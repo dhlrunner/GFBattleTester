@@ -115,7 +115,7 @@ namespace GFBattleTester
         private void Form1_Load(object sender, EventArgs e)
         {
 
-            //updatecheck();
+            updatecheck();
             try
             {
                 string guninfofile = File.ReadAllText(@"data/info_texts/guns.b64");
@@ -303,6 +303,14 @@ namespace GFBattleTester
                 return "0";
             }
         }
+        public string GetMD5HashFromFile(string filepath)
+        {
+            MD5 md5 = MD5.Create();
+            FileStream stream = File.OpenRead(filepath);
+            string hash = BitConverter.ToString(md5.ComputeHash(stream)).Replace("-", string.Empty).ToLower();
+            stream.Close();
+            return hash;
+        }
         void updatecheck()
         {
             try
@@ -311,15 +319,16 @@ namespace GFBattleTester
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
                 bool isLatest = true;
                 WebClient updatercl = new WebClient();
-                byte[] updatelist = updatercl.DownloadData("http://dhlrunner.github.io/gfbtfiles/update_list.txt");
-                string[] list = Encoding.UTF8.GetString(updatelist).Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+                byte[] updatelist = updatercl.DownloadData("https://dhlrunner.github.io/GFBT_update_data_files/update_files.txt");
+                string[] list = Encoding.UTF8.GetString(updatelist).Split(Environment.NewLine.ToCharArray(),StringSplitOptions.RemoveEmptyEntries);
                 foreach (string a in list)
                 {
                     if (a != "")
                     {
                         string filepath = a.Split(',')[0];
                         string filehash = a.Split(',')[1];
-                        if (getFileSizeMD5(filepath) != filehash)
+                        string localhash = GetMD5HashFromFile(filepath);
+                        if (localhash != filehash)
                             isLatest = false;
                     }
                 }
@@ -329,7 +338,7 @@ namespace GFBattleTester
                     {
                         this.Opacity = 0;
                         updater updform = new updater(this);
-                        updform.Show();
+                        updform.ShowDialog();
                     }
                 }
             }

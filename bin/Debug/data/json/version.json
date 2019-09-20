@@ -1,10 +1,10 @@
 {
-  "now": "1556891787",
-  "tomorrow_zero": "1556895600",
+  "now": "",
+  "tomorrow_zero": "",
   "month_zero": 1556636400,
   "next_month_zero": 1559314800,
   "timezone": "Asia/Seoul",
-  "data_version": "7175c97f0953b27eb8aea1159e98dd2f",
+  "data_version": "22784a27ae22ea1f4824279fba2f2bf9",
   "client_version": "2227",
   "ab_version": "0",
   "is_kick": "0",
