@@ -1,0 +1,6 @@
+{
+  "context": "载入场景预设Formation\n\n加载Resource预制物SceneSave/Formation\n\n加载Resource预制物UGUIPrefabs/Common/TeamLabelDrag\n\n加载Resource预制物Tips/TipsManage\n\n加载热更资源包名character_hydra.ab\n\n加载热更资源包名resource_pic_7.ab\n\n加载热更资源包名character_cyclops.ab\n\n加载热更资源包名resource_pic_9.ab\n\n加载热更资源包名resource_pic_12.ab\n\n加载热更资源包名resource_pic_11.ab\n\nNullReferenceException: A null value was found where an object instance was required.\nStBaseDatas`1[T].ContainsKey (Int64 id)\nStBaseDatas`1[T].GetDataById (Int64 id)\nFairy.get_minorSkill ()\nFairy.get_prefixName ()\nFormationFairyLabelController.Init (.Fairy fairy, Int32 teamId)\nFormationController.UpdateCharacterLabels (Int32 teamId)\nFormationController.Start ()\n\n\n\n",
+  "condition": "NullReferenceException: A null value was found where an object instance was required.\n",
+  "stackTrace": "StBaseDatas`1[T].ContainsKey (Int64 id)\nStBaseDatas`1[T].GetDataById (Int64 id)\nFairy.get_minorSkill ()\nFairy.get_prefixName ()\nFormationFairyLabelController.Init (.Fairy fairy, Int32 teamId)\nFormationController.UpdateCharacterLabels (Int32 teamId)\nFormationController.Start ()\n\n",
+  "clientVersion": "2.0400_261"
+}

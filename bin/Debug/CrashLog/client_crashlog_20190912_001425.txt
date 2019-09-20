@@ -1,0 +1,6 @@
+{
+  "context": "加载图片类型attendance1名字attendance1.png\n\n加载本地图片attendence_kr_20190815.png完毕\n\n加载图片类型attendance2名字attendence_kr_20190815.png\n\n加载本地图片CDKey2.png完毕\n\n加载图片类型CDKey2名字CDKey2.png\n\n加载本地图片krsn_180709.png完毕\n\n加载图片类型SevenSupply1名字krsn_180709.png\n\n加载本地图片FirstPurchase.png完毕\n\n加载图片类型FirstPurchase1名字FirstPurchase.png\n\nFunction：Index/attendance\tReceive: error:3\n\nIndex/attendance\nerror:3\n\n\n",
+  "condition": "Index/attendance\n",
+  "stackTrace": "error:3\n",
+  "clientVersion": "2.0401_252"
+}

@@ -1,0 +1,6 @@
+{
+  "context": "加载Resource预制物UGUIPrefabs/GunState/GiftPanel\n\nEnqueue: Friend/dormInfo\t{\"furniture_data\":true}\nhttp://gf-game.girlfrontline.co.kr/index.php/1001/\n\nDequeue: Friend/dormInfo\t{\"furniture_data\":true}\n156707484800006\n\n加载热更资源包名sprites_ui.ab\n\n加载热更资源包名resource_prefab.ab\n\n加载Resource预制物Live2DController/Live2DController\n\n不存在\"Pics/Guns/M1873/M1873_big_Live2D\"资源\n\nAssets/Resources/DaBao/Pics/Guns/M1873/M1873_big_Live2D.prefab对象即不存在配置数据中,也不存在于Resources目录里！\n\n未找到Live2D。尝试加载正常Pic：Pics/Guns/M1873/M1873_big\n\nFunction：Friend/dormInfo\tReceive: error:3\n\nFriend/dormInfo\nerror:3\n\n\n",
+  "condition": "Friend/dormInfo\n",
+  "stackTrace": "error:3\n",
+  "clientVersion": "2.0400_258"
+}

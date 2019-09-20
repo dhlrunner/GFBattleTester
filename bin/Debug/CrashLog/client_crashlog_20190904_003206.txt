@@ -1,0 +1,6 @@
+{
+  "context": "Enqueue: Index/crashLog\t{\"context\":\"Enqueue: Index/crashLog\\t{\\\"context\\\":\\\"\\\\u52A0\\\\u8F7DResource\\\\u9884\\\\u5236\\\\u7269UGUIPrefabs/Deployment/DeploymentAllyTeam\\\\n\\\\n\\\\u52A0\\\\u8F7D\\\\u70ED\\\\u66F4\\\\u8D44\\\\u6E90\\\\u5305\\\\u540Dsprites_deployment.ab\\\\n\\\\n\\\\u521B\\\\u5EFA\\\\u654C\\\\u4EBA\\\\u6570\\\\u636ESpotID941-AllyTeamInstanceID1Name-DeploymentAllyTeam(Clone)\\\\n\\\\n\\\\u672A\\\\u627E\\\\u5230allyTeamInstanceId1\\\\n\\\\n\\\\u521B\\\\u5EFA\\\\u654C\\\\u4EBA\\\\u6570\\\\u636ESpotID942-AllyTeamInstanceID1Name-DeploymentSquadTeam(Clone)\\\\n\\\\n\\\\\n\nNullReferenceException: A null value was found where an object instance was required.\nDeploymentAllyTeamFloatingInfo.UpdateInfo ()\nDeploymentAllyTeamFloatingInfo.Start ()\n\n\n\n",
+  "condition": "NullReferenceException: A null value was found where an object instance was required.\n",
+  "stackTrace": "DeploymentAllyTeamFloatingInfo.UpdateInfo ()\nDeploymentAllyTeamFloatingInfo.Start ()\n\n",
+  "clientVersion": "2.0400_261"
+}

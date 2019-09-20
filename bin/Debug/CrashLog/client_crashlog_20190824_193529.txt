@@ -1,0 +1,6 @@
+{
+  "context": "DeploymentFairySkillPanelController OnSelectTeam: null\n\n检查影响设施状态\n\nDeploymentFairySkillPanelController OnSelectTeam: null\n\n检查影响设施状态\n\nDeploymentFairySkillPanelController OnSelectTeam: null\n\n加载热更资源包名atlasclips_battleresult.ab\n\n加载热更资源包名atlasclips_deploymentexplain.ab\n\n加载热更资源包名atlasclips_battleresultpanel.ab\n\n加载热更资源包名atlasclips_gashapon.ab\n\n加载Resource预制物UGUIPrefabs/Deployment/TrunChange\n\nInvalidOperationException: try to dispose a LuaEnv with C# callback!\nXLua.LuaEnv.Dispose (Boolean dispose)\nXLua.LuaEnv.Dispose ()\nLuaManager.Shutdown ()\nFrameworkEntry.Shutdown ()\n\n\n\n",
+  "condition": "InvalidOperationException: try to dispose a LuaEnv with C# callback!\n",
+  "stackTrace": "XLua.LuaEnv.Dispose (Boolean dispose)\nXLua.LuaEnv.Dispose ()\nLuaManager.Shutdown ()\nFrameworkEntry.Shutdown ()\n\n",
+  "clientVersion": "2.0400_244"
+}

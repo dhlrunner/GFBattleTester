@@ -1,0 +1,70 @@
+E:\Visual Studio 2017\Projects\GFBattleTester\GFBattleTester\bin\Debug\GFBattleTester.exe.config
+E:\Visual Studio 2017\Projects\GFBattleTester\GFBattleTester\bin\Debug\GFBattleTester.exe
+E:\Visual Studio 2017\Projects\GFBattleTester\GFBattleTester\bin\Debug\GFBattleTester.pdb
+E:\Visual Studio 2017\Projects\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.csprojResolveAssemblyReference.cache
+E:\Visual Studio 2017\Projects\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.Form1.resources
+E:\Visual Studio 2017\Projects\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.Properties.Resources.resources
+E:\Visual Studio 2017\Projects\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.csproj.GenerateResource.Cache
+E:\Visual Studio 2017\Projects\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.exe
+E:\Visual Studio 2017\Projects\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.pdb
+E:\Visual Studio 2017\Projects\GFBattleTester\GFBattleTester\bin\Debug\Newtonsoft.Json.dll
+E:\Visual Studio 2017\Projects\GFBattleTester\GFBattleTester\bin\Debug\Newtonsoft.Json.xml
+E:\Visual Studio 2017\Projects\GFBattleTester\GFBattleTester\bin\Debug\AuthCode.dll
+E:\Visual Studio 2017\Projects\GFBattleTester\GFBattleTester\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\Visual Studio 2017\Projects\GFBattleTester\GFBattleTester\bin\Debug\ICSharpCode.SharpZipLib.pdb
+E:\Visual Studio 2017\Projects\GFBattleTester\GFBattleTester\bin\Debug\ICSharpCode.SharpZipLib.xml
+E:\Visual Studio 2017\Projects\GFBattleTester\GFBattleTester\bin\Debug\Resources\Pages\404.html
+E:\Visual Studio 2017\Projects\GFBattleTester\GFBattleTester\bin\Debug\Resources\Pages\500.html
+E:\Visual Studio 2017\Projects\GFBattleTester\GFBattleTester\bin\Debug\SimpleHttpServer.dll
+E:\Visual Studio 2017\Projects\GFBattleTester\GFBattleTester\bin\Debug\log4net.dll
+E:\Visual Studio 2017\Projects\GFBattleTester\GFBattleTester\bin\Debug\SimpleHttpServer.pdb
+E:\Visual Studio 2017\Projects\GFBattleTester\GFBattleTester\bin\Debug\SimpleHttpServer.dll.config
+E:\Visual Studio 2017\Projects\GFBattleTester\GFBattleTester\bin\Debug\log4net.xml
+E:\Visual Studio 2017\Projects\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.updater.resources
+C:\Users\runner38\Desktop\GFBattleTester\GFBattleTester\bin\Debug\Resources\Pages\404.html
+C:\Users\runner38\Desktop\GFBattleTester\GFBattleTester\bin\Debug\Resources\Pages\500.html
+C:\Users\runner38\Desktop\GFBattleTester\GFBattleTester\bin\Debug\GFBattleTester.exe.config
+C:\Users\runner38\Desktop\GFBattleTester\GFBattleTester\bin\Debug\GFBattleTester.exe
+C:\Users\runner38\Desktop\GFBattleTester\GFBattleTester\bin\Debug\GFBattleTester.pdb
+C:\Users\runner38\Desktop\GFBattleTester\GFBattleTester\bin\Debug\AuthCode.dll
+C:\Users\runner38\Desktop\GFBattleTester\GFBattleTester\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\runner38\Desktop\GFBattleTester\GFBattleTester\bin\Debug\Newtonsoft.Json.dll
+C:\Users\runner38\Desktop\GFBattleTester\GFBattleTester\bin\Debug\SimpleHttpServer.dll
+C:\Users\runner38\Desktop\GFBattleTester\GFBattleTester\bin\Debug\log4net.dll
+C:\Users\runner38\Desktop\GFBattleTester\GFBattleTester\bin\Debug\SimpleHttpServer.pdb
+C:\Users\runner38\Desktop\GFBattleTester\GFBattleTester\bin\Debug\SimpleHttpServer.dll.config
+C:\Users\runner38\Desktop\GFBattleTester\GFBattleTester\bin\Debug\ICSharpCode.SharpZipLib.pdb
+C:\Users\runner38\Desktop\GFBattleTester\GFBattleTester\bin\Debug\ICSharpCode.SharpZipLib.xml
+C:\Users\runner38\Desktop\GFBattleTester\GFBattleTester\bin\Debug\Newtonsoft.Json.xml
+C:\Users\runner38\Desktop\GFBattleTester\GFBattleTester\bin\Debug\log4net.xml
+C:\Users\runner38\Desktop\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.EquipSelecter.resources
+C:\Users\runner38\Desktop\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.Form1.resources
+C:\Users\runner38\Desktop\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.Properties.Resources.resources
+C:\Users\runner38\Desktop\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.updater.resources
+C:\Users\runner38\Desktop\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.csproj.GenerateResource.Cache
+C:\Users\runner38\Desktop\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.exe
+C:\Users\runner38\Desktop\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.pdb
+C:\Users\runner38\Desktop\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.csprojAssemblyReference.cache
+C:\Users\runner38\Desktop\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.csproj.CoreCompileInputs.cache
+C:\Users\runner38\Desktop\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.csproj.CopyComplete
+C:\Users\runner38\Desktop\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.battleResultViewer.resources
+C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.csprojAssemblyReference.cache
+C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.battleResultViewer.resources
+C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.EquipSelecter.resources
+C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.Form1.resources
+C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.Properties.Resources.resources
+C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.updater.resources
+C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.csproj.GenerateResource.cache
+C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.csproj.CoreCompileInputs.cache
+C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.exe
+C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.pdb
+C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\bin\Debug\GFBattleTester.exe.config
+C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\bin\Debug\GFBattleTester.exe
+C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\bin\Debug\GFBattleTester.pdb
+C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\bin\Debug\AuthCode.dll
+C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\bin\Debug\Newtonsoft.Json.dll
+C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\bin\Debug\ICSharpCode.SharpZipLib.pdb
+C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\bin\Debug\ICSharpCode.SharpZipLib.xml
+C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\bin\Debug\Newtonsoft.Json.xml
+C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.csproj.CopyComplete

@@ -1,0 +1,6 @@
+{
+  "context": "检测到交战点5520\n\n开始战斗!!\n\n载入场景耗时0.9972134\n\n<color=#19D7D7>stcBattle_target_select_aiList文件流加载完成</color>\n\n<color=#19D7D7>stcBattle_action_configList文件流加载完成</color>\n\n<color=#19D7D7>stcBattle_creationList文件流加载完成</color>\n\n加载热更资源包名asset_particleseffects.ab\n\n加载热更资源包名asset_particlesmaterials.ab\n\n加载热更资源包名resource_effect.ab\n\n加载Resource预制物UGUIPrefabs/Battle/FloatLifeBar\n\nNullReferenceException: A null value was found where an object instance was required.\nGF.Battle.BattleCharacterController+<AsyncLoadData>c__Iterator0.MoveNext ()\nUnityEngine.SetupCoroutine.InvokeMoveNext (IEnumerator enumerator, IntPtr returnValueAddress)\n\n\n\n",
+  "condition": "NullReferenceException: A null value was found where an object instance was required.\n",
+  "stackTrace": "GF.Battle.BattleCharacterController+<AsyncLoadData>c__Iterator0.MoveNext ()\nUnityEngine.SetupCoroutine.InvokeMoveNext (IEnumerator enumerator, IntPtr returnValueAddress)\n\n",
+  "clientVersion": "2.0400_244"
+}

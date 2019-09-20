@@ -1,0 +1,84 @@
+﻿{
+  "night_spots": [
+    {
+      "spot_id": "13692",
+      "belong": "1",
+      "seed": 5577
+    },
+    {
+      "spot_id": "13693",
+      "belong": "2",
+      "seed": 1759
+    },
+    {
+      "spot_id": "13694",
+      "belong": "3",
+      "seed": 8295
+    },
+    {
+      "spot_id": "13695",
+      "belong": "3",
+      "seed": 5675
+    }
+  ],
+  "night_enemy": [
+    {
+      "enemy_team_id": "337001",
+      "enemy_hp_percent": "1",
+      "enemy_instance_id": "2",
+      "enemy_birth_turn": "1",
+      "enemy_ai": "0",
+      "enemy_ai_para": 0,
+      "from_spot_id": "13693",
+      "to_spot_id": "13693",
+      "boss_hp": "75000",
+      "hostage_id": "0",
+      "hostage_hp": "0",
+      "ally_instance_ids": [ 1 ]
+    }
+  ],
+  "night_ally": [
+    {
+      "from_spot_id": "13694",
+      "to_spot_id": "13693",
+      "ally_instance_id": 1,
+      "to_hostage_id": "0",
+      "to_hostage_hp": "0",
+      "ally_team_id": "337002",
+      "hostage_id": "0",
+      "hostage_hp": "0"
+    }
+  ],
+  "ally_instance_info": [
+    {
+      "ally_instance_id": "1",
+      "ally_team_id": "337002",
+      "ally_enemy": "317948",
+      "ally_type": "1",
+      "ai": "1",
+      "ai_para": "",
+      "ally_boss_hp": "0",
+      "ally_enemy_hp_percent": "1",
+      "team_guns_life": {
+        "826": {
+          "id": "826",
+          "life": "1760"
+        }
+      },
+      "move_turn": "1",
+      "transform_condition2": "",
+      "betray_condition2": ""
+    }
+  ],
+  "ally_battle": [],
+  "all_ally_team_moved": 0,
+  "building_defender_change": [],
+  "type5_score": "0",
+  "fairy_skill_return": [],
+  "fairy_skill_perform": [],
+  "fairy_skill_on_spot": [],
+  "fairy_skill_on_team": [],
+  "fairy_skill_on_enemy": [],
+  "fairy_skill_on_squad": [],
+  "fairy_skill_on_ally": []
+}

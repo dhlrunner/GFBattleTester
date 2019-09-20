@@ -1,0 +1,6 @@
+{
+  "context": "加载热更资源包名atlasclips_gashapon.ab\n\n加载热更资源包名asset_deployment.ab\n\n加载Resource预制物UGUIPrefabs/Deployment/TrunChange\n\n检查影响设施状态\n\nDeploymentFairySkillPanelController OnSelectTeam: null\n\n检查影响设施状态\n\nDeploymentFairySkillPanelController OnSelectTeam: null\n\nEnqueue: Mission/abortMission\t\nhttp://gf-game.girlfrontline.co.kr/index.php/1001/\n\nDequeue: Mission/abortMission\t\n156664019000005\n\nFunction：Mission/abortMission\tReceive: error:3\n\nMission/abortMission\nerror:3\n\n\n",
+  "condition": "Mission/abortMission\n",
+  "stackTrace": "error:3\n",
+  "clientVersion": "2.0400_258"
+}

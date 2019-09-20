@@ -1,0 +1,6 @@
+{
+  "context": "加载Resource预制物Tips/TipsManage\n\n加载热更资源包名character_m16a1_boss.ab\n\n加载热更资源包名resource_pic_9.ab\n\n加载热更资源包名character_m4a1.ab\n\n加载热更资源包名resource_pic_4.ab\n\n加载热更资源包名character_ar15.ab\n\n加载热更资源包名character_m4 sopmod ii_he.ab\n\n加载热更资源包名resource_pic_12.ab\n\n加载热更资源包名character_ro635.ab\n\n加载热更资源包名resource_pic_5.ab\n\nNullReferenceException: A null value was found where an object instance was required.\nStBaseDatas`1[T].ContainsKey (Int64 id)\nStBaseDatas`1[T].GetDataById (Int64 id)\nFairy.get_prefixName ()\nFormationFairyLabelController.Init (.Fairy fairy, Int32 teamId)\nFormationController.UpdateCharacterLabels (Int32 teamId)\nFormationController.Start ()\n\n\n\n",
+  "condition": "NullReferenceException: A null value was found where an object instance was required.\n",
+  "stackTrace": "StBaseDatas`1[T].ContainsKey (Int64 id)\nStBaseDatas`1[T].GetDataById (Int64 id)\nFairy.get_prefixName ()\nFormationFairyLabelController.Init (.Fairy fairy, Int32 teamId)\nFormationController.UpdateCharacterLabels (Int32 teamId)\nFormationController.Start ()\n\n",
+  "clientVersion": "2.0400_258"
+}

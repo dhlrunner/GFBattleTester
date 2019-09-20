@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<servers>
+	<server>
+		<name>GRIFON</name>
+		<addr>http://gf-game.girlfrontline.co.kr/index.php/1001/</addr>
+		<worldId>1001</worldId>
+		<recommended>0</recommended>
+		<condition>0</condition>
+		<is_check>0</is_check>
+		<nc>0</nc>
+		<ab_version>0</ab_version>
+		<open_time>1565942400</open_time>
+	</server>
+	<config>
+		<notice_url>http://www.girlsfrontline.co.kr/pages/notice</notice_url>
+		<update_log_url>http://www.girlsfrontline.co.kr/pages/update_url</update_log_url>
+		<update_start_time>1609257600</update_start_time>
+		<update_end_time>1609257600</update_end_time>
+		<client_version>20399</client_version>
+		<platform>https://play.google.com/store/apps/details?id=kr.txwy.and.snqx</platform>
+		<top_client_version>130</top_client_version>
+		<version_desc>게임 클라이언트가 업데이트 되었습니다. 스토어에서 다운로드하여 주시기 바랍니다. </version_desc>
+	</config>
+</servers>

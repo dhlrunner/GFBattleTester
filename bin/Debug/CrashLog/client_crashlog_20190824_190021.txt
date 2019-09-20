@@ -1,0 +1,6 @@
+{
+  "context": "Next\n\n遮罩隐藏\n\n遮罩激活\n\nNext\n\n遮罩隐藏\n\n检查影响设施状态\n\nNext\n\n遮罩隐藏\n\n检查影响设施状态\n\nDeploymentFairySkillPanelController OnSelectTeam: null\n\nInvalidOperationException: try to dispose a LuaEnv with C# callback!\nXLua.LuaEnv.Dispose (Boolean dispose)\nXLua.LuaEnv.Dispose ()\nLuaManager.Shutdown ()\nFrameworkEntry.Shutdown ()\n\n\n\n",
+  "condition": "InvalidOperationException: try to dispose a LuaEnv with C# callback!\n",
+  "stackTrace": "XLua.LuaEnv.Dispose (Boolean dispose)\nXLua.LuaEnv.Dispose ()\nLuaManager.Shutdown ()\nFrameworkEntry.Shutdown ()\n\n",
+  "clientVersion": "2.0400_255"
+}

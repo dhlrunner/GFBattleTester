@@ -1,0 +1,6 @@
+{
+  "context": "初始化战斗！\n\n己方枪数量3\n\n<color=#19D7D7>stcBattle_triggerList文件流加载完成</color>\n\nLuaException: c# exception:Array index is out of range.,stack:  at GF.Battle.BattleCharacterController.InitMemberOffset () [0x00000] in <filename unknown>:0 \n  at BattleFriendlyCharacterController.Init (GF.Battle.Gun gun, System.Action callbackIfDownloaded, Boolean showLIfeBar) [0x00000] in <filename unknown>:0 \n  at GF.Battle.BattleController.InitBattle () [0x00000] in <filename unknown>:0 \n  at GF.Battle.BattleController.Awake () [0x00000] in <filename unknown>:0 \n  at System.Reflection.MonoMethod.Invoke \n\n载入场景耗时1.116211\n\n加载热更资源包名asset_particleseffects.ab\n\n加载热更资源包名resource_effect.ab\n\n销毁时间1103.728\n\nBattleFieldTeamHolder.OnDestroy()\n\nBattleFieldTeamHolder.OnDestroy()\n\nInvalidOperationException: try to dispose a LuaEnv with C# callback!\nXLua.LuaEnv.Dispose (Boolean dispose)\nXLua.LuaEnv.Dispose ()\nLuaManager.Shutdown ()\nFrameworkEntry.Shutdown ()\n\n\n\n",
+  "condition": "InvalidOperationException: try to dispose a LuaEnv with C# callback!\n",
+  "stackTrace": "XLua.LuaEnv.Dispose (Boolean dispose)\nXLua.LuaEnv.Dispose ()\nLuaManager.Shutdown ()\nFrameworkEntry.Shutdown ()\n\n",
+  "clientVersion": "2.0401_252"
+}

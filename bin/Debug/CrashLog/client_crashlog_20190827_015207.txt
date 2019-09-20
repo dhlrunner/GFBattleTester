@@ -1,0 +1,6 @@
+{
+  "context": "检查影响设施状态\n\n加载Resource预制物UGUIPrefabs/Deployment/BuildSkillInfo\n\nDeploymentFairySkillPanelController OnSelectTeam: null\n\n检查影响设施状态\n\nDeploymentFairySkillPanelController OnSelectTeam: null\n\nEnqueue: Mission/abortMission\t\nhttp://gf-game.girlfrontline.co.kr/index.php/1001/\n\nDequeue: Mission/abortMission\t\n156683809200005\n\nFunction：Mission/abortMission\tReceive: error:3\n\nMission/abortMission\nerror:3\n\n加载Resource预制物MessageBox\n\nInvalidOperationException: try to dispose a LuaEnv with C# callback!\nXLua.LuaEnv.Dispose (Boolean dispose)\nXLua.LuaEnv.Dispose ()\nLuaManager.Shutdown ()\nFrameworkEntry.Shutdown ()\n\n\n\n",
+  "condition": "InvalidOperationException: try to dispose a LuaEnv with C# callback!\n",
+  "stackTrace": "XLua.LuaEnv.Dispose (Boolean dispose)\nXLua.LuaEnv.Dispose ()\nLuaManager.Shutdown ()\nFrameworkEntry.Shutdown ()\n\n",
+  "clientVersion": "2.0400_244"
+}

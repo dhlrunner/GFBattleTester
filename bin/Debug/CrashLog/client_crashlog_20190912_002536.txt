@@ -1,0 +1,6 @@
+{
+  "context": "加载Resource预制物Live2DController/Live2DController\n\n加载热更资源包名asset_assetother.ab\n\n加载热更资源包名resource_perfab_live2d.ab\n\n加载热更资源包名live2d_bg_cg1.ab\n\n<color=#19D7D7>stcLive2d_motionsList文件流加载完成</color>\n\n加载热更资源包名live2d_gun_hk416_805.ab\n\n当前看板娘的结契状态：False\n\nNullReferenceException: A null value was found where an object instance was required.\nGameData.get_engagedSpot ()\nHomeController.Start ()\n\n\n获得热更音频文件路径：/var/mobile/Containers/Data/Application/A71924BA-AD2B-454E-82D8-AA4387295364/Documents/Iphone/New/HK416.acb.bytes\n\n加载热更资源包名asset_textes.ab\n\nInvalidOperationException: try to dispose a LuaEnv with C# callback!\nXLua.LuaEnv.Dispose (Boolean dispose)\nXLua.LuaEnv.Dispose ()\nLuaManager.Shutdown ()\nFrameworkEntry.Shutdown ()\n\n\n\n",
+  "condition": "InvalidOperationException: try to dispose a LuaEnv with C# callback!\n",
+  "stackTrace": "XLua.LuaEnv.Dispose (Boolean dispose)\nXLua.LuaEnv.Dispose ()\nLuaManager.Shutdown ()\nFrameworkEntry.Shutdown ()\n\n",
+  "clientVersion": "2.0401_252"
+}

@@ -1,0 +1,6 @@
+{
+  "context": "场景跳转==scene: Formation, jumpType: 0, subJumpType: 0\n\n开始加载场景\n\n载入场景\n\n跳转场景Formation\n\n载入场景预设Formation\n\n加载Resource预制物SceneSave/Formation\n\n加载Resource预制物UGUIPrefabs/Common/TeamLabelDrag\n\n加载Resource预制物Tips/TipsManage\n\n加载热更资源包名character_98k_he.ab\n\n加载热更资源包名resource_pic_3.ab\n\nNullReferenceException: A null value was found where an object instance was required.\nStBaseDatas`1[T].ContainsKey (Int64 id)\nStBaseDatas`1[T].GetDataById (Int64 id)\nFairy.get_prefixName ()\nFormationFairyLabelController.Init (.Fairy fairy, Int32 teamId)\nFormationController.UpdateCharacterLabels (Int32 teamId)\nFormationController.Start ()\n\n\n\n",
+  "condition": "NullReferenceException: A null value was found where an object instance was required.\n",
+  "stackTrace": "StBaseDatas`1[T].ContainsKey (Int64 id)\nStBaseDatas`1[T].GetDataById (Int64 id)\nFairy.get_prefixName ()\nFormationFairyLabelController.Init (.Fairy fairy, Int32 teamId)\nFormationController.UpdateCharacterLabels (Int32 teamId)\nFormationController.Start ()\n\n",
+  "clientVersion": "2.0400_261"
+}

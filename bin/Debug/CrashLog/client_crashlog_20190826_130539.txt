@@ -1,0 +1,6 @@
+{
+  "context": "加载Resource预制物SceneSave/Dorm\n\n加载Resource预制物UGUIPrefabs/Common/Badge\n\n加载Resource预制物UGUIPrefabs/Battle/SequenceSprite\n\n加载Resource预制物Tips/TipsManage\n\nEnqueue: Friend/dormInfo\t{\"furniture_data\":true}\nhttp://gf-game.girlfrontline.co.kr/index.php/1001/\n\nDequeue: Friend/dormInfo\t{\"furniture_data\":true}\n156679213600009\n\n加载Resource预制物UGUIPrefabs/Dorm/BatteryContainer1\n\n加载Resource预制物UGUIPrefabs/Dorm/BatteryPanel\n\n加载热更资源包名resource_icon_item.ab\n\nFunction：Friend/dormInfo\tReceive: error:3\n\nFriend/dormInfo\nerror:3\n\n\n",
+  "condition": "Friend/dormInfo\n",
+  "stackTrace": "error:3\n",
+  "clientVersion": "2.0400_244"
+}

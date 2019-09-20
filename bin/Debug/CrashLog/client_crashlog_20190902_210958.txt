@@ -1,0 +1,6 @@
+{
+  "context": "<color=#19D7D7>stcBattle_triggerList文件流加载完成</color>\n\n加载Resource预制物UGUIPrefabs/Battle/CharacterEffect\n\n加载热更资源包名character_cyclops_spine.ab\n\n加载热更资源包名resource_spine.ab\n\n加载热更资源包名character_jill_spine.ab\n\nLuaException: c# exception:The given key was not present in the dictionary.,stack:  at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (.TKey key) [0x00000] in <filename unknown>:0 \n  at GF.Battle.BattleController.InitBattle () [0x00000] in <filename unknown>:0 \n  at GF.Battle.BattleController.Awake () [0x00000] in <filename unknown>:0 \n  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globa\n\n载入场景耗时1.046875\n\n加载热更资源包名asset_particleseffects.ab\n\n加载热更资源包名resource_effect.ab\n\n销毁时间16239.75\n\nInvalidOperationException: try to dispose a LuaEnv with C# callback!\nXLua.LuaEnv.Dispose (Boolean dispose)\nXLua.LuaEnv.Dispose ()\nLuaManager.Shutdown ()\nFrameworkEntry.Shutdown ()\n\n\n\n",
+  "condition": "InvalidOperationException: try to dispose a LuaEnv with C# callback!\n",
+  "stackTrace": "XLua.LuaEnv.Dispose (Boolean dispose)\nXLua.LuaEnv.Dispose ()\nLuaManager.Shutdown ()\nFrameworkEntry.Shutdown ()\n\n",
+  "clientVersion": "2.0401_252"
+}

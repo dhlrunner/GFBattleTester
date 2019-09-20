@@ -1,0 +1,6 @@
+{
+  "context": "106\n\n读取/storage/emulated/0/Android/data/kr.txwy.and.snqx/files/stc/5001.stc失败:\n\nSharing violation on path /storage/emulated/0/Android/data/kr.txwy.and.snqx/files/stc/5001.stc\n  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean anonymous, FileOptions options) [0x00000] in <filename unknown>:0 \n  at System.IO.FileStream..ctor (System.String path, FileMode mode) [0x00000] in <filename unknown>:0 \n  at TableHelper.LoadBytesTable[T] (IBaseDatas`1 tDatas, CmdDef table, Boolean sectionRead) [0x00000] in <filename un\n\nstcBattle_skill_configList解析失败\n\n加载Resource预制物MessageBox\n\n跳转场景Home\n\n获得热更音频文件路径：/storage/emulated/0/Android/data/kr.txwy.and.snqx/files/Android/New/GF_Lobby_New_loop.acb.bytes\n\n载入场景预设Home\n\n加载Resource预制物SceneSave/Home\n\n加载Resource预制物UGUIPrefabs/Common/Badge\n\nNullReferenceException: A null value was found where an object instance was required.\nHomeController.SetHomeBg ()\nHomeController.Awake ()\n\n\n\n",
+  "condition": "NullReferenceException: A null value was found where an object instance was required.\n",
+  "stackTrace": "HomeController.SetHomeBg ()\nHomeController.Awake ()\n\n",
+  "clientVersion": "2.0400_255"
+}

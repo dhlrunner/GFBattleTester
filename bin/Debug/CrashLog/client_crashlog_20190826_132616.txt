@@ -1,0 +1,6 @@
+{
+  "context": "当前活动无drawinfo\n\n加载Resource预制物UGUIPrefabs/Common/TeamLabel\n\n加载Resource预制物UGUIPrefabs/Common/TeamSelectionCharacterLabel\n\n加载Resource预制物UGUIPrefabs/Deployment/EnemyInfo\n\n显示梯队信息\n\n加载热更资源包名resource_icon_logo.ab\n\n加载热更资源包名resource_icon_item.ab\n\n加载热更资源包名character_m1873.ab\n\n加载热更资源包名resource_pic_5.ab\n\n网络连接关闭\n\nInvalidOperationException: try to dispose a LuaEnv with C# callback!\nXLua.LuaEnv.Dispose (Boolean dispose)\nXLua.LuaEnv.Dispose ()\nLuaManager.Shutdown ()\nFrameworkEntry.Shutdown ()\n\n\n\n",
+  "condition": "InvalidOperationException: try to dispose a LuaEnv with C# callback!\n",
+  "stackTrace": "XLua.LuaEnv.Dispose (Boolean dispose)\nXLua.LuaEnv.Dispose ()\nLuaManager.Shutdown ()\nFrameworkEntry.Shutdown ()\n\n",
+  "clientVersion": "2.0400_244"
+}
