@@ -1,0 +1,60 @@
+{
+  "spot": "941",
+  "enemyDie": true,
+  "battleEndtime": "1569371487",
+  "bossHP": "0",
+  "mvp": "1",
+  "sqd_skill": [],
+  "gun_info": [
+    {
+      "id": "1",
+      "gunid": "179",
+      "life": "4101",
+      "lifeBefore": "4101",
+      "pos": "9",
+      "isUsed": "1"
+    },
+    {
+      "id": "2",
+      "gunid": "1002",
+      "life": "852",
+      "lifeBefore": "1375",
+      "pos": "7",
+      "isUsed": "1"
+    },
+    {
+      "id": "3",
+      "gunid": "1002",
+      "life": "-1",
+      "lifeBefore": "1375",
+      "pos": "9",
+      "isUsed": "0"
+    },
+    {
+      "id": "4",
+      "gunid": "1002",
+      "life": "-1",
+      "lifeBefore": "1375",
+      "pos": "13",
+      "isUsed": "0"
+    },
+    {
+      "id": "5",
+      "gunid": "1002",
+      "life": "-1",
+      "lifeBefore": "1375",
+      "pos": "14",
+      "isUsed": "0"
+    }
+  ],
+  "rec": [
+    "332,1,3,0"
+  ],
+  "battleTime": "14",
+  "totalDamageFromEnemy": "96",
+  "totalDamageToEnemy": "75000",
+  "MaxDamageToEnemy": "1923",
+  "EnemyLeaderID": "0",
+  "EnemyGroupID": "337001",
+  "unknown": "OOqojBtZDD+bBhLNWMYoM56I13l5yapo2wNqn52vFPTzZDWLr51b72+/+YMANELw+Lk2UipNB3F2K6vTfZv9Dcf968hdsJ1WfBLfyCoMaUI+Gjer3+ebgslMkN50FjVegxST75vd72XKgw8pmRmQLEgeDS7BqdxlZ9mxirDgnDy5l0lS9nH3Ja+PzyknWNcUz2VoC33GvePZfLoeYYnNTOfGgpQsDXr1LKfsKZra/x9CUD/TTS6MXTkhATdiANWHREyMlV4yVdojAUIm0RZxPIjVgnQT2mFF9co2ODKqIz3vCPMrieVJ8OwRIWF8kTe3g3vOcllX88DjUlq2SjA7R9Wzs3kMnpQDE4/+EE4H5YDIQ7gys4UclZidW/MMgB6afybujtWKUzZGFelWesfT3I5gsF7yfwHnHYld0KyaABUZ4kgkIdXlfg/DR8P8h/iP9DTu4tz/8KszHeZa6BgqwLWZIVawKxiuHnxRV9eAVW5iVXWrvRvY7Q=="
+}

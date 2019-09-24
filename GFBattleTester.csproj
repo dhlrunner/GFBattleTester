@@ -116,6 +116,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="serveraccess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="serveraccess.Designer.cs">
+      <DependentUpon>serveraccess.cs</DependentUpon>
+    </Compile>
     <Compile Include="updater.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="serveraccess.resx">
+      <DependentUpon>serveraccess.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="updater.resx">
       <DependentUpon>updater.cs</DependentUpon>
     </EmbeddedResource>

@@ -24,8 +24,10 @@ namespace GFBattleTester
 {
     public partial class Form1 : Form
     {
-
+        
+        bool getUserinfoFromServer = false;
         public static Form1 frm;
+        serveraccess serv ;
         static string signkey = "우중비모";
         bool gunsaved = false;
         string[] Equippos = { "11", "12", "13", "21", "22", "23", "31", "32", "33", "41", "42", "43", "51", "52", "53" };
@@ -110,6 +112,7 @@ namespace GFBattleTester
         {
             InitializeComponent();
             frm = this;
+            serv = new serveraccess(this);
             CheckForIllegalCrossThreadCalls = false;
         }
         private void Form1_Load(object sender, EventArgs e)
@@ -279,6 +282,7 @@ namespace GFBattleTester
                 MessageBox.Show(ex.ToString(), "파일 로드 실패", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 Close();
             }
+            UpdatePosTile(null, null);
         }
         string getFileSizeMD5(string path)
         {
@@ -542,18 +546,26 @@ namespace GFBattleTester
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            run_server();
+        }
+        bool run_server()
+        {
             if (enemy_team_id_combobox.Text == string.Empty)
             {
                 MessageBox.Show("적 그룹을 선택해주세요.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
             }
             else if (!gunsaved)
+            {
                 MessageBox.Show("먼저 인형설정에서 진형을 설정 후 \"결정\" 버튼을 눌러주세요.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
             else
             {
                 if (!IsTcpPortAvailable(Convert.ToInt16(portnum.Value)))
                 {
                     MessageBox.Show("선택한 포트 " + portnum.Value.ToString() + "번이 현제 다른 프로세스에 의해 사용 중입니다. 다른 포트번호를 설정해 주세요.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
                 }
                 else
                 {
@@ -572,28 +584,29 @@ namespace GFBattleTester
                             thread.SetApartmentState(ApartmentState.STA);
                             thread.Start(listener);
                         }
-                            
+
 
                         label117.Text = "서버 상태: 실행 중";
                         if (!checkBox1.Checked)
                             label119.Text = "서버 IP: " + GetLocalIP();
                         label120.Text = "서버 포트: " + portnum.Value.ToString();
-                        AddLog((checkBox1.Checked? "***.***.***.***": GetLocalIP())+ ":" + portnum.Value.ToString() + " 에서 서버 시작됨; 적 그룹 ID:" + userinfo["spot_act_info"][2]["enemy_team_id"].ToString());
+                        AddLog((checkBox1.Checked ? "***.***.***.***" : GetLocalIP()) + ":" + portnum.Value.ToString() + " 에서 서버 시작됨; 적 그룹 ID:" + userinfo["spot_act_info"][2]["enemy_team_id"].ToString());
 
 
                         File.WriteAllText(@"data/port", portnum.Value.ToString());
                         button5.Enabled = false;
                         portnum.Enabled = false;
+                        return true;
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.ToString(), "Error while opening server", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
                     }
                 }
 
 
             }
-
         }
         private string GetLocalIP()
         {
@@ -636,287 +649,295 @@ namespace GFBattleTester
         }
         private static void ProcessRequest(HttpListenerContext ctx)
         {
-            string uri = ctx.Request.RawUrl;
-            byte[] Client_Req_data = Encoding.UTF8.GetBytes(new StreamReader(ctx.Request.InputStream).ReadToEnd());
-            string Outdatacode = Encoding.UTF8.GetString(Client_Req_data);
-            if (Outdatacode.Contains("outdatacode"))
-                Outdatacode = HttpUtility.UrlDecode(Outdatacode.Split('&')[1].Split('=')[1]);
-            frm.AddLog("ClientIP: " + ctx.Request.RemoteEndPoint.Address.ToString() + "; Request: " + uri);
-            if (uri.Contains("favicon.ico"))
+            if (!frm.getUserinfoFromServer)
             {
-                ResponceProcessBinary(ctx, File.ReadAllBytes(@"data/icon.ico"), false, false);
-            }
-            else if (ctx.Request.Url.LocalPath == "/")
-            {
-                string html = "<!doctype html><html lang=\"ko\"><head><meta charset=\"utf-8\"><title>GFHelper</title></head><body>Server is working</br><a href=\"data/Cert/GFBattleTester.cer/\">인증서 다운로드</a></body></html>";                
-                ResponceProcessBinary(ctx, Encoding.UTF8.GetBytes(html), false, true);
-            }
-            else if(ctx.Request.Url.LocalPath == "/data/Cert/GFBattleTester.cer/")
-            {
-                byte[] cert = File.ReadAllBytes(@"data/Cert/Cert.pfx");
-                ctx.Response.ContentType = "other/certificate";
-                ctx.Response.Headers.Add("Content-Disposition", "form-data; name=\"my_file\"; filename=\"GFBattleTester.pfx\"");
-                ResponceProcessBinary(ctx, cert, false, true);
-            }
-            else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.index_version)
-            {
-                string json = File.ReadAllText(@"data/json/version.json");
-                JObject o = JObject.Parse(json);
-                o["now"] = Packet.GetCurrentTimeStamp().ToString();
-                o["tomorrow_zero"] = (Packet.GetCurrentTimeStamp()+(86400 - Packet.GetCurrentTimeStamp() % 86400 )).ToString();
-                ResponceProcessBinary(ctx, Encoding.UTF8.GetBytes(o.ToString()), false, false);
-            }
-            else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.getToken )
-            {
-                string data = Packet.Encode(File.ReadAllText(@"data/json/token.json"), "yundoudou");
-                ResponceProcessBinary(ctx, Encoding.UTF8.GetBytes(data), false, false);
-            }
-            else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.getuserinfo)
-            {
-                frm.AddLog("유저 정보 취득");
-                ResponceProcessBinary(ctx, Encoding.UTF8.GetBytes(userinfo.ToString()), true, false);
-            }
-            else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.battlefinish)
-            {
-                Random random = new Random();
-                JObject clientdata = JObject.Parse(Packet.Decode(Outdatacode, signkey));
-                //Clipboard.SetText(clientdata.ToString());
-                JObject saveJson = new JObject();
-                JArray guninfo = new JArray();                
-                guninfo.Add(JObject.Parse("{"+string.Format(@"'id':'1','gunid':'{0}','life':'{1}','lifeBefore':'{4}','pos':'{2}','isUsed':'{3}'",frm.gun_info_json_1["gun_id"].ToString(),clientdata["guns"][0]["life"].ToString(),frm.gun_info_json_1["position"].ToString(),frm.gun_info_json_1["team_id"].ToString(),frm.gun_info_json_1["life"].ToString())+"}"));
-                guninfo.Add(JObject.Parse("{" + string.Format(@"'id':'2','gunid':'{0}','life':'{1}','lifeBefore':'{4}','pos':'{2}','isUsed':'{3}'", frm.gun_info_json_2["gun_id"].ToString(), clientdata["guns"].Count() > 1 ? clientdata["guns"][1]["life"].ToString():"-1" , frm.gun_info_json_2["position"].ToString(), frm.gun_info_json_2["team_id"].ToString(), frm.gun_info_json_2["life"].ToString()) + "}"));
-                guninfo.Add(JObject.Parse("{" + string.Format(@"'id':'3','gunid':'{0}','life':'{1}','lifeBefore':'{4}','pos':'{2}','isUsed':'{3}'", frm.gun_info_json_3["gun_id"].ToString(), clientdata["guns"].Count() > 2 ? clientdata["guns"][2]["life"].ToString():"-1", frm.gun_info_json_3["position"].ToString(), frm.gun_info_json_3["team_id"].ToString(), frm.gun_info_json_3["life"].ToString()) + "}"));
-                guninfo.Add(JObject.Parse("{" + string.Format(@"'id':'4','gunid':'{0}','life':'{1}','lifeBefore':'{4}','pos':'{2}','isUsed':'{3}'", frm.gun_info_json_4["gun_id"].ToString(), clientdata["guns"].Count() > 3 ? clientdata["guns"][3]["life"].ToString():"-1", frm.gun_info_json_4["position"].ToString(), frm.gun_info_json_4["team_id"].ToString(), frm.gun_info_json_4["life"].ToString()) + "}"));
-                guninfo.Add(JObject.Parse("{" + string.Format(@"'id':'5','gunid':'{0}','life':'{1}','lifeBefore':'{4}','pos':'{2}','isUsed':'{3}'", frm.gun_info_json_5["gun_id"].ToString(), clientdata["guns"].Count() > 4 ? clientdata["guns"][4]["life"].ToString():"-1", frm.gun_info_json_5["position"].ToString(), frm.gun_info_json_5["team_id"].ToString(), frm.gun_info_json_5["life"].ToString()) + "}"));
-                saveJson.Add("spot", clientdata["spot_id"].ToString());
-                saveJson.Add("enemyDie", clientdata["if_enemy_die"]);
-                saveJson.Add("battleEndtime", clientdata["current_time"].ToString());
-                saveJson.Add("bossHP", clientdata["boss_hp"].ToString());
-                saveJson.Add("mvp", clientdata["mvp"].ToString());
-                saveJson.Add("sqd_skill", clientdata["use_skill_squads"]);
-                saveJson.Add("gun_info", guninfo);               
-                saveJson.Add("rec",JObject.Parse(clientdata["user_rec"].ToString())["record"]);
-                saveJson.Add("battleTime", clientdata["1000"]["27"].ToString());
-                saveJson.Add("totalDamageFromEnemy", clientdata["1000"]["18"].ToString());
-                saveJson.Add("totalDamageToEnemy", clientdata["1000"]["24"].ToString());
-                saveJson.Add("MaxDamageToEnemy", clientdata["1000"]["41"].ToString());
-                saveJson.Add("EnemyLeaderID", clientdata["1000"]["33"].ToString());
-                saveJson.Add("EnemyGroupID", userinfo["spot_act_info"][2]["enemy_team_id"].ToString());
-                saveJson.Add("unknown", Xxtea.XXTEA.EncryptToBase64String(Encoding.UTF8.GetBytes(clientdata["1000"].ToString()), Encoding.UTF8.GetBytes("우중비모")));
-                File.WriteAllText(@"BattleLog/" + DateTime.Now.ToString("yyyyMMdd_HHmmss")+ "_battlelog.brvf", saveJson.ToString());
-                JArray gun_ids = JArray.Parse(clientdata["guns"].ToString());
-                int fight_gun = gun_ids.Count;
-                string[] gunid = new string[fight_gun];
-                for (int i = 0; i < fight_gun; i++)
+                string uri = ctx.Request.RawUrl;
+                byte[] Client_Req_data = Encoding.UTF8.GetBytes(new StreamReader(ctx.Request.InputStream).ReadToEnd());
+                string Outdatacode = Encoding.UTF8.GetString(Client_Req_data);
+                if (Outdatacode.Contains("outdatacode"))
+                    Outdatacode = HttpUtility.UrlDecode(Outdatacode.Split('&')[1].Split('=')[1]);
+                frm.AddLog("ClientIP: " + ctx.Request.RemoteEndPoint.Address.ToString() + "; Request: " + uri);
+                if (uri.Contains("favicon.ico"))
                 {
-                    gunid[i] = gun_ids[i]["id"].ToString();
+                    ResponceProcessBinary(ctx, File.ReadAllBytes(@"data/icon.ico"), false, false);
                 }
-                var sd = new
+                else if (ctx.Request.Url.LocalPath == "/")
                 {
-                    user_exp = "50",
-                    /*
-                    gun_exp = new List<guns>()
-                     {                        
-                         new guns(){gun_with_user_id = gunid[0], exp = "0"},
-                        new guns(){gun_with_user_id = gunid[1], exp = "0"},
-                        new guns(){gun_with_user_id = gunid[2], exp = "0"},
-                        new guns(){gun_with_user_id = gunid[3], exp = "0"},
-                        new guns(){gun_with_user_id = gunid[4], exp = "0"}
-                    },*/
-                    fairy_exp = "0",
-                    gun_life = new List<gun_life>()
+                    string html = "<!doctype html><html lang=\"ko\"><head><meta charset=\"utf-8\"><title>GFHelper</title></head><body>Server is working</br><a href=\"data/Cert/GFBattleTester.cer/\">인증서 다운로드</a></body></html>";
+                    ResponceProcessBinary(ctx, Encoding.UTF8.GetBytes(html), false, true);
+                }
+                else if (ctx.Request.Url.LocalPath == "/data/Cert/GFBattleTester.cer/")
+                {
+                    byte[] cert = File.ReadAllBytes(@"data/Cert/Cert.pfx");
+                    ctx.Response.ContentType = "other/certificate";
+                    ctx.Response.Headers.Add("Content-Disposition", "form-data; name=\"my_file\"; filename=\"GFBattleTester.pfx\"");
+                    ResponceProcessBinary(ctx, cert, false, true);
+                }
+                else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.index_version)
+                {
+                    string json = File.ReadAllText(@"data/json/version.json");
+                    JObject o = JObject.Parse(json);
+                    o["now"] = Packet.GetCurrentTimeStamp().ToString();
+                    o["tomorrow_zero"] = (Packet.GetCurrentTimeStamp() + (86400 - Packet.GetCurrentTimeStamp() % 86400)).ToString();
+                    ResponceProcessBinary(ctx, Encoding.UTF8.GetBytes(o.ToString()), false, false);
+                }
+                else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.getToken)
+                {
+                    string data = Packet.Encode(File.ReadAllText(@"data/json/token.json"), "yundoudou");
+                    ResponceProcessBinary(ctx, Encoding.UTF8.GetBytes(data), false, false);
+                }
+                else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.getuserinfo)
+                {
+                    frm.AddLog("유저 정보 취득");
+                    ResponceProcessBinary(ctx, Encoding.UTF8.GetBytes(userinfo.ToString()), true, false);
+                }
+                else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.battlefinish)
+                {
+                    Random random = new Random();
+                    JObject clientdata = JObject.Parse(Packet.Decode(Outdatacode, signkey));
+                    //Clipboard.SetText(clientdata.ToString());
+                    JObject saveJson = new JObject();
+                    JArray guninfo = new JArray();
+                    guninfo.Add(JObject.Parse("{" + string.Format(@"'id':'1','gunid':'{0}','life':'{1}','lifeBefore':'{4}','pos':'{2}','isUsed':'{3}'", frm.gun_info_json_1["gun_id"].ToString(), clientdata["guns"][0]["life"].ToString(), frm.gun_info_json_1["position"].ToString(), frm.gun_info_json_1["team_id"].ToString(), frm.gun_info_json_1["life"].ToString()) + "}"));
+                    guninfo.Add(JObject.Parse("{" + string.Format(@"'id':'2','gunid':'{0}','life':'{1}','lifeBefore':'{4}','pos':'{2}','isUsed':'{3}'", frm.gun_info_json_2["gun_id"].ToString(), clientdata["guns"].Count() > 1 ? clientdata["guns"][1]["life"].ToString() : "-1", frm.gun_info_json_2["position"].ToString(), frm.gun_info_json_2["team_id"].ToString(), frm.gun_info_json_2["life"].ToString()) + "}"));
+                    guninfo.Add(JObject.Parse("{" + string.Format(@"'id':'3','gunid':'{0}','life':'{1}','lifeBefore':'{4}','pos':'{2}','isUsed':'{3}'", frm.gun_info_json_3["gun_id"].ToString(), clientdata["guns"].Count() > 2 ? clientdata["guns"][2]["life"].ToString() : "-1", frm.gun_info_json_3["position"].ToString(), frm.gun_info_json_3["team_id"].ToString(), frm.gun_info_json_3["life"].ToString()) + "}"));
+                    guninfo.Add(JObject.Parse("{" + string.Format(@"'id':'4','gunid':'{0}','life':'{1}','lifeBefore':'{4}','pos':'{2}','isUsed':'{3}'", frm.gun_info_json_4["gun_id"].ToString(), clientdata["guns"].Count() > 3 ? clientdata["guns"][3]["life"].ToString() : "-1", frm.gun_info_json_4["position"].ToString(), frm.gun_info_json_4["team_id"].ToString(), frm.gun_info_json_4["life"].ToString()) + "}"));
+                    guninfo.Add(JObject.Parse("{" + string.Format(@"'id':'5','gunid':'{0}','life':'{1}','lifeBefore':'{4}','pos':'{2}','isUsed':'{3}'", frm.gun_info_json_5["gun_id"].ToString(), clientdata["guns"].Count() > 4 ? clientdata["guns"][4]["life"].ToString() : "-1", frm.gun_info_json_5["position"].ToString(), frm.gun_info_json_5["team_id"].ToString(), frm.gun_info_json_5["life"].ToString()) + "}"));
+                    saveJson.Add("spot", clientdata["spot_id"].ToString());
+                    saveJson.Add("enemyDie", clientdata["if_enemy_die"]);
+                    saveJson.Add("battleEndtime", clientdata["current_time"].ToString());
+                    saveJson.Add("bossHP", clientdata["boss_hp"].ToString());
+                    saveJson.Add("mvp", clientdata["mvp"].ToString());
+                    saveJson.Add("sqd_skill", clientdata["use_skill_squads"]);
+                    saveJson.Add("gun_info", guninfo);
+                    saveJson.Add("rec", JObject.Parse(clientdata["user_rec"].ToString())["record"]);
+                    saveJson.Add("battleTime", clientdata["1000"]["27"].ToString());
+                    saveJson.Add("totalDamageFromEnemy", clientdata["1000"]["18"].ToString());
+                    saveJson.Add("totalDamageToEnemy", clientdata["1000"]["24"].ToString());
+                    saveJson.Add("MaxDamageToEnemy", clientdata["1000"]["41"].ToString());
+                    saveJson.Add("EnemyLeaderID", clientdata["1000"]["33"].ToString());
+                    saveJson.Add("EnemyGroupID", userinfo["spot_act_info"][2]["enemy_team_id"].ToString());
+                    saveJson.Add("unknown", Xxtea.XXTEA.EncryptToBase64String(Encoding.UTF8.GetBytes(clientdata["1000"].ToString()), Encoding.UTF8.GetBytes("우중비모")));
+                    File.WriteAllText(@"BattleLog/" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + "_battlelog.brvf", saveJson.ToString());
+                    JArray gun_ids = JArray.Parse(clientdata["guns"].ToString());
+                    int fight_gun = gun_ids.Count;
+                    string[] gunid = new string[fight_gun];
+                    for (int i = 0; i < fight_gun; i++)
                     {
-                    },
-                    squad_exp = new List<squads>()
-                    {
-
-                    },
-                    battle_rank = 5,
-                    free_exp = "999999",
-                    change_belong = new List<empty>()
-                    {
-
-                    },
-                    building_defender_change = new List<empty>()
-                    {
-                    },
-                    mission_win_result = new List<empty>()
-                    {
-
-                    },
-                    seed = "2801",
-                    type5_score = "0",
-                    ally_instance_transform = new List<empty>() { },
-                    ally_instance_betray = new List<empty>() { },
-                    mission_control = new
-                    {
+                        gunid[i] = gun_ids[i]["id"].ToString();
                     }
-                };
-                var senddata = JsonConvert.SerializeObject(sd, Formatting.Indented);
-                JObject a = JObject.Parse(senddata.ToString());
-                JObject fav = new JObject();
-                for (int i = 0; i < fight_gun; i++)
-                {
-                    fav.Add(gunid[i], "500");
-                }
-                //var favor = JObject.Parse("{\"" + gunid[0] + "\":500,\"" + gunid[1] + "\":150,\"" + gunid[2] + "\":150,\"" + gunid[3] + "\":500,\"" + gunid[4] + "\":450}");
-                a.Add("favor_change", fav);
-                JArray array = new JArray();
-                for (int i = 0; i < fight_gun; i++)
-                {
-                    JObject k = new JObject();
-                    k.Add("gun_with_user_id", gunid[i]);
-                    k.Add("exp", random.Next(1, 23442393).ToString());
-                    array.Add(k);
-                    //a.Add("gun_exp", array);
-                }
-                a.Add("gun_exp", array);
-                string outtdata = a.ToString();
-                outtdata = outtdata.Replace("\n", String.Empty);
-                outtdata = outtdata.Replace("\r", String.Empty);
-                ResponceProcessBinary(ctx, Encoding.UTF8.GetBytes(a.ToString()), true, false);
-            }
-            else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.downloadsucsess)
-            {
-                ResponceProcessBinary(ctx, Encoding.ASCII.GetBytes("1"), false, false);
-            }//wc.Headers.Add("Accept","*/*");
-            /*else if (ctx.Request.Url.AbsoluteUri.Contains("sn-list.girlfrontline.co.kr") && ctx.Request.Url.LocalPath.Contains(".txt"))
-            {
-                WebClient wc = new WebClient();
-                
-                wc.Headers.Add("Accept-Encoding", "gzip, deflate");
-                wc.Headers.Add("Accept-Language", "en-us");
-                wc.Headers.Add("User-Agent", ctx.Request.UserAgent);
-                wc.Headers.Add("X-Unity-Version", ctx.Request.Headers.GetValues("X-Unity-Version")[0]);
-                byte[] unitydata = wc.DownloadData("http://"+ctx.Request.Url.Host+ctx.Request.Url.AbsolutePath);
-                
-                ResponceProcessBinary(ctx, unitydata, false,true);
-            }*/
-            else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.crashreport)
-            {
-                JObject temp = JObject.Parse(Packet.Decode(Outdatacode, signkey));
-                File.AppendAllText("CrashLog/client_crashlog_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".txt", temp.ToString());
-                ResponceProcessBinary(ctx, Encoding.ASCII.GetBytes("1"), false, false);
-                frm.AddLog("(CrashReport) 클라이언트 충돌 보고서가 /CrashLog 폴더에 저장되었습니다.");
-            }
-            else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.abortmission)
-            {
-                frm.AddLog("클라이언트 강제 리셋");
-                ResponceProcessBinary(ctx, Encoding.ASCII.GetBytes("error:3"), false, false);
-            }
-            else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.teammove || ctx.Request.Url.LocalPath == GF_URLs_Kr.squadMove)
-            {
-                frm.AddLog("제대 이동: " + Packet.Decode(Outdatacode, signkey));
-                ResponceProcessBinary(ctx, Encoding.ASCII.GetBytes("1"), false, false);
-            }
-            else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.squadSwitchChange)
-            {
-                frm.AddLog("화력소대 지원 스위치 조작: " + Packet.Decode(Outdatacode, signkey));
-                ResponceProcessBinary(ctx, Encoding.ASCII.GetBytes("1"), false, false);
-            }
-            /*
-            else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.home)
-            {
-                ResponceProcessBinary(ctx, Encoding.UTF8.GetBytes(File.ReadAllText(@"data/json/home.json")), true, false);
-            }
-            else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.statictables)
-            {
-                ResponceProcessBinary(ctx, Encoding.UTF8.GetBytes(File.ReadAllText(@"data/json/mail.json")), true, false);
-            }
-            else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.getdorminfo)
-            {
-                ResponceProcessBinary(ctx, Encoding.UTF8.GetBytes(File.ReadAllText(@"data/json/dorminfo.json")), true, false);
-            }*/
-            else if (ctx.Request.RawUrl.Contains("gf-game.girlfrontline.co.kr"))
-            {
-                frm.AddLog("클라이언트 강제 리셋");
-                ResponceProcessBinary(ctx, Encoding.ASCII.GetBytes("error:3"), false, false);
-            }
-            else
-            {
-                //ResponceProcessBinary(ctx, Encoding.UTF8.GetBytes("우중이 애미 하늘로 날아감"), false,false);
-                try
-                {
-                    //uri = "http://gf-game.girlfrontline.co.kr" + uri;
-                    HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
-                    request.Method = ctx.Request.HttpMethod;
-                    request.KeepAlive = true;
-                    request.UserAgent = ctx.Request.UserAgent;
-                    request.ContentType = ctx.Request.ContentType;
-                    request.Host = ctx.Request.Headers.GetValues("Host")[0];
-                    for (int i = 0; i < ctx.Request.Headers.Count; i++)
+                    var sd = new
                     {
-                        if (ctx.Request.Headers.GetKey(i) != "Content-Length" &&
-                            ctx.Request.Headers.GetKey(i) != "Content-Type" &&
-                            ctx.Request.Headers.GetKey(i) != "Connection" &&
-                            ctx.Request.Headers.GetKey(i) != "Transfer-Encoding" &&
-                            ctx.Request.Headers.GetKey(i) != "Accept-Encoding" &&
-                            ctx.Request.Headers.GetKey(i) != "Content-Length")
-                            ctx.Response.Headers.Add(ctx.Request.Headers.GetKey(i), ctx.Request.Headers.GetValues(i)[0]);
-                    }
-                    //request.Headers.Add("X-Unity-Version", ctx.Request.Headers.GetValues("X-Unity-Version")[0]);
-                    //request.Headers.Add("Accept-Encoding", "none");
-                    //byte[] data = Encoding.UTF8.GetBytes(new StreamReader(ctx.Request.InputStream).ReadToEnd());
-                    request.ContentLength = Client_Req_data.Length;
-                    if (ctx.Request.HttpMethod == "POST")
-                    {
-                        using (Stream reqStream = request.GetRequestStream())
+                        user_exp = "50",
+                        /*
+                        gun_exp = new List<guns>()
+                         {                        
+                             new guns(){gun_with_user_id = gunid[0], exp = "0"},
+                            new guns(){gun_with_user_id = gunid[1], exp = "0"},
+                            new guns(){gun_with_user_id = gunid[2], exp = "0"},
+                            new guns(){gun_with_user_id = gunid[3], exp = "0"},
+                            new guns(){gun_with_user_id = gunid[4], exp = "0"}
+                        },*/
+                        fairy_exp = "0",
+                        gun_life = new List<gun_life>()
                         {
-                            reqStream.Write(Client_Req_data, 0, Client_Req_data.Length);
+                        },
+                        squad_exp = new List<squads>()
+                        {
+
+                        },
+                        battle_rank = 5,
+                        free_exp = "999999",
+                        change_belong = new List<empty>()
+                        {
+
+                        },
+                        building_defender_change = new List<empty>()
+                        {
+                        },
+                        mission_win_result = new List<empty>()
+                        {
+
+                        },
+                        seed = "2801",
+                        type5_score = "0",
+                        ally_instance_transform = new List<empty>() { },
+                        ally_instance_betray = new List<empty>() { },
+                        mission_control = new
+                        {
                         }
+                    };
+                    var senddata = JsonConvert.SerializeObject(sd, Formatting.Indented);
+                    JObject a = JObject.Parse(senddata.ToString());
+                    JObject fav = new JObject();
+                    for (int i = 0; i < fight_gun; i++)
+                    {
+                        fav.Add(gunid[i], "500");
                     }
-                    //if(ctx.Request.HttpMethod == "POST")
-                    //{
+                    //var favor = JObject.Parse("{\"" + gunid[0] + "\":500,\"" + gunid[1] + "\":150,\"" + gunid[2] + "\":150,\"" + gunid[3] + "\":500,\"" + gunid[4] + "\":450}");
+                    a.Add("favor_change", fav);
+                    JArray array = new JArray();
+                    for (int i = 0; i < fight_gun; i++)
+                    {
+                        JObject k = new JObject();
+                        k.Add("gun_with_user_id", gunid[i]);
+                        k.Add("exp", random.Next(1, 23442393).ToString());
+                        array.Add(k);
+                        //a.Add("gun_exp", array);
+                    }
+                    a.Add("gun_exp", array);
+                    string outtdata = a.ToString();
+                    outtdata = outtdata.Replace("\n", String.Empty);
+                    outtdata = outtdata.Replace("\r", String.Empty);
+                    ResponceProcessBinary(ctx, Encoding.UTF8.GetBytes(a.ToString()), true, false);
+                }
+                else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.downloadsucsess)
+                {
+                    ResponceProcessBinary(ctx, Encoding.ASCII.GetBytes("1"), false, false);
+                }//wc.Headers.Add("Accept","*/*");
+                 /*else if (ctx.Request.Url.AbsoluteUri.Contains("sn-list.girlfrontline.co.kr") && ctx.Request.Url.LocalPath.Contains(".txt"))
+                 {
+                     WebClient wc = new WebClient();
+
+                     wc.Headers.Add("Accept-Encoding", "gzip, deflate");
+                     wc.Headers.Add("Accept-Language", "en-us");
+                     wc.Headers.Add("User-Agent", ctx.Request.UserAgent);
+                     wc.Headers.Add("X-Unity-Version", ctx.Request.Headers.GetValues("X-Unity-Version")[0]);
+                     byte[] unitydata = wc.DownloadData("http://"+ctx.Request.Url.Host+ctx.Request.Url.AbsolutePath);
+
+                     ResponceProcessBinary(ctx, unitydata, false,true);
+                 }*/
+                else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.crashreport)
+                {
+                    JObject temp = JObject.Parse(Packet.Decode(Outdatacode, signkey));
+                    File.AppendAllText("CrashLog/client_crashlog_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".txt", temp.ToString());
+                    ResponceProcessBinary(ctx, Encoding.ASCII.GetBytes("1"), false, false);
+                    frm.AddLog("(CrashReport) 클라이언트 충돌 보고서가 /CrashLog 폴더에 저장되었습니다.");
+                }
+                else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.abortmission)
+                {
+                    frm.AddLog("클라이언트 강제 리셋");
+                    ResponceProcessBinary(ctx, Encoding.ASCII.GetBytes("error:3"), false, false);
+                }
+                else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.teammove || ctx.Request.Url.LocalPath == GF_URLs_Kr.squadMove)
+                {
+                    frm.AddLog("제대 이동: " + Packet.Decode(Outdatacode, signkey));
+                    ResponceProcessBinary(ctx, Encoding.ASCII.GetBytes("1"), false, false);
+                }
+                else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.squadSwitchChange)
+                {
+                    frm.AddLog("화력소대 지원 스위치 조작: " + Packet.Decode(Outdatacode, signkey));
+                    ResponceProcessBinary(ctx, Encoding.ASCII.GetBytes("1"), false, false);
+                }
+                /*
+                else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.home)
+                {
+                    ResponceProcessBinary(ctx, Encoding.UTF8.GetBytes(File.ReadAllText(@"data/json/home.json")), true, false);
+                }
+                else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.statictables)
+                {
+                    ResponceProcessBinary(ctx, Encoding.UTF8.GetBytes(File.ReadAllText(@"data/json/mail.json")), true, false);
+                }
+                else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.getdorminfo)
+                {
+                    ResponceProcessBinary(ctx, Encoding.UTF8.GetBytes(File.ReadAllText(@"data/json/dorminfo.json")), true, false);
+                }*/
+                else if (ctx.Request.RawUrl.Contains("gf-game.girlfrontline.co.kr"))
+                {
+                    frm.AddLog("클라이언트 강제 리셋");
+                    ResponceProcessBinary(ctx, Encoding.ASCII.GetBytes("error:3"), false, false);
+                }
+                else
+                {
+                    //ResponceProcessBinary(ctx, Encoding.UTF8.GetBytes("우중이 애미 하늘로 날아감"), false,false);
                     try
                     {
-                        using (WebResponse resp = request.GetResponse())
+                        //uri = "http://gf-game.girlfrontline.co.kr" + uri;
+                        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
+                        request.Method = ctx.Request.HttpMethod;
+                        request.KeepAlive = true;
+                        request.UserAgent = ctx.Request.UserAgent;
+                        request.ContentType = ctx.Request.ContentType;
+                        request.Host = ctx.Request.Headers.GetValues("Host")[0];
+                        for (int i = 0; i < ctx.Request.Headers.Count; i++)
                         {
-                            byte[] b = null;
-                            Stream respStream = resp.GetResponseStream();
-                            using (MemoryStream ms = new MemoryStream())
+                            if (ctx.Request.Headers.GetKey(i) != "Content-Length" &&
+                                ctx.Request.Headers.GetKey(i) != "Content-Type" &&
+                                ctx.Request.Headers.GetKey(i) != "Connection" &&
+                                ctx.Request.Headers.GetKey(i) != "Transfer-Encoding" &&
+                                ctx.Request.Headers.GetKey(i) != "Accept-Encoding" &&
+                                ctx.Request.Headers.GetKey(i) != "Content-Length")
+                                ctx.Response.Headers.Add(ctx.Request.Headers.GetKey(i), ctx.Request.Headers.GetValues(i)[0]);
+                        }
+                        //request.Headers.Add("X-Unity-Version", ctx.Request.Headers.GetValues("X-Unity-Version")[0]);
+                        //request.Headers.Add("Accept-Encoding", "none");
+                        //byte[] data = Encoding.UTF8.GetBytes(new StreamReader(ctx.Request.InputStream).ReadToEnd());
+                        request.ContentLength = Client_Req_data.Length;
+                        if (ctx.Request.HttpMethod == "POST")
+                        {
+                            using (Stream reqStream = request.GetRequestStream())
                             {
-                                int count = 0;
-                                do
+                                reqStream.Write(Client_Req_data, 0, Client_Req_data.Length);
+                            }
+                        }
+                        //if(ctx.Request.HttpMethod == "POST")
+                        //{
+                        try
+                        {
+                            using (WebResponse resp = request.GetResponse())
+                            {
+                                byte[] b = null;
+                                Stream respStream = resp.GetResponseStream();
+                                using (MemoryStream ms = new MemoryStream())
                                 {
-                                    byte[] buf = new byte[1024];
-                                    count = respStream.Read(buf, 0, 1024);
-                                    ms.Write(buf, 0, count);
-                                } while (respStream.CanRead && count > 0);
-                                b = ms.ToArray();
+                                    int count = 0;
+                                    do
+                                    {
+                                        byte[] buf = new byte[1024];
+                                        count = respStream.Read(buf, 0, 1024);
+                                        ms.Write(buf, 0, count);
+                                    } while (respStream.CanRead && count > 0);
+                                    b = ms.ToArray();
+                                }
+
+                                for (int i = 0; i < resp.Headers.Count; i++)
+                                {
+                                    if (resp.Headers.GetKey(i) != "Content-Length" &&
+                                        resp.Headers.GetKey(i) != "Content-Type" &&
+                                        resp.Headers.GetKey(i) != "Connection" &&
+                                        resp.Headers.GetKey(i) != "Transfer-Encoding" &&
+                                        resp.Headers.GetKey(i) != "Content-Length" &&
+                                        resp.Headers.GetKey(i) != "Content-Length")
+                                        ctx.Response.Headers.Add(resp.Headers.GetKey(i), resp.Headers.GetValues(i)[0]);
+                                }
+                                ctx.Response.KeepAlive = true;
+                                ctx.Response.ContentType = resp.ContentType;
+                                ResponceProcessBinary(ctx, b, false, true);
+                                //frm.textBox1.AppendText(packet+"\n");
                             }
 
-                            for (int i = 0; i < resp.Headers.Count; i++)
-                            {
-                                if (resp.Headers.GetKey(i) != "Content-Length" &&
-                                    resp.Headers.GetKey(i) != "Content-Type" &&
-                                    resp.Headers.GetKey(i) != "Connection" &&
-                                    resp.Headers.GetKey(i) != "Transfer-Encoding" &&
-                                    resp.Headers.GetKey(i) != "Content-Length" &&
-                                    resp.Headers.GetKey(i) != "Content-Length")
-                                    ctx.Response.Headers.Add(resp.Headers.GetKey(i), resp.Headers.GetValues(i)[0]);
-                            }
-                            ctx.Response.KeepAlive = true;
-                            ctx.Response.ContentType = resp.ContentType;
-                            ResponceProcessBinary(ctx, b, false, true);
-                            //frm.textBox1.AppendText(packet+"\n");
                         }
+                        catch (Exception ex)
+                        {
+                            frm.AddLog("Error: " + ex.ToString());
+                        }
+                        //  }
+                        //ctx.Response.Headers.
+
 
                     }
+
                     catch (Exception ex)
                     {
                         frm.AddLog("Error: " + ex.ToString());
                     }
-                    //  }
-                    //ctx.Response.Headers.
-
-
-                }
-
-                catch (Exception ex)
-                {
-                    frm.AddLog("Error: " + ex.ToString());
                 }
             }
+            else
+            {
+
+            }
+            
             ctx.Response.Close();
         }
         private static void WorkerThread(object arg)
@@ -1321,26 +1342,31 @@ namespace GFBattleTester
         private void enable_1_CheckedChanged(object sender, EventArgs e)
         {
             enable_set(1);
+            UpdatePosTile(null,null);
         }
 
         private void enable_2_CheckedChanged(object sender, EventArgs e)
         {
             enable_set(2);
+            UpdatePosTile(null, null);
         }
 
         private void enable_3_CheckedChanged(object sender, EventArgs e)
         {
             enable_set(3);
+            UpdatePosTile(null, null);
         }
 
         private void enable_4_CheckedChanged(object sender, EventArgs e)
         {
             enable_set(4);
+            UpdatePosTile(null, null);
         }
 
         private void enable_5_CheckedChanged(object sender, EventArgs e)
         {
             enable_set(5);
+            UpdatePosTile(null, null);
         }
         void enable_set(int num)
         {
@@ -2751,32 +2777,43 @@ namespace GFBattleTester
 
         private void Button3_Click_1(object sender, EventArgs e)
         {
-            
+            ShowposSelector(1, (int)gunpos_1_number.Value, (Control)sender);
         }
 
         private void Button19_Click(object sender, EventArgs e)
         {
-
+            ShowposSelector(2, (int)gunpos_2_number.Value, (Control)sender);
         }
 
         private void Button20_Click(object sender, EventArgs e)
         {
-
+            ShowposSelector(3, (int)gunpos_3_number.Value, (Control)sender);
         }
 
         private void Button21_Click(object sender, EventArgs e)
         {
-
+            ShowposSelector(4, (int)gunpos_4_number.Value, (Control)sender);
         }
 
         private void Button22_Click(object sender, EventArgs e)
         {
-
+            ShowposSelector(5, (int)gunpos_5_number.Value, (Control)sender);
         }
-        void ShowposSelector(int n)
+        void ShowposSelector(int n ,int selpos,Control c)
         {
-            posSelector posselector = new posSelector(this);
-            posSelector.StartPosition = FormStartPosition.CenterScreen;
+            foreach (Form f in Application.OpenForms) //중복로드 방지
+            {
+                if (f.Name == "posSelector")
+                {
+                    f.Activate();
+                    System.Media.SystemSounds.Asterisk.Play();
+                    return;                   
+                }
+            }
+            GroupBox gbox = (GroupBox)Controls.Find("groupBox" + n.ToString(), true)[0];
+            posSelector posselector = new posSelector(c,selpos ,n);            
+            posselector.StartPosition = FormStartPosition.Manual;
+            posselector.Location = new Point(c.Location.X+gbox.Location.X+100,c.Location.Y+gbox.Location.Y+100);
             //posselector.FormSendEvent += new EquipSelecter.FormSendDataHandler(getEquipInfoFromForm2);
             //posselector.Passvalue = value;
             posselector.Show();
@@ -2856,15 +2893,95 @@ namespace GFBattleTester
             }
 
         }
-        void showTooltip(Control sender, string caption)
+        public void showTooltip(Control sender, string caption)
         {
             toolTip1.ToolTipTitle = "";
             toolTip1.SetToolTip(sender, caption);
         }
+
+        private void Button23_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("유저 정보 가져오기 모드를 활성화할까요? " +
+                "소녀전선 클라이언트를 이용하여 전투 서버를 시뮬레이트 하는 대신 소녀전선 서버로부터 유저 정보를 가져옵니다." +
+                " 유저 정보 가져오기에 성공하면 이 모드는 자동으로 비활성화 됩니다.", "유저 정보 가져오기 모드", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                if (!listener.IsListening)
+                {
+                    if(MessageBox.Show("서버가 아직 실행되지 않았습니다. 실행할까요?","서버 미실행",MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                    {
+                       if(run_server())
+                        {
+                            MessageBox.Show("서버가 실행 되었습니다.", "서버 실행됨", MessageBoxButtons.OK, MessageBoxIcon.Information);                            
+                            serv.Show();
+                            frm.getUserinfoFromServer = true;
+                            button23.Enabled = false;
+                        }
+                       else
+                        {
+                            MessageBox.Show("서버 실행에 실패했습니다.", "서버 실행 실패", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("서버가 실행되지 않았기 때문에 유저 정보 불러오기 모드는 활성화되지 않았습니다.", "서버 실행 실패", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("서버가 실행되지 않았기 때문에 유저 정보 불러오기 모드는 활성화되지 않았습니다.", "서버 실행 실패", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else
+                {          
+                    serv.Show();
+                    frm.getUserinfoFromServer = true;
+                    button23.Enabled = false;
+                }
+            }
+
+        }
+
         void showTooltip(Control sender, string caption, string title)
         {
             toolTip1.ToolTipTitle = title;
             toolTip1.SetToolTip(sender, caption);
+        }
+        private void UpdatePosTile(object sender, EventArgs e)
+        {
+            string[] pos = Enumerable.Repeat("0", 9).ToArray();
+            for (int i = 0; i < 5; i++)
+            {
+                CheckBox checkBox = (CheckBox)Controls.Find("enable_" + (i + 1).ToString(), true)[0];
+                if (checkBox.Checked)
+                {
+                    NumericUpDown Num = (NumericUpDown)Controls.Find("gunpos_" + (i + 1).ToString() + "_number", true)[0];
+                    pos[(int)Num.Value - 1] = "1," + (i + 1).ToString();
+                }
+                //else
+                    //pos[(int)Num.Value - 1] = "0";
+            }
+           for(int i = 0; i < 9; i++)
+            {                            
+                Button button = (Button)Controls.Find("postile_" + (i+1).ToString(), true)[0];
+                if(pos[i].StartsWith("1"))
+                {
+                    button.BackColor = ColorTranslator.FromHtml("#00aeff");
+                    button.Text = pos[i].Substring(2);
+                }
+                else if(pos[i].StartsWith("0"))
+                {
+                    button.BackColor = Color.Transparent;
+                    button.Text = string.Empty;
+                }
+               
+            }
+          
+        }
+        private void PosTile_Hover(object sender, EventArgs e)
+        {
+            Control control = (Control)sender;
+            if (control.Text != "")
+            {               
+                ComboBox comboBox = (ComboBox)Controls.Find("gunid_" + control.Text + "_combobox", true)[0];
+                showTooltip(control, comboBox.Text);
+            }            
         }
     }
 }

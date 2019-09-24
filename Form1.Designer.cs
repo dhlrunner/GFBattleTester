@@ -44,6 +44,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.button22 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.gunhit_5_number = new System.Windows.Forms.NumericUpDown();
             this.label72 = new System.Windows.Forms.Label();
@@ -74,6 +75,7 @@
             this.gunid_5_combobox = new System.Windows.Forms.ComboBox();
             this.label60 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button21 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.gunhit_4_number = new System.Windows.Forms.NumericUpDown();
             this.label71 = new System.Windows.Forms.Label();
@@ -104,6 +106,7 @@
             this.gunid_4_combobox = new System.Windows.Forms.ComboBox();
             this.label48 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button20 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.gunhit_3_number = new System.Windows.Forms.NumericUpDown();
             this.label70 = new System.Windows.Forms.Label();
@@ -134,6 +137,7 @@
             this.gunid_3_combobox = new System.Windows.Forms.ComboBox();
             this.label36 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button19 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.gunhit_2_number = new System.Windows.Forms.NumericUpDown();
             this.label69 = new System.Windows.Forms.Label();
@@ -164,6 +168,7 @@
             this.gunid_2_combobox = new System.Windows.Forms.ComboBox();
             this.label24 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.gunhit_1_number = new System.Windows.Forms.NumericUpDown();
             this.label68 = new System.Windows.Forms.Label();
@@ -356,11 +361,18 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.saveFileDialog3 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog3 = new System.Windows.Forms.OpenFileDialog();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
-            this.button22 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.postile_7 = new System.Windows.Forms.Button();
+            this.postile_8 = new System.Windows.Forms.Button();
+            this.postile_9 = new System.Windows.Forms.Button();
+            this.postile_4 = new System.Windows.Forms.Button();
+            this.postile_5 = new System.Windows.Forms.Button();
+            this.postile_6 = new System.Windows.Forms.Button();
+            this.postile_1 = new System.Windows.Forms.Button();
+            this.postile_2 = new System.Windows.Forms.Button();
+            this.postile_3 = new System.Windows.Forms.Button();
+            this.label122 = new System.Windows.Forms.Label();
+            this.button23 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -485,6 +497,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.portnum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Boss_HP_textbox)).BeginInit();
             this.panel1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -532,6 +545,9 @@
             // 
             this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox6.Controls.Add(this.button23);
+            this.groupBox6.Controls.Add(this.label122);
+            this.groupBox6.Controls.Add(this.tableLayoutPanel1);
             this.groupBox6.Controls.Add(this.groupBox7);
             this.groupBox6.Controls.Add(this.button4);
             this.groupBox6.Controls.Add(this.button2);
@@ -696,6 +712,16 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "5번 인형";
             // 
+            // button22
+            // 
+            this.button22.Location = new System.Drawing.Point(66, 567);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(63, 23);
+            this.button22.TabIndex = 29;
+            this.button22.Text = "설정";
+            this.button22.UseVisualStyleBackColor = true;
+            this.button22.Click += new System.EventHandler(this.Button22_Click);
+            // 
             // button13
             // 
             this.button13.Location = new System.Drawing.Point(9, 635);
@@ -754,6 +780,7 @@
             0,
             0,
             0});
+            this.gunpos_5_number.ValueChanged += new System.EventHandler(this.UpdatePosTile);
             // 
             // label67
             // 
@@ -1100,6 +1127,16 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "4번 인형";
             // 
+            // button21
+            // 
+            this.button21.Location = new System.Drawing.Point(66, 567);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(63, 23);
+            this.button21.TabIndex = 29;
+            this.button21.Text = "설정";
+            this.button21.UseVisualStyleBackColor = true;
+            this.button21.Click += new System.EventHandler(this.Button21_Click);
+            // 
             // button12
             // 
             this.button12.Location = new System.Drawing.Point(8, 635);
@@ -1158,6 +1195,7 @@
             0,
             0,
             0});
+            this.gunpos_4_number.ValueChanged += new System.EventHandler(this.UpdatePosTile);
             // 
             // label66
             // 
@@ -1504,6 +1542,16 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "3번 인형";
             // 
+            // button20
+            // 
+            this.button20.Location = new System.Drawing.Point(66, 566);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(63, 23);
+            this.button20.TabIndex = 29;
+            this.button20.Text = "설정";
+            this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.Button20_Click);
+            // 
             // button11
             // 
             this.button11.Location = new System.Drawing.Point(9, 635);
@@ -1562,6 +1610,7 @@
             0,
             0,
             0});
+            this.gunpos_3_number.ValueChanged += new System.EventHandler(this.UpdatePosTile);
             // 
             // label65
             // 
@@ -1908,6 +1957,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "2번 인형";
             // 
+            // button19
+            // 
+            this.button19.Location = new System.Drawing.Point(66, 567);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(63, 23);
+            this.button19.TabIndex = 29;
+            this.button19.Text = "설정";
+            this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.Button19_Click);
+            // 
             // button10
             // 
             this.button10.Location = new System.Drawing.Point(9, 635);
@@ -1966,6 +2025,7 @@
             0,
             0,
             0});
+            this.gunpos_2_number.ValueChanged += new System.EventHandler(this.UpdatePosTile);
             // 
             // label64
             // 
@@ -2313,6 +2373,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "1번 인형";
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(65, 567);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(63, 23);
+            this.button3.TabIndex = 29;
+            this.button3.Text = "설정";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click_1);
+            // 
             // button9
             // 
             this.button9.Location = new System.Drawing.Point(9, 635);
@@ -2371,6 +2441,7 @@
             0,
             0,
             0});
+            this.gunpos_1_number.ValueChanged += new System.EventHandler(this.UpdatePosTile);
             // 
             // label63
             // 
@@ -4643,55 +4714,139 @@
             this.openFileDialog3.Filter = "인형 장비 정보 파일|*.equip|Json 파일|*.json|모든 파일|*.*";
             this.openFileDialog3.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog3_FileOk);
             // 
-            // button3
+            // tableLayoutPanel1
             // 
-            this.button3.Location = new System.Drawing.Point(65, 567);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(63, 23);
-            this.button3.TabIndex = 29;
-            this.button3.Text = "설정";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.Button3_Click_1);
+            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tableLayoutPanel1.Controls.Add(this.postile_7, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.postile_8, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.postile_9, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.postile_4, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.postile_5, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.postile_1, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.postile_2, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.postile_6, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.postile_3, 2, 2);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 352);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(125, 125);
+            this.tableLayoutPanel1.TabIndex = 28;
             // 
-            // button19
+            // postile_7
             // 
-            this.button19.Location = new System.Drawing.Point(66, 567);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(63, 23);
-            this.button19.TabIndex = 29;
-            this.button19.Text = "설정";
-            this.button19.UseVisualStyleBackColor = true;
-            this.button19.Click += new System.EventHandler(this.Button19_Click);
+            this.postile_7.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.postile_7.Location = new System.Drawing.Point(5, 5);
+            this.postile_7.Name = "postile_7";
+            this.postile_7.Size = new System.Drawing.Size(32, 32);
+            this.postile_7.TabIndex = 0;
+            this.postile_7.UseVisualStyleBackColor = true;
+            this.postile_7.MouseEnter += new System.EventHandler(this.PosTile_Hover);
             // 
-            // button20
+            // postile_8
             // 
-            this.button20.Location = new System.Drawing.Point(66, 566);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(63, 23);
-            this.button20.TabIndex = 29;
-            this.button20.Text = "설정";
-            this.button20.UseVisualStyleBackColor = true;
-            this.button20.Click += new System.EventHandler(this.Button20_Click);
+            this.postile_8.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.postile_8.Location = new System.Drawing.Point(45, 5);
+            this.postile_8.Name = "postile_8";
+            this.postile_8.Size = new System.Drawing.Size(32, 32);
+            this.postile_8.TabIndex = 1;
+            this.postile_8.UseVisualStyleBackColor = true;
+            this.postile_8.MouseEnter += new System.EventHandler(this.PosTile_Hover);
             // 
-            // button21
+            // postile_9
             // 
-            this.button21.Location = new System.Drawing.Point(66, 567);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(63, 23);
-            this.button21.TabIndex = 29;
-            this.button21.Text = "설정";
-            this.button21.UseVisualStyleBackColor = true;
-            this.button21.Click += new System.EventHandler(this.Button21_Click);
+            this.postile_9.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.postile_9.Location = new System.Drawing.Point(86, 5);
+            this.postile_9.Name = "postile_9";
+            this.postile_9.Size = new System.Drawing.Size(32, 32);
+            this.postile_9.TabIndex = 2;
+            this.postile_9.UseVisualStyleBackColor = true;
+            this.postile_9.MouseEnter += new System.EventHandler(this.PosTile_Hover);
             // 
-            // button22
+            // postile_4
             // 
-            this.button22.Location = new System.Drawing.Point(66, 567);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(63, 23);
-            this.button22.TabIndex = 29;
-            this.button22.Text = "설정";
-            this.button22.UseVisualStyleBackColor = true;
-            this.button22.Click += new System.EventHandler(this.Button22_Click);
+            this.postile_4.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.postile_4.Location = new System.Drawing.Point(5, 45);
+            this.postile_4.Name = "postile_4";
+            this.postile_4.Size = new System.Drawing.Size(32, 32);
+            this.postile_4.TabIndex = 3;
+            this.postile_4.UseVisualStyleBackColor = true;
+            this.postile_4.MouseEnter += new System.EventHandler(this.PosTile_Hover);
+            // 
+            // postile_5
+            // 
+            this.postile_5.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.postile_5.Location = new System.Drawing.Point(45, 45);
+            this.postile_5.Name = "postile_5";
+            this.postile_5.Size = new System.Drawing.Size(32, 32);
+            this.postile_5.TabIndex = 4;
+            this.postile_5.UseVisualStyleBackColor = true;
+            this.postile_5.MouseEnter += new System.EventHandler(this.PosTile_Hover);
+            // 
+            // postile_6
+            // 
+            this.postile_6.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.postile_6.Location = new System.Drawing.Point(86, 45);
+            this.postile_6.Name = "postile_6";
+            this.postile_6.Size = new System.Drawing.Size(32, 32);
+            this.postile_6.TabIndex = 5;
+            this.postile_6.UseVisualStyleBackColor = true;
+            this.postile_6.MouseEnter += new System.EventHandler(this.PosTile_Hover);
+            // 
+            // postile_1
+            // 
+            this.postile_1.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.postile_1.Location = new System.Drawing.Point(5, 85);
+            this.postile_1.Name = "postile_1";
+            this.postile_1.Size = new System.Drawing.Size(32, 32);
+            this.postile_1.TabIndex = 6;
+            this.postile_1.UseVisualStyleBackColor = true;
+            this.postile_1.MouseEnter += new System.EventHandler(this.PosTile_Hover);
+            // 
+            // postile_2
+            // 
+            this.postile_2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.postile_2.Location = new System.Drawing.Point(45, 85);
+            this.postile_2.Name = "postile_2";
+            this.postile_2.Size = new System.Drawing.Size(32, 32);
+            this.postile_2.TabIndex = 7;
+            this.postile_2.UseVisualStyleBackColor = true;
+            this.postile_2.MouseEnter += new System.EventHandler(this.PosTile_Hover);
+            // 
+            // postile_3
+            // 
+            this.postile_3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.postile_3.Location = new System.Drawing.Point(86, 85);
+            this.postile_3.Name = "postile_3";
+            this.postile_3.Size = new System.Drawing.Size(32, 32);
+            this.postile_3.TabIndex = 8;
+            this.postile_3.UseVisualStyleBackColor = true;
+            this.postile_3.MouseEnter += new System.EventHandler(this.PosTile_Hover);
+            // 
+            // label122
+            // 
+            this.label122.AutoSize = true;
+            this.label122.Location = new System.Drawing.Point(7, 335);
+            this.label122.Name = "label122";
+            this.label122.Size = new System.Drawing.Size(53, 12);
+            this.label122.TabIndex = 29;
+            this.label122.Text = "진형정보";
+            // 
+            // button23
+            // 
+            this.button23.Location = new System.Drawing.Point(15, 128);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(105, 34);
+            this.button23.TabIndex = 30;
+            this.button23.Text = "유저 정보로부터 불러오기";
+            this.button23.UseVisualStyleBackColor = true;
+            this.button23.Click += new System.EventHandler(this.Button23_Click);
             // 
             // Form1
             // 
@@ -4710,6 +4865,7 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -4847,6 +5003,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.portnum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Boss_HP_textbox)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -4993,15 +5150,10 @@
         private System.Windows.Forms.ComboBox enemy_team_id_combobox;
         private System.Windows.Forms.Label label61;
         private System.Windows.Forms.TextBox LogTextBox;
-        private System.Windows.Forms.NumericUpDown gunpos_5_number;
         private System.Windows.Forms.Label label67;
-        private System.Windows.Forms.NumericUpDown gunpos_4_number;
         private System.Windows.Forms.Label label66;
-        private System.Windows.Forms.NumericUpDown gunpos_3_number;
         private System.Windows.Forms.Label label65;
-        private System.Windows.Forms.NumericUpDown gunpos_2_number;
         private System.Windows.Forms.Label label64;
-        private System.Windows.Forms.NumericUpDown gunpos_1_number;
         private System.Windows.Forms.Label label63;
         private System.Windows.Forms.CheckBox enable_1;
         private System.Windows.Forms.CheckBox enable_2;
@@ -5184,6 +5336,23 @@
         private System.Windows.Forms.Button button20;
         private System.Windows.Forms.Button button19;
         private System.Windows.Forms.Button button3;
+        public System.Windows.Forms.NumericUpDown gunpos_5_number;
+        public System.Windows.Forms.NumericUpDown gunpos_4_number;
+        public System.Windows.Forms.NumericUpDown gunpos_3_number;
+        public System.Windows.Forms.NumericUpDown gunpos_2_number;
+        public System.Windows.Forms.NumericUpDown gunpos_1_number;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Button postile_7;
+        private System.Windows.Forms.Button postile_8;
+        private System.Windows.Forms.Button postile_9;
+        private System.Windows.Forms.Button postile_4;
+        private System.Windows.Forms.Button postile_5;
+        private System.Windows.Forms.Button postile_6;
+        private System.Windows.Forms.Button postile_1;
+        private System.Windows.Forms.Button postile_2;
+        private System.Windows.Forms.Button postile_3;
+        private System.Windows.Forms.Label label122;
+        private System.Windows.Forms.Button button23;
     }
 }
 
