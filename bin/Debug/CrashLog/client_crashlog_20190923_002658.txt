@@ -1,0 +1,6 @@
+{
+  "context": "加载热更资源包名atlasclips_common.ab\n\n加载热更资源包名atlasclips_quest.ab\n\n加载热更资源包名asset_fonts.ab\n\n加载热更资源包名atlasclips_weddingring1.ab\n\n加载热更资源包名asset_particlesother.ab\n\n加载热更资源包名asset_animation.ab\n\n加载热更资源包名atlasclips_missionselection.ab\n\n加载热更资源包名atlasclips_dorm.ab\n\n加载热更资源包名atlasclips_theater_1.ab\n\n加载热更资源包名asset_theater.ab\n\nNullReferenceException: A null value was found where an object instance was required.\nCarnivalInfo..ctor (.TheaterEventInfo theaterEventInfo)\nTheaterRewardUIController.InitData ()\nTheaterRewardUIController.InitUIElements ()\n_tBaseUIElement`1[T].Awake ()\n\n\n\n",
+  "condition": "NullReferenceException: A null value was found where an object instance was required.\n",
+  "stackTrace": "CarnivalInfo..ctor (.TheaterEventInfo theaterEventInfo)\nTheaterRewardUIController.InitData ()\nTheaterRewardUIController.InitUIElements ()\n_tBaseUIElement`1[T].Awake ()\n\n",
+  "clientVersion": "2.0400_266"
+}

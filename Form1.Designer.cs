@@ -41,7 +41,6 @@
             this.enable_4 = new System.Windows.Forms.CheckBox();
             this.enable_3 = new System.Windows.Forms.CheckBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -348,6 +347,7 @@
             this.label62 = new System.Windows.Forms.Label();
             this.enemy_team_id_combobox = new System.Windows.Forms.ComboBox();
             this.label61 = new System.Windows.Forms.Label();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -356,6 +356,11 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.saveFileDialog3 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog3 = new System.Windows.Forms.OpenFileDialog();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button19 = new System.Windows.Forms.Button();
+            this.button20 = new System.Windows.Forms.Button();
+            this.button21 = new System.Windows.Forms.Button();
+            this.button22 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -484,11 +489,15 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(5, 12);
+            this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Location = new System.Drawing.Point(5, 9);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(883, 722);
@@ -521,9 +530,10 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox6.Controls.Add(this.groupBox7);
             this.groupBox6.Controls.Add(this.button4);
-            this.groupBox6.Controls.Add(this.button3);
             this.groupBox6.Controls.Add(this.button2);
             this.groupBox6.Controls.Add(this.button1);
             this.groupBox6.Location = new System.Drawing.Point(731, 6);
@@ -553,7 +563,7 @@
             this.enable_1.Checked = true;
             this.enable_1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.enable_1.Enabled = false;
-            this.enable_1.Location = new System.Drawing.Point(27, 20);
+            this.enable_1.Location = new System.Drawing.Point(27, 25);
             this.enable_1.Name = "enable_1";
             this.enable_1.Size = new System.Drawing.Size(70, 16);
             this.enable_1.TabIndex = 25;
@@ -566,7 +576,7 @@
             this.enable_5.AutoSize = true;
             this.enable_5.Checked = true;
             this.enable_5.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.enable_5.Location = new System.Drawing.Point(27, 107);
+            this.enable_5.Location = new System.Drawing.Point(27, 112);
             this.enable_5.Name = "enable_5";
             this.enable_5.Size = new System.Drawing.Size(70, 16);
             this.enable_5.TabIndex = 25;
@@ -579,7 +589,7 @@
             this.enable_2.AutoSize = true;
             this.enable_2.Checked = true;
             this.enable_2.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.enable_2.Location = new System.Drawing.Point(27, 42);
+            this.enable_2.Location = new System.Drawing.Point(27, 47);
             this.enable_2.Name = "enable_2";
             this.enable_2.Size = new System.Drawing.Size(70, 16);
             this.enable_2.TabIndex = 25;
@@ -592,7 +602,7 @@
             this.enable_4.AutoSize = true;
             this.enable_4.Checked = true;
             this.enable_4.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.enable_4.Location = new System.Drawing.Point(27, 85);
+            this.enable_4.Location = new System.Drawing.Point(27, 90);
             this.enable_4.Name = "enable_4";
             this.enable_4.Size = new System.Drawing.Size(70, 16);
             this.enable_4.TabIndex = 25;
@@ -605,7 +615,7 @@
             this.enable_3.AutoSize = true;
             this.enable_3.Checked = true;
             this.enable_3.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.enable_3.Location = new System.Drawing.Point(27, 63);
+            this.enable_3.Location = new System.Drawing.Point(27, 68);
             this.enable_3.Name = "enable_3";
             this.enable_3.Size = new System.Drawing.Size(70, 16);
             this.enable_3.TabIndex = 25;
@@ -623,17 +633,6 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             this.button4.MouseHover += new System.EventHandler(this.button4_MouseHover);
-            // 
-            // button3
-            // 
-            this.button3.Enabled = false;
-            this.button3.Location = new System.Drawing.Point(15, 131);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(105, 37);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "유저 정보로부터 불러오기";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -659,6 +658,8 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.groupBox5.Controls.Add(this.button22);
             this.groupBox5.Controls.Add(this.button13);
             this.groupBox5.Controls.Add(this.gunhit_5_number);
             this.groupBox5.Controls.Add(this.label72);
@@ -734,7 +735,7 @@
             // 
             // gunpos_5_number
             // 
-            this.gunpos_5_number.Location = new System.Drawing.Point(9, 563);
+            this.gunpos_5_number.Location = new System.Drawing.Point(9, 568);
             this.gunpos_5_number.Maximum = new decimal(new int[] {
             9,
             0,
@@ -746,7 +747,7 @@
             0,
             0});
             this.gunpos_5_number.Name = "gunpos_5_number";
-            this.gunpos_5_number.Size = new System.Drawing.Size(120, 21);
+            this.gunpos_5_number.Size = new System.Drawing.Size(49, 21);
             this.gunpos_5_number.TabIndex = 24;
             this.gunpos_5_number.Value = new decimal(new int[] {
             5,
@@ -757,7 +758,7 @@
             // label67
             // 
             this.label67.AutoSize = true;
-            this.label67.Location = new System.Drawing.Point(9, 546);
+            this.label67.Location = new System.Drawing.Point(9, 551);
             this.label67.Name = "label67";
             this.label67.Size = new System.Drawing.Size(99, 12);
             this.label67.TabIndex = 23;
@@ -792,7 +793,7 @@
             // 
             // gunfavor_5_number
             // 
-            this.gunfavor_5_number.Location = new System.Drawing.Point(9, 514);
+            this.gunfavor_5_number.Location = new System.Drawing.Point(9, 519);
             this.gunfavor_5_number.Maximum = new decimal(new int[] {
             200,
             0,
@@ -805,7 +806,7 @@
             // label50
             // 
             this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(9, 499);
+            this.label50.Location = new System.Drawing.Point(9, 504);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(41, 12);
             this.label50.TabIndex = 18;
@@ -813,7 +814,7 @@
             // 
             // gunskill2_5_number
             // 
-            this.gunskill2_5_number.Location = new System.Drawing.Point(9, 469);
+            this.gunskill2_5_number.Location = new System.Drawing.Point(9, 474);
             this.gunskill2_5_number.Maximum = new decimal(new int[] {
             10,
             0,
@@ -825,7 +826,7 @@
             // 
             // gunskill1_5_number
             // 
-            this.gunskill1_5_number.Location = new System.Drawing.Point(9, 425);
+            this.gunskill1_5_number.Location = new System.Drawing.Point(9, 430);
             this.gunskill1_5_number.Maximum = new decimal(new int[] {
             10,
             0,
@@ -848,7 +849,7 @@
             // label51
             // 
             this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(7, 454);
+            this.label51.Location = new System.Drawing.Point(7, 459);
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(67, 12);
             this.label51.TabIndex = 15;
@@ -857,7 +858,7 @@
             // label52
             // 
             this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(9, 410);
+            this.label52.Location = new System.Drawing.Point(9, 415);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(67, 12);
             this.label52.TabIndex = 15;
@@ -873,7 +874,7 @@
             // 
             // gundummy_5_number
             // 
-            this.gundummy_5_number.Location = new System.Drawing.Point(9, 379);
+            this.gundummy_5_number.Location = new System.Drawing.Point(9, 384);
             this.gundummy_5_number.Maximum = new decimal(new int[] {
             5,
             0,
@@ -896,7 +897,7 @@
             // label54
             // 
             this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(9, 364);
+            this.label54.Location = new System.Drawing.Point(9, 369);
             this.label54.Name = "label54";
             this.label54.Size = new System.Drawing.Size(45, 12);
             this.label54.TabIndex = 12;
@@ -1061,6 +1062,8 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.groupBox4.Controls.Add(this.button21);
             this.groupBox4.Controls.Add(this.button12);
             this.groupBox4.Controls.Add(this.gunhit_4_number);
             this.groupBox4.Controls.Add(this.label71);
@@ -1136,7 +1139,7 @@
             // 
             // gunpos_4_number
             // 
-            this.gunpos_4_number.Location = new System.Drawing.Point(9, 563);
+            this.gunpos_4_number.Location = new System.Drawing.Point(9, 568);
             this.gunpos_4_number.Maximum = new decimal(new int[] {
             9,
             0,
@@ -1148,7 +1151,7 @@
             0,
             0});
             this.gunpos_4_number.Name = "gunpos_4_number";
-            this.gunpos_4_number.Size = new System.Drawing.Size(120, 21);
+            this.gunpos_4_number.Size = new System.Drawing.Size(49, 21);
             this.gunpos_4_number.TabIndex = 24;
             this.gunpos_4_number.Value = new decimal(new int[] {
             4,
@@ -1159,7 +1162,7 @@
             // label66
             // 
             this.label66.AutoSize = true;
-            this.label66.Location = new System.Drawing.Point(9, 546);
+            this.label66.Location = new System.Drawing.Point(9, 551);
             this.label66.Name = "label66";
             this.label66.Size = new System.Drawing.Size(99, 12);
             this.label66.TabIndex = 23;
@@ -1194,7 +1197,7 @@
             // 
             // gunfavor_4_number
             // 
-            this.gunfavor_4_number.Location = new System.Drawing.Point(9, 514);
+            this.gunfavor_4_number.Location = new System.Drawing.Point(9, 519);
             this.gunfavor_4_number.Maximum = new decimal(new int[] {
             200,
             0,
@@ -1207,7 +1210,7 @@
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(9, 499);
+            this.label38.Location = new System.Drawing.Point(9, 504);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(41, 12);
             this.label38.TabIndex = 18;
@@ -1215,7 +1218,7 @@
             // 
             // gunskill2_4_number
             // 
-            this.gunskill2_4_number.Location = new System.Drawing.Point(9, 469);
+            this.gunskill2_4_number.Location = new System.Drawing.Point(9, 474);
             this.gunskill2_4_number.Maximum = new decimal(new int[] {
             10,
             0,
@@ -1227,7 +1230,7 @@
             // 
             // gunskill1_4_number
             // 
-            this.gunskill1_4_number.Location = new System.Drawing.Point(9, 425);
+            this.gunskill1_4_number.Location = new System.Drawing.Point(9, 430);
             this.gunskill1_4_number.Maximum = new decimal(new int[] {
             10,
             0,
@@ -1250,7 +1253,7 @@
             // label39
             // 
             this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(7, 454);
+            this.label39.Location = new System.Drawing.Point(7, 459);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(67, 12);
             this.label39.TabIndex = 15;
@@ -1259,7 +1262,7 @@
             // label40
             // 
             this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(9, 410);
+            this.label40.Location = new System.Drawing.Point(9, 415);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(67, 12);
             this.label40.TabIndex = 15;
@@ -1275,7 +1278,7 @@
             // 
             // gundummy_4_number
             // 
-            this.gundummy_4_number.Location = new System.Drawing.Point(9, 379);
+            this.gundummy_4_number.Location = new System.Drawing.Point(9, 384);
             this.gundummy_4_number.Maximum = new decimal(new int[] {
             5,
             0,
@@ -1298,7 +1301,7 @@
             // label42
             // 
             this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(9, 364);
+            this.label42.Location = new System.Drawing.Point(9, 369);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(45, 12);
             this.label42.TabIndex = 12;
@@ -1463,6 +1466,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.groupBox3.Controls.Add(this.button20);
             this.groupBox3.Controls.Add(this.button11);
             this.groupBox3.Controls.Add(this.gunhit_3_number);
             this.groupBox3.Controls.Add(this.label70);
@@ -1538,7 +1543,7 @@
             // 
             // gunpos_3_number
             // 
-            this.gunpos_3_number.Location = new System.Drawing.Point(9, 563);
+            this.gunpos_3_number.Location = new System.Drawing.Point(9, 568);
             this.gunpos_3_number.Maximum = new decimal(new int[] {
             9,
             0,
@@ -1550,7 +1555,7 @@
             0,
             0});
             this.gunpos_3_number.Name = "gunpos_3_number";
-            this.gunpos_3_number.Size = new System.Drawing.Size(120, 21);
+            this.gunpos_3_number.Size = new System.Drawing.Size(49, 21);
             this.gunpos_3_number.TabIndex = 24;
             this.gunpos_3_number.Value = new decimal(new int[] {
             3,
@@ -1561,7 +1566,7 @@
             // label65
             // 
             this.label65.AutoSize = true;
-            this.label65.Location = new System.Drawing.Point(9, 546);
+            this.label65.Location = new System.Drawing.Point(9, 551);
             this.label65.Name = "label65";
             this.label65.Size = new System.Drawing.Size(99, 12);
             this.label65.TabIndex = 23;
@@ -1596,7 +1601,7 @@
             // 
             // gunfavor_3_number
             // 
-            this.gunfavor_3_number.Location = new System.Drawing.Point(9, 514);
+            this.gunfavor_3_number.Location = new System.Drawing.Point(9, 519);
             this.gunfavor_3_number.Maximum = new decimal(new int[] {
             200,
             0,
@@ -1609,7 +1614,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(9, 499);
+            this.label26.Location = new System.Drawing.Point(9, 504);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(41, 12);
             this.label26.TabIndex = 18;
@@ -1617,7 +1622,7 @@
             // 
             // gunskill2_3_number
             // 
-            this.gunskill2_3_number.Location = new System.Drawing.Point(9, 469);
+            this.gunskill2_3_number.Location = new System.Drawing.Point(9, 474);
             this.gunskill2_3_number.Maximum = new decimal(new int[] {
             10,
             0,
@@ -1629,7 +1634,7 @@
             // 
             // gunskill1_3_number
             // 
-            this.gunskill1_3_number.Location = new System.Drawing.Point(9, 425);
+            this.gunskill1_3_number.Location = new System.Drawing.Point(9, 430);
             this.gunskill1_3_number.Maximum = new decimal(new int[] {
             10,
             0,
@@ -1652,7 +1657,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(7, 454);
+            this.label27.Location = new System.Drawing.Point(7, 459);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(67, 12);
             this.label27.TabIndex = 15;
@@ -1661,7 +1666,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(9, 410);
+            this.label28.Location = new System.Drawing.Point(9, 415);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(67, 12);
             this.label28.TabIndex = 15;
@@ -1677,7 +1682,7 @@
             // 
             // gundummy_3_number
             // 
-            this.gundummy_3_number.Location = new System.Drawing.Point(9, 379);
+            this.gundummy_3_number.Location = new System.Drawing.Point(9, 384);
             this.gundummy_3_number.Maximum = new decimal(new int[] {
             5,
             0,
@@ -1700,7 +1705,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(9, 364);
+            this.label30.Location = new System.Drawing.Point(9, 369);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(45, 12);
             this.label30.TabIndex = 12;
@@ -1865,6 +1870,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.groupBox2.Controls.Add(this.button19);
             this.groupBox2.Controls.Add(this.button10);
             this.groupBox2.Controls.Add(this.gunhit_2_number);
             this.groupBox2.Controls.Add(this.label69);
@@ -1940,7 +1947,7 @@
             // 
             // gunpos_2_number
             // 
-            this.gunpos_2_number.Location = new System.Drawing.Point(9, 563);
+            this.gunpos_2_number.Location = new System.Drawing.Point(9, 568);
             this.gunpos_2_number.Maximum = new decimal(new int[] {
             9,
             0,
@@ -1952,7 +1959,7 @@
             0,
             0});
             this.gunpos_2_number.Name = "gunpos_2_number";
-            this.gunpos_2_number.Size = new System.Drawing.Size(120, 21);
+            this.gunpos_2_number.Size = new System.Drawing.Size(49, 21);
             this.gunpos_2_number.TabIndex = 24;
             this.gunpos_2_number.Value = new decimal(new int[] {
             2,
@@ -1963,7 +1970,7 @@
             // label64
             // 
             this.label64.AutoSize = true;
-            this.label64.Location = new System.Drawing.Point(9, 546);
+            this.label64.Location = new System.Drawing.Point(9, 551);
             this.label64.Name = "label64";
             this.label64.Size = new System.Drawing.Size(99, 12);
             this.label64.TabIndex = 23;
@@ -1998,7 +2005,7 @@
             // 
             // gunfavor_2_number
             // 
-            this.gunfavor_2_number.Location = new System.Drawing.Point(9, 514);
+            this.gunfavor_2_number.Location = new System.Drawing.Point(9, 519);
             this.gunfavor_2_number.Maximum = new decimal(new int[] {
             200,
             0,
@@ -2011,7 +2018,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(9, 499);
+            this.label14.Location = new System.Drawing.Point(9, 504);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(41, 12);
             this.label14.TabIndex = 18;
@@ -2019,7 +2026,7 @@
             // 
             // gunskill2_2_number
             // 
-            this.gunskill2_2_number.Location = new System.Drawing.Point(9, 469);
+            this.gunskill2_2_number.Location = new System.Drawing.Point(9, 474);
             this.gunskill2_2_number.Maximum = new decimal(new int[] {
             10,
             0,
@@ -2031,7 +2038,7 @@
             // 
             // gunskill1_2_number
             // 
-            this.gunskill1_2_number.Location = new System.Drawing.Point(9, 425);
+            this.gunskill1_2_number.Location = new System.Drawing.Point(9, 430);
             this.gunskill1_2_number.Maximum = new decimal(new int[] {
             10,
             0,
@@ -2054,7 +2061,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(7, 454);
+            this.label15.Location = new System.Drawing.Point(7, 459);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(67, 12);
             this.label15.TabIndex = 15;
@@ -2063,7 +2070,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(9, 410);
+            this.label16.Location = new System.Drawing.Point(9, 415);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(67, 12);
             this.label16.TabIndex = 15;
@@ -2079,7 +2086,7 @@
             // 
             // gundummy_2_number
             // 
-            this.gundummy_2_number.Location = new System.Drawing.Point(9, 379);
+            this.gundummy_2_number.Location = new System.Drawing.Point(9, 384);
             this.gundummy_2_number.Maximum = new decimal(new int[] {
             5,
             0,
@@ -2102,7 +2109,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(9, 364);
+            this.label18.Location = new System.Drawing.Point(9, 369);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(45, 12);
             this.label18.TabIndex = 12;
@@ -2267,6 +2274,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button9);
             this.groupBox1.Controls.Add(this.gunhit_1_number);
             this.groupBox1.Controls.Add(this.label68);
@@ -2342,7 +2352,7 @@
             // 
             // gunpos_1_number
             // 
-            this.gunpos_1_number.Location = new System.Drawing.Point(9, 563);
+            this.gunpos_1_number.Location = new System.Drawing.Point(9, 568);
             this.gunpos_1_number.Maximum = new decimal(new int[] {
             9,
             0,
@@ -2354,7 +2364,7 @@
             0,
             0});
             this.gunpos_1_number.Name = "gunpos_1_number";
-            this.gunpos_1_number.Size = new System.Drawing.Size(120, 21);
+            this.gunpos_1_number.Size = new System.Drawing.Size(49, 21);
             this.gunpos_1_number.TabIndex = 24;
             this.gunpos_1_number.Value = new decimal(new int[] {
             1,
@@ -2365,7 +2375,7 @@
             // label63
             // 
             this.label63.AutoSize = true;
-            this.label63.Location = new System.Drawing.Point(9, 546);
+            this.label63.Location = new System.Drawing.Point(9, 551);
             this.label63.Name = "label63";
             this.label63.Size = new System.Drawing.Size(99, 12);
             this.label63.TabIndex = 23;
@@ -2400,7 +2410,7 @@
             // 
             // gunfavor_1_number
             // 
-            this.gunfavor_1_number.Location = new System.Drawing.Point(9, 514);
+            this.gunfavor_1_number.Location = new System.Drawing.Point(9, 519);
             this.gunfavor_1_number.Maximum = new decimal(new int[] {
             200,
             0,
@@ -2413,7 +2423,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(9, 499);
+            this.label11.Location = new System.Drawing.Point(9, 504);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(41, 12);
             this.label11.TabIndex = 18;
@@ -2421,7 +2431,7 @@
             // 
             // gunskill2_1_number
             // 
-            this.gunskill2_1_number.Location = new System.Drawing.Point(9, 469);
+            this.gunskill2_1_number.Location = new System.Drawing.Point(9, 474);
             this.gunskill2_1_number.Maximum = new decimal(new int[] {
             10,
             0,
@@ -2433,7 +2443,7 @@
             // 
             // gunskill1_1_number
             // 
-            this.gunskill1_1_number.Location = new System.Drawing.Point(9, 425);
+            this.gunskill1_1_number.Location = new System.Drawing.Point(9, 430);
             this.gunskill1_1_number.Maximum = new decimal(new int[] {
             10,
             0,
@@ -2456,7 +2466,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(7, 454);
+            this.label10.Location = new System.Drawing.Point(7, 459);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(67, 12);
             this.label10.TabIndex = 15;
@@ -2465,7 +2475,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(9, 410);
+            this.label9.Location = new System.Drawing.Point(9, 415);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(67, 12);
             this.label9.TabIndex = 15;
@@ -2481,7 +2491,7 @@
             // 
             // gundummy_1_number
             // 
-            this.gundummy_1_number.Location = new System.Drawing.Point(9, 379);
+            this.gundummy_1_number.Location = new System.Drawing.Point(9, 384);
             this.gundummy_1_number.Maximum = new decimal(new int[] {
             5,
             0,
@@ -2504,7 +2514,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(9, 364);
+            this.label7.Location = new System.Drawing.Point(9, 369);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(45, 12);
             this.label7.TabIndex = 12;
@@ -2724,7 +2734,7 @@
             // sqdswitch_5
             // 
             this.sqdswitch_5.AutoSize = true;
-            this.sqdswitch_5.Location = new System.Drawing.Point(8, 111);
+            this.sqdswitch_5.Location = new System.Drawing.Point(8, 112);
             this.sqdswitch_5.Name = "sqdswitch_5";
             this.sqdswitch_5.Size = new System.Drawing.Size(46, 16);
             this.sqdswitch_5.TabIndex = 4;
@@ -2735,7 +2745,7 @@
             // sqdswitch_4
             // 
             this.sqdswitch_4.AutoSize = true;
-            this.sqdswitch_4.Location = new System.Drawing.Point(8, 88);
+            this.sqdswitch_4.Location = new System.Drawing.Point(8, 89);
             this.sqdswitch_4.Name = "sqdswitch_4";
             this.sqdswitch_4.Size = new System.Drawing.Size(41, 16);
             this.sqdswitch_4.TabIndex = 3;
@@ -2746,7 +2756,7 @@
             // sqdswitch_3
             // 
             this.sqdswitch_3.AutoSize = true;
-            this.sqdswitch_3.Location = new System.Drawing.Point(8, 66);
+            this.sqdswitch_3.Location = new System.Drawing.Point(8, 67);
             this.sqdswitch_3.Name = "sqdswitch_3";
             this.sqdswitch_3.Size = new System.Drawing.Size(50, 16);
             this.sqdswitch_3.TabIndex = 2;
@@ -2757,7 +2767,7 @@
             // sqdswitch_2
             // 
             this.sqdswitch_2.AutoSize = true;
-            this.sqdswitch_2.Location = new System.Drawing.Point(8, 44);
+            this.sqdswitch_2.Location = new System.Drawing.Point(8, 45);
             this.sqdswitch_2.Name = "sqdswitch_2";
             this.sqdswitch_2.Size = new System.Drawing.Size(67, 16);
             this.sqdswitch_2.TabIndex = 1;
@@ -2768,7 +2778,7 @@
             // sqdswitch_1
             // 
             this.sqdswitch_1.AutoSize = true;
-            this.sqdswitch_1.Location = new System.Drawing.Point(8, 22);
+            this.sqdswitch_1.Location = new System.Drawing.Point(8, 23);
             this.sqdswitch_1.Name = "sqdswitch_1";
             this.sqdswitch_1.Size = new System.Drawing.Size(70, 16);
             this.sqdswitch_1.TabIndex = 0;
@@ -4581,13 +4591,23 @@
             this.label61.TabIndex = 0;
             this.label61.Text = "적 그룹";
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(875, 696);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "프로그램 설정";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.tabControl1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(892, 740);
+            this.panel1.Size = new System.Drawing.Size(892, 738);
             this.panel1.TabIndex = 1;
             // 
             // saveFileDialog1
@@ -4623,11 +4643,61 @@
             this.openFileDialog3.Filter = "인형 장비 정보 파일|*.equip|Json 파일|*.json|모든 파일|*.*";
             this.openFileDialog3.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog3_FileOk);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(65, 567);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(63, 23);
+            this.button3.TabIndex = 29;
+            this.button3.Text = "설정";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click_1);
+            // 
+            // button19
+            // 
+            this.button19.Location = new System.Drawing.Point(66, 567);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(63, 23);
+            this.button19.TabIndex = 29;
+            this.button19.Text = "설정";
+            this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.Button19_Click);
+            // 
+            // button20
+            // 
+            this.button20.Location = new System.Drawing.Point(66, 566);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(63, 23);
+            this.button20.TabIndex = 29;
+            this.button20.Text = "설정";
+            this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.Button20_Click);
+            // 
+            // button21
+            // 
+            this.button21.Location = new System.Drawing.Point(66, 567);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(63, 23);
+            this.button21.TabIndex = 29;
+            this.button21.Text = "설정";
+            this.button21.UseVisualStyleBackColor = true;
+            this.button21.Click += new System.EventHandler(this.Button21_Click);
+            // 
+            // button22
+            // 
+            this.button22.Location = new System.Drawing.Point(66, 567);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(63, 23);
+            this.button22.TabIndex = 29;
+            this.button22.Text = "설정";
+            this.button22.UseVisualStyleBackColor = true;
+            this.button22.Click += new System.EventHandler(this.Button22_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(892, 740);
+            this.ClientSize = new System.Drawing.Size(892, 738);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -4914,7 +4984,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabPage tabPage3;
@@ -5109,6 +5178,12 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog3;
         private System.Windows.Forms.OpenFileDialog openFileDialog3;
         private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Button button19;
+        private System.Windows.Forms.Button button3;
     }
 }
 

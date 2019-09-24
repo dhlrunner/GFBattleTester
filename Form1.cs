@@ -55,7 +55,7 @@ namespace GFBattleTester
         JArray gunstatdata = new JArray();
         JObject attribute = new JObject();
         JObject grow = new JObject();
-
+        //JObject test_userinfo = JObject.Parse(File.ReadAllText("data/json/userinfo_test.json"));
         long[] gun_exp_table = {0,100,300,400,600,1000,1500,2100,2800,3600,4500,5500,6600,7800,9100,10500,
         12000,13600,15300,17100,19000,21000,23000,25300,27600,30000,32500,35100,37900,41000,44400,48600,
         53200,58200,63600,69400,75700,82400,89600,97300,105500,114300,123600,133500,144000,155100,166900,179400,
@@ -114,7 +114,7 @@ namespace GFBattleTester
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
             updatecheck();
             try
             {
@@ -336,8 +336,11 @@ namespace GFBattleTester
                 {
                     if (MessageBox.Show("데이터파일의 업데이트가 필요합니다. 업데이트를 진행할까요?", "업데이트 있음", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        this.Opacity = 0;
+                        //this.Opacity = 0;
                         updater updform = new updater(this);
+                        updform.StartPosition = FormStartPosition.Manual;
+                        updform.Left = 500;
+                        updform.Top = 500;                       
                         updform.ShowDialog();
                     }
                 }
@@ -677,7 +680,7 @@ namespace GFBattleTester
             {
                 Random random = new Random();
                 JObject clientdata = JObject.Parse(Packet.Decode(Outdatacode, signkey));
-                Clipboard.SetText(clientdata.ToString());
+                //Clipboard.SetText(clientdata.ToString());
                 JObject saveJson = new JObject();
                 JArray guninfo = new JArray();                
                 guninfo.Add(JObject.Parse("{"+string.Format(@"'id':'1','gunid':'{0}','life':'{1}','lifeBefore':'{4}','pos':'{2}','isUsed':'{3}'",frm.gun_info_json_1["gun_id"].ToString(),clientdata["guns"][0]["life"].ToString(),frm.gun_info_json_1["position"].ToString(),frm.gun_info_json_1["team_id"].ToString(),frm.gun_info_json_1["life"].ToString())+"}"));
@@ -2701,7 +2704,7 @@ namespace GFBattleTester
 
         private void linkLabel3_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Clipboard.SetText(userinfo.ToString());
+            //Clipboard.SetText(userinfo.ToString());
         }
 
         private void Button18_Click_1(object sender, EventArgs e)
@@ -2746,6 +2749,38 @@ namespace GFBattleTester
             showTooltip((Control)sender, "서버 IP를 숨깁니다. 로그에도 적용됩니다.");
         }
 
+        private void Button3_Click_1(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Button19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button20_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button21_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button22_Click(object sender, EventArgs e)
+        {
+
+        }
+        void ShowposSelector(int n)
+        {
+            posSelector posselector = new posSelector(this);
+            posSelector.StartPosition = FormStartPosition.CenterScreen;
+            //posselector.FormSendEvent += new EquipSelecter.FormSendDataHandler(getEquipInfoFromForm2);
+            //posselector.Passvalue = value;
+            posselector.Show();
+        }
         JObject getGunDefaultStat(int gunNum, int gunID, int lev)
         {
             int level = lev;

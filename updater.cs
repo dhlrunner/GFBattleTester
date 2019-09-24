@@ -63,6 +63,7 @@ namespace GFBattleTester
         private void updater_FormClosing(object sender, FormClosingEventArgs e)
         {
             opener.Close();
+            System.Diagnostics.Process.Start(System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName);
         }
         void Downloadprogresschanged(object sender, DownloadProgressChangedEventArgs args)
         {
@@ -130,7 +131,7 @@ namespace GFBattleTester
                     Uri a = new Uri("https://dhlrunner.github.io/GFBT_update_data_files/" + updatefilelist[i]);
                 }*/
             }
-            label1.Text = "다운로드 완료. 창을 닫아 프로그램을 재시작 해주세요.";
+            label1.Text = "다운로드 완료. 창을 닫으면 프로그램이 재실행 됩니다.";
             //progressBar1.Style = ProgressBarStyle.Continuous;
             //progressBar1.Value = 100;
             //opener.Close();

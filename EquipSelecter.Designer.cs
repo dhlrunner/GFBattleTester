@@ -57,9 +57,10 @@
             this.type,
             this.stars,
             this.fitgun});
-            this.listView1.Location = new System.Drawing.Point(12, 12);
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(14, 12);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(615, 186);
+            this.listView1.Size = new System.Drawing.Size(717, 186);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -94,9 +95,9 @@
             // button1
             // 
             this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(552, 308);
+            this.button1.Location = new System.Drawing.Point(644, 308);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(87, 23);
             this.button1.TabIndex = 1;
             this.button1.Text = "결정";
             this.button1.UseVisualStyleBackColor = true;
@@ -104,7 +105,7 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(473, 278);
+            this.numericUpDown1.Location = new System.Drawing.Point(552, 278);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             10,
             0,
@@ -116,7 +117,7 @@
             0,
             0});
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(70, 19);
+            this.numericUpDown1.Size = new System.Drawing.Size(82, 21);
             this.numericUpDown1.TabIndex = 2;
             this.numericUpDown1.Value = new decimal(new int[] {
             10,
@@ -128,31 +129,31 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(422, 281);
+            this.label1.Location = new System.Drawing.Point(492, 281);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 12);
+            this.label1.Size = new System.Drawing.Size(57, 12);
             this.label1.TabIndex = 3;
             this.label1.Text = "장비 레벨";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(413, 313);
+            this.label2.Location = new System.Drawing.Point(482, 313);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 12);
+            this.label2.Size = new System.Drawing.Size(69, 12);
             this.label2.TabIndex = 4;
             this.label2.Text = "장비 교정률";
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(474, 310);
+            this.numericUpDown2.Location = new System.Drawing.Point(553, 310);
             this.numericUpDown2.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(69, 19);
+            this.numericUpDown2.Size = new System.Drawing.Size(80, 21);
             this.numericUpDown2.TabIndex = 5;
             this.numericUpDown2.Value = new decimal(new int[] {
             100,
@@ -163,7 +164,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 220);
+            this.label3.Location = new System.Drawing.Point(26, 220);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 12);
             this.label3.TabIndex = 6;
@@ -172,33 +173,33 @@
             // 
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Location = new System.Drawing.Point(12, 206);
+            this.groupBox1.Location = new System.Drawing.Point(14, 206);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(385, 127);
+            this.groupBox1.Size = new System.Drawing.Size(449, 127);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "장비가 선택되지 않음";
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(10, 26);
+            this.label5.Location = new System.Drawing.Point(12, 26);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(363, 34);
+            this.label5.Size = new System.Drawing.Size(423, 34);
             this.label5.TabIndex = 1;
             this.label5.Text = "장비를 선택해주세요";
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(6, 79);
+            this.label4.Location = new System.Drawing.Point(7, 79);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(373, 31);
+            this.label4.Size = new System.Drawing.Size(435, 31);
             this.label4.TabIndex = 0;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(552, 276);
+            this.button2.Location = new System.Drawing.Point(644, 276);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(87, 23);
             this.button2.TabIndex = 1;
             this.button2.Text = "장비 해제";
             this.button2.UseVisualStyleBackColor = true;
@@ -206,9 +207,9 @@
             // 
             // EquipSelecter
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(639, 343);
+            this.ClientSize = new System.Drawing.Size(745, 343);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.numericUpDown2);
@@ -222,6 +223,7 @@
             this.MaximizeBox = false;
             this.Name = "EquipSelecter";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "장비 선택";
             this.Load += new System.EventHandler(this.EquipSelecter_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();

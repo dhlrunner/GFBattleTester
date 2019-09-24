@@ -68,3 +68,4 @@ C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\bin\Debug\ICS
 C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\bin\Debug\ICSharpCode.SharpZipLib.xml
 C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\bin\Debug\Newtonsoft.Json.xml
 C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.csproj.CopyComplete
+C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.posSelector.resources

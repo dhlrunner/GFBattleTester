@@ -60,6 +60,7 @@
             // 
             // listView1
             // 
+            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.time,
             this.fps,
@@ -67,10 +68,10 @@
             this.Event,
             this.currentPos,
             this.remain});
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.listView1.Location = new System.Drawing.Point(0, 515);
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(0, 498);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(485, 242);
+            this.listView1.Size = new System.Drawing.Size(494, 362);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -108,6 +109,9 @@
             // 
             // listView2
             // 
+            this.listView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.date,
             this.leader,
@@ -121,10 +125,10 @@
             this.totalDamagefromenemy,
             this.totalDamagetoEnemy,
             this.fileName});
-            this.listView2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.listView2.HideSelection = false;
             this.listView2.Location = new System.Drawing.Point(0, 0);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(1190, 515);
+            this.listView2.Size = new System.Drawing.Size(1388, 499);
             this.listView2.TabIndex = 5;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.Details;
@@ -149,17 +153,17 @@
             // result
             // 
             this.result.Text = "전투상태";
-            this.result.Width = 65;
+            this.result.Width = 85;
             // 
             // memberNum
             // 
             this.memberNum.Text = "출격인원";
-            this.memberNum.Width = 65;
+            this.memberNum.Width = 85;
             // 
             // battleTime
             // 
             this.battleTime.Text = "전투시간";
-            this.battleTime.Width = 70;
+            this.battleTime.Width = 90;
             // 
             // enemyLeader
             // 
@@ -169,22 +173,22 @@
             // enemyGroupID
             // 
             this.enemyGroupID.Text = "적 그룹ID";
-            this.enemyGroupID.Width = 75;
+            this.enemyGroupID.Width = 90;
             // 
             // maxDamage
             // 
             this.maxDamage.Text = "최대 딜";
-            this.maxDamage.Width = 65;
+            this.maxDamage.Width = 80;
             // 
             // totalDamagefromenemy
             // 
             this.totalDamagefromenemy.Text = "총 받은 데미지";
-            this.totalDamagefromenemy.Width = 86;
+            this.totalDamagefromenemy.Width = 120;
             // 
             // totalDamagetoEnemy
             // 
             this.totalDamagetoEnemy.Text = "총 딜량";
-            this.totalDamagetoEnemy.Width = 65;
+            this.totalDamagetoEnemy.Width = 85;
             // 
             // fileName
             // 
@@ -193,16 +197,17 @@
             // 
             // listView3
             // 
+            this.listView3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.listView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.pos,
             this.name,
             this.hp,
             this.hpafterbattle,
             this.totaldamage});
-            this.listView3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.listView3.Location = new System.Drawing.Point(761, 515);
+            this.listView3.HideSelection = false;
+            this.listView3.Location = new System.Drawing.Point(865, 498);
             this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(429, 242);
+            this.listView3.Size = new System.Drawing.Size(523, 362);
             this.listView3.TabIndex = 6;
             this.listView3.UseCompatibleStateImageBehavior = false;
             this.listView3.View = System.Windows.Forms.View.Details;
@@ -239,9 +244,9 @@
             // 
             // battleResultViewer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1190, 757);
+            this.ClientSize = new System.Drawing.Size(1388, 860);
             this.Controls.Add(this.listView3);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.listView2);
