@@ -17,6 +17,7 @@ using Newtonsoft.Json;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
 using System.Security.Cryptography;
+using System.IO.Compression;
 //using SimpleHttpServer;
 
 
@@ -25,10 +26,11 @@ namespace GFBattleTester
     public partial class Form1 : Form
     {
         
-        bool getUserinfoFromServer = false;
+        public bool getUserinfoFromServer = false;
         public static Form1 frm;
         serveraccess serv ;
         static string signkey = "우중비모";
+        string _token = string.Empty;
         bool gunsaved = false;
         string[] Equippos = { "11", "12", "13", "21", "22", "23", "31", "32", "33", "41", "42", "43", "51", "52", "53" };
         string equip = string.Empty;
@@ -571,7 +573,7 @@ namespace GFBattleTester
                 {
                     try
                     {
-                        Packet.init();
+                        
                         userinfo["spot_act_info"][2]["enemy_team_id"] = enemy_team_id_combobox.Text;
                         userinfo["spot_act_info"][2]["boss_hp"] = Boss_HP_textbox.Value.ToString();
                         //if (enemy_team_info[])              
@@ -649,31 +651,32 @@ namespace GFBattleTester
         }
         private static void ProcessRequest(HttpListenerContext ctx)
         {
-            if (!frm.getUserinfoFromServer)
+            string uri = ctx.Request.RawUrl;
+            byte[] Client_Req_data = Encoding.UTF8.GetBytes(new StreamReader(ctx.Request.InputStream).ReadToEnd());
+            string Outdatacode = Encoding.UTF8.GetString(Client_Req_data);
+            if (Outdatacode.Contains("outdatacode"))
+                Outdatacode = HttpUtility.UrlDecode(Outdatacode.Split('&')[1].Split('=')[1]);
+            if (uri.Contains("favicon.ico"))
             {
-                string uri = ctx.Request.RawUrl;
-                byte[] Client_Req_data = Encoding.UTF8.GetBytes(new StreamReader(ctx.Request.InputStream).ReadToEnd());
-                string Outdatacode = Encoding.UTF8.GetString(Client_Req_data);
-                if (Outdatacode.Contains("outdatacode"))
-                    Outdatacode = HttpUtility.UrlDecode(Outdatacode.Split('&')[1].Split('=')[1]);
-                frm.AddLog("ClientIP: " + ctx.Request.RemoteEndPoint.Address.ToString() + "; Request: " + uri);
-                if (uri.Contains("favicon.ico"))
-                {
-                    ResponceProcessBinary(ctx, File.ReadAllBytes(@"data/icon.ico"), false, false);
-                }
-                else if (ctx.Request.Url.LocalPath == "/")
-                {
-                    string html = "<!doctype html><html lang=\"ko\"><head><meta charset=\"utf-8\"><title>GFHelper</title></head><body>Server is working</br><a href=\"data/Cert/GFBattleTester.cer/\">인증서 다운로드</a></body></html>";
-                    ResponceProcessBinary(ctx, Encoding.UTF8.GetBytes(html), false, true);
-                }
-                else if (ctx.Request.Url.LocalPath == "/data/Cert/GFBattleTester.cer/")
-                {
-                    byte[] cert = File.ReadAllBytes(@"data/Cert/Cert.pfx");
-                    ctx.Response.ContentType = "other/certificate";
-                    ctx.Response.Headers.Add("Content-Disposition", "form-data; name=\"my_file\"; filename=\"GFBattleTester.pfx\"");
-                    ResponceProcessBinary(ctx, cert, false, true);
-                }
-                else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.index_version)
+                ResponceProcessBinary(ctx, File.ReadAllBytes(@"data/icon.ico"), false, false);
+            }
+            else if (ctx.Request.Url.LocalPath == "/")
+            {
+                string html = "<!doctype html><html lang=\"ko\"><head><meta charset=\"utf-8\"><title>GFHelper</title></head><body>Server is working</br><a href=\"data/Cert/GFBattleTester.cer/\">인증서 다운로드</a></body></html>";
+                ResponceProcessBinary(ctx, Encoding.UTF8.GetBytes(html), false, true);
+            }
+            else if (ctx.Request.Url.LocalPath == "/data/Cert/GFBattleTester.cer/")
+            {
+                byte[] cert = File.ReadAllBytes(@"data/Cert/Cert.pfx");
+                ctx.Response.ContentType = "other/certificate";
+                ctx.Response.Headers.Add("Content-Disposition", "form-data; name=\"my_file\"; filename=\"GFBattleTester.pfx\"");
+                ResponceProcessBinary(ctx, cert, false, true);
+            }
+            frm.AddLog("ClientIP: " + ctx.Request.RemoteEndPoint.Address.ToString() + "; Request: " + uri);
+
+            if (!frm.getUserinfoFromServer) //!유저정보
+            {                                                          
+                if (ctx.Request.Url.LocalPath == GF_URLs_Kr.index_version)
                 {
                     string json = File.ReadAllText(@"data/json/version.json");
                     JObject o = JObject.Parse(json);
@@ -683,6 +686,7 @@ namespace GFBattleTester
                 }
                 else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.getToken)
                 {
+                    Packet.init();
                     string data = Packet.Encode(File.ReadAllText(@"data/json/token.json"), "yundoudou");
                     ResponceProcessBinary(ctx, Encoding.UTF8.GetBytes(data), false, false);
                 }
@@ -935,6 +939,115 @@ namespace GFBattleTester
             }
             else
             {
+               // Packet.init();
+                try
+                {
+                    //uri = "http://gf-game.girlfrontline.co.kr" + uri;
+                    HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
+                    request.Method = ctx.Request.HttpMethod;
+                    request.KeepAlive = true;
+                    request.UserAgent = ctx.Request.UserAgent;
+                    request.ContentType = ctx.Request.ContentType;
+                    request.Host = ctx.Request.Headers.GetValues("Host")[0];                   
+                    for (int i = 0; i < ctx.Request.Headers.Count; i++)
+                    {
+                        if (ctx.Request.Headers.GetKey(i) != "Content-Length" &&
+                            ctx.Request.Headers.GetKey(i) != "Content-Type" &&
+                            ctx.Request.Headers.GetKey(i) != "Connection" &&
+                            ctx.Request.Headers.GetKey(i) != "Transfer-Encoding" &&
+                            ctx.Request.Headers.GetKey(i) != "Accept-Encoding" &&
+                            ctx.Request.Headers.GetKey(i) != "Content-Length")
+                            ctx.Response.Headers.Add(ctx.Request.Headers.GetKey(i), ctx.Request.Headers.GetValues(i)[0]);
+                    }
+                    //request.Headers.Add("X-Unity-Version", ctx.Request.Headers.GetValues("X-Unity-Version")[0]);
+                    //request.Headers.Add("Accept-Encoding", "none");
+                    //byte[] data = Encoding.UTF8.GetBytes(new StreamReader(ctx.Request.InputStream).ReadToEnd());
+                    request.ContentLength = Client_Req_data.Length;
+                    if (ctx.Request.HttpMethod == "POST")
+                    {
+                        using (Stream reqStream = request.GetRequestStream())
+                        {
+                            reqStream.Write(Client_Req_data, 0, Client_Req_data.Length);
+                        }
+                    }
+                    //if(ctx.Request.HttpMethod == "POST")
+                    //{
+                    try
+                    {                      
+                        
+                       
+                        using (WebResponse resp = request.GetResponse())
+                        {
+                            byte[] b = null;
+                            Stream respStream = resp.GetResponseStream();
+                            using (MemoryStream ms = new MemoryStream())
+                            {
+                                int count = 0;
+                                do
+                                {
+                                    byte[] buf = new byte[1024];
+                                    count = respStream.Read(buf, 0, 1024);
+                                    ms.Write(buf, 0, count);
+                                } while (respStream.CanRead && count > 0);
+                                b = ms.ToArray();
+                            }
+
+                            for (int i = 0; i < resp.Headers.Count; i++)
+                            {
+                                if (resp.Headers.GetKey(i) != "Content-Length" &&
+                                    resp.Headers.GetKey(i) != "Content-Type" &&
+                                    resp.Headers.GetKey(i) != "Connection" &&
+                                    resp.Headers.GetKey(i) != "Transfer-Encoding" &&
+                                    resp.Headers.GetKey(i) != "Content-Length" &&
+                                    resp.Headers.GetKey(i) != "Content-Length")
+                                    ctx.Response.Headers.Add(resp.Headers.GetKey(i), resp.Headers.GetValues(i)[0]);
+                            }
+                            ctx.Response.KeepAlive = true;
+                            ctx.Response.ContentType = resp.ContentType;
+
+                            string Serverpacket = Encoding.UTF8.GetString(b);
+                            if (ctx.Request.Url.LocalPath == GF_URLs_Kr.index_version)
+                            {
+                                frm.serv.AddLog("버전 정보 취득..");                               
+                            }
+                            else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.getToken)
+                            {
+                                Packet.init();
+                                if (Serverpacket.Contains("error"))
+                                {
+                                    frm.serv.AddLog("로그인...");
+                                }
+                                else
+                                {                                   
+                                    JObject tok = JObject.Parse(Packet.Decode(Serverpacket, "yundoudou"));
+                                    frm._token = tok["sign"].ToString();
+                                    frm.serv.AddLog("토큰 취득 성공: "+frm._token);
+                                }
+                            }
+                            else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.getuserinfo)
+                            {
+                                JObject uinfo = JObject.Parse(Packet.Decode(Serverpacket, frm._token));
+                                frm.serv.getUserdataFromServer(uinfo);
+                            }
+                            ResponceProcessBinary(ctx, b, false, true);
+
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        frm.serv.AddLog("Error: " + ex.ToString());
+                    }
+                    //  }
+                    //ctx.Response.Headers.
+
+
+                }
+
+                catch (Exception ex)
+                {
+                    frm.serv.AddLog("Error: " + ex.ToString());
+                }
 
             }
             
@@ -2605,7 +2718,8 @@ namespace GFBattleTester
             JObject eq = JObject.Parse(File.ReadAllText(openFileDialog3.FileName));
             foreach (string a in Equippos)
             {
-                if (eq[a]["gun_with_user_id"].ToString() != "0")
+
+                if (eq[a]!=null)
                 {
                     this.Controls.Find("setEquip_" + a, true)[0].Text = equipName[equipID.IndexOf(eq[a]["equip_id"].ToString())];
                     if(a == "11")
@@ -2982,6 +3096,23 @@ namespace GFBattleTester
                 ComboBox comboBox = (ComboBox)Controls.Find("gunid_" + control.Text + "_combobox", true)[0];
                 showTooltip(control, comboBox.Text);
             }            
+        }
+        byte[] DecompressGzip(byte[] data)
+        {
+            try
+            {
+                using (var compressedStream = new MemoryStream(data))
+                using (var zipStream = new GZipStream(compressedStream, CompressionMode.Decompress))
+                using (var resultStream = new MemoryStream())
+                {
+                    zipStream.CopyTo(resultStream);
+                    return resultStream.ToArray();
+                }
+            }
+            catch
+            {
+                return data;
+            }
         }
     }
 }

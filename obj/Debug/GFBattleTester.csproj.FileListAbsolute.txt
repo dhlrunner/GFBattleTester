@@ -61,7 +61,6 @@ C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\obj\Debug\GFB
 C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\bin\Debug\GFBattleTester.exe.config
 C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\bin\Debug\GFBattleTester.exe
 C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\bin\Debug\GFBattleTester.pdb
-C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\bin\Debug\AuthCode.dll
 C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\bin\Debug\ICSharpCode.SharpZipLib.dll
 C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\bin\Debug\Newtonsoft.Json.dll
 C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\bin\Debug\ICSharpCode.SharpZipLib.pdb

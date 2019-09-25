@@ -1,6 +1,5 @@
 ﻿using AC;
 using ICSharpCode.SharpZipLib.GZip;
-using Newtonsoft.Json.Linq;
 using System;
 using System.IO;
 using System.Text;
@@ -8,50 +7,27 @@ using System.Windows.Forms;
 
 class Packet
 {
+    static int time = 0;
     public static string init()
     {
         AuthCode.Init(new AuthCode.IntDelegate(GetCurrentTimeStamp));
         return GetCurrentTimeStamp().ToString();
     }
-    public static string Getsigns(string result)
+    public static string init(int t)
     {
-        JObject o = new JObject();
-        // GameData.realtimeSinceLogin = Convert.ToInt32((DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, 0)).TotalSeconds);
-        //GameData.loginTime = ConvertDateTime_China_Int(DateTime.Now);
-        try
-        {
-            using (MemoryStream stream = new MemoryStream(AuthCode.DecodeWithGzip(result.Substring(1), "yundoudou")))
-            {
-                using (Stream stream2 = new GZipInputStream(stream))
-                {
-                    using (StreamReader streamReader = new StreamReader(stream2, Encoding.UTF8))
-                    {
-                        // jsonData2 = JsonMapper.ToObject(streamReader);
-                        o = JObject.Parse(streamReader.ReadToEnd());
-                    }
-                }
-            }
-        }
-        catch //(Exception e)
-        {
-            //Console.WriteLine(e.ToString());
-            //throw;
-            return string.Empty;
-        }
-        //Console.WriteLine(jsonData2["uid"].ToString());
-        // Console.WriteLine(jsonData2["sign"].ToString());
-        return o["sign"].ToString();
-        //return ProgrameData.sign;
-
+        time = t;
+        AuthCode.Init(new AuthCode.IntDelegate(GetCustomTimeStamp));
+        return GetCurrentTimeStamp().ToString();
     }
-
-
-
+   
     public static int GetCurrentTimeStamp()
     {
-        return Convert.ToInt32((DateTime.Now - new DateTime(1970, 1, 1, 0, 0, 0, 0)).TotalSeconds - realtimeSinceLogin + loginTime);
+        return Convert.ToInt32((DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, 0)).TotalSeconds - realtimeSinceLogin + loginTime);
     }
-
+    public static int GetCustomTimeStamp()
+    {
+        return time;
+    }
     public static string Decode(string m, string s)
     {
         try
@@ -73,8 +49,8 @@ class Packet
         }
         catch (Exception e)
         {
-            //MessageBox.Show("Maybe Signtoken is incorrect. Check your signtoken.\n[Error Details]\n" + e.ToString(), "Decode Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            return string.Empty;
+            MessageBox.Show("Maybe Signtoken is incorrect. Check your signtoken.\n[Error Details]\n" + e.ToString(), "Decode Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return e.ToString();
         }
     }
 
