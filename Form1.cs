@@ -79,6 +79,7 @@ namespace GFBattleTester
         //HttpServer httpServer = new HttpServer(8080, Routes.GET);
         int[] gun_position = { -1, 7, 12, 17, 8, 13, 18, 9, 14, 19 }; //인덱스 = 키패드 배열, 값= 클라이언트상 값
         //Thread thread_http = new Thread(new ThreadStart(frm.httpServer.Listen));
+        //string[] squad_names = { ""};
         int[] squad_BGM71_defaultstat = { 52, 135, 118, 28 };
         int[] squad_AT4_defaultstat = { 38, 88, 96, 45 };
         int[] squad_AGS30_defaultstat = { 27, 49, 67, 130 };
@@ -114,7 +115,7 @@ namespace GFBattleTester
         {
             InitializeComponent();
             frm = this;
-            serv = new serveraccess(this);
+            
             CheckForIllegalCrossThreadCalls = false;
         }
         private void Form1_Load(object sender, EventArgs e)
@@ -1090,7 +1091,7 @@ namespace GFBattleTester
                 response.Headers.Add("Content-Type", "text/html; charset=UTF-8");
                 response.Headers.Add("Server", "ngnix");
                 response.Headers.Add("X-Powered-By", " PHP/5.6.21");
-                response.Headers.Add("X-Upstream", " 10.33.157.68:9000");
+                response.Headers.Add("X-Upstream", " 127.0.0.1:8080");
             }
             //스트림 쓰기
             response.ContentLength64 = data.Length; //데이터 길이 설정
@@ -1621,18 +1622,21 @@ namespace GFBattleTester
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
+            Load_Gun_Info_fromfilepath(openFileDialog1.FileName);
+        }
+        public void Load_Gun_Info_fromfilepath(string path)
+        {
             try
             {
-                JObject file = JObject.Parse(File.ReadAllText(openFileDialog1.FileName));
+                JObject file = JObject.Parse(File.ReadAllText(path));
                 loadinfofromfile(file);
-                label115.Text = Path.GetFileName(openFileDialog1.FileName);
+                label115.Text = Path.GetFileName(path);
                 SetGunInfo(false);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("파일을 불러오는 중에 오류가 발생했습니다." + Environment.NewLine + ex.ToString(), "불러오기 실패", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
         void loadinfofromfile(JObject json)
         {
@@ -2715,16 +2719,20 @@ namespace GFBattleTester
 
         private void openFileDialog3_FileOk(object sender, CancelEventArgs e)
         {
-            JObject eq = JObject.Parse(File.ReadAllText(openFileDialog3.FileName));
+            Load_Equip_Info_From_File(openFileDialog3.FileName);
+        }
+        public void Load_Equip_Info_From_File(string path)
+        {
+            JObject eq = JObject.Parse(File.ReadAllText(path));
             foreach (string a in Equippos)
             {
 
-                if (eq[a]!=null)
+                if (eq[a] != null)
                 {
                     this.Controls.Find("setEquip_" + a, true)[0].Text = equipName[equipID.IndexOf(eq[a]["equip_id"].ToString())];
-                    if(a == "11")
+                    if (a == "11")
                     {
-                        gun_info_json_1["equip1"] = a;                      
+                        gun_info_json_1["equip1"] = a;
                     }
                     else if (a == "12")
                     {
@@ -2785,10 +2793,9 @@ namespace GFBattleTester
                 }
             }
             userinfo["equip_with_user_info"].Replace(eq);
-            label121.Text = Path.GetFileName(openFileDialog3.FileName);
+            label121.Text = Path.GetFileName(path);
             SetGunInfo(false);
         }
-
         private void button17_Click(object sender, EventArgs e)
         {
             if(MessageBox.Show("현제 설정되어 있는 모든 장비를 제거합니다. 이 작업은 취소할 수 없습니다.", "경고", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
@@ -3015,6 +3022,7 @@ namespace GFBattleTester
 
         private void Button23_Click(object sender, EventArgs e)
         {
+            serv = new serveraccess(this);
             if(MessageBox.Show("유저 정보 가져오기 모드를 활성화할까요? " +
                 "소녀전선 클라이언트를 이용하여 전투 서버를 시뮬레이트 하는 대신 소녀전선 서버로부터 유저 정보를 가져옵니다." +
                 " 유저 정보 가져오기에 성공하면 이 모드는 자동으로 비활성화 됩니다.", "유저 정보 가져오기 모드", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
@@ -3043,15 +3051,20 @@ namespace GFBattleTester
                     }
                 }
                 else
-                {          
+                {
                     serv.Show();
+
                     frm.getUserinfoFromServer = true;
                     button23.Enabled = false;
                 }
             }
 
         }
-
+        public bool CheckIfFormIsOpen(string formname)
+        {
+            bool formOpen = Application.OpenForms.Cast<Form>().Any(form => form.Name == formname);
+            return formOpen;
+        }
         void showTooltip(Control sender, string caption, string title)
         {
             toolTip1.ToolTipTitle = title;

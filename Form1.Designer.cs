@@ -34,6 +34,18 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label115 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.button23 = new System.Windows.Forms.Button();
+            this.label122 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.postile_7 = new System.Windows.Forms.Button();
+            this.postile_8 = new System.Windows.Forms.Button();
+            this.postile_9 = new System.Windows.Forms.Button();
+            this.postile_4 = new System.Windows.Forms.Button();
+            this.postile_5 = new System.Windows.Forms.Button();
+            this.postile_1 = new System.Windows.Forms.Button();
+            this.postile_2 = new System.Windows.Forms.Button();
+            this.postile_6 = new System.Windows.Forms.Button();
+            this.postile_3 = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.enable_1 = new System.Windows.Forms.CheckBox();
             this.enable_5 = new System.Windows.Forms.CheckBox();
@@ -361,21 +373,10 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.saveFileDialog3 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog3 = new System.Windows.Forms.OpenFileDialog();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.postile_7 = new System.Windows.Forms.Button();
-            this.postile_8 = new System.Windows.Forms.Button();
-            this.postile_9 = new System.Windows.Forms.Button();
-            this.postile_4 = new System.Windows.Forms.Button();
-            this.postile_5 = new System.Windows.Forms.Button();
-            this.postile_6 = new System.Windows.Forms.Button();
-            this.postile_1 = new System.Windows.Forms.Button();
-            this.postile_2 = new System.Windows.Forms.Button();
-            this.postile_3 = new System.Windows.Forms.Button();
-            this.label122 = new System.Windows.Forms.Label();
-            this.button23 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox6.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunhit_5_number)).BeginInit();
@@ -497,7 +498,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.portnum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Boss_HP_textbox)).BeginInit();
             this.panel1.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -558,6 +558,140 @@
             this.groupBox6.TabIndex = 26;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "설정";
+            // 
+            // button23
+            // 
+            this.button23.Location = new System.Drawing.Point(15, 128);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(105, 34);
+            this.button23.TabIndex = 30;
+            this.button23.Text = "유저 정보로부터 불러오기";
+            this.button23.UseVisualStyleBackColor = true;
+            this.button23.Click += new System.EventHandler(this.Button23_Click);
+            // 
+            // label122
+            // 
+            this.label122.AutoSize = true;
+            this.label122.Location = new System.Drawing.Point(7, 335);
+            this.label122.Name = "label122";
+            this.label122.Size = new System.Drawing.Size(81, 12);
+            this.label122.TabIndex = 29;
+            this.label122.Text = "진형 미리보기";
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tableLayoutPanel1.Controls.Add(this.postile_7, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.postile_8, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.postile_9, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.postile_4, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.postile_5, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.postile_1, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.postile_2, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.postile_6, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.postile_3, 2, 2);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 352);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(125, 125);
+            this.tableLayoutPanel1.TabIndex = 28;
+            // 
+            // postile_7
+            // 
+            this.postile_7.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.postile_7.Location = new System.Drawing.Point(5, 5);
+            this.postile_7.Name = "postile_7";
+            this.postile_7.Size = new System.Drawing.Size(32, 32);
+            this.postile_7.TabIndex = 0;
+            this.postile_7.UseVisualStyleBackColor = true;
+            this.postile_7.MouseEnter += new System.EventHandler(this.PosTile_Hover);
+            // 
+            // postile_8
+            // 
+            this.postile_8.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.postile_8.Location = new System.Drawing.Point(45, 5);
+            this.postile_8.Name = "postile_8";
+            this.postile_8.Size = new System.Drawing.Size(32, 32);
+            this.postile_8.TabIndex = 1;
+            this.postile_8.UseVisualStyleBackColor = true;
+            this.postile_8.MouseEnter += new System.EventHandler(this.PosTile_Hover);
+            // 
+            // postile_9
+            // 
+            this.postile_9.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.postile_9.Location = new System.Drawing.Point(86, 5);
+            this.postile_9.Name = "postile_9";
+            this.postile_9.Size = new System.Drawing.Size(32, 32);
+            this.postile_9.TabIndex = 2;
+            this.postile_9.UseVisualStyleBackColor = true;
+            this.postile_9.MouseEnter += new System.EventHandler(this.PosTile_Hover);
+            // 
+            // postile_4
+            // 
+            this.postile_4.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.postile_4.Location = new System.Drawing.Point(5, 46);
+            this.postile_4.Name = "postile_4";
+            this.postile_4.Size = new System.Drawing.Size(32, 32);
+            this.postile_4.TabIndex = 3;
+            this.postile_4.UseVisualStyleBackColor = true;
+            this.postile_4.MouseEnter += new System.EventHandler(this.PosTile_Hover);
+            // 
+            // postile_5
+            // 
+            this.postile_5.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.postile_5.Location = new System.Drawing.Point(45, 46);
+            this.postile_5.Name = "postile_5";
+            this.postile_5.Size = new System.Drawing.Size(32, 32);
+            this.postile_5.TabIndex = 4;
+            this.postile_5.UseVisualStyleBackColor = true;
+            this.postile_5.MouseEnter += new System.EventHandler(this.PosTile_Hover);
+            // 
+            // postile_1
+            // 
+            this.postile_1.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.postile_1.Location = new System.Drawing.Point(5, 87);
+            this.postile_1.Name = "postile_1";
+            this.postile_1.Size = new System.Drawing.Size(32, 32);
+            this.postile_1.TabIndex = 6;
+            this.postile_1.UseVisualStyleBackColor = true;
+            this.postile_1.MouseEnter += new System.EventHandler(this.PosTile_Hover);
+            // 
+            // postile_2
+            // 
+            this.postile_2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.postile_2.Location = new System.Drawing.Point(45, 87);
+            this.postile_2.Name = "postile_2";
+            this.postile_2.Size = new System.Drawing.Size(32, 32);
+            this.postile_2.TabIndex = 7;
+            this.postile_2.UseVisualStyleBackColor = true;
+            this.postile_2.MouseEnter += new System.EventHandler(this.PosTile_Hover);
+            // 
+            // postile_6
+            // 
+            this.postile_6.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.postile_6.Location = new System.Drawing.Point(86, 46);
+            this.postile_6.Name = "postile_6";
+            this.postile_6.Size = new System.Drawing.Size(32, 32);
+            this.postile_6.TabIndex = 5;
+            this.postile_6.UseVisualStyleBackColor = true;
+            this.postile_6.MouseEnter += new System.EventHandler(this.PosTile_Hover);
+            // 
+            // postile_3
+            // 
+            this.postile_3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.postile_3.Location = new System.Drawing.Point(86, 87);
+            this.postile_3.Name = "postile_3";
+            this.postile_3.Size = new System.Drawing.Size(32, 32);
+            this.postile_3.TabIndex = 8;
+            this.postile_3.UseVisualStyleBackColor = true;
+            this.postile_3.MouseEnter += new System.EventHandler(this.PosTile_Hover);
             // 
             // groupBox7
             // 
@@ -4524,6 +4658,7 @@
             this.bosshp,
             this.leaderhp,
             this.missionName});
+            this.listView1.FullRowSelect = true;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(247, 15);
             this.listView1.Name = "listView1";
@@ -4714,140 +4849,6 @@
             this.openFileDialog3.Filter = "인형 장비 정보 파일|*.equip|Json 파일|*.json|모든 파일|*.*";
             this.openFileDialog3.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog3_FileOk);
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel1.Controls.Add(this.postile_7, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.postile_8, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.postile_9, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.postile_4, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.postile_5, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.postile_1, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.postile_2, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.postile_6, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.postile_3, 2, 2);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 352);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(125, 125);
-            this.tableLayoutPanel1.TabIndex = 28;
-            // 
-            // postile_7
-            // 
-            this.postile_7.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.postile_7.Location = new System.Drawing.Point(5, 5);
-            this.postile_7.Name = "postile_7";
-            this.postile_7.Size = new System.Drawing.Size(32, 32);
-            this.postile_7.TabIndex = 0;
-            this.postile_7.UseVisualStyleBackColor = true;
-            this.postile_7.MouseEnter += new System.EventHandler(this.PosTile_Hover);
-            // 
-            // postile_8
-            // 
-            this.postile_8.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.postile_8.Location = new System.Drawing.Point(45, 5);
-            this.postile_8.Name = "postile_8";
-            this.postile_8.Size = new System.Drawing.Size(32, 32);
-            this.postile_8.TabIndex = 1;
-            this.postile_8.UseVisualStyleBackColor = true;
-            this.postile_8.MouseEnter += new System.EventHandler(this.PosTile_Hover);
-            // 
-            // postile_9
-            // 
-            this.postile_9.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.postile_9.Location = new System.Drawing.Point(86, 5);
-            this.postile_9.Name = "postile_9";
-            this.postile_9.Size = new System.Drawing.Size(32, 32);
-            this.postile_9.TabIndex = 2;
-            this.postile_9.UseVisualStyleBackColor = true;
-            this.postile_9.MouseEnter += new System.EventHandler(this.PosTile_Hover);
-            // 
-            // postile_4
-            // 
-            this.postile_4.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.postile_4.Location = new System.Drawing.Point(5, 45);
-            this.postile_4.Name = "postile_4";
-            this.postile_4.Size = new System.Drawing.Size(32, 32);
-            this.postile_4.TabIndex = 3;
-            this.postile_4.UseVisualStyleBackColor = true;
-            this.postile_4.MouseEnter += new System.EventHandler(this.PosTile_Hover);
-            // 
-            // postile_5
-            // 
-            this.postile_5.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.postile_5.Location = new System.Drawing.Point(45, 45);
-            this.postile_5.Name = "postile_5";
-            this.postile_5.Size = new System.Drawing.Size(32, 32);
-            this.postile_5.TabIndex = 4;
-            this.postile_5.UseVisualStyleBackColor = true;
-            this.postile_5.MouseEnter += new System.EventHandler(this.PosTile_Hover);
-            // 
-            // postile_6
-            // 
-            this.postile_6.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.postile_6.Location = new System.Drawing.Point(86, 45);
-            this.postile_6.Name = "postile_6";
-            this.postile_6.Size = new System.Drawing.Size(32, 32);
-            this.postile_6.TabIndex = 5;
-            this.postile_6.UseVisualStyleBackColor = true;
-            this.postile_6.MouseEnter += new System.EventHandler(this.PosTile_Hover);
-            // 
-            // postile_1
-            // 
-            this.postile_1.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.postile_1.Location = new System.Drawing.Point(5, 85);
-            this.postile_1.Name = "postile_1";
-            this.postile_1.Size = new System.Drawing.Size(32, 32);
-            this.postile_1.TabIndex = 6;
-            this.postile_1.UseVisualStyleBackColor = true;
-            this.postile_1.MouseEnter += new System.EventHandler(this.PosTile_Hover);
-            // 
-            // postile_2
-            // 
-            this.postile_2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.postile_2.Location = new System.Drawing.Point(45, 85);
-            this.postile_2.Name = "postile_2";
-            this.postile_2.Size = new System.Drawing.Size(32, 32);
-            this.postile_2.TabIndex = 7;
-            this.postile_2.UseVisualStyleBackColor = true;
-            this.postile_2.MouseEnter += new System.EventHandler(this.PosTile_Hover);
-            // 
-            // postile_3
-            // 
-            this.postile_3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.postile_3.Location = new System.Drawing.Point(86, 85);
-            this.postile_3.Name = "postile_3";
-            this.postile_3.Size = new System.Drawing.Size(32, 32);
-            this.postile_3.TabIndex = 8;
-            this.postile_3.UseVisualStyleBackColor = true;
-            this.postile_3.MouseEnter += new System.EventHandler(this.PosTile_Hover);
-            // 
-            // label122
-            // 
-            this.label122.AutoSize = true;
-            this.label122.Location = new System.Drawing.Point(7, 335);
-            this.label122.Name = "label122";
-            this.label122.Size = new System.Drawing.Size(53, 12);
-            this.label122.TabIndex = 29;
-            this.label122.Text = "진형정보";
-            // 
-            // button23
-            // 
-            this.button23.Location = new System.Drawing.Point(15, 128);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(105, 34);
-            this.button23.TabIndex = 30;
-            this.button23.Text = "유저 정보로부터 불러오기";
-            this.button23.UseVisualStyleBackColor = true;
-            this.button23.Click += new System.EventHandler(this.Button23_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -4866,6 +4867,7 @@
             this.tabPage1.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -5003,7 +5005,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.portnum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Boss_HP_textbox)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -5352,7 +5353,7 @@
         private System.Windows.Forms.Button postile_2;
         private System.Windows.Forms.Button postile_3;
         private System.Windows.Forms.Label label122;
-        private System.Windows.Forms.Button button23;
+        public System.Windows.Forms.Button button23;
     }
 }
 

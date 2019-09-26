@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections;
+using System.Runtime.InteropServices;
 
 namespace GFBattleTester
 {
@@ -104,6 +105,17 @@ namespace GFBattleTester
                 ListViewItem subitem = items[0];
                 listView1.Items.Clear();
                 listView3.Items.Clear();
+                for(int i = 1; i <= 9; i++)
+                {
+                    Button pbtn = (Button)Controls.Find("p"+i.ToString(),true)[0];
+                    ProgressBar hp = (ProgressBar)Controls.Find("hpbar" + i.ToString(), true)[0];
+                    pbtn.Enabled = false;
+                    pbtn.BackColor = Color.Transparent;
+                    pbtn.Text = string.Empty;
+                    hp.Value = 0;
+
+                }
+
                 JObject brvf = JObject.Parse(File.ReadAllText(@"BattleLog/" + subitem.SubItems[11].Text));
                 JArray rec = new JArray((JArray)brvf["rec"]);
                 foreach(var z in brvf["gun_info"])
@@ -114,6 +126,31 @@ namespace GFBattleTester
                         ,z["lifeBefore"].ToString(),z["life"].ToString(),(int.Parse(z["lifeBefore"].ToString())-int.Parse(z["life"].ToString())).ToString()};
                         ListViewItem itms = new ListViewItem(items2);
                         listView3.Items.Add(itms);
+                        Button posbtn = (Button)Controls.Find("p"+items2[0],true)[0];
+                        ProgressBar hpbar = (ProgressBar)Controls.Find("hpbar" + items2[0], true)[0];
+                        hpbar.Maximum = int.Parse(items2[2]);
+                        hpbar.Value =  int.Parse(items2[3]) != -1? int.Parse(items2[3]):0;
+                        posbtn.Text = items2[1]+Environment.NewLine+"HP: "+ items2[2] +Environment.NewLine+ "피해량: "+ items2[4];
+                        double damage_percent = double.Parse(items2[4]) / double.Parse(items2[2]) * 100.0;
+                        if (damage_percent < 50.0 && damage_percent >= 0.0)
+                        {                           
+                            posbtn.BackColor = ColorTranslator.FromHtml("#00aeff");
+                            //ModifyProgressBarColor.SetState(hpbar, 1);
+                        }
+                        else if(damage_percent > 50.0 && damage_percent <75.0)
+                        {
+                            posbtn.BackColor = ColorTranslator.FromHtml("#ffcc00");
+                            //ModifyProgressBarColor.SetState(hpbar, 2);
+                        }
+                        else if(damage_percent >= 75.0 && damage_percent < 100.0)
+                        {
+                            posbtn.BackColor = ColorTranslator.FromHtml("#ff4d00");
+                           // ModifyProgressBarColor.SetState(hpbar, 3);
+                        }
+                        else
+                        {
+                            posbtn.BackColor = Color.Red;
+                        }
                     }
                 }
                 foreach (var a in rec)
@@ -327,6 +364,15 @@ namespace GFBattleTester
                         return String.Compare(((ListViewItem)y).SubItems[col].Text, ((ListViewItem)x).SubItems[col].Text);
                 }
             }
+        }
+    }
+    public static class ModifyProgressBarColor
+    {
+        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = false)]
+        static extern IntPtr SendMessage(IntPtr hWnd, uint Msg, IntPtr w, IntPtr l);
+        public static void SetState(this ProgressBar pBar, int state)
+        {
+            SendMessage(pBar.Handle, 1040, (IntPtr)state, IntPtr.Zero);
         }
     }
 }
