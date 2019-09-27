@@ -475,7 +475,8 @@
             this.Controls.Add(this.listView2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "battleResultViewer";
-            this.Text = "battleResultViewer";
+            this.ShowIcon = false;
+            this.Text = "전투기록";
             this.Load += new System.EventHandler(this.BattleResultViewer_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);

@@ -139,7 +139,8 @@
             this.Controls.Add(this.logTextbox);
             this.Controls.Add(this.listView1);
             this.Name = "serveraccess";
-            this.Text = "serveraccess";
+            this.ShowIcon = false;
+            this.Text = "서버 접속기";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Serveraccess_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Serveraccess_FormClosed);
             this.Load += new System.EventHandler(this.Serveraccess_Load);

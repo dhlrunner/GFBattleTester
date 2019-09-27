@@ -93,12 +93,23 @@ namespace GFBattleTester
                 {
                     string filepath = a.Split(',')[0];
                     string filehash = a.Split(',')[1];
-                    if (GetMD5HashFromFile(filepath) != filehash)
+                    string localhash = string.Empty;
+                    if (File.Exists(filepath))
+                    {
+                        if (localhash != filehash)
+                        {
+                            updatefilelist.Add(filepath);
+                            downloadfilecount++;
+                            isLatest = false;
+                        }
+                    }
+                    else
                     {
                         updatefilelist.Add(filepath);
                         downloadfilecount++;
                         isLatest = false;
                     }
+                    
                 }
             }
             if (!isLatest)

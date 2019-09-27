@@ -334,9 +334,16 @@ namespace GFBattleTester
                     {
                         string filepath = a.Split(',')[0];
                         string filehash = a.Split(',')[1];
-                        string localhash = GetMD5HashFromFile(filepath);
-                        if (localhash != filehash)
+                        string localhash = string.Empty;
+                        if (File.Exists(filepath))
+                        {
+                            localhash = GetMD5HashFromFile(filepath);
+                            if (localhash != filehash)
+                                isLatest = false;
+                        }
+                        else
                             isLatest = false;
+
                     }
                 }
                 if (!isLatest)

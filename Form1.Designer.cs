@@ -364,7 +364,6 @@
             this.label62 = new System.Windows.Forms.Label();
             this.enemy_team_id_combobox = new System.Windows.Forms.ComboBox();
             this.label61 = new System.Windows.Forms.Label();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -373,6 +372,7 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.saveFileDialog3 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog3 = new System.Windows.Forms.OpenFileDialog();
+            this.label123 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -509,7 +509,6 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Location = new System.Drawing.Point(5, 9);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -4206,6 +4205,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label123);
             this.tabPage2.Controls.Add(this.label121);
             this.tabPage2.Controls.Add(this.grpbox21);
             this.tabPage2.Controls.Add(this.groupBox20);
@@ -4797,16 +4797,6 @@
             this.label61.TabIndex = 0;
             this.label61.Text = "적 그룹";
             // 
-            // tabPage5
-            // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(875, 696);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "프로그램 설정";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.tabControl1);
@@ -4848,6 +4838,15 @@
             this.openFileDialog3.FileName = "openFileDialog3";
             this.openFileDialog3.Filter = "인형 장비 정보 파일|*.equip|Json 파일|*.json|모든 파일|*.*";
             this.openFileDialog3.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog3_FileOk);
+            // 
+            // label123
+            // 
+            this.label123.AutoSize = true;
+            this.label123.Location = new System.Drawing.Point(12, 218);
+            this.label123.Name = "label123";
+            this.label123.Size = new System.Drawing.Size(213, 12);
+            this.label123.TabIndex = 3;
+            this.label123.Text = "장비를 설정하면 자동으로 적용됩니다.";
             // 
             // Form1
             // 
@@ -5331,7 +5330,6 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog3;
         private System.Windows.Forms.OpenFileDialog openFileDialog3;
         private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.Button button21;
         private System.Windows.Forms.Button button20;
@@ -5354,6 +5352,7 @@
         private System.Windows.Forms.Button postile_3;
         private System.Windows.Forms.Label label122;
         public System.Windows.Forms.Button button23;
+        private System.Windows.Forms.Label label123;
     }
 }
 
