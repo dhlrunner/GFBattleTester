@@ -4,10 +4,10 @@
   "month_zero": 1556636400,
   "next_month_zero": 1559314800,
   "timezone": "Asia/Seoul",
-  "data_version": "22784a27ae22ea1f4824279fba2f2bf9",
-  "client_version": "2227",
+  "data_version": "1d073102eec27a20802d013e12f8f2ec",
+  "client_version": "20399",
   "ab_version": "0",
   "is_kick": "0",
-  "weekday": 5,
+  "weekday": 4,
   "authentication_url": "http://realauth.ucenter.ppgame.com/authoriz.html?appid={0}&openid={1}&accounttype=1&language=zh"
 }

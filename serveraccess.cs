@@ -109,6 +109,7 @@ namespace GFBattleTester
             sqd.Add("switch3", "1");
             sqd.Add("switch4", "1");
             sqd.Add("switch5", "1");
+            sqd.Add("switch6", "1");
             File.WriteAllText(@"userdata/presets/" + DateTime.Now.ToString("yyyyMMdd_HHmmss_") + data["user_info"]["name"].ToString() + ".sqd", sqd.ToString());
             AddLog("유저 정보로부터 데이터를 모두 불러왔습니다.");
         }
