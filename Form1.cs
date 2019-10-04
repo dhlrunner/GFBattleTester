@@ -25,8 +25,6 @@ namespace GFBattleTester
 {
     public partial class Form1 : Form
     {
-        string[] Languages = { "Korean","Japanese"};
-        
         string battlespot = "983";
         public bool getUserinfoFromServer = false;
         public static Form1 frm;
@@ -800,12 +798,12 @@ namespace GFBattleTester
                     try
                     {
                         int i=0;
-                        for (i = 0; i < spotactinfo.Count(); i++)
+                        for (i = 0; i < userinfo["spot_act_info"].Count(); i++)
                         {
-                            if (spotactinfo[i]["spot_id"].ToString() == battlespot)
+                            if (userinfo["spot_act_info"][i]["spot_id"].ToString() == battlespot)
                             {
-                                spotactinfo[i]["enemy_team_id"] = enemy_team_id_combobox.Text;
-                                spotactinfo[i]["boss_hp"] = Boss_HP_textbox.Value.ToString();
+                                userinfo["spot_act_info"][i]["enemy_team_id"] = enemy_team_id_combobox.Text;
+                                userinfo["spot_act_info"][i]["boss_hp"] = Boss_HP_textbox.Value.ToString();
                                 break;
                             }                            
                         }
@@ -970,9 +968,9 @@ namespace GFBattleTester
                     JObject saveJson = new JObject();
                     JArray guninfo = new JArray();
                     int index = 0;
-                    for (index = 0; index < frm.spotactinfo.Count(); index++)
+                    for (index = 0; index < userinfo["spot_act_info"].Count(); index++)
                     {
-                        if (frm.spotactinfo[index]["spot_id"].ToString() == frm.battlespot)
+                        if (userinfo["spot_act_info"][index]["spot_id"].ToString() == frm.battlespot)
                         {
                             break;
                         }
