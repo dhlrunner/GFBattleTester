@@ -1,0 +1,274 @@
+{
+    "theater_event_log": {
+        "user_id": "20139",
+        "theater_event_id": "5",
+        "battle_pt": "124688",
+        "construction_pt": "32760",
+        "incident_pt": "6330",
+        "sum_pt": "163778",
+        "ap": "1",
+        "last_withdraw_time": "1569917951",
+        "user_name": "runner38",
+        "user_level": "139"
+    },
+    "theater_info": [
+        {
+            "theater_id": "51",
+            "battle_pt": "147000000",
+            "advantage_gun": "161,129,130,126,118",
+            "is_open": "1",
+            "minus_pt": "306654805"
+        },
+        {
+            "theater_id": "52",
+            "battle_pt": "465000000",
+            "advantage_gun": "208,189,179,171,252",
+            "is_open": "1",
+            "minus_pt": "185329743"
+        },
+        {
+            "theater_id": "53",
+            "battle_pt": "861407828",
+            "advantage_gun": "194,115,46,53,261",
+            "is_open": "1",
+            "minus_pt": "140106408"
+        }
+    ],
+    "theater_construction_info": [
+        {
+            "theater_id": "51",
+            "area_id": "511",
+            "construction_group_id": "511",
+            "lv": "2",
+            "init_pt": "0",
+            "pt": "8254955",
+            "user_pt": 0
+        },
+        {
+            "theater_id": "52",
+            "area_id": "521",
+            "construction_group_id": "521",
+            "lv": "3",
+            "init_pt": "0",
+            "pt": "10000000",
+            "user_pt": 0
+        },
+        {
+            "theater_id": "52",
+            "area_id": "525",
+            "construction_group_id": "525",
+            "lv": "1",
+            "init_pt": "0",
+            "pt": "4150517",
+            "user_pt": 0
+        },
+        {
+            "theater_id": "53",
+            "area_id": "531",
+            "construction_group_id": "531",
+            "lv": "3",
+            "init_pt": "0",
+            "pt": "30000000",
+            "user_pt": 4520
+        },
+        {
+            "theater_id": "53",
+            "area_id": "534",
+            "construction_group_id": "534",
+            "lv": "3",
+            "init_pt": "0",
+            "pt": "30000000",
+            "user_pt": 3840
+        },
+        {
+            "theater_id": "53",
+            "area_id": "536",
+            "construction_group_id": "536",
+            "lv": "2",
+            "init_pt": "0",
+            "pt": "20935259",
+            "user_pt": 2560
+        }
+    ],
+    "theater_incident_info": [
+        {
+            "incident_id": "1",
+            "incident_start_day": "1",
+            "incident_end_day": "2",
+            "result": [
+                {
+                    "selection_id": "101",
+                    "num": 7173
+                },
+                {
+                    "selection_id": "102",
+                    "num": 6950
+                },
+                {
+                    "selection_id": "103",
+                    "num": 9014
+                }
+            ],
+            "status": "1",
+            "selection_id": 101,
+            "num": 1
+        },
+        {
+            "incident_id": "2",
+            "incident_start_day": "2",
+            "incident_end_day": "3",
+            "result": [
+                {
+                    "selection_id": "101",
+                    "num": 99008
+                },
+                {
+                    "selection_id": "102",
+                    "num": 89946
+                },
+                {
+                    "selection_id": "103",
+                    "num": 108044
+                }
+            ],
+            "status": "1",
+            "selection_id": 101,
+            "num": 12
+        },
+        {
+            "incident_id": "3",
+            "incident_start_day": "3",
+            "incident_end_day": "4",
+            "result": [
+                {
+                    "selection_id": "101",
+                    "num": 178021
+                },
+                {
+                    "selection_id": "102",
+                    "num": 212368
+                },
+                {
+                    "selection_id": "103",
+                    "num": 218182
+                }
+            ],
+            "status": "1",
+            "selection_id": 102,
+            "num": 24
+        },
+        {
+            "incident_id": "4",
+            "incident_start_day": "4",
+            "incident_end_day": "5",
+            "result": [
+                {
+                    "selection_id": "101",
+                    "num": 205964
+                },
+                {
+                    "selection_id": "102",
+                    "num": 249798
+                },
+                {
+                    "selection_id": "103",
+                    "num": 231122
+                }
+            ],
+            "status": "1",
+            "selection_id": 102,
+            "num": 27
+        },
+        {
+            "incident_id": "5",
+            "incident_start_day": "5",
+            "incident_end_day": "6",
+            "result": [
+                {
+                    "selection_id": "101",
+                    "num": 317442
+                },
+                {
+                    "selection_id": "102",
+                    "num": 343755
+                },
+                {
+                    "selection_id": "103",
+                    "num": 400653
+                }
+            ],
+            "status": "1",
+            "selection_id": 101,
+            "num": 42
+        },
+        {
+            "incident_id": "6",
+            "incident_start_day": "6",
+            "incident_end_day": "7",
+            "result": [
+                {
+                    "selection_id": "101",
+                    "num": 382499
+                },
+                {
+                    "selection_id": "102",
+                    "num": 408289
+                },
+                {
+                    "selection_id": "103",
+                    "num": 410214
+                }
+            ],
+            "status": "1",
+            "selection_id": 102,
+            "num": 48
+        },
+        {
+            "incident_id": "7",
+            "incident_start_day": "7",
+            "incident_end_day": "8",
+            "result": [],
+            "status": "0",
+            "selection_id": 0,
+            "num": 0
+        }
+    ],
+    "theater_area_type2_log": [
+        {
+            "theater_area_id": "514",
+            "user_id": "20139",
+            "user_name": "runner38",
+            "user_level": "139",
+            "best_pt": "18445"
+        },
+        {
+            "theater_area_id": "524",
+            "user_id": "20139",
+            "user_name": "runner38",
+            "user_level": "139",
+            "best_pt": "19760"
+        },
+        {
+            "theater_area_id": "528",
+            "user_id": "20139",
+            "user_name": "runner38",
+            "user_level": "139",
+            "best_pt": "9304"
+        },
+        {
+            "theater_area_id": "533",
+            "user_id": "20139",
+            "user_name": "runner38",
+            "user_level": "139",
+            "best_pt": "20301"
+        },
+        {
+            "theater_area_id": "536",
+            "user_id": "20139",
+            "user_name": "runner38",
+            "user_level": "139",
+            "best_pt": "11993"
+        }
+    ],
+    "theater_progress_lowest": "53"
+}

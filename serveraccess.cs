@@ -109,6 +109,7 @@ namespace GFBattleTester
             sqd.Add("switch3", "1");
             sqd.Add("switch4", "1");
             sqd.Add("switch5", "1");
+            sqd.Add("switch6", "1");
             File.WriteAllText(@"userdata/presets/" + DateTime.Now.ToString("yyyyMMdd_HHmmss_") + data["user_info"]["name"].ToString() + ".sqd", sqd.ToString());
             AddLog("유저 정보로부터 데이터를 모두 불러왔습니다.");
         }
@@ -126,7 +127,7 @@ namespace GFBattleTester
         private void Serveraccess_FormClosing(object sender, CancelEventArgs e)
         {
             form1.getUserinfoFromServer = false;
-            form1.button23.Enabled = true;
+            form1.gun_loadfromserver.Enabled = true;
             e.Cancel = true;
             this.Hide();
         }

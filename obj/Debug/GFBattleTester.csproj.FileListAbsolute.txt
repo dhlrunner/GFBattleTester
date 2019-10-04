@@ -69,3 +69,24 @@ C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\bin\Debug\New
 C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.csproj.CopyComplete
 C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.posSelector.resources
 C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.serveraccess.resources
+E:\code\GFBattleTester\GFBattleTester\bin\Debug\GFBattleTester.exe.config
+E:\code\GFBattleTester\GFBattleTester\bin\Debug\GFBattleTester.exe
+E:\code\GFBattleTester\GFBattleTester\bin\Debug\GFBattleTester.pdb
+E:\code\GFBattleTester\GFBattleTester\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\code\GFBattleTester\GFBattleTester\bin\Debug\Newtonsoft.Json.dll
+E:\code\GFBattleTester\GFBattleTester\bin\Debug\ICSharpCode.SharpZipLib.pdb
+E:\code\GFBattleTester\GFBattleTester\bin\Debug\ICSharpCode.SharpZipLib.xml
+E:\code\GFBattleTester\GFBattleTester\bin\Debug\Newtonsoft.Json.xml
+E:\code\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.csprojAssemblyReference.cache
+E:\code\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.battleResultViewer.resources
+E:\code\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.EquipSelecter.resources
+E:\code\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.Form1.resources
+E:\code\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.posSelector.resources
+E:\code\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.Properties.Resources.resources
+E:\code\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.serveraccess.resources
+E:\code\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.updater.resources
+E:\code\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.csproj.GenerateResource.cache
+E:\code\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.csproj.CoreCompileInputs.cache
+E:\code\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.csproj.CopyComplete
+E:\code\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.exe
+E:\code\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.pdb

@@ -31,11 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.gun_set = new System.Windows.Forms.TabPage();
             this.label115 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.button23 = new System.Windows.Forms.Button();
-            this.label122 = new System.Windows.Forms.Label();
+            this.gun_loadfromserver = new System.Windows.Forms.Button();
+            this.gun_previewpos = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.postile_7 = new System.Windows.Forms.Button();
             this.postile_8 = new System.Windows.Forms.Button();
@@ -46,190 +46,208 @@
             this.postile_2 = new System.Windows.Forms.Button();
             this.postile_6 = new System.Windows.Forms.Button();
             this.postile_3 = new System.Windows.Forms.Button();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.gun_setfire = new System.Windows.Forms.GroupBox();
             this.enable_1 = new System.Windows.Forms.CheckBox();
             this.enable_5 = new System.Windows.Forms.CheckBox();
             this.enable_2 = new System.Windows.Forms.CheckBox();
             this.enable_4 = new System.Windows.Forms.CheckBox();
             this.enable_3 = new System.Windows.Forms.CheckBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.gun_apply = new System.Windows.Forms.Button();
+            this.gun_load = new System.Windows.Forms.Button();
+            this.gun_save = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.button22 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
+            this.set_gunpos_btn_5 = new System.Windows.Forms.Button();
+            this.gun_resetstat_5 = new System.Windows.Forms.Button();
             this.gunhit_5_number = new System.Windows.Forms.NumericUpDown();
-            this.label72 = new System.Windows.Forms.Label();
+            this.gunhit_5 = new System.Windows.Forms.Label();
             this.gunpos_5_number = new System.Windows.Forms.NumericUpDown();
-            this.label67 = new System.Windows.Forms.Label();
+            this.gunpos_5 = new System.Windows.Forms.Label();
             this.gunskin_5_conbobox = new System.Windows.Forms.ComboBox();
-            this.label49 = new System.Windows.Forms.Label();
+            this.gunskin_5 = new System.Windows.Forms.Label();
             this.gunoath_5_checkbox = new System.Windows.Forms.CheckBox();
             this.gunfavor_5_number = new System.Windows.Forms.NumericUpDown();
-            this.label50 = new System.Windows.Forms.Label();
+            this.gunfavor_5 = new System.Windows.Forms.Label();
             this.gunskill2_5_number = new System.Windows.Forms.NumericUpDown();
             this.gunskill1_5_number = new System.Windows.Forms.NumericUpDown();
-            this.label51 = new System.Windows.Forms.Label();
-            this.label52 = new System.Windows.Forms.Label();
+            this.gunskill2_5 = new System.Windows.Forms.Label();
+            this.gunskill1_5 = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
             this.gundummy_5_number = new System.Windows.Forms.NumericUpDown();
-            this.label54 = new System.Windows.Forms.Label();
+            this.gundummy_5 = new System.Windows.Forms.Label();
             this.gunrate_5_number = new System.Windows.Forms.NumericUpDown();
-            this.label55 = new System.Windows.Forms.Label();
+            this.gunfirespeed_5 = new System.Windows.Forms.Label();
             this.gundodge_5_number = new System.Windows.Forms.NumericUpDown();
-            this.label56 = new System.Windows.Forms.Label();
+            this.gundodge_5 = new System.Windows.Forms.Label();
             this.gunpow_5_number = new System.Windows.Forms.NumericUpDown();
-            this.label57 = new System.Windows.Forms.Label();
+            this.gunfire_5 = new System.Windows.Forms.Label();
             this.gunhp_5_number = new System.Windows.Forms.NumericUpDown();
-            this.label58 = new System.Windows.Forms.Label();
+            this.gunhp_5 = new System.Windows.Forms.Label();
             this.gunlv_5_number = new System.Windows.Forms.NumericUpDown();
-            this.label59 = new System.Windows.Forms.Label();
+            this.gunlv_5 = new System.Windows.Forms.Label();
             this.gunid_5_combobox = new System.Windows.Forms.ComboBox();
-            this.label60 = new System.Windows.Forms.Label();
+            this.gunid_5 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button21 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
+            this.set_gunpos_btn_4 = new System.Windows.Forms.Button();
+            this.gun_resetstat_4 = new System.Windows.Forms.Button();
             this.gunhit_4_number = new System.Windows.Forms.NumericUpDown();
-            this.label71 = new System.Windows.Forms.Label();
+            this.gunhit_4 = new System.Windows.Forms.Label();
             this.gunpos_4_number = new System.Windows.Forms.NumericUpDown();
-            this.label66 = new System.Windows.Forms.Label();
+            this.gunpos_4 = new System.Windows.Forms.Label();
             this.gunskin_4_conbobox = new System.Windows.Forms.ComboBox();
-            this.label37 = new System.Windows.Forms.Label();
+            this.gunskin_4 = new System.Windows.Forms.Label();
             this.gunoath_4_checkbox = new System.Windows.Forms.CheckBox();
             this.gunfavor_4_number = new System.Windows.Forms.NumericUpDown();
-            this.label38 = new System.Windows.Forms.Label();
+            this.gunfavor_4 = new System.Windows.Forms.Label();
             this.gunskill2_4_number = new System.Windows.Forms.NumericUpDown();
             this.gunskill1_4_number = new System.Windows.Forms.NumericUpDown();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
+            this.gunskill2_4 = new System.Windows.Forms.Label();
+            this.gunskill1_4 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.gundummy_4_number = new System.Windows.Forms.NumericUpDown();
-            this.label42 = new System.Windows.Forms.Label();
+            this.gundummy_4 = new System.Windows.Forms.Label();
             this.gunrate_4_number = new System.Windows.Forms.NumericUpDown();
-            this.label43 = new System.Windows.Forms.Label();
+            this.gunfirespeed_4 = new System.Windows.Forms.Label();
             this.gundodge_4_number = new System.Windows.Forms.NumericUpDown();
-            this.label44 = new System.Windows.Forms.Label();
+            this.gundodge_4 = new System.Windows.Forms.Label();
             this.gunpow_4_number = new System.Windows.Forms.NumericUpDown();
-            this.label45 = new System.Windows.Forms.Label();
+            this.gunfire_4 = new System.Windows.Forms.Label();
             this.gunhp_4_number = new System.Windows.Forms.NumericUpDown();
-            this.label46 = new System.Windows.Forms.Label();
+            this.gunhp_4 = new System.Windows.Forms.Label();
             this.gunlv_4_number = new System.Windows.Forms.NumericUpDown();
-            this.label47 = new System.Windows.Forms.Label();
+            this.gunlv_4 = new System.Windows.Forms.Label();
             this.gunid_4_combobox = new System.Windows.Forms.ComboBox();
-            this.label48 = new System.Windows.Forms.Label();
+            this.gunid_4 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button20 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
+            this.set_gunpos_btn_3 = new System.Windows.Forms.Button();
+            this.gun_resetstat_3 = new System.Windows.Forms.Button();
             this.gunhit_3_number = new System.Windows.Forms.NumericUpDown();
-            this.label70 = new System.Windows.Forms.Label();
+            this.gunhit_3 = new System.Windows.Forms.Label();
             this.gunpos_3_number = new System.Windows.Forms.NumericUpDown();
-            this.label65 = new System.Windows.Forms.Label();
+            this.gunpos_3 = new System.Windows.Forms.Label();
             this.gunskin_3_conbobox = new System.Windows.Forms.ComboBox();
-            this.label25 = new System.Windows.Forms.Label();
+            this.gunskin_3 = new System.Windows.Forms.Label();
             this.gunoath_3_checkbox = new System.Windows.Forms.CheckBox();
             this.gunfavor_3_number = new System.Windows.Forms.NumericUpDown();
-            this.label26 = new System.Windows.Forms.Label();
+            this.gunfavor_3 = new System.Windows.Forms.Label();
             this.gunskill2_3_number = new System.Windows.Forms.NumericUpDown();
             this.gunskill1_3_number = new System.Windows.Forms.NumericUpDown();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
+            this.gunskill2_3 = new System.Windows.Forms.Label();
+            this.gunskill1_3 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.gundummy_3_number = new System.Windows.Forms.NumericUpDown();
-            this.label30 = new System.Windows.Forms.Label();
+            this.gundummy_3 = new System.Windows.Forms.Label();
             this.gunrate_3_number = new System.Windows.Forms.NumericUpDown();
-            this.label31 = new System.Windows.Forms.Label();
+            this.gunfirespeed_3 = new System.Windows.Forms.Label();
             this.gundodge_3_number = new System.Windows.Forms.NumericUpDown();
-            this.label32 = new System.Windows.Forms.Label();
+            this.gundodge_3 = new System.Windows.Forms.Label();
             this.gunpow_3_number = new System.Windows.Forms.NumericUpDown();
-            this.label33 = new System.Windows.Forms.Label();
+            this.gunfire_3 = new System.Windows.Forms.Label();
             this.gunhp_3_number = new System.Windows.Forms.NumericUpDown();
-            this.label34 = new System.Windows.Forms.Label();
+            this.gunhp_3 = new System.Windows.Forms.Label();
             this.gunlv_3_number = new System.Windows.Forms.NumericUpDown();
-            this.label35 = new System.Windows.Forms.Label();
+            this.gunlv_3 = new System.Windows.Forms.Label();
             this.gunid_3_combobox = new System.Windows.Forms.ComboBox();
-            this.label36 = new System.Windows.Forms.Label();
+            this.gunid_3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.set_gunpos_btn_2 = new System.Windows.Forms.Button();
+            this.gun_resetstat_2 = new System.Windows.Forms.Button();
             this.gunhit_2_number = new System.Windows.Forms.NumericUpDown();
-            this.label69 = new System.Windows.Forms.Label();
+            this.gunhit_2 = new System.Windows.Forms.Label();
             this.gunpos_2_number = new System.Windows.Forms.NumericUpDown();
-            this.label64 = new System.Windows.Forms.Label();
+            this.gunpos_2 = new System.Windows.Forms.Label();
             this.gunskin_2_conbobox = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
+            this.gunskin_2 = new System.Windows.Forms.Label();
             this.gunoath_2_checkbox = new System.Windows.Forms.CheckBox();
             this.gunfavor_2_number = new System.Windows.Forms.NumericUpDown();
-            this.label14 = new System.Windows.Forms.Label();
+            this.gunfavor_2 = new System.Windows.Forms.Label();
             this.gunskill2_2_number = new System.Windows.Forms.NumericUpDown();
             this.gunskill1_2_number = new System.Windows.Forms.NumericUpDown();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
+            this.gunskill2_2 = new System.Windows.Forms.Label();
+            this.gunskill1_2 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.gundummy_2_number = new System.Windows.Forms.NumericUpDown();
-            this.label18 = new System.Windows.Forms.Label();
+            this.gundummy_2 = new System.Windows.Forms.Label();
             this.gunrate_2_number = new System.Windows.Forms.NumericUpDown();
-            this.label19 = new System.Windows.Forms.Label();
+            this.gunfirespeed_2 = new System.Windows.Forms.Label();
             this.gundodge_2_number = new System.Windows.Forms.NumericUpDown();
-            this.label20 = new System.Windows.Forms.Label();
+            this.gundodge_2 = new System.Windows.Forms.Label();
             this.gunpow_2_number = new System.Windows.Forms.NumericUpDown();
-            this.label21 = new System.Windows.Forms.Label();
+            this.gunfire_2 = new System.Windows.Forms.Label();
             this.gunhp_2_number = new System.Windows.Forms.NumericUpDown();
-            this.label22 = new System.Windows.Forms.Label();
+            this.gunhp_2 = new System.Windows.Forms.Label();
             this.gunlv_2_number = new System.Windows.Forms.NumericUpDown();
-            this.label23 = new System.Windows.Forms.Label();
+            this.gunlv_2 = new System.Windows.Forms.Label();
             this.gunid_2_combobox = new System.Windows.Forms.ComboBox();
-            this.label24 = new System.Windows.Forms.Label();
+            this.gunid_2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.set_gunpos_btn_1 = new System.Windows.Forms.Button();
+            this.gun_resetstat_1 = new System.Windows.Forms.Button();
             this.gunhit_1_number = new System.Windows.Forms.NumericUpDown();
-            this.label68 = new System.Windows.Forms.Label();
+            this.gunhit_1 = new System.Windows.Forms.Label();
             this.gunpos_1_number = new System.Windows.Forms.NumericUpDown();
-            this.label63 = new System.Windows.Forms.Label();
+            this.gunpos_1 = new System.Windows.Forms.Label();
             this.gunskin_1_conbobox = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.gunskin_1 = new System.Windows.Forms.Label();
             this.gunoath_1_checkbox = new System.Windows.Forms.CheckBox();
             this.gunfavor_1_number = new System.Windows.Forms.NumericUpDown();
-            this.label11 = new System.Windows.Forms.Label();
+            this.gunfavor_1 = new System.Windows.Forms.Label();
             this.gunskill2_1_number = new System.Windows.Forms.NumericUpDown();
             this.gunskill1_1_number = new System.Windows.Forms.NumericUpDown();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.gunskill2_1 = new System.Windows.Forms.Label();
+            this.gunskill1_1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.gundummy_1_number = new System.Windows.Forms.NumericUpDown();
-            this.label7 = new System.Windows.Forms.Label();
+            this.gundummy_1 = new System.Windows.Forms.Label();
             this.gunrate_1_number = new System.Windows.Forms.NumericUpDown();
-            this.label6 = new System.Windows.Forms.Label();
+            this.gunfirespeed_1 = new System.Windows.Forms.Label();
             this.gundodge_1_number = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
+            this.gundodge_1 = new System.Windows.Forms.Label();
             this.gunpow_1_number = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
+            this.gunfire_1 = new System.Windows.Forms.Label();
             this.gunhp_1_number = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
+            this.gunhp_1 = new System.Windows.Forms.Label();
             this.gunlv_1_number = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
+            this.gunlv_1 = new System.Windows.Forms.Label();
             this.gunid_1_combobox = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.gunid_1 = new System.Windows.Forms.Label();
+            this.fire_support_unit_set = new System.Windows.Forms.TabPage();
+            this.groupBox21 = new System.Windows.Forms.GroupBox();
+            this.sqdskill3_6 = new System.Windows.Forms.Label();
+            this.sqdreload_6 = new System.Windows.Forms.Label();
+            this.sqdskill2_6 = new System.Windows.Forms.Label();
+            this.sqdhit_6 = new System.Windows.Forms.Label();
+            this.sqdskill1_6 = new System.Windows.Forms.Label();
+            this.sqdbreak_6 = new System.Windows.Forms.Label();
+            this.sqddamage_6 = new System.Windows.Forms.Label();
+            this.sqd_6_skill3 = new System.Windows.Forms.NumericUpDown();
+            this.sqd_6_skill2 = new System.Windows.Forms.NumericUpDown();
+            this.sqd_6_reload = new System.Windows.Forms.NumericUpDown();
+            this.sqd_6_skill1 = new System.Windows.Forms.NumericUpDown();
+            this.sqd_6_hit = new System.Windows.Forms.NumericUpDown();
+            this.sqd_6_break = new System.Windows.Forms.NumericUpDown();
+            this.sqd_6_damage = new System.Windows.Forms.NumericUpDown();
+            this.sqd_6_lv = new System.Windows.Forms.NumericUpDown();
+            this.sqdlv_6 = new System.Windows.Forms.Label();
             this.label116 = new System.Windows.Forms.Label();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
-            this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.set_fire = new System.Windows.Forms.GroupBox();
+            this.sqdswitch_6 = new System.Windows.Forms.CheckBox();
             this.sqdswitch_5 = new System.Windows.Forms.CheckBox();
             this.sqdswitch_4 = new System.Windows.Forms.CheckBox();
             this.sqdswitch_3 = new System.Windows.Forms.CheckBox();
             this.sqdswitch_2 = new System.Windows.Forms.CheckBox();
             this.sqdswitch_1 = new System.Windows.Forms.CheckBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.sqd_apply = new System.Windows.Forms.Button();
+            this.sqd_load = new System.Windows.Forms.Button();
+            this.sqd_save = new System.Windows.Forms.Button();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.label107 = new System.Windows.Forms.Label();
-            this.label108 = new System.Windows.Forms.Label();
-            this.label109 = new System.Windows.Forms.Label();
-            this.label110 = new System.Windows.Forms.Label();
-            this.label111 = new System.Windows.Forms.Label();
-            this.label112 = new System.Windows.Forms.Label();
-            this.label113 = new System.Windows.Forms.Label();
+            this.sqdskill3_5 = new System.Windows.Forms.Label();
+            this.sqdreload_5 = new System.Windows.Forms.Label();
+            this.sqdskill2_5 = new System.Windows.Forms.Label();
+            this.sqdhit_5 = new System.Windows.Forms.Label();
+            this.sqdskill1_5 = new System.Windows.Forms.Label();
+            this.sqdbreak_5 = new System.Windows.Forms.Label();
+            this.sqddamage_5 = new System.Windows.Forms.Label();
             this.sqd_5_skill3 = new System.Windows.Forms.NumericUpDown();
             this.sqd_5_skill2 = new System.Windows.Forms.NumericUpDown();
             this.sqd_5_reload = new System.Windows.Forms.NumericUpDown();
@@ -238,15 +256,15 @@
             this.sqd_5_break = new System.Windows.Forms.NumericUpDown();
             this.sqd_5_damage = new System.Windows.Forms.NumericUpDown();
             this.sqd_5_lv = new System.Windows.Forms.NumericUpDown();
-            this.label114 = new System.Windows.Forms.Label();
+            this.sqdlv_5 = new System.Windows.Forms.Label();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.label99 = new System.Windows.Forms.Label();
-            this.label100 = new System.Windows.Forms.Label();
-            this.label101 = new System.Windows.Forms.Label();
-            this.label102 = new System.Windows.Forms.Label();
-            this.label103 = new System.Windows.Forms.Label();
-            this.label104 = new System.Windows.Forms.Label();
-            this.label105 = new System.Windows.Forms.Label();
+            this.sqdskill3_4 = new System.Windows.Forms.Label();
+            this.sqdreload_4 = new System.Windows.Forms.Label();
+            this.sqdskill2_4 = new System.Windows.Forms.Label();
+            this.sqdhit_4 = new System.Windows.Forms.Label();
+            this.sqdskill1_4 = new System.Windows.Forms.Label();
+            this.sqdbreak_4 = new System.Windows.Forms.Label();
+            this.sqddamage_4 = new System.Windows.Forms.Label();
             this.sqd_4_skill3 = new System.Windows.Forms.NumericUpDown();
             this.sqd_4_skill2 = new System.Windows.Forms.NumericUpDown();
             this.sqd_4_reload = new System.Windows.Forms.NumericUpDown();
@@ -255,15 +273,15 @@
             this.sqd_4_break = new System.Windows.Forms.NumericUpDown();
             this.sqd_4_damage = new System.Windows.Forms.NumericUpDown();
             this.sqd_4_lv = new System.Windows.Forms.NumericUpDown();
-            this.label106 = new System.Windows.Forms.Label();
+            this.sqdlv_4 = new System.Windows.Forms.Label();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.label91 = new System.Windows.Forms.Label();
-            this.label92 = new System.Windows.Forms.Label();
-            this.label93 = new System.Windows.Forms.Label();
-            this.label94 = new System.Windows.Forms.Label();
-            this.label95 = new System.Windows.Forms.Label();
-            this.label96 = new System.Windows.Forms.Label();
-            this.label97 = new System.Windows.Forms.Label();
+            this.sqdskill3_3 = new System.Windows.Forms.Label();
+            this.sqdreload_3 = new System.Windows.Forms.Label();
+            this.sqdskill2_3 = new System.Windows.Forms.Label();
+            this.sqdhit_3 = new System.Windows.Forms.Label();
+            this.sqdskill1_3 = new System.Windows.Forms.Label();
+            this.sqdbreak_3 = new System.Windows.Forms.Label();
+            this.sqddamage_3 = new System.Windows.Forms.Label();
             this.sqd_3_skill3 = new System.Windows.Forms.NumericUpDown();
             this.sqd_3_skill2 = new System.Windows.Forms.NumericUpDown();
             this.sqd_3_reload = new System.Windows.Forms.NumericUpDown();
@@ -272,15 +290,15 @@
             this.sqd_3_break = new System.Windows.Forms.NumericUpDown();
             this.sqd_3_damage = new System.Windows.Forms.NumericUpDown();
             this.sqd_3_lv = new System.Windows.Forms.NumericUpDown();
-            this.label98 = new System.Windows.Forms.Label();
+            this.sqdlv_3 = new System.Windows.Forms.Label();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.label83 = new System.Windows.Forms.Label();
-            this.label84 = new System.Windows.Forms.Label();
-            this.label85 = new System.Windows.Forms.Label();
-            this.label86 = new System.Windows.Forms.Label();
-            this.label87 = new System.Windows.Forms.Label();
-            this.label88 = new System.Windows.Forms.Label();
-            this.label89 = new System.Windows.Forms.Label();
+            this.sqdskill3_2 = new System.Windows.Forms.Label();
+            this.sqdreload_2 = new System.Windows.Forms.Label();
+            this.sqdskill2_2 = new System.Windows.Forms.Label();
+            this.sqdhit_2 = new System.Windows.Forms.Label();
+            this.sqdskill1_2 = new System.Windows.Forms.Label();
+            this.sqdbreak_2 = new System.Windows.Forms.Label();
+            this.sqddamage_2 = new System.Windows.Forms.Label();
             this.sqd_2_skill3 = new System.Windows.Forms.NumericUpDown();
             this.sqd_2_skill2 = new System.Windows.Forms.NumericUpDown();
             this.sqd_2_reload = new System.Windows.Forms.NumericUpDown();
@@ -289,15 +307,15 @@
             this.sqd_2_break = new System.Windows.Forms.NumericUpDown();
             this.sqd_2_damage = new System.Windows.Forms.NumericUpDown();
             this.sqd_2_lv = new System.Windows.Forms.NumericUpDown();
-            this.label90 = new System.Windows.Forms.Label();
+            this.sqdlv_2 = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.label82 = new System.Windows.Forms.Label();
-            this.label79 = new System.Windows.Forms.Label();
-            this.label81 = new System.Windows.Forms.Label();
-            this.label78 = new System.Windows.Forms.Label();
-            this.label80 = new System.Windows.Forms.Label();
-            this.label77 = new System.Windows.Forms.Label();
-            this.label76 = new System.Windows.Forms.Label();
+            this.sqdskill3_1 = new System.Windows.Forms.Label();
+            this.sqdreload_1 = new System.Windows.Forms.Label();
+            this.sqdskill2_1 = new System.Windows.Forms.Label();
+            this.sqdhit_1 = new System.Windows.Forms.Label();
+            this.sqdskill1_1 = new System.Windows.Forms.Label();
+            this.sqdbreak_1 = new System.Windows.Forms.Label();
+            this.sqddamage_1 = new System.Windows.Forms.Label();
             this.sqd_1_skill3 = new System.Windows.Forms.NumericUpDown();
             this.sqd_1_skill2 = new System.Windows.Forms.NumericUpDown();
             this.sqd_1_reload = new System.Windows.Forms.NumericUpDown();
@@ -306,64 +324,81 @@
             this.sqd_1_break = new System.Windows.Forms.NumericUpDown();
             this.sqd_1_damage = new System.Windows.Forms.NumericUpDown();
             this.sqd_1_lv = new System.Windows.Forms.NumericUpDown();
-            this.label75 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.sqdlv_1 = new System.Windows.Forms.Label();
+            this.equip_set = new System.Windows.Forms.TabPage();
+            this.equip_autoapply_desc = new System.Windows.Forms.Label();
             this.label121 = new System.Windows.Forms.Label();
-            this.grpbox21 = new System.Windows.Forms.GroupBox();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.groupBox20 = new System.Windows.Forms.GroupBox();
+            this.groupBox_equip_setting = new System.Windows.Forms.GroupBox();
+            this.equip_removeall = new System.Windows.Forms.Button();
+            this.equip_load = new System.Windows.Forms.Button();
+            this.equip_save = new System.Windows.Forms.Button();
+            this.groupBox_equip_5 = new System.Windows.Forms.GroupBox();
             this.eq5_gun_name = new System.Windows.Forms.Label();
             this.setEquip_53 = new System.Windows.Forms.Button();
             this.setEquip_52 = new System.Windows.Forms.Button();
             this.setEquip_51 = new System.Windows.Forms.Button();
-            this.groupBox19 = new System.Windows.Forms.GroupBox();
+            this.groupBox_equip_4 = new System.Windows.Forms.GroupBox();
             this.eq4_gun_name = new System.Windows.Forms.Label();
             this.setEquip_43 = new System.Windows.Forms.Button();
             this.setEquip_42 = new System.Windows.Forms.Button();
             this.setEquip_41 = new System.Windows.Forms.Button();
-            this.groupBox18 = new System.Windows.Forms.GroupBox();
+            this.groupBox_equip_3 = new System.Windows.Forms.GroupBox();
             this.eq3_gun_name = new System.Windows.Forms.Label();
             this.setEquip_33 = new System.Windows.Forms.Button();
             this.setEquip_32 = new System.Windows.Forms.Button();
             this.setEquip_31 = new System.Windows.Forms.Button();
-            this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.groupBox_equip_2 = new System.Windows.Forms.GroupBox();
             this.eq2_gun_name = new System.Windows.Forms.Label();
             this.setEquip_23 = new System.Windows.Forms.Button();
             this.setEquip_22 = new System.Windows.Forms.Button();
             this.setEquip_21 = new System.Windows.Forms.Button();
-            this.groupBox16 = new System.Windows.Forms.GroupBox();
+            this.groupBox_equip_1 = new System.Windows.Forms.GroupBox();
             this.eq1_gun_name = new System.Windows.Forms.Label();
             this.setEquip_13 = new System.Windows.Forms.Button();
             this.setEquip_12 = new System.Windows.Forms.Button();
             this.setEquip_11 = new System.Windows.Forms.Button();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.button18 = new System.Windows.Forms.Button();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button14 = new System.Windows.Forms.Button();
-            this.groupBox15 = new System.Windows.Forms.GroupBox();
-            this.label120 = new System.Windows.Forms.Label();
-            this.label119 = new System.Windows.Forms.Label();
-            this.label118 = new System.Windows.Forms.Label();
-            this.label117 = new System.Windows.Forms.Label();
+            this.server_set = new System.Windows.Forms.TabPage();
+            this.server_mode = new System.Windows.Forms.GroupBox();
+            this.theaterbattle = new System.Windows.Forms.RadioButton();
+            //this.normalbattle = new System.Windows.Forms.RadioButton();
+            this.server_viewBattlelog = new System.Windows.Forms.Button();
+            this.clearlog = new System.Windows.Forms.LinkLabel();
+            this.server_hideip = new System.Windows.Forms.CheckBox();
+            this.server_applyID = new System.Windows.Forms.Button();
+            this.server_information = new System.Windows.Forms.GroupBox();
+            this.server_port = new System.Windows.Forms.Label();
+            this.server_ip = new System.Windows.Forms.Label();
+            this.server_settedID = new System.Windows.Forms.Label();
+            this.server_state = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.leader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.bosshp = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.leaderhp = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.missionName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label74 = new System.Windows.Forms.Label();
+            this.server_setport = new System.Windows.Forms.Label();
             this.portnum = new System.Windows.Forms.NumericUpDown();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.label73 = new System.Windows.Forms.Label();
+            this.server_referenceID = new System.Windows.Forms.LinkLabel();
+            this.server_log = new System.Windows.Forms.Label();
             this.LogTextBox = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.server_start = new System.Windows.Forms.Button();
             this.Boss_HP_textbox = new System.Windows.Forms.NumericUpDown();
-            this.label62 = new System.Windows.Forms.Label();
+            this.boss_hp = new System.Windows.Forms.Label();
             this.enemy_team_id_combobox = new System.Windows.Forms.ComboBox();
-            this.label61 = new System.Windows.Forms.Label();
+            this.enemy_group = new System.Windows.Forms.Label();
+            this.etc_set = new System.Windows.Forms.TabPage();
+            this.groupBox25 = new System.Windows.Forms.GroupBox();
+            this.Language_set = new System.Windows.Forms.Button();
+            this.languageList_Combobox = new System.Windows.Forms.ComboBox();
+            this.etc_progsetting = new System.Windows.Forms.GroupBox();
+            this.nolog_checkbox = new System.Windows.Forms.CheckBox();
+            this.updatecheck_checkbox = new System.Windows.Forms.CheckBox();
+            this.showdetailLog_checkbox = new System.Windows.Forms.CheckBox();
+            this.etc_basicinformation = new System.Windows.Forms.GroupBox();
+            this.commander_exp = new System.Windows.Forms.TextBox();
+            this.com_exp = new System.Windows.Forms.Label();
+            this.commander_name = new System.Windows.Forms.TextBox();
+            this.com_name = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -372,12 +407,15 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.saveFileDialog3 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog3 = new System.Windows.Forms.OpenFileDialog();
-            this.label123 = new System.Windows.Forms.Label();
+            //this.groupBox22 = new System.Windows.Forms.GroupBox();
+            this.normalbattle = new System.Windows.Forms.RadioButton();
+            //this.theaterbattle = new System.Windows.Forms.RadioButton();
+            //this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.gun_set.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.groupBox7.SuspendLayout();
+            this.gun_setfire.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunhit_5_number)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunpos_5_number)).BeginInit();
@@ -438,9 +476,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.gunpow_1_number)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunhp_1_number)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunlv_1_number)).BeginInit();
-            this.tabPage4.SuspendLayout();
+            this.fire_support_unit_set.SuspendLayout();
+            this.groupBox21.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sqd_6_skill3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sqd_6_skill2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sqd_6_reload)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sqd_6_skill1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sqd_6_hit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sqd_6_break)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sqd_6_damage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sqd_6_lv)).BeginInit();
             this.groupBox13.SuspendLayout();
-            this.groupBox14.SuspendLayout();
+            this.set_fire.SuspendLayout();
             this.groupBox12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sqd_5_skill3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sqd_5_skill2)).BeginInit();
@@ -486,18 +533,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.sqd_1_break)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sqd_1_damage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sqd_1_lv)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            this.grpbox21.SuspendLayout();
-            this.groupBox20.SuspendLayout();
-            this.groupBox19.SuspendLayout();
-            this.groupBox18.SuspendLayout();
-            this.groupBox17.SuspendLayout();
-            this.groupBox16.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.groupBox15.SuspendLayout();
+            this.equip_set.SuspendLayout();
+            this.groupBox_equip_setting.SuspendLayout();
+            this.groupBox_equip_5.SuspendLayout();
+            this.groupBox_equip_4.SuspendLayout();
+            this.groupBox_equip_3.SuspendLayout();
+            this.groupBox_equip_2.SuspendLayout();
+            this.groupBox_equip_1.SuspendLayout();
+            this.server_set.SuspendLayout();
+            this.server_mode.SuspendLayout();
+            this.server_information.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.portnum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Boss_HP_textbox)).BeginInit();
+            this.etc_set.SuspendLayout();
+            this.groupBox25.SuspendLayout();
+            this.etc_progsetting.SuspendLayout();
+            this.etc_basicinformation.SuspendLayout();
             this.panel1.SuspendLayout();
+            //this.groupBox22.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -505,32 +558,33 @@
             this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.gun_set);
+            this.tabControl1.Controls.Add(this.fire_support_unit_set);
+            this.tabControl1.Controls.Add(this.equip_set);
+            this.tabControl1.Controls.Add(this.server_set);
+            this.tabControl1.Controls.Add(this.etc_set);
             this.tabControl1.Location = new System.Drawing.Point(5, 9);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(883, 722);
+            this.tabControl1.Size = new System.Drawing.Size(883, 726);
             this.tabControl1.TabIndex = 0;
             // 
-            // tabPage1
+            // gun_set
             // 
-            this.tabPage1.Controls.Add(this.label115);
-            this.tabPage1.Controls.Add(this.groupBox6);
-            this.tabPage1.Controls.Add(this.groupBox5);
-            this.tabPage1.Controls.Add(this.groupBox4);
-            this.tabPage1.Controls.Add(this.groupBox3);
-            this.tabPage1.Controls.Add(this.groupBox2);
-            this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(875, 696);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "인형 설정";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.gun_set.Controls.Add(this.label115);
+            this.gun_set.Controls.Add(this.groupBox6);
+            this.gun_set.Controls.Add(this.groupBox5);
+            this.gun_set.Controls.Add(this.groupBox4);
+            this.gun_set.Controls.Add(this.groupBox3);
+            this.gun_set.Controls.Add(this.groupBox2);
+            this.gun_set.Controls.Add(this.groupBox1);
+            this.gun_set.Location = new System.Drawing.Point(4, 22);
+            this.gun_set.Name = "gun_set";
+            this.gun_set.Padding = new System.Windows.Forms.Padding(3);
+            this.gun_set.Size = new System.Drawing.Size(875, 700);
+            this.gun_set.TabIndex = 0;
+            this.gun_set.Text = "인형 설정";
+            this.gun_set.UseVisualStyleBackColor = true;
             // 
             // label115
             // 
@@ -544,13 +598,13 @@
             // 
             this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox6.Controls.Add(this.button23);
-            this.groupBox6.Controls.Add(this.label122);
+            this.groupBox6.Controls.Add(this.gun_loadfromserver);
+            this.groupBox6.Controls.Add(this.gun_previewpos);
             this.groupBox6.Controls.Add(this.tableLayoutPanel1);
-            this.groupBox6.Controls.Add(this.groupBox7);
-            this.groupBox6.Controls.Add(this.button4);
-            this.groupBox6.Controls.Add(this.button2);
-            this.groupBox6.Controls.Add(this.button1);
+            this.groupBox6.Controls.Add(this.gun_setfire);
+            this.groupBox6.Controls.Add(this.gun_apply);
+            this.groupBox6.Controls.Add(this.gun_load);
+            this.groupBox6.Controls.Add(this.gun_save);
             this.groupBox6.Location = new System.Drawing.Point(731, 6);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(136, 668);
@@ -558,24 +612,24 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "설정";
             // 
-            // button23
+            // gun_loadfromserver
             // 
-            this.button23.Location = new System.Drawing.Point(15, 128);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(105, 34);
-            this.button23.TabIndex = 30;
-            this.button23.Text = "유저 정보로부터 불러오기";
-            this.button23.UseVisualStyleBackColor = true;
-            this.button23.Click += new System.EventHandler(this.Button23_Click);
+            this.gun_loadfromserver.Location = new System.Drawing.Point(15, 128);
+            this.gun_loadfromserver.Name = "gun_loadfromserver";
+            this.gun_loadfromserver.Size = new System.Drawing.Size(105, 34);
+            this.gun_loadfromserver.TabIndex = 30;
+            this.gun_loadfromserver.Text = "유저 정보로부터 불러오기";
+            this.gun_loadfromserver.UseVisualStyleBackColor = true;
+            this.gun_loadfromserver.Click += new System.EventHandler(this.Button23_Click);
             // 
-            // label122
+            // gun_previewpos
             // 
-            this.label122.AutoSize = true;
-            this.label122.Location = new System.Drawing.Point(7, 335);
-            this.label122.Name = "label122";
-            this.label122.Size = new System.Drawing.Size(81, 12);
-            this.label122.TabIndex = 29;
-            this.label122.Text = "진형 미리보기";
+            this.gun_previewpos.AutoSize = true;
+            this.gun_previewpos.Location = new System.Drawing.Point(7, 335);
+            this.gun_previewpos.Name = "gun_previewpos";
+            this.gun_previewpos.Size = new System.Drawing.Size(81, 12);
+            this.gun_previewpos.TabIndex = 29;
+            this.gun_previewpos.Text = "진형 미리보기";
             // 
             // tableLayoutPanel1
             // 
@@ -607,7 +661,7 @@
             this.postile_7.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.postile_7.Location = new System.Drawing.Point(5, 5);
             this.postile_7.Name = "postile_7";
-            this.postile_7.Size = new System.Drawing.Size(32, 32);
+            this.postile_7.Size = new System.Drawing.Size(30, 32);
             this.postile_7.TabIndex = 0;
             this.postile_7.UseVisualStyleBackColor = true;
             this.postile_7.MouseEnter += new System.EventHandler(this.PosTile_Hover);
@@ -617,7 +671,7 @@
             this.postile_8.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.postile_8.Location = new System.Drawing.Point(45, 5);
             this.postile_8.Name = "postile_8";
-            this.postile_8.Size = new System.Drawing.Size(32, 32);
+            this.postile_8.Size = new System.Drawing.Size(31, 32);
             this.postile_8.TabIndex = 1;
             this.postile_8.UseVisualStyleBackColor = true;
             this.postile_8.MouseEnter += new System.EventHandler(this.PosTile_Hover);
@@ -627,7 +681,7 @@
             this.postile_9.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.postile_9.Location = new System.Drawing.Point(86, 5);
             this.postile_9.Name = "postile_9";
-            this.postile_9.Size = new System.Drawing.Size(32, 32);
+            this.postile_9.Size = new System.Drawing.Size(31, 32);
             this.postile_9.TabIndex = 2;
             this.postile_9.UseVisualStyleBackColor = true;
             this.postile_9.MouseEnter += new System.EventHandler(this.PosTile_Hover);
@@ -637,7 +691,7 @@
             this.postile_4.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.postile_4.Location = new System.Drawing.Point(5, 46);
             this.postile_4.Name = "postile_4";
-            this.postile_4.Size = new System.Drawing.Size(32, 32);
+            this.postile_4.Size = new System.Drawing.Size(30, 32);
             this.postile_4.TabIndex = 3;
             this.postile_4.UseVisualStyleBackColor = true;
             this.postile_4.MouseEnter += new System.EventHandler(this.PosTile_Hover);
@@ -647,7 +701,7 @@
             this.postile_5.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.postile_5.Location = new System.Drawing.Point(45, 46);
             this.postile_5.Name = "postile_5";
-            this.postile_5.Size = new System.Drawing.Size(32, 32);
+            this.postile_5.Size = new System.Drawing.Size(31, 32);
             this.postile_5.TabIndex = 4;
             this.postile_5.UseVisualStyleBackColor = true;
             this.postile_5.MouseEnter += new System.EventHandler(this.PosTile_Hover);
@@ -657,7 +711,7 @@
             this.postile_1.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.postile_1.Location = new System.Drawing.Point(5, 87);
             this.postile_1.Name = "postile_1";
-            this.postile_1.Size = new System.Drawing.Size(32, 32);
+            this.postile_1.Size = new System.Drawing.Size(30, 32);
             this.postile_1.TabIndex = 6;
             this.postile_1.UseVisualStyleBackColor = true;
             this.postile_1.MouseEnter += new System.EventHandler(this.PosTile_Hover);
@@ -667,7 +721,7 @@
             this.postile_2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.postile_2.Location = new System.Drawing.Point(45, 87);
             this.postile_2.Name = "postile_2";
-            this.postile_2.Size = new System.Drawing.Size(32, 32);
+            this.postile_2.Size = new System.Drawing.Size(31, 32);
             this.postile_2.TabIndex = 7;
             this.postile_2.UseVisualStyleBackColor = true;
             this.postile_2.MouseEnter += new System.EventHandler(this.PosTile_Hover);
@@ -677,7 +731,7 @@
             this.postile_6.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.postile_6.Location = new System.Drawing.Point(86, 46);
             this.postile_6.Name = "postile_6";
-            this.postile_6.Size = new System.Drawing.Size(32, 32);
+            this.postile_6.Size = new System.Drawing.Size(31, 32);
             this.postile_6.TabIndex = 5;
             this.postile_6.UseVisualStyleBackColor = true;
             this.postile_6.MouseEnter += new System.EventHandler(this.PosTile_Hover);
@@ -687,24 +741,24 @@
             this.postile_3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.postile_3.Location = new System.Drawing.Point(86, 87);
             this.postile_3.Name = "postile_3";
-            this.postile_3.Size = new System.Drawing.Size(32, 32);
+            this.postile_3.Size = new System.Drawing.Size(31, 32);
             this.postile_3.TabIndex = 8;
             this.postile_3.UseVisualStyleBackColor = true;
             this.postile_3.MouseEnter += new System.EventHandler(this.PosTile_Hover);
             // 
-            // groupBox7
+            // gun_setfire
             // 
-            this.groupBox7.Controls.Add(this.enable_1);
-            this.groupBox7.Controls.Add(this.enable_5);
-            this.groupBox7.Controls.Add(this.enable_2);
-            this.groupBox7.Controls.Add(this.enable_4);
-            this.groupBox7.Controls.Add(this.enable_3);
-            this.groupBox7.Location = new System.Drawing.Point(6, 177);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(125, 144);
-            this.groupBox7.TabIndex = 26;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "출격";
+            this.gun_setfire.Controls.Add(this.enable_1);
+            this.gun_setfire.Controls.Add(this.enable_5);
+            this.gun_setfire.Controls.Add(this.enable_2);
+            this.gun_setfire.Controls.Add(this.enable_4);
+            this.gun_setfire.Controls.Add(this.enable_3);
+            this.gun_setfire.Location = new System.Drawing.Point(6, 177);
+            this.gun_setfire.Name = "gun_setfire";
+            this.gun_setfire.Size = new System.Drawing.Size(125, 144);
+            this.gun_setfire.TabIndex = 26;
+            this.gun_setfire.TabStop = false;
+            this.gun_setfire.Text = "출격";
             // 
             // enable_1
             // 
@@ -772,72 +826,72 @@
             this.enable_3.UseVisualStyleBackColor = true;
             this.enable_3.CheckedChanged += new System.EventHandler(this.enable_3_CheckedChanged);
             // 
-            // button4
+            // gun_apply
             // 
-            this.button4.Location = new System.Drawing.Point(15, 635);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(105, 23);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "결정";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            this.button4.MouseHover += new System.EventHandler(this.button4_MouseHover);
+            this.gun_apply.Location = new System.Drawing.Point(15, 635);
+            this.gun_apply.Name = "gun_apply";
+            this.gun_apply.Size = new System.Drawing.Size(105, 23);
+            this.gun_apply.TabIndex = 3;
+            this.gun_apply.Text = "결정";
+            this.gun_apply.UseVisualStyleBackColor = true;
+            this.gun_apply.Click += new System.EventHandler(this.button4_Click);
+            this.gun_apply.MouseHover += new System.EventHandler(this.button4_MouseHover);
             // 
-            // button2
+            // gun_load
             // 
-            this.button2.Location = new System.Drawing.Point(15, 83);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(105, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "불러오기";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            this.button2.MouseHover += new System.EventHandler(this.button2_MouseHover);
+            this.gun_load.Location = new System.Drawing.Point(15, 83);
+            this.gun_load.Name = "gun_load";
+            this.gun_load.Size = new System.Drawing.Size(105, 23);
+            this.gun_load.TabIndex = 1;
+            this.gun_load.Text = "불러오기";
+            this.gun_load.UseVisualStyleBackColor = true;
+            this.gun_load.Click += new System.EventHandler(this.button2_Click);
+            this.gun_load.MouseHover += new System.EventHandler(this.button2_MouseHover);
             // 
-            // button1
+            // gun_save
             // 
-            this.button1.Location = new System.Drawing.Point(15, 41);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "저장";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            this.button1.MouseHover += new System.EventHandler(this.button1_MouseHover);
+            this.gun_save.Location = new System.Drawing.Point(15, 41);
+            this.gun_save.Name = "gun_save";
+            this.gun_save.Size = new System.Drawing.Size(105, 23);
+            this.gun_save.TabIndex = 0;
+            this.gun_save.Text = "저장";
+            this.gun_save.UseVisualStyleBackColor = true;
+            this.gun_save.Click += new System.EventHandler(this.button1_Click);
+            this.gun_save.MouseHover += new System.EventHandler(this.button1_MouseHover);
             // 
             // groupBox5
             // 
             this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.groupBox5.Controls.Add(this.button22);
-            this.groupBox5.Controls.Add(this.button13);
+            this.groupBox5.Controls.Add(this.set_gunpos_btn_5);
+            this.groupBox5.Controls.Add(this.gun_resetstat_5);
             this.groupBox5.Controls.Add(this.gunhit_5_number);
-            this.groupBox5.Controls.Add(this.label72);
+            this.groupBox5.Controls.Add(this.gunhit_5);
             this.groupBox5.Controls.Add(this.gunpos_5_number);
-            this.groupBox5.Controls.Add(this.label67);
+            this.groupBox5.Controls.Add(this.gunpos_5);
             this.groupBox5.Controls.Add(this.gunskin_5_conbobox);
-            this.groupBox5.Controls.Add(this.label49);
+            this.groupBox5.Controls.Add(this.gunskin_5);
             this.groupBox5.Controls.Add(this.gunoath_5_checkbox);
             this.groupBox5.Controls.Add(this.gunfavor_5_number);
-            this.groupBox5.Controls.Add(this.label50);
+            this.groupBox5.Controls.Add(this.gunfavor_5);
             this.groupBox5.Controls.Add(this.gunskill2_5_number);
             this.groupBox5.Controls.Add(this.gunskill1_5_number);
-            this.groupBox5.Controls.Add(this.label51);
-            this.groupBox5.Controls.Add(this.label52);
+            this.groupBox5.Controls.Add(this.gunskill2_5);
+            this.groupBox5.Controls.Add(this.gunskill1_5);
             this.groupBox5.Controls.Add(this.label53);
             this.groupBox5.Controls.Add(this.gundummy_5_number);
-            this.groupBox5.Controls.Add(this.label54);
+            this.groupBox5.Controls.Add(this.gundummy_5);
             this.groupBox5.Controls.Add(this.gunrate_5_number);
-            this.groupBox5.Controls.Add(this.label55);
+            this.groupBox5.Controls.Add(this.gunfirespeed_5);
             this.groupBox5.Controls.Add(this.gundodge_5_number);
-            this.groupBox5.Controls.Add(this.label56);
+            this.groupBox5.Controls.Add(this.gundodge_5);
             this.groupBox5.Controls.Add(this.gunpow_5_number);
-            this.groupBox5.Controls.Add(this.label57);
+            this.groupBox5.Controls.Add(this.gunfire_5);
             this.groupBox5.Controls.Add(this.gunhp_5_number);
-            this.groupBox5.Controls.Add(this.label58);
+            this.groupBox5.Controls.Add(this.gunhp_5);
             this.groupBox5.Controls.Add(this.gunlv_5_number);
-            this.groupBox5.Controls.Add(this.label59);
+            this.groupBox5.Controls.Add(this.gunlv_5);
             this.groupBox5.Controls.Add(this.gunid_5_combobox);
-            this.groupBox5.Controls.Add(this.label60);
+            this.groupBox5.Controls.Add(this.gunid_5);
             this.groupBox5.Location = new System.Drawing.Point(586, 6);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(139, 668);
@@ -845,26 +899,26 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "5번 인형";
             // 
-            // button22
+            // set_gunpos_btn_5
             // 
-            this.button22.Location = new System.Drawing.Point(66, 567);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(63, 23);
-            this.button22.TabIndex = 29;
-            this.button22.Text = "설정";
-            this.button22.UseVisualStyleBackColor = true;
-            this.button22.Click += new System.EventHandler(this.Button22_Click);
+            this.set_gunpos_btn_5.Location = new System.Drawing.Point(66, 567);
+            this.set_gunpos_btn_5.Name = "set_gunpos_btn_5";
+            this.set_gunpos_btn_5.Size = new System.Drawing.Size(63, 23);
+            this.set_gunpos_btn_5.TabIndex = 29;
+            this.set_gunpos_btn_5.Text = "설정";
+            this.set_gunpos_btn_5.UseVisualStyleBackColor = true;
+            this.set_gunpos_btn_5.Click += new System.EventHandler(this.Button22_Click);
             // 
-            // button13
+            // gun_resetstat_5
             // 
-            this.button13.Location = new System.Drawing.Point(9, 635);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(119, 23);
-            this.button13.TabIndex = 28;
-            this.button13.Text = "기본스텟 초기화";
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
-            this.button13.MouseHover += new System.EventHandler(this.button9_MouseHover);
+            this.gun_resetstat_5.Location = new System.Drawing.Point(9, 635);
+            this.gun_resetstat_5.Name = "gun_resetstat_5";
+            this.gun_resetstat_5.Size = new System.Drawing.Size(119, 23);
+            this.gun_resetstat_5.TabIndex = 28;
+            this.gun_resetstat_5.Text = "기본스텟 초기화";
+            this.gun_resetstat_5.UseVisualStyleBackColor = true;
+            this.gun_resetstat_5.Click += new System.EventHandler(this.button13_Click);
+            this.gun_resetstat_5.MouseHover += new System.EventHandler(this.button9_MouseHover);
             // 
             // gunhit_5_number
             // 
@@ -883,14 +937,14 @@
             0,
             0});
             // 
-            // label72
+            // gunhit_5
             // 
-            this.label72.AutoSize = true;
-            this.label72.Location = new System.Drawing.Point(10, 326);
-            this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(29, 12);
-            this.label72.TabIndex = 26;
-            this.label72.Text = "명중";
+            this.gunhit_5.AutoSize = true;
+            this.gunhit_5.Location = new System.Drawing.Point(10, 326);
+            this.gunhit_5.Name = "gunhit_5";
+            this.gunhit_5.Size = new System.Drawing.Size(29, 12);
+            this.gunhit_5.TabIndex = 26;
+            this.gunhit_5.Text = "명중";
             // 
             // gunpos_5_number
             // 
@@ -915,14 +969,14 @@
             0});
             this.gunpos_5_number.ValueChanged += new System.EventHandler(this.UpdatePosTile);
             // 
-            // label67
+            // gunpos_5
             // 
-            this.label67.AutoSize = true;
-            this.label67.Location = new System.Drawing.Point(9, 551);
-            this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(99, 12);
-            this.label67.TabIndex = 23;
-            this.label67.Text = "진형위치(키패드)";
+            this.gunpos_5.AutoSize = true;
+            this.gunpos_5.Location = new System.Drawing.Point(9, 551);
+            this.gunpos_5.Name = "gunpos_5";
+            this.gunpos_5.Size = new System.Drawing.Size(99, 12);
+            this.gunpos_5.TabIndex = 23;
+            this.gunpos_5.Text = "진형위치(키패드)";
             // 
             // gunskin_5_conbobox
             // 
@@ -932,14 +986,14 @@
             this.gunskin_5_conbobox.Size = new System.Drawing.Size(121, 20);
             this.gunskin_5_conbobox.TabIndex = 22;
             // 
-            // label49
+            // gunskin_5
             // 
-            this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(8, 70);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(29, 12);
-            this.label49.TabIndex = 21;
-            this.label49.Text = "스킨";
+            this.gunskin_5.AutoSize = true;
+            this.gunskin_5.Location = new System.Drawing.Point(8, 70);
+            this.gunskin_5.Name = "gunskin_5";
+            this.gunskin_5.Size = new System.Drawing.Size(29, 12);
+            this.gunskin_5.TabIndex = 21;
+            this.gunskin_5.Text = "스킨";
             // 
             // gunoath_5_checkbox
             // 
@@ -963,14 +1017,14 @@
             this.gunfavor_5_number.Size = new System.Drawing.Size(120, 21);
             this.gunfavor_5_number.TabIndex = 19;
             // 
-            // label50
+            // gunfavor_5
             // 
-            this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(9, 504);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(41, 12);
-            this.label50.TabIndex = 18;
-            this.label50.Text = "호감도";
+            this.gunfavor_5.AutoSize = true;
+            this.gunfavor_5.Location = new System.Drawing.Point(9, 504);
+            this.gunfavor_5.Name = "gunfavor_5";
+            this.gunfavor_5.Size = new System.Drawing.Size(41, 12);
+            this.gunfavor_5.TabIndex = 18;
+            this.gunfavor_5.Text = "호감도";
             // 
             // gunskill2_5_number
             // 
@@ -1006,23 +1060,23 @@
             0,
             0});
             // 
-            // label51
+            // gunskill2_5
             // 
-            this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(7, 459);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(67, 12);
-            this.label51.TabIndex = 15;
-            this.label51.Text = "스킬 2 레벨";
+            this.gunskill2_5.AutoSize = true;
+            this.gunskill2_5.Location = new System.Drawing.Point(7, 459);
+            this.gunskill2_5.Name = "gunskill2_5";
+            this.gunskill2_5.Size = new System.Drawing.Size(67, 12);
+            this.gunskill2_5.TabIndex = 15;
+            this.gunskill2_5.Text = "스킬 2 레벨";
             // 
-            // label52
+            // gunskill1_5
             // 
-            this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(9, 415);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(67, 12);
-            this.label52.TabIndex = 15;
-            this.label52.Text = "스킬 1 레벨";
+            this.gunskill1_5.AutoSize = true;
+            this.gunskill1_5.Location = new System.Drawing.Point(9, 415);
+            this.gunskill1_5.Name = "gunskill1_5";
+            this.gunskill1_5.Size = new System.Drawing.Size(67, 12);
+            this.gunskill1_5.TabIndex = 15;
+            this.gunskill1_5.Text = "스킬 1 레벨";
             // 
             // label53
             // 
@@ -1054,14 +1108,14 @@
             0,
             0});
             // 
-            // label54
+            // gundummy_5
             // 
-            this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(9, 369);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(45, 12);
-            this.label54.TabIndex = 12;
-            this.label54.Text = "편제 수";
+            this.gundummy_5.AutoSize = true;
+            this.gundummy_5.Location = new System.Drawing.Point(9, 369);
+            this.gundummy_5.Name = "gundummy_5";
+            this.gundummy_5.Size = new System.Drawing.Size(45, 12);
+            this.gundummy_5.TabIndex = 12;
+            this.gundummy_5.Text = "편제 수";
             // 
             // gunrate_5_number
             // 
@@ -1080,14 +1134,14 @@
             0,
             0});
             // 
-            // label55
+            // gunfirespeed_5
             // 
-            this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(9, 283);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(29, 12);
-            this.label55.TabIndex = 10;
-            this.label55.Text = "사속";
+            this.gunfirespeed_5.AutoSize = true;
+            this.gunfirespeed_5.Location = new System.Drawing.Point(9, 283);
+            this.gunfirespeed_5.Name = "gunfirespeed_5";
+            this.gunfirespeed_5.Size = new System.Drawing.Size(29, 12);
+            this.gunfirespeed_5.TabIndex = 10;
+            this.gunfirespeed_5.Text = "사속";
             // 
             // gundodge_5_number
             // 
@@ -1106,14 +1160,14 @@
             0,
             0});
             // 
-            // label56
+            // gundodge_5
             // 
-            this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(9, 244);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(29, 12);
-            this.label56.TabIndex = 8;
-            this.label56.Text = "회피";
+            this.gundodge_5.AutoSize = true;
+            this.gundodge_5.Location = new System.Drawing.Point(9, 244);
+            this.gundodge_5.Name = "gundodge_5";
+            this.gundodge_5.Size = new System.Drawing.Size(29, 12);
+            this.gundodge_5.TabIndex = 8;
+            this.gundodge_5.Text = "회피";
             // 
             // gunpow_5_number
             // 
@@ -1132,13 +1186,13 @@
             0,
             0});
             // 
-            // label57
+            // gunfire_5
             // 
-            this.label57.Location = new System.Drawing.Point(9, 203);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(38, 14);
-            this.label57.TabIndex = 6;
-            this.label57.Text = "화력";
+            this.gunfire_5.Location = new System.Drawing.Point(9, 203);
+            this.gunfire_5.Name = "gunfire_5";
+            this.gunfire_5.Size = new System.Drawing.Size(38, 14);
+            this.gunfire_5.TabIndex = 6;
+            this.gunfire_5.Text = "화력";
             // 
             // gunhp_5_number
             // 
@@ -1162,14 +1216,14 @@
             0,
             0});
             // 
-            // label58
+            // gunhp_5
             // 
-            this.label58.AutoSize = true;
-            this.label58.Location = new System.Drawing.Point(9, 162);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(21, 12);
-            this.label58.TabIndex = 4;
-            this.label58.Text = "HP";
+            this.gunhp_5.AutoSize = true;
+            this.gunhp_5.Location = new System.Drawing.Point(9, 162);
+            this.gunhp_5.Name = "gunhp_5";
+            this.gunhp_5.Size = new System.Drawing.Size(21, 12);
+            this.gunhp_5.TabIndex = 4;
+            this.gunhp_5.Text = "HP";
             // 
             // gunlv_5_number
             // 
@@ -1193,14 +1247,14 @@
             0,
             0});
             // 
-            // label59
+            // gunlv_5
             // 
-            this.label59.AutoSize = true;
-            this.label59.Location = new System.Drawing.Point(7, 116);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(20, 12);
-            this.label59.TabIndex = 2;
-            this.label59.Text = "LV";
+            this.gunlv_5.AutoSize = true;
+            this.gunlv_5.Location = new System.Drawing.Point(7, 116);
+            this.gunlv_5.Name = "gunlv_5";
+            this.gunlv_5.Size = new System.Drawing.Size(20, 12);
+            this.gunlv_5.TabIndex = 2;
+            this.gunlv_5.Text = "LV";
             // 
             // gunid_5_combobox
             // 
@@ -1211,48 +1265,48 @@
             this.gunid_5_combobox.TabIndex = 1;
             this.gunid_5_combobox.SelectedIndexChanged += new System.EventHandler(this.gunid_5_combobox_SelectedIndexChanged);
             // 
-            // label60
+            // gunid_5
             // 
-            this.label60.AutoSize = true;
-            this.label60.Location = new System.Drawing.Point(6, 27);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(40, 12);
-            this.label60.TabIndex = 0;
-            this.label60.Text = "인형ID";
+            this.gunid_5.AutoSize = true;
+            this.gunid_5.Location = new System.Drawing.Point(6, 27);
+            this.gunid_5.Name = "gunid_5";
+            this.gunid_5.Size = new System.Drawing.Size(40, 12);
+            this.gunid_5.TabIndex = 0;
+            this.gunid_5.Text = "인형ID";
             // 
             // groupBox4
             // 
             this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.groupBox4.Controls.Add(this.button21);
-            this.groupBox4.Controls.Add(this.button12);
+            this.groupBox4.Controls.Add(this.set_gunpos_btn_4);
+            this.groupBox4.Controls.Add(this.gun_resetstat_4);
             this.groupBox4.Controls.Add(this.gunhit_4_number);
-            this.groupBox4.Controls.Add(this.label71);
+            this.groupBox4.Controls.Add(this.gunhit_4);
             this.groupBox4.Controls.Add(this.gunpos_4_number);
-            this.groupBox4.Controls.Add(this.label66);
+            this.groupBox4.Controls.Add(this.gunpos_4);
             this.groupBox4.Controls.Add(this.gunskin_4_conbobox);
-            this.groupBox4.Controls.Add(this.label37);
+            this.groupBox4.Controls.Add(this.gunskin_4);
             this.groupBox4.Controls.Add(this.gunoath_4_checkbox);
             this.groupBox4.Controls.Add(this.gunfavor_4_number);
-            this.groupBox4.Controls.Add(this.label38);
+            this.groupBox4.Controls.Add(this.gunfavor_4);
             this.groupBox4.Controls.Add(this.gunskill2_4_number);
             this.groupBox4.Controls.Add(this.gunskill1_4_number);
-            this.groupBox4.Controls.Add(this.label39);
-            this.groupBox4.Controls.Add(this.label40);
+            this.groupBox4.Controls.Add(this.gunskill2_4);
+            this.groupBox4.Controls.Add(this.gunskill1_4);
             this.groupBox4.Controls.Add(this.label41);
             this.groupBox4.Controls.Add(this.gundummy_4_number);
-            this.groupBox4.Controls.Add(this.label42);
+            this.groupBox4.Controls.Add(this.gundummy_4);
             this.groupBox4.Controls.Add(this.gunrate_4_number);
-            this.groupBox4.Controls.Add(this.label43);
+            this.groupBox4.Controls.Add(this.gunfirespeed_4);
             this.groupBox4.Controls.Add(this.gundodge_4_number);
-            this.groupBox4.Controls.Add(this.label44);
+            this.groupBox4.Controls.Add(this.gundodge_4);
             this.groupBox4.Controls.Add(this.gunpow_4_number);
-            this.groupBox4.Controls.Add(this.label45);
+            this.groupBox4.Controls.Add(this.gunfire_4);
             this.groupBox4.Controls.Add(this.gunhp_4_number);
-            this.groupBox4.Controls.Add(this.label46);
+            this.groupBox4.Controls.Add(this.gunhp_4);
             this.groupBox4.Controls.Add(this.gunlv_4_number);
-            this.groupBox4.Controls.Add(this.label47);
+            this.groupBox4.Controls.Add(this.gunlv_4);
             this.groupBox4.Controls.Add(this.gunid_4_combobox);
-            this.groupBox4.Controls.Add(this.label48);
+            this.groupBox4.Controls.Add(this.gunid_4);
             this.groupBox4.Location = new System.Drawing.Point(441, 6);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(139, 668);
@@ -1260,26 +1314,26 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "4번 인형";
             // 
-            // button21
+            // set_gunpos_btn_4
             // 
-            this.button21.Location = new System.Drawing.Point(66, 567);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(63, 23);
-            this.button21.TabIndex = 29;
-            this.button21.Text = "설정";
-            this.button21.UseVisualStyleBackColor = true;
-            this.button21.Click += new System.EventHandler(this.Button21_Click);
+            this.set_gunpos_btn_4.Location = new System.Drawing.Point(66, 567);
+            this.set_gunpos_btn_4.Name = "set_gunpos_btn_4";
+            this.set_gunpos_btn_4.Size = new System.Drawing.Size(63, 23);
+            this.set_gunpos_btn_4.TabIndex = 29;
+            this.set_gunpos_btn_4.Text = "설정";
+            this.set_gunpos_btn_4.UseVisualStyleBackColor = true;
+            this.set_gunpos_btn_4.Click += new System.EventHandler(this.Button21_Click);
             // 
-            // button12
+            // gun_resetstat_4
             // 
-            this.button12.Location = new System.Drawing.Point(8, 635);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(119, 23);
-            this.button12.TabIndex = 28;
-            this.button12.Text = "기본스텟 초기화";
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
-            this.button12.MouseHover += new System.EventHandler(this.button9_MouseHover);
+            this.gun_resetstat_4.Location = new System.Drawing.Point(8, 635);
+            this.gun_resetstat_4.Name = "gun_resetstat_4";
+            this.gun_resetstat_4.Size = new System.Drawing.Size(119, 23);
+            this.gun_resetstat_4.TabIndex = 28;
+            this.gun_resetstat_4.Text = "기본스텟 초기화";
+            this.gun_resetstat_4.UseVisualStyleBackColor = true;
+            this.gun_resetstat_4.Click += new System.EventHandler(this.button12_Click);
+            this.gun_resetstat_4.MouseHover += new System.EventHandler(this.button9_MouseHover);
             // 
             // gunhit_4_number
             // 
@@ -1298,14 +1352,14 @@
             0,
             0});
             // 
-            // label71
+            // gunhit_4
             // 
-            this.label71.AutoSize = true;
-            this.label71.Location = new System.Drawing.Point(10, 327);
-            this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(29, 12);
-            this.label71.TabIndex = 26;
-            this.label71.Text = "명중";
+            this.gunhit_4.AutoSize = true;
+            this.gunhit_4.Location = new System.Drawing.Point(10, 327);
+            this.gunhit_4.Name = "gunhit_4";
+            this.gunhit_4.Size = new System.Drawing.Size(29, 12);
+            this.gunhit_4.TabIndex = 26;
+            this.gunhit_4.Text = "명중";
             // 
             // gunpos_4_number
             // 
@@ -1330,14 +1384,14 @@
             0});
             this.gunpos_4_number.ValueChanged += new System.EventHandler(this.UpdatePosTile);
             // 
-            // label66
+            // gunpos_4
             // 
-            this.label66.AutoSize = true;
-            this.label66.Location = new System.Drawing.Point(9, 551);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(99, 12);
-            this.label66.TabIndex = 23;
-            this.label66.Text = "진형위치(키패드)";
+            this.gunpos_4.AutoSize = true;
+            this.gunpos_4.Location = new System.Drawing.Point(9, 551);
+            this.gunpos_4.Name = "gunpos_4";
+            this.gunpos_4.Size = new System.Drawing.Size(99, 12);
+            this.gunpos_4.TabIndex = 23;
+            this.gunpos_4.Text = "진형위치(키패드)";
             // 
             // gunskin_4_conbobox
             // 
@@ -1347,14 +1401,14 @@
             this.gunskin_4_conbobox.Size = new System.Drawing.Size(121, 20);
             this.gunskin_4_conbobox.TabIndex = 22;
             // 
-            // label37
+            // gunskin_4
             // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(8, 70);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(29, 12);
-            this.label37.TabIndex = 21;
-            this.label37.Text = "스킨";
+            this.gunskin_4.AutoSize = true;
+            this.gunskin_4.Location = new System.Drawing.Point(8, 70);
+            this.gunskin_4.Name = "gunskin_4";
+            this.gunskin_4.Size = new System.Drawing.Size(29, 12);
+            this.gunskin_4.TabIndex = 21;
+            this.gunskin_4.Text = "스킨";
             // 
             // gunoath_4_checkbox
             // 
@@ -1378,14 +1432,14 @@
             this.gunfavor_4_number.Size = new System.Drawing.Size(120, 21);
             this.gunfavor_4_number.TabIndex = 19;
             // 
-            // label38
+            // gunfavor_4
             // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(9, 504);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(41, 12);
-            this.label38.TabIndex = 18;
-            this.label38.Text = "호감도";
+            this.gunfavor_4.AutoSize = true;
+            this.gunfavor_4.Location = new System.Drawing.Point(9, 504);
+            this.gunfavor_4.Name = "gunfavor_4";
+            this.gunfavor_4.Size = new System.Drawing.Size(41, 12);
+            this.gunfavor_4.TabIndex = 18;
+            this.gunfavor_4.Text = "호감도";
             // 
             // gunskill2_4_number
             // 
@@ -1421,23 +1475,23 @@
             0,
             0});
             // 
-            // label39
+            // gunskill2_4
             // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(7, 459);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(67, 12);
-            this.label39.TabIndex = 15;
-            this.label39.Text = "스킬 2 레벨";
+            this.gunskill2_4.AutoSize = true;
+            this.gunskill2_4.Location = new System.Drawing.Point(7, 459);
+            this.gunskill2_4.Name = "gunskill2_4";
+            this.gunskill2_4.Size = new System.Drawing.Size(67, 12);
+            this.gunskill2_4.TabIndex = 15;
+            this.gunskill2_4.Text = "스킬 2 레벨";
             // 
-            // label40
+            // gunskill1_4
             // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(9, 415);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(67, 12);
-            this.label40.TabIndex = 15;
-            this.label40.Text = "스킬 1 레벨";
+            this.gunskill1_4.AutoSize = true;
+            this.gunskill1_4.Location = new System.Drawing.Point(9, 415);
+            this.gunskill1_4.Name = "gunskill1_4";
+            this.gunskill1_4.Size = new System.Drawing.Size(67, 12);
+            this.gunskill1_4.TabIndex = 15;
+            this.gunskill1_4.Text = "스킬 1 레벨";
             // 
             // label41
             // 
@@ -1469,14 +1523,14 @@
             0,
             0});
             // 
-            // label42
+            // gundummy_4
             // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(9, 369);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(45, 12);
-            this.label42.TabIndex = 12;
-            this.label42.Text = "편제 수";
+            this.gundummy_4.AutoSize = true;
+            this.gundummy_4.Location = new System.Drawing.Point(9, 369);
+            this.gundummy_4.Name = "gundummy_4";
+            this.gundummy_4.Size = new System.Drawing.Size(45, 12);
+            this.gundummy_4.TabIndex = 12;
+            this.gundummy_4.Text = "편제 수";
             // 
             // gunrate_4_number
             // 
@@ -1495,14 +1549,14 @@
             0,
             0});
             // 
-            // label43
+            // gunfirespeed_4
             // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(9, 283);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(29, 12);
-            this.label43.TabIndex = 10;
-            this.label43.Text = "사속";
+            this.gunfirespeed_4.AutoSize = true;
+            this.gunfirespeed_4.Location = new System.Drawing.Point(9, 283);
+            this.gunfirespeed_4.Name = "gunfirespeed_4";
+            this.gunfirespeed_4.Size = new System.Drawing.Size(29, 12);
+            this.gunfirespeed_4.TabIndex = 10;
+            this.gunfirespeed_4.Text = "사속";
             // 
             // gundodge_4_number
             // 
@@ -1521,14 +1575,14 @@
             0,
             0});
             // 
-            // label44
+            // gundodge_4
             // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(9, 244);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(29, 12);
-            this.label44.TabIndex = 8;
-            this.label44.Text = "회피";
+            this.gundodge_4.AutoSize = true;
+            this.gundodge_4.Location = new System.Drawing.Point(9, 244);
+            this.gundodge_4.Name = "gundodge_4";
+            this.gundodge_4.Size = new System.Drawing.Size(29, 12);
+            this.gundodge_4.TabIndex = 8;
+            this.gundodge_4.Text = "회피";
             // 
             // gunpow_4_number
             // 
@@ -1547,13 +1601,13 @@
             0,
             0});
             // 
-            // label45
+            // gunfire_4
             // 
-            this.label45.Location = new System.Drawing.Point(9, 203);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(38, 14);
-            this.label45.TabIndex = 6;
-            this.label45.Text = "화력";
+            this.gunfire_4.Location = new System.Drawing.Point(9, 203);
+            this.gunfire_4.Name = "gunfire_4";
+            this.gunfire_4.Size = new System.Drawing.Size(38, 14);
+            this.gunfire_4.TabIndex = 6;
+            this.gunfire_4.Text = "화력";
             // 
             // gunhp_4_number
             // 
@@ -1577,14 +1631,14 @@
             0,
             0});
             // 
-            // label46
+            // gunhp_4
             // 
-            this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(9, 162);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(21, 12);
-            this.label46.TabIndex = 4;
-            this.label46.Text = "HP";
+            this.gunhp_4.AutoSize = true;
+            this.gunhp_4.Location = new System.Drawing.Point(9, 162);
+            this.gunhp_4.Name = "gunhp_4";
+            this.gunhp_4.Size = new System.Drawing.Size(21, 12);
+            this.gunhp_4.TabIndex = 4;
+            this.gunhp_4.Text = "HP";
             // 
             // gunlv_4_number
             // 
@@ -1608,14 +1662,14 @@
             0,
             0});
             // 
-            // label47
+            // gunlv_4
             // 
-            this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(7, 116);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(20, 12);
-            this.label47.TabIndex = 2;
-            this.label47.Text = "LV";
+            this.gunlv_4.AutoSize = true;
+            this.gunlv_4.Location = new System.Drawing.Point(7, 116);
+            this.gunlv_4.Name = "gunlv_4";
+            this.gunlv_4.Size = new System.Drawing.Size(20, 12);
+            this.gunlv_4.TabIndex = 2;
+            this.gunlv_4.Text = "LV";
             // 
             // gunid_4_combobox
             // 
@@ -1626,48 +1680,48 @@
             this.gunid_4_combobox.TabIndex = 1;
             this.gunid_4_combobox.SelectedIndexChanged += new System.EventHandler(this.gunid_4_combobox_SelectedIndexChanged);
             // 
-            // label48
+            // gunid_4
             // 
-            this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(6, 27);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(40, 12);
-            this.label48.TabIndex = 0;
-            this.label48.Text = "인형ID";
+            this.gunid_4.AutoSize = true;
+            this.gunid_4.Location = new System.Drawing.Point(6, 27);
+            this.gunid_4.Name = "gunid_4";
+            this.gunid_4.Size = new System.Drawing.Size(40, 12);
+            this.gunid_4.TabIndex = 0;
+            this.gunid_4.Text = "인형ID";
             // 
             // groupBox3
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.groupBox3.Controls.Add(this.button20);
-            this.groupBox3.Controls.Add(this.button11);
+            this.groupBox3.Controls.Add(this.set_gunpos_btn_3);
+            this.groupBox3.Controls.Add(this.gun_resetstat_3);
             this.groupBox3.Controls.Add(this.gunhit_3_number);
-            this.groupBox3.Controls.Add(this.label70);
+            this.groupBox3.Controls.Add(this.gunhit_3);
             this.groupBox3.Controls.Add(this.gunpos_3_number);
-            this.groupBox3.Controls.Add(this.label65);
+            this.groupBox3.Controls.Add(this.gunpos_3);
             this.groupBox3.Controls.Add(this.gunskin_3_conbobox);
-            this.groupBox3.Controls.Add(this.label25);
+            this.groupBox3.Controls.Add(this.gunskin_3);
             this.groupBox3.Controls.Add(this.gunoath_3_checkbox);
             this.groupBox3.Controls.Add(this.gunfavor_3_number);
-            this.groupBox3.Controls.Add(this.label26);
+            this.groupBox3.Controls.Add(this.gunfavor_3);
             this.groupBox3.Controls.Add(this.gunskill2_3_number);
             this.groupBox3.Controls.Add(this.gunskill1_3_number);
-            this.groupBox3.Controls.Add(this.label27);
-            this.groupBox3.Controls.Add(this.label28);
+            this.groupBox3.Controls.Add(this.gunskill2_3);
+            this.groupBox3.Controls.Add(this.gunskill1_3);
             this.groupBox3.Controls.Add(this.label29);
             this.groupBox3.Controls.Add(this.gundummy_3_number);
-            this.groupBox3.Controls.Add(this.label30);
+            this.groupBox3.Controls.Add(this.gundummy_3);
             this.groupBox3.Controls.Add(this.gunrate_3_number);
-            this.groupBox3.Controls.Add(this.label31);
+            this.groupBox3.Controls.Add(this.gunfirespeed_3);
             this.groupBox3.Controls.Add(this.gundodge_3_number);
-            this.groupBox3.Controls.Add(this.label32);
+            this.groupBox3.Controls.Add(this.gundodge_3);
             this.groupBox3.Controls.Add(this.gunpow_3_number);
-            this.groupBox3.Controls.Add(this.label33);
+            this.groupBox3.Controls.Add(this.gunfire_3);
             this.groupBox3.Controls.Add(this.gunhp_3_number);
-            this.groupBox3.Controls.Add(this.label34);
+            this.groupBox3.Controls.Add(this.gunhp_3);
             this.groupBox3.Controls.Add(this.gunlv_3_number);
-            this.groupBox3.Controls.Add(this.label35);
+            this.groupBox3.Controls.Add(this.gunlv_3);
             this.groupBox3.Controls.Add(this.gunid_3_combobox);
-            this.groupBox3.Controls.Add(this.label36);
+            this.groupBox3.Controls.Add(this.gunid_3);
             this.groupBox3.Location = new System.Drawing.Point(296, 6);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(139, 668);
@@ -1675,26 +1729,26 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "3번 인형";
             // 
-            // button20
+            // set_gunpos_btn_3
             // 
-            this.button20.Location = new System.Drawing.Point(66, 566);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(63, 23);
-            this.button20.TabIndex = 29;
-            this.button20.Text = "설정";
-            this.button20.UseVisualStyleBackColor = true;
-            this.button20.Click += new System.EventHandler(this.Button20_Click);
+            this.set_gunpos_btn_3.Location = new System.Drawing.Point(66, 566);
+            this.set_gunpos_btn_3.Name = "set_gunpos_btn_3";
+            this.set_gunpos_btn_3.Size = new System.Drawing.Size(63, 23);
+            this.set_gunpos_btn_3.TabIndex = 29;
+            this.set_gunpos_btn_3.Text = "설정";
+            this.set_gunpos_btn_3.UseVisualStyleBackColor = true;
+            this.set_gunpos_btn_3.Click += new System.EventHandler(this.Button20_Click);
             // 
-            // button11
+            // gun_resetstat_3
             // 
-            this.button11.Location = new System.Drawing.Point(9, 635);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(119, 23);
-            this.button11.TabIndex = 28;
-            this.button11.Text = "기본스텟 초기화";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
-            this.button11.MouseHover += new System.EventHandler(this.button9_MouseHover);
+            this.gun_resetstat_3.Location = new System.Drawing.Point(9, 635);
+            this.gun_resetstat_3.Name = "gun_resetstat_3";
+            this.gun_resetstat_3.Size = new System.Drawing.Size(119, 23);
+            this.gun_resetstat_3.TabIndex = 28;
+            this.gun_resetstat_3.Text = "기본스텟 초기화";
+            this.gun_resetstat_3.UseVisualStyleBackColor = true;
+            this.gun_resetstat_3.Click += new System.EventHandler(this.button11_Click);
+            this.gun_resetstat_3.MouseHover += new System.EventHandler(this.button9_MouseHover);
             // 
             // gunhit_3_number
             // 
@@ -1713,14 +1767,14 @@
             0,
             0});
             // 
-            // label70
+            // gunhit_3
             // 
-            this.label70.AutoSize = true;
-            this.label70.Location = new System.Drawing.Point(10, 327);
-            this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(29, 12);
-            this.label70.TabIndex = 26;
-            this.label70.Text = "명중";
+            this.gunhit_3.AutoSize = true;
+            this.gunhit_3.Location = new System.Drawing.Point(10, 327);
+            this.gunhit_3.Name = "gunhit_3";
+            this.gunhit_3.Size = new System.Drawing.Size(29, 12);
+            this.gunhit_3.TabIndex = 26;
+            this.gunhit_3.Text = "명중";
             // 
             // gunpos_3_number
             // 
@@ -1745,14 +1799,14 @@
             0});
             this.gunpos_3_number.ValueChanged += new System.EventHandler(this.UpdatePosTile);
             // 
-            // label65
+            // gunpos_3
             // 
-            this.label65.AutoSize = true;
-            this.label65.Location = new System.Drawing.Point(9, 551);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(99, 12);
-            this.label65.TabIndex = 23;
-            this.label65.Text = "진형위치(키패드)";
+            this.gunpos_3.AutoSize = true;
+            this.gunpos_3.Location = new System.Drawing.Point(9, 551);
+            this.gunpos_3.Name = "gunpos_3";
+            this.gunpos_3.Size = new System.Drawing.Size(99, 12);
+            this.gunpos_3.TabIndex = 23;
+            this.gunpos_3.Text = "진형위치(키패드)";
             // 
             // gunskin_3_conbobox
             // 
@@ -1762,14 +1816,14 @@
             this.gunskin_3_conbobox.Size = new System.Drawing.Size(121, 20);
             this.gunskin_3_conbobox.TabIndex = 22;
             // 
-            // label25
+            // gunskin_3
             // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(8, 70);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(29, 12);
-            this.label25.TabIndex = 21;
-            this.label25.Text = "스킨";
+            this.gunskin_3.AutoSize = true;
+            this.gunskin_3.Location = new System.Drawing.Point(8, 70);
+            this.gunskin_3.Name = "gunskin_3";
+            this.gunskin_3.Size = new System.Drawing.Size(29, 12);
+            this.gunskin_3.TabIndex = 21;
+            this.gunskin_3.Text = "스킨";
             // 
             // gunoath_3_checkbox
             // 
@@ -1793,14 +1847,14 @@
             this.gunfavor_3_number.Size = new System.Drawing.Size(120, 21);
             this.gunfavor_3_number.TabIndex = 19;
             // 
-            // label26
+            // gunfavor_3
             // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(9, 504);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(41, 12);
-            this.label26.TabIndex = 18;
-            this.label26.Text = "호감도";
+            this.gunfavor_3.AutoSize = true;
+            this.gunfavor_3.Location = new System.Drawing.Point(9, 504);
+            this.gunfavor_3.Name = "gunfavor_3";
+            this.gunfavor_3.Size = new System.Drawing.Size(41, 12);
+            this.gunfavor_3.TabIndex = 18;
+            this.gunfavor_3.Text = "호감도";
             // 
             // gunskill2_3_number
             // 
@@ -1836,23 +1890,23 @@
             0,
             0});
             // 
-            // label27
+            // gunskill2_3
             // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(7, 459);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(67, 12);
-            this.label27.TabIndex = 15;
-            this.label27.Text = "스킬 2 레벨";
+            this.gunskill2_3.AutoSize = true;
+            this.gunskill2_3.Location = new System.Drawing.Point(7, 459);
+            this.gunskill2_3.Name = "gunskill2_3";
+            this.gunskill2_3.Size = new System.Drawing.Size(67, 12);
+            this.gunskill2_3.TabIndex = 15;
+            this.gunskill2_3.Text = "스킬 2 레벨";
             // 
-            // label28
+            // gunskill1_3
             // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(9, 415);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(67, 12);
-            this.label28.TabIndex = 15;
-            this.label28.Text = "스킬 1 레벨";
+            this.gunskill1_3.AutoSize = true;
+            this.gunskill1_3.Location = new System.Drawing.Point(9, 415);
+            this.gunskill1_3.Name = "gunskill1_3";
+            this.gunskill1_3.Size = new System.Drawing.Size(67, 12);
+            this.gunskill1_3.TabIndex = 15;
+            this.gunskill1_3.Text = "스킬 1 레벨";
             // 
             // label29
             // 
@@ -1884,14 +1938,14 @@
             0,
             0});
             // 
-            // label30
+            // gundummy_3
             // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(9, 369);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(45, 12);
-            this.label30.TabIndex = 12;
-            this.label30.Text = "편제 수";
+            this.gundummy_3.AutoSize = true;
+            this.gundummy_3.Location = new System.Drawing.Point(9, 369);
+            this.gundummy_3.Name = "gundummy_3";
+            this.gundummy_3.Size = new System.Drawing.Size(45, 12);
+            this.gundummy_3.TabIndex = 12;
+            this.gundummy_3.Text = "편제 수";
             // 
             // gunrate_3_number
             // 
@@ -1910,14 +1964,14 @@
             0,
             0});
             // 
-            // label31
+            // gunfirespeed_3
             // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(9, 283);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(29, 12);
-            this.label31.TabIndex = 10;
-            this.label31.Text = "사속";
+            this.gunfirespeed_3.AutoSize = true;
+            this.gunfirespeed_3.Location = new System.Drawing.Point(9, 283);
+            this.gunfirespeed_3.Name = "gunfirespeed_3";
+            this.gunfirespeed_3.Size = new System.Drawing.Size(29, 12);
+            this.gunfirespeed_3.TabIndex = 10;
+            this.gunfirespeed_3.Text = "사속";
             // 
             // gundodge_3_number
             // 
@@ -1936,14 +1990,14 @@
             0,
             0});
             // 
-            // label32
+            // gundodge_3
             // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(9, 244);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(29, 12);
-            this.label32.TabIndex = 8;
-            this.label32.Text = "회피";
+            this.gundodge_3.AutoSize = true;
+            this.gundodge_3.Location = new System.Drawing.Point(9, 244);
+            this.gundodge_3.Name = "gundodge_3";
+            this.gundodge_3.Size = new System.Drawing.Size(29, 12);
+            this.gundodge_3.TabIndex = 8;
+            this.gundodge_3.Text = "회피";
             // 
             // gunpow_3_number
             // 
@@ -1962,13 +2016,13 @@
             0,
             0});
             // 
-            // label33
+            // gunfire_3
             // 
-            this.label33.Location = new System.Drawing.Point(9, 203);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(38, 14);
-            this.label33.TabIndex = 6;
-            this.label33.Text = "화력";
+            this.gunfire_3.Location = new System.Drawing.Point(9, 203);
+            this.gunfire_3.Name = "gunfire_3";
+            this.gunfire_3.Size = new System.Drawing.Size(38, 14);
+            this.gunfire_3.TabIndex = 6;
+            this.gunfire_3.Text = "화력";
             // 
             // gunhp_3_number
             // 
@@ -1992,14 +2046,14 @@
             0,
             0});
             // 
-            // label34
+            // gunhp_3
             // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(9, 162);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(21, 12);
-            this.label34.TabIndex = 4;
-            this.label34.Text = "HP";
+            this.gunhp_3.AutoSize = true;
+            this.gunhp_3.Location = new System.Drawing.Point(9, 162);
+            this.gunhp_3.Name = "gunhp_3";
+            this.gunhp_3.Size = new System.Drawing.Size(21, 12);
+            this.gunhp_3.TabIndex = 4;
+            this.gunhp_3.Text = "HP";
             // 
             // gunlv_3_number
             // 
@@ -2023,14 +2077,14 @@
             0,
             0});
             // 
-            // label35
+            // gunlv_3
             // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(7, 116);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(20, 12);
-            this.label35.TabIndex = 2;
-            this.label35.Text = "LV";
+            this.gunlv_3.AutoSize = true;
+            this.gunlv_3.Location = new System.Drawing.Point(7, 116);
+            this.gunlv_3.Name = "gunlv_3";
+            this.gunlv_3.Size = new System.Drawing.Size(20, 12);
+            this.gunlv_3.TabIndex = 2;
+            this.gunlv_3.Text = "LV";
             // 
             // gunid_3_combobox
             // 
@@ -2041,48 +2095,48 @@
             this.gunid_3_combobox.TabIndex = 1;
             this.gunid_3_combobox.SelectedIndexChanged += new System.EventHandler(this.gunid_3_combobox_SelectedIndexChanged);
             // 
-            // label36
+            // gunid_3
             // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(6, 27);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(40, 12);
-            this.label36.TabIndex = 0;
-            this.label36.Text = "인형ID";
+            this.gunid_3.AutoSize = true;
+            this.gunid_3.Location = new System.Drawing.Point(6, 27);
+            this.gunid_3.Name = "gunid_3";
+            this.gunid_3.Size = new System.Drawing.Size(40, 12);
+            this.gunid_3.TabIndex = 0;
+            this.gunid_3.Text = "인형ID";
             // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.groupBox2.Controls.Add(this.button19);
-            this.groupBox2.Controls.Add(this.button10);
+            this.groupBox2.Controls.Add(this.set_gunpos_btn_2);
+            this.groupBox2.Controls.Add(this.gun_resetstat_2);
             this.groupBox2.Controls.Add(this.gunhit_2_number);
-            this.groupBox2.Controls.Add(this.label69);
+            this.groupBox2.Controls.Add(this.gunhit_2);
             this.groupBox2.Controls.Add(this.gunpos_2_number);
-            this.groupBox2.Controls.Add(this.label64);
+            this.groupBox2.Controls.Add(this.gunpos_2);
             this.groupBox2.Controls.Add(this.gunskin_2_conbobox);
-            this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Controls.Add(this.gunskin_2);
             this.groupBox2.Controls.Add(this.gunoath_2_checkbox);
             this.groupBox2.Controls.Add(this.gunfavor_2_number);
-            this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.Controls.Add(this.gunfavor_2);
             this.groupBox2.Controls.Add(this.gunskill2_2_number);
             this.groupBox2.Controls.Add(this.gunskill1_2_number);
-            this.groupBox2.Controls.Add(this.label15);
-            this.groupBox2.Controls.Add(this.label16);
+            this.groupBox2.Controls.Add(this.gunskill2_2);
+            this.groupBox2.Controls.Add(this.gunskill1_2);
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.gundummy_2_number);
-            this.groupBox2.Controls.Add(this.label18);
+            this.groupBox2.Controls.Add(this.gundummy_2);
             this.groupBox2.Controls.Add(this.gunrate_2_number);
-            this.groupBox2.Controls.Add(this.label19);
+            this.groupBox2.Controls.Add(this.gunfirespeed_2);
             this.groupBox2.Controls.Add(this.gundodge_2_number);
-            this.groupBox2.Controls.Add(this.label20);
+            this.groupBox2.Controls.Add(this.gundodge_2);
             this.groupBox2.Controls.Add(this.gunpow_2_number);
-            this.groupBox2.Controls.Add(this.label21);
+            this.groupBox2.Controls.Add(this.gunfire_2);
             this.groupBox2.Controls.Add(this.gunhp_2_number);
-            this.groupBox2.Controls.Add(this.label22);
+            this.groupBox2.Controls.Add(this.gunhp_2);
             this.groupBox2.Controls.Add(this.gunlv_2_number);
-            this.groupBox2.Controls.Add(this.label23);
+            this.groupBox2.Controls.Add(this.gunlv_2);
             this.groupBox2.Controls.Add(this.gunid_2_combobox);
-            this.groupBox2.Controls.Add(this.label24);
+            this.groupBox2.Controls.Add(this.gunid_2);
             this.groupBox2.Location = new System.Drawing.Point(150, 6);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(139, 668);
@@ -2090,26 +2144,26 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "2번 인형";
             // 
-            // button19
+            // set_gunpos_btn_2
             // 
-            this.button19.Location = new System.Drawing.Point(66, 567);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(63, 23);
-            this.button19.TabIndex = 29;
-            this.button19.Text = "설정";
-            this.button19.UseVisualStyleBackColor = true;
-            this.button19.Click += new System.EventHandler(this.Button19_Click);
+            this.set_gunpos_btn_2.Location = new System.Drawing.Point(66, 567);
+            this.set_gunpos_btn_2.Name = "set_gunpos_btn_2";
+            this.set_gunpos_btn_2.Size = new System.Drawing.Size(63, 23);
+            this.set_gunpos_btn_2.TabIndex = 29;
+            this.set_gunpos_btn_2.Text = "설정";
+            this.set_gunpos_btn_2.UseVisualStyleBackColor = true;
+            this.set_gunpos_btn_2.Click += new System.EventHandler(this.Button19_Click);
             // 
-            // button10
+            // gun_resetstat_2
             // 
-            this.button10.Location = new System.Drawing.Point(9, 635);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(119, 23);
-            this.button10.TabIndex = 28;
-            this.button10.Text = "기본스텟 초기화";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
-            this.button10.MouseHover += new System.EventHandler(this.button9_MouseHover);
+            this.gun_resetstat_2.Location = new System.Drawing.Point(9, 635);
+            this.gun_resetstat_2.Name = "gun_resetstat_2";
+            this.gun_resetstat_2.Size = new System.Drawing.Size(119, 23);
+            this.gun_resetstat_2.TabIndex = 28;
+            this.gun_resetstat_2.Text = "기본스텟 초기화";
+            this.gun_resetstat_2.UseVisualStyleBackColor = true;
+            this.gun_resetstat_2.Click += new System.EventHandler(this.button10_Click);
+            this.gun_resetstat_2.MouseHover += new System.EventHandler(this.button9_MouseHover);
             // 
             // gunhit_2_number
             // 
@@ -2128,14 +2182,14 @@
             0,
             0});
             // 
-            // label69
+            // gunhit_2
             // 
-            this.label69.AutoSize = true;
-            this.label69.Location = new System.Drawing.Point(10, 327);
-            this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(29, 12);
-            this.label69.TabIndex = 26;
-            this.label69.Text = "명중";
+            this.gunhit_2.AutoSize = true;
+            this.gunhit_2.Location = new System.Drawing.Point(10, 327);
+            this.gunhit_2.Name = "gunhit_2";
+            this.gunhit_2.Size = new System.Drawing.Size(29, 12);
+            this.gunhit_2.TabIndex = 26;
+            this.gunhit_2.Text = "명중";
             // 
             // gunpos_2_number
             // 
@@ -2160,14 +2214,14 @@
             0});
             this.gunpos_2_number.ValueChanged += new System.EventHandler(this.UpdatePosTile);
             // 
-            // label64
+            // gunpos_2
             // 
-            this.label64.AutoSize = true;
-            this.label64.Location = new System.Drawing.Point(9, 551);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(99, 12);
-            this.label64.TabIndex = 23;
-            this.label64.Text = "진형위치(키패드)";
+            this.gunpos_2.AutoSize = true;
+            this.gunpos_2.Location = new System.Drawing.Point(9, 551);
+            this.gunpos_2.Name = "gunpos_2";
+            this.gunpos_2.Size = new System.Drawing.Size(99, 12);
+            this.gunpos_2.TabIndex = 23;
+            this.gunpos_2.Text = "진형위치(키패드)";
             // 
             // gunskin_2_conbobox
             // 
@@ -2177,14 +2231,14 @@
             this.gunskin_2_conbobox.Size = new System.Drawing.Size(121, 20);
             this.gunskin_2_conbobox.TabIndex = 22;
             // 
-            // label13
+            // gunskin_2
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(8, 70);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(29, 12);
-            this.label13.TabIndex = 21;
-            this.label13.Text = "스킨";
+            this.gunskin_2.AutoSize = true;
+            this.gunskin_2.Location = new System.Drawing.Point(8, 70);
+            this.gunskin_2.Name = "gunskin_2";
+            this.gunskin_2.Size = new System.Drawing.Size(29, 12);
+            this.gunskin_2.TabIndex = 21;
+            this.gunskin_2.Text = "스킨";
             // 
             // gunoath_2_checkbox
             // 
@@ -2208,14 +2262,14 @@
             this.gunfavor_2_number.Size = new System.Drawing.Size(120, 21);
             this.gunfavor_2_number.TabIndex = 19;
             // 
-            // label14
+            // gunfavor_2
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(9, 504);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(41, 12);
-            this.label14.TabIndex = 18;
-            this.label14.Text = "호감도";
+            this.gunfavor_2.AutoSize = true;
+            this.gunfavor_2.Location = new System.Drawing.Point(9, 504);
+            this.gunfavor_2.Name = "gunfavor_2";
+            this.gunfavor_2.Size = new System.Drawing.Size(41, 12);
+            this.gunfavor_2.TabIndex = 18;
+            this.gunfavor_2.Text = "호감도";
             // 
             // gunskill2_2_number
             // 
@@ -2251,23 +2305,23 @@
             0,
             0});
             // 
-            // label15
+            // gunskill2_2
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(7, 459);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(67, 12);
-            this.label15.TabIndex = 15;
-            this.label15.Text = "스킬 2 레벨";
+            this.gunskill2_2.AutoSize = true;
+            this.gunskill2_2.Location = new System.Drawing.Point(7, 459);
+            this.gunskill2_2.Name = "gunskill2_2";
+            this.gunskill2_2.Size = new System.Drawing.Size(67, 12);
+            this.gunskill2_2.TabIndex = 15;
+            this.gunskill2_2.Text = "스킬 2 레벨";
             // 
-            // label16
+            // gunskill1_2
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(9, 415);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(67, 12);
-            this.label16.TabIndex = 15;
-            this.label16.Text = "스킬 1 레벨";
+            this.gunskill1_2.AutoSize = true;
+            this.gunskill1_2.Location = new System.Drawing.Point(9, 415);
+            this.gunskill1_2.Name = "gunskill1_2";
+            this.gunskill1_2.Size = new System.Drawing.Size(67, 12);
+            this.gunskill1_2.TabIndex = 15;
+            this.gunskill1_2.Text = "스킬 1 레벨";
             // 
             // label17
             // 
@@ -2299,14 +2353,14 @@
             0,
             0});
             // 
-            // label18
+            // gundummy_2
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(9, 369);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(45, 12);
-            this.label18.TabIndex = 12;
-            this.label18.Text = "편제 수";
+            this.gundummy_2.AutoSize = true;
+            this.gundummy_2.Location = new System.Drawing.Point(9, 369);
+            this.gundummy_2.Name = "gundummy_2";
+            this.gundummy_2.Size = new System.Drawing.Size(45, 12);
+            this.gundummy_2.TabIndex = 12;
+            this.gundummy_2.Text = "편제 수";
             // 
             // gunrate_2_number
             // 
@@ -2325,14 +2379,14 @@
             0,
             0});
             // 
-            // label19
+            // gunfirespeed_2
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(9, 283);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(29, 12);
-            this.label19.TabIndex = 10;
-            this.label19.Text = "사속";
+            this.gunfirespeed_2.AutoSize = true;
+            this.gunfirespeed_2.Location = new System.Drawing.Point(9, 283);
+            this.gunfirespeed_2.Name = "gunfirespeed_2";
+            this.gunfirespeed_2.Size = new System.Drawing.Size(29, 12);
+            this.gunfirespeed_2.TabIndex = 10;
+            this.gunfirespeed_2.Text = "사속";
             // 
             // gundodge_2_number
             // 
@@ -2351,14 +2405,14 @@
             0,
             0});
             // 
-            // label20
+            // gundodge_2
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(9, 244);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(29, 12);
-            this.label20.TabIndex = 8;
-            this.label20.Text = "회피";
+            this.gundodge_2.AutoSize = true;
+            this.gundodge_2.Location = new System.Drawing.Point(9, 244);
+            this.gundodge_2.Name = "gundodge_2";
+            this.gundodge_2.Size = new System.Drawing.Size(29, 12);
+            this.gundodge_2.TabIndex = 8;
+            this.gundodge_2.Text = "회피";
             // 
             // gunpow_2_number
             // 
@@ -2377,13 +2431,13 @@
             0,
             0});
             // 
-            // label21
+            // gunfire_2
             // 
-            this.label21.Location = new System.Drawing.Point(9, 203);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(38, 14);
-            this.label21.TabIndex = 6;
-            this.label21.Text = "화력";
+            this.gunfire_2.Location = new System.Drawing.Point(9, 203);
+            this.gunfire_2.Name = "gunfire_2";
+            this.gunfire_2.Size = new System.Drawing.Size(38, 14);
+            this.gunfire_2.TabIndex = 6;
+            this.gunfire_2.Text = "화력";
             // 
             // gunhp_2_number
             // 
@@ -2407,14 +2461,14 @@
             0,
             0});
             // 
-            // label22
+            // gunhp_2
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(9, 162);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(21, 12);
-            this.label22.TabIndex = 4;
-            this.label22.Text = "HP";
+            this.gunhp_2.AutoSize = true;
+            this.gunhp_2.Location = new System.Drawing.Point(9, 162);
+            this.gunhp_2.Name = "gunhp_2";
+            this.gunhp_2.Size = new System.Drawing.Size(21, 12);
+            this.gunhp_2.TabIndex = 4;
+            this.gunhp_2.Text = "HP";
             // 
             // gunlv_2_number
             // 
@@ -2438,14 +2492,14 @@
             0,
             0});
             // 
-            // label23
+            // gunlv_2
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(7, 116);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(20, 12);
-            this.label23.TabIndex = 2;
-            this.label23.Text = "LV";
+            this.gunlv_2.AutoSize = true;
+            this.gunlv_2.Location = new System.Drawing.Point(7, 116);
+            this.gunlv_2.Name = "gunlv_2";
+            this.gunlv_2.Size = new System.Drawing.Size(20, 12);
+            this.gunlv_2.TabIndex = 2;
+            this.gunlv_2.Text = "LV";
             // 
             // gunid_2_combobox
             // 
@@ -2456,49 +2510,49 @@
             this.gunid_2_combobox.TabIndex = 1;
             this.gunid_2_combobox.SelectedIndexChanged += new System.EventHandler(this.gunid_2_combobox_SelectedIndexChanged);
             // 
-            // label24
+            // gunid_2
             // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(6, 27);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(40, 12);
-            this.label24.TabIndex = 0;
-            this.label24.Text = "인형ID";
+            this.gunid_2.AutoSize = true;
+            this.gunid_2.Location = new System.Drawing.Point(6, 27);
+            this.gunid_2.Name = "gunid_2";
+            this.gunid_2.Size = new System.Drawing.Size(40, 12);
+            this.gunid_2.TabIndex = 0;
+            this.gunid_2.Text = "인형ID";
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button9);
+            this.groupBox1.Controls.Add(this.set_gunpos_btn_1);
+            this.groupBox1.Controls.Add(this.gun_resetstat_1);
             this.groupBox1.Controls.Add(this.gunhit_1_number);
-            this.groupBox1.Controls.Add(this.label68);
+            this.groupBox1.Controls.Add(this.gunhit_1);
             this.groupBox1.Controls.Add(this.gunpos_1_number);
-            this.groupBox1.Controls.Add(this.label63);
+            this.groupBox1.Controls.Add(this.gunpos_1);
             this.groupBox1.Controls.Add(this.gunskin_1_conbobox);
-            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.gunskin_1);
             this.groupBox1.Controls.Add(this.gunoath_1_checkbox);
             this.groupBox1.Controls.Add(this.gunfavor_1_number);
-            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.gunfavor_1);
             this.groupBox1.Controls.Add(this.gunskill2_1_number);
             this.groupBox1.Controls.Add(this.gunskill1_1_number);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.gunskill2_1);
+            this.groupBox1.Controls.Add(this.gunskill1_1);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.gundummy_1_number);
-            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.gundummy_1);
             this.groupBox1.Controls.Add(this.gunrate_1_number);
-            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.gunfirespeed_1);
             this.groupBox1.Controls.Add(this.gundodge_1_number);
-            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.gundodge_1);
             this.groupBox1.Controls.Add(this.gunpow_1_number);
-            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.gunfire_1);
             this.groupBox1.Controls.Add(this.gunhp_1_number);
-            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.gunhp_1);
             this.groupBox1.Controls.Add(this.gunlv_1_number);
-            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.gunlv_1);
             this.groupBox1.Controls.Add(this.gunid_1_combobox);
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.gunid_1);
             this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(139, 668);
@@ -2506,26 +2560,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "1번 인형";
             // 
-            // button3
+            // set_gunpos_btn_1
             // 
-            this.button3.Location = new System.Drawing.Point(65, 567);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(63, 23);
-            this.button3.TabIndex = 29;
-            this.button3.Text = "설정";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.Button3_Click_1);
+            this.set_gunpos_btn_1.Location = new System.Drawing.Point(65, 567);
+            this.set_gunpos_btn_1.Name = "set_gunpos_btn_1";
+            this.set_gunpos_btn_1.Size = new System.Drawing.Size(63, 23);
+            this.set_gunpos_btn_1.TabIndex = 29;
+            this.set_gunpos_btn_1.Text = "설정";
+            this.set_gunpos_btn_1.UseVisualStyleBackColor = true;
+            this.set_gunpos_btn_1.Click += new System.EventHandler(this.Button3_Click_1);
             // 
-            // button9
+            // gun_resetstat_1
             // 
-            this.button9.Location = new System.Drawing.Point(9, 635);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(119, 23);
-            this.button9.TabIndex = 28;
-            this.button9.Text = "기본스텟 초기화";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
-            this.button9.MouseHover += new System.EventHandler(this.button9_MouseHover);
+            this.gun_resetstat_1.Location = new System.Drawing.Point(9, 635);
+            this.gun_resetstat_1.Name = "gun_resetstat_1";
+            this.gun_resetstat_1.Size = new System.Drawing.Size(119, 23);
+            this.gun_resetstat_1.TabIndex = 28;
+            this.gun_resetstat_1.Text = "기본스텟 초기화";
+            this.gun_resetstat_1.UseVisualStyleBackColor = true;
+            this.gun_resetstat_1.Click += new System.EventHandler(this.button9_Click);
+            this.gun_resetstat_1.MouseHover += new System.EventHandler(this.button9_MouseHover);
             // 
             // gunhit_1_number
             // 
@@ -2544,14 +2598,14 @@
             0,
             0});
             // 
-            // label68
+            // gunhit_1
             // 
-            this.label68.AutoSize = true;
-            this.label68.Location = new System.Drawing.Point(9, 327);
-            this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(29, 12);
-            this.label68.TabIndex = 26;
-            this.label68.Text = "명중";
+            this.gunhit_1.AutoSize = true;
+            this.gunhit_1.Location = new System.Drawing.Point(9, 327);
+            this.gunhit_1.Name = "gunhit_1";
+            this.gunhit_1.Size = new System.Drawing.Size(29, 12);
+            this.gunhit_1.TabIndex = 26;
+            this.gunhit_1.Text = "명중";
             // 
             // gunpos_1_number
             // 
@@ -2576,14 +2630,14 @@
             0});
             this.gunpos_1_number.ValueChanged += new System.EventHandler(this.UpdatePosTile);
             // 
-            // label63
+            // gunpos_1
             // 
-            this.label63.AutoSize = true;
-            this.label63.Location = new System.Drawing.Point(9, 551);
-            this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(99, 12);
-            this.label63.TabIndex = 23;
-            this.label63.Text = "진형위치(키패드)";
+            this.gunpos_1.AutoSize = true;
+            this.gunpos_1.Location = new System.Drawing.Point(9, 551);
+            this.gunpos_1.Name = "gunpos_1";
+            this.gunpos_1.Size = new System.Drawing.Size(99, 12);
+            this.gunpos_1.TabIndex = 23;
+            this.gunpos_1.Text = "진형위치(키패드)";
             // 
             // gunskin_1_conbobox
             // 
@@ -2593,14 +2647,14 @@
             this.gunskin_1_conbobox.Size = new System.Drawing.Size(121, 20);
             this.gunskin_1_conbobox.TabIndex = 22;
             // 
-            // label12
+            // gunskin_1
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(8, 70);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(29, 12);
-            this.label12.TabIndex = 21;
-            this.label12.Text = "스킨";
+            this.gunskin_1.AutoSize = true;
+            this.gunskin_1.Location = new System.Drawing.Point(8, 70);
+            this.gunskin_1.Name = "gunskin_1";
+            this.gunskin_1.Size = new System.Drawing.Size(29, 12);
+            this.gunskin_1.TabIndex = 21;
+            this.gunskin_1.Text = "스킨";
             // 
             // gunoath_1_checkbox
             // 
@@ -2624,14 +2678,14 @@
             this.gunfavor_1_number.Size = new System.Drawing.Size(120, 21);
             this.gunfavor_1_number.TabIndex = 19;
             // 
-            // label11
+            // gunfavor_1
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(9, 504);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 12);
-            this.label11.TabIndex = 18;
-            this.label11.Text = "호감도";
+            this.gunfavor_1.AutoSize = true;
+            this.gunfavor_1.Location = new System.Drawing.Point(9, 504);
+            this.gunfavor_1.Name = "gunfavor_1";
+            this.gunfavor_1.Size = new System.Drawing.Size(41, 12);
+            this.gunfavor_1.TabIndex = 18;
+            this.gunfavor_1.Text = "호감도";
             // 
             // gunskill2_1_number
             // 
@@ -2667,23 +2721,23 @@
             0,
             0});
             // 
-            // label10
+            // gunskill2_1
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(7, 459);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(67, 12);
-            this.label10.TabIndex = 15;
-            this.label10.Text = "스킬 2 레벨";
+            this.gunskill2_1.AutoSize = true;
+            this.gunskill2_1.Location = new System.Drawing.Point(7, 459);
+            this.gunskill2_1.Name = "gunskill2_1";
+            this.gunskill2_1.Size = new System.Drawing.Size(67, 12);
+            this.gunskill2_1.TabIndex = 15;
+            this.gunskill2_1.Text = "스킬 2 레벨";
             // 
-            // label9
+            // gunskill1_1
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(9, 415);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(67, 12);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "스킬 1 레벨";
+            this.gunskill1_1.AutoSize = true;
+            this.gunskill1_1.Location = new System.Drawing.Point(9, 415);
+            this.gunskill1_1.Name = "gunskill1_1";
+            this.gunskill1_1.Size = new System.Drawing.Size(67, 12);
+            this.gunskill1_1.TabIndex = 15;
+            this.gunskill1_1.Text = "스킬 1 레벨";
             // 
             // label8
             // 
@@ -2715,14 +2769,14 @@
             0,
             0});
             // 
-            // label7
+            // gundummy_1
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(9, 369);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(45, 12);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "편제 수";
+            this.gundummy_1.AutoSize = true;
+            this.gundummy_1.Location = new System.Drawing.Point(9, 369);
+            this.gundummy_1.Name = "gundummy_1";
+            this.gundummy_1.Size = new System.Drawing.Size(45, 12);
+            this.gundummy_1.TabIndex = 12;
+            this.gundummy_1.Text = "편제 수";
             // 
             // gunrate_1_number
             // 
@@ -2741,14 +2795,14 @@
             0,
             0});
             // 
-            // label6
+            // gunfirespeed_1
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 283);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(29, 12);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "사속";
+            this.gunfirespeed_1.AutoSize = true;
+            this.gunfirespeed_1.Location = new System.Drawing.Point(9, 283);
+            this.gunfirespeed_1.Name = "gunfirespeed_1";
+            this.gunfirespeed_1.Size = new System.Drawing.Size(29, 12);
+            this.gunfirespeed_1.TabIndex = 10;
+            this.gunfirespeed_1.Text = "사속";
             // 
             // gundodge_1_number
             // 
@@ -2767,14 +2821,14 @@
             0,
             0});
             // 
-            // label5
+            // gundodge_1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 244);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(29, 12);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "회피";
+            this.gundodge_1.AutoSize = true;
+            this.gundodge_1.Location = new System.Drawing.Point(9, 244);
+            this.gundodge_1.Name = "gundodge_1";
+            this.gundodge_1.Size = new System.Drawing.Size(29, 12);
+            this.gundodge_1.TabIndex = 8;
+            this.gundodge_1.Text = "회피";
             // 
             // gunpow_1_number
             // 
@@ -2794,13 +2848,13 @@
             0});
             this.gunpow_1_number.ValueChanged += new System.EventHandler(this.Gunpow_1_number_ValueChanged);
             // 
-            // label4
+            // gunfire_1
             // 
-            this.label4.Location = new System.Drawing.Point(9, 203);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 14);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "화력";
+            this.gunfire_1.Location = new System.Drawing.Point(9, 203);
+            this.gunfire_1.Name = "gunfire_1";
+            this.gunfire_1.Size = new System.Drawing.Size(38, 14);
+            this.gunfire_1.TabIndex = 6;
+            this.gunfire_1.Text = "화력";
             // 
             // gunhp_1_number
             // 
@@ -2824,14 +2878,14 @@
             0,
             0});
             // 
-            // label3
+            // gunhp_1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 162);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(21, 12);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "HP";
+            this.gunhp_1.AutoSize = true;
+            this.gunhp_1.Location = new System.Drawing.Point(9, 162);
+            this.gunhp_1.Name = "gunhp_1";
+            this.gunhp_1.Size = new System.Drawing.Size(21, 12);
+            this.gunhp_1.TabIndex = 4;
+            this.gunhp_1.Text = "HP";
             // 
             // gunlv_1_number
             // 
@@ -2856,14 +2910,14 @@
             0});
             this.gunlv_1_number.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
-            // label2
+            // gunlv_1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 116);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(20, 12);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "LV";
+            this.gunlv_1.AutoSize = true;
+            this.gunlv_1.Location = new System.Drawing.Point(7, 116);
+            this.gunlv_1.Name = "gunlv_1";
+            this.gunlv_1.Size = new System.Drawing.Size(20, 12);
+            this.gunlv_1.TabIndex = 2;
+            this.gunlv_1.Text = "LV";
             // 
             // gunid_1_combobox
             // 
@@ -2874,17 +2928,272 @@
             this.gunid_1_combobox.TabIndex = 1;
             this.gunid_1_combobox.SelectedIndexChanged += new System.EventHandler(this.gunid_1_combobox_SelectedIndexChanged);
             // 
+            // gunid_1
+            // 
+            this.gunid_1.AutoSize = true;
+            this.gunid_1.Location = new System.Drawing.Point(6, 27);
+            this.gunid_1.Name = "gunid_1";
+            this.gunid_1.Size = new System.Drawing.Size(40, 12);
+            this.gunid_1.TabIndex = 0;
+            this.gunid_1.Text = "인형ID";
+            // 
+            // fire_support_unit_set
+            // 
+            this.fire_support_unit_set.Controls.Add(this.groupBox21);
+            this.fire_support_unit_set.Controls.Add(this.label116);
+            this.fire_support_unit_set.Controls.Add(this.groupBox13);
+            this.fire_support_unit_set.Controls.Add(this.groupBox12);
+            this.fire_support_unit_set.Controls.Add(this.groupBox11);
+            this.fire_support_unit_set.Controls.Add(this.groupBox10);
+            this.fire_support_unit_set.Controls.Add(this.groupBox9);
+            this.fire_support_unit_set.Controls.Add(this.groupBox8);
+            this.fire_support_unit_set.Location = new System.Drawing.Point(4, 22);
+            this.fire_support_unit_set.Name = "fire_support_unit_set";
+            this.fire_support_unit_set.Padding = new System.Windows.Forms.Padding(3);
+            this.fire_support_unit_set.Size = new System.Drawing.Size(875, 700);
+            this.fire_support_unit_set.TabIndex = 3;
+            this.fire_support_unit_set.Text = "중장비부대 설정";
+            this.fire_support_unit_set.UseVisualStyleBackColor = true;
+            // 
+            // groupBox21
+            // 
+            this.groupBox21.Controls.Add(this.sqdskill3_6);
+            this.groupBox21.Controls.Add(this.sqdreload_6);
+            this.groupBox21.Controls.Add(this.sqdskill2_6);
+            this.groupBox21.Controls.Add(this.sqdhit_6);
+            this.groupBox21.Controls.Add(this.sqdskill1_6);
+            this.groupBox21.Controls.Add(this.sqdbreak_6);
+            this.groupBox21.Controls.Add(this.sqddamage_6);
+            this.groupBox21.Controls.Add(this.sqd_6_skill3);
+            this.groupBox21.Controls.Add(this.sqd_6_skill2);
+            this.groupBox21.Controls.Add(this.sqd_6_reload);
+            this.groupBox21.Controls.Add(this.sqd_6_skill1);
+            this.groupBox21.Controls.Add(this.sqd_6_hit);
+            this.groupBox21.Controls.Add(this.sqd_6_break);
+            this.groupBox21.Controls.Add(this.sqd_6_damage);
+            this.groupBox21.Controls.Add(this.sqd_6_lv);
+            this.groupBox21.Controls.Add(this.sqdlv_6);
+            this.groupBox21.Location = new System.Drawing.Point(582, 6);
+            this.groupBox21.Name = "groupBox21";
+            this.groupBox21.Size = new System.Drawing.Size(110, 383);
+            this.groupBox21.TabIndex = 3;
+            this.groupBox21.TabStop = false;
+            this.groupBox21.Text = "QLZ-04";
+            // 
+            // sqdskill3_6
+            // 
+            this.sqdskill3_6.AutoSize = true;
+            this.sqdskill3_6.Location = new System.Drawing.Point(5, 330);
+            this.sqdskill3_6.Name = "sqdskill3_6";
+            this.sqdskill3_6.Size = new System.Drawing.Size(54, 12);
+            this.sqdskill3_6.TabIndex = 2;
+            this.sqdskill3_6.Text = "스킬3 LV";
+            // 
+            // sqdreload_6
+            // 
+            this.sqdreload_6.AutoSize = true;
+            this.sqdreload_6.Location = new System.Drawing.Point(3, 201);
+            this.sqdreload_6.Name = "sqdreload_6";
+            this.sqdreload_6.Size = new System.Drawing.Size(29, 12);
+            this.sqdreload_6.TabIndex = 2;
+            this.sqdreload_6.Text = "장전";
+            // 
+            // sqdskill2_6
+            // 
+            this.sqdskill2_6.AutoSize = true;
+            this.sqdskill2_6.Location = new System.Drawing.Point(5, 286);
+            this.sqdskill2_6.Name = "sqdskill2_6";
+            this.sqdskill2_6.Size = new System.Drawing.Size(54, 12);
+            this.sqdskill2_6.TabIndex = 2;
+            this.sqdskill2_6.Text = "스킬2 LV";
+            // 
+            // sqdhit_6
+            // 
+            this.sqdhit_6.AutoSize = true;
+            this.sqdhit_6.Location = new System.Drawing.Point(3, 157);
+            this.sqdhit_6.Name = "sqdhit_6";
+            this.sqdhit_6.Size = new System.Drawing.Size(41, 12);
+            this.sqdhit_6.TabIndex = 2;
+            this.sqdhit_6.Text = "정밀성";
+            // 
+            // sqdskill1_6
+            // 
+            this.sqdskill1_6.AutoSize = true;
+            this.sqdskill1_6.Location = new System.Drawing.Point(5, 243);
+            this.sqdskill1_6.Name = "sqdskill1_6";
+            this.sqdskill1_6.Size = new System.Drawing.Size(54, 12);
+            this.sqdskill1_6.TabIndex = 2;
+            this.sqdskill1_6.Text = "스킬1 LV";
+            // 
+            // sqdbreak_6
+            // 
+            this.sqdbreak_6.AutoSize = true;
+            this.sqdbreak_6.Location = new System.Drawing.Point(3, 114);
+            this.sqdbreak_6.Name = "sqdbreak_6";
+            this.sqdbreak_6.Size = new System.Drawing.Size(41, 12);
+            this.sqdbreak_6.TabIndex = 2;
+            this.sqdbreak_6.Text = "파쇄력";
+            // 
+            // sqddamage_6
+            // 
+            this.sqddamage_6.AutoSize = true;
+            this.sqddamage_6.Location = new System.Drawing.Point(3, 71);
+            this.sqddamage_6.Name = "sqddamage_6";
+            this.sqddamage_6.Size = new System.Drawing.Size(41, 12);
+            this.sqddamage_6.TabIndex = 2;
+            this.sqddamage_6.Text = "살상력";
+            // 
+            // sqd_6_skill3
+            // 
+            this.sqd_6_skill3.Location = new System.Drawing.Point(7, 345);
+            this.sqd_6_skill3.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.sqd_6_skill3.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.sqd_6_skill3.Name = "sqd_6_skill3";
+            this.sqd_6_skill3.Size = new System.Drawing.Size(96, 21);
+            this.sqd_6_skill3.TabIndex = 1;
+            this.sqd_6_skill3.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // sqd_6_skill2
+            // 
+            this.sqd_6_skill2.Location = new System.Drawing.Point(7, 301);
+            this.sqd_6_skill2.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.sqd_6_skill2.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.sqd_6_skill2.Name = "sqd_6_skill2";
+            this.sqd_6_skill2.Size = new System.Drawing.Size(96, 21);
+            this.sqd_6_skill2.TabIndex = 1;
+            this.sqd_6_skill2.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // sqd_6_reload
+            // 
+            this.sqd_6_reload.Location = new System.Drawing.Point(6, 216);
+            this.sqd_6_reload.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.sqd_6_reload.Name = "sqd_6_reload";
+            this.sqd_6_reload.Size = new System.Drawing.Size(96, 21);
+            this.sqd_6_reload.TabIndex = 1;
+            // 
+            // sqd_6_skill1
+            // 
+            this.sqd_6_skill1.Location = new System.Drawing.Point(7, 258);
+            this.sqd_6_skill1.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.sqd_6_skill1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.sqd_6_skill1.Name = "sqd_6_skill1";
+            this.sqd_6_skill1.Size = new System.Drawing.Size(96, 21);
+            this.sqd_6_skill1.TabIndex = 1;
+            this.sqd_6_skill1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // sqd_6_hit
+            // 
+            this.sqd_6_hit.Location = new System.Drawing.Point(6, 172);
+            this.sqd_6_hit.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.sqd_6_hit.Name = "sqd_6_hit";
+            this.sqd_6_hit.Size = new System.Drawing.Size(96, 21);
+            this.sqd_6_hit.TabIndex = 1;
+            // 
+            // sqd_6_break
+            // 
+            this.sqd_6_break.Location = new System.Drawing.Point(6, 129);
+            this.sqd_6_break.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.sqd_6_break.Name = "sqd_6_break";
+            this.sqd_6_break.Size = new System.Drawing.Size(96, 21);
+            this.sqd_6_break.TabIndex = 1;
+            // 
+            // sqd_6_damage
+            // 
+            this.sqd_6_damage.Location = new System.Drawing.Point(6, 86);
+            this.sqd_6_damage.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.sqd_6_damage.Name = "sqd_6_damage";
+            this.sqd_6_damage.Size = new System.Drawing.Size(96, 21);
+            this.sqd_6_damage.TabIndex = 1;
+            // 
+            // sqd_6_lv
+            // 
+            this.sqd_6_lv.Location = new System.Drawing.Point(6, 40);
+            this.sqd_6_lv.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.sqd_6_lv.Name = "sqd_6_lv";
+            this.sqd_6_lv.Size = new System.Drawing.Size(96, 21);
+            this.sqd_6_lv.TabIndex = 1;
+            this.sqd_6_lv.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // sqdlv_6
+            // 
+            this.sqdlv_6.AutoSize = true;
+            this.sqdlv_6.Location = new System.Drawing.Point(3, 25);
+            this.sqdlv_6.Name = "sqdlv_6";
+            this.sqdlv_6.Size = new System.Drawing.Size(20, 12);
+            this.sqdlv_6.TabIndex = 0;
+            this.sqdlv_6.Text = "LV";
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 12);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "인형ID";
+            //this.label1.AutoSize = true;
+            //this.label1.Location = new System.Drawing.Point(6, 27);
+            //this.label1.Name = "label1";
+            //this.label1.Size = new System.Drawing.Size(40, 12);
+            //this.label1.TabIndex = 0;
+            //this.label1.Text = "인형ID";
             // 
             // tabPage4
             // 
+            /*this.tabPage4.Controls.Add(this.groupBox21);
             this.tabPage4.Controls.Add(this.label116);
             this.tabPage4.Controls.Add(this.groupBox13);
             this.tabPage4.Controls.Add(this.groupBox12);
@@ -2898,7 +3207,235 @@
             this.tabPage4.Size = new System.Drawing.Size(875, 696);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "중장비부대 설정";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabPage4.UseVisualStyleBackColor = true;*/
+            // 
+            // groupBox21
+            // 
+            //this.groupBox21.Controls.Add(this.label124);
+            //this.groupBox21.Controls.Add(this.label125);
+            //this.groupBox21.Controls.Add(this.label126);
+            //this.groupBox21.Controls.Add(this.label127);
+            //this.groupBox21.Controls.Add(this.label128);
+            //this.groupBox21.Controls.Add(this.label129);
+            //this.groupBox21.Controls.Add(this.label130);
+            this.groupBox21.Controls.Add(this.sqd_6_skill3);
+            this.groupBox21.Controls.Add(this.sqd_6_skill2);
+            this.groupBox21.Controls.Add(this.sqd_6_reload);
+            this.groupBox21.Controls.Add(this.sqd_6_skill1);
+            this.groupBox21.Controls.Add(this.sqd_6_hit);
+            this.groupBox21.Controls.Add(this.sqd_6_break);
+            this.groupBox21.Controls.Add(this.sqd_6_damage);
+            this.groupBox21.Controls.Add(this.sqd_6_lv);
+            //this.groupBox21.Controls.Add(this.label131);
+            this.groupBox21.Location = new System.Drawing.Point(582, 6);
+            this.groupBox21.Name = "groupBox21";
+            this.groupBox21.Size = new System.Drawing.Size(110, 383);
+            this.groupBox21.TabIndex = 3;
+            this.groupBox21.TabStop = false;
+            this.groupBox21.Text = "QLZ-04";
+            // 
+            // label124
+            // 
+            /*this.label124.AutoSize = true;
+            this.label124.Location = new System.Drawing.Point(5, 330);
+            this.label124.Name = "label124";
+            this.label124.Size = new System.Drawing.Size(54, 12);
+            this.label124.TabIndex = 2;
+            this.label124.Text = "스킬3 LV";
+            // 
+            // label125
+            // 
+            this.label125.AutoSize = true;
+            this.label125.Location = new System.Drawing.Point(3, 201);
+            this.label125.Name = "label125";
+            this.label125.Size = new System.Drawing.Size(29, 12);
+            this.label125.TabIndex = 2;
+            this.label125.Text = "장전";
+            // 
+            // label126
+            // 
+            this.label126.AutoSize = true;
+            this.label126.Location = new System.Drawing.Point(5, 286);
+            this.label126.Name = "label126";
+            this.label126.Size = new System.Drawing.Size(54, 12);
+            this.label126.TabIndex = 2;
+            this.label126.Text = "스킬2 LV";
+            // 
+            // label127
+            // 
+            this.label127.AutoSize = true;
+            this.label127.Location = new System.Drawing.Point(3, 157);
+            this.label127.Name = "label127";
+            this.label127.Size = new System.Drawing.Size(41, 12);
+            this.label127.TabIndex = 2;
+            this.label127.Text = "정밀성";
+            // 
+            // label128
+            // 
+            this.label128.AutoSize = true;
+            this.label128.Location = new System.Drawing.Point(5, 243);
+            this.label128.Name = "label128";
+            this.label128.Size = new System.Drawing.Size(54, 12);
+            this.label128.TabIndex = 2;
+            this.label128.Text = "스킬1 LV";
+            // 
+            // label129
+            // 
+            this.label129.AutoSize = true;
+            this.label129.Location = new System.Drawing.Point(3, 114);
+            this.label129.Name = "label129";
+            this.label129.Size = new System.Drawing.Size(41, 12);
+            this.label129.TabIndex = 2;
+            this.label129.Text = "파쇄력";
+            // 
+            // label130
+            // 
+            this.label130.AutoSize = true;
+            this.label130.Location = new System.Drawing.Point(3, 71);
+            this.label130.Name = "label130";
+            this.label130.Size = new System.Drawing.Size(41, 12);
+            this.label130.TabIndex = 2;
+            this.label130.Text = "살상력";*/
+            // 
+            // sqd_6_skill3
+            // 
+            this.sqd_6_skill3.Location = new System.Drawing.Point(7, 345);
+            this.sqd_6_skill3.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.sqd_6_skill3.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.sqd_6_skill3.Name = "sqd_6_skill3";
+            this.sqd_6_skill3.Size = new System.Drawing.Size(96, 21);
+            this.sqd_6_skill3.TabIndex = 1;
+            this.sqd_6_skill3.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // sqd_6_skill2
+            // 
+            this.sqd_6_skill2.Location = new System.Drawing.Point(7, 301);
+            this.sqd_6_skill2.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.sqd_6_skill2.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.sqd_6_skill2.Name = "sqd_6_skill2";
+            this.sqd_6_skill2.Size = new System.Drawing.Size(96, 21);
+            this.sqd_6_skill2.TabIndex = 1;
+            this.sqd_6_skill2.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // sqd_6_reload
+            // 
+            this.sqd_6_reload.Location = new System.Drawing.Point(6, 216);
+            this.sqd_6_reload.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.sqd_6_reload.Name = "sqd_6_reload";
+            this.sqd_6_reload.Size = new System.Drawing.Size(96, 21);
+            this.sqd_6_reload.TabIndex = 1;
+            // 
+            // sqd_6_skill1
+            // 
+            this.sqd_6_skill1.Location = new System.Drawing.Point(7, 258);
+            this.sqd_6_skill1.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.sqd_6_skill1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.sqd_6_skill1.Name = "sqd_6_skill1";
+            this.sqd_6_skill1.Size = new System.Drawing.Size(96, 21);
+            this.sqd_6_skill1.TabIndex = 1;
+            this.sqd_6_skill1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // sqd_6_hit
+            // 
+            this.sqd_6_hit.Location = new System.Drawing.Point(6, 172);
+            this.sqd_6_hit.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.sqd_6_hit.Name = "sqd_6_hit";
+            this.sqd_6_hit.Size = new System.Drawing.Size(96, 21);
+            this.sqd_6_hit.TabIndex = 1;
+            // 
+            // sqd_6_break
+            // 
+            this.sqd_6_break.Location = new System.Drawing.Point(6, 129);
+            this.sqd_6_break.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.sqd_6_break.Name = "sqd_6_break";
+            this.sqd_6_break.Size = new System.Drawing.Size(96, 21);
+            this.sqd_6_break.TabIndex = 1;
+            // 
+            // sqd_6_damage
+            // 
+            this.sqd_6_damage.Location = new System.Drawing.Point(6, 86);
+            this.sqd_6_damage.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.sqd_6_damage.Name = "sqd_6_damage";
+            this.sqd_6_damage.Size = new System.Drawing.Size(96, 21);
+            this.sqd_6_damage.TabIndex = 1;
+            // 
+            // sqd_6_lv
+            // 
+            this.sqd_6_lv.Location = new System.Drawing.Point(6, 40);
+            this.sqd_6_lv.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.sqd_6_lv.Name = "sqd_6_lv";
+            this.sqd_6_lv.Size = new System.Drawing.Size(96, 21);
+            this.sqd_6_lv.TabIndex = 1;
+            this.sqd_6_lv.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label131
+            // 
+            //this.label131.AutoSize = true;
+            //this.label131.Location = new System.Drawing.Point(3, 25);
+            //this.label131.Name = "label131";
+            //this.label131.Size = new System.Drawing.Size(20, 12);
+           // this.label131.TabIndex = 0;
+           // this.label131.Text = "LV";
             // 
             // label116
             // 
@@ -2910,10 +3447,10 @@
             // 
             // groupBox13
             // 
-            this.groupBox13.Controls.Add(this.groupBox14);
-            this.groupBox13.Controls.Add(this.button8);
-            this.groupBox13.Controls.Add(this.button7);
-            this.groupBox13.Controls.Add(this.button6);
+            this.groupBox13.Controls.Add(this.set_fire);
+            this.groupBox13.Controls.Add(this.sqd_apply);
+            this.groupBox13.Controls.Add(this.sqd_load);
+            this.groupBox13.Controls.Add(this.sqd_save);
             this.groupBox13.Location = new System.Drawing.Point(698, 6);
             this.groupBox13.Name = "groupBox13";
             this.groupBox13.Size = new System.Drawing.Size(169, 682);
@@ -2921,8 +3458,35 @@
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "설정";
             // 
+            // set_fire
+            // 
+            this.set_fire.Controls.Add(this.sqdswitch_6);
+            this.set_fire.Controls.Add(this.sqdswitch_5);
+            this.set_fire.Controls.Add(this.sqdswitch_4);
+            this.set_fire.Controls.Add(this.sqdswitch_3);
+            this.set_fire.Controls.Add(this.sqdswitch_2);
+            this.set_fire.Controls.Add(this.sqdswitch_1);
+            this.set_fire.Location = new System.Drawing.Point(7, 135);
+            this.set_fire.Name = "set_fire";
+            this.set_fire.Size = new System.Drawing.Size(155, 163);
+            this.set_fire.TabIndex = 1;
+            this.set_fire.TabStop = false;
+            this.set_fire.Text = "지원설정";
+            // 
+            // sqdswitch_6
+            // 
+            this.sqdswitch_6.AutoSize = true;
+            this.sqdswitch_6.Location = new System.Drawing.Point(8, 134);
+            this.sqdswitch_6.Name = "sqdswitch_6";
+            this.sqdswitch_6.Size = new System.Drawing.Size(66, 16);
+            this.sqdswitch_6.TabIndex = 5;
+            this.sqdswitch_6.Text = "QLZ-04";
+            this.sqdswitch_6.UseVisualStyleBackColor = true;
+            this.sqdswitch_6.CheckedChanged += new System.EventHandler(this.Sqdswitch_6_CheckedChanged);
             // groupBox14
             // 
+            /*
+            this.groupBox14.Controls.Add(this.sqdswitch_6);
             this.groupBox14.Controls.Add(this.sqdswitch_5);
             this.groupBox14.Controls.Add(this.sqdswitch_4);
             this.groupBox14.Controls.Add(this.sqdswitch_3);
@@ -2930,10 +3494,21 @@
             this.groupBox14.Controls.Add(this.sqdswitch_1);
             this.groupBox14.Location = new System.Drawing.Point(7, 135);
             this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(155, 142);
+            this.groupBox14.Size = new System.Drawing.Size(155, 163);
             this.groupBox14.TabIndex = 1;
             this.groupBox14.TabStop = false;
-            this.groupBox14.Text = "지원설정";
+            this.groupBox14.Text = "지원설정";*/
+            // 
+            // sqdswitch_6
+            // 
+            this.sqdswitch_6.AutoSize = true;
+            this.sqdswitch_6.Location = new System.Drawing.Point(8, 134);
+            this.sqdswitch_6.Name = "sqdswitch_6";
+            this.sqdswitch_6.Size = new System.Drawing.Size(66, 16);
+            this.sqdswitch_6.TabIndex = 5;
+            this.sqdswitch_6.Text = "QLZ-04";
+            this.sqdswitch_6.UseVisualStyleBackColor = true;
+            this.sqdswitch_6.CheckedChanged += new System.EventHandler(this.Sqdswitch_6_CheckedChanged);
             // 
             // sqdswitch_5
             // 
@@ -2990,48 +3565,48 @@
             this.sqdswitch_1.UseVisualStyleBackColor = true;
             this.sqdswitch_1.CheckedChanged += new System.EventHandler(this.sqdswitch_1_CheckedChanged);
             // 
-            // button8
+            // sqd_apply
             // 
-            this.button8.Location = new System.Drawing.Point(23, 643);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(125, 23);
-            this.button8.TabIndex = 0;
-            this.button8.Text = "결정";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            this.button8.MouseHover += new System.EventHandler(this.Button8_MouseHover);
+            this.sqd_apply.Location = new System.Drawing.Point(23, 643);
+            this.sqd_apply.Name = "sqd_apply";
+            this.sqd_apply.Size = new System.Drawing.Size(125, 23);
+            this.sqd_apply.TabIndex = 0;
+            this.sqd_apply.Text = "결정";
+            this.sqd_apply.UseVisualStyleBackColor = true;
+            this.sqd_apply.Click += new System.EventHandler(this.button8_Click);
+            this.sqd_apply.MouseHover += new System.EventHandler(this.Button8_MouseHover);
             // 
-            // button7
+            // sqd_load
             // 
-            this.button7.Location = new System.Drawing.Point(23, 83);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(125, 23);
-            this.button7.TabIndex = 0;
-            this.button7.Text = "불러오기";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            this.button7.MouseHover += new System.EventHandler(this.Button7_MouseHover);
+            this.sqd_load.Location = new System.Drawing.Point(23, 83);
+            this.sqd_load.Name = "sqd_load";
+            this.sqd_load.Size = new System.Drawing.Size(125, 23);
+            this.sqd_load.TabIndex = 0;
+            this.sqd_load.Text = "불러오기";
+            this.sqd_load.UseVisualStyleBackColor = true;
+            this.sqd_load.Click += new System.EventHandler(this.button7_Click);
+            this.sqd_load.MouseHover += new System.EventHandler(this.Button7_MouseHover);
             // 
-            // button6
+            // sqd_save
             // 
-            this.button6.Location = new System.Drawing.Point(23, 37);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(125, 23);
-            this.button6.TabIndex = 0;
-            this.button6.Text = "저장";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click_1);
-            this.button6.MouseHover += new System.EventHandler(this.Button6_MouseHover);
+            this.sqd_save.Location = new System.Drawing.Point(23, 37);
+            this.sqd_save.Name = "sqd_save";
+            this.sqd_save.Size = new System.Drawing.Size(125, 23);
+            this.sqd_save.TabIndex = 0;
+            this.sqd_save.Text = "저장";
+            this.sqd_save.UseVisualStyleBackColor = true;
+            this.sqd_save.Click += new System.EventHandler(this.button6_Click_1);
+            this.sqd_save.MouseHover += new System.EventHandler(this.Button6_MouseHover);
             // 
             // groupBox12
             // 
-            this.groupBox12.Controls.Add(this.label107);
-            this.groupBox12.Controls.Add(this.label108);
-            this.groupBox12.Controls.Add(this.label109);
-            this.groupBox12.Controls.Add(this.label110);
-            this.groupBox12.Controls.Add(this.label111);
-            this.groupBox12.Controls.Add(this.label112);
-            this.groupBox12.Controls.Add(this.label113);
+            this.groupBox12.Controls.Add(this.sqdskill3_5);
+            this.groupBox12.Controls.Add(this.sqdreload_5);
+            this.groupBox12.Controls.Add(this.sqdskill2_5);
+            this.groupBox12.Controls.Add(this.sqdhit_5);
+            this.groupBox12.Controls.Add(this.sqdskill1_5);
+            this.groupBox12.Controls.Add(this.sqdbreak_5);
+            this.groupBox12.Controls.Add(this.sqddamage_5);
             this.groupBox12.Controls.Add(this.sqd_5_skill3);
             this.groupBox12.Controls.Add(this.sqd_5_skill2);
             this.groupBox12.Controls.Add(this.sqd_5_reload);
@@ -3040,76 +3615,76 @@
             this.groupBox12.Controls.Add(this.sqd_5_break);
             this.groupBox12.Controls.Add(this.sqd_5_damage);
             this.groupBox12.Controls.Add(this.sqd_5_lv);
-            this.groupBox12.Controls.Add(this.label114);
-            this.groupBox12.Location = new System.Drawing.Point(559, 6);
+            this.groupBox12.Controls.Add(this.sqdlv_5);
+            this.groupBox12.Location = new System.Drawing.Point(467, 6);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(132, 383);
+            this.groupBox12.Size = new System.Drawing.Size(110, 383);
             this.groupBox12.TabIndex = 0;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "AT-4";
             // 
-            // label107
+            // sqdskill3_5
             // 
-            this.label107.AutoSize = true;
-            this.label107.Location = new System.Drawing.Point(5, 330);
-            this.label107.Name = "label107";
-            this.label107.Size = new System.Drawing.Size(54, 12);
-            this.label107.TabIndex = 2;
-            this.label107.Text = "스킬3 LV";
+            this.sqdskill3_5.AutoSize = true;
+            this.sqdskill3_5.Location = new System.Drawing.Point(5, 330);
+            this.sqdskill3_5.Name = "sqdskill3_5";
+            this.sqdskill3_5.Size = new System.Drawing.Size(54, 12);
+            this.sqdskill3_5.TabIndex = 2;
+            this.sqdskill3_5.Text = "스킬3 LV";
             // 
-            // label108
+            // sqdreload_5
             // 
-            this.label108.AutoSize = true;
-            this.label108.Location = new System.Drawing.Point(3, 201);
-            this.label108.Name = "label108";
-            this.label108.Size = new System.Drawing.Size(29, 12);
-            this.label108.TabIndex = 2;
-            this.label108.Text = "장전";
+            this.sqdreload_5.AutoSize = true;
+            this.sqdreload_5.Location = new System.Drawing.Point(3, 201);
+            this.sqdreload_5.Name = "sqdreload_5";
+            this.sqdreload_5.Size = new System.Drawing.Size(29, 12);
+            this.sqdreload_5.TabIndex = 2;
+            this.sqdreload_5.Text = "장전";
             // 
-            // label109
+            // sqdskill2_5
             // 
-            this.label109.AutoSize = true;
-            this.label109.Location = new System.Drawing.Point(5, 286);
-            this.label109.Name = "label109";
-            this.label109.Size = new System.Drawing.Size(54, 12);
-            this.label109.TabIndex = 2;
-            this.label109.Text = "스킬2 LV";
+            this.sqdskill2_5.AutoSize = true;
+            this.sqdskill2_5.Location = new System.Drawing.Point(5, 286);
+            this.sqdskill2_5.Name = "sqdskill2_5";
+            this.sqdskill2_5.Size = new System.Drawing.Size(54, 12);
+            this.sqdskill2_5.TabIndex = 2;
+            this.sqdskill2_5.Text = "스킬2 LV";
             // 
-            // label110
+            // sqdhit_5
             // 
-            this.label110.AutoSize = true;
-            this.label110.Location = new System.Drawing.Point(3, 157);
-            this.label110.Name = "label110";
-            this.label110.Size = new System.Drawing.Size(41, 12);
-            this.label110.TabIndex = 2;
-            this.label110.Text = "정밀성";
+            this.sqdhit_5.AutoSize = true;
+            this.sqdhit_5.Location = new System.Drawing.Point(3, 157);
+            this.sqdhit_5.Name = "sqdhit_5";
+            this.sqdhit_5.Size = new System.Drawing.Size(41, 12);
+            this.sqdhit_5.TabIndex = 2;
+            this.sqdhit_5.Text = "정밀성";
             // 
-            // label111
+            // sqdskill1_5
             // 
-            this.label111.AutoSize = true;
-            this.label111.Location = new System.Drawing.Point(5, 243);
-            this.label111.Name = "label111";
-            this.label111.Size = new System.Drawing.Size(54, 12);
-            this.label111.TabIndex = 2;
-            this.label111.Text = "스킬1 LV";
+            this.sqdskill1_5.AutoSize = true;
+            this.sqdskill1_5.Location = new System.Drawing.Point(5, 243);
+            this.sqdskill1_5.Name = "sqdskill1_5";
+            this.sqdskill1_5.Size = new System.Drawing.Size(54, 12);
+            this.sqdskill1_5.TabIndex = 2;
+            this.sqdskill1_5.Text = "스킬1 LV";
             // 
-            // label112
+            // sqdbreak_5
             // 
-            this.label112.AutoSize = true;
-            this.label112.Location = new System.Drawing.Point(3, 114);
-            this.label112.Name = "label112";
-            this.label112.Size = new System.Drawing.Size(41, 12);
-            this.label112.TabIndex = 2;
-            this.label112.Text = "파쇄력";
+            this.sqdbreak_5.AutoSize = true;
+            this.sqdbreak_5.Location = new System.Drawing.Point(3, 114);
+            this.sqdbreak_5.Name = "sqdbreak_5";
+            this.sqdbreak_5.Size = new System.Drawing.Size(41, 12);
+            this.sqdbreak_5.TabIndex = 2;
+            this.sqdbreak_5.Text = "파쇄력";
             // 
-            // label113
+            // sqddamage_5
             // 
-            this.label113.AutoSize = true;
-            this.label113.Location = new System.Drawing.Point(3, 71);
-            this.label113.Name = "label113";
-            this.label113.Size = new System.Drawing.Size(41, 12);
-            this.label113.TabIndex = 2;
-            this.label113.Text = "살상력";
+            this.sqddamage_5.AutoSize = true;
+            this.sqddamage_5.Location = new System.Drawing.Point(3, 71);
+            this.sqddamage_5.Name = "sqddamage_5";
+            this.sqddamage_5.Size = new System.Drawing.Size(41, 12);
+            this.sqddamage_5.TabIndex = 2;
+            this.sqddamage_5.Text = "살상력";
             // 
             // sqd_5_skill3
             // 
@@ -3125,7 +3700,7 @@
             0,
             0});
             this.sqd_5_skill3.Name = "sqd_5_skill3";
-            this.sqd_5_skill3.Size = new System.Drawing.Size(119, 21);
+            this.sqd_5_skill3.Size = new System.Drawing.Size(96, 21);
             this.sqd_5_skill3.TabIndex = 1;
             this.sqd_5_skill3.Value = new decimal(new int[] {
             1,
@@ -3148,7 +3723,7 @@
             0,
             0});
             this.sqd_5_skill2.Name = "sqd_5_skill2";
-            this.sqd_5_skill2.Size = new System.Drawing.Size(119, 21);
+            this.sqd_5_skill2.Size = new System.Drawing.Size(96, 21);
             this.sqd_5_skill2.TabIndex = 1;
             this.sqd_5_skill2.Value = new decimal(new int[] {
             1,
@@ -3166,7 +3741,7 @@
             0,
             0});
             this.sqd_5_reload.Name = "sqd_5_reload";
-            this.sqd_5_reload.Size = new System.Drawing.Size(119, 21);
+            this.sqd_5_reload.Size = new System.Drawing.Size(96, 21);
             this.sqd_5_reload.TabIndex = 1;
             this.sqd_5_reload.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged_1);
             // 
@@ -3184,7 +3759,7 @@
             0,
             0});
             this.sqd_5_skill1.Name = "sqd_5_skill1";
-            this.sqd_5_skill1.Size = new System.Drawing.Size(119, 21);
+            this.sqd_5_skill1.Size = new System.Drawing.Size(96, 21);
             this.sqd_5_skill1.TabIndex = 1;
             this.sqd_5_skill1.Value = new decimal(new int[] {
             1,
@@ -3202,7 +3777,7 @@
             0,
             0});
             this.sqd_5_hit.Name = "sqd_5_hit";
-            this.sqd_5_hit.Size = new System.Drawing.Size(119, 21);
+            this.sqd_5_hit.Size = new System.Drawing.Size(96, 21);
             this.sqd_5_hit.TabIndex = 1;
             this.sqd_5_hit.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged_1);
             // 
@@ -3215,7 +3790,7 @@
             0,
             0});
             this.sqd_5_break.Name = "sqd_5_break";
-            this.sqd_5_break.Size = new System.Drawing.Size(119, 21);
+            this.sqd_5_break.Size = new System.Drawing.Size(96, 21);
             this.sqd_5_break.TabIndex = 1;
             this.sqd_5_break.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged_1);
             // 
@@ -3228,7 +3803,7 @@
             0,
             0});
             this.sqd_5_damage.Name = "sqd_5_damage";
-            this.sqd_5_damage.Size = new System.Drawing.Size(119, 21);
+            this.sqd_5_damage.Size = new System.Drawing.Size(96, 21);
             this.sqd_5_damage.TabIndex = 1;
             this.sqd_5_damage.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged_1);
             // 
@@ -3241,7 +3816,7 @@
             0,
             0});
             this.sqd_5_lv.Name = "sqd_5_lv";
-            this.sqd_5_lv.Size = new System.Drawing.Size(119, 21);
+            this.sqd_5_lv.Size = new System.Drawing.Size(96, 21);
             this.sqd_5_lv.TabIndex = 1;
             this.sqd_5_lv.Value = new decimal(new int[] {
             1,
@@ -3250,24 +3825,24 @@
             0});
             this.sqd_5_lv.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged_1);
             // 
-            // label114
+            // sqdlv_5
             // 
-            this.label114.AutoSize = true;
-            this.label114.Location = new System.Drawing.Point(3, 25);
-            this.label114.Name = "label114";
-            this.label114.Size = new System.Drawing.Size(20, 12);
-            this.label114.TabIndex = 0;
-            this.label114.Text = "LV";
+            this.sqdlv_5.AutoSize = true;
+            this.sqdlv_5.Location = new System.Drawing.Point(3, 25);
+            this.sqdlv_5.Name = "sqdlv_5";
+            this.sqdlv_5.Size = new System.Drawing.Size(20, 12);
+            this.sqdlv_5.TabIndex = 0;
+            this.sqdlv_5.Text = "LV";
             // 
             // groupBox11
             // 
-            this.groupBox11.Controls.Add(this.label99);
-            this.groupBox11.Controls.Add(this.label100);
-            this.groupBox11.Controls.Add(this.label101);
-            this.groupBox11.Controls.Add(this.label102);
-            this.groupBox11.Controls.Add(this.label103);
-            this.groupBox11.Controls.Add(this.label104);
-            this.groupBox11.Controls.Add(this.label105);
+            this.groupBox11.Controls.Add(this.sqdskill3_4);
+            this.groupBox11.Controls.Add(this.sqdreload_4);
+            this.groupBox11.Controls.Add(this.sqdskill2_4);
+            this.groupBox11.Controls.Add(this.sqdhit_4);
+            this.groupBox11.Controls.Add(this.sqdskill1_4);
+            this.groupBox11.Controls.Add(this.sqdbreak_4);
+            this.groupBox11.Controls.Add(this.sqddamage_4);
             this.groupBox11.Controls.Add(this.sqd_4_skill3);
             this.groupBox11.Controls.Add(this.sqd_4_skill2);
             this.groupBox11.Controls.Add(this.sqd_4_reload);
@@ -3276,76 +3851,76 @@
             this.groupBox11.Controls.Add(this.sqd_4_break);
             this.groupBox11.Controls.Add(this.sqd_4_damage);
             this.groupBox11.Controls.Add(this.sqd_4_lv);
-            this.groupBox11.Controls.Add(this.label106);
-            this.groupBox11.Location = new System.Drawing.Point(420, 6);
+            this.groupBox11.Controls.Add(this.sqdlv_4);
+            this.groupBox11.Location = new System.Drawing.Point(351, 6);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(132, 383);
+            this.groupBox11.Size = new System.Drawing.Size(110, 383);
             this.groupBox11.TabIndex = 0;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "M2";
             // 
-            // label99
+            // sqdskill3_4
             // 
-            this.label99.AutoSize = true;
-            this.label99.Location = new System.Drawing.Point(5, 330);
-            this.label99.Name = "label99";
-            this.label99.Size = new System.Drawing.Size(54, 12);
-            this.label99.TabIndex = 2;
-            this.label99.Text = "스킬3 LV";
+            this.sqdskill3_4.AutoSize = true;
+            this.sqdskill3_4.Location = new System.Drawing.Point(5, 330);
+            this.sqdskill3_4.Name = "sqdskill3_4";
+            this.sqdskill3_4.Size = new System.Drawing.Size(54, 12);
+            this.sqdskill3_4.TabIndex = 2;
+            this.sqdskill3_4.Text = "스킬3 LV";
             // 
-            // label100
+            // sqdreload_4
             // 
-            this.label100.AutoSize = true;
-            this.label100.Location = new System.Drawing.Point(3, 201);
-            this.label100.Name = "label100";
-            this.label100.Size = new System.Drawing.Size(29, 12);
-            this.label100.TabIndex = 2;
-            this.label100.Text = "장전";
+            this.sqdreload_4.AutoSize = true;
+            this.sqdreload_4.Location = new System.Drawing.Point(3, 201);
+            this.sqdreload_4.Name = "sqdreload_4";
+            this.sqdreload_4.Size = new System.Drawing.Size(29, 12);
+            this.sqdreload_4.TabIndex = 2;
+            this.sqdreload_4.Text = "장전";
             // 
-            // label101
+            // sqdskill2_4
             // 
-            this.label101.AutoSize = true;
-            this.label101.Location = new System.Drawing.Point(5, 286);
-            this.label101.Name = "label101";
-            this.label101.Size = new System.Drawing.Size(54, 12);
-            this.label101.TabIndex = 2;
-            this.label101.Text = "스킬2 LV";
+            this.sqdskill2_4.AutoSize = true;
+            this.sqdskill2_4.Location = new System.Drawing.Point(5, 286);
+            this.sqdskill2_4.Name = "sqdskill2_4";
+            this.sqdskill2_4.Size = new System.Drawing.Size(54, 12);
+            this.sqdskill2_4.TabIndex = 2;
+            this.sqdskill2_4.Text = "스킬2 LV";
             // 
-            // label102
+            // sqdhit_4
             // 
-            this.label102.AutoSize = true;
-            this.label102.Location = new System.Drawing.Point(3, 157);
-            this.label102.Name = "label102";
-            this.label102.Size = new System.Drawing.Size(41, 12);
-            this.label102.TabIndex = 2;
-            this.label102.Text = "정밀성";
+            this.sqdhit_4.AutoSize = true;
+            this.sqdhit_4.Location = new System.Drawing.Point(3, 157);
+            this.sqdhit_4.Name = "sqdhit_4";
+            this.sqdhit_4.Size = new System.Drawing.Size(41, 12);
+            this.sqdhit_4.TabIndex = 2;
+            this.sqdhit_4.Text = "정밀성";
             // 
-            // label103
+            // sqdskill1_4
             // 
-            this.label103.AutoSize = true;
-            this.label103.Location = new System.Drawing.Point(5, 243);
-            this.label103.Name = "label103";
-            this.label103.Size = new System.Drawing.Size(54, 12);
-            this.label103.TabIndex = 2;
-            this.label103.Text = "스킬1 LV";
+            this.sqdskill1_4.AutoSize = true;
+            this.sqdskill1_4.Location = new System.Drawing.Point(5, 243);
+            this.sqdskill1_4.Name = "sqdskill1_4";
+            this.sqdskill1_4.Size = new System.Drawing.Size(54, 12);
+            this.sqdskill1_4.TabIndex = 2;
+            this.sqdskill1_4.Text = "스킬1 LV";
             // 
-            // label104
+            // sqdbreak_4
             // 
-            this.label104.AutoSize = true;
-            this.label104.Location = new System.Drawing.Point(3, 114);
-            this.label104.Name = "label104";
-            this.label104.Size = new System.Drawing.Size(41, 12);
-            this.label104.TabIndex = 2;
-            this.label104.Text = "파쇄력";
+            this.sqdbreak_4.AutoSize = true;
+            this.sqdbreak_4.Location = new System.Drawing.Point(3, 114);
+            this.sqdbreak_4.Name = "sqdbreak_4";
+            this.sqdbreak_4.Size = new System.Drawing.Size(41, 12);
+            this.sqdbreak_4.TabIndex = 2;
+            this.sqdbreak_4.Text = "파쇄력";
             // 
-            // label105
+            // sqddamage_4
             // 
-            this.label105.AutoSize = true;
-            this.label105.Location = new System.Drawing.Point(3, 71);
-            this.label105.Name = "label105";
-            this.label105.Size = new System.Drawing.Size(41, 12);
-            this.label105.TabIndex = 2;
-            this.label105.Text = "살상력";
+            this.sqddamage_4.AutoSize = true;
+            this.sqddamage_4.Location = new System.Drawing.Point(3, 71);
+            this.sqddamage_4.Name = "sqddamage_4";
+            this.sqddamage_4.Size = new System.Drawing.Size(41, 12);
+            this.sqddamage_4.TabIndex = 2;
+            this.sqddamage_4.Text = "살상력";
             // 
             // sqd_4_skill3
             // 
@@ -3361,7 +3936,7 @@
             0,
             0});
             this.sqd_4_skill3.Name = "sqd_4_skill3";
-            this.sqd_4_skill3.Size = new System.Drawing.Size(119, 21);
+            this.sqd_4_skill3.Size = new System.Drawing.Size(96, 21);
             this.sqd_4_skill3.TabIndex = 1;
             this.sqd_4_skill3.Value = new decimal(new int[] {
             1,
@@ -3384,7 +3959,7 @@
             0,
             0});
             this.sqd_4_skill2.Name = "sqd_4_skill2";
-            this.sqd_4_skill2.Size = new System.Drawing.Size(119, 21);
+            this.sqd_4_skill2.Size = new System.Drawing.Size(96, 21);
             this.sqd_4_skill2.TabIndex = 1;
             this.sqd_4_skill2.Value = new decimal(new int[] {
             1,
@@ -3402,7 +3977,7 @@
             0,
             0});
             this.sqd_4_reload.Name = "sqd_4_reload";
-            this.sqd_4_reload.Size = new System.Drawing.Size(119, 21);
+            this.sqd_4_reload.Size = new System.Drawing.Size(96, 21);
             this.sqd_4_reload.TabIndex = 1;
             this.sqd_4_reload.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged_1);
             // 
@@ -3420,7 +3995,7 @@
             0,
             0});
             this.sqd_4_skill1.Name = "sqd_4_skill1";
-            this.sqd_4_skill1.Size = new System.Drawing.Size(119, 21);
+            this.sqd_4_skill1.Size = new System.Drawing.Size(96, 21);
             this.sqd_4_skill1.TabIndex = 1;
             this.sqd_4_skill1.Value = new decimal(new int[] {
             1,
@@ -3438,7 +4013,7 @@
             0,
             0});
             this.sqd_4_hit.Name = "sqd_4_hit";
-            this.sqd_4_hit.Size = new System.Drawing.Size(119, 21);
+            this.sqd_4_hit.Size = new System.Drawing.Size(96, 21);
             this.sqd_4_hit.TabIndex = 1;
             this.sqd_4_hit.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged_1);
             // 
@@ -3451,7 +4026,7 @@
             0,
             0});
             this.sqd_4_break.Name = "sqd_4_break";
-            this.sqd_4_break.Size = new System.Drawing.Size(119, 21);
+            this.sqd_4_break.Size = new System.Drawing.Size(96, 21);
             this.sqd_4_break.TabIndex = 1;
             this.sqd_4_break.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged_1);
             // 
@@ -3464,7 +4039,7 @@
             0,
             0});
             this.sqd_4_damage.Name = "sqd_4_damage";
-            this.sqd_4_damage.Size = new System.Drawing.Size(119, 21);
+            this.sqd_4_damage.Size = new System.Drawing.Size(96, 21);
             this.sqd_4_damage.TabIndex = 1;
             this.sqd_4_damage.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged_1);
             // 
@@ -3477,7 +4052,7 @@
             0,
             0});
             this.sqd_4_lv.Name = "sqd_4_lv";
-            this.sqd_4_lv.Size = new System.Drawing.Size(119, 21);
+            this.sqd_4_lv.Size = new System.Drawing.Size(96, 21);
             this.sqd_4_lv.TabIndex = 1;
             this.sqd_4_lv.Value = new decimal(new int[] {
             1,
@@ -3486,24 +4061,24 @@
             0});
             this.sqd_4_lv.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged_1);
             // 
-            // label106
+            // sqdlv_4
             // 
-            this.label106.AutoSize = true;
-            this.label106.Location = new System.Drawing.Point(3, 25);
-            this.label106.Name = "label106";
-            this.label106.Size = new System.Drawing.Size(20, 12);
-            this.label106.TabIndex = 0;
-            this.label106.Text = "LV";
+            this.sqdlv_4.AutoSize = true;
+            this.sqdlv_4.Location = new System.Drawing.Point(3, 25);
+            this.sqdlv_4.Name = "sqdlv_4";
+            this.sqdlv_4.Size = new System.Drawing.Size(20, 12);
+            this.sqdlv_4.TabIndex = 0;
+            this.sqdlv_4.Text = "LV";
             // 
             // groupBox10
             // 
-            this.groupBox10.Controls.Add(this.label91);
-            this.groupBox10.Controls.Add(this.label92);
-            this.groupBox10.Controls.Add(this.label93);
-            this.groupBox10.Controls.Add(this.label94);
-            this.groupBox10.Controls.Add(this.label95);
-            this.groupBox10.Controls.Add(this.label96);
-            this.groupBox10.Controls.Add(this.label97);
+            this.groupBox10.Controls.Add(this.sqdskill3_3);
+            this.groupBox10.Controls.Add(this.sqdreload_3);
+            this.groupBox10.Controls.Add(this.sqdskill2_3);
+            this.groupBox10.Controls.Add(this.sqdhit_3);
+            this.groupBox10.Controls.Add(this.sqdskill1_3);
+            this.groupBox10.Controls.Add(this.sqdbreak_3);
+            this.groupBox10.Controls.Add(this.sqddamage_3);
             this.groupBox10.Controls.Add(this.sqd_3_skill3);
             this.groupBox10.Controls.Add(this.sqd_3_skill2);
             this.groupBox10.Controls.Add(this.sqd_3_reload);
@@ -3512,76 +4087,76 @@
             this.groupBox10.Controls.Add(this.sqd_3_break);
             this.groupBox10.Controls.Add(this.sqd_3_damage);
             this.groupBox10.Controls.Add(this.sqd_3_lv);
-            this.groupBox10.Controls.Add(this.label98);
-            this.groupBox10.Location = new System.Drawing.Point(281, 6);
+            this.groupBox10.Controls.Add(this.sqdlv_3);
+            this.groupBox10.Location = new System.Drawing.Point(234, 6);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(132, 383);
+            this.groupBox10.Size = new System.Drawing.Size(110, 383);
             this.groupBox10.TabIndex = 0;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "2B14";
             // 
-            // label91
+            // sqdskill3_3
             // 
-            this.label91.AutoSize = true;
-            this.label91.Location = new System.Drawing.Point(5, 330);
-            this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(54, 12);
-            this.label91.TabIndex = 2;
-            this.label91.Text = "스킬3 LV";
+            this.sqdskill3_3.AutoSize = true;
+            this.sqdskill3_3.Location = new System.Drawing.Point(5, 330);
+            this.sqdskill3_3.Name = "sqdskill3_3";
+            this.sqdskill3_3.Size = new System.Drawing.Size(54, 12);
+            this.sqdskill3_3.TabIndex = 2;
+            this.sqdskill3_3.Text = "스킬3 LV";
             // 
-            // label92
+            // sqdreload_3
             // 
-            this.label92.AutoSize = true;
-            this.label92.Location = new System.Drawing.Point(3, 201);
-            this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(29, 12);
-            this.label92.TabIndex = 2;
-            this.label92.Text = "장전";
+            this.sqdreload_3.AutoSize = true;
+            this.sqdreload_3.Location = new System.Drawing.Point(3, 201);
+            this.sqdreload_3.Name = "sqdreload_3";
+            this.sqdreload_3.Size = new System.Drawing.Size(29, 12);
+            this.sqdreload_3.TabIndex = 2;
+            this.sqdreload_3.Text = "장전";
             // 
-            // label93
+            // sqdskill2_3
             // 
-            this.label93.AutoSize = true;
-            this.label93.Location = new System.Drawing.Point(5, 286);
-            this.label93.Name = "label93";
-            this.label93.Size = new System.Drawing.Size(54, 12);
-            this.label93.TabIndex = 2;
-            this.label93.Text = "스킬2 LV";
+            this.sqdskill2_3.AutoSize = true;
+            this.sqdskill2_3.Location = new System.Drawing.Point(5, 286);
+            this.sqdskill2_3.Name = "sqdskill2_3";
+            this.sqdskill2_3.Size = new System.Drawing.Size(54, 12);
+            this.sqdskill2_3.TabIndex = 2;
+            this.sqdskill2_3.Text = "스킬2 LV";
             // 
-            // label94
+            // sqdhit_3
             // 
-            this.label94.AutoSize = true;
-            this.label94.Location = new System.Drawing.Point(3, 157);
-            this.label94.Name = "label94";
-            this.label94.Size = new System.Drawing.Size(41, 12);
-            this.label94.TabIndex = 2;
-            this.label94.Text = "정밀성";
+            this.sqdhit_3.AutoSize = true;
+            this.sqdhit_3.Location = new System.Drawing.Point(3, 157);
+            this.sqdhit_3.Name = "sqdhit_3";
+            this.sqdhit_3.Size = new System.Drawing.Size(41, 12);
+            this.sqdhit_3.TabIndex = 2;
+            this.sqdhit_3.Text = "정밀성";
             // 
-            // label95
+            // sqdskill1_3
             // 
-            this.label95.AutoSize = true;
-            this.label95.Location = new System.Drawing.Point(5, 243);
-            this.label95.Name = "label95";
-            this.label95.Size = new System.Drawing.Size(54, 12);
-            this.label95.TabIndex = 2;
-            this.label95.Text = "스킬1 LV";
+            this.sqdskill1_3.AutoSize = true;
+            this.sqdskill1_3.Location = new System.Drawing.Point(5, 243);
+            this.sqdskill1_3.Name = "sqdskill1_3";
+            this.sqdskill1_3.Size = new System.Drawing.Size(54, 12);
+            this.sqdskill1_3.TabIndex = 2;
+            this.sqdskill1_3.Text = "스킬1 LV";
             // 
-            // label96
+            // sqdbreak_3
             // 
-            this.label96.AutoSize = true;
-            this.label96.Location = new System.Drawing.Point(3, 114);
-            this.label96.Name = "label96";
-            this.label96.Size = new System.Drawing.Size(41, 12);
-            this.label96.TabIndex = 2;
-            this.label96.Text = "파쇄력";
+            this.sqdbreak_3.AutoSize = true;
+            this.sqdbreak_3.Location = new System.Drawing.Point(3, 114);
+            this.sqdbreak_3.Name = "sqdbreak_3";
+            this.sqdbreak_3.Size = new System.Drawing.Size(41, 12);
+            this.sqdbreak_3.TabIndex = 2;
+            this.sqdbreak_3.Text = "파쇄력";
             // 
-            // label97
+            // sqddamage_3
             // 
-            this.label97.AutoSize = true;
-            this.label97.Location = new System.Drawing.Point(3, 71);
-            this.label97.Name = "label97";
-            this.label97.Size = new System.Drawing.Size(41, 12);
-            this.label97.TabIndex = 2;
-            this.label97.Text = "살상력";
+            this.sqddamage_3.AutoSize = true;
+            this.sqddamage_3.Location = new System.Drawing.Point(3, 71);
+            this.sqddamage_3.Name = "sqddamage_3";
+            this.sqddamage_3.Size = new System.Drawing.Size(41, 12);
+            this.sqddamage_3.TabIndex = 2;
+            this.sqddamage_3.Text = "살상력";
             // 
             // sqd_3_skill3
             // 
@@ -3597,7 +4172,7 @@
             0,
             0});
             this.sqd_3_skill3.Name = "sqd_3_skill3";
-            this.sqd_3_skill3.Size = new System.Drawing.Size(119, 21);
+            this.sqd_3_skill3.Size = new System.Drawing.Size(96, 21);
             this.sqd_3_skill3.TabIndex = 1;
             this.sqd_3_skill3.Value = new decimal(new int[] {
             1,
@@ -3620,7 +4195,7 @@
             0,
             0});
             this.sqd_3_skill2.Name = "sqd_3_skill2";
-            this.sqd_3_skill2.Size = new System.Drawing.Size(119, 21);
+            this.sqd_3_skill2.Size = new System.Drawing.Size(96, 21);
             this.sqd_3_skill2.TabIndex = 1;
             this.sqd_3_skill2.Value = new decimal(new int[] {
             1,
@@ -3638,7 +4213,7 @@
             0,
             0});
             this.sqd_3_reload.Name = "sqd_3_reload";
-            this.sqd_3_reload.Size = new System.Drawing.Size(119, 21);
+            this.sqd_3_reload.Size = new System.Drawing.Size(96, 21);
             this.sqd_3_reload.TabIndex = 1;
             this.sqd_3_reload.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged_1);
             // 
@@ -3656,7 +4231,7 @@
             0,
             0});
             this.sqd_3_skill1.Name = "sqd_3_skill1";
-            this.sqd_3_skill1.Size = new System.Drawing.Size(119, 21);
+            this.sqd_3_skill1.Size = new System.Drawing.Size(96, 21);
             this.sqd_3_skill1.TabIndex = 1;
             this.sqd_3_skill1.Value = new decimal(new int[] {
             1,
@@ -3674,7 +4249,7 @@
             0,
             0});
             this.sqd_3_hit.Name = "sqd_3_hit";
-            this.sqd_3_hit.Size = new System.Drawing.Size(119, 21);
+            this.sqd_3_hit.Size = new System.Drawing.Size(96, 21);
             this.sqd_3_hit.TabIndex = 1;
             this.sqd_3_hit.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged_1);
             // 
@@ -3687,7 +4262,7 @@
             0,
             0});
             this.sqd_3_break.Name = "sqd_3_break";
-            this.sqd_3_break.Size = new System.Drawing.Size(119, 21);
+            this.sqd_3_break.Size = new System.Drawing.Size(96, 21);
             this.sqd_3_break.TabIndex = 1;
             this.sqd_3_break.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged_1);
             // 
@@ -3700,7 +4275,7 @@
             0,
             0});
             this.sqd_3_damage.Name = "sqd_3_damage";
-            this.sqd_3_damage.Size = new System.Drawing.Size(119, 21);
+            this.sqd_3_damage.Size = new System.Drawing.Size(96, 21);
             this.sqd_3_damage.TabIndex = 1;
             this.sqd_3_damage.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged_1);
             // 
@@ -3713,7 +4288,7 @@
             0,
             0});
             this.sqd_3_lv.Name = "sqd_3_lv";
-            this.sqd_3_lv.Size = new System.Drawing.Size(119, 21);
+            this.sqd_3_lv.Size = new System.Drawing.Size(96, 21);
             this.sqd_3_lv.TabIndex = 1;
             this.sqd_3_lv.Value = new decimal(new int[] {
             1,
@@ -3722,24 +4297,24 @@
             0});
             this.sqd_3_lv.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged_1);
             // 
-            // label98
+            // sqdlv_3
             // 
-            this.label98.AutoSize = true;
-            this.label98.Location = new System.Drawing.Point(3, 25);
-            this.label98.Name = "label98";
-            this.label98.Size = new System.Drawing.Size(20, 12);
-            this.label98.TabIndex = 0;
-            this.label98.Text = "LV";
+            this.sqdlv_3.AutoSize = true;
+            this.sqdlv_3.Location = new System.Drawing.Point(3, 25);
+            this.sqdlv_3.Name = "sqdlv_3";
+            this.sqdlv_3.Size = new System.Drawing.Size(20, 12);
+            this.sqdlv_3.TabIndex = 0;
+            this.sqdlv_3.Text = "LV";
             // 
             // groupBox9
             // 
-            this.groupBox9.Controls.Add(this.label83);
-            this.groupBox9.Controls.Add(this.label84);
-            this.groupBox9.Controls.Add(this.label85);
-            this.groupBox9.Controls.Add(this.label86);
-            this.groupBox9.Controls.Add(this.label87);
-            this.groupBox9.Controls.Add(this.label88);
-            this.groupBox9.Controls.Add(this.label89);
+            this.groupBox9.Controls.Add(this.sqdskill3_2);
+            this.groupBox9.Controls.Add(this.sqdreload_2);
+            this.groupBox9.Controls.Add(this.sqdskill2_2);
+            this.groupBox9.Controls.Add(this.sqdhit_2);
+            this.groupBox9.Controls.Add(this.sqdskill1_2);
+            this.groupBox9.Controls.Add(this.sqdbreak_2);
+            this.groupBox9.Controls.Add(this.sqddamage_2);
             this.groupBox9.Controls.Add(this.sqd_2_skill3);
             this.groupBox9.Controls.Add(this.sqd_2_skill2);
             this.groupBox9.Controls.Add(this.sqd_2_reload);
@@ -3748,76 +4323,76 @@
             this.groupBox9.Controls.Add(this.sqd_2_break);
             this.groupBox9.Controls.Add(this.sqd_2_damage);
             this.groupBox9.Controls.Add(this.sqd_2_lv);
-            this.groupBox9.Controls.Add(this.label90);
-            this.groupBox9.Location = new System.Drawing.Point(142, 6);
+            this.groupBox9.Controls.Add(this.sqdlv_2);
+            this.groupBox9.Location = new System.Drawing.Point(119, 6);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(132, 383);
+            this.groupBox9.Size = new System.Drawing.Size(110, 383);
             this.groupBox9.TabIndex = 0;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "AGS-30";
             // 
-            // label83
+            // sqdskill3_2
             // 
-            this.label83.AutoSize = true;
-            this.label83.Location = new System.Drawing.Point(5, 330);
-            this.label83.Name = "label83";
-            this.label83.Size = new System.Drawing.Size(54, 12);
-            this.label83.TabIndex = 2;
-            this.label83.Text = "스킬3 LV";
+            this.sqdskill3_2.AutoSize = true;
+            this.sqdskill3_2.Location = new System.Drawing.Point(5, 330);
+            this.sqdskill3_2.Name = "sqdskill3_2";
+            this.sqdskill3_2.Size = new System.Drawing.Size(54, 12);
+            this.sqdskill3_2.TabIndex = 2;
+            this.sqdskill3_2.Text = "스킬3 LV";
             // 
-            // label84
+            // sqdreload_2
             // 
-            this.label84.AutoSize = true;
-            this.label84.Location = new System.Drawing.Point(3, 201);
-            this.label84.Name = "label84";
-            this.label84.Size = new System.Drawing.Size(29, 12);
-            this.label84.TabIndex = 2;
-            this.label84.Text = "장전";
+            this.sqdreload_2.AutoSize = true;
+            this.sqdreload_2.Location = new System.Drawing.Point(3, 201);
+            this.sqdreload_2.Name = "sqdreload_2";
+            this.sqdreload_2.Size = new System.Drawing.Size(29, 12);
+            this.sqdreload_2.TabIndex = 2;
+            this.sqdreload_2.Text = "장전";
             // 
-            // label85
+            // sqdskill2_2
             // 
-            this.label85.AutoSize = true;
-            this.label85.Location = new System.Drawing.Point(5, 286);
-            this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(54, 12);
-            this.label85.TabIndex = 2;
-            this.label85.Text = "스킬2 LV";
+            this.sqdskill2_2.AutoSize = true;
+            this.sqdskill2_2.Location = new System.Drawing.Point(5, 286);
+            this.sqdskill2_2.Name = "sqdskill2_2";
+            this.sqdskill2_2.Size = new System.Drawing.Size(54, 12);
+            this.sqdskill2_2.TabIndex = 2;
+            this.sqdskill2_2.Text = "스킬2 LV";
             // 
-            // label86
+            // sqdhit_2
             // 
-            this.label86.AutoSize = true;
-            this.label86.Location = new System.Drawing.Point(3, 157);
-            this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(41, 12);
-            this.label86.TabIndex = 2;
-            this.label86.Text = "정밀성";
+            this.sqdhit_2.AutoSize = true;
+            this.sqdhit_2.Location = new System.Drawing.Point(3, 157);
+            this.sqdhit_2.Name = "sqdhit_2";
+            this.sqdhit_2.Size = new System.Drawing.Size(41, 12);
+            this.sqdhit_2.TabIndex = 2;
+            this.sqdhit_2.Text = "정밀성";
             // 
-            // label87
+            // sqdskill1_2
             // 
-            this.label87.AutoSize = true;
-            this.label87.Location = new System.Drawing.Point(5, 243);
-            this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(54, 12);
-            this.label87.TabIndex = 2;
-            this.label87.Text = "스킬1 LV";
+            this.sqdskill1_2.AutoSize = true;
+            this.sqdskill1_2.Location = new System.Drawing.Point(5, 243);
+            this.sqdskill1_2.Name = "sqdskill1_2";
+            this.sqdskill1_2.Size = new System.Drawing.Size(54, 12);
+            this.sqdskill1_2.TabIndex = 2;
+            this.sqdskill1_2.Text = "스킬1 LV";
             // 
-            // label88
+            // sqdbreak_2
             // 
-            this.label88.AutoSize = true;
-            this.label88.Location = new System.Drawing.Point(3, 114);
-            this.label88.Name = "label88";
-            this.label88.Size = new System.Drawing.Size(41, 12);
-            this.label88.TabIndex = 2;
-            this.label88.Text = "파쇄력";
+            this.sqdbreak_2.AutoSize = true;
+            this.sqdbreak_2.Location = new System.Drawing.Point(3, 114);
+            this.sqdbreak_2.Name = "sqdbreak_2";
+            this.sqdbreak_2.Size = new System.Drawing.Size(41, 12);
+            this.sqdbreak_2.TabIndex = 2;
+            this.sqdbreak_2.Text = "파쇄력";
             // 
-            // label89
+            // sqddamage_2
             // 
-            this.label89.AutoSize = true;
-            this.label89.Location = new System.Drawing.Point(3, 71);
-            this.label89.Name = "label89";
-            this.label89.Size = new System.Drawing.Size(41, 12);
-            this.label89.TabIndex = 2;
-            this.label89.Text = "살상력";
+            this.sqddamage_2.AutoSize = true;
+            this.sqddamage_2.Location = new System.Drawing.Point(3, 71);
+            this.sqddamage_2.Name = "sqddamage_2";
+            this.sqddamage_2.Size = new System.Drawing.Size(41, 12);
+            this.sqddamage_2.TabIndex = 2;
+            this.sqddamage_2.Text = "살상력";
             // 
             // sqd_2_skill3
             // 
@@ -3833,7 +4408,7 @@
             0,
             0});
             this.sqd_2_skill3.Name = "sqd_2_skill3";
-            this.sqd_2_skill3.Size = new System.Drawing.Size(119, 21);
+            this.sqd_2_skill3.Size = new System.Drawing.Size(96, 21);
             this.sqd_2_skill3.TabIndex = 1;
             this.sqd_2_skill3.Value = new decimal(new int[] {
             1,
@@ -3856,7 +4431,7 @@
             0,
             0});
             this.sqd_2_skill2.Name = "sqd_2_skill2";
-            this.sqd_2_skill2.Size = new System.Drawing.Size(119, 21);
+            this.sqd_2_skill2.Size = new System.Drawing.Size(96, 21);
             this.sqd_2_skill2.TabIndex = 1;
             this.sqd_2_skill2.Value = new decimal(new int[] {
             1,
@@ -3874,7 +4449,7 @@
             0,
             0});
             this.sqd_2_reload.Name = "sqd_2_reload";
-            this.sqd_2_reload.Size = new System.Drawing.Size(119, 21);
+            this.sqd_2_reload.Size = new System.Drawing.Size(96, 21);
             this.sqd_2_reload.TabIndex = 1;
             this.sqd_2_reload.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged_1);
             // 
@@ -3892,7 +4467,7 @@
             0,
             0});
             this.sqd_2_skill1.Name = "sqd_2_skill1";
-            this.sqd_2_skill1.Size = new System.Drawing.Size(119, 21);
+            this.sqd_2_skill1.Size = new System.Drawing.Size(96, 21);
             this.sqd_2_skill1.TabIndex = 1;
             this.sqd_2_skill1.Value = new decimal(new int[] {
             1,
@@ -3910,7 +4485,7 @@
             0,
             0});
             this.sqd_2_hit.Name = "sqd_2_hit";
-            this.sqd_2_hit.Size = new System.Drawing.Size(119, 21);
+            this.sqd_2_hit.Size = new System.Drawing.Size(96, 21);
             this.sqd_2_hit.TabIndex = 1;
             this.sqd_2_hit.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged_1);
             // 
@@ -3923,7 +4498,7 @@
             0,
             0});
             this.sqd_2_break.Name = "sqd_2_break";
-            this.sqd_2_break.Size = new System.Drawing.Size(119, 21);
+            this.sqd_2_break.Size = new System.Drawing.Size(96, 21);
             this.sqd_2_break.TabIndex = 1;
             this.sqd_2_break.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged_1);
             // 
@@ -3936,7 +4511,7 @@
             0,
             0});
             this.sqd_2_damage.Name = "sqd_2_damage";
-            this.sqd_2_damage.Size = new System.Drawing.Size(119, 21);
+            this.sqd_2_damage.Size = new System.Drawing.Size(96, 21);
             this.sqd_2_damage.TabIndex = 1;
             this.sqd_2_damage.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged_1);
             // 
@@ -3949,7 +4524,7 @@
             0,
             0});
             this.sqd_2_lv.Name = "sqd_2_lv";
-            this.sqd_2_lv.Size = new System.Drawing.Size(119, 21);
+            this.sqd_2_lv.Size = new System.Drawing.Size(96, 21);
             this.sqd_2_lv.TabIndex = 1;
             this.sqd_2_lv.Value = new decimal(new int[] {
             1,
@@ -3958,24 +4533,24 @@
             0});
             this.sqd_2_lv.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged_1);
             // 
-            // label90
+            // sqdlv_2
             // 
-            this.label90.AutoSize = true;
-            this.label90.Location = new System.Drawing.Point(3, 25);
-            this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(20, 12);
-            this.label90.TabIndex = 0;
-            this.label90.Text = "LV";
+            this.sqdlv_2.AutoSize = true;
+            this.sqdlv_2.Location = new System.Drawing.Point(3, 25);
+            this.sqdlv_2.Name = "sqdlv_2";
+            this.sqdlv_2.Size = new System.Drawing.Size(20, 12);
+            this.sqdlv_2.TabIndex = 0;
+            this.sqdlv_2.Text = "LV";
             // 
             // groupBox8
             // 
-            this.groupBox8.Controls.Add(this.label82);
-            this.groupBox8.Controls.Add(this.label79);
-            this.groupBox8.Controls.Add(this.label81);
-            this.groupBox8.Controls.Add(this.label78);
-            this.groupBox8.Controls.Add(this.label80);
-            this.groupBox8.Controls.Add(this.label77);
-            this.groupBox8.Controls.Add(this.label76);
+            this.groupBox8.Controls.Add(this.sqdskill3_1);
+            this.groupBox8.Controls.Add(this.sqdreload_1);
+            this.groupBox8.Controls.Add(this.sqdskill2_1);
+            this.groupBox8.Controls.Add(this.sqdhit_1);
+            this.groupBox8.Controls.Add(this.sqdskill1_1);
+            this.groupBox8.Controls.Add(this.sqdbreak_1);
+            this.groupBox8.Controls.Add(this.sqddamage_1);
             this.groupBox8.Controls.Add(this.sqd_1_skill3);
             this.groupBox8.Controls.Add(this.sqd_1_skill2);
             this.groupBox8.Controls.Add(this.sqd_1_reload);
@@ -3984,76 +4559,76 @@
             this.groupBox8.Controls.Add(this.sqd_1_break);
             this.groupBox8.Controls.Add(this.sqd_1_damage);
             this.groupBox8.Controls.Add(this.sqd_1_lv);
-            this.groupBox8.Controls.Add(this.label75);
+            this.groupBox8.Controls.Add(this.sqdlv_1);
             this.groupBox8.Location = new System.Drawing.Point(3, 6);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(132, 383);
+            this.groupBox8.Size = new System.Drawing.Size(110, 383);
             this.groupBox8.TabIndex = 0;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "BGM-71";
             // 
-            // label82
+            // sqdskill3_1
             // 
-            this.label82.AutoSize = true;
-            this.label82.Location = new System.Drawing.Point(5, 330);
-            this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(54, 12);
-            this.label82.TabIndex = 2;
-            this.label82.Text = "스킬3 LV";
+            this.sqdskill3_1.AutoSize = true;
+            this.sqdskill3_1.Location = new System.Drawing.Point(5, 330);
+            this.sqdskill3_1.Name = "sqdskill3_1";
+            this.sqdskill3_1.Size = new System.Drawing.Size(54, 12);
+            this.sqdskill3_1.TabIndex = 2;
+            this.sqdskill3_1.Text = "스킬3 LV";
             // 
-            // label79
+            // sqdreload_1
             // 
-            this.label79.AutoSize = true;
-            this.label79.Location = new System.Drawing.Point(3, 201);
-            this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(29, 12);
-            this.label79.TabIndex = 2;
-            this.label79.Text = "장전";
+            this.sqdreload_1.AutoSize = true;
+            this.sqdreload_1.Location = new System.Drawing.Point(3, 201);
+            this.sqdreload_1.Name = "sqdreload_1";
+            this.sqdreload_1.Size = new System.Drawing.Size(29, 12);
+            this.sqdreload_1.TabIndex = 2;
+            this.sqdreload_1.Text = "장전";
             // 
-            // label81
+            // sqdskill2_1
             // 
-            this.label81.AutoSize = true;
-            this.label81.Location = new System.Drawing.Point(5, 286);
-            this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(54, 12);
-            this.label81.TabIndex = 2;
-            this.label81.Text = "스킬2 LV";
+            this.sqdskill2_1.AutoSize = true;
+            this.sqdskill2_1.Location = new System.Drawing.Point(5, 286);
+            this.sqdskill2_1.Name = "sqdskill2_1";
+            this.sqdskill2_1.Size = new System.Drawing.Size(54, 12);
+            this.sqdskill2_1.TabIndex = 2;
+            this.sqdskill2_1.Text = "스킬2 LV";
             // 
-            // label78
+            // sqdhit_1
             // 
-            this.label78.AutoSize = true;
-            this.label78.Location = new System.Drawing.Point(3, 157);
-            this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(41, 12);
-            this.label78.TabIndex = 2;
-            this.label78.Text = "정밀성";
+            this.sqdhit_1.AutoSize = true;
+            this.sqdhit_1.Location = new System.Drawing.Point(3, 157);
+            this.sqdhit_1.Name = "sqdhit_1";
+            this.sqdhit_1.Size = new System.Drawing.Size(41, 12);
+            this.sqdhit_1.TabIndex = 2;
+            this.sqdhit_1.Text = "정밀성";
             // 
-            // label80
+            // sqdskill1_1
             // 
-            this.label80.AutoSize = true;
-            this.label80.Location = new System.Drawing.Point(5, 243);
-            this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(54, 12);
-            this.label80.TabIndex = 2;
-            this.label80.Text = "스킬1 LV";
+            this.sqdskill1_1.AutoSize = true;
+            this.sqdskill1_1.Location = new System.Drawing.Point(5, 243);
+            this.sqdskill1_1.Name = "sqdskill1_1";
+            this.sqdskill1_1.Size = new System.Drawing.Size(54, 12);
+            this.sqdskill1_1.TabIndex = 2;
+            this.sqdskill1_1.Text = "스킬1 LV";
             // 
-            // label77
+            // sqdbreak_1
             // 
-            this.label77.AutoSize = true;
-            this.label77.Location = new System.Drawing.Point(3, 114);
-            this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(41, 12);
-            this.label77.TabIndex = 2;
-            this.label77.Text = "파쇄력";
+            this.sqdbreak_1.AutoSize = true;
+            this.sqdbreak_1.Location = new System.Drawing.Point(3, 114);
+            this.sqdbreak_1.Name = "sqdbreak_1";
+            this.sqdbreak_1.Size = new System.Drawing.Size(41, 12);
+            this.sqdbreak_1.TabIndex = 2;
+            this.sqdbreak_1.Text = "파쇄력";
             // 
-            // label76
+            // sqddamage_1
             // 
-            this.label76.AutoSize = true;
-            this.label76.Location = new System.Drawing.Point(3, 71);
-            this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(41, 12);
-            this.label76.TabIndex = 2;
-            this.label76.Text = "살상력";
+            this.sqddamage_1.AutoSize = true;
+            this.sqddamage_1.Location = new System.Drawing.Point(3, 71);
+            this.sqddamage_1.Name = "sqddamage_1";
+            this.sqddamage_1.Size = new System.Drawing.Size(41, 12);
+            this.sqddamage_1.TabIndex = 2;
+            this.sqddamage_1.Text = "살상력";
             // 
             // sqd_1_skill3
             // 
@@ -4069,7 +4644,7 @@
             0,
             0});
             this.sqd_1_skill3.Name = "sqd_1_skill3";
-            this.sqd_1_skill3.Size = new System.Drawing.Size(119, 21);
+            this.sqd_1_skill3.Size = new System.Drawing.Size(96, 21);
             this.sqd_1_skill3.TabIndex = 1;
             this.sqd_1_skill3.Value = new decimal(new int[] {
             1,
@@ -4092,7 +4667,7 @@
             0,
             0});
             this.sqd_1_skill2.Name = "sqd_1_skill2";
-            this.sqd_1_skill2.Size = new System.Drawing.Size(119, 21);
+            this.sqd_1_skill2.Size = new System.Drawing.Size(96, 21);
             this.sqd_1_skill2.TabIndex = 1;
             this.sqd_1_skill2.Value = new decimal(new int[] {
             1,
@@ -4110,7 +4685,7 @@
             0,
             0});
             this.sqd_1_reload.Name = "sqd_1_reload";
-            this.sqd_1_reload.Size = new System.Drawing.Size(119, 21);
+            this.sqd_1_reload.Size = new System.Drawing.Size(96, 21);
             this.sqd_1_reload.TabIndex = 1;
             this.sqd_1_reload.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged_1);
             // 
@@ -4128,7 +4703,7 @@
             0,
             0});
             this.sqd_1_skill1.Name = "sqd_1_skill1";
-            this.sqd_1_skill1.Size = new System.Drawing.Size(119, 21);
+            this.sqd_1_skill1.Size = new System.Drawing.Size(96, 21);
             this.sqd_1_skill1.TabIndex = 1;
             this.sqd_1_skill1.Value = new decimal(new int[] {
             1,
@@ -4146,7 +4721,7 @@
             0,
             0});
             this.sqd_1_hit.Name = "sqd_1_hit";
-            this.sqd_1_hit.Size = new System.Drawing.Size(119, 21);
+            this.sqd_1_hit.Size = new System.Drawing.Size(96, 21);
             this.sqd_1_hit.TabIndex = 1;
             this.sqd_1_hit.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged_1);
             // 
@@ -4159,7 +4734,7 @@
             0,
             0});
             this.sqd_1_break.Name = "sqd_1_break";
-            this.sqd_1_break.Size = new System.Drawing.Size(119, 21);
+            this.sqd_1_break.Size = new System.Drawing.Size(96, 21);
             this.sqd_1_break.TabIndex = 1;
             this.sqd_1_break.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged_1);
             // 
@@ -4172,7 +4747,7 @@
             0,
             0});
             this.sqd_1_damage.Name = "sqd_1_damage";
-            this.sqd_1_damage.Size = new System.Drawing.Size(119, 21);
+            this.sqd_1_damage.Size = new System.Drawing.Size(96, 21);
             this.sqd_1_damage.TabIndex = 1;
             this.sqd_1_damage.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged_1);
             // 
@@ -4185,7 +4760,7 @@
             0,
             0});
             this.sqd_1_lv.Name = "sqd_1_lv";
-            this.sqd_1_lv.Size = new System.Drawing.Size(119, 21);
+            this.sqd_1_lv.Size = new System.Drawing.Size(96, 21);
             this.sqd_1_lv.TabIndex = 1;
             this.sqd_1_lv.Value = new decimal(new int[] {
             1,
@@ -4194,32 +4769,50 @@
             0});
             this.sqd_1_lv.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged_1);
             // 
-            // label75
+            // sqdlv_1
             // 
-            this.label75.AutoSize = true;
-            this.label75.Location = new System.Drawing.Point(3, 25);
-            this.label75.Name = "label75";
-            this.label75.Size = new System.Drawing.Size(20, 12);
-            this.label75.TabIndex = 0;
-            this.label75.Text = "LV";
+            this.sqdlv_1.AutoSize = true;
+            this.sqdlv_1.Location = new System.Drawing.Point(3, 25);
+            this.sqdlv_1.Name = "sqdlv_1";
+            this.sqdlv_1.Size = new System.Drawing.Size(20, 12);
+            this.sqdlv_1.TabIndex = 0;
+            this.sqdlv_1.Text = "LV";
             // 
-            // tabPage2
+            // equip_set
             // 
-            this.tabPage2.Controls.Add(this.label123);
-            this.tabPage2.Controls.Add(this.label121);
-            this.tabPage2.Controls.Add(this.grpbox21);
-            this.tabPage2.Controls.Add(this.groupBox20);
-            this.tabPage2.Controls.Add(this.groupBox19);
-            this.tabPage2.Controls.Add(this.groupBox18);
-            this.tabPage2.Controls.Add(this.groupBox17);
-            this.tabPage2.Controls.Add(this.groupBox16);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(875, 696);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "장비 설정";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.equip_set.Controls.Add(this.equip_autoapply_desc);
+            this.equip_set.Controls.Add(this.label121);
+            this.equip_set.Controls.Add(this.groupBox_equip_setting);
+            this.equip_set.Controls.Add(this.groupBox_equip_5);
+            this.equip_set.Controls.Add(this.groupBox_equip_4);
+            this.equip_set.Controls.Add(this.groupBox_equip_3);
+            this.equip_set.Controls.Add(this.groupBox_equip_2);
+            this.equip_set.Controls.Add(this.groupBox_equip_1);
+            this.equip_set.Location = new System.Drawing.Point(4, 22);
+            this.equip_set.Name = "equip_set";
+            this.equip_set.Padding = new System.Windows.Forms.Padding(3);
+            this.equip_set.Size = new System.Drawing.Size(875, 700);
+            this.equip_set.TabIndex = 1;
+            this.equip_set.Text = "장비 설정";
+            this.equip_set.UseVisualStyleBackColor = true;
+            // 
+            // equip_autoapply_desc
+            // 
+            this.equip_autoapply_desc.AutoSize = true;
+            this.equip_autoapply_desc.Location = new System.Drawing.Point(12, 218);
+            this.equip_autoapply_desc.Name = "equip_autoapply_desc";
+            this.equip_autoapply_desc.Size = new System.Drawing.Size(213, 12);
+            this.equip_autoapply_desc.TabIndex = 3;
+            this.equip_autoapply_desc.Text = "장비를 설정하면 자동으로 적용됩니다.";
+            // 
+            // label123
+            // 
+            //this.label123.AutoSize = true;
+            //this.label123.Location = new System.Drawing.Point(12, 218);
+            //this.label123.Name = "label123";
+            //this.label123.Size = new System.Drawing.Size(213, 12);
+            //this.label123.TabIndex = 3;
+            //this.label123.Text = "장비를 설정하면 자동으로 적용됩니다.";
             // 
             // label121
             // 
@@ -4229,60 +4822,60 @@
             this.label121.Size = new System.Drawing.Size(0, 12);
             this.label121.TabIndex = 2;
             // 
-            // grpbox21
+            // groupBox_equip_setting
             // 
-            this.grpbox21.Controls.Add(this.button17);
-            this.grpbox21.Controls.Add(this.button16);
-            this.grpbox21.Controls.Add(this.button15);
-            this.grpbox21.Location = new System.Drawing.Point(707, 6);
-            this.grpbox21.Name = "grpbox21";
-            this.grpbox21.Size = new System.Drawing.Size(160, 200);
-            this.grpbox21.TabIndex = 1;
-            this.grpbox21.TabStop = false;
-            this.grpbox21.Text = "설정";
+            this.groupBox_equip_setting.Controls.Add(this.equip_removeall);
+            this.groupBox_equip_setting.Controls.Add(this.equip_load);
+            this.groupBox_equip_setting.Controls.Add(this.equip_save);
+            this.groupBox_equip_setting.Location = new System.Drawing.Point(707, 6);
+            this.groupBox_equip_setting.Name = "groupBox_equip_setting";
+            this.groupBox_equip_setting.Size = new System.Drawing.Size(160, 200);
+            this.groupBox_equip_setting.TabIndex = 1;
+            this.groupBox_equip_setting.TabStop = false;
+            this.groupBox_equip_setting.Text = "설정";
             // 
-            // button17
+            // equip_removeall
             // 
-            this.button17.Location = new System.Drawing.Point(19, 154);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(121, 23);
-            this.button17.TabIndex = 1;
-            this.button17.Text = "모든 장비 해제";
-            this.button17.UseVisualStyleBackColor = true;
-            this.button17.Click += new System.EventHandler(this.button17_Click);
+            this.equip_removeall.Location = new System.Drawing.Point(19, 154);
+            this.equip_removeall.Name = "equip_removeall";
+            this.equip_removeall.Size = new System.Drawing.Size(121, 23);
+            this.equip_removeall.TabIndex = 1;
+            this.equip_removeall.Text = "모든 장비 해제";
+            this.equip_removeall.UseVisualStyleBackColor = true;
+            this.equip_removeall.Click += new System.EventHandler(this.button17_Click);
             // 
-            // button16
+            // equip_load
             // 
-            this.button16.Location = new System.Drawing.Point(19, 80);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(121, 23);
-            this.button16.TabIndex = 0;
-            this.button16.Text = "불러오기";
-            this.button16.UseVisualStyleBackColor = true;
-            this.button16.Click += new System.EventHandler(this.button16_Click);
+            this.equip_load.Location = new System.Drawing.Point(19, 80);
+            this.equip_load.Name = "equip_load";
+            this.equip_load.Size = new System.Drawing.Size(121, 23);
+            this.equip_load.TabIndex = 0;
+            this.equip_load.Text = "불러오기";
+            this.equip_load.UseVisualStyleBackColor = true;
+            this.equip_load.Click += new System.EventHandler(this.button16_Click);
             // 
-            // button15
+            // equip_save
             // 
-            this.button15.Location = new System.Drawing.Point(19, 37);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(121, 23);
-            this.button15.TabIndex = 0;
-            this.button15.Text = "저장";
-            this.button15.UseVisualStyleBackColor = true;
-            this.button15.Click += new System.EventHandler(this.button15_Click_1);
+            this.equip_save.Location = new System.Drawing.Point(19, 37);
+            this.equip_save.Name = "equip_save";
+            this.equip_save.Size = new System.Drawing.Size(121, 23);
+            this.equip_save.TabIndex = 0;
+            this.equip_save.Text = "저장";
+            this.equip_save.UseVisualStyleBackColor = true;
+            this.equip_save.Click += new System.EventHandler(this.button15_Click_1);
             // 
-            // groupBox20
+            // groupBox_equip_5
             // 
-            this.groupBox20.Controls.Add(this.eq5_gun_name);
-            this.groupBox20.Controls.Add(this.setEquip_53);
-            this.groupBox20.Controls.Add(this.setEquip_52);
-            this.groupBox20.Controls.Add(this.setEquip_51);
-            this.groupBox20.Location = new System.Drawing.Point(567, 6);
-            this.groupBox20.Name = "groupBox20";
-            this.groupBox20.Size = new System.Drawing.Size(133, 200);
-            this.groupBox20.TabIndex = 0;
-            this.groupBox20.TabStop = false;
-            this.groupBox20.Text = "5번 인형";
+            this.groupBox_equip_5.Controls.Add(this.eq5_gun_name);
+            this.groupBox_equip_5.Controls.Add(this.setEquip_53);
+            this.groupBox_equip_5.Controls.Add(this.setEquip_52);
+            this.groupBox_equip_5.Controls.Add(this.setEquip_51);
+            this.groupBox_equip_5.Location = new System.Drawing.Point(567, 6);
+            this.groupBox_equip_5.Name = "groupBox_equip_5";
+            this.groupBox_equip_5.Size = new System.Drawing.Size(133, 200);
+            this.groupBox_equip_5.TabIndex = 0;
+            this.groupBox_equip_5.TabStop = false;
+            this.groupBox_equip_5.Text = "5번 인형";
             // 
             // eq5_gun_name
             // 
@@ -4323,18 +4916,18 @@
             this.setEquip_51.UseVisualStyleBackColor = true;
             this.setEquip_51.Click += new System.EventHandler(this.setEquip_51_Click);
             // 
-            // groupBox19
+            // groupBox_equip_4
             // 
-            this.groupBox19.Controls.Add(this.eq4_gun_name);
-            this.groupBox19.Controls.Add(this.setEquip_43);
-            this.groupBox19.Controls.Add(this.setEquip_42);
-            this.groupBox19.Controls.Add(this.setEquip_41);
-            this.groupBox19.Location = new System.Drawing.Point(427, 6);
-            this.groupBox19.Name = "groupBox19";
-            this.groupBox19.Size = new System.Drawing.Size(133, 200);
-            this.groupBox19.TabIndex = 0;
-            this.groupBox19.TabStop = false;
-            this.groupBox19.Text = "4번 인형";
+            this.groupBox_equip_4.Controls.Add(this.eq4_gun_name);
+            this.groupBox_equip_4.Controls.Add(this.setEquip_43);
+            this.groupBox_equip_4.Controls.Add(this.setEquip_42);
+            this.groupBox_equip_4.Controls.Add(this.setEquip_41);
+            this.groupBox_equip_4.Location = new System.Drawing.Point(427, 6);
+            this.groupBox_equip_4.Name = "groupBox_equip_4";
+            this.groupBox_equip_4.Size = new System.Drawing.Size(133, 200);
+            this.groupBox_equip_4.TabIndex = 0;
+            this.groupBox_equip_4.TabStop = false;
+            this.groupBox_equip_4.Text = "4번 인형";
             // 
             // eq4_gun_name
             // 
@@ -4375,18 +4968,18 @@
             this.setEquip_41.UseVisualStyleBackColor = true;
             this.setEquip_41.Click += new System.EventHandler(this.setEquip_41_Click);
             // 
-            // groupBox18
+            // groupBox_equip_3
             // 
-            this.groupBox18.Controls.Add(this.eq3_gun_name);
-            this.groupBox18.Controls.Add(this.setEquip_33);
-            this.groupBox18.Controls.Add(this.setEquip_32);
-            this.groupBox18.Controls.Add(this.setEquip_31);
-            this.groupBox18.Location = new System.Drawing.Point(287, 6);
-            this.groupBox18.Name = "groupBox18";
-            this.groupBox18.Size = new System.Drawing.Size(133, 200);
-            this.groupBox18.TabIndex = 0;
-            this.groupBox18.TabStop = false;
-            this.groupBox18.Text = "3번 인형";
+            this.groupBox_equip_3.Controls.Add(this.eq3_gun_name);
+            this.groupBox_equip_3.Controls.Add(this.setEquip_33);
+            this.groupBox_equip_3.Controls.Add(this.setEquip_32);
+            this.groupBox_equip_3.Controls.Add(this.setEquip_31);
+            this.groupBox_equip_3.Location = new System.Drawing.Point(287, 6);
+            this.groupBox_equip_3.Name = "groupBox_equip_3";
+            this.groupBox_equip_3.Size = new System.Drawing.Size(133, 200);
+            this.groupBox_equip_3.TabIndex = 0;
+            this.groupBox_equip_3.TabStop = false;
+            this.groupBox_equip_3.Text = "3번 인형";
             // 
             // eq3_gun_name
             // 
@@ -4427,18 +5020,18 @@
             this.setEquip_31.UseVisualStyleBackColor = true;
             this.setEquip_31.Click += new System.EventHandler(this.setEquip_31_Click);
             // 
-            // groupBox17
+            // groupBox_equip_2
             // 
-            this.groupBox17.Controls.Add(this.eq2_gun_name);
-            this.groupBox17.Controls.Add(this.setEquip_23);
-            this.groupBox17.Controls.Add(this.setEquip_22);
-            this.groupBox17.Controls.Add(this.setEquip_21);
-            this.groupBox17.Location = new System.Drawing.Point(147, 6);
-            this.groupBox17.Name = "groupBox17";
-            this.groupBox17.Size = new System.Drawing.Size(133, 200);
-            this.groupBox17.TabIndex = 0;
-            this.groupBox17.TabStop = false;
-            this.groupBox17.Text = "2번 인형";
+            this.groupBox_equip_2.Controls.Add(this.eq2_gun_name);
+            this.groupBox_equip_2.Controls.Add(this.setEquip_23);
+            this.groupBox_equip_2.Controls.Add(this.setEquip_22);
+            this.groupBox_equip_2.Controls.Add(this.setEquip_21);
+            this.groupBox_equip_2.Location = new System.Drawing.Point(147, 6);
+            this.groupBox_equip_2.Name = "groupBox_equip_2";
+            this.groupBox_equip_2.Size = new System.Drawing.Size(133, 200);
+            this.groupBox_equip_2.TabIndex = 0;
+            this.groupBox_equip_2.TabStop = false;
+            this.groupBox_equip_2.Text = "2번 인형";
             // 
             // eq2_gun_name
             // 
@@ -4479,18 +5072,18 @@
             this.setEquip_21.UseVisualStyleBackColor = true;
             this.setEquip_21.Click += new System.EventHandler(this.setEquip_21_Click);
             // 
-            // groupBox16
+            // groupBox_equip_1
             // 
-            this.groupBox16.Controls.Add(this.eq1_gun_name);
-            this.groupBox16.Controls.Add(this.setEquip_13);
-            this.groupBox16.Controls.Add(this.setEquip_12);
-            this.groupBox16.Controls.Add(this.setEquip_11);
-            this.groupBox16.Location = new System.Drawing.Point(7, 6);
-            this.groupBox16.Name = "groupBox16";
-            this.groupBox16.Size = new System.Drawing.Size(133, 200);
-            this.groupBox16.TabIndex = 0;
-            this.groupBox16.TabStop = false;
-            this.groupBox16.Text = "1번 인형";
+            this.groupBox_equip_1.Controls.Add(this.eq1_gun_name);
+            this.groupBox_equip_1.Controls.Add(this.setEquip_13);
+            this.groupBox_equip_1.Controls.Add(this.setEquip_12);
+            this.groupBox_equip_1.Controls.Add(this.setEquip_11);
+            this.groupBox_equip_1.Location = new System.Drawing.Point(7, 6);
+            this.groupBox_equip_1.Name = "groupBox_equip_1";
+            this.groupBox_equip_1.Size = new System.Drawing.Size(133, 200);
+            this.groupBox_equip_1.TabIndex = 0;
+            this.groupBox_equip_1.TabStop = false;
+            this.groupBox_equip_1.Text = "1번 인형";
             // 
             // eq1_gun_name
             // 
@@ -4531,124 +5124,159 @@
             this.setEquip_11.UseVisualStyleBackColor = true;
             this.setEquip_11.Click += new System.EventHandler(this.button15_Click);
             // 
-            // tabPage3
+            // server_set
             // 
-            this.tabPage3.Controls.Add(this.button18);
-            this.tabPage3.Controls.Add(this.linkLabel2);
-            this.tabPage3.Controls.Add(this.checkBox1);
-            this.tabPage3.Controls.Add(this.button14);
-            this.tabPage3.Controls.Add(this.groupBox15);
-            this.tabPage3.Controls.Add(this.listView1);
-            this.tabPage3.Controls.Add(this.label74);
-            this.tabPage3.Controls.Add(this.portnum);
-            this.tabPage3.Controls.Add(this.linkLabel1);
-            this.tabPage3.Controls.Add(this.label73);
-            this.tabPage3.Controls.Add(this.LogTextBox);
-            this.tabPage3.Controls.Add(this.button5);
-            this.tabPage3.Controls.Add(this.Boss_HP_textbox);
-            this.tabPage3.Controls.Add(this.label62);
-            this.tabPage3.Controls.Add(this.enemy_team_id_combobox);
-            this.tabPage3.Controls.Add(this.label61);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(875, 696);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "전투 설정";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.server_set.Controls.Add(this.server_mode);
+            this.server_set.Controls.Add(this.server_viewBattlelog);
+            this.server_set.Controls.Add(this.clearlog);
+            this.server_set.Controls.Add(this.server_hideip);
+            this.server_set.Controls.Add(this.server_applyID);
+            this.server_set.Controls.Add(this.server_information);
+            this.server_set.Controls.Add(this.listView1);
+            this.server_set.Controls.Add(this.server_setport);
+            this.server_set.Controls.Add(this.portnum);
+            this.server_set.Controls.Add(this.server_referenceID);
+            this.server_set.Controls.Add(this.server_log);
+            this.server_set.Controls.Add(this.LogTextBox);
+            this.server_set.Controls.Add(this.server_start);
+            this.server_set.Controls.Add(this.Boss_HP_textbox);
+            this.server_set.Controls.Add(this.boss_hp);
+            this.server_set.Controls.Add(this.enemy_team_id_combobox);
+            this.server_set.Controls.Add(this.enemy_group);
+            this.server_set.Location = new System.Drawing.Point(4, 22);
+            this.server_set.Name = "server_set";
+            this.server_set.Padding = new System.Windows.Forms.Padding(3);
+            this.server_set.Size = new System.Drawing.Size(875, 700);
+            this.server_set.TabIndex = 2;
+            this.server_set.Text = "전투 설정";
+            this.server_set.UseVisualStyleBackColor = true;
             // 
-            // button18
+            // server_mode
             // 
-            this.button18.Location = new System.Drawing.Point(29, 156);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(182, 23);
-            this.button18.TabIndex = 17;
-            this.button18.Text = "전투 기록 보기";
-            this.button18.UseVisualStyleBackColor = true;
-            this.button18.Click += new System.EventHandler(this.Button18_Click_1);
+            this.server_mode.AccessibleDescription = "";
+            this.server_mode.Controls.Add(this.theaterbattle);
+            this.server_mode.Controls.Add(this.normalbattle);
+            this.server_mode.Location = new System.Drawing.Point(373, 657);
+            this.server_mode.Name = "server_mode";
+            this.server_mode.Size = new System.Drawing.Size(184, 34);
+            this.server_mode.TabIndex = 18;
+            this.server_mode.TabStop = false;
+            this.server_mode.Text = "모드";
             // 
-            // linkLabel2
+            // theaterbattle
             // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(7, 673);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(69, 12);
-            this.linkLabel2.TabIndex = 15;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "로그 지우기";
-            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            this.theaterbattle.AutoSize = true;
+            this.theaterbattle.Location = new System.Drawing.Point(119, 13);
+            this.theaterbattle.Name = "theaterbattle";
+            this.theaterbattle.Size = new System.Drawing.Size(59, 16);
+            this.theaterbattle.TabIndex = 1;
+            this.theaterbattle.Text = "국지전";
+            this.theaterbattle.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // normalbattle
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(33, 351);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(75, 16);
-            this.checkBox1.TabIndex = 14;
-            this.checkBox1.Text = "IP 숨기기";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            this.checkBox1.MouseHover += new System.EventHandler(this.CheckBox1_MouseHover);
+            this.normalbattle.Checked = true;
+            this.normalbattle.Location = new System.Drawing.Point(6, 9);
+            this.normalbattle.Name = "normalbattle";
+            this.normalbattle.Size = new System.Drawing.Size(104, 24);
+            this.normalbattle.TabIndex = 0;
+            this.normalbattle.TabStop = true;
+            this.normalbattle.Text = "일반(모의전)";
+            this.normalbattle.UseVisualStyleBackColor = true;
+            this.normalbattle.CheckedChanged += new System.EventHandler(this.Normalbattle_CheckedChanged);
             // 
-            // button14
+            // server_viewBattlelog
             // 
-            this.button14.Location = new System.Drawing.Point(29, 116);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(182, 23);
-            this.button14.TabIndex = 13;
-            this.button14.Text = "적용";
-            this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
+            this.server_viewBattlelog.Location = new System.Drawing.Point(30, 146);
+            this.server_viewBattlelog.Name = "server_viewBattlelog";
+            this.server_viewBattlelog.Size = new System.Drawing.Size(182, 23);
+            this.server_viewBattlelog.TabIndex = 17;
+            this.server_viewBattlelog.Text = "전투 기록 보기";
+            this.server_viewBattlelog.UseVisualStyleBackColor = true;
+            this.server_viewBattlelog.Click += new System.EventHandler(this.Button18_Click_1);
             // 
-            // groupBox15
+            // clearlog
             // 
-            this.groupBox15.Controls.Add(this.label120);
-            this.groupBox15.Controls.Add(this.label119);
-            this.groupBox15.Controls.Add(this.label118);
-            this.groupBox15.Controls.Add(this.label117);
-            this.groupBox15.Location = new System.Drawing.Point(33, 230);
-            this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(164, 115);
-            this.groupBox15.TabIndex = 12;
-            this.groupBox15.TabStop = false;
-            this.groupBox15.Text = "서버 정보";
+            this.clearlog.AutoSize = true;
+            this.clearlog.Location = new System.Drawing.Point(9, 668);
+            this.clearlog.Name = "clearlog";
+            this.clearlog.Size = new System.Drawing.Size(69, 12);
+            this.clearlog.TabIndex = 15;
+            this.clearlog.TabStop = true;
+            this.clearlog.Text = "로그 지우기";
+            this.clearlog.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
-            // label120
+            // server_hideip
             // 
-            this.label120.AutoSize = true;
-            this.label120.Location = new System.Drawing.Point(6, 84);
-            this.label120.Name = "label120";
-            this.label120.Size = new System.Drawing.Size(65, 12);
-            this.label120.TabIndex = 3;
-            this.label120.Text = "서버 포트: ";
+            this.server_hideip.AutoSize = true;
+            this.server_hideip.Location = new System.Drawing.Point(34, 341);
+            this.server_hideip.Name = "server_hideip";
+            this.server_hideip.Size = new System.Drawing.Size(75, 16);
+            this.server_hideip.TabIndex = 14;
+            this.server_hideip.Text = "IP 숨기기";
+            this.server_hideip.UseVisualStyleBackColor = true;
+            this.server_hideip.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.server_hideip.MouseHover += new System.EventHandler(this.CheckBox1_MouseHover);
             // 
-            // label119
+            // server_applyID
             // 
-            this.label119.AutoSize = true;
-            this.label119.Location = new System.Drawing.Point(6, 65);
-            this.label119.Name = "label119";
-            this.label119.Size = new System.Drawing.Size(48, 12);
-            this.label119.TabIndex = 2;
-            this.label119.Text = "서버 IP:";
+            this.server_applyID.Location = new System.Drawing.Point(30, 106);
+            this.server_applyID.Name = "server_applyID";
+            this.server_applyID.Size = new System.Drawing.Size(182, 23);
+            this.server_applyID.TabIndex = 13;
+            this.server_applyID.Text = "적용";
+            this.server_applyID.UseVisualStyleBackColor = true;
+            this.server_applyID.Click += new System.EventHandler(this.button14_Click);
             // 
-            // label118
+            // server_information
             // 
-            this.label118.AutoSize = true;
-            this.label118.Location = new System.Drawing.Point(6, 44);
-            this.label118.Name = "label118";
-            this.label118.Size = new System.Drawing.Size(99, 12);
-            this.label118.TabIndex = 1;
-            this.label118.Text = "설정된 적 그룹: 0";
+            this.server_information.Controls.Add(this.server_port);
+            this.server_information.Controls.Add(this.server_ip);
+            this.server_information.Controls.Add(this.server_settedID);
+            this.server_information.Controls.Add(this.server_state);
+            this.server_information.Location = new System.Drawing.Point(34, 220);
+            this.server_information.Name = "server_information";
+            this.server_information.Size = new System.Drawing.Size(164, 115);
+            this.server_information.TabIndex = 12;
+            this.server_information.TabStop = false;
+            this.server_information.Text = "서버 정보";
             // 
-            // label117
+            // server_port
             // 
-            this.label117.AutoSize = true;
-            this.label117.Location = new System.Drawing.Point(7, 25);
-            this.label117.Name = "label117";
-            this.label117.Size = new System.Drawing.Size(101, 12);
-            this.label117.TabIndex = 0;
-            this.label117.Text = "서버 상태: 중단됨";
-            this.label117.Click += new System.EventHandler(this.label117_Click);
+            this.server_port.AutoSize = true;
+            this.server_port.Location = new System.Drawing.Point(6, 84);
+            this.server_port.Name = "server_port";
+            this.server_port.Size = new System.Drawing.Size(65, 12);
+            this.server_port.TabIndex = 3;
+            this.server_port.Text = "서버 포트: ";
+            // 
+            // server_ip
+            // 
+            this.server_ip.AutoSize = true;
+            this.server_ip.Location = new System.Drawing.Point(6, 65);
+            this.server_ip.Name = "server_ip";
+            this.server_ip.Size = new System.Drawing.Size(48, 12);
+            this.server_ip.TabIndex = 2;
+            this.server_ip.Text = "서버 IP:";
+            // 
+            // server_settedID
+            // 
+            this.server_settedID.AutoSize = true;
+            this.server_settedID.Location = new System.Drawing.Point(6, 44);
+            this.server_settedID.Name = "server_settedID";
+            this.server_settedID.Size = new System.Drawing.Size(99, 12);
+            this.server_settedID.TabIndex = 1;
+            this.server_settedID.Text = "설정된 적 그룹: 0";
+            // 
+            // server_state
+            // 
+            this.server_state.AutoSize = true;
+            this.server_state.Location = new System.Drawing.Point(7, 25);
+            this.server_state.Name = "server_state";
+            this.server_state.Size = new System.Drawing.Size(101, 12);
+            this.server_state.TabIndex = 0;
+            this.server_state.Text = "서버 상태: 중단됨";
+            this.server_state.Click += new System.EventHandler(this.label117_Click);
             // 
             // listView1
             // 
@@ -4693,18 +5321,18 @@
             this.missionName.Text = "전역명";
             this.missionName.Width = 160;
             // 
-            // label74
+            // server_setport
             // 
-            this.label74.AutoSize = true;
-            this.label74.Location = new System.Drawing.Point(595, 673);
-            this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(29, 12);
-            this.label74.TabIndex = 10;
-            this.label74.Text = "포트";
+            this.server_setport.AutoSize = true;
+            this.server_setport.Location = new System.Drawing.Point(595, 672);
+            this.server_setport.Name = "server_setport";
+            this.server_setport.Size = new System.Drawing.Size(29, 12);
+            this.server_setport.TabIndex = 10;
+            this.server_setport.Text = "포트";
             // 
             // portnum
             // 
-            this.portnum.Location = new System.Drawing.Point(629, 670);
+            this.portnum.Location = new System.Drawing.Point(629, 669);
             this.portnum.Maximum = new decimal(new int[] {
             65535,
             0,
@@ -4714,51 +5342,51 @@
             this.portnum.Size = new System.Drawing.Size(134, 21);
             this.portnum.TabIndex = 9;
             // 
-            // linkLabel1
+            // server_referenceID
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(30, 200);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(187, 12);
-            this.linkLabel1.TabIndex = 8;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "적 그룹 참고 사이트(클릭시 이동)";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.server_referenceID.AutoSize = true;
+            this.server_referenceID.Location = new System.Drawing.Point(31, 190);
+            this.server_referenceID.Name = "server_referenceID";
+            this.server_referenceID.Size = new System.Drawing.Size(187, 12);
+            this.server_referenceID.TabIndex = 8;
+            this.server_referenceID.TabStop = true;
+            this.server_referenceID.Text = "적 그룹 참고 사이트(클릭시 이동)";
+            this.server_referenceID.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // label73
+            // server_log
             // 
-            this.label73.AutoSize = true;
-            this.label73.Location = new System.Drawing.Point(7, 385);
-            this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(57, 12);
-            this.label73.TabIndex = 7;
-            this.label73.Text = "서버 로그";
+            this.server_log.AutoSize = true;
+            this.server_log.Location = new System.Drawing.Point(9, 393);
+            this.server_log.Name = "server_log";
+            this.server_log.Size = new System.Drawing.Size(57, 12);
+            this.server_log.TabIndex = 7;
+            this.server_log.Text = "서버 로그";
             // 
             // LogTextBox
             // 
             this.LogTextBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LogTextBox.Location = new System.Drawing.Point(7, 400);
+            this.LogTextBox.Location = new System.Drawing.Point(9, 408);
             this.LogTextBox.Multiline = true;
             this.LogTextBox.Name = "LogTextBox";
             this.LogTextBox.ReadOnly = true;
             this.LogTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.LogTextBox.Size = new System.Drawing.Size(859, 262);
+            this.LogTextBox.Size = new System.Drawing.Size(859, 241);
             this.LogTextBox.TabIndex = 6;
             // 
-            // button5
+            // server_start
             // 
-            this.button5.Location = new System.Drawing.Point(770, 668);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(98, 23);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "시작";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            this.button5.MouseHover += new System.EventHandler(this.Button5_MouseHover);
+            this.server_start.Location = new System.Drawing.Point(770, 668);
+            this.server_start.Name = "server_start";
+            this.server_start.Size = new System.Drawing.Size(98, 23);
+            this.server_start.TabIndex = 4;
+            this.server_start.Text = "시작";
+            this.server_start.UseVisualStyleBackColor = true;
+            this.server_start.Click += new System.EventHandler(this.button5_Click);
+            this.server_start.MouseHover += new System.EventHandler(this.Button5_MouseHover);
             // 
             // Boss_HP_textbox
             // 
-            this.Boss_HP_textbox.Location = new System.Drawing.Point(92, 71);
+            this.Boss_HP_textbox.Location = new System.Drawing.Point(93, 61);
             this.Boss_HP_textbox.Maximum = new decimal(new int[] {
             2147483647,
             0,
@@ -4769,33 +5397,166 @@
             this.Boss_HP_textbox.TabIndex = 3;
             this.Boss_HP_textbox.ValueChanged += new System.EventHandler(this.Boss_HP_textbox_ValueChanged);
             // 
-            // label62
+            // boss_hp
             // 
-            this.label62.AutoSize = true;
-            this.label62.Location = new System.Drawing.Point(27, 75);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(62, 12);
-            this.label62.TabIndex = 2;
-            this.label62.Text = "Boss 체력";
+            this.boss_hp.AutoSize = true;
+            this.boss_hp.Location = new System.Drawing.Point(28, 65);
+            this.boss_hp.Name = "boss_hp";
+            this.boss_hp.Size = new System.Drawing.Size(62, 12);
+            this.boss_hp.TabIndex = 2;
+            this.boss_hp.Text = "Boss 체력";
             // 
             // enemy_team_id_combobox
             // 
             this.enemy_team_id_combobox.FormattingEnabled = true;
-            this.enemy_team_id_combobox.Location = new System.Drawing.Point(77, 33);
+            this.enemy_team_id_combobox.Location = new System.Drawing.Point(78, 23);
             this.enemy_team_id_combobox.Name = "enemy_team_id_combobox";
             this.enemy_team_id_combobox.Size = new System.Drawing.Size(133, 20);
             this.enemy_team_id_combobox.TabIndex = 1;
             this.enemy_team_id_combobox.SelectedIndexChanged += new System.EventHandler(this.enemy_team_id_combobox_SelectedIndexChanged);
             this.enemy_team_id_combobox.TextUpdate += new System.EventHandler(this.enemy_team_id_combobox_TextUpdate);
             // 
-            // label61
+            // enemy_group
             // 
-            this.label61.AutoSize = true;
-            this.label61.Location = new System.Drawing.Point(27, 37);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(45, 12);
-            this.label61.TabIndex = 0;
-            this.label61.Text = "적 그룹";
+            this.enemy_group.AutoSize = true;
+            this.enemy_group.Location = new System.Drawing.Point(28, 27);
+            this.enemy_group.Name = "enemy_group";
+            this.enemy_group.Size = new System.Drawing.Size(45, 12);
+            this.enemy_group.TabIndex = 0;
+            this.enemy_group.Text = "적 그룹";
+            // 
+            // etc_set
+            // 
+            this.etc_set.Controls.Add(this.groupBox25);
+            this.etc_set.Controls.Add(this.etc_progsetting);
+            this.etc_set.Controls.Add(this.etc_basicinformation);
+            this.etc_set.Location = new System.Drawing.Point(4, 22);
+            this.etc_set.Name = "etc_set";
+            this.etc_set.Padding = new System.Windows.Forms.Padding(3);
+            this.etc_set.Size = new System.Drawing.Size(875, 700);
+            this.etc_set.TabIndex = 4;
+            this.etc_set.Text = "기타 설정";
+            this.etc_set.UseVisualStyleBackColor = true;
+            // 
+            // groupBox25
+            // 
+            this.groupBox25.Controls.Add(this.Language_set);
+            this.groupBox25.Controls.Add(this.languageList_Combobox);
+            this.groupBox25.Location = new System.Drawing.Point(7, 108);
+            this.groupBox25.Name = "groupBox25";
+            this.groupBox25.Size = new System.Drawing.Size(246, 69);
+            this.groupBox25.TabIndex = 2;
+            this.groupBox25.TabStop = false;
+            this.groupBox25.Text = "Language";
+            // 
+            // Language_set
+            // 
+            this.Language_set.Location = new System.Drawing.Point(149, 27);
+            this.Language_set.Name = "Language_set";
+            this.Language_set.Size = new System.Drawing.Size(75, 23);
+            this.Language_set.TabIndex = 1;
+            this.Language_set.Text = "Set";
+            this.Language_set.UseVisualStyleBackColor = true;
+            // 
+            // languageList_Combobox
+            // 
+            this.languageList_Combobox.FormattingEnabled = true;
+            this.languageList_Combobox.Location = new System.Drawing.Point(22, 29);
+            this.languageList_Combobox.Name = "languageList_Combobox";
+            this.languageList_Combobox.Size = new System.Drawing.Size(121, 20);
+            this.languageList_Combobox.TabIndex = 0;
+            // 
+            // etc_progsetting
+            // 
+            this.etc_progsetting.Controls.Add(this.nolog_checkbox);
+            this.etc_progsetting.Controls.Add(this.updatecheck_checkbox);
+            this.etc_progsetting.Controls.Add(this.showdetailLog_checkbox);
+            this.etc_progsetting.Location = new System.Drawing.Point(260, 6);
+            this.etc_progsetting.Name = "etc_progsetting";
+            this.etc_progsetting.Size = new System.Drawing.Size(607, 95);
+            this.etc_progsetting.TabIndex = 1;
+            this.etc_progsetting.TabStop = false;
+            this.etc_progsetting.Text = "프로그램 설정";
+            // 
+            // nolog_checkbox
+            // 
+            this.nolog_checkbox.AutoSize = true;
+            this.nolog_checkbox.Location = new System.Drawing.Point(17, 67);
+            this.nolog_checkbox.Name = "nolog_checkbox";
+            this.nolog_checkbox.Size = new System.Drawing.Size(140, 16);
+            this.nolog_checkbox.TabIndex = 2;
+            this.nolog_checkbox.Text = "로그를 표시하지 않음";
+            this.nolog_checkbox.UseVisualStyleBackColor = true;
+            this.nolog_checkbox.CheckedChanged += new System.EventHandler(this.programSettingChanged);
+            // 
+            // updatecheck_checkbox
+            // 
+            this.updatecheck_checkbox.AutoSize = true;
+            this.updatecheck_checkbox.Location = new System.Drawing.Point(17, 45);
+            this.updatecheck_checkbox.Name = "updatecheck_checkbox";
+            this.updatecheck_checkbox.Size = new System.Drawing.Size(196, 16);
+            this.updatecheck_checkbox.TabIndex = 1;
+            this.updatecheck_checkbox.Text = "프로그램 실행 시 업데이트 확인";
+            this.updatecheck_checkbox.UseVisualStyleBackColor = true;
+            this.updatecheck_checkbox.CheckedChanged += new System.EventHandler(this.programSettingChanged);
+            // 
+            // showdetailLog_checkbox
+            // 
+            this.showdetailLog_checkbox.AutoSize = true;
+            this.showdetailLog_checkbox.Location = new System.Drawing.Point(17, 23);
+            this.showdetailLog_checkbox.Name = "showdetailLog_checkbox";
+            this.showdetailLog_checkbox.Size = new System.Drawing.Size(354, 16);
+            this.showdetailLog_checkbox.TabIndex = 0;
+            this.showdetailLog_checkbox.Text = "자세한 로그 표시 (멈춤 현상이나 속도 저하가 발생할수 있음)";
+            this.showdetailLog_checkbox.UseVisualStyleBackColor = true;
+            this.showdetailLog_checkbox.CheckedChanged += new System.EventHandler(this.programSettingChanged);
+            // 
+            // etc_basicinformation
+            // 
+            this.etc_basicinformation.Controls.Add(this.commander_exp);
+            this.etc_basicinformation.Controls.Add(this.com_exp);
+            this.etc_basicinformation.Controls.Add(this.commander_name);
+            this.etc_basicinformation.Controls.Add(this.com_name);
+            this.etc_basicinformation.Location = new System.Drawing.Point(7, 6);
+            this.etc_basicinformation.Name = "etc_basicinformation";
+            this.etc_basicinformation.Size = new System.Drawing.Size(246, 95);
+            this.etc_basicinformation.TabIndex = 0;
+            this.etc_basicinformation.TabStop = false;
+            this.etc_basicinformation.Text = "기본 정보";
+            // 
+            // commander_exp
+            // 
+            this.commander_exp.Location = new System.Drawing.Point(104, 56);
+            this.commander_exp.Name = "commander_exp";
+            this.commander_exp.Size = new System.Drawing.Size(116, 21);
+            this.commander_exp.TabIndex = 3;
+            this.commander_exp.TextChanged += new System.EventHandler(this.Commander_exp_TextChanged);
+            // 
+            // com_exp
+            // 
+            this.com_exp.Location = new System.Drawing.Point(20, 59);
+            this.com_exp.Name = "com_exp";
+            this.com_exp.Size = new System.Drawing.Size(81, 12);
+            this.com_exp.TabIndex = 2;
+            this.com_exp.Text = "지휘관 경험치";
+            this.com_exp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // commander_name
+            // 
+            this.commander_name.Location = new System.Drawing.Point(104, 21);
+            this.commander_name.Name = "commander_name";
+            this.commander_name.Size = new System.Drawing.Size(116, 21);
+            this.commander_name.TabIndex = 1;
+            this.commander_name.TextChanged += new System.EventHandler(this.Commander_name_TextChanged);
+            // 
+            // com_name
+            // 
+            this.com_name.Location = new System.Drawing.Point(30, 24);
+            this.com_name.Name = "com_name";
+            this.com_name.Size = new System.Drawing.Size(69, 15);
+            this.com_name.TabIndex = 0;
+            this.com_name.Text = "지휘관 이름";
+            this.com_name.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel1
             // 
@@ -4839,14 +5600,48 @@
             this.openFileDialog3.Filter = "인형 장비 정보 파일|*.equip|Json 파일|*.json|모든 파일|*.*";
             this.openFileDialog3.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog3_FileOk);
             // 
-            // label123
+            // groupBox22
             // 
-            this.label123.AutoSize = true;
-            this.label123.Location = new System.Drawing.Point(12, 218);
-            this.label123.Name = "label123";
-            this.label123.Size = new System.Drawing.Size(213, 12);
-            this.label123.TabIndex = 3;
-            this.label123.Text = "장비를 설정하면 자동으로 적용됩니다.";
+            //this.groupBox22.AccessibleDescription = "";
+            //this.groupBox22.Controls.Add(this.theaterbattle);
+            //this.groupBox22.Controls.Add(this.normalbattle);
+            //this.groupBox22.Location = new System.Drawing.Point(405, 659);
+            //this.groupBox22.Name = "groupBox22";
+            //this.groupBox22.Size = new System.Drawing.Size(184, 34);
+            //this.groupBox22.TabIndex = 18;
+            //this.groupBox22.TabStop = false;
+           // this.groupBox22.Text = "모드";
+            // 
+            // normalbattle
+            // 
+            this.normalbattle.Checked = true;
+            this.normalbattle.Location = new System.Drawing.Point(6, 9);
+            this.normalbattle.Name = "normalbattle";
+            this.normalbattle.Size = new System.Drawing.Size(104, 24);
+            this.normalbattle.TabIndex = 0;
+            this.normalbattle.TabStop = true;
+            this.normalbattle.Text = "일반(모의전)";
+            this.normalbattle.UseVisualStyleBackColor = true;
+            // 
+            // theaterbattle
+            // 
+            this.theaterbattle.AutoSize = true;
+            this.theaterbattle.Location = new System.Drawing.Point(119, 13);
+            this.theaterbattle.Name = "theaterbattle";
+            this.theaterbattle.Size = new System.Drawing.Size(59, 16);
+            this.theaterbattle.TabIndex = 1;
+            this.theaterbattle.Text = "국지전";
+            this.theaterbattle.UseVisualStyleBackColor = true;
+            // 
+            // tabPage5
+            // 
+            //this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            //this.tabPage5.Name = "tabPage5";
+            //this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            //this.tabPage5.Size = new System.Drawing.Size(875, 700);
+            //this.tabPage5.TabIndex = 4;
+            //this.tabPage5.Text = "tabPage5";
+            //this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -4862,13 +5657,13 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.gun_set.ResumeLayout(false);
+            this.gun_set.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
+            this.gun_setfire.ResumeLayout(false);
+            this.gun_setfire.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunhit_5_number)).EndInit();
@@ -4934,11 +5729,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.gunpow_1_number)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunhp_1_number)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunlv_1_number)).EndInit();
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
+            this.fire_support_unit_set.ResumeLayout(false);
+            this.fire_support_unit_set.PerformLayout();
+            this.groupBox21.ResumeLayout(false);
+            this.groupBox21.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sqd_6_skill3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sqd_6_skill2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sqd_6_reload)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sqd_6_skill1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sqd_6_hit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sqd_6_break)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sqd_6_damage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sqd_6_lv)).EndInit();
             this.groupBox13.ResumeLayout(false);
-            this.groupBox14.ResumeLayout(false);
-            this.groupBox14.PerformLayout();
+            this.set_fire.ResumeLayout(false);
+            this.set_fire.PerformLayout();
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sqd_5_skill3)).EndInit();
@@ -4989,21 +5794,31 @@
             ((System.ComponentModel.ISupportInitialize)(this.sqd_1_break)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sqd_1_damage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sqd_1_lv)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.grpbox21.ResumeLayout(false);
-            this.groupBox20.ResumeLayout(false);
-            this.groupBox19.ResumeLayout(false);
-            this.groupBox18.ResumeLayout(false);
-            this.groupBox17.ResumeLayout(false);
-            this.groupBox16.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
-            this.groupBox15.ResumeLayout(false);
-            this.groupBox15.PerformLayout();
+            this.equip_set.ResumeLayout(false);
+            this.equip_set.PerformLayout();
+            this.groupBox_equip_setting.ResumeLayout(false);
+            this.groupBox_equip_5.ResumeLayout(false);
+            this.groupBox_equip_4.ResumeLayout(false);
+            this.groupBox_equip_3.ResumeLayout(false);
+            this.groupBox_equip_2.ResumeLayout(false);
+            this.groupBox_equip_1.ResumeLayout(false);
+            this.server_set.ResumeLayout(false);
+            this.server_set.PerformLayout();
+            this.server_mode.ResumeLayout(false);
+            this.server_mode.PerformLayout();
+            this.server_information.ResumeLayout(false);
+            this.server_information.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.portnum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Boss_HP_textbox)).EndInit();
+            this.etc_set.ResumeLayout(false);
+            this.groupBox25.ResumeLayout(false);
+            this.etc_progsetting.ResumeLayout(false);
+            this.etc_progsetting.PerformLayout();
+            this.etc_basicinformation.ResumeLayout(false);
+            this.etc_basicinformation.PerformLayout();
             this.panel1.ResumeLayout(false);
+            //this.groupBox22.ResumeLayout(false);
+            //this.groupBox22.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -5011,170 +5826,170 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage gun_set;
+        private System.Windows.Forms.TabPage equip_set;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.NumericUpDown gunlv_1_number;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label gunlv_1;
         private System.Windows.Forms.ComboBox gunid_1_combobox;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label gunid_1;
         private System.Windows.Forms.NumericUpDown gunskill2_1_number;
         private System.Windows.Forms.NumericUpDown gunskill1_1_number;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label gunskill2_1;
+        private System.Windows.Forms.Label gunskill1_1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.NumericUpDown gundummy_1_number;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label gundummy_1;
         private System.Windows.Forms.NumericUpDown gunrate_1_number;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label gunfirespeed_1;
         private System.Windows.Forms.NumericUpDown gundodge_1_number;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label gundodge_1;
         private System.Windows.Forms.NumericUpDown gunpow_1_number;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label gunfire_1;
         private System.Windows.Forms.NumericUpDown gunhp_1_number;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label gunhp_1;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.ComboBox gunskin_5_conbobox;
-        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label gunskin_5;
         private System.Windows.Forms.CheckBox gunoath_5_checkbox;
         private System.Windows.Forms.NumericUpDown gunfavor_5_number;
-        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Label gunfavor_5;
         private System.Windows.Forms.NumericUpDown gunskill2_5_number;
         private System.Windows.Forms.NumericUpDown gunskill1_5_number;
-        private System.Windows.Forms.Label label51;
-        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.Label gunskill2_5;
+        private System.Windows.Forms.Label gunskill1_5;
         private System.Windows.Forms.Label label53;
         private System.Windows.Forms.NumericUpDown gundummy_5_number;
-        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Label gundummy_5;
         private System.Windows.Forms.NumericUpDown gunrate_5_number;
-        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.Label gunfirespeed_5;
         private System.Windows.Forms.NumericUpDown gundodge_5_number;
-        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.Label gundodge_5;
         private System.Windows.Forms.NumericUpDown gunpow_5_number;
-        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.Label gunfire_5;
         private System.Windows.Forms.NumericUpDown gunhp_5_number;
-        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.Label gunhp_5;
         private System.Windows.Forms.NumericUpDown gunlv_5_number;
-        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.Label gunlv_5;
         private System.Windows.Forms.ComboBox gunid_5_combobox;
-        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.Label gunid_5;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.ComboBox gunskin_4_conbobox;
-        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label gunskin_4;
         private System.Windows.Forms.CheckBox gunoath_4_checkbox;
         private System.Windows.Forms.NumericUpDown gunfavor_4_number;
-        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label gunfavor_4;
         private System.Windows.Forms.NumericUpDown gunskill2_4_number;
         private System.Windows.Forms.NumericUpDown gunskill1_4_number;
-        private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label gunskill2_4;
+        private System.Windows.Forms.Label gunskill1_4;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.NumericUpDown gundummy_4_number;
-        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label gundummy_4;
         private System.Windows.Forms.NumericUpDown gunrate_4_number;
-        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label gunfirespeed_4;
         private System.Windows.Forms.NumericUpDown gundodge_4_number;
-        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label gundodge_4;
         private System.Windows.Forms.NumericUpDown gunpow_4_number;
-        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label gunfire_4;
         private System.Windows.Forms.NumericUpDown gunhp_4_number;
-        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label gunhp_4;
         private System.Windows.Forms.NumericUpDown gunlv_4_number;
-        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Label gunlv_4;
         private System.Windows.Forms.ComboBox gunid_4_combobox;
-        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label gunid_4;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ComboBox gunskin_3_conbobox;
-        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label gunskin_3;
         private System.Windows.Forms.CheckBox gunoath_3_checkbox;
         private System.Windows.Forms.NumericUpDown gunfavor_3_number;
-        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label gunfavor_3;
         private System.Windows.Forms.NumericUpDown gunskill2_3_number;
         private System.Windows.Forms.NumericUpDown gunskill1_3_number;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label gunskill2_3;
+        private System.Windows.Forms.Label gunskill1_3;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.NumericUpDown gundummy_3_number;
-        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label gundummy_3;
         private System.Windows.Forms.NumericUpDown gunrate_3_number;
-        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label gunfirespeed_3;
         private System.Windows.Forms.NumericUpDown gundodge_3_number;
-        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label gundodge_3;
         private System.Windows.Forms.NumericUpDown gunpow_3_number;
-        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label gunfire_3;
         private System.Windows.Forms.NumericUpDown gunhp_3_number;
-        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label gunhp_3;
         private System.Windows.Forms.NumericUpDown gunlv_3_number;
-        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label gunlv_3;
         private System.Windows.Forms.ComboBox gunid_3_combobox;
-        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label gunid_3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox gunskin_2_conbobox;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label gunskin_2;
         private System.Windows.Forms.CheckBox gunoath_2_checkbox;
         private System.Windows.Forms.NumericUpDown gunfavor_2_number;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label gunfavor_2;
         private System.Windows.Forms.NumericUpDown gunskill2_2_number;
         private System.Windows.Forms.NumericUpDown gunskill1_2_number;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label gunskill2_2;
+        private System.Windows.Forms.Label gunskill1_2;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.NumericUpDown gundummy_2_number;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label gundummy_2;
         private System.Windows.Forms.NumericUpDown gunrate_2_number;
-        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label gunfirespeed_2;
         private System.Windows.Forms.NumericUpDown gundodge_2_number;
-        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label gundodge_2;
         private System.Windows.Forms.NumericUpDown gunpow_2_number;
-        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label gunfire_2;
         private System.Windows.Forms.NumericUpDown gunhp_2_number;
-        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label gunhp_2;
         private System.Windows.Forms.NumericUpDown gunlv_2_number;
-        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label gunlv_2;
         private System.Windows.Forms.ComboBox gunid_2_combobox;
-        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label gunid_2;
         private System.Windows.Forms.ComboBox gunskin_1_conbobox;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label gunskin_1;
         private System.Windows.Forms.CheckBox gunoath_1_checkbox;
         private System.Windows.Forms.NumericUpDown gunfavor_1_number;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label gunfavor_1;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button gun_apply;
+        private System.Windows.Forms.Button gun_load;
+        private System.Windows.Forms.Button gun_save;
+        private System.Windows.Forms.TabPage server_set;
+        private System.Windows.Forms.Button server_start;
         private System.Windows.Forms.NumericUpDown Boss_HP_textbox;
-        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.Label boss_hp;
         private System.Windows.Forms.ComboBox enemy_team_id_combobox;
-        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.Label enemy_group;
         private System.Windows.Forms.TextBox LogTextBox;
-        private System.Windows.Forms.Label label67;
-        private System.Windows.Forms.Label label66;
-        private System.Windows.Forms.Label label65;
-        private System.Windows.Forms.Label label64;
-        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.Label gunpos_5;
+        private System.Windows.Forms.Label gunpos_4;
+        private System.Windows.Forms.Label gunpos_3;
+        private System.Windows.Forms.Label gunpos_2;
+        private System.Windows.Forms.Label gunpos_1;
         private System.Windows.Forms.CheckBox enable_1;
         private System.Windows.Forms.CheckBox enable_2;
         private System.Windows.Forms.CheckBox enable_3;
         private System.Windows.Forms.CheckBox enable_4;
         private System.Windows.Forms.CheckBox enable_5;
-        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.GroupBox gun_setfire;
         private System.Windows.Forms.NumericUpDown gunhit_5_number;
-        private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.Label gunhit_5;
         private System.Windows.Forms.NumericUpDown gunhit_4_number;
-        private System.Windows.Forms.Label label71;
+        private System.Windows.Forms.Label gunhit_4;
         private System.Windows.Forms.NumericUpDown gunhit_3_number;
-        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.Label gunhit_3;
         private System.Windows.Forms.NumericUpDown gunhit_2_number;
-        private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.Label gunhit_2;
         private System.Windows.Forms.NumericUpDown gunhit_1_number;
-        private System.Windows.Forms.Label label68;
-        private System.Windows.Forms.Label label73;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Label label74;
+        private System.Windows.Forms.Label gunhit_1;
+        private System.Windows.Forms.Label server_log;
+        private System.Windows.Forms.TabPage fire_support_unit_set;
+        private System.Windows.Forms.LinkLabel server_referenceID;
+        private System.Windows.Forms.Label server_setport;
         private System.Windows.Forms.NumericUpDown portnum;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader id;
@@ -5184,23 +5999,23 @@
         private System.Windows.Forms.ColumnHeader missionName;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.NumericUpDown sqd_1_lv;
-        private System.Windows.Forms.Label label75;
-        private System.Windows.Forms.Label label79;
-        private System.Windows.Forms.Label label78;
-        private System.Windows.Forms.Label label77;
-        private System.Windows.Forms.Label label76;
+        private System.Windows.Forms.Label sqdlv_1;
+        private System.Windows.Forms.Label sqdreload_1;
+        private System.Windows.Forms.Label sqdhit_1;
+        private System.Windows.Forms.Label sqdbreak_1;
+        private System.Windows.Forms.Label sqddamage_1;
         private System.Windows.Forms.NumericUpDown sqd_1_reload;
         private System.Windows.Forms.NumericUpDown sqd_1_hit;
         private System.Windows.Forms.NumericUpDown sqd_1_break;
         private System.Windows.Forms.NumericUpDown sqd_1_damage;
         private System.Windows.Forms.GroupBox groupBox12;
-        private System.Windows.Forms.Label label107;
-        private System.Windows.Forms.Label label108;
-        private System.Windows.Forms.Label label109;
-        private System.Windows.Forms.Label label110;
-        private System.Windows.Forms.Label label111;
-        private System.Windows.Forms.Label label112;
-        private System.Windows.Forms.Label label113;
+        private System.Windows.Forms.Label sqdskill3_5;
+        private System.Windows.Forms.Label sqdreload_5;
+        private System.Windows.Forms.Label sqdskill2_5;
+        private System.Windows.Forms.Label sqdhit_5;
+        private System.Windows.Forms.Label sqdskill1_5;
+        private System.Windows.Forms.Label sqdbreak_5;
+        private System.Windows.Forms.Label sqddamage_5;
         private System.Windows.Forms.NumericUpDown sqd_5_skill3;
         private System.Windows.Forms.NumericUpDown sqd_5_skill2;
         private System.Windows.Forms.NumericUpDown sqd_5_reload;
@@ -5209,15 +6024,15 @@
         private System.Windows.Forms.NumericUpDown sqd_5_break;
         private System.Windows.Forms.NumericUpDown sqd_5_damage;
         private System.Windows.Forms.NumericUpDown sqd_5_lv;
-        private System.Windows.Forms.Label label114;
+        private System.Windows.Forms.Label sqdlv_5;
         private System.Windows.Forms.GroupBox groupBox11;
-        private System.Windows.Forms.Label label99;
-        private System.Windows.Forms.Label label100;
-        private System.Windows.Forms.Label label101;
-        private System.Windows.Forms.Label label102;
-        private System.Windows.Forms.Label label103;
-        private System.Windows.Forms.Label label104;
-        private System.Windows.Forms.Label label105;
+        private System.Windows.Forms.Label sqdskill3_4;
+        private System.Windows.Forms.Label sqdreload_4;
+        private System.Windows.Forms.Label sqdskill2_4;
+        private System.Windows.Forms.Label sqdhit_4;
+        private System.Windows.Forms.Label sqdskill1_4;
+        private System.Windows.Forms.Label sqdbreak_4;
+        private System.Windows.Forms.Label sqddamage_4;
         private System.Windows.Forms.NumericUpDown sqd_4_skill3;
         private System.Windows.Forms.NumericUpDown sqd_4_skill2;
         private System.Windows.Forms.NumericUpDown sqd_4_reload;
@@ -5226,15 +6041,15 @@
         private System.Windows.Forms.NumericUpDown sqd_4_break;
         private System.Windows.Forms.NumericUpDown sqd_4_damage;
         private System.Windows.Forms.NumericUpDown sqd_4_lv;
-        private System.Windows.Forms.Label label106;
+        private System.Windows.Forms.Label sqdlv_4;
         private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.Label label91;
-        private System.Windows.Forms.Label label92;
-        private System.Windows.Forms.Label label93;
-        private System.Windows.Forms.Label label94;
-        private System.Windows.Forms.Label label95;
-        private System.Windows.Forms.Label label96;
-        private System.Windows.Forms.Label label97;
+        private System.Windows.Forms.Label sqdskill3_3;
+        private System.Windows.Forms.Label sqdreload_3;
+        private System.Windows.Forms.Label sqdskill2_3;
+        private System.Windows.Forms.Label sqdhit_3;
+        private System.Windows.Forms.Label sqdskill1_3;
+        private System.Windows.Forms.Label sqdbreak_3;
+        private System.Windows.Forms.Label sqddamage_3;
         private System.Windows.Forms.NumericUpDown sqd_3_skill3;
         private System.Windows.Forms.NumericUpDown sqd_3_skill2;
         private System.Windows.Forms.NumericUpDown sqd_3_reload;
@@ -5243,15 +6058,15 @@
         private System.Windows.Forms.NumericUpDown sqd_3_break;
         private System.Windows.Forms.NumericUpDown sqd_3_damage;
         private System.Windows.Forms.NumericUpDown sqd_3_lv;
-        private System.Windows.Forms.Label label98;
+        private System.Windows.Forms.Label sqdlv_3;
         private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.Label label83;
-        private System.Windows.Forms.Label label84;
-        private System.Windows.Forms.Label label85;
-        private System.Windows.Forms.Label label86;
-        private System.Windows.Forms.Label label87;
-        private System.Windows.Forms.Label label88;
-        private System.Windows.Forms.Label label89;
+        private System.Windows.Forms.Label sqdskill3_2;
+        private System.Windows.Forms.Label sqdreload_2;
+        private System.Windows.Forms.Label sqdskill2_2;
+        private System.Windows.Forms.Label sqdhit_2;
+        private System.Windows.Forms.Label sqdskill1_2;
+        private System.Windows.Forms.Label sqdbreak_2;
+        private System.Windows.Forms.Label sqddamage_2;
         private System.Windows.Forms.NumericUpDown sqd_2_skill3;
         private System.Windows.Forms.NumericUpDown sqd_2_skill2;
         private System.Windows.Forms.NumericUpDown sqd_2_reload;
@@ -5260,10 +6075,10 @@
         private System.Windows.Forms.NumericUpDown sqd_2_break;
         private System.Windows.Forms.NumericUpDown sqd_2_damage;
         private System.Windows.Forms.NumericUpDown sqd_2_lv;
-        private System.Windows.Forms.Label label90;
-        private System.Windows.Forms.Label label82;
-        private System.Windows.Forms.Label label81;
-        private System.Windows.Forms.Label label80;
+        private System.Windows.Forms.Label sqdlv_2;
+        private System.Windows.Forms.Label sqdskill3_1;
+        private System.Windows.Forms.Label sqdskill2_1;
+        private System.Windows.Forms.Label sqdskill1_1;
         private System.Windows.Forms.NumericUpDown sqd_1_skill3;
         private System.Windows.Forms.NumericUpDown sqd_1_skill2;
         private System.Windows.Forms.NumericUpDown sqd_1_skill1;
@@ -5271,70 +6086,70 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Label label115;
         private System.Windows.Forms.GroupBox groupBox13;
-        private System.Windows.Forms.GroupBox groupBox14;
+        private System.Windows.Forms.GroupBox set_fire;
         private System.Windows.Forms.CheckBox sqdswitch_5;
         private System.Windows.Forms.CheckBox sqdswitch_4;
         private System.Windows.Forms.CheckBox sqdswitch_3;
         private System.Windows.Forms.CheckBox sqdswitch_2;
         private System.Windows.Forms.CheckBox sqdswitch_1;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button sqd_load;
+        private System.Windows.Forms.Button sqd_save;
+        private System.Windows.Forms.Button sqd_apply;
         private System.Windows.Forms.SaveFileDialog saveFileDialog2;
         private System.Windows.Forms.OpenFileDialog openFileDialog2;
         private System.Windows.Forms.Label label116;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.GroupBox groupBox15;
-        private System.Windows.Forms.Label label118;
-        private System.Windows.Forms.Label label117;
-        private System.Windows.Forms.Label label120;
-        private System.Windows.Forms.Label label119;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.GroupBox groupBox16;
+        private System.Windows.Forms.Button gun_resetstat_5;
+        private System.Windows.Forms.Button gun_resetstat_4;
+        private System.Windows.Forms.Button gun_resetstat_3;
+        private System.Windows.Forms.Button gun_resetstat_2;
+        private System.Windows.Forms.Button gun_resetstat_1;
+        private System.Windows.Forms.Button server_applyID;
+        private System.Windows.Forms.GroupBox server_information;
+        private System.Windows.Forms.Label server_settedID;
+        private System.Windows.Forms.Label server_state;
+        private System.Windows.Forms.Label server_port;
+        private System.Windows.Forms.Label server_ip;
+        private System.Windows.Forms.CheckBox server_hideip;
+        private System.Windows.Forms.LinkLabel clearlog;
+        private System.Windows.Forms.GroupBox groupBox_equip_1;
         private System.Windows.Forms.Button setEquip_11;
-        private System.Windows.Forms.GroupBox groupBox20;
+        private System.Windows.Forms.GroupBox groupBox_equip_5;
         private System.Windows.Forms.Button setEquip_53;
         private System.Windows.Forms.Button setEquip_52;
         private System.Windows.Forms.Button setEquip_51;
-        private System.Windows.Forms.GroupBox groupBox19;
+        private System.Windows.Forms.GroupBox groupBox_equip_4;
         private System.Windows.Forms.Button setEquip_43;
         private System.Windows.Forms.Button setEquip_42;
         private System.Windows.Forms.Button setEquip_41;
-        private System.Windows.Forms.GroupBox groupBox18;
+        private System.Windows.Forms.GroupBox groupBox_equip_3;
         private System.Windows.Forms.Button setEquip_33;
         private System.Windows.Forms.Button setEquip_32;
         private System.Windows.Forms.Button setEquip_31;
-        private System.Windows.Forms.GroupBox groupBox17;
+        private System.Windows.Forms.GroupBox groupBox_equip_2;
         private System.Windows.Forms.Button setEquip_23;
         private System.Windows.Forms.Button setEquip_22;
         private System.Windows.Forms.Button setEquip_21;
         private System.Windows.Forms.Button setEquip_13;
         private System.Windows.Forms.Button setEquip_12;
-        private System.Windows.Forms.GroupBox grpbox21;
+        private System.Windows.Forms.GroupBox groupBox_equip_setting;
         private System.Windows.Forms.Label eq5_gun_name;
         private System.Windows.Forms.Label eq4_gun_name;
         private System.Windows.Forms.Label eq3_gun_name;
         private System.Windows.Forms.Label eq2_gun_name;
         private System.Windows.Forms.Label eq1_gun_name;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button equip_load;
+        private System.Windows.Forms.Button equip_save;
         private System.Windows.Forms.Label label121;
-        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Button equip_removeall;
         private System.Windows.Forms.SaveFileDialog saveFileDialog3;
         private System.Windows.Forms.OpenFileDialog openFileDialog3;
-        private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button server_viewBattlelog;
+        private System.Windows.Forms.Button set_gunpos_btn_5;
+        private System.Windows.Forms.Button set_gunpos_btn_4;
+        private System.Windows.Forms.Button set_gunpos_btn_3;
+        private System.Windows.Forms.Button set_gunpos_btn_2;
+        private System.Windows.Forms.Button set_gunpos_btn_1;
         public System.Windows.Forms.NumericUpDown gunpos_5_number;
         public System.Windows.Forms.NumericUpDown gunpos_4_number;
         public System.Windows.Forms.NumericUpDown gunpos_3_number;
@@ -5350,9 +6165,43 @@
         private System.Windows.Forms.Button postile_1;
         private System.Windows.Forms.Button postile_2;
         private System.Windows.Forms.Button postile_3;
-        private System.Windows.Forms.Label label122;
-        public System.Windows.Forms.Button button23;
-        private System.Windows.Forms.Label label123;
+        private System.Windows.Forms.Label gun_previewpos;
+        public System.Windows.Forms.Button gun_loadfromserver;
+        private System.Windows.Forms.Label equip_autoapply_desc;
+        private System.Windows.Forms.GroupBox groupBox21;
+        private System.Windows.Forms.Label sqdskill3_6;
+        private System.Windows.Forms.Label sqdreload_6;
+        private System.Windows.Forms.Label sqdskill2_6;
+        private System.Windows.Forms.Label sqdhit_6;
+        private System.Windows.Forms.Label sqdskill1_6;
+        private System.Windows.Forms.Label sqdbreak_6;
+        private System.Windows.Forms.Label sqddamage_6;
+        private System.Windows.Forms.NumericUpDown sqd_6_skill3;
+        private System.Windows.Forms.NumericUpDown sqd_6_skill2;
+        private System.Windows.Forms.NumericUpDown sqd_6_reload;
+        private System.Windows.Forms.NumericUpDown sqd_6_skill1;
+        private System.Windows.Forms.NumericUpDown sqd_6_hit;
+        private System.Windows.Forms.NumericUpDown sqd_6_break;
+        private System.Windows.Forms.NumericUpDown sqd_6_damage;
+        private System.Windows.Forms.NumericUpDown sqd_6_lv;
+        private System.Windows.Forms.Label sqdlv_6;
+        private System.Windows.Forms.CheckBox sqdswitch_6;
+        private System.Windows.Forms.GroupBox server_mode;
+        private System.Windows.Forms.RadioButton theaterbattle;
+        private System.Windows.Forms.RadioButton normalbattle;
+        private System.Windows.Forms.TabPage etc_set;
+        private System.Windows.Forms.GroupBox etc_progsetting;
+        private System.Windows.Forms.CheckBox nolog_checkbox;
+        private System.Windows.Forms.CheckBox updatecheck_checkbox;
+        private System.Windows.Forms.CheckBox showdetailLog_checkbox;
+        private System.Windows.Forms.GroupBox etc_basicinformation;
+        private System.Windows.Forms.TextBox commander_exp;
+        private System.Windows.Forms.Label com_exp;
+        private System.Windows.Forms.TextBox commander_name;
+        private System.Windows.Forms.Label com_name;
+        private System.Windows.Forms.GroupBox groupBox25;
+        private System.Windows.Forms.Button Language_set;
+        private System.Windows.Forms.ComboBox languageList_Combobox;
     }
 }
 

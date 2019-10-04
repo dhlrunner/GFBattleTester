@@ -8047,7 +8047,7 @@
   ],
   "develop_act_info": [],
   "fix_act_info": [],
-  "mission_act_info": {
+ "mission_act_info": {
     "get_guns": "",
     "gundie_num": "0",
     "lose_type": "0",
@@ -8055,27 +8055,27 @@
     "join_teams": "1",
     "user_id": "20139",
     "ally_instance_info": "[]",
-    "squad_info": "{\"1\": {\"squad_instance_id\": \"1\",\"squad_id\": 227,\"belong\": 1,\"battleskill_switch\": 0,\"attack_next_turn\": \"2\",\"against_force_life\": 0},\"2\": {\"squad_instance_id\": \"2\",\"squad_id\": 7615,\"belong\": 1,\"battleskill_switch\": 1,\"attack_next_turn\": \"2\",\"against_force_life\": 0},\"3\": {\"squad_instance_id\": \"3\",\"squad_id\": 7138,\"belong\": 1,\"battleskill_switch\": 1,\"attack_next_turn\": \"2\",\"against_force_life\": 0},\"4\": {\"squad_instance_id\": \"4\",\"squad_id\": 24369,\"belong\": 1,\"battleskill_switch\": 1,\"attack_next_turn\": \"2\",\"against_force_life\": 0},\"5\": {\"squad_instance_id\": \"5\",\"squad_id\": 28011,\"belong\": 1,\"battleskill_switch\": 1,\"attack_next_turn\": \"2\",\"against_force_life\": 0}}",
-    "end_squad_instance_id": "2",
+    "squad_info": "{\"1\": {\"squad_instance_id\": \"1\",\"squad_id\": 227,\"belong\": 1,\"battleskill_switch\": 0,\"attack_next_turn\": \"1\",\"against_force_life\": 0},\"2\": {\"squad_instance_id\": \"2\",\"squad_id\": 7615,\"belong\": 1,\"battleskill_switch\": 1,\"attack_next_turn\": \"1\",\"against_force_life\": 0},\"3\": {\"squad_instance_id\": \"3\",\"squad_id\": 7138,\"belong\": 1,\"battleskill_switch\": 1,\"attack_next_turn\": \"1\",\"against_force_life\": 0},\"4\": {\"squad_instance_id\": \"4\",\"squad_id\": 24369,\"belong\": 1,\"battleskill_switch\": 1,\"attack_next_turn\": \"1\",\"against_force_life\": 0},\"5\": {\"squad_instance_id\": \"5\",\"squad_id\": 28011,\"belong\": 1,\"battleskill_switch\": 1,\"attack_next_turn\": \"1\",\"against_force_life\": 0},\"6\": {\"squad_instance_id\": \"6\",\"squad_id\": 99999,\"belong\": 1,\"battleskill_switch\": 0,\"attack_next_turn\": \"1\",\"against_force_life\": 0}}",
+    "end_squad_instance_id": "7",
     "end_skill_id": "0",
     "save_hostage": "0",
     "mission_control_trigger_spot_id": "[]",
     "reinforce_ally_team": "[]",
     "died_ally": "[]",
     "enemydie_num_killbyfriend": "0",
-    "reinforce_squads": "[\"1\",\"2\",\"3\",\"4\",\"5\"]",
+    "reinforce_squads": "[\"1\",\"2\",\"3\",\"4\",\"5\",\"6\"]",
     "growenemy_with_enemydie": "0",
     "enemydie_this_turn": "[]",
     "died_ally_type": "{\"1\":0,\"2\":0,\"0\":0}",
     "turn_belong": "1",
     "mission_control": "{\"1\":1,\"2\":2,\"3\":3}",
     "type5_score": "0",
-    "ap": "99",
-    "end_enemy_instance_id": "6",
+    "ap": "3",
+    "end_enemy_instance_id": "16",
     "reinforce_friend_team_num": "0",
-    "spots_change": "[]",
+    "spots_change": "",
     "gun_average_level": "",
-    "mission_id": "1101",
+    "mission_id": "1103",
     "gunid_gunlv": "",
     "last_battle_info": "",
     "enter_assisttype_squads": "[]",
@@ -8091,14 +8091,13 @@
     "fairy_skill_on_team": "[]",
     "enemydie_num": "0",
     "defend_line_start_turn": "0",
-    "gunid_gunlev": "{\"20055\":\"117\",\"20056\":\"116\",\"20057\":\"117\",\"20103\":\"117\",\"234\":\"100\"}",
     "mysquad_die_num": "0",
     "fairy_skill_on_ally": "[]",
-    "is_win": "0",
+    "is_win": "1",
     "building_info": "[]",
     "team_effect": "",
     "fairy_skill_on_squad": "[]",
-    "spot": "{\"939\":{\"spot_id\":\"939\",\"enemy_team_id\":\"0\",\"boss_hp\":\"0\",\"enemy_hp_percent\":\"1\",\"enemy_instance_id\":\"0\",\"enemy_birth_turn\":\"999\",\"enemy_ai\":0,\"enemy_ai_para\":0,\"belong\":\"1\",\"if_random\":\"0\",\"seed\":511,\"team_id\":\"0\",\"ally_instance_ids\":[],\"squad_instance_ids\":[],\"hostage_id\":\"0\",\"hostage_hp\":\"0\",\"hostage_max_hp\":\"0\",\"reinforce_count\":\"0\",\"supply_count\":\"0\"},\"940\":{\"spot_id\":\"940\",\"enemy_team_id\":\"0\",\"boss_hp\":\"0\",\"enemy_hp_percent\":\"1\",\"enemy_instance_id\":\"0\",\"enemy_birth_turn\":\"999\",\"enemy_ai\":0,\"enemy_ai_para\":0,\"belong\":\"3\",\"if_random\":\"0\",\"seed\":445,\"team_id\":\"0\",\"ally_instance_ids\":[],\"squad_instance_ids\":[],\"hostage_id\":\"0\",\"hostage_hp\":\"0\",\"hostage_max_hp\":\"0\",\"reinforce_count\":\"0\",\"supply_count\":\"0\"},\"941\":{\"spot_id\":\"941\",\"enemy_team_id\":\"424\",\"boss_hp\":\"0\",\"enemy_hp_percent\":\"1\",\"enemy_instance_id\":\"3\",\"enemy_birth_turn\":\"1\",\"enemy_ai\":\"0\",\"enemy_ai_para\":0,\"belong\":\"3\",\"if_random\":\"0\",\"seed\":2672,\"team_id\":\"1\",\"ally_instance_ids\":[],\"squad_instance_ids\":[],\"hostage_id\":\"0\",\"hostage_hp\":\"0\",\"hostage_max_hp\":\"0\",\"reinforce_count\":\"0\",\"supply_count\":\"0\"},\"942\":{\"spot_id\":\"942\",\"enemy_team_id\":\"0\",\"boss_hp\":\"0\",\"enemy_hp_percent\":\"1\",\"enemy_instance_id\":\"0\",\"enemy_birth_turn\":\"1\",\"enemy_ai\":\"0\",\"enemy_ai_para\":0,\"belong\":\"3\",\"if_random\":\"0\",\"seed\":1845,\"team_id\":\"0\",\"ally_instance_ids\":[],\"squad_instance_ids\":[],\"hostage_id\":\"0\",\"hostage_hp\":\"0\",\"hostage_max_hp\":\"0\",\"reinforce_count\":\"0\",\"supply_count\":\"0\"},\"943\":{\"spot_id\":\"943\",\"enemy_team_id\":\"0\",\"boss_hp\":\"0\",\"enemy_hp_percent\":\"1\",\"enemy_instance_id\":\"0\",\"enemy_birth_turn\":\"1\",\"enemy_ai\":\"0\",\"enemy_ai_para\":0,\"belong\":\"3\",\"if_random\":\"0\",\"seed\":708,\"team_id\":\"0\",\"ally_instance_ids\":[],\"squad_instance_ids\":[],\"hostage_id\":\"0\",\"hostage_hp\":\"0\",\"hostage_max_hp\":\"0\",\"reinforce_count\":\"0\",\"supply_count\":\"0\"},\"938\":{\"spot_id\":\"938\",\"team_id\":\"0\",\"belong\":\"1\",\"if_random\":\"0\",\"reinforce_count\":\"1\",\"seed\":4327,\"enemy_team_id\":\"0\",\"boss_hp\":\"0\",\"enemy_hp_percent\":\"1\",\"enemy_instance_id\":\"0\",\"enemy_ai\":0,\"enemy_ai_para\":\"\",\"ally_instance_ids\":[],\"squad_instance_ids\":[],\"hostage_id\":\"0\",\"hostage_hp\":\"0\",\"hostage_max_hp\":\"0\",\"enemy_birth_turn\":\"999\",\"supply_count\":\"0\"}}",
+    "spot": "{\"984\":{\"spot_id\":\"984\",\"enemy_team_id\":\"0\",\"boss_hp\":\"0\",\"enemy_hp_percent\":\"1\",\"enemy_instance_id\":\"0\",\"enemy_birth_turn\":\"999\",\"enemy_ai\":0,\"enemy_ai_para\":0,\"belong\":\"1\",\"if_random\":\"0\",\"seed\":4227,\"team_id\":\"0\",\"ally_instance_ids\":[],\"squad_instance_ids\":[],\"hostage_id\":\"0\",\"hostage_hp\":\"0\",\"hostage_max_hp\":\"0\",\"reinforce_count\":\"0\",\"supply_count\":\"0\"},\"985\":{\"spot_id\":\"985\",\"enemy_team_id\":\"0\",\"boss_hp\":\"0\",\"enemy_hp_percent\":\"1\",\"enemy_instance_id\":\"0\",\"enemy_birth_turn\":\"999\",\"enemy_ai\":0,\"enemy_ai_para\":0,\"belong\":\"1\",\"if_random\":\"0\",\"seed\":2798,\"team_id\":\"0\",\"ally_instance_ids\":[],\"squad_instance_ids\":[],\"hostage_id\":\"0\",\"hostage_hp\":\"0\",\"hostage_max_hp\":\"0\",\"reinforce_count\":\"0\",\"supply_count\":\"0\"},\"986\":{\"spot_id\":\"986\",\"enemy_team_id\":\"0\",\"boss_hp\":\"0\",\"enemy_hp_percent\":\"1\",\"enemy_instance_id\":\"0\",\"enemy_birth_turn\":\"999\",\"enemy_ai\":0,\"enemy_ai_para\":0,\"belong\":\"1\",\"if_random\":\"0\",\"seed\":3926,\"team_id\":\"0\",\"ally_instance_ids\":[],\"squad_instance_ids\":[],\"hostage_id\":\"0\",\"hostage_hp\":\"0\",\"hostage_max_hp\":\"0\",\"reinforce_count\":\"0\",\"supply_count\":\"0\"},\"987\":{\"spot_id\":\"987\",\"enemy_team_id\":\"442\",\"boss_hp\":\"0\",\"enemy_hp_percent\":\"1\",\"enemy_instance_id\":\"4\",\"enemy_birth_turn\":\"1\",\"enemy_ai\":\"0\",\"enemy_ai_para\":0,\"belong\":\"3\",\"if_random\":\"0\",\"seed\":1776,\"team_id\":\"0\",\"ally_instance_ids\":[],\"squad_instance_ids\":[],\"hostage_id\":\"0\",\"hostage_hp\":\"0\",\"hostage_max_hp\":\"0\",\"reinforce_count\":\"0\",\"supply_count\":\"0\"},\"988\":{\"spot_id\":\"988\",\"enemy_team_id\":\"442\",\"boss_hp\":\"0\",\"enemy_hp_percent\":\"1\",\"enemy_instance_id\":\"5\",\"enemy_birth_turn\":\"1\",\"enemy_ai\":\"0\",\"enemy_ai_para\":0,\"belong\":\"3\",\"if_random\":\"0\",\"seed\":3892,\"team_id\":\"0\",\"ally_instance_ids\":[],\"squad_instance_ids\":[],\"hostage_id\":\"0\",\"hostage_hp\":\"0\",\"hostage_max_hp\":\"0\",\"reinforce_count\":\"0\",\"supply_count\":\"0\"},\"990\":{\"spot_id\":\"990\",\"enemy_team_id\":\"442\",\"boss_hp\":\"0\",\"enemy_hp_percent\":\"1\",\"enemy_instance_id\":\"6\",\"enemy_birth_turn\":\"1\",\"enemy_ai\":\"0\",\"enemy_ai_para\":0,\"belong\":\"3\",\"if_random\":\"0\",\"seed\":5007,\"team_id\":\"0\",\"ally_instance_ids\":[],\"squad_instance_ids\":[],\"hostage_id\":\"0\",\"hostage_hp\":\"0\",\"hostage_max_hp\":\"0\",\"reinforce_count\":\"0\",\"supply_count\":\"0\"},\"992\":{\"spot_id\":\"992\",\"enemy_team_id\":\"0\",\"boss_hp\":\"0\",\"enemy_hp_percent\":\"1\",\"enemy_instance_id\":\"0\",\"enemy_birth_turn\":\"999\",\"enemy_ai\":0,\"enemy_ai_para\":0,\"belong\":\"1\",\"if_random\":\"0\",\"seed\":279,\"team_id\":\"0\",\"ally_instance_ids\":[],\"squad_instance_ids\":[],\"hostage_id\":\"0\",\"hostage_hp\":\"0\",\"hostage_max_hp\":\"0\",\"reinforce_count\":\"0\",\"supply_count\":\"0\"},\"993\":{\"spot_id\":\"993\",\"enemy_team_id\":\"442\",\"boss_hp\":\"0\",\"enemy_hp_percent\":\"1\",\"enemy_instance_id\":\"8\",\"enemy_birth_turn\":\"1\",\"enemy_ai\":\"0\",\"enemy_ai_para\":0,\"belong\":\"3\",\"if_random\":\"0\",\"seed\":2967,\"team_id\":\"0\",\"ally_instance_ids\":[],\"squad_instance_ids\":[],\"hostage_id\":\"0\",\"hostage_hp\":\"0\",\"hostage_max_hp\":\"0\",\"reinforce_count\":\"0\",\"supply_count\":\"0\"},\"994\":{\"spot_id\":\"994\",\"enemy_team_id\":\"0\",\"boss_hp\":\"0\",\"enemy_hp_percent\":\"1\",\"enemy_instance_id\":\"0\",\"enemy_birth_turn\":\"999\",\"enemy_ai\":0,\"enemy_ai_para\":0,\"belong\":\"1\",\"if_random\":\"0\",\"seed\":1265,\"team_id\":\"0\",\"ally_instance_ids\":[],\"squad_instance_ids\":[],\"hostage_id\":\"0\",\"hostage_hp\":\"0\",\"hostage_max_hp\":\"0\",\"reinforce_count\":\"0\",\"supply_count\":\"0\"},\"995\":{\"spot_id\":\"995\",\"enemy_team_id\":\"443\",\"boss_hp\":\"0\",\"enemy_hp_percent\":\"1\",\"enemy_instance_id\":\"10\",\"enemy_birth_turn\":\"1\",\"enemy_ai\":\"0\",\"enemy_ai_para\":0,\"belong\":\"3\",\"if_random\":\"0\",\"seed\":6650,\"team_id\":\"0\",\"ally_instance_ids\":[],\"squad_instance_ids\":[],\"hostage_id\":\"0\",\"hostage_hp\":\"0\",\"hostage_max_hp\":\"0\",\"reinforce_count\":\"0\",\"supply_count\":\"0\"},\"997\":{\"spot_id\":\"997\",\"enemy_team_id\":\"443\",\"boss_hp\":\"0\",\"enemy_hp_percent\":\"1\",\"enemy_instance_id\":\"11\",\"enemy_birth_turn\":\"1\",\"enemy_ai\":\"0\",\"enemy_ai_para\":0,\"belong\":\"3\",\"if_random\":\"0\",\"seed\":3508,\"team_id\":\"0\",\"ally_instance_ids\":[],\"squad_instance_ids\":[],\"hostage_id\":\"0\",\"hostage_hp\":\"0\",\"hostage_max_hp\":\"0\",\"reinforce_count\":\"0\",\"supply_count\":\"0\"},\"998\":{\"spot_id\":\"998\",\"enemy_team_id\":\"443\",\"boss_hp\":\"0\",\"enemy_hp_percent\":\"1\",\"enemy_instance_id\":\"12\",\"enemy_birth_turn\":\"1\",\"enemy_ai\":\"0\",\"enemy_ai_para\":0,\"belong\":\"3\",\"if_random\":\"0\",\"seed\":3692,\"team_id\":\"0\",\"ally_instance_ids\":[],\"squad_instance_ids\":[],\"hostage_id\":\"0\",\"hostage_hp\":\"0\",\"hostage_max_hp\":\"0\",\"reinforce_count\":\"0\",\"supply_count\":\"0\"},\"1001\":{\"spot_id\":\"1001\",\"enemy_team_id\":\"444\",\"boss_hp\":\"0\",\"enemy_hp_percent\":\"1\",\"enemy_instance_id\":\"13\",\"enemy_birth_turn\":\"1\",\"enemy_ai\":\"0\",\"enemy_ai_para\":0,\"belong\":\"3\",\"if_random\":\"0\",\"seed\":8130,\"team_id\":\"0\",\"ally_instance_ids\":[],\"squad_instance_ids\":[],\"hostage_id\":\"0\",\"hostage_hp\":\"0\",\"hostage_max_hp\":\"0\",\"reinforce_count\":\"0\",\"supply_count\":\"0\"},\"1002\":{\"spot_id\":\"1002\",\"enemy_team_id\":\"444\",\"boss_hp\":\"0\",\"enemy_hp_percent\":\"1\",\"enemy_instance_id\":\"14\",\"enemy_birth_turn\":\"1\",\"enemy_ai\":\"0\",\"enemy_ai_para\":0,\"belong\":\"3\",\"if_random\":\"0\",\"seed\":65,\"team_id\":\"0\",\"ally_instance_ids\":[],\"squad_instance_ids\":[],\"hostage_id\":\"0\",\"hostage_hp\":\"0\",\"hostage_max_hp\":\"0\",\"reinforce_count\":\"0\",\"supply_count\":\"0\"},\"1003\":{\"spot_id\":\"1003\",\"enemy_team_id\":\"445\",\"boss_hp\":\"0\",\"enemy_hp_percent\":\"1\",\"enemy_instance_id\":\"15\",\"enemy_birth_turn\":\"1\",\"enemy_ai\":\"0\",\"enemy_ai_para\":0,\"belong\":\"3\",\"if_random\":\"0\",\"seed\":9562,\"team_id\":\"0\",\"ally_instance_ids\":[],\"squad_instance_ids\":[],\"hostage_id\":\"0\",\"hostage_hp\":\"0\",\"hostage_max_hp\":\"0\",\"reinforce_count\":\"0\",\"supply_count\":\"0\"},\"983\":{\"spot_id\":\"983\",\"team_id\":\"1\",\"belong\":\"1\",\"if_random\":\"0\",\"reinforce_count\":\"1\",\"seed\":6724,\"enemy_team_id\":\"0\",\"boss_hp\":\"0\",\"enemy_hp_percent\":\"1\",\"enemy_instance_id\":\"0\",\"enemy_ai\":0,\"enemy_ai_para\":\"\",\"ally_instance_ids\":[],\"squad_instance_ids\":[],\"hostage_id\":\"0\",\"hostage_hp\":\"0\",\"hostage_max_hp\":\"0\",\"enemy_birth_turn\":\"999\",\"supply_count\":\"0\"}}",
     "enemydie_tigger_team_colour": "[]",
     "fairy_skill_on_enemy": "[]",
     "turn": "1",
@@ -8109,7 +8108,7 @@
   },
   "spot_act_info": [
     {
-      "spot_id": "939",
+      "spot_id": "984",
       "enemy_team_id": "0",
       "boss_hp": "0",
       "enemy_hp_percent": "1",
@@ -8119,10 +8118,10 @@
       "enemy_ai_para": 0,
       "belong": "1",
       "if_random": "0",
-      "seed": 511,
+      "seed": 4227,
       "team_id": "0",
       "ally_instance_ids": [],
-      "squad_instance_ids": [ "2" ],
+      "squad_instance_ids": ["1"],
       "hostage_id": "0",
       "hostage_hp": "0",
       "hostage_max_hp": "0",
@@ -8130,7 +8129,7 @@
       "supply_count": "0"
     },
     {
-      "spot_id": "940",
+      "spot_id": "985",
       "enemy_team_id": "0",
       "boss_hp": "0",
       "enemy_hp_percent": "1",
@@ -8138,12 +8137,12 @@
       "enemy_birth_turn": "999",
       "enemy_ai": 0,
       "enemy_ai_para": 0,
-      "belong": "3",
+      "belong": "1",
       "if_random": "0",
-      "seed": 445,
+      "seed": 2798,
       "team_id": "0",
       "ally_instance_ids": [],
-      "squad_instance_ids": [ "3" ],
+      "squad_instance_ids": [],
       "hostage_id": "0",
       "hostage_hp": "0",
       "hostage_max_hp": "0",
@@ -8151,7 +8150,280 @@
       "supply_count": "0"
     },
     {
-      "spot_id": "941",
+      "spot_id": "986",
+      "enemy_team_id": "0",
+      "boss_hp": "0",
+      "enemy_hp_percent": "1",
+      "enemy_instance_id": "0",
+      "enemy_birth_turn": "999",
+      "enemy_ai": 0,
+      "enemy_ai_para": 0,
+      "belong": "1",
+      "if_random": "0",
+      "seed": 3926,
+      "team_id": "0",
+      "ally_instance_ids": [],
+      "squad_instance_ids": [],
+      "hostage_id": "0",
+      "hostage_hp": "0",
+      "hostage_max_hp": "0",
+      "reinforce_count": "0",
+      "supply_count": "0"
+    },
+    {
+      "spot_id": "987",
+      "enemy_team_id": "0",
+      "boss_hp": "0",
+      "enemy_hp_percent": "1",
+      "enemy_instance_id": "0",
+      "enemy_birth_turn": "999",
+      "enemy_ai": "0",
+      "enemy_ai_para": 0,
+      "belong": "3",
+      "if_random": "0",
+      "seed": 1776,
+      "team_id": "0",
+      "ally_instance_ids": [],
+      "squad_instance_ids": [],
+      "hostage_id": "0",
+      "hostage_hp": "0",
+      "hostage_max_hp": "0",
+      "reinforce_count": "0",
+      "supply_count": "0"
+    },
+    {
+      "spot_id": "988",
+      "enemy_team_id": "0",
+      "boss_hp": "0",
+      "enemy_hp_percent": "1",
+      "enemy_instance_id": "0",
+      "enemy_birth_turn": "999",
+      "enemy_ai": "0",
+      "enemy_ai_para": 0,
+      "belong": "3",
+      "if_random": "0",
+      "seed": 3892,
+      "team_id": "0",
+      "ally_instance_ids": [],
+      "squad_instance_ids": ["6"],
+      "hostage_id": "0",
+      "hostage_hp": "0",
+      "hostage_max_hp": "0",
+      "reinforce_count": "0",
+      "supply_count": "0"
+    },
+    {
+      "spot_id": "990",
+      "enemy_team_id": "0",
+      "boss_hp": "0",
+      "enemy_hp_percent": "1",
+      "enemy_instance_id": "0",
+      "enemy_birth_turn": "999",
+      "enemy_ai": "0",
+      "enemy_ai_para": 0,
+      "belong": "3",
+      "if_random": "0",
+      "seed": 5007,
+      "team_id": "0",
+      "ally_instance_ids": [],
+      "squad_instance_ids": [],
+      "hostage_id": "0",
+      "hostage_hp": "0",
+      "hostage_max_hp": "0",
+      "reinforce_count": "0",
+      "supply_count": "0"
+    },
+    {
+      "spot_id": "992",
+      "enemy_team_id": "0",
+      "boss_hp": "0",
+      "enemy_hp_percent": "1",
+      "enemy_instance_id": "0",
+      "enemy_birth_turn": "999",
+      "enemy_ai": 0,
+      "enemy_ai_para": 0,
+      "belong": "1",
+      "if_random": "0",
+      "seed": 279,
+      "team_id": "0",
+      "ally_instance_ids": [],
+      "squad_instance_ids": ["3"],
+      "hostage_id": "0",
+      "hostage_hp": "0",
+      "hostage_max_hp": "0",
+      "reinforce_count": "0",
+      "supply_count": "0"
+    },
+    {
+      "spot_id": "993",
+	  "squad_instance_ids": [ "5" ],
+      "belong": "1",
+      "if_random": "0",
+      "reinforce_count": "0",
+      "seed": 2983,
+      "team_id": "0",
+      "enemy_team_id": "0",
+      "boss_hp": "0",
+      "enemy_hp_percent": "1",
+      "enemy_instance_id": "0",
+      "enemy_ai": 0,
+      "enemy_ai_para": "",
+      "ally_instance_ids": [],
+      "hostage_id": "0",
+      "hostage_hp": "0",
+      "hostage_max_hp": "0",
+      "enemy_birth_turn": "999",
+      "supply_count": "0"
+    },
+    {
+      "spot_id": "994",
+      "enemy_team_id": "0",
+      "boss_hp": "0",
+      "enemy_hp_percent": "1",
+      "enemy_instance_id": "0",
+      "enemy_birth_turn": "999",
+      "enemy_ai": 0,
+      "enemy_ai_para": 0,
+      "belong": "1",
+      "if_random": "0",
+      "seed": 1265,
+      "team_id": "0",
+      "ally_instance_ids": [],
+      "squad_instance_ids": [],
+      "hostage_id": "0",
+      "hostage_hp": "0",
+      "hostage_max_hp": "0",
+      "reinforce_count": "0",
+      "supply_count": "0"
+    },
+    {
+      "spot_id": "995",
+      "enemy_team_id": "0",
+      "boss_hp": "0",
+      "enemy_hp_percent": "1",
+      "enemy_instance_id": "0",
+      "enemy_birth_turn": "999",
+      "enemy_ai": "0",
+      "enemy_ai_para": 0,
+      "belong": "3",
+      "if_random": "0",
+      "seed": 6650,
+      "team_id": "0",
+      "ally_instance_ids": [],
+      "squad_instance_ids": ["2"],
+      "hostage_id": "0",
+      "hostage_hp": "0",
+      "hostage_max_hp": "0",
+      "reinforce_count": "0",
+      "supply_count": "0"
+    },
+    {
+      "spot_id": "997",
+      "enemy_team_id": "0",
+      "boss_hp": "0",
+      "enemy_hp_percent": "1",
+      "enemy_instance_id": "0",
+      "enemy_birth_turn": "999",
+      "enemy_ai": "0",
+      "enemy_ai_para": 0,
+      "belong": "3",
+      "if_random": "0",
+      "seed": 3508,
+      "team_id": "0",
+      "ally_instance_ids": [],
+      "squad_instance_ids": [],
+      "hostage_id": "0",
+      "hostage_hp": "0",
+      "hostage_max_hp": "0",
+      "reinforce_count": "0",
+      "supply_count": "0"
+    },
+    {
+      "spot_id": "998",
+      "enemy_team_id": "0",
+      "boss_hp": "0",
+      "enemy_hp_percent": "1",
+      "enemy_instance_id": "0",
+      "enemy_birth_turn": "999",
+      "enemy_ai": "0",
+      "enemy_ai_para": 0,
+      "belong": "3",
+      "if_random": "0",
+      "seed": 3692,
+      "team_id": "0",
+      "ally_instance_ids": [],
+      "squad_instance_ids": [],
+      "hostage_id": "0",
+      "hostage_hp": "0",
+      "hostage_max_hp": "0",
+      "reinforce_count": "0",
+      "supply_count": "0"
+    },
+    {
+      "spot_id": "1001",
+      "enemy_team_id": "0",
+      "boss_hp": "0",
+      "enemy_hp_percent": "1",
+      "enemy_instance_id": "0",
+      "enemy_birth_turn": "999",
+      "enemy_ai": "0",
+      "enemy_ai_para": 0,
+      "belong": "3",
+      "if_random": "0",
+      "seed": 8130,
+      "team_id": "0",
+      "ally_instance_ids": [],
+      "squad_instance_ids": ["4"],
+      "hostage_id": "0",
+      "hostage_hp": "0",
+      "hostage_max_hp": "0",
+      "reinforce_count": "0",
+      "supply_count": "0"
+    },
+    {
+      "spot_id": "1002",
+      "enemy_team_id": "0",
+      "boss_hp": "0",
+      "enemy_hp_percent": "1",
+      "enemy_instance_id": "0",
+      "enemy_birth_turn": "999",
+      "enemy_ai": "0",
+      "enemy_ai_para": 0,
+      "belong": "3",
+      "if_random": "0",
+      "seed": 65,
+      "team_id": "0",
+      "ally_instance_ids": [],
+      "squad_instance_ids": [],
+      "hostage_id": "0",
+      "hostage_hp": "0",
+      "hostage_max_hp": "0",
+      "reinforce_count": "0",
+      "supply_count": "0"
+    },
+    {
+      "spot_id": "1003",
+      "enemy_team_id": "0",
+      "boss_hp": "0",
+      "enemy_hp_percent": "1",
+      "enemy_instance_id": "0",
+      "enemy_birth_turn": "999",
+      "enemy_ai": "0",
+      "enemy_ai_para": 0,
+      "belong": "3",
+      "if_random": "0",
+      "seed": 9562,
+      "team_id": "0",
+      "ally_instance_ids": [],
+      "squad_instance_ids": [],
+      "hostage_id": "0",
+      "hostage_hp": "0",
+      "hostage_max_hp": "0",
+      "reinforce_count": "0",
+      "supply_count": "0"
+    },
+    {
+      "spot_id": "983",
       "enemy_team_id": "1",
       "boss_hp": "0",
       "enemy_hp_percent": "1",
@@ -8169,69 +8441,6 @@
       "hostage_hp": "0",
       "hostage_max_hp": "0",
       "reinforce_count": "0",
-      "supply_count": "0"
-    },
-    {
-      "spot_id": "942",
-      "enemy_team_id": "0",
-      "boss_hp": "0",
-      "enemy_hp_percent": "1",
-      "enemy_instance_id": "4",
-      "enemy_birth_turn": "1",
-      "enemy_ai": "0",
-      "enemy_ai_para": 0,
-      "belong": "3",
-      "if_random": "0",
-      "seed": 1845,
-      "team_id": "0",
-      "ally_instance_ids": [],
-      "squad_instance_ids": [ "1" ],
-      "hostage_id": "0",
-      "hostage_hp": "0",
-      "hostage_max_hp": "0",
-      "reinforce_count": "0",
-      "supply_count": "0"
-    },
-    {
-      "spot_id": "943",
-      "enemy_team_id": "0",
-      "boss_hp": "0",
-      "enemy_hp_percent": "1",
-      "enemy_instance_id": "5",
-      "enemy_birth_turn": "1",
-      "enemy_ai": "0",
-      "enemy_ai_para": 0,
-      "belong": "3",
-      "if_random": "0",
-      "seed": 708,
-      "team_id": "0",
-      "ally_instance_ids": [],
-      "squad_instance_ids": [ "4" ],
-      "hostage_id": "0",
-      "hostage_hp": "0",
-      "hostage_max_hp": "0",
-      "reinforce_count": "0",
-      "supply_count": "0"
-    },
-    {
-      "spot_id": "938",
-      "team_id": "0",
-      "belong": "1",
-      "if_random": "0",
-      "reinforce_count": "1",
-      "seed": 4327,
-      "enemy_team_id": "0",
-      "boss_hp": "0",
-      "enemy_hp_percent": "1",
-      "enemy_instance_id": "0",
-      "enemy_ai": 0,
-      "enemy_ai_para": "",
-      "ally_instance_ids": [],
-      "squad_instance_ids": [ "5" ],
-      "hostage_id": "0",
-      "hostage_hp": "0",
-      "hostage_max_hp": "0",
-      "enemy_birth_turn": "999",
       "supply_count": "0"
     }
   ],
@@ -9138,703 +9347,2093 @@
     }
   },
   "furniture_collect_info": [
-    { "furniture_id": "101" },
-    { "furniture_id": "102" },
-    { "furniture_id": "104" },
-    { "furniture_id": "105" },
-    { "furniture_id": "110" },
-    { "furniture_id": "112" },
-    { "furniture_id": "201" },
-    { "furniture_id": "202" },
-    { "furniture_id": "203" },
-    { "furniture_id": "204" },
-    { "furniture_id": "205" },
-    { "furniture_id": "206" },
-    { "furniture_id": "207" },
-    { "furniture_id": "301" },
-    { "furniture_id": "302" },
-    { "furniture_id": "303" },
-    { "furniture_id": "304" },
-    { "furniture_id": "305" },
-    { "furniture_id": "306" },
-    { "furniture_id": "307" },
-    { "furniture_id": "308" },
-    { "furniture_id": "309" },
-    { "furniture_id": "310" },
-    { "furniture_id": "311" },
-    { "furniture_id": "312" },
-    { "furniture_id": "313" },
-    { "furniture_id": "314" },
-    { "furniture_id": "315" },
-    { "furniture_id": "402" },
-    { "furniture_id": "403" },
-    { "furniture_id": "404" },
-    { "furniture_id": "406" },
-    { "furniture_id": "407" },
-    { "furniture_id": "408" },
-    { "furniture_id": "409" },
-    { "furniture_id": "410" },
-    { "furniture_id": "411" },
-    { "furniture_id": "412" },
-    { "furniture_id": "413" },
-    { "furniture_id": "414" },
-    { "furniture_id": "416" },
-    { "furniture_id": "501" },
-    { "furniture_id": "502" },
-    { "furniture_id": "503" },
-    { "furniture_id": "504" },
-    { "furniture_id": "505" },
-    { "furniture_id": "506" },
-    { "furniture_id": "507" },
-    { "furniture_id": "508" },
-    { "furniture_id": "509" },
-    { "furniture_id": "510" },
-    { "furniture_id": "511" },
-    { "furniture_id": "512" },
-    { "furniture_id": "513" },
-    { "furniture_id": "514" },
-    { "furniture_id": "515" },
-    { "furniture_id": "601" },
-    { "furniture_id": "604" },
-    { "furniture_id": "605" },
-    { "furniture_id": "606" },
-    { "furniture_id": "608" },
-    { "furniture_id": "609" },
-    { "furniture_id": "610" },
-    { "furniture_id": "614" },
-    { "furniture_id": "615" },
-    { "furniture_id": "701" },
-    { "furniture_id": "702" },
-    { "furniture_id": "703" },
-    { "furniture_id": "704" },
-    { "furniture_id": "705" },
-    { "furniture_id": "706" },
-    { "furniture_id": "707" },
-    { "furniture_id": "708" },
-    { "furniture_id": "709" },
-    { "furniture_id": "710" },
-    { "furniture_id": "711" },
-    { "furniture_id": "712" },
-    { "furniture_id": "713" },
-    { "furniture_id": "714" },
-    { "furniture_id": "715" },
-    { "furniture_id": "716" },
-    { "furniture_id": "801" },
-    { "furniture_id": "802" },
-    { "furniture_id": "803" },
-    { "furniture_id": "804" },
-    { "furniture_id": "805" },
-    { "furniture_id": "806" },
-    { "furniture_id": "807" },
-    { "furniture_id": "808" },
-    { "furniture_id": "809" },
-    { "furniture_id": "810" },
-    { "furniture_id": "811" },
-    { "furniture_id": "812" },
-    { "furniture_id": "813" },
-    { "furniture_id": "814" },
-    { "furniture_id": "815" },
-    { "furniture_id": "816" },
-    { "furniture_id": "903" },
-    { "furniture_id": "907" },
-    { "furniture_id": "908" },
-    { "furniture_id": "911" },
-    { "furniture_id": "912" },
-    { "furniture_id": "1001" },
-    { "furniture_id": "1002" },
-    { "furniture_id": "1003" },
-    { "furniture_id": "1004" },
-    { "furniture_id": "1005" },
-    { "furniture_id": "1006" },
-    { "furniture_id": "1007" },
-    { "furniture_id": "1008" },
-    { "furniture_id": "1009" },
-    { "furniture_id": "1010" },
-    { "furniture_id": "1011" },
-    { "furniture_id": "1012" },
-    { "furniture_id": "1013" },
-    { "furniture_id": "1101" },
-    { "furniture_id": "1102" },
-    { "furniture_id": "1103" },
-    { "furniture_id": "1104" },
-    { "furniture_id": "1105" },
-    { "furniture_id": "1107" },
-    { "furniture_id": "1108" },
-    { "furniture_id": "1109" },
-    { "furniture_id": "1110" },
-    { "furniture_id": "1111" },
-    { "furniture_id": "1112" },
-    { "furniture_id": "1113" },
-    { "furniture_id": "1114" },
-    { "furniture_id": "1201" },
-    { "furniture_id": "1202" },
-    { "furniture_id": "1203" },
-    { "furniture_id": "1204" },
-    { "furniture_id": "1205" },
-    { "furniture_id": "1207" },
-    { "furniture_id": "1208" },
-    { "furniture_id": "1209" },
-    { "furniture_id": "1210" },
-    { "furniture_id": "1211" },
-    { "furniture_id": "1212" },
-    { "furniture_id": "1213" },
-    { "furniture_id": "1214" },
-    { "furniture_id": "1401" },
-    { "furniture_id": "1403" },
-    { "furniture_id": "1404" },
-    { "furniture_id": "1405" },
-    { "furniture_id": "1406" },
-    { "furniture_id": "1408" },
-    { "furniture_id": "1409" },
-    { "furniture_id": "1410" },
-    { "furniture_id": "1412" },
-    { "furniture_id": "1413" },
-    { "furniture_id": "1501" },
-    { "furniture_id": "1502" },
-    { "furniture_id": "1503" },
-    { "furniture_id": "1504" },
-    { "furniture_id": "1505" },
-    { "furniture_id": "1506" },
-    { "furniture_id": "1507" },
-    { "furniture_id": "1508" },
-    { "furniture_id": "1509" },
-    { "furniture_id": "1510" },
-    { "furniture_id": "1511" },
-    { "furniture_id": "1512" },
-    { "furniture_id": "1513" },
-    { "furniture_id": "1514" },
-    { "furniture_id": "1515" },
-    { "furniture_id": "1601" },
-    { "furniture_id": "1602" },
-    { "furniture_id": "1603" },
-    { "furniture_id": "1604" },
-    { "furniture_id": "1605" },
-    { "furniture_id": "1606" },
-    { "furniture_id": "1607" },
-    { "furniture_id": "1608" },
-    { "furniture_id": "1609" },
-    { "furniture_id": "1610" },
-    { "furniture_id": "1611" },
-    { "furniture_id": "1612" },
-    { "furniture_id": "1613" },
-    { "furniture_id": "1614" },
-    { "furniture_id": "1615" },
-    { "furniture_id": "1704" },
-    { "furniture_id": "1711" },
-    { "furniture_id": "1801" },
-    { "furniture_id": "1802" },
-    { "furniture_id": "1803" },
-    { "furniture_id": "1806" },
-    { "furniture_id": "1808" },
-    { "furniture_id": "1810" },
-    { "furniture_id": "1811" },
-    { "furniture_id": "1812" },
-    { "furniture_id": "1815" },
-    { "furniture_id": "1816" },
-    { "furniture_id": "1901" },
-    { "furniture_id": "1902" },
-    { "furniture_id": "1903" },
-    { "furniture_id": "1904" },
-    { "furniture_id": "1905" },
-    { "furniture_id": "1906" },
-    { "furniture_id": "1907" },
-    { "furniture_id": "1908" },
-    { "furniture_id": "1909" },
-    { "furniture_id": "1910" },
-    { "furniture_id": "1911" },
-    { "furniture_id": "1912" },
-    { "furniture_id": "1913" },
-    { "furniture_id": "1914" },
-    { "furniture_id": "1915" },
-    { "furniture_id": "1916" },
-    { "furniture_id": "1917" },
-    { "furniture_id": "1918" },
-    { "furniture_id": "1919" },
-    { "furniture_id": "1920" },
-    { "furniture_id": "1921" },
-    { "furniture_id": "1922" },
-    { "furniture_id": "1923" },
-    { "furniture_id": "1924" },
-    { "furniture_id": "1925" },
-    { "furniture_id": "1926" },
-    { "furniture_id": "2001" },
-    { "furniture_id": "2009" },
-    { "furniture_id": "2012" },
-    { "furniture_id": "2013" },
-    { "furniture_id": "2014" },
-    { "furniture_id": "2015" },
-    { "furniture_id": "2016" },
-    { "furniture_id": "2017" },
-    { "furniture_id": "2018" },
-    { "furniture_id": "2019" },
-    { "furniture_id": "2020" },
-    { "furniture_id": "2021" },
-    { "furniture_id": "2022" },
-    { "furniture_id": "2023" },
-    { "furniture_id": "2024" },
-    { "furniture_id": "2026" },
-    { "furniture_id": "2027" },
-    { "furniture_id": "2028" },
-    { "furniture_id": "2029" },
-    { "furniture_id": "2030" },
-    { "furniture_id": "2031" },
-    { "furniture_id": "2032" },
-    { "furniture_id": "2033" },
-    { "furniture_id": "2034" },
-    { "furniture_id": "2037" },
-    { "furniture_id": "2038" },
-    { "furniture_id": "2041" },
-    { "furniture_id": "2104" },
-    { "furniture_id": "2105" },
-    { "furniture_id": "2106" },
-    { "furniture_id": "2108" },
-    { "furniture_id": "2111" },
-    { "furniture_id": "2201" },
-    { "furniture_id": "2202" },
-    { "furniture_id": "2203" },
-    { "furniture_id": "2204" },
-    { "furniture_id": "2205" },
-    { "furniture_id": "2206" },
-    { "furniture_id": "2207" },
-    { "furniture_id": "2208" },
-    { "furniture_id": "2209" },
-    { "furniture_id": "2210" },
-    { "furniture_id": "2211" },
-    { "furniture_id": "2212" },
-    { "furniture_id": "2213" },
-    { "furniture_id": "2214" },
-    { "furniture_id": "2215" },
-    { "furniture_id": "2302" },
-    { "furniture_id": "2303" },
-    { "furniture_id": "2304" },
-    { "furniture_id": "2305" },
-    { "furniture_id": "2306" },
-    { "furniture_id": "2307" },
-    { "furniture_id": "2308" },
-    { "furniture_id": "2310" },
-    { "furniture_id": "2311" },
-    { "furniture_id": "2313" },
-    { "furniture_id": "2402" },
-    { "furniture_id": "2403" },
-    { "furniture_id": "2413" },
-    { "furniture_id": "2601" },
-    { "furniture_id": "2602" },
-    { "furniture_id": "2603" },
-    { "furniture_id": "2604" },
-    { "furniture_id": "2605" },
-    { "furniture_id": "2606" },
-    { "furniture_id": "2608" },
-    { "furniture_id": "2610" },
-    { "furniture_id": "2612" },
-    { "furniture_id": "2613" },
-    { "furniture_id": "2701" },
-    { "furniture_id": "2702" },
-    { "furniture_id": "2703" },
-    { "furniture_id": "2704" },
-    { "furniture_id": "2705" },
-    { "furniture_id": "2706" },
-    { "furniture_id": "2707" },
-    { "furniture_id": "2708" },
-    { "furniture_id": "2709" },
-    { "furniture_id": "2710" },
-    { "furniture_id": "2711" },
-    { "furniture_id": "2712" },
-    { "furniture_id": "2713" },
-    { "furniture_id": "2801" },
-    { "furniture_id": "2802" },
-    { "furniture_id": "2803" },
-    { "furniture_id": "2805" },
-    { "furniture_id": "2806" },
-    { "furniture_id": "2807" },
-    { "furniture_id": "2808" },
-    { "furniture_id": "2809" },
-    { "furniture_id": "2810" },
-    { "furniture_id": "2901" },
-    { "furniture_id": "2902" },
-    { "furniture_id": "2904" },
-    { "furniture_id": "2906" },
-    { "furniture_id": "2907" },
-    { "furniture_id": "2908" },
-    { "furniture_id": "2909" },
-    { "furniture_id": "2910" },
-    { "furniture_id": "2911" },
-    { "furniture_id": "2912" },
-    { "furniture_id": "2913" },
-    { "furniture_id": "3001" },
-    { "furniture_id": "3003" },
-    { "furniture_id": "3006" },
-    { "furniture_id": "3007" },
-    { "furniture_id": "3010" },
-    { "furniture_id": "3101" },
-    { "furniture_id": "3104" },
-    { "furniture_id": "3105" },
-    { "furniture_id": "3106" },
-    { "furniture_id": "3107" },
-    { "furniture_id": "3110" },
-    { "furniture_id": "3201" },
-    { "furniture_id": "3202" },
-    { "furniture_id": "3204" },
-    { "furniture_id": "3205" },
-    { "furniture_id": "3206" },
-    { "furniture_id": "3207" },
-    { "furniture_id": "3208" },
-    { "furniture_id": "3211" },
-    { "furniture_id": "3212" },
-    { "furniture_id": "3213" },
-    { "furniture_id": "3214" },
-    { "furniture_id": "3216" },
-    { "furniture_id": "3301" },
-    { "furniture_id": "3302" },
-    { "furniture_id": "3303" },
-    { "furniture_id": "3312" },
-    { "furniture_id": "3314" },
-    { "furniture_id": "3401" },
-    { "furniture_id": "3402" },
-    { "furniture_id": "3403" },
-    { "furniture_id": "3405" },
-    { "furniture_id": "3406" },
-    { "furniture_id": "3407" },
-    { "furniture_id": "3408" },
-    { "furniture_id": "3410" },
-    { "furniture_id": "3411" },
-    { "furniture_id": "3413" },
-    { "furniture_id": "3414" },
-    { "furniture_id": "3415" },
-    { "furniture_id": "3501" },
-    { "furniture_id": "3502" },
-    { "furniture_id": "3505" },
-    { "furniture_id": "3506" },
-    { "furniture_id": "3507" },
-    { "furniture_id": "3508" },
-    { "furniture_id": "3512" },
-    { "furniture_id": "3601" },
-    { "furniture_id": "3602" },
-    { "furniture_id": "3603" },
-    { "furniture_id": "3604" },
-    { "furniture_id": "3605" },
-    { "furniture_id": "3606" },
-    { "furniture_id": "3607" },
-    { "furniture_id": "3608" },
-    { "furniture_id": "3609" },
-    { "furniture_id": "3610" },
-    { "furniture_id": "3611" },
-    { "furniture_id": "3612" },
-    { "furniture_id": "3613" },
-    { "furniture_id": "3614" },
-    { "furniture_id": "3615" },
-    { "furniture_id": "3616" },
-    { "furniture_id": "3617" },
-    { "furniture_id": "3701" },
-    { "furniture_id": "3705" },
-    { "furniture_id": "3710" },
-    { "furniture_id": "3803" },
-    { "furniture_id": "3804" },
-    { "furniture_id": "3805" },
-    { "furniture_id": "3806" },
-    { "furniture_id": "3807" },
-    { "furniture_id": "3808" },
-    { "furniture_id": "3810" },
-    { "furniture_id": "3812" },
-    { "furniture_id": "3907" },
-    { "furniture_id": "3912" },
-    { "furniture_id": "4001" },
-    { "furniture_id": "4002" },
-    { "furniture_id": "4003" },
-    { "furniture_id": "4005" },
-    { "furniture_id": "4006" },
-    { "furniture_id": "4008" },
-    { "furniture_id": "4009" },
-    { "furniture_id": "4010" },
-    { "furniture_id": "4011" },
-    { "furniture_id": "4012" },
-    { "furniture_id": "4014" },
-    { "furniture_id": "4101" },
-    { "furniture_id": "4102" },
-    { "furniture_id": "4103" },
-    { "furniture_id": "4104" },
-    { "furniture_id": "4105" },
-    { "furniture_id": "4106" },
-    { "furniture_id": "4107" },
-    { "furniture_id": "4108" },
-    { "furniture_id": "4109" },
-    { "furniture_id": "4110" },
-    { "furniture_id": "4111" },
-    { "furniture_id": "4112" },
-    { "furniture_id": "4113" },
-    { "furniture_id": "4114" },
-    { "furniture_id": "4115" },
-    { "furniture_id": "4116" },
-    { "furniture_id": "4204" },
-    { "furniture_id": "4207" },
-    { "furniture_id": "4211" },
-    { "furniture_id": "4213" },
-    { "furniture_id": "4214" },
-    { "furniture_id": "4215" },
-    { "furniture_id": "4303" },
-    { "furniture_id": "4305" },
-    { "furniture_id": "4308" },
-    { "furniture_id": "4314" },
-    { "furniture_id": "4315" },
-    { "furniture_id": "4401" },
-    { "furniture_id": "4407" },
-    { "furniture_id": "4411" },
-    { "furniture_id": "4501" },
-    { "furniture_id": "4502" },
-    { "furniture_id": "4503" },
-    { "furniture_id": "4504" },
-    { "furniture_id": "4506" },
-    { "furniture_id": "4507" },
-    { "furniture_id": "4508" },
-    { "furniture_id": "4509" },
-    { "furniture_id": "4510" },
-    { "furniture_id": "4511" },
-    { "furniture_id": "4512" },
-    { "furniture_id": "4513" },
-    { "furniture_id": "4514" },
-    { "furniture_id": "4515" },
-    { "furniture_id": "4602" },
-    { "furniture_id": "4603" },
-    { "furniture_id": "4611" },
-    { "furniture_id": "4612" },
-    { "furniture_id": "4701" },
-    { "furniture_id": "4702" },
-    { "furniture_id": "4703" },
-    { "furniture_id": "4704" },
-    { "furniture_id": "4705" },
-    { "furniture_id": "4706" },
-    { "furniture_id": "4707" },
-    { "furniture_id": "4709" },
-    { "furniture_id": "4710" },
-    { "furniture_id": "4711" },
-    { "furniture_id": "4713" },
-    { "furniture_id": "4714" },
-    { "furniture_id": "4806" },
-    { "furniture_id": "4808" },
-    { "furniture_id": "4809" },
-    { "furniture_id": "4811" },
-    { "furniture_id": "4812" },
-    { "furniture_id": "4902" },
-    { "furniture_id": "4903" },
-    { "furniture_id": "4904" },
-    { "furniture_id": "4905" },
-    { "furniture_id": "4906" },
-    { "furniture_id": "4909" },
-    { "furniture_id": "4911" },
-    { "furniture_id": "4913" },
-    { "furniture_id": "4915" },
-    { "furniture_id": "5007" },
-    { "furniture_id": "5010" },
-    { "furniture_id": "5202" },
-    { "furniture_id": "5205" },
-    { "furniture_id": "5206" },
-    { "furniture_id": "5207" },
-    { "furniture_id": "5209" },
-    { "furniture_id": "5211" },
-    { "furniture_id": "5213" },
-    { "furniture_id": "5301" },
-    { "furniture_id": "5302" },
-    { "furniture_id": "5303" },
-    { "furniture_id": "5304" },
-    { "furniture_id": "5305" },
-    { "furniture_id": "5306" },
-    { "furniture_id": "5307" },
-    { "furniture_id": "5308" },
-    { "furniture_id": "5309" },
-    { "furniture_id": "5310" },
-    { "furniture_id": "5311" },
-    { "furniture_id": "5312" },
-    { "furniture_id": "5313" },
-    { "furniture_id": "5314" },
-    { "furniture_id": "5315" },
-    { "furniture_id": "5316" },
-    { "furniture_id": "5317" },
-    { "furniture_id": "5401" },
-    { "furniture_id": "5402" },
-    { "furniture_id": "5403" },
-    { "furniture_id": "5404" },
-    { "furniture_id": "5405" },
-    { "furniture_id": "5406" },
-    { "furniture_id": "5408" },
-    { "furniture_id": "5410" },
-    { "furniture_id": "5411" },
-    { "furniture_id": "5412" },
-    { "furniture_id": "5414" },
-    { "furniture_id": "5503" },
-    { "furniture_id": "5504" },
-    { "furniture_id": "5512" },
-    { "furniture_id": "5602" },
-    { "furniture_id": "5603" },
-    { "furniture_id": "5604" },
-    { "furniture_id": "5605" },
-    { "furniture_id": "5607" },
-    { "furniture_id": "5608" },
-    { "furniture_id": "5609" },
-    { "furniture_id": "5610" },
-    { "furniture_id": "5611" },
-    { "furniture_id": "5612" },
-    { "furniture_id": "5614" },
-    { "furniture_id": "5615" },
-    { "furniture_id": "5701" },
-    { "furniture_id": "5702" },
-    { "furniture_id": "5703" },
-    { "furniture_id": "5704" },
-    { "furniture_id": "5705" },
-    { "furniture_id": "5706" },
-    { "furniture_id": "5707" },
-    { "furniture_id": "5708" },
-    { "furniture_id": "5709" },
-    { "furniture_id": "5710" },
-    { "furniture_id": "5711" },
-    { "furniture_id": "5712" },
-    { "furniture_id": "5713" },
-    { "furniture_id": "5714" },
-    { "furniture_id": "5801" },
-    { "furniture_id": "5802" },
-    { "furniture_id": "5805" },
-    { "furniture_id": "5806" },
-    { "furniture_id": "5903" },
-    { "furniture_id": "5905" },
-    { "furniture_id": "5912" },
-    { "furniture_id": "6001" },
-    { "furniture_id": "6002" },
-    { "furniture_id": "6003" },
-    { "furniture_id": "6005" },
-    { "furniture_id": "6006" },
-    { "furniture_id": "6007" },
-    { "furniture_id": "6008" },
-    { "furniture_id": "6009" },
-    { "furniture_id": "6010" },
-    { "furniture_id": "6011" },
-    { "furniture_id": "6014" },
-    { "furniture_id": "6015" },
-    { "furniture_id": "6101" },
-    { "furniture_id": "6102" },
-    { "furniture_id": "6103" },
-    { "furniture_id": "6104" },
-    { "furniture_id": "6105" },
-    { "furniture_id": "6106" },
-    { "furniture_id": "6107" },
-    { "furniture_id": "6108" },
-    { "furniture_id": "6109" },
-    { "furniture_id": "6110" },
-    { "furniture_id": "6111" },
-    { "furniture_id": "6112" },
-    { "furniture_id": "6113" },
-    { "furniture_id": "6114" },
-    { "furniture_id": "6115" },
-    { "furniture_id": "6116" },
-    { "furniture_id": "6117" },
-    { "furniture_id": "6118" },
-    { "furniture_id": "6405" },
-    { "furniture_id": "6501" },
-    { "furniture_id": "6508" },
-    { "furniture_id": "6509" },
-    { "furniture_id": "6602" },
-    { "furniture_id": "6604" },
-    { "furniture_id": "6609" },
-    { "furniture_id": "6612" },
-    { "furniture_id": "6804" },
-    { "furniture_id": "6805" },
-    { "furniture_id": "6808" },
-    { "furniture_id": "6809" },
-    { "furniture_id": "6810" },
-    { "furniture_id": "6811" },
-    { "furniture_id": "6812" },
-    { "furniture_id": "6813" },
-    { "furniture_id": "7106" },
-    { "furniture_id": "30101" },
-    { "furniture_id": "30102" },
-    { "furniture_id": "30105" },
-    { "furniture_id": "30106" },
-    { "furniture_id": "30305" },
-    { "furniture_id": "30402" },
-    { "furniture_id": "30410" },
-    { "furniture_id": "30501" },
-    { "furniture_id": "30505" },
-    { "furniture_id": "30509" },
-    { "furniture_id": "30510" },
-    { "furniture_id": "30603" },
-    { "furniture_id": "30701" },
-    { "furniture_id": "30702" },
-    { "furniture_id": "30703" },
-    { "furniture_id": "30704" },
-    { "furniture_id": "30801" },
-    { "furniture_id": "30804" },
-    { "furniture_id": "30805" },
-    { "furniture_id": "30806" },
-    { "furniture_id": "30903" },
-    { "furniture_id": "30904" },
-    { "furniture_id": "30905" },
-    { "furniture_id": "31302" },
-    { "furniture_id": "31304" },
-    { "furniture_id": "31305" },
-    { "furniture_id": "31401" },
-    { "furniture_id": "31403" },
-    { "furniture_id": "31406" },
-    { "furniture_id": "31503" },
-    { "furniture_id": "31507" },
-    { "furniture_id": "31608" },
-    { "furniture_id": "31703" },
-    { "furniture_id": "31805" },
-    { "furniture_id": "31807" },
-    { "furniture_id": "31809" },
-    { "furniture_id": "31904" },
-    { "furniture_id": "32001" },
-    { "furniture_id": "32002" },
-    { "furniture_id": "32103" },
-    { "furniture_id": "32106" },
-    { "furniture_id": "32109" },
-    { "furniture_id": "32302" },
-    { "furniture_id": "32304" },
-    { "furniture_id": "32305" },
-    { "furniture_id": "32402" },
-    { "furniture_id": "32404" },
-    { "furniture_id": "32409" },
-    { "furniture_id": "32502" },
-    { "furniture_id": "32602" },
-    { "furniture_id": "32603" },
-    { "furniture_id": "32604" },
-    { "furniture_id": "32605" },
-    { "furniture_id": "32606" },
-    { "furniture_id": "32706" },
-    { "furniture_id": "32801" },
-    { "furniture_id": "32806" },
-    { "furniture_id": "32906" },
-    { "furniture_id": "33003" },
-    { "furniture_id": "33004" },
-    { "furniture_id": "33005" },
-    { "furniture_id": "33203" },
-    { "furniture_id": "33302" },
-    { "furniture_id": "33304" },
-    { "furniture_id": "33308" },
-    { "furniture_id": "33506" },
-    { "furniture_id": "33507" },
-    { "furniture_id": "40101" },
-    { "furniture_id": "40201" }
+    {
+      "furniture_id": "101"
+    },
+    {
+      "furniture_id": "102"
+    },
+    {
+      "furniture_id": "104"
+    },
+    {
+      "furniture_id": "105"
+    },
+    {
+      "furniture_id": "110"
+    },
+    {
+      "furniture_id": "112"
+    },
+    {
+      "furniture_id": "201"
+    },
+    {
+      "furniture_id": "202"
+    },
+    {
+      "furniture_id": "203"
+    },
+    {
+      "furniture_id": "204"
+    },
+    {
+      "furniture_id": "205"
+    },
+    {
+      "furniture_id": "206"
+    },
+    {
+      "furniture_id": "207"
+    },
+    {
+      "furniture_id": "301"
+    },
+    {
+      "furniture_id": "302"
+    },
+    {
+      "furniture_id": "303"
+    },
+    {
+      "furniture_id": "304"
+    },
+    {
+      "furniture_id": "305"
+    },
+    {
+      "furniture_id": "306"
+    },
+    {
+      "furniture_id": "307"
+    },
+    {
+      "furniture_id": "308"
+    },
+    {
+      "furniture_id": "309"
+    },
+    {
+      "furniture_id": "310"
+    },
+    {
+      "furniture_id": "311"
+    },
+    {
+      "furniture_id": "312"
+    },
+    {
+      "furniture_id": "313"
+    },
+    {
+      "furniture_id": "314"
+    },
+    {
+      "furniture_id": "315"
+    },
+    {
+      "furniture_id": "402"
+    },
+    {
+      "furniture_id": "403"
+    },
+    {
+      "furniture_id": "404"
+    },
+    {
+      "furniture_id": "406"
+    },
+    {
+      "furniture_id": "407"
+    },
+    {
+      "furniture_id": "408"
+    },
+    {
+      "furniture_id": "409"
+    },
+    {
+      "furniture_id": "410"
+    },
+    {
+      "furniture_id": "411"
+    },
+    {
+      "furniture_id": "412"
+    },
+    {
+      "furniture_id": "413"
+    },
+    {
+      "furniture_id": "414"
+    },
+    {
+      "furniture_id": "416"
+    },
+    {
+      "furniture_id": "501"
+    },
+    {
+      "furniture_id": "502"
+    },
+    {
+      "furniture_id": "503"
+    },
+    {
+      "furniture_id": "504"
+    },
+    {
+      "furniture_id": "505"
+    },
+    {
+      "furniture_id": "506"
+    },
+    {
+      "furniture_id": "507"
+    },
+    {
+      "furniture_id": "508"
+    },
+    {
+      "furniture_id": "509"
+    },
+    {
+      "furniture_id": "510"
+    },
+    {
+      "furniture_id": "511"
+    },
+    {
+      "furniture_id": "512"
+    },
+    {
+      "furniture_id": "513"
+    },
+    {
+      "furniture_id": "514"
+    },
+    {
+      "furniture_id": "515"
+    },
+    {
+      "furniture_id": "601"
+    },
+    {
+      "furniture_id": "604"
+    },
+    {
+      "furniture_id": "605"
+    },
+    {
+      "furniture_id": "606"
+    },
+    {
+      "furniture_id": "608"
+    },
+    {
+      "furniture_id": "609"
+    },
+    {
+      "furniture_id": "610"
+    },
+    {
+      "furniture_id": "614"
+    },
+    {
+      "furniture_id": "615"
+    },
+    {
+      "furniture_id": "701"
+    },
+    {
+      "furniture_id": "702"
+    },
+    {
+      "furniture_id": "703"
+    },
+    {
+      "furniture_id": "704"
+    },
+    {
+      "furniture_id": "705"
+    },
+    {
+      "furniture_id": "706"
+    },
+    {
+      "furniture_id": "707"
+    },
+    {
+      "furniture_id": "708"
+    },
+    {
+      "furniture_id": "709"
+    },
+    {
+      "furniture_id": "710"
+    },
+    {
+      "furniture_id": "711"
+    },
+    {
+      "furniture_id": "712"
+    },
+    {
+      "furniture_id": "713"
+    },
+    {
+      "furniture_id": "714"
+    },
+    {
+      "furniture_id": "715"
+    },
+    {
+      "furniture_id": "716"
+    },
+    {
+      "furniture_id": "801"
+    },
+    {
+      "furniture_id": "802"
+    },
+    {
+      "furniture_id": "803"
+    },
+    {
+      "furniture_id": "804"
+    },
+    {
+      "furniture_id": "805"
+    },
+    {
+      "furniture_id": "806"
+    },
+    {
+      "furniture_id": "807"
+    },
+    {
+      "furniture_id": "808"
+    },
+    {
+      "furniture_id": "809"
+    },
+    {
+      "furniture_id": "810"
+    },
+    {
+      "furniture_id": "811"
+    },
+    {
+      "furniture_id": "812"
+    },
+    {
+      "furniture_id": "813"
+    },
+    {
+      "furniture_id": "814"
+    },
+    {
+      "furniture_id": "815"
+    },
+    {
+      "furniture_id": "816"
+    },
+    {
+      "furniture_id": "903"
+    },
+    {
+      "furniture_id": "907"
+    },
+    {
+      "furniture_id": "908"
+    },
+    {
+      "furniture_id": "911"
+    },
+    {
+      "furniture_id": "912"
+    },
+    {
+      "furniture_id": "1001"
+    },
+    {
+      "furniture_id": "1002"
+    },
+    {
+      "furniture_id": "1003"
+    },
+    {
+      "furniture_id": "1004"
+    },
+    {
+      "furniture_id": "1005"
+    },
+    {
+      "furniture_id": "1006"
+    },
+    {
+      "furniture_id": "1007"
+    },
+    {
+      "furniture_id": "1008"
+    },
+    {
+      "furniture_id": "1009"
+    },
+    {
+      "furniture_id": "1010"
+    },
+    {
+      "furniture_id": "1011"
+    },
+    {
+      "furniture_id": "1012"
+    },
+    {
+      "furniture_id": "1013"
+    },
+    {
+      "furniture_id": "1101"
+    },
+    {
+      "furniture_id": "1102"
+    },
+    {
+      "furniture_id": "1103"
+    },
+    {
+      "furniture_id": "1104"
+    },
+    {
+      "furniture_id": "1105"
+    },
+    {
+      "furniture_id": "1107"
+    },
+    {
+      "furniture_id": "1108"
+    },
+    {
+      "furniture_id": "1109"
+    },
+    {
+      "furniture_id": "1110"
+    },
+    {
+      "furniture_id": "1111"
+    },
+    {
+      "furniture_id": "1112"
+    },
+    {
+      "furniture_id": "1113"
+    },
+    {
+      "furniture_id": "1114"
+    },
+    {
+      "furniture_id": "1201"
+    },
+    {
+      "furniture_id": "1202"
+    },
+    {
+      "furniture_id": "1203"
+    },
+    {
+      "furniture_id": "1204"
+    },
+    {
+      "furniture_id": "1205"
+    },
+    {
+      "furniture_id": "1207"
+    },
+    {
+      "furniture_id": "1208"
+    },
+    {
+      "furniture_id": "1209"
+    },
+    {
+      "furniture_id": "1210"
+    },
+    {
+      "furniture_id": "1211"
+    },
+    {
+      "furniture_id": "1212"
+    },
+    {
+      "furniture_id": "1213"
+    },
+    {
+      "furniture_id": "1214"
+    },
+    {
+      "furniture_id": "1401"
+    },
+    {
+      "furniture_id": "1403"
+    },
+    {
+      "furniture_id": "1404"
+    },
+    {
+      "furniture_id": "1405"
+    },
+    {
+      "furniture_id": "1406"
+    },
+    {
+      "furniture_id": "1408"
+    },
+    {
+      "furniture_id": "1409"
+    },
+    {
+      "furniture_id": "1410"
+    },
+    {
+      "furniture_id": "1412"
+    },
+    {
+      "furniture_id": "1413"
+    },
+    {
+      "furniture_id": "1501"
+    },
+    {
+      "furniture_id": "1502"
+    },
+    {
+      "furniture_id": "1503"
+    },
+    {
+      "furniture_id": "1504"
+    },
+    {
+      "furniture_id": "1505"
+    },
+    {
+      "furniture_id": "1506"
+    },
+    {
+      "furniture_id": "1507"
+    },
+    {
+      "furniture_id": "1508"
+    },
+    {
+      "furniture_id": "1509"
+    },
+    {
+      "furniture_id": "1510"
+    },
+    {
+      "furniture_id": "1511"
+    },
+    {
+      "furniture_id": "1512"
+    },
+    {
+      "furniture_id": "1513"
+    },
+    {
+      "furniture_id": "1514"
+    },
+    {
+      "furniture_id": "1515"
+    },
+    {
+      "furniture_id": "1601"
+    },
+    {
+      "furniture_id": "1602"
+    },
+    {
+      "furniture_id": "1603"
+    },
+    {
+      "furniture_id": "1604"
+    },
+    {
+      "furniture_id": "1605"
+    },
+    {
+      "furniture_id": "1606"
+    },
+    {
+      "furniture_id": "1607"
+    },
+    {
+      "furniture_id": "1608"
+    },
+    {
+      "furniture_id": "1609"
+    },
+    {
+      "furniture_id": "1610"
+    },
+    {
+      "furniture_id": "1611"
+    },
+    {
+      "furniture_id": "1612"
+    },
+    {
+      "furniture_id": "1613"
+    },
+    {
+      "furniture_id": "1614"
+    },
+    {
+      "furniture_id": "1615"
+    },
+    {
+      "furniture_id": "1704"
+    },
+    {
+      "furniture_id": "1711"
+    },
+    {
+      "furniture_id": "1801"
+    },
+    {
+      "furniture_id": "1802"
+    },
+    {
+      "furniture_id": "1803"
+    },
+    {
+      "furniture_id": "1806"
+    },
+    {
+      "furniture_id": "1808"
+    },
+    {
+      "furniture_id": "1810"
+    },
+    {
+      "furniture_id": "1811"
+    },
+    {
+      "furniture_id": "1812"
+    },
+    {
+      "furniture_id": "1815"
+    },
+    {
+      "furniture_id": "1816"
+    },
+    {
+      "furniture_id": "1901"
+    },
+    {
+      "furniture_id": "1902"
+    },
+    {
+      "furniture_id": "1903"
+    },
+    {
+      "furniture_id": "1904"
+    },
+    {
+      "furniture_id": "1905"
+    },
+    {
+      "furniture_id": "1906"
+    },
+    {
+      "furniture_id": "1907"
+    },
+    {
+      "furniture_id": "1908"
+    },
+    {
+      "furniture_id": "1909"
+    },
+    {
+      "furniture_id": "1910"
+    },
+    {
+      "furniture_id": "1911"
+    },
+    {
+      "furniture_id": "1912"
+    },
+    {
+      "furniture_id": "1913"
+    },
+    {
+      "furniture_id": "1914"
+    },
+    {
+      "furniture_id": "1915"
+    },
+    {
+      "furniture_id": "1916"
+    },
+    {
+      "furniture_id": "1917"
+    },
+    {
+      "furniture_id": "1918"
+    },
+    {
+      "furniture_id": "1919"
+    },
+    {
+      "furniture_id": "1920"
+    },
+    {
+      "furniture_id": "1921"
+    },
+    {
+      "furniture_id": "1922"
+    },
+    {
+      "furniture_id": "1923"
+    },
+    {
+      "furniture_id": "1924"
+    },
+    {
+      "furniture_id": "1925"
+    },
+    {
+      "furniture_id": "1926"
+    },
+    {
+      "furniture_id": "2001"
+    },
+    {
+      "furniture_id": "2009"
+    },
+    {
+      "furniture_id": "2012"
+    },
+    {
+      "furniture_id": "2013"
+    },
+    {
+      "furniture_id": "2014"
+    },
+    {
+      "furniture_id": "2015"
+    },
+    {
+      "furniture_id": "2016"
+    },
+    {
+      "furniture_id": "2017"
+    },
+    {
+      "furniture_id": "2018"
+    },
+    {
+      "furniture_id": "2019"
+    },
+    {
+      "furniture_id": "2020"
+    },
+    {
+      "furniture_id": "2021"
+    },
+    {
+      "furniture_id": "2022"
+    },
+    {
+      "furniture_id": "2023"
+    },
+    {
+      "furniture_id": "2024"
+    },
+    {
+      "furniture_id": "2026"
+    },
+    {
+      "furniture_id": "2027"
+    },
+    {
+      "furniture_id": "2028"
+    },
+    {
+      "furniture_id": "2029"
+    },
+    {
+      "furniture_id": "2030"
+    },
+    {
+      "furniture_id": "2031"
+    },
+    {
+      "furniture_id": "2032"
+    },
+    {
+      "furniture_id": "2033"
+    },
+    {
+      "furniture_id": "2034"
+    },
+    {
+      "furniture_id": "2037"
+    },
+    {
+      "furniture_id": "2038"
+    },
+    {
+      "furniture_id": "2041"
+    },
+    {
+      "furniture_id": "2104"
+    },
+    {
+      "furniture_id": "2105"
+    },
+    {
+      "furniture_id": "2106"
+    },
+    {
+      "furniture_id": "2108"
+    },
+    {
+      "furniture_id": "2111"
+    },
+    {
+      "furniture_id": "2201"
+    },
+    {
+      "furniture_id": "2202"
+    },
+    {
+      "furniture_id": "2203"
+    },
+    {
+      "furniture_id": "2204"
+    },
+    {
+      "furniture_id": "2205"
+    },
+    {
+      "furniture_id": "2206"
+    },
+    {
+      "furniture_id": "2207"
+    },
+    {
+      "furniture_id": "2208"
+    },
+    {
+      "furniture_id": "2209"
+    },
+    {
+      "furniture_id": "2210"
+    },
+    {
+      "furniture_id": "2211"
+    },
+    {
+      "furniture_id": "2212"
+    },
+    {
+      "furniture_id": "2213"
+    },
+    {
+      "furniture_id": "2214"
+    },
+    {
+      "furniture_id": "2215"
+    },
+    {
+      "furniture_id": "2302"
+    },
+    {
+      "furniture_id": "2303"
+    },
+    {
+      "furniture_id": "2304"
+    },
+    {
+      "furniture_id": "2305"
+    },
+    {
+      "furniture_id": "2306"
+    },
+    {
+      "furniture_id": "2307"
+    },
+    {
+      "furniture_id": "2308"
+    },
+    {
+      "furniture_id": "2310"
+    },
+    {
+      "furniture_id": "2311"
+    },
+    {
+      "furniture_id": "2313"
+    },
+    {
+      "furniture_id": "2402"
+    },
+    {
+      "furniture_id": "2403"
+    },
+    {
+      "furniture_id": "2413"
+    },
+    {
+      "furniture_id": "2601"
+    },
+    {
+      "furniture_id": "2602"
+    },
+    {
+      "furniture_id": "2603"
+    },
+    {
+      "furniture_id": "2604"
+    },
+    {
+      "furniture_id": "2605"
+    },
+    {
+      "furniture_id": "2606"
+    },
+    {
+      "furniture_id": "2608"
+    },
+    {
+      "furniture_id": "2610"
+    },
+    {
+      "furniture_id": "2612"
+    },
+    {
+      "furniture_id": "2613"
+    },
+    {
+      "furniture_id": "2701"
+    },
+    {
+      "furniture_id": "2702"
+    },
+    {
+      "furniture_id": "2703"
+    },
+    {
+      "furniture_id": "2704"
+    },
+    {
+      "furniture_id": "2705"
+    },
+    {
+      "furniture_id": "2706"
+    },
+    {
+      "furniture_id": "2707"
+    },
+    {
+      "furniture_id": "2708"
+    },
+    {
+      "furniture_id": "2709"
+    },
+    {
+      "furniture_id": "2710"
+    },
+    {
+      "furniture_id": "2711"
+    },
+    {
+      "furniture_id": "2712"
+    },
+    {
+      "furniture_id": "2713"
+    },
+    {
+      "furniture_id": "2801"
+    },
+    {
+      "furniture_id": "2802"
+    },
+    {
+      "furniture_id": "2803"
+    },
+    {
+      "furniture_id": "2805"
+    },
+    {
+      "furniture_id": "2806"
+    },
+    {
+      "furniture_id": "2807"
+    },
+    {
+      "furniture_id": "2808"
+    },
+    {
+      "furniture_id": "2809"
+    },
+    {
+      "furniture_id": "2810"
+    },
+    {
+      "furniture_id": "2901"
+    },
+    {
+      "furniture_id": "2902"
+    },
+    {
+      "furniture_id": "2904"
+    },
+    {
+      "furniture_id": "2906"
+    },
+    {
+      "furniture_id": "2907"
+    },
+    {
+      "furniture_id": "2908"
+    },
+    {
+      "furniture_id": "2909"
+    },
+    {
+      "furniture_id": "2910"
+    },
+    {
+      "furniture_id": "2911"
+    },
+    {
+      "furniture_id": "2912"
+    },
+    {
+      "furniture_id": "2913"
+    },
+    {
+      "furniture_id": "3001"
+    },
+    {
+      "furniture_id": "3003"
+    },
+    {
+      "furniture_id": "3006"
+    },
+    {
+      "furniture_id": "3007"
+    },
+    {
+      "furniture_id": "3010"
+    },
+    {
+      "furniture_id": "3101"
+    },
+    {
+      "furniture_id": "3104"
+    },
+    {
+      "furniture_id": "3105"
+    },
+    {
+      "furniture_id": "3106"
+    },
+    {
+      "furniture_id": "3107"
+    },
+    {
+      "furniture_id": "3110"
+    },
+    {
+      "furniture_id": "3201"
+    },
+    {
+      "furniture_id": "3202"
+    },
+    {
+      "furniture_id": "3204"
+    },
+    {
+      "furniture_id": "3205"
+    },
+    {
+      "furniture_id": "3206"
+    },
+    {
+      "furniture_id": "3207"
+    },
+    {
+      "furniture_id": "3208"
+    },
+    {
+      "furniture_id": "3211"
+    },
+    {
+      "furniture_id": "3212"
+    },
+    {
+      "furniture_id": "3213"
+    },
+    {
+      "furniture_id": "3214"
+    },
+    {
+      "furniture_id": "3216"
+    },
+    {
+      "furniture_id": "3301"
+    },
+    {
+      "furniture_id": "3302"
+    },
+    {
+      "furniture_id": "3303"
+    },
+    {
+      "furniture_id": "3312"
+    },
+    {
+      "furniture_id": "3314"
+    },
+    {
+      "furniture_id": "3401"
+    },
+    {
+      "furniture_id": "3402"
+    },
+    {
+      "furniture_id": "3403"
+    },
+    {
+      "furniture_id": "3405"
+    },
+    {
+      "furniture_id": "3406"
+    },
+    {
+      "furniture_id": "3407"
+    },
+    {
+      "furniture_id": "3408"
+    },
+    {
+      "furniture_id": "3410"
+    },
+    {
+      "furniture_id": "3411"
+    },
+    {
+      "furniture_id": "3413"
+    },
+    {
+      "furniture_id": "3414"
+    },
+    {
+      "furniture_id": "3415"
+    },
+    {
+      "furniture_id": "3501"
+    },
+    {
+      "furniture_id": "3502"
+    },
+    {
+      "furniture_id": "3505"
+    },
+    {
+      "furniture_id": "3506"
+    },
+    {
+      "furniture_id": "3507"
+    },
+    {
+      "furniture_id": "3508"
+    },
+    {
+      "furniture_id": "3512"
+    },
+    {
+      "furniture_id": "3601"
+    },
+    {
+      "furniture_id": "3602"
+    },
+    {
+      "furniture_id": "3603"
+    },
+    {
+      "furniture_id": "3604"
+    },
+    {
+      "furniture_id": "3605"
+    },
+    {
+      "furniture_id": "3606"
+    },
+    {
+      "furniture_id": "3607"
+    },
+    {
+      "furniture_id": "3608"
+    },
+    {
+      "furniture_id": "3609"
+    },
+    {
+      "furniture_id": "3610"
+    },
+    {
+      "furniture_id": "3611"
+    },
+    {
+      "furniture_id": "3612"
+    },
+    {
+      "furniture_id": "3613"
+    },
+    {
+      "furniture_id": "3614"
+    },
+    {
+      "furniture_id": "3615"
+    },
+    {
+      "furniture_id": "3616"
+    },
+    {
+      "furniture_id": "3617"
+    },
+    {
+      "furniture_id": "3701"
+    },
+    {
+      "furniture_id": "3705"
+    },
+    {
+      "furniture_id": "3710"
+    },
+    {
+      "furniture_id": "3803"
+    },
+    {
+      "furniture_id": "3804"
+    },
+    {
+      "furniture_id": "3805"
+    },
+    {
+      "furniture_id": "3806"
+    },
+    {
+      "furniture_id": "3807"
+    },
+    {
+      "furniture_id": "3808"
+    },
+    {
+      "furniture_id": "3810"
+    },
+    {
+      "furniture_id": "3812"
+    },
+    {
+      "furniture_id": "3907"
+    },
+    {
+      "furniture_id": "3912"
+    },
+    {
+      "furniture_id": "4001"
+    },
+    {
+      "furniture_id": "4002"
+    },
+    {
+      "furniture_id": "4003"
+    },
+    {
+      "furniture_id": "4005"
+    },
+    {
+      "furniture_id": "4006"
+    },
+    {
+      "furniture_id": "4008"
+    },
+    {
+      "furniture_id": "4009"
+    },
+    {
+      "furniture_id": "4010"
+    },
+    {
+      "furniture_id": "4011"
+    },
+    {
+      "furniture_id": "4012"
+    },
+    {
+      "furniture_id": "4014"
+    },
+    {
+      "furniture_id": "4101"
+    },
+    {
+      "furniture_id": "4102"
+    },
+    {
+      "furniture_id": "4103"
+    },
+    {
+      "furniture_id": "4104"
+    },
+    {
+      "furniture_id": "4105"
+    },
+    {
+      "furniture_id": "4106"
+    },
+    {
+      "furniture_id": "4107"
+    },
+    {
+      "furniture_id": "4108"
+    },
+    {
+      "furniture_id": "4109"
+    },
+    {
+      "furniture_id": "4110"
+    },
+    {
+      "furniture_id": "4111"
+    },
+    {
+      "furniture_id": "4112"
+    },
+    {
+      "furniture_id": "4113"
+    },
+    {
+      "furniture_id": "4114"
+    },
+    {
+      "furniture_id": "4115"
+    },
+    {
+      "furniture_id": "4116"
+    },
+    {
+      "furniture_id": "4204"
+    },
+    {
+      "furniture_id": "4207"
+    },
+    {
+      "furniture_id": "4211"
+    },
+    {
+      "furniture_id": "4213"
+    },
+    {
+      "furniture_id": "4214"
+    },
+    {
+      "furniture_id": "4215"
+    },
+    {
+      "furniture_id": "4303"
+    },
+    {
+      "furniture_id": "4305"
+    },
+    {
+      "furniture_id": "4308"
+    },
+    {
+      "furniture_id": "4314"
+    },
+    {
+      "furniture_id": "4315"
+    },
+    {
+      "furniture_id": "4401"
+    },
+    {
+      "furniture_id": "4407"
+    },
+    {
+      "furniture_id": "4411"
+    },
+    {
+      "furniture_id": "4501"
+    },
+    {
+      "furniture_id": "4502"
+    },
+    {
+      "furniture_id": "4503"
+    },
+    {
+      "furniture_id": "4504"
+    },
+    {
+      "furniture_id": "4506"
+    },
+    {
+      "furniture_id": "4507"
+    },
+    {
+      "furniture_id": "4508"
+    },
+    {
+      "furniture_id": "4509"
+    },
+    {
+      "furniture_id": "4510"
+    },
+    {
+      "furniture_id": "4511"
+    },
+    {
+      "furniture_id": "4512"
+    },
+    {
+      "furniture_id": "4513"
+    },
+    {
+      "furniture_id": "4514"
+    },
+    {
+      "furniture_id": "4515"
+    },
+    {
+      "furniture_id": "4602"
+    },
+    {
+      "furniture_id": "4603"
+    },
+    {
+      "furniture_id": "4611"
+    },
+    {
+      "furniture_id": "4612"
+    },
+    {
+      "furniture_id": "4701"
+    },
+    {
+      "furniture_id": "4702"
+    },
+    {
+      "furniture_id": "4703"
+    },
+    {
+      "furniture_id": "4704"
+    },
+    {
+      "furniture_id": "4705"
+    },
+    {
+      "furniture_id": "4706"
+    },
+    {
+      "furniture_id": "4707"
+    },
+    {
+      "furniture_id": "4709"
+    },
+    {
+      "furniture_id": "4710"
+    },
+    {
+      "furniture_id": "4711"
+    },
+    {
+      "furniture_id": "4713"
+    },
+    {
+      "furniture_id": "4714"
+    },
+    {
+      "furniture_id": "4806"
+    },
+    {
+      "furniture_id": "4808"
+    },
+    {
+      "furniture_id": "4809"
+    },
+    {
+      "furniture_id": "4811"
+    },
+    {
+      "furniture_id": "4812"
+    },
+    {
+      "furniture_id": "4902"
+    },
+    {
+      "furniture_id": "4903"
+    },
+    {
+      "furniture_id": "4904"
+    },
+    {
+      "furniture_id": "4905"
+    },
+    {
+      "furniture_id": "4906"
+    },
+    {
+      "furniture_id": "4909"
+    },
+    {
+      "furniture_id": "4911"
+    },
+    {
+      "furniture_id": "4913"
+    },
+    {
+      "furniture_id": "4915"
+    },
+    {
+      "furniture_id": "5007"
+    },
+    {
+      "furniture_id": "5010"
+    },
+    {
+      "furniture_id": "5202"
+    },
+    {
+      "furniture_id": "5205"
+    },
+    {
+      "furniture_id": "5206"
+    },
+    {
+      "furniture_id": "5207"
+    },
+    {
+      "furniture_id": "5209"
+    },
+    {
+      "furniture_id": "5211"
+    },
+    {
+      "furniture_id": "5213"
+    },
+    {
+      "furniture_id": "5301"
+    },
+    {
+      "furniture_id": "5302"
+    },
+    {
+      "furniture_id": "5303"
+    },
+    {
+      "furniture_id": "5304"
+    },
+    {
+      "furniture_id": "5305"
+    },
+    {
+      "furniture_id": "5306"
+    },
+    {
+      "furniture_id": "5307"
+    },
+    {
+      "furniture_id": "5308"
+    },
+    {
+      "furniture_id": "5309"
+    },
+    {
+      "furniture_id": "5310"
+    },
+    {
+      "furniture_id": "5311"
+    },
+    {
+      "furniture_id": "5312"
+    },
+    {
+      "furniture_id": "5313"
+    },
+    {
+      "furniture_id": "5314"
+    },
+    {
+      "furniture_id": "5315"
+    },
+    {
+      "furniture_id": "5316"
+    },
+    {
+      "furniture_id": "5317"
+    },
+    {
+      "furniture_id": "5401"
+    },
+    {
+      "furniture_id": "5402"
+    },
+    {
+      "furniture_id": "5403"
+    },
+    {
+      "furniture_id": "5404"
+    },
+    {
+      "furniture_id": "5405"
+    },
+    {
+      "furniture_id": "5406"
+    },
+    {
+      "furniture_id": "5408"
+    },
+    {
+      "furniture_id": "5410"
+    },
+    {
+      "furniture_id": "5411"
+    },
+    {
+      "furniture_id": "5412"
+    },
+    {
+      "furniture_id": "5414"
+    },
+    {
+      "furniture_id": "5503"
+    },
+    {
+      "furniture_id": "5504"
+    },
+    {
+      "furniture_id": "5512"
+    },
+    {
+      "furniture_id": "5602"
+    },
+    {
+      "furniture_id": "5603"
+    },
+    {
+      "furniture_id": "5604"
+    },
+    {
+      "furniture_id": "5605"
+    },
+    {
+      "furniture_id": "5607"
+    },
+    {
+      "furniture_id": "5608"
+    },
+    {
+      "furniture_id": "5609"
+    },
+    {
+      "furniture_id": "5610"
+    },
+    {
+      "furniture_id": "5611"
+    },
+    {
+      "furniture_id": "5612"
+    },
+    {
+      "furniture_id": "5614"
+    },
+    {
+      "furniture_id": "5615"
+    },
+    {
+      "furniture_id": "5701"
+    },
+    {
+      "furniture_id": "5702"
+    },
+    {
+      "furniture_id": "5703"
+    },
+    {
+      "furniture_id": "5704"
+    },
+    {
+      "furniture_id": "5705"
+    },
+    {
+      "furniture_id": "5706"
+    },
+    {
+      "furniture_id": "5707"
+    },
+    {
+      "furniture_id": "5708"
+    },
+    {
+      "furniture_id": "5709"
+    },
+    {
+      "furniture_id": "5710"
+    },
+    {
+      "furniture_id": "5711"
+    },
+    {
+      "furniture_id": "5712"
+    },
+    {
+      "furniture_id": "5713"
+    },
+    {
+      "furniture_id": "5714"
+    },
+    {
+      "furniture_id": "5801"
+    },
+    {
+      "furniture_id": "5802"
+    },
+    {
+      "furniture_id": "5805"
+    },
+    {
+      "furniture_id": "5806"
+    },
+    {
+      "furniture_id": "5903"
+    },
+    {
+      "furniture_id": "5905"
+    },
+    {
+      "furniture_id": "5912"
+    },
+    {
+      "furniture_id": "6001"
+    },
+    {
+      "furniture_id": "6002"
+    },
+    {
+      "furniture_id": "6003"
+    },
+    {
+      "furniture_id": "6005"
+    },
+    {
+      "furniture_id": "6006"
+    },
+    {
+      "furniture_id": "6007"
+    },
+    {
+      "furniture_id": "6008"
+    },
+    {
+      "furniture_id": "6009"
+    },
+    {
+      "furniture_id": "6010"
+    },
+    {
+      "furniture_id": "6011"
+    },
+    {
+      "furniture_id": "6014"
+    },
+    {
+      "furniture_id": "6015"
+    },
+    {
+      "furniture_id": "6101"
+    },
+    {
+      "furniture_id": "6102"
+    },
+    {
+      "furniture_id": "6103"
+    },
+    {
+      "furniture_id": "6104"
+    },
+    {
+      "furniture_id": "6105"
+    },
+    {
+      "furniture_id": "6106"
+    },
+    {
+      "furniture_id": "6107"
+    },
+    {
+      "furniture_id": "6108"
+    },
+    {
+      "furniture_id": "6109"
+    },
+    {
+      "furniture_id": "6110"
+    },
+    {
+      "furniture_id": "6111"
+    },
+    {
+      "furniture_id": "6112"
+    },
+    {
+      "furniture_id": "6113"
+    },
+    {
+      "furniture_id": "6114"
+    },
+    {
+      "furniture_id": "6115"
+    },
+    {
+      "furniture_id": "6116"
+    },
+    {
+      "furniture_id": "6117"
+    },
+    {
+      "furniture_id": "6118"
+    },
+    {
+      "furniture_id": "6405"
+    },
+    {
+      "furniture_id": "6501"
+    },
+    {
+      "furniture_id": "6508"
+    },
+    {
+      "furniture_id": "6509"
+    },
+    {
+      "furniture_id": "6602"
+    },
+    {
+      "furniture_id": "6604"
+    },
+    {
+      "furniture_id": "6609"
+    },
+    {
+      "furniture_id": "6612"
+    },
+    {
+      "furniture_id": "6804"
+    },
+    {
+      "furniture_id": "6805"
+    },
+    {
+      "furniture_id": "6808"
+    },
+    {
+      "furniture_id": "6809"
+    },
+    {
+      "furniture_id": "6810"
+    },
+    {
+      "furniture_id": "6811"
+    },
+    {
+      "furniture_id": "6812"
+    },
+    {
+      "furniture_id": "6813"
+    },
+    {
+      "furniture_id": "7106"
+    },
+    {
+      "furniture_id": "30101"
+    },
+    {
+      "furniture_id": "30102"
+    },
+    {
+      "furniture_id": "30105"
+    },
+    {
+      "furniture_id": "30106"
+    },
+    {
+      "furniture_id": "30305"
+    },
+    {
+      "furniture_id": "30402"
+    },
+    {
+      "furniture_id": "30410"
+    },
+    {
+      "furniture_id": "30501"
+    },
+    {
+      "furniture_id": "30505"
+    },
+    {
+      "furniture_id": "30509"
+    },
+    {
+      "furniture_id": "30510"
+    },
+    {
+      "furniture_id": "30603"
+    },
+    {
+      "furniture_id": "30701"
+    },
+    {
+      "furniture_id": "30702"
+    },
+    {
+      "furniture_id": "30703"
+    },
+    {
+      "furniture_id": "30704"
+    },
+    {
+      "furniture_id": "30801"
+    },
+    {
+      "furniture_id": "30804"
+    },
+    {
+      "furniture_id": "30805"
+    },
+    {
+      "furniture_id": "30806"
+    },
+    {
+      "furniture_id": "30903"
+    },
+    {
+      "furniture_id": "30904"
+    },
+    {
+      "furniture_id": "30905"
+    },
+    {
+      "furniture_id": "31302"
+    },
+    {
+      "furniture_id": "31304"
+    },
+    {
+      "furniture_id": "31305"
+    },
+    {
+      "furniture_id": "31401"
+    },
+    {
+      "furniture_id": "31403"
+    },
+    {
+      "furniture_id": "31406"
+    },
+    {
+      "furniture_id": "31503"
+    },
+    {
+      "furniture_id": "31507"
+    },
+    {
+      "furniture_id": "31608"
+    },
+    {
+      "furniture_id": "31703"
+    },
+    {
+      "furniture_id": "31805"
+    },
+    {
+      "furniture_id": "31807"
+    },
+    {
+      "furniture_id": "31809"
+    },
+    {
+      "furniture_id": "31904"
+    },
+    {
+      "furniture_id": "32001"
+    },
+    {
+      "furniture_id": "32002"
+    },
+    {
+      "furniture_id": "32103"
+    },
+    {
+      "furniture_id": "32106"
+    },
+    {
+      "furniture_id": "32109"
+    },
+    {
+      "furniture_id": "32302"
+    },
+    {
+      "furniture_id": "32304"
+    },
+    {
+      "furniture_id": "32305"
+    },
+    {
+      "furniture_id": "32402"
+    },
+    {
+      "furniture_id": "32404"
+    },
+    {
+      "furniture_id": "32409"
+    },
+    {
+      "furniture_id": "32502"
+    },
+    {
+      "furniture_id": "32602"
+    },
+    {
+      "furniture_id": "32603"
+    },
+    {
+      "furniture_id": "32604"
+    },
+    {
+      "furniture_id": "32605"
+    },
+    {
+      "furniture_id": "32606"
+    },
+    {
+      "furniture_id": "32706"
+    },
+    {
+      "furniture_id": "32801"
+    },
+    {
+      "furniture_id": "32806"
+    },
+    {
+      "furniture_id": "32906"
+    },
+    {
+      "furniture_id": "33003"
+    },
+    {
+      "furniture_id": "33004"
+    },
+    {
+      "furniture_id": "33005"
+    },
+    {
+      "furniture_id": "33203"
+    },
+    {
+      "furniture_id": "33302"
+    },
+    {
+      "furniture_id": "33304"
+    },
+    {
+      "furniture_id": "33308"
+    },
+    {
+      "furniture_id": "33506"
+    },
+    {
+      "furniture_id": "33507"
+    },
+    {
+      "furniture_id": "40101"
+    },
+    {
+      "furniture_id": "40201"
+    }
   ],
   "fairy_collect_info": [
-    { "fairy_id": "1" },
-    { "fairy_id": "2" },
-    { "fairy_id": "3" },
-    { "fairy_id": "4" },
-    { "fairy_id": "6" },
-    { "fairy_id": "7" },
-    { "fairy_id": "8" },
-    { "fairy_id": "9" },
-    { "fairy_id": "10" },
-    { "fairy_id": "11" },
-    { "fairy_id": "13" },
-    { "fairy_id": "14" },
-    { "fairy_id": "15" },
-    { "fairy_id": "16" },
-    { "fairy_id": "17" },
-    { "fairy_id": "18" },
-    { "fairy_id": "20" },
-    { "fairy_id": "21" },
-    { "fairy_id": "1004" },
-    { "fairy_id": "1005" },
-    { "fairy_id": "1006" },
-    { "fairy_id": "1007" }
+    {
+      "fairy_id": "1"
+    },
+    {
+      "fairy_id": "2"
+    },
+    {
+      "fairy_id": "3"
+    },
+    {
+      "fairy_id": "4"
+    },
+    {
+      "fairy_id": "6"
+    },
+    {
+      "fairy_id": "7"
+    },
+    {
+      "fairy_id": "8"
+    },
+    {
+      "fairy_id": "9"
+    },
+    {
+      "fairy_id": "10"
+    },
+    {
+      "fairy_id": "11"
+    },
+    {
+      "fairy_id": "13"
+    },
+    {
+      "fairy_id": "14"
+    },
+    {
+      "fairy_id": "15"
+    },
+    {
+      "fairy_id": "16"
+    },
+    {
+      "fairy_id": "17"
+    },
+    {
+      "fairy_id": "18"
+    },
+    {
+      "fairy_id": "20"
+    },
+    {
+      "fairy_id": "21"
+    },
+    {
+      "fairy_id": "1004"
+    },
+    {
+      "fairy_id": "1005"
+    },
+    {
+      "fairy_id": "1006"
+    },
+    {
+      "fairy_id": "1007"
+    }
   ],
   "trial_with_user_info": {
     "user_id": "20139",
@@ -11346,34 +12945,90 @@
     "tips": "11,12,33,34,35"
   },
   "fairy_skin_with_user_info": [
-    { "skin_id": "1" },
-    { "skin_id": "2" },
-    { "skin_id": "4" },
-    { "skin_id": "5" },
-    { "skin_id": "7" },
-    { "skin_id": "10" },
-    { "skin_id": "16" },
-    { "skin_id": "17" },
-    { "skin_id": "19" },
-    { "skin_id": "20" },
-    { "skin_id": "22" },
-    { "skin_id": "23" },
-    { "skin_id": "25" },
-    { "skin_id": "28" },
-    { "skin_id": "31" },
-    { "skin_id": "37" },
-    { "skin_id": "40" },
-    { "skin_id": "43" },
-    { "skin_id": "46" },
-    { "skin_id": "47" },
-    { "skin_id": "49" },
-    { "skin_id": "52" },
-    { "skin_id": "76" },
-    { "skin_id": "79" },
-    { "skin_id": "67" },
-    { "skin_id": "70" },
-    { "skin_id": "73" },
-    { "skin_id": "82" }
+    {
+      "skin_id": "1"
+    },
+    {
+      "skin_id": "2"
+    },
+    {
+      "skin_id": "4"
+    },
+    {
+      "skin_id": "5"
+    },
+    {
+      "skin_id": "7"
+    },
+    {
+      "skin_id": "10"
+    },
+    {
+      "skin_id": "16"
+    },
+    {
+      "skin_id": "17"
+    },
+    {
+      "skin_id": "19"
+    },
+    {
+      "skin_id": "20"
+    },
+    {
+      "skin_id": "22"
+    },
+    {
+      "skin_id": "23"
+    },
+    {
+      "skin_id": "25"
+    },
+    {
+      "skin_id": "28"
+    },
+    {
+      "skin_id": "31"
+    },
+    {
+      "skin_id": "37"
+    },
+    {
+      "skin_id": "40"
+    },
+    {
+      "skin_id": "43"
+    },
+    {
+      "skin_id": "46"
+    },
+    {
+      "skin_id": "47"
+    },
+    {
+      "skin_id": "49"
+    },
+    {
+      "skin_id": "52"
+    },
+    {
+      "skin_id": "76"
+    },
+    {
+      "skin_id": "79"
+    },
+    {
+      "skin_id": "67"
+    },
+    {
+      "skin_id": "70"
+    },
+    {
+      "skin_id": "73"
+    },
+    {
+      "skin_id": "82"
+    }
   ],
   "user_game_setting": {
     "uid": "20139",
@@ -11606,8 +13261,8 @@
     "227": {
       "id": "227",
       "squad_id": "1",
-      "squad_exp": "97025984",
-      "squad_level": "80",
+      "squad_exp": "0",
+      "squad_level": "1",
       "rank": "5",
       "advanced_level": "0",
       "life": "210",
@@ -11629,8 +13284,8 @@
     "7615": {
       "id": "7615",
       "squad_id": "2",
-      "squad_exp": "92529200",
-      "squad_level": "60",
+      "squad_exp": "0",
+      "squad_level": "1",
       "rank": "5",
       "advanced_level": "0",
       "life": "169",
@@ -11652,8 +13307,8 @@
     "7138": {
       "id": "7138",
       "squad_id": "3",
-      "squad_exp": "93452050",
-      "squad_level": "65",
+      "squad_exp": "0",
+      "squad_level": "1",
       "rank": "5",
       "advanced_level": "0",
       "life": "169",
@@ -11675,8 +13330,8 @@
     "24369": {
       "id": "24369",
       "squad_id": "4",
-      "squad_exp": "98741000",
-      "squad_level": "42",
+      "squad_exp": "0",
+      "squad_level": "1",
       "rank": "5",
       "advanced_level": "0",
       "life": "121",
@@ -11695,28 +13350,51 @@
       "skill2": "5",
       "skill3": "5"
     },
+	"99999": {
+      "id": "99999",
+      "squad_id": "6",
+      "squad_exp": "0",
+      "squad_level": "1",
+      "rank": "5",
+      "advanced_level": "0",
+      "life": "210",
+      "cur_def": "0",
+      "ammo": "1000",
+      "mre": "1000",
+      "assist_damage": "0",
+      "assist_reload": "0",
+      "assist_hit": "0",
+      "assist_def_break": "0",
+      "damage": "0",
+      "atk_speed": "0",
+      "hit": "0",
+      "def": "0",
+      "skill1": "1",
+      "skill2": "1",
+      "skill3": "1"
+    },
     "28011": {
       "id": "28011",
       "squad_id": "5",
-      "squad_exp": "93231000",
-      "squad_level": "64",
-      "rank": "4",
+      "squad_exp": "0",
+      "squad_level": "1",
+      "rank": "5",
       "advanced_level": "0",
       "life": "175",
       "cur_def": "0",
       "ammo": "1000",
       "mre": "1000",
-      "assist_damage": "48",
-      "assist_reload": "57",
-      "assist_hit": "120",
-      "assist_def_break": "110",
+      "assist_damage": "0",
+      "assist_reload": "0",
+      "assist_hit": "0",
+      "assist_def_break": "0",
       "damage": "0",
       "atk_speed": "0",
       "hit": "0",
       "def": "0",
-      "skill1": "10",
-      "skill2": "10",
-      "skill3": "10"
+      "skill1": "1",
+      "skill2": "1",
+      "skill3": "1"
     }
   },
   "chip_with_user_info": {},
@@ -11859,8 +13537,16 @@
         "end_time": "1565468740",
         "cancel_time": "1565450756",
         "affairs": [],
-        "gun_ids": [ "27_801", "20037", "48_804", "20081" ],
-        "pet_ids": [ "40201", "2031" ],
+        "gun_ids": [
+          "27_801",
+          "20037",
+          "48_804",
+          "20081"
+        ],
+        "pet_ids": [
+          "40201",
+          "2031"
+        ],
         "area_id": "1",
         "target_id": "5",
         "item_id": "0",
@@ -11897,8 +13583,16 @@
             "affair_time": "1565467947"
           }
         ],
-        "gun_ids": [ "27_801", "20037", "48_804", "20081" ],
-        "pet_ids": [ "40201", "2038" ],
+        "gun_ids": [
+          "27_801",
+          "20037",
+          "48_804",
+          "20081"
+        ],
+        "pet_ids": [
+          "40201",
+          "2038"
+        ],
         "area_id": "3",
         "target_id": "55",
         "item_id": "6012",
@@ -11931,8 +13625,16 @@
             "affair_time": "1565487428"
           }
         ],
-        "gun_ids": [ "27_801", "20037", "48_804", "20081" ],
-        "pet_ids": [ "40201", "2018" ],
+        "gun_ids": [
+          "27_801",
+          "20037",
+          "48_804",
+          "20081"
+        ],
+        "pet_ids": [
+          "40201",
+          "2018"
+        ],
         "area_id": "2",
         "target_id": "23",
         "item_id": "6010",
@@ -11965,8 +13667,16 @@
             "affair_time": "1565505809"
           }
         ],
-        "gun_ids": [ "27_801", "20037", "48_804", "20081" ],
-        "pet_ids": [ "40201", "2031" ],
+        "gun_ids": [
+          "27_801",
+          "20037",
+          "48_804",
+          "20081"
+        ],
+        "pet_ids": [
+          "40201",
+          "2031"
+        ],
         "area_id": "4",
         "target_id": "65",
         "item_id": "6009",
@@ -12003,8 +13713,16 @@
             "affair_time": "1565542945"
           }
         ],
-        "gun_ids": [ "27_801", "20037", "48_804", "20081" ],
-        "pet_ids": [ "40201", "2031" ],
+        "gun_ids": [
+          "27_801",
+          "20037",
+          "48_804",
+          "20081"
+        ],
+        "pet_ids": [
+          "40201",
+          "2031"
+        ],
         "area_id": "2",
         "target_id": "25",
         "item_id": "6011",
@@ -12045,8 +13763,17 @@
             "affair_time": "1565599960"
           }
         ],
-        "gun_ids": [ "27_801", "20037", "48_804", "20081", "96_105" ],
-        "pet_ids": [ "40201", "2031" ],
+        "gun_ids": [
+          "27_801",
+          "20037",
+          "48_804",
+          "20081",
+          "96_105"
+        ],
+        "pet_ids": [
+          "40201",
+          "2031"
+        ],
         "area_id": "1",
         "target_id": "10",
         "item_id": "6007",
@@ -12091,8 +13818,17 @@
             "affair_time": "1565657746"
           }
         ],
-        "gun_ids": [ "106", "20081", "210", "228", "168" ],
-        "pet_ids": [ "40101", "2038" ],
+        "gun_ids": [
+          "106",
+          "20081",
+          "210",
+          "228",
+          "168"
+        ],
+        "pet_ids": [
+          "40101",
+          "2038"
+        ],
         "area_id": "2",
         "target_id": "30",
         "item_id": "0",
@@ -12141,8 +13877,18 @@
             "affair_time": "1565728747"
           }
         ],
-        "gun_ids": [ "106", "20081", "210", "228", "168" ],
-        "pet_ids": [ "40101", "2038", "2031" ],
+        "gun_ids": [
+          "106",
+          "20081",
+          "210",
+          "228",
+          "168"
+        ],
+        "pet_ids": [
+          "40101",
+          "2038",
+          "2031"
+        ],
         "area_id": "2",
         "target_id": "40",
         "item_id": "0",
@@ -12191,8 +13937,18 @@
             "affair_time": "1565814426"
           }
         ],
-        "gun_ids": [ "106", "20081", "210", "228", "168" ],
-        "pet_ids": [ "40101", "2031", "2018" ],
+        "gun_ids": [
+          "106",
+          "20081",
+          "210",
+          "228",
+          "168"
+        ],
+        "pet_ids": [
+          "40101",
+          "2031",
+          "2018"
+        ],
         "area_id": "2",
         "target_id": "31",
         "item_id": "6006",
@@ -12233,8 +13989,18 @@
             "affair_time": "1565904259"
           }
         ],
-        "gun_ids": [ "106", "20081", "210", "228", "168" ],
-        "pet_ids": [ "40101", "2031", "2018" ],
+        "gun_ids": [
+          "106",
+          "20081",
+          "210",
+          "228",
+          "168"
+        ],
+        "pet_ids": [
+          "40101",
+          "2031",
+          "2018"
+        ],
         "area_id": "2",
         "target_id": "30",
         "item_id": "6006",
@@ -12275,8 +14041,18 @@
             "affair_time": "1565960423"
           }
         ],
-        "gun_ids": [ "106", "20081", "210", "228", "168" ],
-        "pet_ids": [ "40101", "2018", "2031" ],
+        "gun_ids": [
+          "106",
+          "20081",
+          "210",
+          "228",
+          "168"
+        ],
+        "pet_ids": [
+          "40101",
+          "2018",
+          "2031"
+        ],
         "area_id": "2",
         "target_id": "26",
         "draw_event_prize": 1,
@@ -12325,8 +14101,18 @@
             "affair_time": "1566000619"
           }
         ],
-        "gun_ids": [ "106", "20081", "210", "202", "228" ],
-        "pet_ids": [ "40101", "2018", "2031" ],
+        "gun_ids": [
+          "106",
+          "20081",
+          "210",
+          "202",
+          "228"
+        ],
+        "pet_ids": [
+          "40101",
+          "2018",
+          "2031"
+        ],
         "area_id": "3",
         "target_id": "59",
         "draw_event_prize": 1,
@@ -12371,8 +14157,18 @@
             "affair_time": "1566035151"
           }
         ],
-        "gun_ids": [ "106", "20081", "210", "202", "228" ],
-        "pet_ids": [ "40101", "2018", "2031" ],
+        "gun_ids": [
+          "106",
+          "20081",
+          "210",
+          "202",
+          "228"
+        ],
+        "pet_ids": [
+          "40101",
+          "2018",
+          "2031"
+        ],
         "area_id": "4",
         "target_id": "70",
         "draw_event_prize": 1,
@@ -12400,8 +14196,14 @@
       "chip": []
     },
     "is_auto": 0,
-    "pets": [ "6377709", "20181376", "18628195" ],
-    "items_taken": [ "6013" ],
+    "pets": [
+      "6377709",
+      "20181376",
+      "18628195"
+    ],
+    "items_taken": [
+      "6013"
+    ],
     "next_explore_time": 1566048254,
     "end_time": 1566037454,
     "explore_time_type": 3,
@@ -12411,336 +14213,100 @@
     "part": "-1"
   },
   "gun_in_theater_info": [
-    {
-      "user_id": "20139",
-      "team_id": "1",
-      "location": "1",
-      "gun_with_user_id": "88127586",
-      "position": "7",
-      "life": "495"
+        {
+            "user_id": "20139",
+            "team_id": "1",
+            "location": "1",
+            "gun_with_user_id": "1",
+            "position": "8",
+            "life": "99999"
+        },
+        {
+            "user_id": "20139",
+            "team_id": "1",
+            "location": "2",
+            "gun_with_user_id": "2",
+            "position": "7",
+            "life": "535"
+        },
+        {
+            "user_id": "20139",
+            "team_id": "1",
+            "location": "3",
+            "gun_with_user_id": "3",
+            "position": "13",
+            "life": "975"
+        },
+        {
+            "user_id": "20139",
+            "team_id": "1",
+            "location": "4",
+            "gun_with_user_id": "4",
+            "position": "9",
+            "life": "565"
+        },
+        {
+            "user_id": "20139",
+            "team_id": "1",
+            "location": "5",
+            "gun_with_user_id": "5",
+            "position": "14",
+            "life": "900"
+        }       
+    ],
+    "fairy_in_theater_info": [        
+    ],
+	"squad_in_theater_info": [
+        {
+            "user_id": "20139",
+            "squad_no": "1",
+            "squad_with_user_id": "227"
+        },
+        {
+            "user_id": "20139",
+            "squad_no": "2",
+            "squad_with_user_id": "7615"
+        },
+        {
+            "user_id": "20139",
+            "squad_no": "3",
+            "squad_with_user_id": "7138"
+        }
+    ],
+    "theater_exercise_info": {
+        "user_id": 20139,
+        "theater_area_id": 536,
+        "enemy_teams": "6,5,0,6,4,4,2,0,2,1",
+        "theater_teams": "1,2,3,4,5,6",
+        "theater_squads": "1,2,3",
+        "theater_squads_use_count": "",
+        "theater_fairy_use_count": 0,
+        "battle_enemy_no": -1,
+        "battle_team": 0,
+        "battle_fairy": 0,
+        "battle_squads": "",
+        "last_battle_finish_time": 0
     },
-    {
-      "user_id": "20139",
-      "team_id": "1",
-      "location": "2",
-      "gun_with_user_id": "200512050",
-      "position": "8",
-      "life": "310"
+    "theater_with_user_info": {
+        "51": {
+            "user_id": 20139,
+            "theater_id": "51",
+            "battle_pt": 23070,
+            "last_exercise_finish_time": 1570030644
+        },
+        "53": {
+            "user_id": 20139,
+            "theater_id": "53",
+            "battle_pt": 60043,
+            "last_exercise_finish_time": 1570031669
+        },
+        "52": {
+            "user_id": 20139,
+            "theater_id": "52",
+            "battle_pt": 41575,
+            "last_exercise_finish_time": 1569918938
+        }
     },
-    {
-      "user_id": "20139",
-      "team_id": "1",
-      "location": "3",
-      "gun_with_user_id": "89903513",
-      "position": "13",
-      "life": "295"
-    },
-    {
-      "user_id": "20139",
-      "team_id": "1",
-      "location": "4",
-      "gun_with_user_id": "83885218",
-      "position": "9",
-      "life": "470"
-    },
-    {
-      "user_id": "20139",
-      "team_id": "1",
-      "location": "5",
-      "gun_with_user_id": "286303434",
-      "position": "14",
-      "life": "247"
-    },
-    {
-      "user_id": "20139",
-      "team_id": "2",
-      "location": "1",
-      "gun_with_user_id": "139864368",
-      "position": "14",
-      "life": "400"
-    },
-    {
-      "user_id": "20139",
-      "team_id": "2",
-      "location": "2",
-      "gun_with_user_id": "83584893",
-      "position": "9",
-      "life": "565"
-    },
-    {
-      "user_id": "20139",
-      "team_id": "2",
-      "location": "3",
-      "gun_with_user_id": "228288081",
-      "position": "7",
-      "life": "440"
-    },
-    {
-      "user_id": "20139",
-      "team_id": "2",
-      "location": "4",
-      "gun_with_user_id": "149019089",
-      "position": "8",
-      "life": "415"
-    },
-    {
-      "user_id": "20139",
-      "team_id": "2",
-      "location": "5",
-      "gun_with_user_id": "151480474",
-      "position": "13",
-      "life": "400"
-    },
-    {
-      "user_id": "20139",
-      "team_id": "3",
-      "location": "1",
-      "gun_with_user_id": "319902809",
-      "position": "8",
-      "life": "345"
-    },
-    {
-      "user_id": "20139",
-      "team_id": "3",
-      "location": "2",
-      "gun_with_user_id": "154960243",
-      "position": "13",
-      "life": "380"
-    },
-    {
-      "user_id": "20139",
-      "team_id": "3",
-      "location": "3",
-      "gun_with_user_id": "294798589",
-      "position": "14",
-      "life": "325"
-    },
-    {
-      "user_id": "20139",
-      "team_id": "3",
-      "location": "4",
-      "gun_with_user_id": "256100242",
-      "position": "7",
-      "life": "365"
-    },
-    {
-      "user_id": "20139",
-      "team_id": "3",
-      "location": "5",
-      "gun_with_user_id": "82248008",
-      "position": "9",
-      "life": "430"
-    },
-    {
-      "user_id": "20139",
-      "team_id": "4",
-      "location": "1",
-      "gun_with_user_id": "162011713",
-      "position": "8",
-      "life": "635"
-    },
-    {
-      "user_id": "20139",
-      "team_id": "4",
-      "location": "2",
-      "gun_with_user_id": "201043997",
-      "position": "14",
-      "life": "837"
-    },
-    {
-      "user_id": "20139",
-      "team_id": "4",
-      "location": "3",
-      "gun_with_user_id": "249017270",
-      "position": "13",
-      "life": "910"
-    },
-    {
-      "user_id": "20139",
-      "team_id": "4",
-      "location": "4",
-      "gun_with_user_id": "244428267",
-      "position": "9",
-      "life": "580"
-    },
-    {
-      "user_id": "20139",
-      "team_id": "4",
-      "location": "5",
-      "gun_with_user_id": "275175792",
-      "position": "7",
-      "life": "550"
-    },
-    {
-      "user_id": "20139",
-      "team_id": "5",
-      "location": "1",
-      "gun_with_user_id": "261698307",
-      "position": "9",
-      "life": "825"
-    },
-    {
-      "user_id": "20139",
-      "team_id": "5",
-      "location": "2",
-      "gun_with_user_id": "183653419",
-      "position": "8",
-      "life": "400"
-    },
-    {
-      "user_id": "20139",
-      "team_id": "5",
-      "location": "3",
-      "gun_with_user_id": "155805163",
-      "position": "13",
-      "life": "519"
-    },
-    {
-      "user_id": "20139",
-      "team_id": "5",
-      "location": "4",
-      "gun_with_user_id": "144754148",
-      "position": "7",
-      "life": "885"
-    },
-    {
-      "user_id": "20139",
-      "team_id": "5",
-      "location": "5",
-      "gun_with_user_id": "212418777",
-      "position": "18",
-      "life": "1265"
-    },
-    {
-      "user_id": "20139",
-      "team_id": "6",
-      "location": "1",
-      "gun_with_user_id": "219343356",
-      "position": "18",
-      "life": "1410"
-    },
-    {
-      "user_id": "20139",
-      "team_id": "6",
-      "location": "2",
-      "gun_with_user_id": "318051723",
-      "position": "7",
-      "life": "950"
-    },
-    {
-      "user_id": "20139",
-      "team_id": "6",
-      "location": "3",
-      "gun_with_user_id": "145856822",
-      "position": "9",
-      "life": "990"
-    },
-    {
-      "user_id": "20139",
-      "team_id": "6",
-      "location": "4",
-      "gun_with_user_id": "232190171",
-      "position": "13",
-      "life": "330"
-    },
-    {
-      "user_id": "20139",
-      "team_id": "6",
-      "location": "5",
-      "gun_with_user_id": "128451183",
-      "position": "8",
-      "life": "950"
-    }
-  ],
-  "squad_in_theater_info": [
-    {
-      "user_id": "20139",
-      "squad_no": "1",
-      "squad_with_user_id": "227"
-    },
-    {
-      "user_id": "20139",
-      "squad_no": "2",
-      "squad_with_user_id": "7615"
-    },
-    {
-      "user_id": "20139",
-      "squad_no": "3",
-      "squad_with_user_id": "7138"
-    }
-  ],
-  "fairy_in_theater_info": [
-    {
-      "user_id": "20139",
-      "team_id": "1",
-      "fairy_with_user_id": "201023"
-    },
-    {
-      "user_id": "20139",
-      "team_id": "2",
-      "fairy_with_user_id": "215264"
-    },
-    {
-      "user_id": "20139",
-      "team_id": "3",
-      "fairy_with_user_id": "201022"
-    },
-    {
-      "user_id": "20139",
-      "team_id": "4",
-      "fairy_with_user_id": "593686"
-    },
-    {
-      "user_id": "20139",
-      "team_id": "5",
-      "fairy_with_user_id": "203442"
-    },
-    {
-      "user_id": "20139",
-      "team_id": "6",
-      "fairy_with_user_id": "459625"
-    }
-  ],
-  "theater_exercise_info": {
-    "user_id": "20139",
-    "theater_area_id": "0",
-    "enemy_teams": "3,8,7,7,8,8,5,4,5,3",
-    "theater_teams": "1,2,3,4,5,6",
-    "theater_squads": "1,2,3",
-    "theater_squads_use_count": "3-6,2-4,1-3",
-    "theater_fairy_use_count": "12",
-    "battle_enemy_no": "9",
-    "battle_team": "0",
-    "battle_fairy": "0",
-    "battle_squads": "",
-    "last_battle_finish_time": "1564054232"
-  },
-  "theater_with_user_info": {
-    "41": {
-      "theater_id": "41",
-      "user_id": "20139",
-      "battle_pt": "43567",
-      "last_exercise_finish_time": "1562821122"
-    },
-    "42": {
-      "theater_id": "42",
-      "user_id": "20139",
-      "battle_pt": "22730",
-      "last_exercise_finish_time": "1562552028"
-    },
-    "43": {
-      "theater_id": "43",
-      "user_id": "20139",
-      "battle_pt": "105116",
-      "last_exercise_finish_time": "1562817002"
-    },
-    "44": {
-      "theater_id": "44",
-      "user_id": "20139",
-      "battle_pt": "444156",
-      "last_exercise_finish_time": "1564054235"
-    }
-  },
   "commander_with_user_info": {
     "user_id": "20139",
     "commander_emoji": "17",
@@ -13207,7 +14773,9 @@
     "skin": "205",
     "send_mail_time": "1566068400"
   },
-  "share_with_user_info": { "last_time": "1566140400" },
+  "share_with_user_info": {
+    "last_time": "1566140400"
+  },
   "auto_mission_act_info": null,
   "friend_act_info": {
     "friend_guns": [],

@@ -3,3 +3,6 @@
 *.sqd
 *.equip
 *.gun
+bin/Debug/userdata/userinfo
+*.brvf
+*.txt

@@ -25,7 +25,9 @@ namespace GFBattleTester
 {
     public partial class Form1 : Form
     {
+        string[] Languages = { "Korean","Japanese"};
         
+        string battlespot = "983";
         public bool getUserinfoFromServer = false;
         public static Form1 frm;
         serveraccess serv ;
@@ -51,14 +53,19 @@ namespace GFBattleTester
         public List<string> gunName = new List<string>();
         HttpListener listener = new HttpListener();
         Thread thread = new Thread(new ParameterizedThreadStart(WorkerThread));
-        
+        JObject lang_data = new JObject();
+
         ManualResetEvent _pauseEvent = new ManualResetEvent(false);
         static JObject userinfo = new JObject();
         JObject enemy_team_info = new JObject();
         JObject enemy_character_info = new JObject();
+        JObject Theater_data = new JObject();
         JArray gunstatdata = new JArray();
         JObject attribute = new JObject();
         JObject grow = new JObject();
+        JObject missionactinfo = new JObject();
+        JArray spotactinfo = new JArray();
+        JObject setting = new JObject();
         //JObject test_userinfo = JObject.Parse(File.ReadAllText("data/json/userinfo_test.json"));
         long[] gun_exp_table = {0,100,300,400,600,1000,1500,2100,2800,3600,4500,5500,6600,7800,9100,10500,
         12000,13600,15300,17100,19000,21000,23000,25300,27600,30000,32500,35100,37900,41000,44400,48600,
@@ -75,7 +82,7 @@ namespace GFBattleTester
         2227200,2363500,2505900,2654400,2809000,2970100,3137800,3312300,3493800,3682300,3877800,4080800,4291400,4509600,4735800,4970000,
         5212500,5463300,5722800,5990800,6267800,6553800,6849300,7154000,7468500,7792500,8127000,8471000,8826000,9191000,9567000,9954000,
         10352000,10761000,11182000,11614000,12058000,12514000,12983000,13464000,13957000,14463000,15000000};
-        int[] sqdID = { 227, 7615, 7138, 24369, 28011 };
+        int[] sqdID = { 227, 7615, 7138, 24369, 28011, 99999 };
         //HttpServer httpServer = new HttpServer(8080, Routes.GET);
         int[] gun_position = { -1, 7, 12, 17, 8, 13, 18, 9, 14, 19 }; //인덱스 = 키패드 배열, 값= 클라이언트상 값
         //Thread thread_http = new Thread(new ThreadStart(frm.httpServer.Listen));
@@ -85,6 +92,7 @@ namespace GFBattleTester
         int[] squad_AGS30_defaultstat = { 27, 49, 67, 130 };
         int[] squad_2B14_defaultstat = { 51, 20, 46, 54 };
         int[] squad_M2_defaultstat = { 38, 17, 40, 61 };
+        int[] squad_QLZ04_defaultstat = { 26,46,63,112};
         int 살상력 = 0, 파쇄력 = 1, 정밀성 = 2, 장전 = 3;
         int battleStarttime = 0;
 
@@ -107,26 +115,52 @@ namespace GFBattleTester
         }
         private void AddLog(string text)
         {
-            LogTextBox.AppendText(string.Format("[{0}]{1}" + Environment.NewLine, DateTime.Now.ToString("yyyy.MM.dd HH:mm:ss"), text));
+            if(!nolog_checkbox.Checked)
+                LogTextBox.AppendText(string.Format("[{0}]{1}" + Environment.NewLine, DateTime.Now.ToString("yyyy.MM.dd HH:mm:ss"), text));
 
         }
 
         public Form1()
         {
             InitializeComponent();
-            frm = this;
-            
+            frm = this;            
             CheckForIllegalCrossThreadCalls = false;
         }
         private void Form1_Load(object sender, EventArgs e)
         {
             
-            updatecheck();
+            try
+            {           
+                setting = JObject.Parse(File.ReadAllText(@"data/json/settings.json"));
+                showdetailLog_checkbox.Checked = bool.Parse(setting["showDetailLog"].ToString());
+                updatecheck_checkbox.Checked = bool.Parse(setting["checkUpdate"].ToString());
+                nolog_checkbox.Checked = bool.Parse(setting["disableLog"].ToString());
+                if (!File.Exists(@"data/lang/" + setting["language"].ToString() + ".json"))
+                {
+                    MessageBox.Show("Cannot find setted language file.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Close();
+                }
+                lang_data = JObject.Parse(File.ReadAllText(@"data/lang/" + setting["language"].ToString() + ".json"));
+            }
+            catch
+            {
+                MessageBox.Show("Failed to load setting data", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            if(updatecheck_checkbox.Checked)
+                updatecheck();
             try
             {
                 string guninfofile = File.ReadAllText(@"data/info_texts/guns.b64");
                 string mission = File.ReadAllText("data/info_texts/mission.b64");
-                
+
+                System.IO.DirectoryInfo di = new System.IO.DirectoryInfo(@"data/lang");
+                System.IO.FileInfo[] fi = di.GetFiles("*.json");
+                foreach(var a in fi)
+                {
+                    languageList_Combobox.Items.Add(Path.GetFileNameWithoutExtension(a.FullName));
+                }
+                languageList_Combobox.SelectedItem = setting["language"].ToString();
+                Set_Lang();
                 JObject spotinfo = JObject.Parse(File.ReadAllText(@"data/json/spot_info.json"));
                 guninfofile = Encoding.UTF8.GetString(Convert.FromBase64String(guninfofile));
                 mission = Encoding.UTF8.GetString(Convert.FromBase64String(mission));
@@ -135,6 +169,11 @@ namespace GFBattleTester
 
                 enemy_team_info = JObject.Parse(File.ReadAllText(@"data/json/enemy_team_info.json"));
                 userinfo = JObject.Parse(File.ReadAllText(@"data/json/userinfo.json"));
+                Theater_data = JObject.Parse(File.ReadAllText(@"data/json/theater_data.json"));
+                missionactinfo = new JObject((JObject)userinfo["mission_act_info"]);
+                spotactinfo = new JArray((JArray)userinfo["spot_act_info"]);
+                userinfo["mission_act_info"] = null;
+                userinfo["spot_act_info"] = null;
                 enemy_character_info = JObject.Parse(File.ReadAllText(@"data/json/enemy_character_type_info.json"));
                 string[] guninfofile_split = guninfofile.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
                 gun_info_json_1 = JObject.Parse(File.ReadAllText(@"data/json/default_gun.json"));
@@ -153,6 +192,8 @@ namespace GFBattleTester
                 ChangeEnemyBossHP();
                 equip = Encoding.UTF8.GetString(Convert.FromBase64String(File.ReadAllText("data/info_texts/equip.b64")));
                 string[] temp = equip.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+                commander_name.Text = userinfo["user_info"]["name"].ToString();
+                commander_exp.Text = userinfo["user_info"]["experience"].ToString();
                 foreach (string a in temp)
                 {
                     if (a.Split(',')[0].Split('-')[1].StartsWith("1"))
@@ -250,6 +291,37 @@ namespace GFBattleTester
                 gunid_4_combobox.SelectedIndex = 3;
                 gunid_5_combobox.SelectedIndex = 4;
 
+                {
+                    sqd_1_damage.Minimum = squad_BGM71_defaultstat[살상력];
+                    sqd_1_break.Minimum = squad_BGM71_defaultstat[파쇄력];
+                    sqd_1_hit.Minimum = squad_BGM71_defaultstat[정밀성];
+                    sqd_1_reload.Minimum = squad_BGM71_defaultstat[장전];
+
+                    sqd_2_damage.Minimum = squad_AGS30_defaultstat[살상력];
+                    sqd_2_break.Minimum = squad_AGS30_defaultstat[파쇄력];
+                    sqd_2_hit.Minimum = squad_AGS30_defaultstat[정밀성];
+                    sqd_2_reload.Minimum = squad_AGS30_defaultstat[장전];
+
+                    sqd_3_damage.Minimum = squad_2B14_defaultstat[살상력];
+                    sqd_3_break.Minimum = squad_2B14_defaultstat[파쇄력];
+                    sqd_3_hit.Minimum = squad_2B14_defaultstat[정밀성];
+                    sqd_3_reload.Minimum = squad_2B14_defaultstat[장전];
+
+                    sqd_4_damage.Minimum = squad_M2_defaultstat[살상력];
+                    sqd_4_break.Minimum = squad_M2_defaultstat[파쇄력];
+                    sqd_4_hit.Minimum = squad_M2_defaultstat[정밀성];
+                    sqd_4_reload.Minimum = squad_M2_defaultstat[장전];
+
+                    sqd_5_damage.Minimum = squad_AT4_defaultstat[살상력];
+                    sqd_5_break.Minimum = squad_AT4_defaultstat[파쇄력];
+                    sqd_5_hit.Minimum = squad_AT4_defaultstat[정밀성];
+                    sqd_5_reload.Minimum = squad_AT4_defaultstat[장전];
+
+                    sqd_6_damage.Minimum = squad_QLZ04_defaultstat[살상력];
+                    sqd_6_break.Minimum = squad_QLZ04_defaultstat[파쇄력];
+                    sqd_6_hit.Minimum = squad_QLZ04_defaultstat[정밀성];
+                    sqd_6_reload.Minimum = squad_QLZ04_defaultstat[장전];
+                }
                 setSquadInfo(false); //중장비 초기화
                 SetGunInfo(false); //인형 초기화
                 {
@@ -277,16 +349,162 @@ namespace GFBattleTester
                     sqd_5_break.Minimum = squad_AT4_defaultstat[파쇄력];
                     sqd_5_hit.Minimum = squad_AT4_defaultstat[정밀성];
                     sqd_5_reload.Minimum = squad_AT4_defaultstat[장전];
+
+                    sqd_6_damage.Minimum = squad_QLZ04_defaultstat[살상력];
+                    sqd_6_break.Minimum = squad_QLZ04_defaultstat[파쇄력];
+                    sqd_6_hit.Minimum = squad_QLZ04_defaultstat[정밀성];
+                    sqd_6_reload.Minimum = squad_QLZ04_defaultstat[장전];
                 }
                 enable_set_sqd();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "파일 로드 실패", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show(ex.ToString(), lang_data["fileload_failed_msg"].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 Close();
             }
             UpdatePosTile(null, null);
+            
         }
+        private void Set_Lang()
+        {           
+            for(int i=1; i <= 5; i++)
+            {
+                Label gunid = (Label)Controls.Find("gunid_" + i.ToString(),true)[0];
+                gunid.Text = lang_data["gun_id"].ToString();
+                Label gunskin = (Label)Controls.Find("gunskin_" + i.ToString(), true)[0];
+                gunskin.Text = lang_data["skin"].ToString();
+                Label gunlv = (Label)Controls.Find("gunlv_" + i.ToString(), true)[0];
+                gunlv.Text = lang_data["Level"].ToString();
+                Label gunhp = (Label)Controls.Find("gunhp_" + i.ToString(), true)[0];
+                gunhp.Text = lang_data["Health"].ToString();
+                Label gunfire = (Label)Controls.Find("gunfire_" + i.ToString(), true)[0];
+                gunfire.Text = lang_data["fire"].ToString();
+                Label gundodge = (Label)Controls.Find("gundodge_" + i.ToString(), true)[0];
+                gundodge.Text = lang_data["dodge"].ToString();
+                Label gunfirespeed = (Label)Controls.Find("gunfirespeed_" + i.ToString(), true)[0];
+                gunfirespeed.Text = lang_data["fire_speed"].ToString();
+                Label gunhit = (Label)Controls.Find("gunhit_" + i.ToString(), true)[0];
+                gunhit.Text = lang_data["hit"].ToString();
+                Label gundummy = (Label)Controls.Find("gundummy_" + i.ToString(), true)[0];
+                gundummy.Text = lang_data["gun_dummy"].ToString();
+                Label gunskill1 = (Label)Controls.Find("gunskill1_" + i.ToString(), true)[0];
+                gunskill1.Text = lang_data["skill_1_lv"].ToString();
+                Label gunskill2 = (Label)Controls.Find("gunskill2_" + i.ToString(), true)[0];
+                gunskill2.Text = lang_data["skill_2_lv"].ToString();
+                Label gunfavor = (Label)Controls.Find("gunfavor_" + i.ToString(), true)[0];
+                gunfavor.Text = lang_data["favor"].ToString();
+                Label gunpos = (Label)Controls.Find("gunpos_" + i.ToString(), true)[0];
+                gunpos.Text = lang_data["position"].ToString();
+                Button setbtn = (Button)Controls.Find("set_gunpos_btn_" + i.ToString(), true)[0];
+                setbtn.Text = lang_data["set"].ToString();
+                CheckBox gunoath = (CheckBox)Controls.Find("gunoath_" + i.ToString() + "_checkbox",true)[0];
+                gunoath.Text = lang_data["oath"].ToString();
+                Button resetstat = (Button)Controls.Find("gun_resetstat_" + i.ToString(), true)[0];
+                resetstat.Text = lang_data["reset_default_stat"].ToString();
+                CheckBox enable = (CheckBox)Controls.Find("enable_" + i.ToString(),true)[0];
+                enable.Text = lang_data["doll_no"+i.ToString()].ToString();
+                GroupBox gun_gb = (GroupBox)Controls.Find("groupBox" + i.ToString(), true)[0];
+                gun_gb.Text = lang_data["doll_no" + i.ToString()].ToString();
+                GroupBox equip_gb = (GroupBox)Controls.Find("groupBox_equip_" + i.ToString(), true)[0];
+                equip_gb.Text = lang_data["doll_no" + i.ToString()].ToString();
+                Button setequip_1 = (Button)Controls.Find("setEquip_" + i.ToString() + "1" , true)[0];
+                setequip_1.Text = lang_data["none_equip"].ToString();
+                Button setequip_2 = (Button)Controls.Find("setEquip_" + i.ToString() + "2", true)[0];
+                setequip_2.Text = lang_data["none_equip"].ToString();
+                Button setequip_3 = (Button)Controls.Find("setEquip_" + i.ToString() + "3", true)[0];
+                setequip_3.Text = lang_data["none_equip"].ToString();
+
+            }
+            for (int i = 1; i <= 6; i++)
+            {
+                Label sqdlv = (Label)Controls.Find("sqdlv_" + i.ToString(), true)[0];
+                sqdlv.Text = lang_data["Level"].ToString();
+                Label sqddam = (Label)Controls.Find("sqddamage_" + i.ToString(), true)[0];
+                sqddam.Text = lang_data["sqd_damage"].ToString();
+                Label sqdbrk = (Label)Controls.Find("sqdbreak_" + i.ToString(), true)[0];
+                sqdbrk.Text = lang_data["sqd_break"].ToString();
+                Label sqdhit = (Label)Controls.Find("sqdhit_" + i.ToString(), true)[0];
+                sqdhit.Text = lang_data["sqd_hit"].ToString();
+                Label sqdreload = (Label)Controls.Find("sqdreload_" + i.ToString(), true)[0];
+                sqdreload.Text = lang_data["sqd_reload"].ToString();
+                Label sqdskill_1 = (Label)Controls.Find("sqdskill1_" + i.ToString(), true)[0];
+                sqdskill_1.Text = lang_data["skill_1_lv"].ToString();
+                Label sqdskill_2 = (Label)Controls.Find("sqdskill2_" + i.ToString(), true)[0];
+                sqdskill_2.Text = lang_data["skill_2_lv"].ToString();
+                Label sqdskill_3 = (Label)Controls.Find("sqdskill3_" + i.ToString(), true)[0];
+                sqdskill_3.Text = lang_data["skill_3_lv"].ToString();
+
+            }
+            #region page1
+            tabControl1.TabPages[0].Text = lang_data["set_guns"].ToString();
+            groupBox6.Text = lang_data["settings"].ToString();
+            gun_save.Text = lang_data["save"].ToString();
+            gun_load.Text = lang_data["load"].ToString();
+            gun_loadfromserver.Text = lang_data["loadfromserver"].ToString();
+            gun_setfire.Text = lang_data["sally"].ToString();
+            gun_previewpos.Text = lang_data["preview_position"].ToString();
+            gun_apply.Text = lang_data["decide"].ToString();
+            #endregion
+
+            #region page2
+            tabControl1.TabPages[1].Text = lang_data["set_fire_suppert_unit"].ToString();
+            groupBox13.Text = lang_data["set"].ToString();
+            sqd_save.Text = lang_data["save"].ToString();
+            sqd_load.Text = lang_data["load"].ToString();
+            set_fire.Text = lang_data["set_fire"].ToString();
+            sqd_apply.Text = lang_data["decide"].ToString();
+            #endregion
+
+            #region page3
+            tabControl1.TabPages[2].Text = lang_data["set_equips"].ToString();
+            groupBox_equip_setting.Text = lang_data["set"].ToString();
+            equip_save.Text = lang_data["save"].ToString();
+            equip_load.Text = lang_data["load"].ToString();
+            equip_removeall.Text = lang_data["remove_all_equip"].ToString();
+            equip_autoapply_desc.Text = lang_data["equip_autoapply_desc"].ToString();
+            #endregion
+
+            #region page4
+            tabControl1.TabPages[3].Text = lang_data["set_battle"].ToString();
+            server_applyID.Text = lang_data["apply"].ToString();
+            server_viewBattlelog.Text = lang_data["view_battleLog"].ToString();
+            server_referenceID.Text = lang_data["enemy_id_reference"].ToString();
+            server_information.Text = lang_data["server_info"].ToString();
+            server_hideip.Text = lang_data["hide_ip"].ToString();
+            server_log.Text = lang_data["server_log"].ToString();
+            server_mode.Text = lang_data["server_mode"].ToString();
+            normalbattle.Text = lang_data["server_mode_normal"].ToString();
+            theaterbattle.Text = lang_data["server_mode_theater"].ToString();
+            server_setport.Text = lang_data["port_setting"].ToString();
+            server_start.Text = lang_data["start_server"].ToString();
+            clearlog.Text = lang_data["clear_log"].ToString();
+            listView1.Columns[0].Text = lang_data["group"].ToString();
+            listView1.Columns[1].Text = lang_data["leader"].ToString();
+            listView1.Columns[2].Text = lang_data["list_boss_hp"].ToString();
+            listView1.Columns[3].Text = lang_data["list_leader_hp"].ToString();
+            listView1.Columns[4].Text = lang_data["list_mission_name"].ToString();
+            server_state.Text = lang_data["server_state_stopped"].ToString();
+            server_settedID.Text = lang_data["server_setted_id"].ToString();
+            server_ip.Text = lang_data["server_ip"].ToString();
+            server_port.Text = lang_data["server_port"].ToString();
+            enemy_group.Text = lang_data["enemy_group"].ToString();
+            boss_hp.Text = lang_data["boss_hp"].ToString();
+            #endregion
+
+            #region page5
+            tabControl1.TabPages[4].Text = lang_data["set_etc"].ToString();
+            etc_basicinformation.Text = lang_data["basic_information"].ToString();
+            com_name.Text = lang_data["commander_name"].ToString();
+            com_exp.Text = lang_data["commander_exp"].ToString();
+            etc_progsetting.Text = lang_data["program_setting"].ToString();
+            showdetailLog_checkbox.Text = lang_data["show_detailLog"].ToString();
+            updatecheck_checkbox.Text = lang_data["chech_update"].ToString();
+            nolog_checkbox.Text = lang_data["no_log"].ToString();
+            #endregion
+
+          
+        }
+
         string getFileSizeMD5(string path)
         {
             try
@@ -348,7 +566,7 @@ namespace GFBattleTester
                 }
                 if (!isLatest)
                 {
-                    if (MessageBox.Show("데이터파일의 업데이트가 필요합니다. 업데이트를 진행할까요?", "업데이트 있음", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show(lang_data["update_available_msg"].ToString(), lang_data["update_available"].ToString(), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         //this.Opacity = 0;
                         updater updform = new updater(this);
@@ -361,7 +579,7 @@ namespace GFBattleTester
             }
             catch (Exception ex)
             {
-                MessageBox.Show("업데이트 확인에 실패했습니다." + Environment.NewLine + ex.ToString(), "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(lang_data["update_check_failed_msg"].ToString() + Environment.NewLine + ex.ToString(), lang_data["error"].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         string CodeToMissionName(int code)
@@ -562,28 +780,36 @@ namespace GFBattleTester
         {
             if (enemy_team_id_combobox.Text == string.Empty)
             {
-                MessageBox.Show("적 그룹을 선택해주세요.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(lang_data["select_enemygroup_msg"].ToString(), lang_data["error"].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             else if (!gunsaved)
             {
-                MessageBox.Show("먼저 인형설정에서 진형을 설정 후 \"결정\" 버튼을 눌러주세요.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(lang_data["set_gun_first_msg"].ToString(), lang_data["error"].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             else
             {
                 if (!IsTcpPortAvailable(Convert.ToInt16(portnum.Value)))
                 {
-                    MessageBox.Show("선택한 포트 " + portnum.Value.ToString() + "번이 현제 다른 프로세스에 의해 사용 중입니다. 다른 포트번호를 설정해 주세요.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(string.Format(lang_data["port_already_using_msg"].ToString(), portnum.Value.ToString()) , lang_data["error"].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
                 else
                 {
                     try
                     {
-                        
-                        userinfo["spot_act_info"][2]["enemy_team_id"] = enemy_team_id_combobox.Text;
-                        userinfo["spot_act_info"][2]["boss_hp"] = Boss_HP_textbox.Value.ToString();
+                        int i=0;
+                        for (i = 0; i < spotactinfo.Count(); i++)
+                        {
+                            if (spotactinfo[i]["spot_id"].ToString() == battlespot)
+                            {
+                                spotactinfo[i]["enemy_team_id"] = enemy_team_id_combobox.Text;
+                                spotactinfo[i]["boss_hp"] = Boss_HP_textbox.Value.ToString();
+                                break;
+                            }                            
+                        }
+                       
                         //if (enemy_team_info[])              
                         listener.Prefixes.Add(string.Format("http://*:{0}/", portnum.Value.ToString()));
                         //listener.Prefixes.Add("https://+/");
@@ -596,15 +822,15 @@ namespace GFBattleTester
                         }
 
 
-                        label117.Text = "서버 상태: 실행 중";
-                        if (!checkBox1.Checked)
-                            label119.Text = "서버 IP: " + GetLocalIP();
-                        label120.Text = "서버 포트: " + portnum.Value.ToString();
-                        AddLog((checkBox1.Checked ? "***.***.***.***" : GetLocalIP()) + ":" + portnum.Value.ToString() + " 에서 서버 시작됨; 적 그룹 ID:" + userinfo["spot_act_info"][2]["enemy_team_id"].ToString());
-
+                        server_state.Text = lang_data["server_state_running"].ToString();
+                        if (!server_hideip.Checked)
+                            server_ip.Text = lang_data["server_ip"].ToString() + GetLocalIP();
+                        server_port.Text = lang_data["server_port"].ToString() + portnum.Value.ToString();
+                        AddLog(string.Format(lang_data["server_started_log_msg"].ToString(), server_hideip.Checked ? "***.***.***.***" : GetLocalIP(), portnum.Value.ToString(), spotactinfo[i]["enemy_team_id"].ToString()));
+                        
 
                         File.WriteAllText(@"data/port", portnum.Value.ToString());
-                        button5.Enabled = false;
+                        server_start.Enabled = false;
                         portnum.Enabled = false;
                         return true;
                     }
@@ -681,6 +907,8 @@ namespace GFBattleTester
                 ResponceProcessBinary(ctx, cert, false, true);
             }
             frm.AddLog("ClientIP: " + ctx.Request.RemoteEndPoint.Address.ToString() + "; Request: " + uri);
+            if (frm.showdetailLog_checkbox.Checked && ctx.Request.HttpMethod.ToString() == "POST")
+                frm.AddLog("Client_Request: " + Encoding.UTF8.GetString(Client_Req_data));
 
             if (!frm.getUserinfoFromServer) //!유저정보
             {                                                          
@@ -700,8 +928,39 @@ namespace GFBattleTester
                 }
                 else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.getuserinfo)
                 {
-                    frm.AddLog("유저 정보 취득");
+                    frm.AddLog(frm.lang_data["get_userinfo_log"].ToString());
+                    Clipboard.SetText(userinfo.ToString());
+                    if (frm.normalbattle.Checked)
+                    {
+                        userinfo["mission_act_info"] = new JObject(frm.missionactinfo);
+                        userinfo["spot_act_info"] = new JArray(frm.spotactinfo);
+                    }
+                    else
+                    {
+                        userinfo["mission_act_info"] = null;
+                        userinfo["spot_act_info"] = null;
+                    }
                     ResponceProcessBinary(ctx, Encoding.UTF8.GetBytes(userinfo.ToString()), true, false);
+                }
+                else if(ctx.Request.Url.LocalPath == GF_URLs_Kr.GetTheaterData)
+                {
+                    ResponceProcessBinary(ctx, Encoding.UTF8.GetBytes(frm.Theater_data.ToString()), true, false);
+                }
+                else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.GetTheaterBalance)
+                {
+                    string data = "{\"incident_pt\":0}";
+                    ResponceProcessBinary(ctx, Encoding.UTF8.GetBytes(data), true, false);
+                }
+                else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.GetTheaterPrize)
+                {
+                    string data = "[{ \"type\":2,\"occupied_ids\":52}]";
+                    ResponceProcessBinary(ctx, Encoding.UTF8.GetBytes(data), true, false);
+                }
+                else if(ctx.Request.Url.LocalPath == GF_URLs_Kr.startTheaterBattle)
+                {
+                    JObject clientdata = JObject.Parse(Packet.Decode(Outdatacode, signkey));
+                    frm.AddLog(string.Format(frm.lang_data["echelon_out"].ToString() , clientdata["team_id"].ToString()));
+                    ResponceProcessBinary(ctx, new byte[1] { 0x31 }/*"1"*/, false, false);
                 }
                 else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.battlefinish)
                 {
@@ -710,6 +969,14 @@ namespace GFBattleTester
                     //Clipboard.SetText(clientdata.ToString());
                     JObject saveJson = new JObject();
                     JArray guninfo = new JArray();
+                    int index = 0;
+                    for (index = 0; index < frm.spotactinfo.Count(); index++)
+                    {
+                        if (frm.spotactinfo[index]["spot_id"].ToString() == frm.battlespot)
+                        {
+                            break;
+                        }
+                    }
                     guninfo.Add(JObject.Parse("{" + string.Format(@"'id':'1','gunid':'{0}','life':'{1}','lifeBefore':'{4}','pos':'{2}','isUsed':'{3}'", frm.gun_info_json_1["gun_id"].ToString(), clientdata["guns"][0]["life"].ToString(), frm.gun_info_json_1["position"].ToString(), frm.gun_info_json_1["team_id"].ToString(), frm.gun_info_json_1["life"].ToString()) + "}"));
                     guninfo.Add(JObject.Parse("{" + string.Format(@"'id':'2','gunid':'{0}','life':'{1}','lifeBefore':'{4}','pos':'{2}','isUsed':'{3}'", frm.gun_info_json_2["gun_id"].ToString(), clientdata["guns"].Count() > 1 ? clientdata["guns"][1]["life"].ToString() : "-1", frm.gun_info_json_2["position"].ToString(), frm.gun_info_json_2["team_id"].ToString(), frm.gun_info_json_2["life"].ToString()) + "}"));
                     guninfo.Add(JObject.Parse("{" + string.Format(@"'id':'3','gunid':'{0}','life':'{1}','lifeBefore':'{4}','pos':'{2}','isUsed':'{3}'", frm.gun_info_json_3["gun_id"].ToString(), clientdata["guns"].Count() > 2 ? clientdata["guns"][2]["life"].ToString() : "-1", frm.gun_info_json_3["position"].ToString(), frm.gun_info_json_3["team_id"].ToString(), frm.gun_info_json_3["life"].ToString()) + "}"));
@@ -728,7 +995,7 @@ namespace GFBattleTester
                     saveJson.Add("totalDamageToEnemy", clientdata["1000"]["24"].ToString());
                     saveJson.Add("MaxDamageToEnemy", clientdata["1000"]["41"].ToString());
                     saveJson.Add("EnemyLeaderID", clientdata["1000"]["33"].ToString());
-                    saveJson.Add("EnemyGroupID", userinfo["spot_act_info"][2]["enemy_team_id"].ToString());
+                    saveJson.Add("EnemyGroupID", frm.spotactinfo[index]["enemy_team_id"].ToString());
                     saveJson.Add("unknown", Xxtea.XXTEA.EncryptToBase64String(Encoding.UTF8.GetBytes(clientdata["1000"].ToString()), Encoding.UTF8.GetBytes("우중비모")));
                     File.WriteAllText(@"BattleLog/" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + "_battlelog.brvf", saveJson.ToString());
                     JArray gun_ids = JArray.Parse(clientdata["guns"].ToString());
@@ -801,12 +1068,26 @@ namespace GFBattleTester
                     string outtdata = a.ToString();
                     outtdata = outtdata.Replace("\n", String.Empty);
                     outtdata = outtdata.Replace("\r", String.Empty);
-                    ResponceProcessBinary(ctx, Encoding.UTF8.GetBytes(a.ToString()), true, false);
+                    ResponceProcessBinary(ctx, Encoding.UTF8.GetBytes(a.ToString()), true, false);        
+                    
+                }
+                else if(ctx.Request.Url.LocalPath == GF_URLs_Kr.endTheaterBattle)
+                {
+                    string data = "{\"theater_end_exercise\":[],\"next_enemy_no\":\"2\"}";
+                    ResponceProcessBinary(ctx, Encoding.UTF8.GetBytes(data), true, false);
+                }
+                else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.TheaterBossBattle)
+                {
+                    Random rdm = new Random();
+                    int score = rdm.Next(1, 999999);
+                    string data = "{\"boss_score\":" + rdm.Next(1, 999999).ToString()+ ",\"battle_pt\":"+score.ToString()+",\"material_num\":1844}";
+                    ResponceProcessBinary(ctx, Encoding.UTF8.GetBytes(data), true, false);
                 }
                 else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.downloadsucsess)
                 {
                     ResponceProcessBinary(ctx, Encoding.ASCII.GetBytes("1"), false, false);
-                }//wc.Headers.Add("Accept","*/*");
+                }
+                //wc.Headers.Add("Accept","*/*");
                  /*else if (ctx.Request.Url.AbsoluteUri.Contains("sn-list.girlfrontline.co.kr") && ctx.Request.Url.LocalPath.Contains(".txt"))
                  {
                      WebClient wc = new WebClient();
@@ -824,21 +1105,21 @@ namespace GFBattleTester
                     JObject temp = JObject.Parse(Packet.Decode(Outdatacode, signkey));
                     File.AppendAllText("CrashLog/client_crashlog_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".txt", temp.ToString());
                     ResponceProcessBinary(ctx, Encoding.ASCII.GetBytes("1"), false, false);
-                    frm.AddLog("(CrashReport) 클라이언트 충돌 보고서가 /CrashLog 폴더에 저장되었습니다.");
+                    frm.AddLog("(CrashReport)"+frm.lang_data["crashlog_log_msg"].ToString());
                 }
                 else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.abortmission)
                 {
-                    frm.AddLog("클라이언트 강제 리셋");
+                    frm.AddLog(frm.lang_data["client_force_reset_log_msg"].ToString());
                     ResponceProcessBinary(ctx, Encoding.ASCII.GetBytes("error:3"), false, false);
                 }
                 else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.teammove || ctx.Request.Url.LocalPath == GF_URLs_Kr.squadMove)
                 {
-                    frm.AddLog("제대 이동: " + Packet.Decode(Outdatacode, signkey));
+                    frm.AddLog(frm.lang_data["move_echelon"].ToString() + Packet.Decode(Outdatacode, signkey));
                     ResponceProcessBinary(ctx, Encoding.ASCII.GetBytes("1"), false, false);
                 }
                 else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.squadSwitchChange)
                 {
-                    frm.AddLog("화력소대 지원 스위치 조작: " + Packet.Decode(Outdatacode, signkey));
+                    frm.AddLog(frm.lang_data["fire_unit_switch_change"].ToString() + Packet.Decode(Outdatacode, signkey));
                     ResponceProcessBinary(ctx, Encoding.ASCII.GetBytes("1"), false, false);
                 }
                 /*
@@ -856,7 +1137,7 @@ namespace GFBattleTester
                 }*/
                 else if (ctx.Request.RawUrl.Contains("gf-game.girlfrontline.co.kr"))
                 {
-                    frm.AddLog("클라이언트 강제 리셋");
+                    frm.AddLog(frm.lang_data["client_force_reset_log_msg"].ToString());
                     ResponceProcessBinary(ctx, Encoding.ASCII.GetBytes("error:3"), false, false);
                 }
                 else
@@ -1016,20 +1297,20 @@ namespace GFBattleTester
                             string Serverpacket = Encoding.UTF8.GetString(b);
                             if (ctx.Request.Url.LocalPath == GF_URLs_Kr.index_version)
                             {
-                                frm.serv.AddLog("버전 정보 취득..");                               
+                                frm.serv.AddLog(frm.lang_data["get_versioninfo_log"].ToString()) ;                               
                             }
                             else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.getToken)
                             {
                                 Packet.init();
                                 if (Serverpacket.Contains("error"))
                                 {
-                                    frm.serv.AddLog("로그인...");
+                                    frm.serv.AddLog(frm.lang_data["login_log"].ToString());
                                 }
                                 else
                                 {                                   
                                     JObject tok = JObject.Parse(Packet.Decode(Serverpacket, "yundoudou"));
                                     frm._token = tok["sign"].ToString();
-                                    frm.serv.AddLog("토큰 취득 성공: "+frm._token);
+                                    frm.serv.AddLog(frm.lang_data["get_token_success_log"].ToString());
                                 }
                             }
                             else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.getuserinfo)
@@ -1104,7 +1385,8 @@ namespace GFBattleTester
             response.ContentLength64 = data.Length; //데이터 길이 설정
             Stream output = response.OutputStream;
             output.Write(data, 0, data.Length);
-            //frm.AddLog("Responce: " + Encoding.UTF8.GetString(data));
+            if(frm.showdetailLog_checkbox.Checked)
+                frm.AddLog("Responce: " + Encoding.UTF8.GetString(data));
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -1141,33 +1423,62 @@ namespace GFBattleTester
                 {
                     bosshp = int.Parse(enemy_character_info[enemy_team_info[enemy_team_id_combobox.Text]["enemy_leader"].ToString()]["boss_hp"].ToString());
                     Boss_HP_textbox.Value = bosshp;
-                    userinfo["spot_act_info"][2]["enemy_team_id"] = enemy_team_id_combobox.Text;
-                    userinfo["spot_act_info"][2]["boss_hp"] = Boss_HP_textbox.Value.ToString();
-                    AddLog("적 그룹 변경: " + userinfo["spot_act_info"][2]["enemy_team_id"].ToString());
-                    label118.Text = "설정된 적 그룹: " + enemy_team_id_combobox.Text;
+                    for (int i = 0; i < spotactinfo.Count(); i++)
+                    {
+                        if (spotactinfo[i]["spot_id"].ToString() == battlespot)
+                        {
+                            spotactinfo[i]["enemy_team_id"] = enemy_team_id_combobox.Text;
+                            spotactinfo[i]["boss_hp"] = Boss_HP_textbox.Value.ToString();
+                            AddLog(lang_data["changed_groupID"].ToString() + spotactinfo[i]["enemy_team_id"].ToString());
+                            break;
+                        }
+                    }
+                    JObject p = new JObject();
+                    for(int k = 0; k< spotactinfo.Count(); k++)
+                    {
+                        p.Add(spotactinfo[k]["spot_id"].ToString(), spotactinfo[k]);
+                    }
+                    missionactinfo["spot"].Replace(JsonConvert.SerializeObject(p,Formatting.None));
+                    //MessageBox.Show(userinfo["mission_act_info"]["spot"].ToString());
+                    server_settedID.Text = lang_data["server_setted_id"].ToString() + enemy_team_id_combobox.Text;
                     File.WriteAllText(@"data/last_enemyID", enemy_team_id_combobox.Text);
                 }
                 else
-                    MessageBox.Show("숫자만 입력해주세요.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(lang_data["enter_only_number_msg"].ToString(), lang_data["error"].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             catch (NullReferenceException)
             {
-                if (MessageBox.Show("적 데이터베이스에 아직 등록되어 있지 않은 그룹 번호입니다. 강제로 설정할까요?", "ID 찾을 수 없음", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                if (MessageBox.Show(lang_data["db_notfound_msg"].ToString(), lang_data["id_cannotfound"].ToString(), MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
                     bosshp = 0;
                     Boss_HP_textbox.Value = bosshp;
-                    userinfo["spot_act_info"][2]["enemy_team_id"] = enemy_team_id_combobox.Text;
-                    userinfo["spot_act_info"][2]["boss_hp"] = Boss_HP_textbox.Value.ToString();
-                    label118.Text = "설정된 적 그룹: " + enemy_team_id_combobox.Text;
-                    AddLog("적 그룹 변경: " + userinfo["spot_act_info"][2]["enemy_team_id"].ToString());
+                    for(int i=0; i<spotactinfo.Count(); i++)
+                    {
+                        if(spotactinfo[i]["spot_id"].ToString() == battlespot)
+                        {
+                            spotactinfo[i]["enemy_team_id"] = enemy_team_id_combobox.Text;
+                            spotactinfo[i]["boss_hp"] = Boss_HP_textbox.Value.ToString();
+                            AddLog(lang_data["changed_groupID"].ToString() + spotactinfo[i]["enemy_team_id"].ToString());
+                            break;
+                        }                        
+                    }                   
+                    server_settedID.Text = lang_data["server_setted_id"].ToString() + enemy_team_id_combobox.Text;
+                    
                 }
             }
         }
         void ChangeEnemyBossHP()
         {
-            userinfo["spot_act_info"][2]["boss_hp"] = Boss_HP_textbox.Value.ToString();
-            AddLog("보스 HP 변경: " + userinfo["spot_act_info"][2]["boss_hp"].ToString());
+            for (int i = 0; i < spotactinfo.Count(); i++)
+            {
+                if (spotactinfo[i]["spot_id"].ToString() == battlespot)
+                {
+                    spotactinfo[i]["boss_hp"] = Boss_HP_textbox.Value.ToString();
+                    AddLog(lang_data["changed_bossHP"].ToString() + spotactinfo[i]["boss_hp"].ToString());
+                    break;
+                }
+            }                     
             File.WriteAllText(@"data/last_bossHP", Boss_HP_textbox.Value.ToString());
         }
         bool check_gun(int o)
@@ -1253,14 +1564,14 @@ namespace GFBattleTester
             }
             else if (duplicated)
             {
-                MessageBox.Show("중복되는 진형이 있습니다.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(lang_data["duplicate_formation_msg"].ToString(), lang_data["error"].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
             else if (gunid_1_combobox.SelectedIndex == -1 || gunid_2_combobox.SelectedIndex == -1
                 || gunid_3_combobox.SelectedIndex == -1 || gunid_4_combobox.SelectedIndex == -1
                 || gunid_5_combobox.SelectedIndex == -1)
             {
-                MessageBox.Show("인형 ID 입력칸에 오류가 있습니다.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(lang_data["gun_id_error_msg"].ToString(), lang_data["error"].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -1284,7 +1595,7 @@ namespace GFBattleTester
               gunid_5_combobox.SelectedIndex == gunid_3_combobox.SelectedIndex ||
               gunid_5_combobox.SelectedIndex == gunid_4_combobox.SelectedIndex ||
               gunid_5_combobox.SelectedIndex == gunid_1_combobox.SelectedIndex)
-                    MessageBox.Show("같은 인형을 중복 편성할 시 해당 인형의 스킬 발동에 문제가 생길 수 있습니다.", "경고", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(lang_data["gun_duplicate_skill_error_warning_msg"].ToString(), lang_data["warning"].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Information);
                 JArray gun_user_info = JArray.Parse(userinfo["gun_with_user_info"].ToString());
                 gun_user_info.RemoveAll();
                 for (int i = 1; i <= 5; i++)
@@ -1294,7 +1605,7 @@ namespace GFBattleTester
                 userinfo["gun_with_user_info"].Replace(gun_user_info);
                 //MessageBox.Show(Get_user_gun_info_json(1).ToString());
                 if (showMessageBox)
-                    MessageBox.Show("저장되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(lang_data["saved_msg"].ToString(), lang_data["alert"].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Information);
                 gunsaved = true;
             }
         }
@@ -1564,6 +1875,11 @@ namespace GFBattleTester
                 groupBox12.Enabled = true;
             else
                 groupBox12.Enabled = false;
+
+            if (sqdswitch_6.Checked)
+                groupBox21.Enabled = true;
+            else
+                groupBox21.Enabled = false;
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -1577,6 +1893,13 @@ namespace GFBattleTester
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
+            JObject sett = new JObject();
+            sett.Add("showDetailLog", showdetailLog_checkbox.Checked);
+            sett.Add("checkUpdate", updatecheck_checkbox.Checked);
+            sett.Add("disableLog", nolog_checkbox.Checked);
+            sett.Add("language", languageList_Combobox.SelectedItem.ToString());
+            File.WriteAllText(@"data/json/settings.json", sett.ToString());
+
             listener.Abort();
             if (thread.IsAlive)
             {
@@ -1642,7 +1965,7 @@ namespace GFBattleTester
             }
             catch (Exception ex)
             {
-                MessageBox.Show("파일을 불러오는 중에 오류가 발생했습니다." + Environment.NewLine + ex.ToString(), "불러오기 실패", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(lang_data["file_load_error_msg"].ToString() + Environment.NewLine + ex.ToString(), lang_data["load_failed"].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         void loadinfofromfile(JObject json)
@@ -1921,7 +2244,7 @@ namespace GFBattleTester
 
             JArray sqd = new JArray();
             JObject temp = new JObject();
-            JObject sqdSwitch = JObject.Parse(userinfo["mission_act_info"]["squad_info"].ToString());
+            JObject sqdSwitch = JObject.Parse(missionactinfo["squad_info"].ToString());
 
             #region SetData
             sqdSwitch["1"]["battleskill_switch"] = Convert.ToInt16(sqdswitch_1.Checked);
@@ -1929,8 +2252,10 @@ namespace GFBattleTester
             sqdSwitch["3"]["battleskill_switch"] = Convert.ToInt16(sqdswitch_3.Checked);
             sqdSwitch["4"]["battleskill_switch"] = Convert.ToInt16(sqdswitch_4.Checked);
             sqdSwitch["5"]["battleskill_switch"] = Convert.ToInt16(sqdswitch_5.Checked);
-            userinfo["mission_act_info"]["squad_info"] = sqdSwitch.ToString();
-            for (int i = 0; i < 5; i++)
+            sqdSwitch["6"]["battleskill_switch"] = Convert.ToInt16(sqdswitch_6.Checked);
+
+            missionactinfo["squad_info"].Replace(JsonConvert.SerializeObject(sqdSwitch, Formatting.None));
+            for (int i = 0; i < 6; i++)
             {
                 sqd.Add(userinfo["squad_with_user_info"][sqdID[i].ToString()]);
                 switch (i)
@@ -1995,12 +2320,25 @@ namespace GFBattleTester
                         sqd[i]["skill2"] = sqd_5_skill2.Value.ToString();
                         sqd[i]["skill3"] = sqd_5_skill3.Value.ToString();
                         break;
+                    case 5:
+                        sqd[i]["squad_id"] = (i + 1).ToString();
+                        sqd[i]["squad_exp"] = sqd_exp_table[Convert.ToInt16(sqd_6_lv.Value) - 1].ToString();
+                        sqd[i]["squad_level"] = sqd_6_lv.Value.ToString();
+                        sqd[i]["assist_damage"] = (sqd_6_damage.Value - squad_QLZ04_defaultstat[살상력]).ToString();
+                        sqd[i]["assist_reload"] = (sqd_6_reload.Value - squad_QLZ04_defaultstat[장전]).ToString();
+                        sqd[i]["assist_hit"] = (sqd_6_hit.Value - squad_QLZ04_defaultstat[정밀성]).ToString();
+                        sqd[i]["assist_def_break"] = (sqd_6_break.Value - squad_QLZ04_defaultstat[파쇄력]).ToString();
+                        sqd[i]["skill1"] = sqd_6_skill1.Value.ToString();
+                        sqd[i]["skill2"] = sqd_6_skill2.Value.ToString();
+                        sqd[i]["skill3"] = sqd_6_skill3.Value.ToString();
+                        break;
                 }
                 temp.Add(sqdID[i].ToString(), sqd[i]);
             }
-            userinfo["squad_with_user_info"].Replace(temp);
+            userinfo["squad_with_user_info"].Replace(temp);            
+            //Clipboard.SetText(userinfo["squad_with_user_info"].ToString());
             if (showConfirmMessage)
-                MessageBox.Show("저장되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(lang_data["saved_msg"].ToString(), lang_data["alert"].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Information);
             #endregion
 
         }
@@ -2009,7 +2347,7 @@ namespace GFBattleTester
             JObject savefile = new JObject();
             try
             {
-                for (int i = 0; i < 5; i++)
+                for (int i = 0; i < 6; i++)
                 {
                     savefile.Add("Squad" + (i + 1).ToString(), userinfo["squad_with_user_info"][sqdID[i].ToString()]);
                 }
@@ -2018,11 +2356,12 @@ namespace GFBattleTester
                 savefile.Add("switch3", Convert.ToInt16(sqdswitch_3.Checked));
                 savefile.Add("switch4", Convert.ToInt16(sqdswitch_4.Checked));
                 savefile.Add("switch5", Convert.ToInt16(sqdswitch_5.Checked));
+                savefile.Add("switch6", Convert.ToInt16(sqdswitch_6.Checked));
                 File.WriteAllText(path, savefile.ToString());
             }
             catch (Exception ex)
             {
-                MessageBox.Show("파일을 저장하는 중 오류가 발생했습니다." + Environment.NewLine + ex.ToString(), "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(lang_data["file_save_error_msg"].ToString() + Environment.NewLine + ex.ToString(), lang_data["error"].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         void loadSquadInfoFromFile(JObject json)
@@ -2030,60 +2369,182 @@ namespace GFBattleTester
             try
             {
                 #region LoadSqdDataFromJson
-                sqd_1_lv.Value = int.Parse(json["Squad1"]["squad_level"].ToString());
-                sqd_1_damage.Value = int.Parse(json["Squad1"]["assist_damage"].ToString()) + squad_BGM71_defaultstat[살상력];
-                sqd_1_reload.Value = int.Parse(json["Squad1"]["assist_reload"].ToString()) + squad_BGM71_defaultstat[장전];
-                sqd_1_hit.Value = int.Parse(json["Squad1"]["assist_hit"].ToString()) + squad_BGM71_defaultstat[정밀성];
-                sqd_1_break.Value = int.Parse(json["Squad1"]["assist_def_break"].ToString()) + squad_BGM71_defaultstat[파쇄력];
-                sqd_1_skill1.Value = int.Parse(json["Squad1"]["skill1"].ToString());
-                sqd_1_skill2.Value = int.Parse(json["Squad1"]["skill2"].ToString());
-                sqd_1_skill3.Value = int.Parse(json["Squad1"]["skill3"].ToString());
+                if(json["Squad1"] != null)
+                {
+                    json["Squad1"]["id"] = sqdID[0].ToString();
+                    sqd_1_lv.Value = int.Parse(json["Squad1"]["squad_level"].ToString());
+                    sqd_1_damage.Value = int.Parse(json["Squad1"]["assist_damage"].ToString()) + squad_BGM71_defaultstat[살상력];
+                    sqd_1_reload.Value = int.Parse(json["Squad1"]["assist_reload"].ToString()) + squad_BGM71_defaultstat[장전];
+                    sqd_1_hit.Value = int.Parse(json["Squad1"]["assist_hit"].ToString()) + squad_BGM71_defaultstat[정밀성];
+                    sqd_1_break.Value = int.Parse(json["Squad1"]["assist_def_break"].ToString()) + squad_BGM71_defaultstat[파쇄력];
+                    sqd_1_skill1.Value = int.Parse(json["Squad1"]["skill1"].ToString());
+                    sqd_1_skill2.Value = int.Parse(json["Squad1"]["skill2"].ToString());
+                    sqd_1_skill3.Value = int.Parse(json["Squad1"]["skill3"].ToString());
+                }
+                /*else
+                {
+                    sqd_1_lv.Value = 1;
+                    sqd_1_damage.Value = sqd_1_damage.Minimum;
+                    sqd_1_reload.Value = sqd_1_reload.Minimum;
+                    sqd_1_hit.Value = sqd_1_reload.Minimum;
+                    sqd_1_break.Value = sqd_1_break.Minimum;
+                    sqd_1_skill1.Value = 1;
+                    sqd_1_skill2.Value = 1;
+                    sqd_1_skill3.Value = 1;
+                }*/
 
-                sqd_2_lv.Value = int.Parse(json["Squad2"]["squad_level"].ToString());
-                sqd_2_damage.Value = int.Parse(json["Squad2"]["assist_damage"].ToString()) + squad_AGS30_defaultstat[살상력];
-                sqd_2_reload.Value = int.Parse(json["Squad2"]["assist_reload"].ToString()) + squad_AGS30_defaultstat[장전];
-                sqd_2_hit.Value = int.Parse(json["Squad2"]["assist_hit"].ToString()) + squad_AGS30_defaultstat[정밀성];
-                sqd_2_break.Value = int.Parse(json["Squad2"]["assist_def_break"].ToString()) + squad_AGS30_defaultstat[파쇄력];
-                sqd_2_skill1.Value = int.Parse(json["Squad2"]["skill1"].ToString());
-                sqd_2_skill2.Value = int.Parse(json["Squad2"]["skill2"].ToString());
-                sqd_2_skill3.Value = int.Parse(json["Squad2"]["skill3"].ToString());
+                if (json["Squad2"] != null)
+                {
+                    json["Squad2"]["id"] = sqdID[1].ToString();
+                    sqd_2_lv.Value = int.Parse(json["Squad2"]["squad_level"].ToString());
+                    sqd_2_damage.Value = int.Parse(json["Squad2"]["assist_damage"].ToString()) + squad_AGS30_defaultstat[살상력];
+                    sqd_2_reload.Value = int.Parse(json["Squad2"]["assist_reload"].ToString()) + squad_AGS30_defaultstat[장전];
+                    sqd_2_hit.Value = int.Parse(json["Squad2"]["assist_hit"].ToString()) + squad_AGS30_defaultstat[정밀성];
+                    sqd_2_break.Value = int.Parse(json["Squad2"]["assist_def_break"].ToString()) + squad_AGS30_defaultstat[파쇄력];
+                    sqd_2_skill1.Value = int.Parse(json["Squad2"]["skill1"].ToString());
+                    sqd_2_skill2.Value = int.Parse(json["Squad2"]["skill2"].ToString());
+                    sqd_2_skill3.Value = int.Parse(json["Squad2"]["skill3"].ToString());
+                }
+                /*else
+                {
+                    sqd_2_lv.Value = 1;
+                    sqd_2_damage.Value = sqd_2_damage.Minimum;
+                    sqd_2_reload.Value = sqd_2_reload.Minimum;
+                    sqd_2_hit.Value = sqd_2_reload.Minimum;
+                    sqd_2_break.Value = sqd_2_break.Minimum;
+                    sqd_2_skill1.Value = 1;
+                    sqd_2_skill2.Value = 1;
+                    sqd_2_skill3.Value = 1;
+                }*/
 
-                sqd_3_lv.Value = int.Parse(json["Squad3"]["squad_level"].ToString());
-                sqd_3_damage.Value = int.Parse(json["Squad3"]["assist_damage"].ToString()) + squad_2B14_defaultstat[살상력];
-                sqd_3_reload.Value = int.Parse(json["Squad3"]["assist_reload"].ToString()) + squad_2B14_defaultstat[장전];
-                sqd_3_hit.Value = int.Parse(json["Squad3"]["assist_hit"].ToString()) + squad_2B14_defaultstat[정밀성];
-                sqd_3_break.Value = int.Parse(json["Squad3"]["assist_def_break"].ToString()) + squad_2B14_defaultstat[파쇄력];
-                sqd_3_skill1.Value = int.Parse(json["Squad3"]["skill1"].ToString());
-                sqd_3_skill2.Value = int.Parse(json["Squad3"]["skill2"].ToString());
-                sqd_3_skill3.Value = int.Parse(json["Squad3"]["skill3"].ToString());
+                if (json["Squad3"] != null)
+                {
+                    json["Squad3"]["id"] = sqdID[2].ToString();
+                    sqd_3_lv.Value = int.Parse(json["Squad3"]["squad_level"].ToString());
+                    sqd_3_damage.Value = int.Parse(json["Squad3"]["assist_damage"].ToString()) + squad_2B14_defaultstat[살상력];
+                    sqd_3_reload.Value = int.Parse(json["Squad3"]["assist_reload"].ToString()) + squad_2B14_defaultstat[장전];
+                    sqd_3_hit.Value = int.Parse(json["Squad3"]["assist_hit"].ToString()) + squad_2B14_defaultstat[정밀성];
+                    sqd_3_break.Value = int.Parse(json["Squad3"]["assist_def_break"].ToString()) + squad_2B14_defaultstat[파쇄력];
+                    sqd_3_skill1.Value = int.Parse(json["Squad3"]["skill1"].ToString());
+                    sqd_3_skill2.Value = int.Parse(json["Squad3"]["skill2"].ToString());
+                    sqd_3_skill3.Value = int.Parse(json["Squad3"]["skill3"].ToString());
+                }
+               /* else
+                {
+                    sqd_3_lv.Value = 1;
+                    sqd_3_damage.Value = sqd_3_damage.Minimum;
+                    sqd_3_reload.Value = sqd_3_reload.Minimum;
+                    sqd_3_hit.Value = sqd_3_reload.Minimum;
+                    sqd_3_break.Value = sqd_3_break.Minimum;
+                    sqd_3_skill1.Value = 1;
+                    sqd_3_skill2.Value = 1;
+                    sqd_3_skill3.Value = 1;
+                }*/
 
-                sqd_4_lv.Value = int.Parse(json["Squad4"]["squad_level"].ToString());
-                sqd_4_damage.Value = int.Parse(json["Squad4"]["assist_damage"].ToString()) + squad_M2_defaultstat[살상력];
-                sqd_4_reload.Value = int.Parse(json["Squad4"]["assist_reload"].ToString()) + squad_M2_defaultstat[장전];
-                sqd_4_hit.Value = int.Parse(json["Squad4"]["assist_hit"].ToString()) + squad_M2_defaultstat[정밀성];
-                sqd_4_break.Value = int.Parse(json["Squad4"]["assist_def_break"].ToString()) + squad_M2_defaultstat[파쇄력];
-                sqd_4_skill1.Value = int.Parse(json["Squad4"]["skill1"].ToString());
-                sqd_4_skill2.Value = int.Parse(json["Squad4"]["skill2"].ToString());
-                sqd_4_skill3.Value = int.Parse(json["Squad4"]["skill3"].ToString());
+                if (json["Squad4"] != null)
+                {
+                    json["Squad4"]["id"] = sqdID[3].ToString();
+                    sqd_4_lv.Value = int.Parse(json["Squad4"]["squad_level"].ToString());
+                    sqd_4_damage.Value = int.Parse(json["Squad4"]["assist_damage"].ToString()) + squad_M2_defaultstat[살상력];
+                    sqd_4_reload.Value = int.Parse(json["Squad4"]["assist_reload"].ToString()) + squad_M2_defaultstat[장전];
+                    sqd_4_hit.Value = int.Parse(json["Squad4"]["assist_hit"].ToString()) + squad_M2_defaultstat[정밀성];
+                    sqd_4_break.Value = int.Parse(json["Squad4"]["assist_def_break"].ToString()) + squad_M2_defaultstat[파쇄력];
+                    sqd_4_skill1.Value = int.Parse(json["Squad4"]["skill1"].ToString());
+                    sqd_4_skill2.Value = int.Parse(json["Squad4"]["skill2"].ToString());
+                    sqd_4_skill3.Value = int.Parse(json["Squad4"]["skill3"].ToString());
+                }
+                /*else
+                {
+                    sqd_4_lv.Value = 1;
+                    sqd_4_damage.Value = sqd_4_damage.Minimum;
+                    sqd_4_reload.Value = sqd_4_reload.Minimum;
+                    sqd_4_hit.Value = sqd_4_reload.Minimum;
+                    sqd_4_break.Value = sqd_4_break.Minimum;
+                    sqd_4_skill1.Value = 1;
+                    sqd_4_skill2.Value = 1;
+                    sqd_4_skill3.Value = 1;
+                }*/
 
-                sqd_5_lv.Value = int.Parse(json["Squad5"]["squad_level"].ToString());
-                sqd_5_damage.Value = int.Parse(json["Squad5"]["assist_damage"].ToString()) + squad_AT4_defaultstat[살상력];
-                sqd_5_reload.Value = int.Parse(json["Squad5"]["assist_reload"].ToString()) + squad_AT4_defaultstat[장전];
-                sqd_5_hit.Value = int.Parse(json["Squad5"]["assist_hit"].ToString()) + squad_AT4_defaultstat[정밀성];
-                sqd_5_break.Value = int.Parse(json["Squad5"]["assist_def_break"].ToString()) + squad_AT4_defaultstat[파쇄력];
-                sqd_5_skill1.Value = int.Parse(json["Squad5"]["skill1"].ToString());
-                sqd_5_skill2.Value = int.Parse(json["Squad5"]["skill2"].ToString());
-                sqd_5_skill3.Value = int.Parse(json["Squad5"]["skill3"].ToString());
+                if (json["Squad5"] != null)
+                {
+                    json["Squad5"]["id"] = sqdID[4].ToString();
+                    sqd_5_lv.Value = int.Parse(json["Squad5"]["squad_level"].ToString());
+                    sqd_5_damage.Value = int.Parse(json["Squad5"]["assist_damage"].ToString()) + squad_AT4_defaultstat[살상력];
+                    sqd_5_reload.Value = int.Parse(json["Squad5"]["assist_reload"].ToString()) + squad_AT4_defaultstat[장전];
+                    sqd_5_hit.Value = int.Parse(json["Squad5"]["assist_hit"].ToString()) + squad_AT4_defaultstat[정밀성];
+                    sqd_5_break.Value = int.Parse(json["Squad5"]["assist_def_break"].ToString()) + squad_AT4_defaultstat[파쇄력];
+                    sqd_5_skill1.Value = int.Parse(json["Squad5"]["skill1"].ToString());
+                    sqd_5_skill2.Value = int.Parse(json["Squad5"]["skill2"].ToString());
+                    sqd_5_skill3.Value = int.Parse(json["Squad5"]["skill3"].ToString());
+                }
+                /*else
+                {
+                    sqd_5_lv.Value = 1;
+                    sqd_5_damage.Value = sqd_5_damage.Minimum;
+                    sqd_5_reload.Value = sqd_5_reload.Minimum;
+                    sqd_5_hit.Value = sqd_5_reload.Minimum;
+                    sqd_5_break.Value = sqd_5_break.Minimum;
+                    sqd_5_skill1.Value = 1;
+                    sqd_5_skill2.Value = 1;
+                    sqd_5_skill3.Value = 1;
+                }*/
 
+                if (json["Squad6"] != null)
+                {
+                    json["Squad6"]["id"] = sqdID[5].ToString();
+                    sqd_6_lv.Value = int.Parse(json["Squad6"]["squad_level"].ToString());
+                    sqd_6_damage.Value = int.Parse(json["Squad6"]["assist_damage"].ToString()) + squad_QLZ04_defaultstat[살상력];
+                    sqd_6_reload.Value = int.Parse(json["Squad6"]["assist_reload"].ToString()) + squad_QLZ04_defaultstat[장전];
+                    sqd_6_hit.Value = int.Parse(json["Squad6"]["assist_hit"].ToString()) + squad_QLZ04_defaultstat[정밀성];
+                    sqd_6_break.Value = int.Parse(json["Squad6"]["assist_def_break"].ToString()) + squad_QLZ04_defaultstat[파쇄력];
+                    sqd_6_skill1.Value = int.Parse(json["Squad6"]["skill1"].ToString());
+                    sqd_6_skill2.Value = int.Parse(json["Squad6"]["skill2"].ToString());
+                    sqd_6_skill3.Value = int.Parse(json["Squad6"]["skill3"].ToString());
+                }
+                /*else
+                {
+                    sqd_6_lv.Value = 1;
+                    sqd_6_damage.Value = sqd_6_damage.Minimum;
+                    sqd_6_reload.Value = sqd_6_reload.Minimum;
+                    sqd_6_hit.Value = sqd_6_reload.Minimum;
+                    sqd_6_break.Value = sqd_6_break.Minimum;
+                    sqd_6_skill1.Value = 1;
+                    sqd_6_skill2.Value = 1;
+                    sqd_6_skill3.Value = 1;
+                }*/
+               
+
+                for(int i=0; i < 6; i++)
+                {
+                    if(json["switch"+(i+1).ToString()]!= null)
+                    {
+                        CheckBox sw = (CheckBox)Controls.Find("sqdswitch_" + (i + 1).ToString(), true)[0];
+                        sw.Checked = Convert.ToBoolean(int.Parse(json["switch"+(i+1)].ToString()));
+                    }
+                    
+
+                }
+                /*
                 sqdswitch_1.Checked = Convert.ToBoolean(int.Parse(json["switch1"].ToString()));
                 sqdswitch_2.Checked = Convert.ToBoolean(int.Parse(json["switch2"].ToString()));
                 sqdswitch_3.Checked = Convert.ToBoolean(int.Parse(json["switch3"].ToString()));
                 sqdswitch_4.Checked = Convert.ToBoolean(int.Parse(json["switch4"].ToString()));
                 sqdswitch_5.Checked = Convert.ToBoolean(int.Parse(json["switch5"].ToString()));
+                sqdswitch_6.Checked = Convert.ToBoolean(int.Parse(json["switch6"].ToString()));*/
 
-                for (int i = 0; i < 5; i++)
+                for (int i = 0; i < 6; i++)
                 {
-                    userinfo["squad_with_user_info"][sqdID[i].ToString()].Replace(json["Squad" + (i + 1).ToString()]);
+                    if(json["Squad" + (i + 1).ToString()] != null)
+                    {
+
+                        userinfo["squad_with_user_info"][sqdID[i].ToString()].Replace(json["Squad" + (i + 1).ToString()]);
+
+                    }
+                    else
+                    {
+                        JObject t = JObject.Parse("{'id': '"+ sqdID[i].ToString()+"','squad_id': '"+ (i + 1).ToString() + "','squad_exp': '0','squad_level': '1','rank': '1','advanced_level': '0','life': '100','cur_def': '0','ammo': '1000','mre': '1000','assist_damage': '0','assist_reload': '0','assist_hit': '0','assist_def_break': '0','damage': '0','atk_speed': '0','hit': '0','def': '0','skill1': '1','skill2': '1','skill3': '1'}");
+                        userinfo["squad_with_user_info"][sqdID[i].ToString()] = t;
+                    }
                 }
                 setSquadInfo(false);
                 #endregion
@@ -2091,7 +2552,7 @@ namespace GFBattleTester
             }
             catch (Exception ex)
             {
-                MessageBox.Show("파일을 불러오는 중 오류가 발생했습니다." + Environment.NewLine + ex.ToString(), "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(lang_data["file_load_error_msg"].ToString() + Environment.NewLine + ex.ToString(), lang_data["error"].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -2134,7 +2595,7 @@ namespace GFBattleTester
 
         private void button1_MouseHover(object sender, EventArgs e)
         {
-            showTooltip((Control)sender, "현제 입력되어 있는 인형의 수치를 프리셋 파일로 저장합니다.");
+            showTooltip((Control)sender, lang_data["gun_save_tooltip"].ToString());
         }
 
         private void sqdswitch_4_CheckedChanged(object sender, EventArgs e)
@@ -2149,12 +2610,12 @@ namespace GFBattleTester
 
         private void button2_MouseHover(object sender, EventArgs e)
         {
-            showTooltip((Control)sender, "저장한 인형 프리셋 파일을 불러옵니다.");
+            showTooltip((Control)sender, lang_data["gun_load_tooltip"].ToString());
         }
 
         private void button4_MouseHover(object sender, EventArgs e)
         {
-            showTooltip((Control)sender, "현제 입력되어 있는 수치를 적용합니다.");
+            showTooltip((Control)sender, lang_data["gun_apply_tooltip"].ToString());
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -2242,13 +2703,13 @@ namespace GFBattleTester
             }
             catch (ArgumentOutOfRangeException)
             {
-                MessageBox.Show("선택한 인형은 아직 스텟 데이터베이스에 존재하지 않습니다. (추후 업데이트 예정)", "스텟 계산 불가", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(lang_data["stat_calc_error_msg"].ToString(), lang_data["stat_calc_error"].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
         private void button9_MouseHover(object sender, EventArgs e)
         {
-            showTooltip((Control)sender, "입력된 레벨, 편제 수에 따른 능력치로 기본 스텟을 계산하여 값을 설정합니다. 현제 입력된 HP,화력,회피,명중,사속치는 초기화됩니다." + Environment.NewLine + "주) 데이터베이스에 존재하는 인형만");
+            showTooltip((Control)sender, lang_data["stat_calc_tooltip"].ToString() + Environment.NewLine + lang_data["stat_calc_tooltip_line2"].ToString());
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -2278,14 +2739,14 @@ namespace GFBattleTester
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox1.Checked)
-                label119.Text = "서버 IP: ******";
+            if (server_hideip.Checked)
+                server_ip.Text = lang_data["server_ip"].ToString()+"******";
             else
             {
                 if (listener.IsListening)
-                    label119.Text = "서버 IP: " + GetLocalIP();
+                    server_ip.Text = lang_data["server_ip"].ToString() + GetLocalIP();
                 else
-                    label119.Text = "서버 IP: ";
+                    server_ip.Text = lang_data["server_ip"].ToString();
             }
 
         }
@@ -2381,7 +2842,7 @@ namespace GFBattleTester
                 if (clear)
                 {
                     gun_info_json_1["equip1"] = "0";
-                    setEquip_11.Text = "설정된 장비 없음";
+                    setEquip_11.Text =  lang_data["none_equip"].ToString();
                     userinfo["equip_with_user_info"]["11"] = new JObject(json);
                 }
                 else
@@ -2397,8 +2858,9 @@ namespace GFBattleTester
             {
                 if (clear)
                 {
+                   
                     gun_info_json_1["equip2"] = "0";
-                    setEquip_12.Text = "설정된 장비 없음";
+                    setEquip_12.Text =  lang_data["none_equip"].ToString();
                     userinfo["equip_with_user_info"]["12"] = new JObject(json);
                 }
                 else
@@ -2415,7 +2877,7 @@ namespace GFBattleTester
                 if (clear)
                 {
                     gun_info_json_1["equip3"] = "0";
-                    setEquip_13.Text = "설정된 장비 없음";
+                    setEquip_13.Text =  lang_data["none_equip"].ToString();
                     userinfo["equip_with_user_info"]["13"] = new JObject(json);
                 }
                 else
@@ -2432,7 +2894,7 @@ namespace GFBattleTester
                 if (clear)
                 {
                     gun_info_json_2["equip1"] = "0";
-                    setEquip_21.Text = "설정된 장비 없음";
+                    setEquip_21.Text =  lang_data["none_equip"].ToString();
                     userinfo["equip_with_user_info"]["21"] = new JObject(json);
                 }
                 else
@@ -2449,7 +2911,7 @@ namespace GFBattleTester
                 if (clear)
                 {
                     gun_info_json_2["equip2"] = "0";
-                    setEquip_22.Text = "설정된 장비 없음";
+                    setEquip_22.Text =  lang_data["none_equip"].ToString();
                     userinfo["equip_with_user_info"]["22"] = new JObject(json);
                 }
                 else
@@ -2466,7 +2928,7 @@ namespace GFBattleTester
                 if (clear)
                 {
                     gun_info_json_2["equip3"] = "0";
-                    setEquip_23.Text = "설정된 장비 없음";
+                    setEquip_23.Text =  lang_data["none_equip"].ToString();
                     userinfo["equip_with_user_info"]["23"] = new JObject(json);
                 }
                 else
@@ -2483,7 +2945,7 @@ namespace GFBattleTester
                 if (clear)
                 {
                     gun_info_json_3["equip1"] = "0";
-                    setEquip_31.Text = "설정된 장비 없음";
+                    setEquip_31.Text =  lang_data["none_equip"].ToString();
                     userinfo["equip_with_user_info"]["31"] = new JObject(json);
                 }
                 else
@@ -2500,7 +2962,7 @@ namespace GFBattleTester
                 if (clear)
                 {
                     gun_info_json_3["equip2"] = "0";
-                    setEquip_32.Text = "설정된 장비 없음";
+                    setEquip_32.Text =  lang_data["none_equip"].ToString();
                     userinfo["equip_with_user_info"]["32"] = new JObject(json);
                 }
                 else
@@ -2517,7 +2979,7 @@ namespace GFBattleTester
                 if (clear)
                 {
                     gun_info_json_3["equip3"] = "0";
-                    setEquip_33.Text = "설정된 장비 없음";
+                    setEquip_33.Text =  lang_data["none_equip"].ToString();
                     userinfo["equip_with_user_info"]["33"] = new JObject(json);
                 }
                 else
@@ -2534,7 +2996,7 @@ namespace GFBattleTester
                 if (clear)
                 {
                     gun_info_json_4["equip1"] = "0";
-                    setEquip_41.Text = "설정된 장비 없음";
+                    setEquip_41.Text =  lang_data["none_equip"].ToString();
                     userinfo["equip_with_user_info"]["41"] = new JObject(json);
                 }
                 else
@@ -2551,7 +3013,7 @@ namespace GFBattleTester
                 if (clear)
                 {
                     gun_info_json_4["equip2"] = "0";
-                    setEquip_42.Text = "설정된 장비 없음";
+                    setEquip_42.Text =  lang_data["none_equip"].ToString();
                     userinfo["equip_with_user_info"]["42"] = new JObject(json);
                 }
                 else
@@ -2568,7 +3030,7 @@ namespace GFBattleTester
                 if (clear)
                 {
                     gun_info_json_4["equip3"] = "0";
-                    setEquip_43.Text = "설정된 장비 없음";
+                    setEquip_43.Text =  lang_data["none_equip"].ToString();
                     userinfo["equip_with_user_info"]["43"] = new JObject(json);
                 }
                 else
@@ -2585,7 +3047,7 @@ namespace GFBattleTester
                 if (clear)
                 {
                     gun_info_json_5["equip1"] = "0";
-                    setEquip_51.Text = "설정된 장비 없음";
+                    setEquip_51.Text =  lang_data["none_equip"].ToString();
                     userinfo["equip_with_user_info"]["51"] = new JObject(json);
                 }
                 else
@@ -2602,7 +3064,7 @@ namespace GFBattleTester
                 if (clear)
                 {
                     gun_info_json_5["equip2"] = "0";
-                    setEquip_52.Text = "설정된 장비 없음";
+                    setEquip_52.Text =  lang_data["none_equip"].ToString();
                     userinfo["equip_with_user_info"]["52"] = new JObject(json);
                 }
                 else
@@ -2619,7 +3081,7 @@ namespace GFBattleTester
                 if (clear)
                 {
                     gun_info_json_5["equip3"] = "0";
-                    setEquip_53.Text = "설정된 장비 없음";
+                    setEquip_53.Text =  lang_data["none_equip"].ToString();
                     userinfo["equip_with_user_info"]["53"] = new JObject(json);
                 }
                 else
@@ -2805,7 +3267,7 @@ namespace GFBattleTester
         }
         private void button17_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("현제 설정되어 있는 모든 장비를 제거합니다. 이 작업은 취소할 수 없습니다.", "경고", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+            if(MessageBox.Show(lang_data["removeall_equip_confirm_msg"].ToString(), lang_data["alert"].ToString(), MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
             {
                 for(int i=1; i<=5; i++)
                 {
@@ -2813,7 +3275,7 @@ namespace GFBattleTester
                     {
                         foreach(string s in Equippos)
                         {
-                            Controls.Find("setEquip_" + s, true)[0].Text = "설정된 장비 없음";
+                            Controls.Find("setEquip_" + s, true)[0].Text = lang_data["none_equip"].ToString();
                         }
                         if (i == 1)
                         {
@@ -2880,27 +3342,27 @@ namespace GFBattleTester
 
         private void Button6_MouseHover(object sender, EventArgs e)
         {
-            showTooltip((Control)sender, "현제 입력되어 있는 중장비부대의 설정값을 파일로 저장합니다.");
+            showTooltip((Control)sender, lang_data["sqd_save_tooltip"].ToString());
         }
 
         private void Button7_MouseHover(object sender, EventArgs e)
         {
-            showTooltip((Control)sender, "저장한 설정값(.sqd) 파일을 불러옵니다.");
+            showTooltip((Control)sender, lang_data["sqd_load_tooltip"].ToString());
         }
 
         private void Button8_MouseHover(object sender, EventArgs e)
         {
-            showTooltip((Control)sender, "현제 입력되어 있는 중장비부대의 설정값을 적용합니다.");
+            showTooltip((Control)sender, lang_data["sqd_apply_tooltip"].ToString());
         }
 
         private void Button5_MouseHover(object sender, EventArgs e)
         {
-            showTooltip((Control)sender, "입력된 포트에서 서버를 시작합니다.");
+            showTooltip((Control)sender, lang_data["server_start_tooltip"].ToString());
         }
 
         private void CheckBox1_MouseHover(object sender, EventArgs e)
         {
-            showTooltip((Control)sender, "서버 IP를 숨깁니다. 로그에도 적용됩니다.");
+            showTooltip((Control)sender, lang_data["server_hideip_tooltip"].ToString());
         }
 
         private void Button3_Click_1(object sender, EventArgs e)
@@ -3030,31 +3492,29 @@ namespace GFBattleTester
         private void Button23_Click(object sender, EventArgs e)
         {
             serv = new serveraccess(this);
-            if(MessageBox.Show("유저 정보 가져오기 모드를 활성화할까요? " +
-                "소녀전선 클라이언트를 이용하여 전투 서버를 시뮬레이트 하는 대신 소녀전선 서버로부터 유저 정보를 가져옵니다." +
-                " 유저 정보 가져오기에 성공하면 이 모드는 자동으로 비활성화 됩니다.", "유저 정보 가져오기 모드", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            if(MessageBox.Show(lang_data["get_userinfo_confrim_msg"].ToString(), lang_data["get_userinfo_mode"].ToString(), MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
                 if (!listener.IsListening)
                 {
-                    if(MessageBox.Show("서버가 아직 실행되지 않았습니다. 실행할까요?","서버 미실행",MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                    if(MessageBox.Show(lang_data["server_not_started_msg"].ToString(), lang_data["server_not_started"].ToString(), MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                     {
                        if(run_server())
                         {
-                            MessageBox.Show("서버가 실행 되었습니다.", "서버 실행됨", MessageBoxButtons.OK, MessageBoxIcon.Information);                            
+                            MessageBox.Show(lang_data["server_started_msg"].ToString(), lang_data["server_started"].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Information);                            
                             serv.Show();
                             frm.getUserinfoFromServer = true;
-                            button23.Enabled = false;
+                            gun_loadfromserver.Enabled = false;
                         }
                        else
                         {
-                            MessageBox.Show("서버 실행에 실패했습니다.", "서버 실행 실패", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            MessageBox.Show("서버가 실행되지 않았기 때문에 유저 정보 불러오기 모드는 활성화되지 않았습니다.", "서버 실행 실패", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show(lang_data["server_start_failed_msg"].ToString(), lang_data["server_start_failed"].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show(lang_data["get_userinfo_failed_cause_serv_run_failed_msg"].ToString() , lang_data["server_start_failed"].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                         
                     }
                     else
                     {
-                        MessageBox.Show("서버가 실행되지 않았기 때문에 유저 정보 불러오기 모드는 활성화되지 않았습니다.", "서버 실행 실패", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show(lang_data["get_userinfo_failed_cause_serv_run_failed_msg"].ToString(), lang_data["server_start_failed"].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
@@ -3062,7 +3522,7 @@ namespace GFBattleTester
                     serv.Show();
 
                     frm.getUserinfoFromServer = true;
-                    button23.Enabled = false;
+                    gun_loadfromserver.Enabled = false;
                 }
             }
 
@@ -3077,6 +3537,50 @@ namespace GFBattleTester
             toolTip1.ToolTipTitle = title;
             toolTip1.SetToolTip(sender, caption);
         }
+
+        private void Sqdswitch_6_CheckedChanged(object sender, EventArgs e)
+        {
+            enable_set_sqd();
+        }
+
+        private void Nolog_checkbox_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void programSettingChanged(object sender, EventArgs e)
+        {
+            CheckBox chkbox = (CheckBox)sender;
+            if(chkbox.Name == "nolog_checkbox")
+            {
+                if (chkbox.Checked)
+                {
+                    showdetailLog_checkbox.Checked = false;
+                    showdetailLog_checkbox.Enabled = false;
+                }
+                else
+                    showdetailLog_checkbox.Enabled = true;
+            }
+        }
+
+        private void Commander_name_TextChanged(object sender, EventArgs e)
+        {
+            userinfo["user_info"]["name"] = commander_name.Text;
+            
+        }
+
+        private void Commander_exp_TextChanged(object sender, EventArgs e)
+        {
+            userinfo["user_info"]["experience"] = commander_exp.Text;
+        }
+
+        private void Normalbattle_CheckedChanged(object sender, EventArgs e)
+        {
+            if (theaterbattle.Checked)
+            {
+
+            }
+        }
+
         private void UpdatePosTile(object sender, EventArgs e)
         {
             string[] pos = Enumerable.Repeat("0", 9).ToArray();

@@ -49,4 +49,11 @@ class GF_URLs_Kr
     public static string multyequipdevelop = "/index.php/1001/Equip/developMulti";
     public static string squadMove = "/index.php/1001/Mission/squadMove";
     public static string squadSwitchChange = "/index.php/1001/Mission/squadBattleSkillSwitch";
+    public static string GetTheaterData = "/index.php/1001/Theater/data";
+    public static string GetTheaterBalance = "/index.php/1001/Theater/balance";
+    public static string GetTheaterPrize = "/index.php/1001/Theater/prizeData";
+    public static string startTheaterBattle = "/index.php/1001/Theater/startTheaterBattle";
+    public static string endTheaterBattle = "/index.php/1001/Theater/endTheaterBattle";
+    public static string TheaterBossBattle = "/index.php/1001/Theater/bossBattle";
+
 }

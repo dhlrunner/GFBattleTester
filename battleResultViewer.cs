@@ -128,8 +128,15 @@ namespace GFBattleTester
                         listView3.Items.Add(itms);
                         Button posbtn = (Button)Controls.Find("p"+items2[0],true)[0];
                         ProgressBar hpbar = (ProgressBar)Controls.Find("hpbar" + items2[0], true)[0];
-                        hpbar.Maximum = int.Parse(items2[2]);
-                        hpbar.Value =  int.Parse(items2[3]) != -1? int.Parse(items2[3]):0;
+                        hpbar.Maximum = int.Parse(z["lifeBefore"].ToString()) != -1 ? int.Parse(z["lifeBefore"].ToString()) : 0;
+                        try
+                        {
+                            hpbar.Value = int.Parse(z["life"].ToString()) != -1 ? int.Parse(z["life"].ToString()) : 0;
+                        }
+                        catch
+                        {
+                            hpbar.Value = hpbar.Maximum;
+                        }
                         posbtn.Text = items2[1]+Environment.NewLine+"HP: "+ items2[2] +Environment.NewLine+ "피해량: "+ items2[4];
                         double damage_percent = double.Parse(items2[4]) / double.Parse(items2[2]) * 100.0;
                         if (damage_percent < 50.0 && damage_percent >= 0.0)
