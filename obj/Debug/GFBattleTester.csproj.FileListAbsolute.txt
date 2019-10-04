@@ -48,7 +48,6 @@ C:\Users\runner38\Desktop\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester
 C:\Users\runner38\Desktop\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.csproj.CoreCompileInputs.cache
 C:\Users\runner38\Desktop\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.csproj.CopyComplete
 C:\Users\runner38\Desktop\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.battleResultViewer.resources
-C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.csprojAssemblyReference.cache
 C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.battleResultViewer.resources
 C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.EquipSelecter.resources
 C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.Form1.resources

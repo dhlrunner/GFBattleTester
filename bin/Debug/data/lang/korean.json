@@ -125,5 +125,18 @@
     "server_hideip_tooltip":"서버 IP를 숨깁니다. 로그에도 적용됩니다.",
     "gun_load_tooltip":"저장한 인형 프리셋 파일을 불러옵니다.",
     "gun_save_tooltip":"현제 입력되어 있는 인형의 수치를 프리셋 파일로 저장합니다.",
-    "gun_apply_tooltip":"현제 입력되어 있는 수치를 적용합니다."
+    "gun_apply_tooltip":"현제 입력되어 있는 수치를 적용합니다.",
+    "equipselector_title":"{0}번 인형 {1}번 장비 선택중",
+    "equipselector_noinfo":"정보없음",
+    "equipselector_mod":"개조",
+    "equipselector_equip_name":"장비명",
+    "equipselector_kind":"종류",
+    "equipselector_rank":"등급",
+    "equipselector_only":"전용장비",
+    "equipselector_no_equip_selected":"장비가 선택되지 않음",
+    "equipselector_select_equip":"장비를 선택해주세요",
+    "equipselector_equip_level":"장비 레벨",
+    "equipselector_equip_correct":"장비 교정률",
+    "equipselector_apply":"결정",
+    "equipselector_remove":"장비 해제"    
 }
