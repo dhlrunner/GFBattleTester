@@ -5201,9 +5201,9 @@
             this.updatecheck_checkbox.AutoSize = true;
             this.updatecheck_checkbox.Location = new System.Drawing.Point(17, 45);
             this.updatecheck_checkbox.Name = "updatecheck_checkbox";
-            this.updatecheck_checkbox.Size = new System.Drawing.Size(196, 16);
+            this.updatecheck_checkbox.Size = new System.Drawing.Size(236, 16);
             this.updatecheck_checkbox.TabIndex = 1;
-            this.updatecheck_checkbox.Text = "프로그램 실행 시 업데이트 확인";
+            this.updatecheck_checkbox.Text = "프로그램 실행 시 데이터 업데이트 확인";
             this.updatecheck_checkbox.UseVisualStyleBackColor = true;
             this.updatecheck_checkbox.CheckedChanged += new System.EventHandler(this.programSettingChanged);
             // 

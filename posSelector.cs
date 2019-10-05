@@ -17,7 +17,8 @@ namespace GFBattleTester
         public posSelector(Control c, int p, int n)
         {
             InitializeComponent();
-            Text = n.ToString() + "번 인형 위치";
+
+            this.Text = string.Format(Form1.frm.lang_data["posselector_title"].ToString(), n.ToString());
             selpos = p;
             num = n;
 

@@ -66,6 +66,7 @@
             // echelon
             // 
             this.echelon.Text = "제대";
+            this.echelon.Width = 80;
             // 
             // gun1
             // 
@@ -95,7 +96,7 @@
             // filename
             // 
             this.filename.Text = "파일명";
-            this.filename.Width = 130;
+            this.filename.Width = 120;
             // 
             // logTextbox
             // 

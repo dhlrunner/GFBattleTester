@@ -171,5 +171,15 @@
     "brv_win":"승리",
     "brv_lose":"패배",
     "brv_second":"초",
-    "brv_pos_move":"{0}번 위치로 이동"
+    "brv_pos_move":"{0}번 위치로 이동",
+    "posselector_title":"{0}번 인형 위치",
+    "serveraccess_title":"서버 접속기",
+    "serveraccess_echelon":"제대",
+    "serveraccess_gun_name":"{0}번 인형",
+    "serveraccess_filename":"파일명",
+    "serveraccess_desc":"제대가 불러와진 후, 불러오고 싶은 제대의 행을 더블 클릭하면 해당 제대가 자동으로 프로그램에 로딩됩니다.",
+    "serveraccess_with_equip":"해당 제대의 장비도 같이 불러옵니다.",
+    "serveraccess_waiting_log":"클라이언트 접속 대기 중..",
+    "serveraccess_success":"유저 정보 취득 성공.",
+    "serveraccess_completed":"유저 정보로부터 데이터를 모두 불러왔습니다."
 }

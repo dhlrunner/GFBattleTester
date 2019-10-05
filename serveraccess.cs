@@ -21,15 +21,24 @@ namespace GFBattleTester
         {
             InitializeComponent();
             this.form1 = form1;
+            this.Text = form1.lang_data["serveraccess_title"].ToString();
+            listView1.Columns[0].Text = form1.lang_data["serveraccess_echelon"].ToString();
+            for(int i = 1; i <= 5; i++)
+            {
+                listView1.Columns[i].Text = string.Format(form1.lang_data["serveraccess_gun_name"].ToString(),i);
+            }
+            listView1.Columns[6].Text = form1.lang_data["serveraccess_filename"].ToString();
+            label1.Text = form1.lang_data["serveraccess_desc"].ToString();
+            checkBox1.Text =  form1.lang_data["serveraccess_with_equip"].ToString();
         }
 
         private void Serveraccess_Load(object sender, EventArgs e)
         {
-            AddLog("클라이언트 접속 대기 중..");
+            AddLog(form1.lang_data["serveraccess_waiting_log"].ToString());
         }
         public void getUserdataFromServer(JObject data)
         {
-            AddLog("유저 정보 취득 성공.");
+            AddLog(form1.lang_data["serveraccess_success"].ToString());
             File.WriteAllText(@"userdata/userinfo/" + DateTime.Now.ToString("yyyyMMdd_HHmmss_") + data["user_info"]["name"].ToString() + ".json", data.ToString());
             JObject guninfo = new JObject();
 
@@ -111,7 +120,7 @@ namespace GFBattleTester
             sqd.Add("switch5", "1");
             sqd.Add("switch6", "1");
             File.WriteAllText(@"userdata/presets/" + DateTime.Now.ToString("yyyyMMdd_HHmmss_") + data["user_info"]["name"].ToString() + ".sqd", sqd.ToString());
-            AddLog("유저 정보로부터 데이터를 모두 불러왔습니다.");
+            AddLog(form1.lang_data["serveraccess_completed"].ToString());
         }
         public void AddLog(string text)
         {
