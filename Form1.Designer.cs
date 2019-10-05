@@ -219,6 +219,7 @@
             this.sqdskill1_6 = new System.Windows.Forms.Label();
             this.sqdbreak_6 = new System.Windows.Forms.Label();
             this.sqddamage_6 = new System.Windows.Forms.Label();
+            this.sqdlv_6 = new System.Windows.Forms.Label();
             this.sqd_6_skill3 = new System.Windows.Forms.NumericUpDown();
             this.sqd_6_skill2 = new System.Windows.Forms.NumericUpDown();
             this.sqd_6_reload = new System.Windows.Forms.NumericUpDown();
@@ -227,7 +228,6 @@
             this.sqd_6_break = new System.Windows.Forms.NumericUpDown();
             this.sqd_6_damage = new System.Windows.Forms.NumericUpDown();
             this.sqd_6_lv = new System.Windows.Forms.NumericUpDown();
-            this.sqdlv_6 = new System.Windows.Forms.Label();
             this.label116 = new System.Windows.Forms.Label();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.set_fire = new System.Windows.Forms.GroupBox();
@@ -360,7 +360,7 @@
             this.server_set = new System.Windows.Forms.TabPage();
             this.server_mode = new System.Windows.Forms.GroupBox();
             this.theaterbattle = new System.Windows.Forms.RadioButton();
-            //this.normalbattle = new System.Windows.Forms.RadioButton();
+            this.normalbattle = new System.Windows.Forms.RadioButton();
             this.server_viewBattlelog = new System.Windows.Forms.Button();
             this.clearlog = new System.Windows.Forms.LinkLabel();
             this.server_hideip = new System.Windows.Forms.CheckBox();
@@ -388,7 +388,7 @@
             this.enemy_group = new System.Windows.Forms.Label();
             this.etc_set = new System.Windows.Forms.TabPage();
             this.groupBox25 = new System.Windows.Forms.GroupBox();
-            this.Language_set = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.languageList_Combobox = new System.Windows.Forms.ComboBox();
             this.etc_progsetting = new System.Windows.Forms.GroupBox();
             this.nolog_checkbox = new System.Windows.Forms.CheckBox();
@@ -407,10 +407,6 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.saveFileDialog3 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog3 = new System.Windows.Forms.OpenFileDialog();
-            //this.groupBox22 = new System.Windows.Forms.GroupBox();
-            this.normalbattle = new System.Windows.Forms.RadioButton();
-            //this.theaterbattle = new System.Windows.Forms.RadioButton();
-            //this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.gun_set.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -550,7 +546,6 @@
             this.etc_progsetting.SuspendLayout();
             this.etc_basicinformation.SuspendLayout();
             this.panel1.SuspendLayout();
-            //this.groupBox22.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -2964,6 +2959,7 @@
             this.groupBox21.Controls.Add(this.sqdskill1_6);
             this.groupBox21.Controls.Add(this.sqdbreak_6);
             this.groupBox21.Controls.Add(this.sqddamage_6);
+            this.groupBox21.Controls.Add(this.sqdlv_6);
             this.groupBox21.Controls.Add(this.sqd_6_skill3);
             this.groupBox21.Controls.Add(this.sqd_6_skill2);
             this.groupBox21.Controls.Add(this.sqd_6_reload);
@@ -2972,7 +2968,6 @@
             this.groupBox21.Controls.Add(this.sqd_6_break);
             this.groupBox21.Controls.Add(this.sqd_6_damage);
             this.groupBox21.Controls.Add(this.sqd_6_lv);
-            this.groupBox21.Controls.Add(this.sqdlv_6);
             this.groupBox21.Location = new System.Drawing.Point(582, 6);
             this.groupBox21.Name = "groupBox21";
             this.groupBox21.Size = new System.Drawing.Size(110, 383);
@@ -3043,137 +3038,6 @@
             this.sqddamage_6.TabIndex = 2;
             this.sqddamage_6.Text = "살상력";
             // 
-            // sqd_6_skill3
-            // 
-            this.sqd_6_skill3.Location = new System.Drawing.Point(7, 345);
-            this.sqd_6_skill3.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.sqd_6_skill3.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.sqd_6_skill3.Name = "sqd_6_skill3";
-            this.sqd_6_skill3.Size = new System.Drawing.Size(96, 21);
-            this.sqd_6_skill3.TabIndex = 1;
-            this.sqd_6_skill3.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // sqd_6_skill2
-            // 
-            this.sqd_6_skill2.Location = new System.Drawing.Point(7, 301);
-            this.sqd_6_skill2.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.sqd_6_skill2.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.sqd_6_skill2.Name = "sqd_6_skill2";
-            this.sqd_6_skill2.Size = new System.Drawing.Size(96, 21);
-            this.sqd_6_skill2.TabIndex = 1;
-            this.sqd_6_skill2.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // sqd_6_reload
-            // 
-            this.sqd_6_reload.Location = new System.Drawing.Point(6, 216);
-            this.sqd_6_reload.Maximum = new decimal(new int[] {
-            99999999,
-            0,
-            0,
-            0});
-            this.sqd_6_reload.Name = "sqd_6_reload";
-            this.sqd_6_reload.Size = new System.Drawing.Size(96, 21);
-            this.sqd_6_reload.TabIndex = 1;
-            // 
-            // sqd_6_skill1
-            // 
-            this.sqd_6_skill1.Location = new System.Drawing.Point(7, 258);
-            this.sqd_6_skill1.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.sqd_6_skill1.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.sqd_6_skill1.Name = "sqd_6_skill1";
-            this.sqd_6_skill1.Size = new System.Drawing.Size(96, 21);
-            this.sqd_6_skill1.TabIndex = 1;
-            this.sqd_6_skill1.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // sqd_6_hit
-            // 
-            this.sqd_6_hit.Location = new System.Drawing.Point(6, 172);
-            this.sqd_6_hit.Maximum = new decimal(new int[] {
-            99999999,
-            0,
-            0,
-            0});
-            this.sqd_6_hit.Name = "sqd_6_hit";
-            this.sqd_6_hit.Size = new System.Drawing.Size(96, 21);
-            this.sqd_6_hit.TabIndex = 1;
-            // 
-            // sqd_6_break
-            // 
-            this.sqd_6_break.Location = new System.Drawing.Point(6, 129);
-            this.sqd_6_break.Maximum = new decimal(new int[] {
-            99999999,
-            0,
-            0,
-            0});
-            this.sqd_6_break.Name = "sqd_6_break";
-            this.sqd_6_break.Size = new System.Drawing.Size(96, 21);
-            this.sqd_6_break.TabIndex = 1;
-            // 
-            // sqd_6_damage
-            // 
-            this.sqd_6_damage.Location = new System.Drawing.Point(6, 86);
-            this.sqd_6_damage.Maximum = new decimal(new int[] {
-            99999999,
-            0,
-            0,
-            0});
-            this.sqd_6_damage.Name = "sqd_6_damage";
-            this.sqd_6_damage.Size = new System.Drawing.Size(96, 21);
-            this.sqd_6_damage.TabIndex = 1;
-            // 
-            // sqd_6_lv
-            // 
-            this.sqd_6_lv.Location = new System.Drawing.Point(6, 40);
-            this.sqd_6_lv.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.sqd_6_lv.Name = "sqd_6_lv";
-            this.sqd_6_lv.Size = new System.Drawing.Size(96, 21);
-            this.sqd_6_lv.TabIndex = 1;
-            this.sqd_6_lv.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
             // sqdlv_6
             // 
             this.sqdlv_6.AutoSize = true;
@@ -3182,121 +3046,6 @@
             this.sqdlv_6.Size = new System.Drawing.Size(20, 12);
             this.sqdlv_6.TabIndex = 0;
             this.sqdlv_6.Text = "LV";
-            // label1
-            // 
-            //this.label1.AutoSize = true;
-            //this.label1.Location = new System.Drawing.Point(6, 27);
-            //this.label1.Name = "label1";
-            //this.label1.Size = new System.Drawing.Size(40, 12);
-            //this.label1.TabIndex = 0;
-            //this.label1.Text = "인형ID";
-            // 
-            // tabPage4
-            // 
-            /*
-            this.tabPage4.Controls.Add(this.groupBox21);
-            this.tabPage4.Controls.Add(this.label116);
-            this.tabPage4.Controls.Add(this.groupBox13);
-            this.tabPage4.Controls.Add(this.groupBox12);
-            this.tabPage4.Controls.Add(this.groupBox11);
-            this.tabPage4.Controls.Add(this.groupBox10);
-            this.tabPage4.Controls.Add(this.groupBox9);
-            this.tabPage4.Controls.Add(this.groupBox8);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(875, 696);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "중장비부대 설정";
-            this.tabPage4.UseVisualStyleBackColor = true;*/
-            // 
-            // groupBox21
-            // 
-            //this.groupBox21.Controls.Add(this.label124);
-            //this.groupBox21.Controls.Add(this.label125);
-            //this.groupBox21.Controls.Add(this.label126);
-            //this.groupBox21.Controls.Add(this.label127);
-            //this.groupBox21.Controls.Add(this.label128);
-            //this.groupBox21.Controls.Add(this.label129);
-            //this.groupBox21.Controls.Add(this.label130);
-            this.groupBox21.Controls.Add(this.sqd_6_skill3);
-            this.groupBox21.Controls.Add(this.sqd_6_skill2);
-            this.groupBox21.Controls.Add(this.sqd_6_reload);
-            this.groupBox21.Controls.Add(this.sqd_6_skill1);
-            this.groupBox21.Controls.Add(this.sqd_6_hit);
-            this.groupBox21.Controls.Add(this.sqd_6_break);
-            this.groupBox21.Controls.Add(this.sqd_6_damage);
-            this.groupBox21.Controls.Add(this.sqd_6_lv);
-            //this.groupBox21.Controls.Add(this.label131);
-            this.groupBox21.Location = new System.Drawing.Point(582, 6);
-            this.groupBox21.Name = "groupBox21";
-            this.groupBox21.Size = new System.Drawing.Size(110, 383);
-            this.groupBox21.TabIndex = 3;
-            this.groupBox21.TabStop = false;
-            this.groupBox21.Text = "QLZ-04";
-            // 
-            // label124
-            // 
-            /*this.label124.AutoSize = true;
-            this.label124.Location = new System.Drawing.Point(5, 330);
-            this.label124.Name = "label124";
-            this.label124.Size = new System.Drawing.Size(54, 12);
-            this.label124.TabIndex = 2;
-            this.label124.Text = "스킬3 LV";
-            // 
-            // label125
-            // 
-            this.label125.AutoSize = true;
-            this.label125.Location = new System.Drawing.Point(3, 201);
-            this.label125.Name = "label125";
-            this.label125.Size = new System.Drawing.Size(29, 12);
-            this.label125.TabIndex = 2;
-            this.label125.Text = "장전";
-            // 
-            // label126
-            // 
-            this.label126.AutoSize = true;
-            this.label126.Location = new System.Drawing.Point(5, 286);
-            this.label126.Name = "label126";
-            this.label126.Size = new System.Drawing.Size(54, 12);
-            this.label126.TabIndex = 2;
-            this.label126.Text = "스킬2 LV";
-            // 
-            // label127
-            // 
-            this.label127.AutoSize = true;
-            this.label127.Location = new System.Drawing.Point(3, 157);
-            this.label127.Name = "label127";
-            this.label127.Size = new System.Drawing.Size(41, 12);
-            this.label127.TabIndex = 2;
-            this.label127.Text = "정밀성";
-            // 
-            // label128
-            // 
-            this.label128.AutoSize = true;
-            this.label128.Location = new System.Drawing.Point(5, 243);
-            this.label128.Name = "label128";
-            this.label128.Size = new System.Drawing.Size(54, 12);
-            this.label128.TabIndex = 2;
-            this.label128.Text = "스킬1 LV";
-            // 
-            // label129
-            // 
-            this.label129.AutoSize = true;
-            this.label129.Location = new System.Drawing.Point(3, 114);
-            this.label129.Name = "label129";
-            this.label129.Size = new System.Drawing.Size(41, 12);
-            this.label129.TabIndex = 2;
-            this.label129.Text = "파쇄력";
-            // 
-            // label130
-            // 
-            this.label130.AutoSize = true;
-            this.label130.Location = new System.Drawing.Point(3, 71);
-            this.label130.Name = "label130";
-            this.label130.Size = new System.Drawing.Size(41, 12);
-            this.label130.TabIndex = 2;
-            this.label130.Text = "살상력";*/
             // 
             // sqd_6_skill3
             // 
@@ -3428,245 +3177,6 @@
             0,
             0,
             0});
-            // 
-            // label131
-            // 
-            //this.label131.AutoSize = true;
-            //this.label131.Location = new System.Drawing.Point(3, 25);
-            //this.label131.Name = "label131";
-            //this.label131.Size = new System.Drawing.Size(20, 12);
-           // this.label131.TabIndex = 0;
-           // this.label131.Text = "LV";
-            // 
-            // groupBox21
-            // 
-            /*this.groupBox21.Controls.Add(this.label124);
-            this.groupBox21.Controls.Add(this.label125);
-            this.groupBox21.Controls.Add(this.label126);
-            this.groupBox21.Controls.Add(this.label127);
-            this.groupBox21.Controls.Add(this.label128);
-            this.groupBox21.Controls.Add(this.label129);
-            this.groupBox21.Controls.Add(this.label130);*/
-            this.groupBox21.Controls.Add(this.sqd_6_skill3);
-            this.groupBox21.Controls.Add(this.sqd_6_skill2);
-            this.groupBox21.Controls.Add(this.sqd_6_reload);
-            this.groupBox21.Controls.Add(this.sqd_6_skill1);
-            this.groupBox21.Controls.Add(this.sqd_6_hit);
-            this.groupBox21.Controls.Add(this.sqd_6_break);
-            this.groupBox21.Controls.Add(this.sqd_6_damage);
-            this.groupBox21.Controls.Add(this.sqd_6_lv);
-            //this.groupBox21.Controls.Add(this.label131);
-            this.groupBox21.Location = new System.Drawing.Point(582, 6);
-            this.groupBox21.Name = "groupBox21";
-            this.groupBox21.Size = new System.Drawing.Size(110, 383);
-            this.groupBox21.TabIndex = 3;
-            this.groupBox21.TabStop = false;
-            this.groupBox21.Text = "QLZ-04";
-            // 
-            // label124
-            // 
-            /*
-            this.label124.AutoSize = true;
-            this.label124.Location = new System.Drawing.Point(5, 330);
-            this.label124.Name = "label124";
-            this.label124.Size = new System.Drawing.Size(54, 12);
-            this.label124.TabIndex = 2;
-            this.label124.Text = "스킬3 LV";
-            // 
-            // label125
-            // 
-            this.label125.AutoSize = true;
-            this.label125.Location = new System.Drawing.Point(3, 201);
-            this.label125.Name = "label125";
-            this.label125.Size = new System.Drawing.Size(29, 12);
-            this.label125.TabIndex = 2;
-            this.label125.Text = "장전";
-            // 
-            // label126
-            // 
-            this.label126.AutoSize = true;
-            this.label126.Location = new System.Drawing.Point(5, 286);
-            this.label126.Name = "label126";
-            this.label126.Size = new System.Drawing.Size(54, 12);
-            this.label126.TabIndex = 2;
-            this.label126.Text = "스킬2 LV";
-            // 
-            // label127
-            // 
-            this.label127.AutoSize = true;
-            this.label127.Location = new System.Drawing.Point(3, 157);
-            this.label127.Name = "label127";
-            this.label127.Size = new System.Drawing.Size(41, 12);
-            this.label127.TabIndex = 2;
-            this.label127.Text = "정밀성";
-            // 
-            // label128
-            // 
-            this.label128.AutoSize = true;
-            this.label128.Location = new System.Drawing.Point(5, 243);
-            this.label128.Name = "label128";
-            this.label128.Size = new System.Drawing.Size(54, 12);
-            this.label128.TabIndex = 2;
-            this.label128.Text = "스킬1 LV";
-            // 
-            // label129
-            // 
-            this.label129.AutoSize = true;
-            this.label129.Location = new System.Drawing.Point(3, 114);
-            this.label129.Name = "label129";
-            this.label129.Size = new System.Drawing.Size(41, 12);
-            this.label129.TabIndex = 2;
-            this.label129.Text = "파쇄력";
-            // 
-            // label130
-            // 
-            this.label130.AutoSize = true;
-            this.label130.Location = new System.Drawing.Point(3, 71);
-            this.label130.Name = "label130";
-            this.label130.Size = new System.Drawing.Size(41, 12);
-            this.label130.TabIndex = 2;
-            this.label130.Text = "살상력";*/
-            // 
-            // sqd_6_skill3
-            // 
-            this.sqd_6_skill3.Location = new System.Drawing.Point(7, 345);
-            this.sqd_6_skill3.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.sqd_6_skill3.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.sqd_6_skill3.Name = "sqd_6_skill3";
-            this.sqd_6_skill3.Size = new System.Drawing.Size(96, 21);
-            this.sqd_6_skill3.TabIndex = 1;
-            this.sqd_6_skill3.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // sqd_6_skill2
-            // 
-            this.sqd_6_skill2.Location = new System.Drawing.Point(7, 301);
-            this.sqd_6_skill2.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.sqd_6_skill2.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.sqd_6_skill2.Name = "sqd_6_skill2";
-            this.sqd_6_skill2.Size = new System.Drawing.Size(96, 21);
-            this.sqd_6_skill2.TabIndex = 1;
-            this.sqd_6_skill2.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // sqd_6_reload
-            // 
-            this.sqd_6_reload.Location = new System.Drawing.Point(6, 216);
-            this.sqd_6_reload.Maximum = new decimal(new int[] {
-            99999999,
-            0,
-            0,
-            0});
-            this.sqd_6_reload.Name = "sqd_6_reload";
-            this.sqd_6_reload.Size = new System.Drawing.Size(96, 21);
-            this.sqd_6_reload.TabIndex = 1;
-            // 
-            // sqd_6_skill1
-            // 
-            this.sqd_6_skill1.Location = new System.Drawing.Point(7, 258);
-            this.sqd_6_skill1.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.sqd_6_skill1.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.sqd_6_skill1.Name = "sqd_6_skill1";
-            this.sqd_6_skill1.Size = new System.Drawing.Size(96, 21);
-            this.sqd_6_skill1.TabIndex = 1;
-            this.sqd_6_skill1.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // sqd_6_hit
-            // 
-            this.sqd_6_hit.Location = new System.Drawing.Point(6, 172);
-            this.sqd_6_hit.Maximum = new decimal(new int[] {
-            99999999,
-            0,
-            0,
-            0});
-            this.sqd_6_hit.Name = "sqd_6_hit";
-            this.sqd_6_hit.Size = new System.Drawing.Size(96, 21);
-            this.sqd_6_hit.TabIndex = 1;
-            // 
-            // sqd_6_break
-            // 
-            this.sqd_6_break.Location = new System.Drawing.Point(6, 129);
-            this.sqd_6_break.Maximum = new decimal(new int[] {
-            99999999,
-            0,
-            0,
-            0});
-            this.sqd_6_break.Name = "sqd_6_break";
-            this.sqd_6_break.Size = new System.Drawing.Size(96, 21);
-            this.sqd_6_break.TabIndex = 1;
-            // 
-            // sqd_6_damage
-            // 
-            this.sqd_6_damage.Location = new System.Drawing.Point(6, 86);
-            this.sqd_6_damage.Maximum = new decimal(new int[] {
-            99999999,
-            0,
-            0,
-            0});
-            this.sqd_6_damage.Name = "sqd_6_damage";
-            this.sqd_6_damage.Size = new System.Drawing.Size(96, 21);
-            this.sqd_6_damage.TabIndex = 1;
-            // 
-            // sqd_6_lv
-            // 
-            this.sqd_6_lv.Location = new System.Drawing.Point(6, 40);
-            this.sqd_6_lv.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.sqd_6_lv.Name = "sqd_6_lv";
-            this.sqd_6_lv.Size = new System.Drawing.Size(96, 21);
-            this.sqd_6_lv.TabIndex = 1;
-            this.sqd_6_lv.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // label131
-            // 
-            /*
-            this.label131.AutoSize = true;
-            this.label131.Location = new System.Drawing.Point(3, 25);
-            this.label131.Name = "label131";
-            this.label131.Size = new System.Drawing.Size(20, 12);
-            this.label131.TabIndex = 0;
-            this.label131.Text = "LV";*/
             // 
             // label116
             // 
@@ -3703,43 +3213,6 @@
             this.set_fire.TabIndex = 1;
             this.set_fire.TabStop = false;
             this.set_fire.Text = "지원설정";
-            // 
-            // sqdswitch_6
-            // 
-            this.sqdswitch_6.AutoSize = true;
-            this.sqdswitch_6.Location = new System.Drawing.Point(8, 134);
-            this.sqdswitch_6.Name = "sqdswitch_6";
-            this.sqdswitch_6.Size = new System.Drawing.Size(66, 16);
-            this.sqdswitch_6.TabIndex = 5;
-            this.sqdswitch_6.Text = "QLZ-04";
-            this.sqdswitch_6.UseVisualStyleBackColor = true;
-            this.sqdswitch_6.CheckedChanged += new System.EventHandler(this.Sqdswitch_6_CheckedChanged);
-            // groupBox14
-            // 
-            /*
-            this.groupBox14.Controls.Add(this.sqdswitch_6);
-            this.groupBox14.Controls.Add(this.sqdswitch_5);
-            this.groupBox14.Controls.Add(this.sqdswitch_4);
-            this.groupBox14.Controls.Add(this.sqdswitch_3);
-            this.groupBox14.Controls.Add(this.sqdswitch_2);
-            this.groupBox14.Controls.Add(this.sqdswitch_1);
-            this.groupBox14.Location = new System.Drawing.Point(7, 135);
-            this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(155, 163);
-            this.groupBox14.TabIndex = 1;
-            this.groupBox14.TabStop = false;
-            this.groupBox14.Text = "지원설정";*/
-            // 
-            // sqdswitch_6
-            // 
-            this.sqdswitch_6.AutoSize = true;
-            this.sqdswitch_6.Location = new System.Drawing.Point(8, 134);
-            this.sqdswitch_6.Name = "sqdswitch_6";
-            this.sqdswitch_6.Size = new System.Drawing.Size(66, 16);
-            this.sqdswitch_6.TabIndex = 5;
-            this.sqdswitch_6.Text = "QLZ-04";
-            this.sqdswitch_6.UseVisualStyleBackColor = true;
-            this.sqdswitch_6.CheckedChanged += new System.EventHandler(this.Sqdswitch_6_CheckedChanged);
             // 
             // sqdswitch_6
             // 
@@ -5047,25 +4520,6 @@
             this.equip_autoapply_desc.TabIndex = 3;
             this.equip_autoapply_desc.Text = "장비를 설정하면 자동으로 적용됩니다.";
             // 
-            // label123
-            // 
-            //this.label123.AutoSize = true;
-            //this.label123.Location = new System.Drawing.Point(12, 218);
-            //this.label123.Name = "label123";
-            //this.label123.Size = new System.Drawing.Size(213, 12);
-            //this.label123.TabIndex = 3;
-            //this.label123.Text = "장비를 설정하면 자동으로 적용됩니다.";
-            // 
-            // label123
-            // 
-            /*
-            this.label123.AutoSize = true;
-            this.label123.Location = new System.Drawing.Point(12, 218);
-            this.label123.Name = "label123";
-            this.label123.Size = new System.Drawing.Size(213, 12);
-            this.label123.TabIndex = 3;
-            this.label123.Text = "장비를 설정하면 자동으로 적용됩니다.";*/
-            // 
             // label121
             // 
             this.label121.AutoSize = true;
@@ -5692,30 +5146,31 @@
             // 
             // groupBox25
             // 
-            this.groupBox25.Controls.Add(this.Language_set);
+            this.groupBox25.Controls.Add(this.label1);
             this.groupBox25.Controls.Add(this.languageList_Combobox);
             this.groupBox25.Location = new System.Drawing.Point(7, 108);
             this.groupBox25.Name = "groupBox25";
-            this.groupBox25.Size = new System.Drawing.Size(246, 69);
+            this.groupBox25.Size = new System.Drawing.Size(246, 109);
             this.groupBox25.TabIndex = 2;
             this.groupBox25.TabStop = false;
             this.groupBox25.Text = "Language";
             // 
-            // Language_set
+            // label1
             // 
-            this.Language_set.Location = new System.Drawing.Point(149, 27);
-            this.Language_set.Name = "Language_set";
-            this.Language_set.Size = new System.Drawing.Size(75, 23);
-            this.Language_set.TabIndex = 1;
-            this.Language_set.Text = "Set";
-            this.Language_set.UseVisualStyleBackColor = true;
+            this.label1.Location = new System.Drawing.Point(11, 48);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(217, 48);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Using files in data/lang/*.json\r\n\r\nChanges do not take effect until the program i" +
+    "s restarted.";
             // 
             // languageList_Combobox
             // 
+            this.languageList_Combobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.languageList_Combobox.FormattingEnabled = true;
-            this.languageList_Combobox.Location = new System.Drawing.Point(22, 29);
+            this.languageList_Combobox.Location = new System.Drawing.Point(13, 20);
             this.languageList_Combobox.Name = "languageList_Combobox";
-            this.languageList_Combobox.Size = new System.Drawing.Size(121, 20);
+            this.languageList_Combobox.Size = new System.Drawing.Size(215, 20);
             this.languageList_Combobox.TabIndex = 0;
             // 
             // etc_progsetting
@@ -5851,49 +5306,6 @@
             this.openFileDialog3.FileName = "openFileDialog3";
             this.openFileDialog3.Filter = "인형 장비 정보 파일|*.equip|Json 파일|*.json|모든 파일|*.*";
             this.openFileDialog3.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog3_FileOk);
-            // 
-            // groupBox22
-            // 
-            //this.groupBox22.AccessibleDescription = "";
-            //this.groupBox22.Controls.Add(this.theaterbattle);
-            //this.groupBox22.Controls.Add(this.normalbattle);
-            //this.groupBox22.Location = new System.Drawing.Point(405, 659);
-            //this.groupBox22.Name = "groupBox22";
-            //this.groupBox22.Size = new System.Drawing.Size(184, 34);
-            //this.groupBox22.TabIndex = 18;
-            //this.groupBox22.TabStop = false;
-           // this.groupBox22.Text = "모드";
-            // 
-            // normalbattle
-            // 
-            this.normalbattle.Checked = true;
-            this.normalbattle.Location = new System.Drawing.Point(6, 9);
-            this.normalbattle.Name = "normalbattle";
-            this.normalbattle.Size = new System.Drawing.Size(104, 24);
-            this.normalbattle.TabIndex = 0;
-            this.normalbattle.TabStop = true;
-            this.normalbattle.Text = "일반(모의전)";
-            this.normalbattle.UseVisualStyleBackColor = true;
-            // 
-            // theaterbattle
-            // 
-            this.theaterbattle.AutoSize = true;
-            this.theaterbattle.Location = new System.Drawing.Point(119, 13);
-            this.theaterbattle.Name = "theaterbattle";
-            this.theaterbattle.Size = new System.Drawing.Size(59, 16);
-            this.theaterbattle.TabIndex = 1;
-            this.theaterbattle.Text = "국지전";
-            this.theaterbattle.UseVisualStyleBackColor = true;
-            // 
-            // tabPage5
-            // 
-            //this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            //this.tabPage5.Name = "tabPage5";
-            //this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            //this.tabPage5.Size = new System.Drawing.Size(875, 700);
-            //this.tabPage5.TabIndex = 4;
-            //this.tabPage5.Text = "tabPage5";
-            //this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -6069,8 +5481,6 @@
             this.etc_basicinformation.ResumeLayout(false);
             this.etc_basicinformation.PerformLayout();
             this.panel1.ResumeLayout(false);
-            //this.groupBox22.ResumeLayout(false);
-            //this.groupBox22.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -6452,8 +5862,8 @@
         private System.Windows.Forms.TextBox commander_name;
         private System.Windows.Forms.Label com_name;
         private System.Windows.Forms.GroupBox groupBox25;
-        private System.Windows.Forms.Button Language_set;
         private System.Windows.Forms.ComboBox languageList_Combobox;
+        private System.Windows.Forms.Label label1;
     }
 }
 

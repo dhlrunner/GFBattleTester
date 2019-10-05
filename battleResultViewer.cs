@@ -38,9 +38,34 @@ namespace GFBattleTester
 
         private void BattleResultViewer_Load(object sender, EventArgs e)
         {
+            this.Text = Form1.frm.lang_data["brv_title"].ToString();
+            listView2.Columns[0].Text = Form1.frm.lang_data["brv_date_writed"].ToString();
+            listView2.Columns[1].Text = Form1.frm.lang_data["brv_leader"].ToString();
+            listView2.Columns[2].Text = Form1.frm.lang_data["brv_MVP"].ToString();
+            listView2.Columns[3].Text = Form1.frm.lang_data["brv_battle_status"].ToString();
+            listView2.Columns[4].Text = Form1.frm.lang_data["brv_sally_num"].ToString();
+            listView2.Columns[5].Text = Form1.frm.lang_data["brv_battle_time"].ToString();
+            listView2.Columns[6].Text = Form1.frm.lang_data["brv_enemy_leader"].ToString();
+            listView2.Columns[7].Text = Form1.frm.lang_data["brv_enemy_id"].ToString();
+            listView2.Columns[8].Text = Form1.frm.lang_data["brv_max_damage_to_enemy"].ToString();
+            listView2.Columns[9].Text = Form1.frm.lang_data["brv_max_damage_from_enemy"].ToString();
+            listView2.Columns[10].Text = Form1.frm.lang_data["brv_total_damage_to_enemy"].ToString();
+            listView2.Columns[11].Text = Form1.frm.lang_data["brv_filename"].ToString();
+            listView1.Columns[0].Text = Form1.frm.lang_data["brv_time"].ToString();
+            listView1.Columns[1].Text = Form1.frm.lang_data["brv_frame"].ToString();
+            listView1.Columns[2].Text = Form1.frm.lang_data["brv_target"].ToString();
+            listView1.Columns[3].Text = Form1.frm.lang_data["brv_action"].ToString();
+            listView1.Columns[4].Text = Form1.frm.lang_data["brv_current_pos"].ToString();
+            listView3.Columns[0].Text = Form1.frm.lang_data["brv_start_pos"].ToString();
+            listView3.Columns[1].Text = Form1.frm.lang_data["brv_gun_name"].ToString();
+            listView3.Columns[2].Text = Form1.frm.lang_data["brv_hp"].ToString();
+            listView3.Columns[3].Text = Form1.frm.lang_data["brv_hp_after"].ToString();
+            listView3.Columns[4].Text = Form1.frm.lang_data["brv_hp_damaged"].ToString();
+            label1.Text = Form1.frm.lang_data["brv_formation_info"].ToString();
             enemyInfo = JObject.Parse(File.ReadAllText(@"data/json/enemy_character_type_info.json"));
             timer1.Start();
             LoadFile();
+
         }
         void LoadFile()
         {
@@ -54,7 +79,7 @@ namespace GFBattleTester
                 string date = ConvertFromUnixTimestamp(double.Parse(brvf["battleEndtime"].ToString())).ToString("yyyy-MM-dd HH:mm:ss");
                 string leader = Form1.frm.gunName[Form1.frm.gun_id.IndexOf(int.Parse(guns[0]["gunid"].ToString()))];
                 string mvp = Form1.frm.gunName[Form1.frm.gun_id.IndexOf(int.Parse(guns[int.Parse(brvf["mvp"].ToString()) - 1]["gunid"].ToString()))]; 
-                string battleresult = bool.Parse( brvf["enemyDie"].ToString()) ? "승리":"패배";
+                string battleresult = bool.Parse( brvf["enemyDie"].ToString()) ? Form1.frm.lang_data["brv_win"].ToString() : Form1.frm.lang_data["brv_lose"].ToString();
                 int battledNum = 0;
                 string groupID = brvf["EnemyGroupID"].ToString();
                 string enemyLeader = brvf["EnemyLeaderID"].ToString() == "0"?"-" : enemyInfo[brvf["EnemyLeaderID"].ToString()]["code"].ToString();
@@ -62,7 +87,7 @@ namespace GFBattleTester
                 string totalDamageFromEnemy = brvf["totalDamageFromEnemy"].ToString();
                 string totalDamageToEnemy = brvf["totalDamageToEnemy"].ToString();
                 string filename = Path.GetFileName(fname);
-                string battletime = brvf["battleTime"].ToString()+"초";
+                string battletime = brvf["battleTime"].ToString() + Form1.frm.lang_data["brv_second"].ToString();
                 
                 foreach(var u in guns)
                 {
@@ -137,7 +162,7 @@ namespace GFBattleTester
                         {
                             hpbar.Value = hpbar.Maximum;
                         }
-                        posbtn.Text = items2[1]+Environment.NewLine+"HP: "+ items2[2] +Environment.NewLine+ "피해량: "+ items2[4];
+                        posbtn.Text = items2[1]+Environment.NewLine+"HP: "+ items2[2] +Environment.NewLine + Form1.frm.lang_data["brv_hp_damaged"].ToString() + ": "+ items2[4];
                         double damage_percent = double.Parse(items2[4]) / double.Parse(items2[2]) * 100.0;
                         if (damage_percent < 50.0 && damage_percent >= 0.0)
                         {                           
@@ -189,21 +214,21 @@ namespace GFBattleTester
                             if (record.Split(',')[3] == "0")
                             {
                                 //Console.WriteLine(",Toggle AutoSkill Off");
-                                item[3] = "자동스킬 Off";
+                                item[3] = Form1.frm.lang_data["brv_autoskill_off"].ToString();
 
                             }
 
                             else
                             {
                                 //Console.WriteLine(",Toggle AutoSkill On");
-                                item[3] = "자동스킬 On";
+                                item[3] = Form1.frm.lang_data["brv_autoskill_on"].ToString();
                             }
                             item[4] = "-";
                         }
                         else
                         {
                             item[2] = "-";
-                            item[3] = "알 수 없는 동작";
+                            item[3] = Form1.frm.lang_data["brv_unknown_action"].ToString();
                             item[4] = "-";
 
                             Console.WriteLine(",Unknown Op");
@@ -228,20 +253,20 @@ namespace GFBattleTester
 
                         if (record.Split(',')[2] == "1")
                         {
-                            item[3] = "퇴각";
+                            item[3] = Form1.frm.lang_data["brv_retire"].ToString();
                             item[4] = "-";
                             remaingun--;
                             // Console.WriteLine(",Retire");
                         }
                         else if (record.Split(',')[2] == "3")
                         {
-                            item[3] = "스킬 사용";
+                            item[3] = Form1.frm.lang_data["brv_use_skill"].ToString();
                             item[4] = currentpos[currentGun].ToString();
                             //Console.WriteLine(", Use Skill");
                         }
                         else if (record.Split(',')[2] == "0")
                         {
-                            item[3] = Array.IndexOf(gun_pos_in_record, int.Parse(record.Split(',')[3])).ToString() + "번 위치로 이동";
+                            item[3] = string.Format(Form1.frm.lang_data["brv_pos_move"].ToString(), Array.IndexOf(gun_pos_in_record, int.Parse(record.Split(',')[3])).ToString());
                             currentpos[currentGun] = Array.IndexOf(gun_pos_in_record, int.Parse(record.Split(',')[3]));
                             item[4] = currentpos[currentGun].ToString();
                             //Console.WriteLine(",Moveto: " + Array.IndexOf(gun_pos_in_record, int.Parse(record.Split(',')[3])));

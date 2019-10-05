@@ -135,22 +135,22 @@
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(492, 281);
+            this.label1.Location = new System.Drawing.Point(469, 276);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 12);
+            this.label1.Size = new System.Drawing.Size(77, 25);
             this.label1.TabIndex = 3;
             this.label1.Text = "장비 레벨";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(482, 313);
+            this.label2.Location = new System.Drawing.Point(469, 311);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 12);
+            this.label2.Size = new System.Drawing.Size(78, 23);
             this.label2.TabIndex = 4;
             this.label2.Text = "장비 교정률";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // numericUpDown2
             // 
@@ -196,7 +196,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.Location = new System.Drawing.Point(12, 26);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(423, 34);
+            this.label5.Size = new System.Drawing.Size(423, 43);
             this.label5.TabIndex = 1;
             this.label5.Text = "장비를 선택해주세요";
             // 
@@ -204,9 +204,9 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.Location = new System.Drawing.Point(7, 79);
+            this.label4.Location = new System.Drawing.Point(6, 79);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(435, 31);
+            this.label4.Size = new System.Drawing.Size(435, 42);
             this.label4.TabIndex = 0;
             // 
             // button2

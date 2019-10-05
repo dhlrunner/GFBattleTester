@@ -103,7 +103,17 @@ namespace GFBattleTester
         private void EquipSelecter_Load(object sender, EventArgs e)
         {
             //MessageBox.Show(Passvalue);
-            Text = Passvalue.Substring(0, 1) + "번 인형 " + Passvalue.Substring(1, 1) + "번 장비 선택중";
+            listView1.Columns[1].Text = Form1.frm.lang_data["equipselector_equip_name"].ToString();
+            listView1.Columns[2].Text = Form1.frm.lang_data["equipselector_kind"].ToString();
+            listView1.Columns[3].Text = Form1.frm.lang_data["equipselector_rank"].ToString();
+            listView1.Columns[4].Text = Form1.frm.lang_data["equipselector_only"].ToString();
+            groupBox1.Text = Form1.frm.lang_data["equipselector_no_equip_selected"].ToString();
+            label5.Text = Form1.frm.lang_data["equipselector_select_equip"].ToString();
+            label1.Text = Form1.frm.lang_data["equipselector_equip_level"].ToString();
+            label2.Text = Form1.frm.lang_data["equipselector_equip_correct"].ToString();
+            button2.Text = Form1.frm.lang_data["equipselector_remove"].ToString();
+            button1.Text = Form1.frm.lang_data["equipselector_apply"].ToString();
+            Text = string.Format(Form1.frm.lang_data["equipselector_title"].ToString(), Passvalue.Substring(0, 1), Passvalue.Substring(1, 1));
             equip = Encoding.UTF8.GetString(Convert.FromBase64String(File.ReadAllText("data/info_texts/equip.b64")));
             string[] temp = equip.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
             foreach (string a in temp)
@@ -151,9 +161,9 @@ namespace GFBattleTester
                     }
                 }
                 if (type == string.Empty)
-                    type = "정보없음";
+                    type = Form1.frm.lang_data["equipselector_noinfo"].ToString();
                 if (rank == string.Empty)
-                    rank = "정보없음";
+                    rank = Form1.frm.lang_data["equipselector_noinfo"].ToString();
 
                 string[] equipItems = { equipID[i], equipName[i], type, rank, only };
                 ListViewItem itm = new ListViewItem(equipItems);

@@ -51,7 +51,7 @@ namespace GFBattleTester
         public List<string> gunName = new List<string>();
         HttpListener listener = new HttpListener();
         Thread thread = new Thread(new ParameterizedThreadStart(WorkerThread));
-        JObject lang_data = new JObject();
+        public JObject lang_data = new JObject();
 
         ManualResetEvent _pauseEvent = new ManualResetEvent(false);
         static JObject userinfo = new JObject();

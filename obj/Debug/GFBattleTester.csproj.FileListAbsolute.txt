@@ -89,3 +89,4 @@ E:\code\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.csproj.CoreCompil
 E:\code\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.csproj.CopyComplete
 E:\code\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.exe
 E:\code\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.pdb
+C:\Users\dhlru\Desktop\My files\code\GFBattleTester\GFBattleTester\obj\Debug\GFBattleTester.csprojAssemblyReference.cache
