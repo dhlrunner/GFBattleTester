@@ -62,10 +62,10 @@ namespace GFBattleTester
             listView3.Columns[3].Text = Form1.frm.lang_data["brv_hp_after"].ToString();
             listView3.Columns[4].Text = Form1.frm.lang_data["brv_hp_damaged"].ToString();
             label1.Text = Form1.frm.lang_data["brv_formation_info"].ToString();
+
             enemyInfo = JObject.Parse(File.ReadAllText(@"data/json/enemy_character_type_info.json"));
             timer1.Start();
             LoadFile();
-
         }
         void LoadFile()
         {
@@ -74,33 +74,40 @@ namespace GFBattleTester
             lastfcount = brvfFiles.Length;
             foreach (string fname in brvfFiles)
             {
-                JObject brvf = JObject.Parse(File.ReadAllText(@"BattleLog/" + Path.GetFileName(fname)));
-                JArray guns = new JArray((JArray)brvf["gun_info"]);
-                string date = ConvertFromUnixTimestamp(double.Parse(brvf["battleEndtime"].ToString())).ToString("yyyy-MM-dd HH:mm:ss");
-                string leader = Form1.frm.gunName[Form1.frm.gun_id.IndexOf(int.Parse(guns[0]["gunid"].ToString()))];
-                string mvp = Form1.frm.gunName[Form1.frm.gun_id.IndexOf(int.Parse(guns[int.Parse(brvf["mvp"].ToString()) - 1]["gunid"].ToString()))]; 
-                string battleresult = bool.Parse( brvf["enemyDie"].ToString()) ? Form1.frm.lang_data["brv_win"].ToString() : Form1.frm.lang_data["brv_lose"].ToString();
-                int battledNum = 0;
-                string groupID = brvf["EnemyGroupID"].ToString();
-                string enemyLeader = brvf["EnemyLeaderID"].ToString() == "0"?"-" : enemyInfo[brvf["EnemyLeaderID"].ToString()]["code"].ToString();
-                string maxDamage = brvf["MaxDamageToEnemy"].ToString();
-                string totalDamageFromEnemy = brvf["totalDamageFromEnemy"].ToString();
-                string totalDamageToEnemy = brvf["totalDamageToEnemy"].ToString();
-                string filename = Path.GetFileName(fname);
-                string battletime = brvf["battleTime"].ToString() + Form1.frm.lang_data["brv_second"].ToString();
-                
-                foreach(var u in guns)
+                try
                 {
-                    
-                    if (u["isUsed"].ToString() == "1")
+                    JObject brvf = JObject.Parse(File.ReadAllText(@"BattleLog/" + Path.GetFileName(fname)));
+                    JArray guns = new JArray((JArray)brvf["gun_info"]);
+                    string date = ConvertFromUnixTimestamp(double.Parse(brvf["battleEndtime"].ToString())).ToString("yyyy-MM-dd HH:mm:ss");
+                    string leader = Form1.frm.gunName[Form1.frm.gun_id.IndexOf(int.Parse(guns[0]["gunid"].ToString()))];
+                    string mvp = Form1.frm.gunName[Form1.frm.gun_id.IndexOf(int.Parse(guns[int.Parse(brvf["mvp"].ToString()) - 1]["gunid"].ToString()))];
+                    string battleresult = bool.Parse(brvf["enemyDie"].ToString()) ? Form1.frm.lang_data["brv_win"].ToString() : Form1.frm.lang_data["brv_lose"].ToString();
+                    int battledNum = 0;
+                    string groupID = brvf["EnemyGroupID"].ToString();
+                    string enemyLeader = brvf["EnemyLeaderID"].ToString() == "0" ? "-" : enemyInfo[brvf["EnemyLeaderID"].ToString()]["code"].ToString();
+                    string maxDamage = brvf["MaxDamageToEnemy"].ToString();
+                    string totalDamageFromEnemy = brvf["totalDamageFromEnemy"].ToString();
+                    string totalDamageToEnemy = brvf["totalDamageToEnemy"].ToString();
+                    string filename = Path.GetFileName(fname);
+                    string battletime = brvf["battleTime"].ToString() + Form1.frm.lang_data["brv_second"].ToString();
+
+                    foreach (var u in guns)
                     {
-                        
-                        battledNum++;
+
+                        if (u["isUsed"].ToString() == "1")
+                        {
+
+                            battledNum++;
+                        }
                     }
+                    string[] add = { date, leader, mvp, battleresult, battledNum.ToString(), battletime, enemyLeader, groupID, maxDamage, totalDamageFromEnemy, totalDamageToEnemy, filename };
+                    ListViewItem itm = new ListViewItem(add);
+                    listView2.Items.Add(itm);
                 }
-                string[] add = {date,leader,mvp,battleresult,battledNum.ToString(),battletime,enemyLeader,groupID,maxDamage,totalDamageFromEnemy,totalDamageToEnemy,filename };
-                ListViewItem itm = new ListViewItem(add);
-                listView2.Items.Add(itm);
+                catch
+                {
+                    MessageBox.Show("Some File load failed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             } 
             
             
@@ -162,7 +169,7 @@ namespace GFBattleTester
                         {
                             hpbar.Value = hpbar.Maximum;
                         }
-                        posbtn.Text = items2[1]+Environment.NewLine+"HP: "+ items2[2] +Environment.NewLine + Form1.frm.lang_data["brv_hp_damaged"].ToString() + ": "+ items2[4];
+                        posbtn.Text = items2[1]+Environment.NewLine+"HP: "+ items2[2] +Environment.NewLine+ Form1.frm.lang_data["brv_hp_damaged"].ToString()+": " + items2[4];
                         double damage_percent = double.Parse(items2[4]) / double.Parse(items2[2]) * 100.0;
                         if (damage_percent < 50.0 && damage_percent >= 0.0)
                         {                           
@@ -266,6 +273,7 @@ namespace GFBattleTester
                         }
                         else if (record.Split(',')[2] == "0")
                         {
+
                             item[3] = string.Format(Form1.frm.lang_data["brv_pos_move"].ToString(), Array.IndexOf(gun_pos_in_record, int.Parse(record.Split(',')[3])).ToString());
                             currentpos[currentGun] = Array.IndexOf(gun_pos_in_record, int.Parse(record.Split(',')[3]));
                             item[4] = currentpos[currentGun].ToString();

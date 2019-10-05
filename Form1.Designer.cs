@@ -358,9 +358,6 @@
             this.setEquip_12 = new System.Windows.Forms.Button();
             this.setEquip_11 = new System.Windows.Forms.Button();
             this.server_set = new System.Windows.Forms.TabPage();
-            this.server_mode = new System.Windows.Forms.GroupBox();
-            this.theaterbattle = new System.Windows.Forms.RadioButton();
-            this.normalbattle = new System.Windows.Forms.RadioButton();
             this.server_viewBattlelog = new System.Windows.Forms.Button();
             this.clearlog = new System.Windows.Forms.LinkLabel();
             this.server_hideip = new System.Windows.Forms.CheckBox();
@@ -387,6 +384,9 @@
             this.enemy_team_id_combobox = new System.Windows.Forms.ComboBox();
             this.enemy_group = new System.Windows.Forms.Label();
             this.etc_set = new System.Windows.Forms.TabPage();
+            this.server_mode = new System.Windows.Forms.GroupBox();
+            this.theaterbattle = new System.Windows.Forms.RadioButton();
+            this.normalbattle = new System.Windows.Forms.RadioButton();
             this.groupBox25 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.languageList_Combobox = new System.Windows.Forms.ComboBox();
@@ -407,6 +407,7 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.saveFileDialog3 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog3 = new System.Windows.Forms.OpenFileDialog();
+            this.about_label = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.gun_set.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -537,11 +538,11 @@
             this.groupBox_equip_2.SuspendLayout();
             this.groupBox_equip_1.SuspendLayout();
             this.server_set.SuspendLayout();
-            this.server_mode.SuspendLayout();
             this.server_information.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.portnum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Boss_HP_textbox)).BeginInit();
             this.etc_set.SuspendLayout();
+            this.server_mode.SuspendLayout();
             this.groupBox25.SuspendLayout();
             this.etc_progsetting.SuspendLayout();
             this.etc_basicinformation.SuspendLayout();
@@ -4832,7 +4833,6 @@
             // 
             // server_set
             // 
-            this.server_set.Controls.Add(this.server_mode);
             this.server_set.Controls.Add(this.server_viewBattlelog);
             this.server_set.Controls.Add(this.clearlog);
             this.server_set.Controls.Add(this.server_hideip);
@@ -4857,40 +4857,6 @@
             this.server_set.Text = "전투 설정";
             this.server_set.UseVisualStyleBackColor = true;
             // 
-            // server_mode
-            // 
-            this.server_mode.AccessibleDescription = "";
-            this.server_mode.Controls.Add(this.theaterbattle);
-            this.server_mode.Controls.Add(this.normalbattle);
-            this.server_mode.Location = new System.Drawing.Point(373, 657);
-            this.server_mode.Name = "server_mode";
-            this.server_mode.Size = new System.Drawing.Size(184, 34);
-            this.server_mode.TabIndex = 18;
-            this.server_mode.TabStop = false;
-            this.server_mode.Text = "모드";
-            // 
-            // theaterbattle
-            // 
-            this.theaterbattle.AutoSize = true;
-            this.theaterbattle.Location = new System.Drawing.Point(119, 13);
-            this.theaterbattle.Name = "theaterbattle";
-            this.theaterbattle.Size = new System.Drawing.Size(59, 16);
-            this.theaterbattle.TabIndex = 1;
-            this.theaterbattle.Text = "국지전";
-            this.theaterbattle.UseVisualStyleBackColor = true;
-            // 
-            // normalbattle
-            // 
-            this.normalbattle.Checked = true;
-            this.normalbattle.Location = new System.Drawing.Point(6, 9);
-            this.normalbattle.Name = "normalbattle";
-            this.normalbattle.Size = new System.Drawing.Size(104, 24);
-            this.normalbattle.TabIndex = 0;
-            this.normalbattle.TabStop = true;
-            this.normalbattle.Text = "일반(모의전)";
-            this.normalbattle.UseVisualStyleBackColor = true;
-            this.normalbattle.CheckedChanged += new System.EventHandler(this.Normalbattle_CheckedChanged);
-            // 
             // server_viewBattlelog
             // 
             this.server_viewBattlelog.Location = new System.Drawing.Point(30, 146);
@@ -4904,7 +4870,7 @@
             // clearlog
             // 
             this.clearlog.AutoSize = true;
-            this.clearlog.Location = new System.Drawing.Point(9, 668);
+            this.clearlog.Location = new System.Drawing.Point(19, 669);
             this.clearlog.Name = "clearlog";
             this.clearlog.Size = new System.Drawing.Size(69, 12);
             this.clearlog.TabIndex = 15;
@@ -4950,7 +4916,7 @@
             // server_port
             // 
             this.server_port.AutoSize = true;
-            this.server_port.Location = new System.Drawing.Point(6, 84);
+            this.server_port.Location = new System.Drawing.Point(6, 89);
             this.server_port.Name = "server_port";
             this.server_port.Size = new System.Drawing.Size(65, 12);
             this.server_port.TabIndex = 3;
@@ -4959,7 +4925,7 @@
             // server_ip
             // 
             this.server_ip.AutoSize = true;
-            this.server_ip.Location = new System.Drawing.Point(6, 65);
+            this.server_ip.Location = new System.Drawing.Point(6, 70);
             this.server_ip.Name = "server_ip";
             this.server_ip.Size = new System.Drawing.Size(48, 12);
             this.server_ip.TabIndex = 2;
@@ -4967,17 +4933,16 @@
             // 
             // server_settedID
             // 
-            this.server_settedID.AutoSize = true;
             this.server_settedID.Location = new System.Drawing.Point(6, 44);
             this.server_settedID.Name = "server_settedID";
-            this.server_settedID.Size = new System.Drawing.Size(99, 12);
+            this.server_settedID.Size = new System.Drawing.Size(152, 26);
             this.server_settedID.TabIndex = 1;
             this.server_settedID.Text = "설정된 적 그룹: 0";
             // 
             // server_state
             // 
             this.server_state.AutoSize = true;
-            this.server_state.Location = new System.Drawing.Point(7, 25);
+            this.server_state.Location = new System.Drawing.Point(6, 25);
             this.server_state.Name = "server_state";
             this.server_state.Size = new System.Drawing.Size(101, 12);
             this.server_state.TabIndex = 0;
@@ -5029,12 +4994,12 @@
             // 
             // server_setport
             // 
-            this.server_setport.AutoSize = true;
-            this.server_setport.Location = new System.Drawing.Point(595, 672);
+            this.server_setport.Location = new System.Drawing.Point(552, 669);
             this.server_setport.Name = "server_setport";
-            this.server_setport.Size = new System.Drawing.Size(29, 12);
+            this.server_setport.Size = new System.Drawing.Size(71, 22);
             this.server_setport.TabIndex = 10;
             this.server_setport.Text = "포트";
+            this.server_setport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // portnum
             // 
@@ -5133,6 +5098,8 @@
             // 
             // etc_set
             // 
+            this.etc_set.Controls.Add(this.about_label);
+            this.etc_set.Controls.Add(this.server_mode);
             this.etc_set.Controls.Add(this.groupBox25);
             this.etc_set.Controls.Add(this.etc_progsetting);
             this.etc_set.Controls.Add(this.etc_basicinformation);
@@ -5144,11 +5111,44 @@
             this.etc_set.Text = "기타 설정";
             this.etc_set.UseVisualStyleBackColor = true;
             // 
+            // server_mode
+            // 
+            this.server_mode.AccessibleDescription = "";
+            this.server_mode.Controls.Add(this.theaterbattle);
+            this.server_mode.Controls.Add(this.normalbattle);
+            this.server_mode.Location = new System.Drawing.Point(7, 107);
+            this.server_mode.Name = "server_mode";
+            this.server_mode.Size = new System.Drawing.Size(233, 109);
+            this.server_mode.TabIndex = 18;
+            this.server_mode.TabStop = false;
+            this.server_mode.Text = "모드";
+            // 
+            // theaterbattle
+            // 
+            this.theaterbattle.Location = new System.Drawing.Point(19, 65);
+            this.theaterbattle.Name = "theaterbattle";
+            this.theaterbattle.Size = new System.Drawing.Size(191, 23);
+            this.theaterbattle.TabIndex = 1;
+            this.theaterbattle.Text = "국지전";
+            this.theaterbattle.UseVisualStyleBackColor = true;
+            // 
+            // normalbattle
+            // 
+            this.normalbattle.Checked = true;
+            this.normalbattle.Location = new System.Drawing.Point(19, 24);
+            this.normalbattle.Name = "normalbattle";
+            this.normalbattle.Size = new System.Drawing.Size(191, 24);
+            this.normalbattle.TabIndex = 0;
+            this.normalbattle.TabStop = true;
+            this.normalbattle.Text = "일반(모의전)";
+            this.normalbattle.UseVisualStyleBackColor = true;
+            this.normalbattle.CheckedChanged += new System.EventHandler(this.Normalbattle_CheckedChanged);
+            // 
             // groupBox25
             // 
             this.groupBox25.Controls.Add(this.label1);
             this.groupBox25.Controls.Add(this.languageList_Combobox);
-            this.groupBox25.Location = new System.Drawing.Point(7, 108);
+            this.groupBox25.Location = new System.Drawing.Point(246, 107);
             this.groupBox25.Name = "groupBox25";
             this.groupBox25.Size = new System.Drawing.Size(246, 109);
             this.groupBox25.TabIndex = 2;
@@ -5157,7 +5157,7 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(11, 48);
+            this.label1.Location = new System.Drawing.Point(11, 50);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(217, 48);
             this.label1.TabIndex = 1;
@@ -5306,6 +5306,17 @@
             this.openFileDialog3.FileName = "openFileDialog3";
             this.openFileDialog3.Filter = "인형 장비 정보 파일|*.equip|Json 파일|*.json|모든 파일|*.*";
             this.openFileDialog3.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog3_FileOk);
+            // 
+            // about_label
+            // 
+            this.about_label.Location = new System.Drawing.Point(4, 613);
+            this.about_label.Name = "about_label";
+            this.about_label.Size = new System.Drawing.Size(867, 84);
+            this.about_label.TabIndex = 19;
+            this.about_label.Text = "Made by: runner38 from DCinside MICATEAM Gallery\r\n\r\nThis program needs a KR clien" +
+    "t.\r\n\r\nMICA-TEAM owns all copyrights of doll information, stats, description, etc" +
+    ".";
+            this.about_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
@@ -5468,13 +5479,12 @@
             this.groupBox_equip_1.ResumeLayout(false);
             this.server_set.ResumeLayout(false);
             this.server_set.PerformLayout();
-            this.server_mode.ResumeLayout(false);
-            this.server_mode.PerformLayout();
             this.server_information.ResumeLayout(false);
             this.server_information.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.portnum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Boss_HP_textbox)).EndInit();
             this.etc_set.ResumeLayout(false);
+            this.server_mode.ResumeLayout(false);
             this.groupBox25.ResumeLayout(false);
             this.etc_progsetting.ResumeLayout(false);
             this.etc_progsetting.PerformLayout();
@@ -5864,6 +5874,7 @@
         private System.Windows.Forms.GroupBox groupBox25;
         private System.Windows.Forms.ComboBox languageList_Combobox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label about_label;
     }
 }
 
