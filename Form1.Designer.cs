@@ -408,6 +408,9 @@
             this.saveFileDialog3 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog3 = new System.Windows.Forms.OpenFileDialog();
             this.about_label = new System.Windows.Forms.Label();
+            this.theater_set = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.gun_set.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -547,6 +550,7 @@
             this.etc_progsetting.SuspendLayout();
             this.etc_basicinformation.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.theater_set.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -559,6 +563,7 @@
             this.tabControl1.Controls.Add(this.equip_set);
             this.tabControl1.Controls.Add(this.server_set);
             this.tabControl1.Controls.Add(this.etc_set);
+            this.tabControl1.Controls.Add(this.theater_set);
             this.tabControl1.Location = new System.Drawing.Point(5, 9);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -5318,6 +5323,35 @@
     ".";
             this.about_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // theater_set
+            // 
+            this.theater_set.Controls.Add(this.textBox2);
+            this.theater_set.Controls.Add(this.textBox1);
+            this.theater_set.Location = new System.Drawing.Point(4, 22);
+            this.theater_set.Name = "theater_set";
+            this.theater_set.Padding = new System.Windows.Forms.Padding(3);
+            this.theater_set.Size = new System.Drawing.Size(875, 700);
+            this.theater_set.TabIndex = 5;
+            this.theater_set.Text = "국지전 설정";
+            this.theater_set.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(88, 68);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 21);
+            this.textBox1.TabIndex = 0;
+            this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(88, 131);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(163, 21);
+            this.textBox2.TabIndex = 1;
+            this.textBox2.Text = "6,5,0,6,4,4,2,0,2,1";
+            this.textBox2.TextChanged += new System.EventHandler(this.TextBox2_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -5491,6 +5525,8 @@
             this.etc_basicinformation.ResumeLayout(false);
             this.etc_basicinformation.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.theater_set.ResumeLayout(false);
+            this.theater_set.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -5875,6 +5911,9 @@
         private System.Windows.Forms.ComboBox languageList_Combobox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label about_label;
+        private System.Windows.Forms.TabPage theater_set;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
 

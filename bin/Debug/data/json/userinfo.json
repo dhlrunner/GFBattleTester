@@ -12142,7 +12142,7 @@
             "location": "2",
             "gun_with_user_id": "2",
             "position": "7",
-            "life": "535"
+            "life": "99999"
         },
         {
             "user_id": "20139",
@@ -12150,7 +12150,7 @@
             "location": "3",
             "gun_with_user_id": "3",
             "position": "13",
-            "life": "975"
+            "life": "99999"
         },
         {
             "user_id": "20139",
@@ -12158,7 +12158,7 @@
             "location": "4",
             "gun_with_user_id": "4",
             "position": "9",
-            "life": "565"
+            "life": "99999"
         },
         {
             "user_id": "20139",
@@ -12166,7 +12166,7 @@
             "location": "5",
             "gun_with_user_id": "5",
             "position": "14",
-            "life": "900"
+            "life": "99999"
         }       
     ],
     "fairy_in_theater_info": [        

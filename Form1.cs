@@ -3579,6 +3579,16 @@ namespace GFBattleTester
             }
         }
 
+        private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            userinfo["theater_exercise_info"]["theater_area_id"] = textBox1.Text;
+        }
+
+        private void TextBox2_TextChanged(object sender, EventArgs e)
+        {
+            userinfo["theater_exercise_info"]["enemy_teams"] = textBox2.Text;
+        }
+
         private void UpdatePosTile(object sender, EventArgs e)
         {
             string[] pos = Enumerable.Repeat("0", 9).ToArray();
