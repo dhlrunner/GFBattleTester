@@ -495,7 +495,24 @@ namespace GFBattleTester
             #endregion
 
             #region page5
-            tabControl1.TabPages[4].Text = lang_data["set_etc"].ToString();
+            for (int i = 1; i <= 8; i++)
+            {
+                theater_area_num.Items.Add(string.Format(lang_data["theater_area_num"].ToString(), i.ToString()));
+            }
+            tabControl1.TabPages[4].Text = lang_data["set_theater_tap"].ToString();
+            theater_area_gb.Text = lang_data["set_theater_tap"].ToString();
+            theater_area_occ_gb.Text = lang_data["theater_area_occupation"].ToString();
+            theater_area_bigginer_occ.Text = lang_data["theater_area_bigginer"].ToString();
+            theater_area_mid_occ.Text = lang_data["theater_area_mid"].ToString();
+            theater_area_adv_occ.Text = lang_data["theater_area_adv"].ToString();
+            theater_area_core_occ.Text = lang_data["theater_area_core"].ToString();
+            theater_enemy_setting.Text = lang_data["theater_enemy_setting"].ToString();
+            theater_enemy_random_btn.Text =  lang_data["theater_enemy_random"].ToString();
+            theater_enemy_preview.Text = lang_data["theater_enemy_pre"].ToString();
+            #endregion
+
+            #region page6
+            tabControl1.TabPages[5].Text = lang_data["set_etc"].ToString();
             etc_basicinformation.Text = lang_data["basic_information"].ToString();
             com_name.Text = lang_data["commander_name"].ToString();
             com_exp.Text = lang_data["commander_exp"].ToString();
@@ -503,11 +520,14 @@ namespace GFBattleTester
             showdetailLog_checkbox.Text = lang_data["show_detailLog"].ToString();
             updatecheck_checkbox.Text = lang_data["chech_update"].ToString();
             nolog_checkbox.Text = lang_data["no_log"].ToString();
+            client_reset_type.Text = lang_data["client_force_reset_type"].ToString();
+            error_error3.Text = lang_data["type_error3"].ToString();
+            error_error2.Text = lang_data["type_error2"].ToString();
+            error_error1.Text = lang_data["type_error1"].ToString();
+            error_error0.Text = lang_data["type_error0"].ToString();
             #endregion
-            for(int i=1; i <= 8; i++)
-            {
-                theater_area_num.Items.Add(string.Format("제{0}지역", i.ToString()));
-            }
+
+           
            
           
         }
@@ -1604,12 +1624,24 @@ namespace GFBattleTester
               gunid_5_combobox.SelectedIndex == gunid_1_combobox.SelectedIndex)
                     MessageBox.Show(lang_data["gun_duplicate_skill_error_warning_msg"].ToString(), lang_data["warning"].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Information);
                 JArray gun_user_info = JArray.Parse(userinfo["gun_with_user_info"].ToString());
+                JArray gun_info_in_theater = JArray.Parse(userinfo["gun_in_theater_info"].ToString());
                 gun_user_info.RemoveAll();
+                gun_info_in_theater.RemoveAll();
                 for (int i = 1; i <= 5; i++)
                 {
-                    gun_user_info.Add(Get_user_gun_info_json(i));
+                    JObject o = new JObject(Get_user_gun_info_json(i));
+                    JObject n = new JObject();
+                    gun_user_info.Add(o);
+                    n.Add("user_id", "20139");
+                    n.Add("team_id", o["team_id"]);
+                    n.Add("location", o["location"]);
+                    n.Add("gun_with_user_id", o["id"]);
+                    n.Add("position", o["position"]);
+                    n.Add("life", o["life"]);
+                    gun_info_in_theater.Add(n);
                 }
                 userinfo["gun_with_user_info"].Replace(gun_user_info);
+                userinfo["gun_in_theater_info"].Replace(gun_info_in_theater);
                 //MessageBox.Show(Get_user_gun_info_json(1).ToString());
                 if (showMessageBox)
                     MessageBox.Show(lang_data["saved_msg"].ToString(), lang_data["alert"].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Information);

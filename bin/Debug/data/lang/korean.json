@@ -181,5 +181,21 @@
     "serveraccess_with_equip":"해당 제대의 장비도 같이 불러옵니다.",
     "serveraccess_waiting_log":"클라이언트 접속 대기 중..",
     "serveraccess_success":"유저 정보 취득 성공.",
-    "serveraccess_completed":"유저 정보로부터 데이터를 모두 불러왔습니다."
+    "serveraccess_completed":"유저 정보로부터 데이터를 모두 불러왔습니다.",
+    "theater_area_num":"제{0}지역",
+    "set_theater_tap":"국지전 설정",
+    "theater_area":"지역",
+    "theater_area_occupation":"지역 점령 여부(체크 시 점령)",
+    "theater_area_bigginer":"초급",
+    "theater_area_mid":"중급",
+    "theater_area_adv":"고급",
+    "theater_area_core":"핵심",
+    "theater_enemy_setting":"적 설정",
+    "theater_enemy_random":"랜덤 설정",
+    "theater_enemy_pre":"미리보기",
+    "client_force_reset_type":"클라이언트 강제 리셋 유형",
+    "type_error3":"code:3 (기본)",
+    "type_error2":"우중한 조작",
+    "type_error1":"서버 접속 단절",
+    "type_error0":"서명 만료 (재로그인 필요)"
 }

@@ -10841,10 +10841,10 @@
       "user_id": "20139",
       "fairy_id": "6",
       "team_id": "9",
-      "fairy_lv": "62",
-      "fairy_exp": "1937307",
+      "fairy_lv": "63",
+      "fairy_exp": "2072271",
       "quality_lv": "3",
-      "quality_exp": "1000",
+      "quality_exp": "1200",
       "skill_lv": "10",
       "passive_skill": "910104",
       "is_locked": "1",
@@ -12202,7 +12202,11 @@
         }
     ],
     "fairy_in_theater_info": [
-       
+       {
+      "user_id": "20139",
+      "team_id": "1",
+      "fairy_with_user_id": 215264
+    }
     ],
     "theater_exercise_info": {
         "user_id": 20139,

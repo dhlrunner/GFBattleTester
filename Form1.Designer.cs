@@ -415,15 +415,15 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.saveFileDialog3 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog3 = new System.Windows.Forms.OpenFileDialog();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.theater_area_occ_gb = new System.Windows.Forms.GroupBox();
             this.theater_area_bigginer_occ = new System.Windows.Forms.CheckBox();
             this.theater_area_mid_occ = new System.Windows.Forms.CheckBox();
             this.theater_area_adv_occ = new System.Windows.Forms.CheckBox();
             this.theater_area_core_occ = new System.Windows.Forms.CheckBox();
-            this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.theater_area_gb = new System.Windows.Forms.GroupBox();
             this.theater_area = new System.Windows.Forms.ComboBox();
             this.theater_area_num = new System.Windows.Forms.ComboBox();
-            this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.theater_enemy_setting = new System.Windows.Forms.GroupBox();
             this.wave_label = new System.Windows.Forms.Label();
             this.theater_wave_set = new System.Windows.Forms.NumericUpDown();
             this.theater_enemy_random_btn = new System.Windows.Forms.Button();
@@ -579,9 +579,9 @@
             this.etc_basicinformation.SuspendLayout();
             this.theater_set.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.groupBox7.SuspendLayout();
-            this.groupBox14.SuspendLayout();
-            this.groupBox15.SuspendLayout();
+            this.theater_area_occ_gb.SuspendLayout();
+            this.theater_area_gb.SuspendLayout();
+            this.theater_enemy_setting.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.theater_wave_set)).BeginInit();
             this.theater_enemy_preview.SuspendLayout();
             this.theater_sqd_sett.SuspendLayout();
@@ -596,8 +596,8 @@
             this.tabControl1.Controls.Add(this.fire_support_unit_set);
             this.tabControl1.Controls.Add(this.equip_set);
             this.tabControl1.Controls.Add(this.server_set);
-            this.tabControl1.Controls.Add(this.etc_set);
             this.tabControl1.Controls.Add(this.theater_set);
+            this.tabControl1.Controls.Add(this.etc_set);
             this.tabControl1.Location = new System.Drawing.Point(5, 9);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -5378,9 +5378,9 @@
             // theater_set
             // 
             this.theater_set.Controls.Add(this.theater_sqd_sett);
-            this.theater_set.Controls.Add(this.groupBox15);
-            this.theater_set.Controls.Add(this.groupBox14);
-            this.theater_set.Controls.Add(this.groupBox7);
+            this.theater_set.Controls.Add(this.theater_enemy_setting);
+            this.theater_set.Controls.Add(this.theater_area_gb);
+            this.theater_set.Controls.Add(this.theater_area_occ_gb);
             this.theater_set.Location = new System.Drawing.Point(4, 22);
             this.theater_set.Name = "theater_set";
             this.theater_set.Padding = new System.Windows.Forms.Padding(3);
@@ -5440,18 +5440,18 @@
             this.openFileDialog3.Filter = "인형 장비 정보 파일|*.equip|Json 파일|*.json|모든 파일|*.*";
             this.openFileDialog3.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog3_FileOk);
             // 
-            // groupBox7
+            // theater_area_occ_gb
             // 
-            this.groupBox7.Controls.Add(this.theater_area_core_occ);
-            this.groupBox7.Controls.Add(this.theater_area_adv_occ);
-            this.groupBox7.Controls.Add(this.theater_area_mid_occ);
-            this.groupBox7.Controls.Add(this.theater_area_bigginer_occ);
-            this.groupBox7.Location = new System.Drawing.Point(6, 76);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(235, 125);
-            this.groupBox7.TabIndex = 2;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "지역 점령 여부(체크 시 점령)";
+            this.theater_area_occ_gb.Controls.Add(this.theater_area_core_occ);
+            this.theater_area_occ_gb.Controls.Add(this.theater_area_adv_occ);
+            this.theater_area_occ_gb.Controls.Add(this.theater_area_mid_occ);
+            this.theater_area_occ_gb.Controls.Add(this.theater_area_bigginer_occ);
+            this.theater_area_occ_gb.Location = new System.Drawing.Point(6, 76);
+            this.theater_area_occ_gb.Name = "theater_area_occ_gb";
+            this.theater_area_occ_gb.Size = new System.Drawing.Size(235, 125);
+            this.theater_area_occ_gb.TabIndex = 2;
+            this.theater_area_occ_gb.TabStop = false;
+            this.theater_area_occ_gb.Text = "지역 점령 여부(체크 시 점령)";
             // 
             // theater_area_bigginer_occ
             // 
@@ -5497,16 +5497,16 @@
             this.theater_area_core_occ.UseVisualStyleBackColor = true;
             this.theater_area_core_occ.CheckedChanged += new System.EventHandler(this.Theater_area_core_occ_CheckedChanged);
             // 
-            // groupBox14
+            // theater_area_gb
             // 
-            this.groupBox14.Controls.Add(this.theater_area_num);
-            this.groupBox14.Controls.Add(this.theater_area);
-            this.groupBox14.Location = new System.Drawing.Point(6, 6);
-            this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(235, 64);
-            this.groupBox14.TabIndex = 3;
-            this.groupBox14.TabStop = false;
-            this.groupBox14.Text = "지역";
+            this.theater_area_gb.Controls.Add(this.theater_area_num);
+            this.theater_area_gb.Controls.Add(this.theater_area);
+            this.theater_area_gb.Location = new System.Drawing.Point(6, 6);
+            this.theater_area_gb.Name = "theater_area_gb";
+            this.theater_area_gb.Size = new System.Drawing.Size(235, 64);
+            this.theater_area_gb.TabIndex = 3;
+            this.theater_area_gb.TabStop = false;
+            this.theater_area_gb.Text = "지역";
             // 
             // theater_area
             // 
@@ -5533,17 +5533,17 @@
             this.theater_area_num.TabIndex = 1;
             this.theater_area_num.SelectedIndexChanged += new System.EventHandler(this.Theater_area_num_SelectedIndexChanged);
             // 
-            // groupBox15
+            // theater_enemy_setting
             // 
-            this.groupBox15.Controls.Add(this.theater_enemy_preview);
-            this.groupBox15.Controls.Add(this.theater_enemy_random_btn);
-            this.groupBox15.Controls.Add(this.theater_enemyid_set);
-            this.groupBox15.Location = new System.Drawing.Point(247, 6);
-            this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(622, 195);
-            this.groupBox15.TabIndex = 4;
-            this.groupBox15.TabStop = false;
-            this.groupBox15.Text = "적 설정";
+            this.theater_enemy_setting.Controls.Add(this.theater_enemy_preview);
+            this.theater_enemy_setting.Controls.Add(this.theater_enemy_random_btn);
+            this.theater_enemy_setting.Controls.Add(this.theater_enemyid_set);
+            this.theater_enemy_setting.Location = new System.Drawing.Point(247, 6);
+            this.theater_enemy_setting.Name = "theater_enemy_setting";
+            this.theater_enemy_setting.Size = new System.Drawing.Size(622, 195);
+            this.theater_enemy_setting.TabIndex = 4;
+            this.theater_enemy_setting.TabStop = false;
+            this.theater_enemy_setting.Text = "적 설정";
             // 
             // wave_label
             // 
@@ -5879,11 +5879,11 @@
             this.etc_basicinformation.PerformLayout();
             this.theater_set.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
-            this.groupBox14.ResumeLayout(false);
-            this.groupBox15.ResumeLayout(false);
-            this.groupBox15.PerformLayout();
+            this.theater_area_occ_gb.ResumeLayout(false);
+            this.theater_area_occ_gb.PerformLayout();
+            this.theater_area_gb.ResumeLayout(false);
+            this.theater_enemy_setting.ResumeLayout(false);
+            this.theater_enemy_setting.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.theater_wave_set)).EndInit();
             this.theater_enemy_preview.ResumeLayout(false);
             this.theater_sqd_sett.ResumeLayout(false);
@@ -6279,10 +6279,10 @@
         private System.Windows.Forms.RadioButton error_error2;
         private System.Windows.Forms.RadioButton error_error3;
         private System.Windows.Forms.RadioButton error_error1;
-        private System.Windows.Forms.GroupBox groupBox14;
+        private System.Windows.Forms.GroupBox theater_area_gb;
         private System.Windows.Forms.ComboBox theater_area_num;
         private System.Windows.Forms.ComboBox theater_area;
-        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.GroupBox theater_area_occ_gb;
         private System.Windows.Forms.CheckBox theater_area_core_occ;
         private System.Windows.Forms.CheckBox theater_area_adv_occ;
         private System.Windows.Forms.CheckBox theater_area_mid_occ;
@@ -6290,7 +6290,7 @@
         private System.Windows.Forms.GroupBox theater_enemy_preview;
         private System.Windows.Forms.Label wave_label;
         private System.Windows.Forms.NumericUpDown theater_wave_set;
-        private System.Windows.Forms.GroupBox groupBox15;
+        private System.Windows.Forms.GroupBox theater_enemy_setting;
         private System.Windows.Forms.Button theater_enemy_random_btn;
         private System.Windows.Forms.ListView theater_enemy_preview_listbox;
         private System.Windows.Forms.ColumnHeader columnHeader1;
