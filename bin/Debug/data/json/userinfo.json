@@ -12127,14 +12127,14 @@
     "mre": "-1",
     "part": "-1"
   },
-  "gun_in_theater_info": [
+ "gun_in_theater_info": [
         {
             "user_id": "20139",
             "team_id": "1",
             "location": "1",
             "gun_with_user_id": "1",
             "position": "8",
-            "life": "99999"
+            "life": "565"
         },
         {
             "user_id": "20139",
@@ -12142,7 +12142,7 @@
             "location": "2",
             "gun_with_user_id": "2",
             "position": "7",
-            "life": "99999"
+            "life": "535"
         },
         {
             "user_id": "20139",
@@ -12150,7 +12150,7 @@
             "location": "3",
             "gun_with_user_id": "3",
             "position": "13",
-            "life": "99999"
+            "life": "975"
         },
         {
             "user_id": "20139",
@@ -12158,7 +12158,7 @@
             "location": "4",
             "gun_with_user_id": "4",
             "position": "9",
-            "life": "99999"
+            "life": "565"
         },
         {
             "user_id": "20139",
@@ -12166,12 +12166,10 @@
             "location": "5",
             "gun_with_user_id": "5",
             "position": "14",
-            "life": "99999"
-        }       
+            "life": "900"
+        }      
     ],
-    "fairy_in_theater_info": [        
-    ],
-	"squad_in_theater_info": [
+    "squad_in_theater_info": [
         {
             "user_id": "20139",
             "squad_no": "1",
@@ -12186,17 +12184,35 @@
             "user_id": "20139",
             "squad_no": "3",
             "squad_with_user_id": "7138"
+        },
+		{
+            "user_id": "20139",
+            "squad_no": "4",
+            "squad_with_user_id": "24369"
+        },
+		{
+            "user_id": "20139",
+            "squad_no": "5",
+            "squad_with_user_id": "28011"
+        },
+		{
+            "user_id": "20139",
+            "squad_no": "6",
+            "squad_with_user_id": "99999"
         }
+    ],
+    "fairy_in_theater_info": [
+       
     ],
     "theater_exercise_info": {
         "user_id": 20139,
-        "theater_area_id": 536,
-        "enemy_teams": "6,5,0,6,4,4,2,0,2,1",
-        "theater_teams": "1,2,3,4,5,6",
-        "theater_squads": "1,2,3",
+        "theater_area_id": 541,
+        "enemy_teams": "0,1,2,0,1,2,0,0,1,1",
+        "theater_teams": "1,2,3,4",
+        "theater_squads": "1,2,3,4,5,6",
         "theater_squads_use_count": "",
         "theater_fairy_use_count": 0,
-        "battle_enemy_no": -1,
+        "battle_enemy_no":-1,
         "battle_team": 0,
         "battle_fairy": 0,
         "battle_squads": "",
@@ -12206,14 +12222,14 @@
         "51": {
             "user_id": 20139,
             "theater_id": "51",
-            "battle_pt": 23070,
-            "last_exercise_finish_time": 1570030644
+            "battle_pt": 47095,
+            "last_exercise_finish_time": 1570290743
         },
         "53": {
             "user_id": 20139,
             "theater_id": "53",
-            "battle_pt": 60043,
-            "last_exercise_finish_time": 1570031669
+            "battle_pt": 104042.2,
+            "last_exercise_finish_time": 1570290484
         },
         "52": {
             "user_id": 20139,

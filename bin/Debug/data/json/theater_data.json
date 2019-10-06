@@ -2,36 +2,43 @@
     "theater_event_log": {
         "user_id": "20139",
         "theater_event_id": "5",
-        "battle_pt": "124688",
-        "construction_pt": "32760",
-        "incident_pt": "6330",
-        "sum_pt": "163778",
-        "ap": "1",
-        "last_withdraw_time": "1569917951",
+        "battle_pt": "192712",
+        "construction_pt": "49290",
+        "incident_pt": "15270",
+        "sum_pt": "257272",
+        "ap": "2",
+        "last_withdraw_time": "1570290111",
         "user_name": "runner38",
         "user_level": "139"
     },
     "theater_info": [
         {
             "theater_id": "51",
-            "battle_pt": "147000000",
+            "battle_pt": "195000000",
             "advantage_gun": "161,129,130,126,118",
-            "is_open": "1",
+            "is_open": "0",
             "minus_pt": "306654805"
         },
         {
             "theater_id": "52",
             "battle_pt": "465000000",
             "advantage_gun": "208,189,179,171,252",
-            "is_open": "1",
+            "is_open": "0",
             "minus_pt": "185329743"
         },
         {
             "theater_id": "53",
-            "battle_pt": "861407828",
+            "battle_pt": "1640000000",
             "advantage_gun": "194,115,46,53,261",
+            "is_open": "0",
+            "minus_pt": "386339373"
+        },
+        {
+            "theater_id": "54",
+            "battle_pt": "1111000000",
+            "advantage_gun": "161,129,130,126,118",
             "is_open": "1",
-            "minus_pt": "140106408"
+            "minus_pt": "386339373"
         }
     ],
     "theater_construction_info": [
@@ -39,9 +46,9 @@
             "theater_id": "51",
             "area_id": "511",
             "construction_group_id": "511",
-            "lv": "2",
+            "lv": "3",
             "init_pt": "0",
-            "pt": "8254955",
+            "pt": "10000000",
             "user_pt": 0
         },
         {
@@ -57,9 +64,9 @@
             "theater_id": "52",
             "area_id": "525",
             "construction_group_id": "525",
-            "lv": "1",
+            "lv": "3",
             "init_pt": "0",
-            "pt": "4150517",
+            "pt": "10000000",
             "user_pt": 0
         },
         {
@@ -69,7 +76,7 @@
             "lv": "3",
             "init_pt": "0",
             "pt": "30000000",
-            "user_pt": 4520
+            "user_pt": 7030
         },
         {
             "theater_id": "53",
@@ -84,10 +91,37 @@
             "theater_id": "53",
             "area_id": "536",
             "construction_group_id": "536",
-            "lv": "2",
+            "lv": "3",
             "init_pt": "0",
-            "pt": "20935259",
-            "user_pt": 2560
+            "pt": "30000000",
+            "user_pt": 5560
+        },
+        {
+            "theater_id": "54",
+            "area_id": "541",
+            "construction_group_id": "541",
+            "lv": "3",
+            "init_pt": "0",
+            "pt": "50000000",
+            "user_pt": 9999
+        },
+		{
+            "theater_id": "54",
+            "area_id": "542",
+            "construction_group_id": "542",
+            "lv": "3",
+            "init_pt": "0",
+            "pt": "50000000",
+            "user_pt": 9999
+        },
+		{
+            "theater_id": "54",
+            "area_id": "543",
+            "construction_group_id": "543",
+            "lv": "3",
+            "init_pt": "0",
+            "pt": "50000000",
+            "user_pt": 9999
         }
     ],
     "theater_incident_info": [
@@ -227,6 +261,72 @@
             "incident_id": "7",
             "incident_start_day": "7",
             "incident_end_day": "8",
+            "result": [
+                {
+                    "selection_id": "101",
+                    "num": 509466
+                },
+                {
+                    "selection_id": "102",
+                    "num": 480926
+                },
+                {
+                    "selection_id": "103",
+                    "num": 544728
+                }
+            ],
+            "status": "1",
+            "selection_id": 102,
+            "num": 60
+        },
+        {
+            "incident_id": "8",
+            "incident_start_day": "8",
+            "incident_end_day": "9",
+            "result": [
+                {
+                    "selection_id": "101",
+                    "num": 564102
+                },
+                {
+                    "selection_id": "102",
+                    "num": 558768
+                },
+                {
+                    "selection_id": "103",
+                    "num": 537675
+                }
+            ],
+            "status": "1",
+            "selection_id": 0,
+            "num": 0
+        },
+        {
+            "incident_id": "9",
+            "incident_start_day": "9",
+            "incident_end_day": "10",
+            "result": [
+                {
+                    "selection_id": "101",
+                    "num": 499011
+                },
+                {
+                    "selection_id": "102",
+                    "num": 630947
+                },
+                {
+                    "selection_id": "103",
+                    "num": 609245
+                }
+            ],
+            "status": "1",
+            "selection_id": 101,
+            "num": 69
+        },
+        {
+            "incident_id": "10",
+            "incident_start_day": "10",
+            "incident_end_day": "11",
             "result": [],
             "status": "0",
             "selection_id": 0,
@@ -240,6 +340,13 @@
             "user_name": "runner38",
             "user_level": "139",
             "best_pt": "18445"
+        },
+        {
+            "theater_area_id": "518",
+            "user_id": "20139",
+            "user_name": "runner38",
+            "user_level": "139",
+            "best_pt": "24025"
         },
         {
             "theater_area_id": "524",
@@ -267,8 +374,15 @@
             "user_id": "20139",
             "user_name": "runner38",
             "user_level": "139",
-            "best_pt": "11993"
+            "best_pt": "23984"
+        },
+        {
+            "theater_area_id": "538",
+            "user_id": "20139",
+            "user_name": "runner38",
+            "user_level": "139",
+            "best_pt": "13372"
         }
     ],
-    "theater_progress_lowest": "53"
+    "theater_progress_lowest": 0
 }

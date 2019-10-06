@@ -64,6 +64,7 @@ namespace GFBattleTester
         JObject missionactinfo = new JObject();
         JArray spotactinfo = new JArray();
         JObject setting = new JObject();
+        public JObject theater_enemy_info = new JObject();
         //JObject test_userinfo = JObject.Parse(File.ReadAllText("data/json/userinfo_test.json"));
         long[] gun_exp_table = {0,100,300,400,600,1000,1500,2100,2800,3600,4500,5500,6600,7800,9100,10500,
         12000,13600,15300,17100,19000,21000,23000,25300,27600,30000,32500,35100,37900,41000,44400,48600,
@@ -93,6 +94,7 @@ namespace GFBattleTester
         int[] squad_QLZ04_defaultstat = { 26,46,63,112};
         int 살상력 = 0, 파쇄력 = 1, 정밀성 = 2, 장전 = 3;
         int battleStarttime = 0;
+        public string reset_error = "error:3";
 
         public class guns
         {
@@ -186,6 +188,7 @@ namespace GFBattleTester
                 portnum.Value = int.Parse(File.ReadAllText(@"data/port"));
                 enemy_team_id_combobox.Text = File.ReadAllText(@"data/last_enemyID");
                 Boss_HP_textbox.Value = int.Parse(File.ReadAllText(@"data/last_bossHP"));
+                theater_enemy_info = JObject.Parse(File.ReadAllText(@"data/json/theater_enemy_info.json"));
                 ChangeEnemyGroupID();
                 ChangeEnemyBossHP();
                 equip = Encoding.UTF8.GetString(Convert.FromBase64String(File.ReadAllText("data/info_texts/equip.b64")));
@@ -360,6 +363,8 @@ namespace GFBattleTester
                 MessageBox.Show(ex.ToString(), lang_data["fileload_failed_msg"].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 Close();
             }
+            theater_area.SelectedIndex = 0;
+            theater_area_num.SelectedIndex = 0;
             UpdatePosTile(null, null);
             
         }
@@ -499,7 +504,11 @@ namespace GFBattleTester
             updatecheck_checkbox.Text = lang_data["chech_update"].ToString();
             nolog_checkbox.Text = lang_data["no_log"].ToString();
             #endregion
-
+            for(int i=1; i <= 8; i++)
+            {
+                theater_area_num.Items.Add(string.Format("제{0}지역", i.ToString()));
+            }
+           
           
         }
 
@@ -1108,7 +1117,7 @@ namespace GFBattleTester
                 else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.abortmission)
                 {
                     frm.AddLog(frm.lang_data["client_force_reset_log_msg"].ToString());
-                    ResponceProcessBinary(ctx, Encoding.ASCII.GetBytes("error:3"), false, false);
+                    ResponceProcessBinary(ctx, Encoding.ASCII.GetBytes("error:1"), false, false);
                 }
                 else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.teammove || ctx.Request.Url.LocalPath == GF_URLs_Kr.squadMove)
                 {
@@ -1136,7 +1145,7 @@ namespace GFBattleTester
                 else if (ctx.Request.RawUrl.Contains("gf-game.girlfrontline.co.kr"))
                 {
                     frm.AddLog(frm.lang_data["client_force_reset_log_msg"].ToString());
-                    ResponceProcessBinary(ctx, Encoding.ASCII.GetBytes("error:3"), false, false);
+                    ResponceProcessBinary(ctx, Encoding.ASCII.GetBytes(frm.reset_error), false, false);
                 }
                 else
                 {
@@ -3579,14 +3588,174 @@ namespace GFBattleTester
             }
         }
 
-        private void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-            userinfo["theater_exercise_info"]["theater_area_id"] = textBox1.Text;
-        }
+        
 
         private void TextBox2_TextChanged(object sender, EventArgs e)
         {
-            userinfo["theater_exercise_info"]["enemy_teams"] = textBox2.Text;
+            userinfo["theater_exercise_info"]["enemy_teams"] = theater_enemyid_set.Text;
+            preview_theater_enemy_set();
+        }
+
+        private void Error_error1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (error_error0.Checked)
+                reset_error = "error:0";
+            else if (error_error1.Checked)
+                reset_error = "error:1";
+            else if (error_error2.Checked)
+                reset_error = "error:2";
+            else if (error_error3.Checked)
+                reset_error = "error:3";
+        }
+
+        private void Theater_area_num_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            userinfo["theater_exercise_info"]["theater_area_id"] = "5" + (theater_area.SelectedIndex + 1).ToString() + (theater_area_num.SelectedIndex == -1 ? 1 : (theater_area_num.SelectedIndex + 1)).ToString();
+            theater_enemy_random_set();
+        }
+        void preview_theater_enemy_set()
+        {
+            theater_enemy_preview_listbox.Items.Clear();
+            string[] list = theater_enemyid_set.Text.Split(',');
+            string currentid = userinfo["theater_exercise_info"]["theater_area_id"].ToString();
+            foreach(var a in (JArray)theater_enemy_info[currentid.Substring(0, 2)][currentid.Substring(2, 1)][list[(int)theater_wave_set.Value-1]])
+            {
+                ListViewItem itm = new ListViewItem(a.ToString(),7);
+                theater_enemy_preview_listbox.Items.Add(itm);
+                //theater_enemy_preview_listbox.Items.Add(a.ToString());
+            }
+            
+        }
+        private void Theater_enemy_random_btn_Click(object sender, EventArgs e)
+        {
+            theater_enemy_random_set();
+        }
+        void theater_enemy_random_set()
+        {
+            string a = "";
+            string currentid = userinfo["theater_exercise_info"]["theater_area_id"].ToString();
+            int max = theater_enemy_info[currentid.Substring(0, 2)][currentid.Substring(2, 1)].Count();
+            Random random = new Random();
+            for (int i = 0; i < 10; i++)
+            {
+                a += random.Next(0, max);
+                if (i != 9)
+                    a += ",";
+            }
+            theater_enemyid_set.Text = a;
+        }
+
+        private void Theater_wave_set_ValueChanged(object sender, EventArgs e)
+        {
+            preview_theater_enemy_set();
+        }
+
+        private void Theater_area_core_occ_CheckedChanged(object sender, EventArgs e)
+        {
+            if (theater_area_bigginer_occ.Checked)
+            {
+                foreach (var a in (JArray)Theater_data["theater_info"])
+                {
+                    if(a["theater_id"].ToString() == "51")
+                    {
+                        a["battle_pt"] = "195000000";
+                    }
+                }
+            }
+            else
+            {
+                foreach (var a in (JArray)Theater_data["theater_info"])
+                {
+                    if (a["theater_id"].ToString() == "51")
+                    {
+                        a["battle_pt"] = "10";
+                    }
+                }
+            }
+            if (theater_area_mid_occ.Checked)
+            {
+                foreach (var a in (JArray)Theater_data["theater_info"])
+                {
+                    if (a["theater_id"].ToString() == "52")
+                    {
+                        a["battle_pt"] = "465000000";
+                    }
+                }
+            }
+            else
+            {
+                foreach (var a in (JArray)Theater_data["theater_info"])
+                {
+                    if (a["theater_id"].ToString() == "52")
+                    {
+                        a["battle_pt"] = "10";
+                    }
+                }
+            }
+            if (theater_area_adv_occ.Checked)
+            {
+                foreach (var a in (JArray)Theater_data["theater_info"])
+                {
+                    if (a["theater_id"].ToString() == "53")
+                    {
+                        a["battle_pt"] = "1640000000";
+                    }
+                }
+            }
+            else
+            {
+                foreach (var a in (JArray)Theater_data["theater_info"])
+                {
+                    if (a["theater_id"].ToString() == "53")
+                    {
+                        a["battle_pt"] = "10";
+                    }
+                }
+            }
+            if (theater_area_core_occ.Checked)
+            {
+                foreach (var a in (JArray)Theater_data["theater_info"])
+                {
+                    if (a["theater_id"].ToString() == "54")
+                    {
+                        a["battle_pt"] = "9999000000";
+                    }
+                }
+            }
+            else
+            {
+                foreach (var a in (JArray)Theater_data["theater_info"])
+                {
+                    if (a["theater_id"].ToString() == "54")
+                    {
+                        a["battle_pt"] = "10";
+                    }
+                }
+            }
+        }
+
+        private void Theater_sqd_6_CheckedChanged(object sender, EventArgs e)
+        {
+            Control last_cb = (Control)sender;
+            int check_num = 0;
+            int cnt = 0;
+            string sqd = "";
+            for(int i = 1; i <= 6; i++)
+            {
+                CheckBox cb = (CheckBox)Controls.Find("theater_sqd_" + i.ToString(),true)[0];
+                if (cb.Checked) check_num++;
+            }
+            if(check_num > 3)
+            {
+                ((CheckBox)last_cb).Checked = false;
+            }
+            for (int i = 1; i <= 6; i++)
+            {
+                CheckBox cb = (CheckBox)Controls.Find("theater_sqd_" + i.ToString(), true)[0];
+                if (cb.Checked) { sqd += i.ToString(); cnt++; if (cnt != check_num) { sqd += ","; } }
+                
+            }
+            userinfo["theater_exercise_info"]["theater_squads"] = sqd;
         }
 
         private void UpdatePosTile(object sender, EventArgs e)
