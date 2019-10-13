@@ -12212,7 +12212,7 @@
         "user_id": 20139,
         "theater_area_id": 541,
         "enemy_teams": "0,1,2,0,1,2,0,0,1,1",
-        "theater_teams": "1,2,3,4",
+        "theater_teams": "1,2,3,4,5,6",
         "theater_squads": "1,2,3,4,5,6",
         "theater_squads_use_count": "",
         "theater_fairy_use_count": 0,

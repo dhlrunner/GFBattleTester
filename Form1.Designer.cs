@@ -383,6 +383,31 @@
             this.boss_hp = new System.Windows.Forms.Label();
             this.enemy_team_id_combobox = new System.Windows.Forms.ComboBox();
             this.enemy_group = new System.Windows.Forms.Label();
+            this.theater_set = new System.Windows.Forms.TabPage();
+            this.theater_sqd_sett = new System.Windows.Forms.GroupBox();
+            this.theater_sqd_6 = new System.Windows.Forms.CheckBox();
+            this.theater_sqd_5 = new System.Windows.Forms.CheckBox();
+            this.theater_sqd_4 = new System.Windows.Forms.CheckBox();
+            this.theater_sqd_3 = new System.Windows.Forms.CheckBox();
+            this.theater_sqd_2 = new System.Windows.Forms.CheckBox();
+            this.theater_sqd_1 = new System.Windows.Forms.CheckBox();
+            this.theater_enemy_setting = new System.Windows.Forms.GroupBox();
+            this.theater_enemy_preview = new System.Windows.Forms.GroupBox();
+            this.wave_label = new System.Windows.Forms.Label();
+            this.theater_enemy_preview_listbox = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.theater_wave_set = new System.Windows.Forms.NumericUpDown();
+            this.theater_enemy_random_btn = new System.Windows.Forms.Button();
+            this.theater_enemyid_set = new System.Windows.Forms.TextBox();
+            this.theater_area_gb = new System.Windows.Forms.GroupBox();
+            this.theater_area_num = new System.Windows.Forms.ComboBox();
+            this.theater_area = new System.Windows.Forms.ComboBox();
+            this.theater_area_occ_gb = new System.Windows.Forms.GroupBox();
+            this.theater_area_core_occ = new System.Windows.Forms.CheckBox();
+            this.theater_area_adv_occ = new System.Windows.Forms.CheckBox();
+            this.theater_area_mid_occ = new System.Windows.Forms.CheckBox();
+            this.theater_area_bigginer_occ = new System.Windows.Forms.CheckBox();
             this.etc_set = new System.Windows.Forms.TabPage();
             this.client_reset_type = new System.Windows.Forms.GroupBox();
             this.error_error1 = new System.Windows.Forms.RadioButton();
@@ -405,8 +430,6 @@
             this.com_exp = new System.Windows.Forms.Label();
             this.commander_name = new System.Windows.Forms.TextBox();
             this.com_name = new System.Windows.Forms.Label();
-            this.theater_set = new System.Windows.Forms.TabPage();
-            this.theater_enemyid_set = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -415,29 +438,7 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.saveFileDialog3 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog3 = new System.Windows.Forms.OpenFileDialog();
-            this.theater_area_occ_gb = new System.Windows.Forms.GroupBox();
-            this.theater_area_bigginer_occ = new System.Windows.Forms.CheckBox();
-            this.theater_area_mid_occ = new System.Windows.Forms.CheckBox();
-            this.theater_area_adv_occ = new System.Windows.Forms.CheckBox();
-            this.theater_area_core_occ = new System.Windows.Forms.CheckBox();
-            this.theater_area_gb = new System.Windows.Forms.GroupBox();
-            this.theater_area = new System.Windows.Forms.ComboBox();
-            this.theater_area_num = new System.Windows.Forms.ComboBox();
-            this.theater_enemy_setting = new System.Windows.Forms.GroupBox();
-            this.wave_label = new System.Windows.Forms.Label();
-            this.theater_wave_set = new System.Windows.Forms.NumericUpDown();
-            this.theater_enemy_random_btn = new System.Windows.Forms.Button();
-            this.theater_enemy_preview = new System.Windows.Forms.GroupBox();
-            this.theater_enemy_preview_listbox = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.theater_sqd_sett = new System.Windows.Forms.GroupBox();
-            this.theater_sqd_1 = new System.Windows.Forms.CheckBox();
-            this.theater_sqd_2 = new System.Windows.Forms.CheckBox();
-            this.theater_sqd_3 = new System.Windows.Forms.CheckBox();
-            this.theater_sqd_4 = new System.Windows.Forms.CheckBox();
-            this.theater_sqd_5 = new System.Windows.Forms.CheckBox();
-            this.theater_sqd_6 = new System.Windows.Forms.CheckBox();
+            this.echelon_select = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.gun_set.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -571,20 +572,20 @@
             this.server_information.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.portnum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Boss_HP_textbox)).BeginInit();
+            this.theater_set.SuspendLayout();
+            this.theater_sqd_sett.SuspendLayout();
+            this.theater_enemy_setting.SuspendLayout();
+            this.theater_enemy_preview.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.theater_wave_set)).BeginInit();
+            this.theater_area_gb.SuspendLayout();
+            this.theater_area_occ_gb.SuspendLayout();
             this.etc_set.SuspendLayout();
             this.client_reset_type.SuspendLayout();
             this.server_mode.SuspendLayout();
             this.groupBox25.SuspendLayout();
             this.etc_progsetting.SuspendLayout();
             this.etc_basicinformation.SuspendLayout();
-            this.theater_set.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.theater_area_occ_gb.SuspendLayout();
-            this.theater_area_gb.SuspendLayout();
-            this.theater_enemy_setting.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.theater_wave_set)).BeginInit();
-            this.theater_enemy_preview.SuspendLayout();
-            this.theater_sqd_sett.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -633,6 +634,7 @@
             // 
             this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox6.Controls.Add(this.echelon_select);
             this.groupBox6.Controls.Add(this.gun_loadfromserver);
             this.groupBox6.Controls.Add(this.gun_previewpos);
             this.groupBox6.Controls.Add(this.tableLayoutPanel1);
@@ -649,7 +651,7 @@
             // 
             // gun_loadfromserver
             // 
-            this.gun_loadfromserver.Location = new System.Drawing.Point(15, 128);
+            this.gun_loadfromserver.Location = new System.Drawing.Point(15, 171);
             this.gun_loadfromserver.Name = "gun_loadfromserver";
             this.gun_loadfromserver.Size = new System.Drawing.Size(105, 34);
             this.gun_loadfromserver.TabIndex = 30;
@@ -660,7 +662,7 @@
             // gun_previewpos
             // 
             this.gun_previewpos.AutoSize = true;
-            this.gun_previewpos.Location = new System.Drawing.Point(7, 335);
+            this.gun_previewpos.Location = new System.Drawing.Point(7, 378);
             this.gun_previewpos.Name = "gun_previewpos";
             this.gun_previewpos.Size = new System.Drawing.Size(81, 12);
             this.gun_previewpos.TabIndex = 29;
@@ -682,7 +684,7 @@
             this.tableLayoutPanel1.Controls.Add(this.postile_2, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.postile_6, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.postile_3, 2, 2);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 352);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 395);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -788,7 +790,7 @@
             this.gun_setfire.Controls.Add(this.enable_2);
             this.gun_setfire.Controls.Add(this.enable_4);
             this.gun_setfire.Controls.Add(this.enable_3);
-            this.gun_setfire.Location = new System.Drawing.Point(6, 177);
+            this.gun_setfire.Location = new System.Drawing.Point(6, 220);
             this.gun_setfire.Name = "gun_setfire";
             this.gun_setfire.Size = new System.Drawing.Size(125, 144);
             this.gun_setfire.TabIndex = 26;
@@ -874,7 +876,7 @@
             // 
             // gun_load
             // 
-            this.gun_load.Location = new System.Drawing.Point(15, 83);
+            this.gun_load.Location = new System.Drawing.Point(15, 126);
             this.gun_load.Name = "gun_load";
             this.gun_load.Size = new System.Drawing.Size(105, 23);
             this.gun_load.TabIndex = 1;
@@ -885,7 +887,7 @@
             // 
             // gun_save
             // 
-            this.gun_save.Location = new System.Drawing.Point(15, 41);
+            this.gun_save.Location = new System.Drawing.Point(15, 84);
             this.gun_save.Name = "gun_save";
             this.gun_save.Size = new System.Drawing.Size(105, 23);
             this.gun_save.TabIndex = 0;
@@ -5135,6 +5137,293 @@
             this.enemy_group.TabIndex = 0;
             this.enemy_group.Text = "적 그룹";
             // 
+            // theater_set
+            // 
+            this.theater_set.Controls.Add(this.theater_sqd_sett);
+            this.theater_set.Controls.Add(this.theater_enemy_setting);
+            this.theater_set.Controls.Add(this.theater_area_gb);
+            this.theater_set.Controls.Add(this.theater_area_occ_gb);
+            this.theater_set.Location = new System.Drawing.Point(4, 22);
+            this.theater_set.Name = "theater_set";
+            this.theater_set.Padding = new System.Windows.Forms.Padding(3);
+            this.theater_set.Size = new System.Drawing.Size(875, 700);
+            this.theater_set.TabIndex = 5;
+            this.theater_set.Text = "국지전 설정";
+            this.theater_set.UseVisualStyleBackColor = true;
+            // 
+            // theater_sqd_sett
+            // 
+            this.theater_sqd_sett.Controls.Add(this.theater_sqd_6);
+            this.theater_sqd_sett.Controls.Add(this.theater_sqd_5);
+            this.theater_sqd_sett.Controls.Add(this.theater_sqd_4);
+            this.theater_sqd_sett.Controls.Add(this.theater_sqd_3);
+            this.theater_sqd_sett.Controls.Add(this.theater_sqd_2);
+            this.theater_sqd_sett.Controls.Add(this.theater_sqd_1);
+            this.theater_sqd_sett.Location = new System.Drawing.Point(6, 575);
+            this.theater_sqd_sett.Name = "theater_sqd_sett";
+            this.theater_sqd_sett.Size = new System.Drawing.Size(235, 119);
+            this.theater_sqd_sett.TabIndex = 5;
+            this.theater_sqd_sett.TabStop = false;
+            this.theater_sqd_sett.Text = "중장비 출격 설정";
+            this.theater_sqd_sett.Visible = false;
+            // 
+            // theater_sqd_6
+            // 
+            this.theater_sqd_6.AutoSize = true;
+            this.theater_sqd_6.Location = new System.Drawing.Point(124, 80);
+            this.theater_sqd_6.Name = "theater_sqd_6";
+            this.theater_sqd_6.Size = new System.Drawing.Size(66, 16);
+            this.theater_sqd_6.TabIndex = 5;
+            this.theater_sqd_6.Text = "QLZ-04";
+            this.theater_sqd_6.UseVisualStyleBackColor = true;
+            this.theater_sqd_6.CheckedChanged += new System.EventHandler(this.Theater_sqd_6_CheckedChanged);
+            // 
+            // theater_sqd_5
+            // 
+            this.theater_sqd_5.AutoSize = true;
+            this.theater_sqd_5.Location = new System.Drawing.Point(124, 56);
+            this.theater_sqd_5.Name = "theater_sqd_5";
+            this.theater_sqd_5.Size = new System.Drawing.Size(52, 16);
+            this.theater_sqd_5.TabIndex = 4;
+            this.theater_sqd_5.Text = "AT-4";
+            this.theater_sqd_5.UseVisualStyleBackColor = true;
+            this.theater_sqd_5.CheckedChanged += new System.EventHandler(this.Theater_sqd_6_CheckedChanged);
+            // 
+            // theater_sqd_4
+            // 
+            this.theater_sqd_4.AutoSize = true;
+            this.theater_sqd_4.Location = new System.Drawing.Point(124, 31);
+            this.theater_sqd_4.Name = "theater_sqd_4";
+            this.theater_sqd_4.Size = new System.Drawing.Size(41, 16);
+            this.theater_sqd_4.TabIndex = 3;
+            this.theater_sqd_4.Text = "M2";
+            this.theater_sqd_4.UseVisualStyleBackColor = true;
+            this.theater_sqd_4.CheckedChanged += new System.EventHandler(this.Theater_sqd_6_CheckedChanged);
+            // 
+            // theater_sqd_3
+            // 
+            this.theater_sqd_3.AutoSize = true;
+            this.theater_sqd_3.Location = new System.Drawing.Point(17, 80);
+            this.theater_sqd_3.Name = "theater_sqd_3";
+            this.theater_sqd_3.Size = new System.Drawing.Size(50, 16);
+            this.theater_sqd_3.TabIndex = 2;
+            this.theater_sqd_3.Text = "2B14";
+            this.theater_sqd_3.UseVisualStyleBackColor = true;
+            this.theater_sqd_3.CheckedChanged += new System.EventHandler(this.Theater_sqd_6_CheckedChanged);
+            // 
+            // theater_sqd_2
+            // 
+            this.theater_sqd_2.AutoSize = true;
+            this.theater_sqd_2.Location = new System.Drawing.Point(17, 56);
+            this.theater_sqd_2.Name = "theater_sqd_2";
+            this.theater_sqd_2.Size = new System.Drawing.Size(67, 16);
+            this.theater_sqd_2.TabIndex = 1;
+            this.theater_sqd_2.Text = "AGS-30";
+            this.theater_sqd_2.UseVisualStyleBackColor = true;
+            this.theater_sqd_2.CheckedChanged += new System.EventHandler(this.Theater_sqd_6_CheckedChanged);
+            // 
+            // theater_sqd_1
+            // 
+            this.theater_sqd_1.AutoSize = true;
+            this.theater_sqd_1.Location = new System.Drawing.Point(17, 32);
+            this.theater_sqd_1.Name = "theater_sqd_1";
+            this.theater_sqd_1.Size = new System.Drawing.Size(70, 16);
+            this.theater_sqd_1.TabIndex = 0;
+            this.theater_sqd_1.Text = "BGM-71";
+            this.theater_sqd_1.UseVisualStyleBackColor = true;
+            this.theater_sqd_1.CheckedChanged += new System.EventHandler(this.Theater_sqd_6_CheckedChanged);
+            // 
+            // theater_enemy_setting
+            // 
+            this.theater_enemy_setting.Controls.Add(this.theater_enemy_preview);
+            this.theater_enemy_setting.Controls.Add(this.theater_enemy_random_btn);
+            this.theater_enemy_setting.Controls.Add(this.theater_enemyid_set);
+            this.theater_enemy_setting.Location = new System.Drawing.Point(247, 6);
+            this.theater_enemy_setting.Name = "theater_enemy_setting";
+            this.theater_enemy_setting.Size = new System.Drawing.Size(622, 195);
+            this.theater_enemy_setting.TabIndex = 4;
+            this.theater_enemy_setting.TabStop = false;
+            this.theater_enemy_setting.Text = "적 설정";
+            // 
+            // theater_enemy_preview
+            // 
+            this.theater_enemy_preview.Controls.Add(this.wave_label);
+            this.theater_enemy_preview.Controls.Add(this.theater_enemy_preview_listbox);
+            this.theater_enemy_preview.Controls.Add(this.theater_wave_set);
+            this.theater_enemy_preview.Location = new System.Drawing.Point(185, 11);
+            this.theater_enemy_preview.Name = "theater_enemy_preview";
+            this.theater_enemy_preview.Size = new System.Drawing.Size(431, 178);
+            this.theater_enemy_preview.TabIndex = 7;
+            this.theater_enemy_preview.TabStop = false;
+            this.theater_enemy_preview.Text = "미리 보기";
+            // 
+            // wave_label
+            // 
+            this.wave_label.Location = new System.Drawing.Point(24, 17);
+            this.wave_label.Name = "wave_label";
+            this.wave_label.Size = new System.Drawing.Size(40, 23);
+            this.wave_label.TabIndex = 3;
+            this.wave_label.Text = "Wave";
+            this.wave_label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // theater_enemy_preview_listbox
+            // 
+            this.theater_enemy_preview_listbox.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
+            this.theater_enemy_preview_listbox.HideSelection = false;
+            this.theater_enemy_preview_listbox.Location = new System.Drawing.Point(145, 14);
+            this.theater_enemy_preview_listbox.Name = "theater_enemy_preview_listbox";
+            this.theater_enemy_preview_listbox.Size = new System.Drawing.Size(280, 158);
+            this.theater_enemy_preview_listbox.TabIndex = 5;
+            this.theater_enemy_preview_listbox.UseCompatibleStateImageBehavior = false;
+            this.theater_enemy_preview_listbox.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Name";
+            this.columnHeader1.Width = 177;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Image";
+            this.columnHeader2.Width = 88;
+            // 
+            // theater_wave_set
+            // 
+            this.theater_wave_set.Location = new System.Drawing.Point(70, 19);
+            this.theater_wave_set.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.theater_wave_set.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.theater_wave_set.Name = "theater_wave_set";
+            this.theater_wave_set.Size = new System.Drawing.Size(53, 21);
+            this.theater_wave_set.TabIndex = 4;
+            this.theater_wave_set.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.theater_wave_set.ValueChanged += new System.EventHandler(this.Theater_wave_set_ValueChanged);
+            // 
+            // theater_enemy_random_btn
+            // 
+            this.theater_enemy_random_btn.Location = new System.Drawing.Point(20, 52);
+            this.theater_enemy_random_btn.Name = "theater_enemy_random_btn";
+            this.theater_enemy_random_btn.Size = new System.Drawing.Size(145, 23);
+            this.theater_enemy_random_btn.TabIndex = 6;
+            this.theater_enemy_random_btn.Text = "랜덤 설정";
+            this.theater_enemy_random_btn.UseVisualStyleBackColor = true;
+            this.theater_enemy_random_btn.Click += new System.EventHandler(this.Theater_enemy_random_btn_Click);
+            // 
+            // theater_enemyid_set
+            // 
+            this.theater_enemyid_set.Location = new System.Drawing.Point(20, 25);
+            this.theater_enemyid_set.Name = "theater_enemyid_set";
+            this.theater_enemyid_set.Size = new System.Drawing.Size(145, 21);
+            this.theater_enemyid_set.TabIndex = 1;
+            this.theater_enemyid_set.Text = "6,5,0,6,4,4,2,0,2,1";
+            this.theater_enemyid_set.TextChanged += new System.EventHandler(this.TextBox2_TextChanged);
+            // 
+            // theater_area_gb
+            // 
+            this.theater_area_gb.Controls.Add(this.theater_area_num);
+            this.theater_area_gb.Controls.Add(this.theater_area);
+            this.theater_area_gb.Location = new System.Drawing.Point(6, 6);
+            this.theater_area_gb.Name = "theater_area_gb";
+            this.theater_area_gb.Size = new System.Drawing.Size(235, 64);
+            this.theater_area_gb.TabIndex = 3;
+            this.theater_area_gb.TabStop = false;
+            this.theater_area_gb.Text = "지역";
+            // 
+            // theater_area_num
+            // 
+            this.theater_area_num.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.theater_area_num.FormattingEnabled = true;
+            this.theater_area_num.Location = new System.Drawing.Point(110, 25);
+            this.theater_area_num.Name = "theater_area_num";
+            this.theater_area_num.Size = new System.Drawing.Size(109, 20);
+            this.theater_area_num.TabIndex = 1;
+            this.theater_area_num.SelectedIndexChanged += new System.EventHandler(this.Theater_area_num_SelectedIndexChanged);
+            // 
+            // theater_area
+            // 
+            this.theater_area.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.theater_area.FormattingEnabled = true;
+            this.theater_area.Items.AddRange(new object[] {
+            "초급",
+            "중급",
+            "고급",
+            "핵심"});
+            this.theater_area.Location = new System.Drawing.Point(15, 25);
+            this.theater_area.Name = "theater_area";
+            this.theater_area.Size = new System.Drawing.Size(88, 20);
+            this.theater_area.TabIndex = 0;
+            this.theater_area.SelectedIndexChanged += new System.EventHandler(this.Theater_area_num_SelectedIndexChanged);
+            // 
+            // theater_area_occ_gb
+            // 
+            this.theater_area_occ_gb.Controls.Add(this.theater_area_core_occ);
+            this.theater_area_occ_gb.Controls.Add(this.theater_area_adv_occ);
+            this.theater_area_occ_gb.Controls.Add(this.theater_area_mid_occ);
+            this.theater_area_occ_gb.Controls.Add(this.theater_area_bigginer_occ);
+            this.theater_area_occ_gb.Location = new System.Drawing.Point(6, 76);
+            this.theater_area_occ_gb.Name = "theater_area_occ_gb";
+            this.theater_area_occ_gb.Size = new System.Drawing.Size(235, 125);
+            this.theater_area_occ_gb.TabIndex = 2;
+            this.theater_area_occ_gb.TabStop = false;
+            this.theater_area_occ_gb.Text = "지역 점령 여부(체크 시 점령)";
+            // 
+            // theater_area_core_occ
+            // 
+            this.theater_area_core_occ.AutoSize = true;
+            this.theater_area_core_occ.Location = new System.Drawing.Point(15, 90);
+            this.theater_area_core_occ.Name = "theater_area_core_occ";
+            this.theater_area_core_occ.Size = new System.Drawing.Size(48, 16);
+            this.theater_area_core_occ.TabIndex = 3;
+            this.theater_area_core_occ.Text = "핵심";
+            this.theater_area_core_occ.UseVisualStyleBackColor = true;
+            this.theater_area_core_occ.CheckedChanged += new System.EventHandler(this.Theater_area_core_occ_CheckedChanged);
+            // 
+            // theater_area_adv_occ
+            // 
+            this.theater_area_adv_occ.AutoSize = true;
+            this.theater_area_adv_occ.Location = new System.Drawing.Point(15, 67);
+            this.theater_area_adv_occ.Name = "theater_area_adv_occ";
+            this.theater_area_adv_occ.Size = new System.Drawing.Size(48, 16);
+            this.theater_area_adv_occ.TabIndex = 2;
+            this.theater_area_adv_occ.Text = "고급";
+            this.theater_area_adv_occ.UseVisualStyleBackColor = true;
+            this.theater_area_adv_occ.CheckedChanged += new System.EventHandler(this.Theater_area_core_occ_CheckedChanged);
+            // 
+            // theater_area_mid_occ
+            // 
+            this.theater_area_mid_occ.AutoSize = true;
+            this.theater_area_mid_occ.Location = new System.Drawing.Point(15, 44);
+            this.theater_area_mid_occ.Name = "theater_area_mid_occ";
+            this.theater_area_mid_occ.Size = new System.Drawing.Size(48, 16);
+            this.theater_area_mid_occ.TabIndex = 1;
+            this.theater_area_mid_occ.Text = "중급";
+            this.theater_area_mid_occ.UseVisualStyleBackColor = true;
+            this.theater_area_mid_occ.CheckedChanged += new System.EventHandler(this.Theater_area_core_occ_CheckedChanged);
+            // 
+            // theater_area_bigginer_occ
+            // 
+            this.theater_area_bigginer_occ.AutoSize = true;
+            this.theater_area_bigginer_occ.Location = new System.Drawing.Point(15, 22);
+            this.theater_area_bigginer_occ.Name = "theater_area_bigginer_occ";
+            this.theater_area_bigginer_occ.Size = new System.Drawing.Size(48, 16);
+            this.theater_area_bigginer_occ.TabIndex = 0;
+            this.theater_area_bigginer_occ.Text = "초급";
+            this.theater_area_bigginer_occ.UseVisualStyleBackColor = true;
+            this.theater_area_bigginer_occ.CheckedChanged += new System.EventHandler(this.Theater_area_core_occ_CheckedChanged);
+            // 
             // etc_set
             // 
             this.etc_set.Controls.Add(this.client_reset_type);
@@ -5375,29 +5664,6 @@
             this.com_name.Text = "지휘관 이름";
             this.com_name.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // theater_set
-            // 
-            this.theater_set.Controls.Add(this.theater_sqd_sett);
-            this.theater_set.Controls.Add(this.theater_enemy_setting);
-            this.theater_set.Controls.Add(this.theater_area_gb);
-            this.theater_set.Controls.Add(this.theater_area_occ_gb);
-            this.theater_set.Location = new System.Drawing.Point(4, 22);
-            this.theater_set.Name = "theater_set";
-            this.theater_set.Padding = new System.Windows.Forms.Padding(3);
-            this.theater_set.Size = new System.Drawing.Size(875, 700);
-            this.theater_set.TabIndex = 5;
-            this.theater_set.Text = "국지전 설정";
-            this.theater_set.UseVisualStyleBackColor = true;
-            // 
-            // theater_enemyid_set
-            // 
-            this.theater_enemyid_set.Location = new System.Drawing.Point(20, 25);
-            this.theater_enemyid_set.Name = "theater_enemyid_set";
-            this.theater_enemyid_set.Size = new System.Drawing.Size(145, 21);
-            this.theater_enemyid_set.TabIndex = 1;
-            this.theater_enemyid_set.Text = "6,5,0,6,4,4,2,0,2,1";
-            this.theater_enemyid_set.TextChanged += new System.EventHandler(this.TextBox2_TextChanged);
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.tabControl1);
@@ -5440,268 +5706,22 @@
             this.openFileDialog3.Filter = "인형 장비 정보 파일|*.equip|Json 파일|*.json|모든 파일|*.*";
             this.openFileDialog3.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog3_FileOk);
             // 
-            // theater_area_occ_gb
+            // echelon_select
             // 
-            this.theater_area_occ_gb.Controls.Add(this.theater_area_core_occ);
-            this.theater_area_occ_gb.Controls.Add(this.theater_area_adv_occ);
-            this.theater_area_occ_gb.Controls.Add(this.theater_area_mid_occ);
-            this.theater_area_occ_gb.Controls.Add(this.theater_area_bigginer_occ);
-            this.theater_area_occ_gb.Location = new System.Drawing.Point(6, 76);
-            this.theater_area_occ_gb.Name = "theater_area_occ_gb";
-            this.theater_area_occ_gb.Size = new System.Drawing.Size(235, 125);
-            this.theater_area_occ_gb.TabIndex = 2;
-            this.theater_area_occ_gb.TabStop = false;
-            this.theater_area_occ_gb.Text = "지역 점령 여부(체크 시 점령)";
-            // 
-            // theater_area_bigginer_occ
-            // 
-            this.theater_area_bigginer_occ.AutoSize = true;
-            this.theater_area_bigginer_occ.Location = new System.Drawing.Point(15, 22);
-            this.theater_area_bigginer_occ.Name = "theater_area_bigginer_occ";
-            this.theater_area_bigginer_occ.Size = new System.Drawing.Size(48, 16);
-            this.theater_area_bigginer_occ.TabIndex = 0;
-            this.theater_area_bigginer_occ.Text = "초급";
-            this.theater_area_bigginer_occ.UseVisualStyleBackColor = true;
-            this.theater_area_bigginer_occ.CheckedChanged += new System.EventHandler(this.Theater_area_core_occ_CheckedChanged);
-            // 
-            // theater_area_mid_occ
-            // 
-            this.theater_area_mid_occ.AutoSize = true;
-            this.theater_area_mid_occ.Location = new System.Drawing.Point(15, 44);
-            this.theater_area_mid_occ.Name = "theater_area_mid_occ";
-            this.theater_area_mid_occ.Size = new System.Drawing.Size(48, 16);
-            this.theater_area_mid_occ.TabIndex = 1;
-            this.theater_area_mid_occ.Text = "중급";
-            this.theater_area_mid_occ.UseVisualStyleBackColor = true;
-            this.theater_area_mid_occ.CheckedChanged += new System.EventHandler(this.Theater_area_core_occ_CheckedChanged);
-            // 
-            // theater_area_adv_occ
-            // 
-            this.theater_area_adv_occ.AutoSize = true;
-            this.theater_area_adv_occ.Location = new System.Drawing.Point(15, 67);
-            this.theater_area_adv_occ.Name = "theater_area_adv_occ";
-            this.theater_area_adv_occ.Size = new System.Drawing.Size(48, 16);
-            this.theater_area_adv_occ.TabIndex = 2;
-            this.theater_area_adv_occ.Text = "고급";
-            this.theater_area_adv_occ.UseVisualStyleBackColor = true;
-            this.theater_area_adv_occ.CheckedChanged += new System.EventHandler(this.Theater_area_core_occ_CheckedChanged);
-            // 
-            // theater_area_core_occ
-            // 
-            this.theater_area_core_occ.AutoSize = true;
-            this.theater_area_core_occ.Location = new System.Drawing.Point(15, 90);
-            this.theater_area_core_occ.Name = "theater_area_core_occ";
-            this.theater_area_core_occ.Size = new System.Drawing.Size(48, 16);
-            this.theater_area_core_occ.TabIndex = 3;
-            this.theater_area_core_occ.Text = "핵심";
-            this.theater_area_core_occ.UseVisualStyleBackColor = true;
-            this.theater_area_core_occ.CheckedChanged += new System.EventHandler(this.Theater_area_core_occ_CheckedChanged);
-            // 
-            // theater_area_gb
-            // 
-            this.theater_area_gb.Controls.Add(this.theater_area_num);
-            this.theater_area_gb.Controls.Add(this.theater_area);
-            this.theater_area_gb.Location = new System.Drawing.Point(6, 6);
-            this.theater_area_gb.Name = "theater_area_gb";
-            this.theater_area_gb.Size = new System.Drawing.Size(235, 64);
-            this.theater_area_gb.TabIndex = 3;
-            this.theater_area_gb.TabStop = false;
-            this.theater_area_gb.Text = "지역";
-            // 
-            // theater_area
-            // 
-            this.theater_area.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.theater_area.FormattingEnabled = true;
-            this.theater_area.Items.AddRange(new object[] {
-            "초급",
-            "중급",
-            "고급",
-            "핵심"});
-            this.theater_area.Location = new System.Drawing.Point(15, 25);
-            this.theater_area.Name = "theater_area";
-            this.theater_area.Size = new System.Drawing.Size(88, 20);
-            this.theater_area.TabIndex = 0;
-            this.theater_area.SelectedIndexChanged += new System.EventHandler(this.Theater_area_num_SelectedIndexChanged);
-            // 
-            // theater_area_num
-            // 
-            this.theater_area_num.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.theater_area_num.FormattingEnabled = true;
-            this.theater_area_num.Location = new System.Drawing.Point(110, 25);
-            this.theater_area_num.Name = "theater_area_num";
-            this.theater_area_num.Size = new System.Drawing.Size(109, 20);
-            this.theater_area_num.TabIndex = 1;
-            this.theater_area_num.SelectedIndexChanged += new System.EventHandler(this.Theater_area_num_SelectedIndexChanged);
-            // 
-            // theater_enemy_setting
-            // 
-            this.theater_enemy_setting.Controls.Add(this.theater_enemy_preview);
-            this.theater_enemy_setting.Controls.Add(this.theater_enemy_random_btn);
-            this.theater_enemy_setting.Controls.Add(this.theater_enemyid_set);
-            this.theater_enemy_setting.Location = new System.Drawing.Point(247, 6);
-            this.theater_enemy_setting.Name = "theater_enemy_setting";
-            this.theater_enemy_setting.Size = new System.Drawing.Size(622, 195);
-            this.theater_enemy_setting.TabIndex = 4;
-            this.theater_enemy_setting.TabStop = false;
-            this.theater_enemy_setting.Text = "적 설정";
-            // 
-            // wave_label
-            // 
-            this.wave_label.Location = new System.Drawing.Point(24, 17);
-            this.wave_label.Name = "wave_label";
-            this.wave_label.Size = new System.Drawing.Size(40, 23);
-            this.wave_label.TabIndex = 3;
-            this.wave_label.Text = "Wave";
-            this.wave_label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // theater_wave_set
-            // 
-            this.theater_wave_set.Location = new System.Drawing.Point(70, 19);
-            this.theater_wave_set.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.theater_wave_set.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.theater_wave_set.Name = "theater_wave_set";
-            this.theater_wave_set.Size = new System.Drawing.Size(53, 21);
-            this.theater_wave_set.TabIndex = 4;
-            this.theater_wave_set.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.theater_wave_set.ValueChanged += new System.EventHandler(this.Theater_wave_set_ValueChanged);
-            // 
-            // theater_enemy_random_btn
-            // 
-            this.theater_enemy_random_btn.Location = new System.Drawing.Point(20, 52);
-            this.theater_enemy_random_btn.Name = "theater_enemy_random_btn";
-            this.theater_enemy_random_btn.Size = new System.Drawing.Size(145, 23);
-            this.theater_enemy_random_btn.TabIndex = 6;
-            this.theater_enemy_random_btn.Text = "랜덤 설정";
-            this.theater_enemy_random_btn.UseVisualStyleBackColor = true;
-            this.theater_enemy_random_btn.Click += new System.EventHandler(this.Theater_enemy_random_btn_Click);
-            // 
-            // theater_enemy_preview
-            // 
-            this.theater_enemy_preview.Controls.Add(this.wave_label);
-            this.theater_enemy_preview.Controls.Add(this.theater_enemy_preview_listbox);
-            this.theater_enemy_preview.Controls.Add(this.theater_wave_set);
-            this.theater_enemy_preview.Location = new System.Drawing.Point(185, 11);
-            this.theater_enemy_preview.Name = "theater_enemy_preview";
-            this.theater_enemy_preview.Size = new System.Drawing.Size(431, 178);
-            this.theater_enemy_preview.TabIndex = 7;
-            this.theater_enemy_preview.TabStop = false;
-            this.theater_enemy_preview.Text = "미리 보기";
-            // 
-            // theater_enemy_preview_listbox
-            // 
-            this.theater_enemy_preview_listbox.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2});
-            this.theater_enemy_preview_listbox.HideSelection = false;
-            this.theater_enemy_preview_listbox.Location = new System.Drawing.Point(145, 14);
-            this.theater_enemy_preview_listbox.Name = "theater_enemy_preview_listbox";
-            this.theater_enemy_preview_listbox.Size = new System.Drawing.Size(280, 158);
-            this.theater_enemy_preview_listbox.TabIndex = 5;
-            this.theater_enemy_preview_listbox.UseCompatibleStateImageBehavior = false;
-            this.theater_enemy_preview_listbox.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Name";
-            this.columnHeader1.Width = 177;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Image";
-            this.columnHeader2.Width = 88;
-            // 
-            // theater_sqd_sett
-            // 
-            this.theater_sqd_sett.Controls.Add(this.theater_sqd_6);
-            this.theater_sqd_sett.Controls.Add(this.theater_sqd_5);
-            this.theater_sqd_sett.Controls.Add(this.theater_sqd_4);
-            this.theater_sqd_sett.Controls.Add(this.theater_sqd_3);
-            this.theater_sqd_sett.Controls.Add(this.theater_sqd_2);
-            this.theater_sqd_sett.Controls.Add(this.theater_sqd_1);
-            this.theater_sqd_sett.Location = new System.Drawing.Point(6, 207);
-            this.theater_sqd_sett.Name = "theater_sqd_sett";
-            this.theater_sqd_sett.Size = new System.Drawing.Size(235, 119);
-            this.theater_sqd_sett.TabIndex = 5;
-            this.theater_sqd_sett.TabStop = false;
-            this.theater_sqd_sett.Text = "중장비 출격 설정";
-            // 
-            // theater_sqd_1
-            // 
-            this.theater_sqd_1.AutoSize = true;
-            this.theater_sqd_1.Location = new System.Drawing.Point(17, 32);
-            this.theater_sqd_1.Name = "theater_sqd_1";
-            this.theater_sqd_1.Size = new System.Drawing.Size(70, 16);
-            this.theater_sqd_1.TabIndex = 0;
-            this.theater_sqd_1.Text = "BGM-71";
-            this.theater_sqd_1.UseVisualStyleBackColor = true;
-            this.theater_sqd_1.CheckedChanged += new System.EventHandler(this.Theater_sqd_6_CheckedChanged);
-            // 
-            // theater_sqd_2
-            // 
-            this.theater_sqd_2.AutoSize = true;
-            this.theater_sqd_2.Location = new System.Drawing.Point(17, 56);
-            this.theater_sqd_2.Name = "theater_sqd_2";
-            this.theater_sqd_2.Size = new System.Drawing.Size(67, 16);
-            this.theater_sqd_2.TabIndex = 1;
-            this.theater_sqd_2.Text = "AGS-30";
-            this.theater_sqd_2.UseVisualStyleBackColor = true;
-            this.theater_sqd_2.CheckedChanged += new System.EventHandler(this.Theater_sqd_6_CheckedChanged);
-            // 
-            // theater_sqd_3
-            // 
-            this.theater_sqd_3.AutoSize = true;
-            this.theater_sqd_3.Location = new System.Drawing.Point(17, 80);
-            this.theater_sqd_3.Name = "theater_sqd_3";
-            this.theater_sqd_3.Size = new System.Drawing.Size(50, 16);
-            this.theater_sqd_3.TabIndex = 2;
-            this.theater_sqd_3.Text = "2B14";
-            this.theater_sqd_3.UseVisualStyleBackColor = true;
-            this.theater_sqd_3.CheckedChanged += new System.EventHandler(this.Theater_sqd_6_CheckedChanged);
-            // 
-            // theater_sqd_4
-            // 
-            this.theater_sqd_4.AutoSize = true;
-            this.theater_sqd_4.Location = new System.Drawing.Point(124, 31);
-            this.theater_sqd_4.Name = "theater_sqd_4";
-            this.theater_sqd_4.Size = new System.Drawing.Size(41, 16);
-            this.theater_sqd_4.TabIndex = 3;
-            this.theater_sqd_4.Text = "M2";
-            this.theater_sqd_4.UseVisualStyleBackColor = true;
-            this.theater_sqd_4.CheckedChanged += new System.EventHandler(this.Theater_sqd_6_CheckedChanged);
-            // 
-            // theater_sqd_5
-            // 
-            this.theater_sqd_5.AutoSize = true;
-            this.theater_sqd_5.Location = new System.Drawing.Point(124, 56);
-            this.theater_sqd_5.Name = "theater_sqd_5";
-            this.theater_sqd_5.Size = new System.Drawing.Size(52, 16);
-            this.theater_sqd_5.TabIndex = 4;
-            this.theater_sqd_5.Text = "AT-4";
-            this.theater_sqd_5.UseVisualStyleBackColor = true;
-            this.theater_sqd_5.CheckedChanged += new System.EventHandler(this.Theater_sqd_6_CheckedChanged);
-            // 
-            // theater_sqd_6
-            // 
-            this.theater_sqd_6.AutoSize = true;
-            this.theater_sqd_6.Location = new System.Drawing.Point(124, 80);
-            this.theater_sqd_6.Name = "theater_sqd_6";
-            this.theater_sqd_6.Size = new System.Drawing.Size(66, 16);
-            this.theater_sqd_6.TabIndex = 5;
-            this.theater_sqd_6.Text = "QLZ-04";
-            this.theater_sqd_6.UseVisualStyleBackColor = true;
-            this.theater_sqd_6.CheckedChanged += new System.EventHandler(this.Theater_sqd_6_CheckedChanged);
+            this.echelon_select.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.echelon_select.FormattingEnabled = true;
+            this.echelon_select.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"});
+            this.echelon_select.Location = new System.Drawing.Point(15, 43);
+            this.echelon_select.Name = "echelon_select";
+            this.echelon_select.Size = new System.Drawing.Size(105, 20);
+            this.echelon_select.TabIndex = 31;
+            this.echelon_select.SelectedIndexChanged += new System.EventHandler(this.Echelon_select_SelectedIndexChanged);
             // 
             // Form1
             // 
@@ -5868,6 +5888,16 @@
             this.server_information.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.portnum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Boss_HP_textbox)).EndInit();
+            this.theater_set.ResumeLayout(false);
+            this.theater_sqd_sett.ResumeLayout(false);
+            this.theater_sqd_sett.PerformLayout();
+            this.theater_enemy_setting.ResumeLayout(false);
+            this.theater_enemy_setting.PerformLayout();
+            this.theater_enemy_preview.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.theater_wave_set)).EndInit();
+            this.theater_area_gb.ResumeLayout(false);
+            this.theater_area_occ_gb.ResumeLayout(false);
+            this.theater_area_occ_gb.PerformLayout();
             this.etc_set.ResumeLayout(false);
             this.client_reset_type.ResumeLayout(false);
             this.client_reset_type.PerformLayout();
@@ -5877,17 +5907,7 @@
             this.etc_progsetting.PerformLayout();
             this.etc_basicinformation.ResumeLayout(false);
             this.etc_basicinformation.PerformLayout();
-            this.theater_set.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.theater_area_occ_gb.ResumeLayout(false);
-            this.theater_area_occ_gb.PerformLayout();
-            this.theater_area_gb.ResumeLayout(false);
-            this.theater_enemy_setting.ResumeLayout(false);
-            this.theater_enemy_setting.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.theater_wave_set)).EndInit();
-            this.theater_enemy_preview.ResumeLayout(false);
-            this.theater_sqd_sett.ResumeLayout(false);
-            this.theater_sqd_sett.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -6302,6 +6322,7 @@
         private System.Windows.Forms.CheckBox theater_sqd_3;
         private System.Windows.Forms.CheckBox theater_sqd_2;
         private System.Windows.Forms.CheckBox theater_sqd_1;
+        private System.Windows.Forms.ComboBox echelon_select;
     }
 }
 

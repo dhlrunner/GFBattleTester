@@ -28,17 +28,20 @@ namespace GFBattleTester
         string battlespot = "983";
         public bool getUserinfoFromServer = false;
         public static Form1 frm;
-        serveraccess serv ;
+        serveraccess serv;
         static string signkey = "우중비모";
         string _token = string.Empty;
         bool gunsaved = false;
+        int[,] gun_user_id = { { 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10 }, { 11, 12, 13, 14, 15 }, { 16, 17, 18, 19, 20 }, { 21, 22, 23, 24, 25 }, { 26, 27, 28, 29, 30 } };
         string[] Equippos = { "11", "12", "13", "21", "22", "23", "31", "32", "33", "41", "42", "43", "51", "52", "53" };
         string equip = string.Empty;
+        JObject gun_info_array = JObject.Parse(@"{'0':[],'1':[],'2':[],'3':[],'4':[],'5':[]}");
         JObject gun_info_json_1 = new JObject();
         JObject gun_info_json_2 = new JObject();
         JObject gun_info_json_3 = new JObject();
         JObject gun_info_json_4 = new JObject();
         JObject gun_info_json_5 = new JObject();
+        JArray gun_eh_array = new JArray();
         JArray Squad_info = new JArray();
         List<string> equipID = new List<string>();
         List<string> equipDest = new List<string>();
@@ -49,6 +52,7 @@ namespace GFBattleTester
         List<string> mission_name = new List<string>();
         public List<int> gun_id = new List<int>();
         public List<string> gunName = new List<string>();
+        JObject equip_e = new JObject();
         HttpListener listener = new HttpListener();
         Thread thread = new Thread(new ParameterizedThreadStart(WorkerThread));
         public JObject lang_data = new JObject();
@@ -91,7 +95,7 @@ namespace GFBattleTester
         int[] squad_AGS30_defaultstat = { 27, 49, 67, 130 };
         int[] squad_2B14_defaultstat = { 51, 20, 46, 54 };
         int[] squad_M2_defaultstat = { 38, 17, 40, 61 };
-        int[] squad_QLZ04_defaultstat = { 26,46,63,112};
+        int[] squad_QLZ04_defaultstat = { 26, 46, 63, 112 };
         int 살상력 = 0, 파쇄력 = 1, 정밀성 = 2, 장전 = 3;
         int battleStarttime = 0;
         public string reset_error = "error:3";
@@ -115,7 +119,7 @@ namespace GFBattleTester
         }
         private void AddLog(string text)
         {
-            if(!nolog_checkbox.Checked)
+            if (!nolog_checkbox.Checked)
                 LogTextBox.AppendText(string.Format("[{0}]{1}" + Environment.NewLine, DateTime.Now.ToString("yyyy.MM.dd HH:mm:ss"), text));
 
         }
@@ -123,14 +127,14 @@ namespace GFBattleTester
         public Form1()
         {
             InitializeComponent();
-            frm = this;            
+            frm = this;
             CheckForIllegalCrossThreadCalls = false;
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            echelon_select.SelectedIndex = 0;
             try
-            {           
+            {
                 setting = JObject.Parse(File.ReadAllText(@"data/json/settings.json"));
                 showdetailLog_checkbox.Checked = bool.Parse(setting["showDetailLog"].ToString());
                 updatecheck_checkbox.Checked = bool.Parse(setting["checkUpdate"].ToString());
@@ -146,7 +150,7 @@ namespace GFBattleTester
             {
                 MessageBox.Show("Failed to load setting data", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            if(updatecheck_checkbox.Checked)
+            if (updatecheck_checkbox.Checked)
                 updatecheck();
             try
             {
@@ -155,7 +159,7 @@ namespace GFBattleTester
 
                 System.IO.DirectoryInfo di = new System.IO.DirectoryInfo(@"data/lang");
                 System.IO.FileInfo[] fi = di.GetFiles("*.json");
-                foreach(var a in fi)
+                foreach (var a in fi)
                 {
                     languageList_Combobox.Items.Add(Path.GetFileNameWithoutExtension(a.FullName));
                 }
@@ -164,7 +168,7 @@ namespace GFBattleTester
                 JObject spotinfo = JObject.Parse(File.ReadAllText(@"data/json/spot_info.json"));
                 guninfofile = Encoding.UTF8.GetString(Convert.FromBase64String(guninfofile));
                 mission = Encoding.UTF8.GetString(Convert.FromBase64String(mission));
-                
+
                 mission_name = mission.Split('\n').ToList();
 
                 enemy_team_info = JObject.Parse(File.ReadAllText(@"data/json/enemy_team_info.json"));
@@ -176,11 +180,13 @@ namespace GFBattleTester
                 userinfo["spot_act_info"] = null;
                 enemy_character_info = JObject.Parse(File.ReadAllText(@"data/json/enemy_character_type_info.json"));
                 string[] guninfofile_split = guninfofile.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+                gun_eh_array = JArray.Parse(File.ReadAllText(@"data/json/gun_e.json"));
                 gun_info_json_1 = JObject.Parse(File.ReadAllText(@"data/json/default_gun.json"));
                 gun_info_json_2 = JObject.Parse(File.ReadAllText(@"data/json/default_gun.json"));
                 gun_info_json_3 = JObject.Parse(File.ReadAllText(@"data/json/default_gun.json"));
                 gun_info_json_4 = JObject.Parse(File.ReadAllText(@"data/json/default_gun.json"));
                 gun_info_json_5 = JObject.Parse(File.ReadAllText(@"data/json/default_gun.json"));
+                equip_e = JObject.Parse(File.ReadAllText(@"data/json/equip_e.json"));
                 gunstatdata = JArray.Parse(File.ReadAllText(@"data/json/doll.json"));
                 attribute = JObject.Parse(File.ReadAllText(@"data/json/dollAttribute.json"));
                 grow = JObject.Parse(File.ReadAllText(@"data/json/dollGrow.json"));
@@ -239,6 +245,7 @@ namespace GFBattleTester
                     gunid_4_combobox.Items.Add(info);
                     gunid_5_combobox.Items.Add(info);
                 }
+
 
                 foreach (var item in enemy_team_info)
                 {
@@ -324,7 +331,7 @@ namespace GFBattleTester
                     sqd_6_reload.Minimum = squad_QLZ04_defaultstat[장전];
                 }
                 setSquadInfo(false); //중장비 초기화
-                SetGunInfo(false); //인형 초기화
+                SetGunInfo(false, 0); //인형 초기화
                 {
                     sqd_1_damage.Minimum = squad_BGM71_defaultstat[살상력];
                     sqd_1_break.Minimum = squad_BGM71_defaultstat[파쇄력];
@@ -357,6 +364,7 @@ namespace GFBattleTester
                     sqd_6_reload.Minimum = squad_QLZ04_defaultstat[장전];
                 }
                 enable_set_sqd();
+
             }
             catch (Exception ex)
             {
@@ -366,13 +374,13 @@ namespace GFBattleTester
             theater_area.SelectedIndex = 0;
             theater_area_num.SelectedIndex = 0;
             UpdatePosTile(null, null);
-            
+
         }
         private void Set_Lang()
-        {           
-            for(int i=1; i <= 5; i++)
+        {
+            for (int i = 1; i <= 5; i++)
             {
-                Label gunid = (Label)Controls.Find("gunid_" + i.ToString(),true)[0];
+                Label gunid = (Label)Controls.Find("gunid_" + i.ToString(), true)[0];
                 gunid.Text = lang_data["gun_id"].ToString();
                 Label gunskin = (Label)Controls.Find("gunskin_" + i.ToString(), true)[0];
                 gunskin.Text = lang_data["skin"].ToString();
@@ -400,17 +408,17 @@ namespace GFBattleTester
                 gunpos.Text = lang_data["position"].ToString();
                 Button setbtn = (Button)Controls.Find("set_gunpos_btn_" + i.ToString(), true)[0];
                 setbtn.Text = lang_data["set"].ToString();
-                CheckBox gunoath = (CheckBox)Controls.Find("gunoath_" + i.ToString() + "_checkbox",true)[0];
+                CheckBox gunoath = (CheckBox)Controls.Find("gunoath_" + i.ToString() + "_checkbox", true)[0];
                 gunoath.Text = lang_data["oath"].ToString();
                 Button resetstat = (Button)Controls.Find("gun_resetstat_" + i.ToString(), true)[0];
                 resetstat.Text = lang_data["reset_default_stat"].ToString();
-                CheckBox enable = (CheckBox)Controls.Find("enable_" + i.ToString(),true)[0];
-                enable.Text = lang_data["doll_no"+i.ToString()].ToString();
+                CheckBox enable = (CheckBox)Controls.Find("enable_" + i.ToString(), true)[0];
+                enable.Text = lang_data["doll_no" + i.ToString()].ToString();
                 GroupBox gun_gb = (GroupBox)Controls.Find("groupBox" + i.ToString(), true)[0];
                 gun_gb.Text = lang_data["doll_no" + i.ToString()].ToString();
                 GroupBox equip_gb = (GroupBox)Controls.Find("groupBox_equip_" + i.ToString(), true)[0];
                 equip_gb.Text = lang_data["doll_no" + i.ToString()].ToString();
-                Button setequip_1 = (Button)Controls.Find("setEquip_" + i.ToString() + "1" , true)[0];
+                Button setequip_1 = (Button)Controls.Find("setEquip_" + i.ToString() + "1", true)[0];
                 setequip_1.Text = lang_data["none_equip"].ToString();
                 Button setequip_2 = (Button)Controls.Find("setEquip_" + i.ToString() + "2", true)[0];
                 setequip_2.Text = lang_data["none_equip"].ToString();
@@ -507,7 +515,7 @@ namespace GFBattleTester
             theater_area_adv_occ.Text = lang_data["theater_area_adv"].ToString();
             theater_area_core_occ.Text = lang_data["theater_area_core"].ToString();
             theater_enemy_setting.Text = lang_data["theater_enemy_setting"].ToString();
-            theater_enemy_random_btn.Text =  lang_data["theater_enemy_random"].ToString();
+            theater_enemy_random_btn.Text = lang_data["theater_enemy_random"].ToString();
             theater_enemy_preview.Text = lang_data["theater_enemy_pre"].ToString();
             #endregion
 
@@ -527,9 +535,9 @@ namespace GFBattleTester
             error_error0.Text = lang_data["type_error0"].ToString();
             #endregion
 
-           
-           
-          
+
+
+
         }
 
         string getFileSizeMD5(string path)
@@ -572,7 +580,7 @@ namespace GFBattleTester
                 bool isLatest = true;
                 WebClient updatercl = new WebClient();
                 byte[] updatelist = updatercl.DownloadData("https://dhlrunner.github.io/GFBT_update_data_files/update_files.txt");
-                string[] list = Encoding.UTF8.GetString(updatelist).Split(Environment.NewLine.ToCharArray(),StringSplitOptions.RemoveEmptyEntries);
+                string[] list = Encoding.UTF8.GetString(updatelist).Split(Environment.NewLine.ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
                 foreach (string a in list)
                 {
                     if (a != "")
@@ -599,7 +607,7 @@ namespace GFBattleTester
                         updater updform = new updater(this);
                         updform.StartPosition = FormStartPosition.Manual;
                         updform.Left = 500;
-                        updform.Top = 500;                       
+                        updform.Top = 500;
                         updform.ShowDialog();
                     }
                 }
@@ -819,14 +827,14 @@ namespace GFBattleTester
             {
                 if (!IsTcpPortAvailable(Convert.ToInt16(portnum.Value)))
                 {
-                    MessageBox.Show(string.Format(lang_data["port_already_using_msg"].ToString(), portnum.Value.ToString()) , lang_data["error"].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(string.Format(lang_data["port_already_using_msg"].ToString(), portnum.Value.ToString()), lang_data["error"].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
                 else
                 {
                     try
                     {
-                        int i=0;
+                        int i = 0;
                         for (i = 0; i < userinfo["spot_act_info"].Count(); i++)
                         {
                             if (userinfo["spot_act_info"][i]["spot_id"].ToString() == battlespot)
@@ -834,9 +842,9 @@ namespace GFBattleTester
                                 userinfo["spot_act_info"][i]["enemy_team_id"] = enemy_team_id_combobox.Text;
                                 userinfo["spot_act_info"][i]["boss_hp"] = Boss_HP_textbox.Value.ToString();
                                 break;
-                            }                            
+                            }
                         }
-                       
+
                         //if (enemy_team_info[])              
                         listener.Prefixes.Add(string.Format("http://*:{0}/", portnum.Value.ToString()));
                         //listener.Prefixes.Add("https://+/");
@@ -854,7 +862,7 @@ namespace GFBattleTester
                             server_ip.Text = lang_data["server_ip"].ToString() + GetLocalIP();
                         server_port.Text = lang_data["server_port"].ToString() + portnum.Value.ToString();
                         AddLog(string.Format(lang_data["server_started_log_msg"].ToString(), server_hideip.Checked ? "***.***.***.***" : GetLocalIP(), portnum.Value.ToString(), spotactinfo[i]["enemy_team_id"].ToString()));
-                        
+
 
                         File.WriteAllText(@"data/port", portnum.Value.ToString());
                         server_start.Enabled = false;
@@ -938,7 +946,7 @@ namespace GFBattleTester
                 frm.AddLog("Client_Request: " + Encoding.UTF8.GetString(Client_Req_data));
 
             if (!frm.getUserinfoFromServer) //!유저정보
-            {                                                          
+            {
                 if (ctx.Request.Url.LocalPath == GF_URLs_Kr.index_version)
                 {
                     string json = File.ReadAllText(@"data/json/version.json");
@@ -969,7 +977,7 @@ namespace GFBattleTester
                     }
                     ResponceProcessBinary(ctx, Encoding.UTF8.GetBytes(userinfo.ToString()), true, false);
                 }
-                else if(ctx.Request.Url.LocalPath == GF_URLs_Kr.GetTheaterData)
+                else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.GetTheaterData)
                 {
                     ResponceProcessBinary(ctx, Encoding.UTF8.GetBytes(frm.Theater_data.ToString()), true, false);
                 }
@@ -983,10 +991,10 @@ namespace GFBattleTester
                     string data = "[{ \"type\":2,\"occupied_ids\":52}]";
                     ResponceProcessBinary(ctx, Encoding.UTF8.GetBytes(data), true, false);
                 }
-                else if(ctx.Request.Url.LocalPath == GF_URLs_Kr.startTheaterBattle)
+                else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.startTheaterBattle)
                 {
                     JObject clientdata = JObject.Parse(Packet.Decode(Outdatacode, signkey));
-                    frm.AddLog(string.Format(frm.lang_data["echelon_out"].ToString() , clientdata["team_id"].ToString()));
+                    frm.AddLog(string.Format(frm.lang_data["echelon_out"].ToString(), clientdata["team_id"].ToString()));
                     ResponceProcessBinary(ctx, new byte[1] { 0x31 }/*"1"*/, false, false);
                 }
                 else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.battlefinish)
@@ -1095,10 +1103,10 @@ namespace GFBattleTester
                     string outtdata = a.ToString();
                     outtdata = outtdata.Replace("\n", String.Empty);
                     outtdata = outtdata.Replace("\r", String.Empty);
-                    ResponceProcessBinary(ctx, Encoding.UTF8.GetBytes(a.ToString()), true, false);        
-                    
+                    ResponceProcessBinary(ctx, Encoding.UTF8.GetBytes(a.ToString()), true, false);
+
                 }
-                else if(ctx.Request.Url.LocalPath == GF_URLs_Kr.endTheaterBattle)
+                else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.endTheaterBattle)
                 {
                     string data = "{\"theater_end_exercise\":[],\"next_enemy_no\":\"2\"}";
                     ResponceProcessBinary(ctx, Encoding.UTF8.GetBytes(data), true, false);
@@ -1107,7 +1115,7 @@ namespace GFBattleTester
                 {
                     Random rdm = new Random();
                     int score = rdm.Next(1, 999999);
-                    string data = "{\"boss_score\":" + rdm.Next(1, 999999).ToString()+ ",\"battle_pt\":"+score.ToString()+",\"material_num\":1844}";
+                    string data = "{\"boss_score\":" + rdm.Next(1, 999999).ToString() + ",\"battle_pt\":" + score.ToString() + ",\"material_num\":1844}";
                     ResponceProcessBinary(ctx, Encoding.UTF8.GetBytes(data), true, false);
                 }
                 else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.downloadsucsess)
@@ -1115,24 +1123,24 @@ namespace GFBattleTester
                     ResponceProcessBinary(ctx, Encoding.ASCII.GetBytes("1"), false, false);
                 }
                 //wc.Headers.Add("Accept","*/*");
-                 /*else if (ctx.Request.Url.AbsoluteUri.Contains("sn-list.girlfrontline.co.kr") && ctx.Request.Url.LocalPath.Contains(".txt"))
-                 {
-                     WebClient wc = new WebClient();
+                /*else if (ctx.Request.Url.AbsoluteUri.Contains("sn-list.girlfrontline.co.kr") && ctx.Request.Url.LocalPath.Contains(".txt"))
+                {
+                    WebClient wc = new WebClient();
 
-                     wc.Headers.Add("Accept-Encoding", "gzip, deflate");
-                     wc.Headers.Add("Accept-Language", "en-us");
-                     wc.Headers.Add("User-Agent", ctx.Request.UserAgent);
-                     wc.Headers.Add("X-Unity-Version", ctx.Request.Headers.GetValues("X-Unity-Version")[0]);
-                     byte[] unitydata = wc.DownloadData("http://"+ctx.Request.Url.Host+ctx.Request.Url.AbsolutePath);
+                    wc.Headers.Add("Accept-Encoding", "gzip, deflate");
+                    wc.Headers.Add("Accept-Language", "en-us");
+                    wc.Headers.Add("User-Agent", ctx.Request.UserAgent);
+                    wc.Headers.Add("X-Unity-Version", ctx.Request.Headers.GetValues("X-Unity-Version")[0]);
+                    byte[] unitydata = wc.DownloadData("http://"+ctx.Request.Url.Host+ctx.Request.Url.AbsolutePath);
 
-                     ResponceProcessBinary(ctx, unitydata, false,true);
-                 }*/
+                    ResponceProcessBinary(ctx, unitydata, false,true);
+                }*/
                 else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.crashreport)
                 {
                     JObject temp = JObject.Parse(Packet.Decode(Outdatacode, signkey));
                     File.AppendAllText("CrashLog/client_crashlog_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".txt", temp.ToString());
                     ResponceProcessBinary(ctx, Encoding.ASCII.GetBytes("1"), false, false);
-                    frm.AddLog("(CrashReport)"+frm.lang_data["crashlog_log_msg"].ToString());
+                    frm.AddLog("(CrashReport)" + frm.lang_data["crashlog_log_msg"].ToString());
                 }
                 else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.abortmission)
                 {
@@ -1255,7 +1263,7 @@ namespace GFBattleTester
             }
             else
             {
-               // Packet.init();
+                // Packet.init();
                 try
                 {
                     //uri = "http://gf-game.girlfrontline.co.kr" + uri;
@@ -1264,7 +1272,7 @@ namespace GFBattleTester
                     request.KeepAlive = true;
                     request.UserAgent = ctx.Request.UserAgent;
                     request.ContentType = ctx.Request.ContentType;
-                    request.Host = ctx.Request.Headers.GetValues("Host")[0];                   
+                    request.Host = ctx.Request.Headers.GetValues("Host")[0];
                     for (int i = 0; i < ctx.Request.Headers.Count; i++)
                     {
                         if (ctx.Request.Headers.GetKey(i) != "Content-Length" &&
@@ -1289,9 +1297,9 @@ namespace GFBattleTester
                     //if(ctx.Request.HttpMethod == "POST")
                     //{
                     try
-                    {                      
-                        
-                       
+                    {
+
+
                         using (WebResponse resp = request.GetResponse())
                         {
                             byte[] b = null;
@@ -1324,7 +1332,7 @@ namespace GFBattleTester
                             string Serverpacket = Encoding.UTF8.GetString(b);
                             if (ctx.Request.Url.LocalPath == GF_URLs_Kr.index_version)
                             {
-                                frm.serv.AddLog(frm.lang_data["get_versioninfo_log"].ToString()) ;                               
+                                frm.serv.AddLog(frm.lang_data["get_versioninfo_log"].ToString());
                             }
                             else if (ctx.Request.Url.LocalPath == GF_URLs_Kr.getToken)
                             {
@@ -1334,7 +1342,7 @@ namespace GFBattleTester
                                     frm.serv.AddLog(frm.lang_data["login_log"].ToString());
                                 }
                                 else
-                                {                                   
+                                {
                                     JObject tok = JObject.Parse(Packet.Decode(Serverpacket, "yundoudou"));
                                     frm._token = tok["sign"].ToString();
                                     frm.serv.AddLog(frm.lang_data["get_token_success_log"].ToString());
@@ -1366,7 +1374,7 @@ namespace GFBattleTester
                 }
 
             }
-            
+
             ctx.Response.Close();
         }
         private static void WorkerThread(object arg)
@@ -1392,7 +1400,7 @@ namespace GFBattleTester
             //}
 
         }
-        
+
         private static void ResponceProcessBinary(HttpListenerContext ctx, byte[] data, bool encrypt, bool isHeaderSettedAlready)
         {
             if (encrypt)
@@ -1412,7 +1420,7 @@ namespace GFBattleTester
             response.ContentLength64 = data.Length; //데이터 길이 설정
             Stream output = response.OutputStream;
             output.Write(data, 0, data.Length);
-            if(frm.showdetailLog_checkbox.Checked)
+            if (frm.showdetailLog_checkbox.Checked)
                 frm.AddLog("Responce: " + Encoding.UTF8.GetString(data));
         }
 
@@ -1461,11 +1469,11 @@ namespace GFBattleTester
                         }
                     }
                     JObject p = new JObject();
-                    for(int k = 0; k< spotactinfo.Count(); k++)
+                    for (int k = 0; k < spotactinfo.Count(); k++)
                     {
                         p.Add(spotactinfo[k]["spot_id"].ToString(), spotactinfo[k]);
                     }
-                    missionactinfo["spot"].Replace(JsonConvert.SerializeObject(p,Formatting.None));
+                    missionactinfo["spot"].Replace(JsonConvert.SerializeObject(p, Formatting.None));
                     //MessageBox.Show(userinfo["mission_act_info"]["spot"].ToString());
                     server_settedID.Text = lang_data["server_setted_id"].ToString() + enemy_team_id_combobox.Text;
                     File.WriteAllText(@"data/last_enemyID", enemy_team_id_combobox.Text);
@@ -1480,18 +1488,18 @@ namespace GFBattleTester
                 {
                     bosshp = 0;
                     Boss_HP_textbox.Value = bosshp;
-                    for(int i=0; i<spotactinfo.Count(); i++)
+                    for (int i = 0; i < spotactinfo.Count(); i++)
                     {
-                        if(spotactinfo[i]["spot_id"].ToString() == battlespot)
+                        if (spotactinfo[i]["spot_id"].ToString() == battlespot)
                         {
                             spotactinfo[i]["enemy_team_id"] = enemy_team_id_combobox.Text;
                             spotactinfo[i]["boss_hp"] = Boss_HP_textbox.Value.ToString();
                             AddLog(lang_data["changed_groupID"].ToString() + spotactinfo[i]["enemy_team_id"].ToString());
                             break;
-                        }                        
-                    }                   
+                        }
+                    }
                     server_settedID.Text = lang_data["server_setted_id"].ToString() + enemy_team_id_combobox.Text;
-                    
+
                 }
             }
         }
@@ -1505,7 +1513,7 @@ namespace GFBattleTester
                     AddLog(lang_data["changed_bossHP"].ToString() + spotactinfo[i]["boss_hp"].ToString());
                     break;
                 }
-            }                     
+            }
             File.WriteAllText(@"data/last_bossHP", Boss_HP_textbox.Value.ToString());
         }
         bool check_gun(int o)
@@ -1538,30 +1546,30 @@ namespace GFBattleTester
         }
         private void button4_Click(object sender, EventArgs e)
         {
-            SetGunInfo(true);
+            SetGunInfo(true, echelon_select.SelectedIndex);
 
         }
-        void SetGunInfo(bool showMessageBox)
+        void SetGunInfo(bool showMessageBox, int echelon)
         {
             bool duplicated = false;
             for (int i = 1; i <= 5; i++)
             {
-                for (int j = 0;  j < 4;j++)
+                for (int j = 0; j < 4; j++)
                 {
-                    List<int> n = new List<int>() { 1,2,3,4,5};
+                    List<int> n = new List<int>() { 1, 2, 3, 4, 5 };
                     n.Remove(i);
                     NumericUpDown n1 = (NumericUpDown)Controls.Find("gunpos_" + i.ToString() + "_number", true)[0];
-                    NumericUpDown n2 = (NumericUpDown)Controls.Find("gunpos_" +n[j].ToString() + "_number", true)[0];
+                    NumericUpDown n2 = (NumericUpDown)Controls.Find("gunpos_" + n[j].ToString() + "_number", true)[0];
                     if (n1.Value == n2.Value)
                     {
                         CheckBox c1 = (CheckBox)Controls.Find("enable_" + i.ToString(), true)[0];
                         CheckBox c2 = (CheckBox)Controls.Find("enable_" + n[j].ToString(), true)[0];
                         if (c1.Checked)
                         {
-                            if(c2.Checked)
+                            if (c2.Checked)
                                 duplicated = true;
                         }
-                       
+
                     }
                 }
             }
@@ -1593,7 +1601,7 @@ namespace GFBattleTester
             {
                 MessageBox.Show(lang_data["duplicate_formation_msg"].ToString(), lang_data["error"].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
             else if (gunid_1_combobox.SelectedIndex == -1 || gunid_2_combobox.SelectedIndex == -1
                 || gunid_3_combobox.SelectedIndex == -1 || gunid_4_combobox.SelectedIndex == -1
                 || gunid_5_combobox.SelectedIndex == -1)
@@ -1627,25 +1635,44 @@ namespace GFBattleTester
                 JArray gun_info_in_theater = JArray.Parse(userinfo["gun_in_theater_info"].ToString());
                 gun_user_info.RemoveAll();
                 gun_info_in_theater.RemoveAll();
+
                 for (int i = 1; i <= 5; i++)
                 {
-                    JObject o = new JObject(Get_user_gun_info_json(i));
-                    JObject n = new JObject();
+                    Get_user_gun_info_json(i, echelon);
+                    JObject o = new JObject();
+                    for (int k = 0; k < gun_eh_array.Count(); k++)
+                    {
+                        o = new JObject((JObject)gun_eh_array[k]);
+                        if (gun_eh_array[k]["id"].ToString() == o["id"].ToString())
+                        {
+                            gun_eh_array[k].Replace(o);
+                        }
+                    }
                     gun_user_info.Add(o);
+
+                }
+                foreach (var a in gun_eh_array)
+                {
+                    JObject n = new JObject();
                     n.Add("user_id", "20139");
-                    n.Add("team_id", o["team_id"]);
-                    n.Add("location", o["location"]);
-                    n.Add("gun_with_user_id", o["id"]);
-                    n.Add("position", o["position"]);
-                    n.Add("life", o["life"]);
+                    n.Add("team_id", a["team_id"]);
+                    n.Add("location", a["location"]);
+                    n.Add("gun_with_user_id", a["id"]);
+                    n.Add("position", a["position"]);
+                    n.Add("life", a["life"]);
                     gun_info_in_theater.Add(n);
                 }
-                userinfo["gun_with_user_info"].Replace(gun_user_info);
+
+
+                // gun_user_info.Add(gun_info_array);
+
+                userinfo["gun_with_user_info"].Replace(gun_eh_array);
                 userinfo["gun_in_theater_info"].Replace(gun_info_in_theater);
                 //MessageBox.Show(Get_user_gun_info_json(1).ToString());
                 if (showMessageBox)
                     MessageBox.Show(lang_data["saved_msg"].ToString(), lang_data["alert"].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Information);
                 gunsaved = true;
+                //Clipboard.SetText(gun_eh_array.ToString());
             }
         }
         string getModState(int lv)
@@ -1659,17 +1686,43 @@ namespace GFBattleTester
             else
                 return "0";
         }
-        JObject Get_user_gun_info_json(int num)
+
+        void Get_user_gun_info_json(int num, int e)
         {
             JObject defStat = new JObject();
+            for (int k = 0; k < gun_eh_array.Count(); k++)
+            {
+                if (gun_eh_array[k]["id"].ToString() == gun_user_id[e, num - 1].ToString())
+                {
+                    gun_eh_array[k]["gun_id"] = int.Parse(gun_info[((ComboBox)Controls.Find("gunid_" + num.ToString() + "_combobox", true)[0]).SelectedIndex].Split(',')[0]).ToString();
+                    gun_eh_array[k]["gun_level"] = ((NumericUpDown)Controls.Find("gunlv_" + num.ToString() + "_number", true)[0]).Value.ToString();
+                    gun_eh_array[k]["gun_exp"] = gun_exp_table[Convert.ToInt16(((NumericUpDown)Controls.Find("gunlv_" + num.ToString() + "_number", true)[0]).Value - 1)].ToString();
+                    gun_eh_array[k]["location"] = num.ToString();
+                    gun_eh_array[k]["position"] = gun_position[Convert.ToInt16(((NumericUpDown)Controls.Find("gunpos_" + num.ToString() + "_number", true)[0]).Value)].ToString();
+                    gun_eh_array[k]["if_modification"] = check_ifmod(num) ? getModState((int)((NumericUpDown)Controls.Find("gunlv_" + num.ToString() + "_number", true)[0]).Value) : "0";
+                    gun_eh_array[k]["life"] = int.Parse(((NumericUpDown)Controls.Find("gunhp_" + num.ToString() + "_number", true)[0]).Value.ToString());
+                    gun_eh_array[k]["pow"] = (((NumericUpDown)Controls.Find("gunpow_" + num.ToString() + "_number", true)[0]).Value - ((NumericUpDown)Controls.Find("gunpow_" + num.ToString() + "_number", true)[0]).Minimum).ToString();
+                    gun_eh_array[k]["hit"] = (((NumericUpDown)Controls.Find("gunhit_" + num.ToString() + "_number", true)[0]).Value - ((NumericUpDown)Controls.Find("gunhit_" + num.ToString() + "_number", true)[0]).Minimum).ToString();
+                    gun_eh_array[k]["dodge"] = (((NumericUpDown)Controls.Find("gundodge_" + num.ToString() + "_number", true)[0]).Value - ((NumericUpDown)Controls.Find("gundodge_" + num.ToString() + "_number", true)[0]).Minimum).ToString();
+                    gun_eh_array[k]["rate"] = (((NumericUpDown)Controls.Find("gunrate_" + num.ToString() + "_number", true)[0]).Value - ((NumericUpDown)Controls.Find("gunrate_" + num.ToString() + "_number", true)[0]).Minimum).ToString();
+                    gun_eh_array[k]["skill1"] = ((NumericUpDown)Controls.Find("gunskill1_" + num.ToString() + "_number", true)[0]).Value.ToString();
+                    gun_eh_array[k]["skill2"] = ((NumericUpDown)Controls.Find("gunskill2_" + num.ToString() + "_number", true)[0]).Value.ToString(); //개조 아닐경우 0
+                    gun_eh_array[k]["number"] = ((NumericUpDown)Controls.Find("gundummy_" + num.ToString() + "_number", true)[0]).Value.ToString();
+                    gun_eh_array[k]["favor"] = (((NumericUpDown)Controls.Find("gunfavor_" + num.ToString() + "_number", true)[0]).Value * 10000).ToString();
+                    gun_eh_array[k]["soul_bond"] = ((CheckBox)Controls.Find("gunoath_" + num.ToString() + "_checkbox", true)[0]).Checked ? "1" : "0";
+                    gun_eh_array[k]["skin"] = "0";
+                    gun_eh_array[k]["team_id"] = ((CheckBox)Controls.Find("enable_" + num.ToString(), true)[0]).Checked ? getTeamIDfromID(gun_eh_array[k]["id"].ToString()).ToString() : "0";
+                }
+            }
+            /*
             if (num == 1)
             {
                 defStat = new JObject(getGunDefaultStat(1, int.Parse(gun_info[gunid_1_combobox.SelectedIndex].Split(',')[0].ToString()), 1));
-                gun_info_json_1["id"] = num.ToString();
+                gun_info_json_1["id"] = gun_user_id[e, num - 1].ToString();
                 gun_info_json_1["gun_id"] = int.Parse(gun_info[gunid_1_combobox.SelectedIndex].Split(',')[0]).ToString();
                 gun_info_json_1["gun_exp"] = gun_exp_table[Convert.ToInt16(gunlv_1_number.Value - 1)].ToString();
                 gun_info_json_1["gun_level"] = gunlv_1_number.Value.ToString();
-                gun_info_json_1["team_id"] = check_gun(num) ? "1" : "0";
+                gun_info_json_1["team_id"] = check_gun(num) ? (e+1).ToString() : "0";
                 gun_info_json_1["if_modification"] = check_ifmod(1) ? getModState((int)gunlv_1_number.Value) : "0";
                 gun_info_json_1["location"] = num.ToString();
                 gun_info_json_1["position"] = gun_position[Convert.ToInt16(gunpos_1_number.Value)].ToString();
@@ -1679,7 +1732,7 @@ namespace GFBattleTester
                 gun_info_json_1["dodge"] = (gundodge_1_number.Value - gundodge_1_number.Minimum).ToString();
                 gun_info_json_1["rate"] = (gunrate_1_number.Value - gunrate_1_number.Minimum).ToString();
                 gun_info_json_1["skill1"] = gunskill1_1_number.Value.ToString();
-                gun_info_json_1["skill2"] = gunskill1_1_number.Value.ToString();
+                gun_info_json_1["skill2"] = gunskill2_1_number.Value.ToString();
                 gun_info_json_1["number"] = gundummy_1_number.Value.ToString();
                 //gun_info_json_1["equip1"] = "6";
                 //gun_info_json_1["equip2"] = "7";
@@ -1694,11 +1747,11 @@ namespace GFBattleTester
             else if (num == 2)
             {
                 defStat = new JObject(getGunDefaultStat(1, int.Parse(gun_info[gunid_2_combobox.SelectedIndex].Split(',')[0].ToString()), 1));
-                gun_info_json_2["id"] = num.ToString();
+                gun_info_json_2["id"] = gun_user_id[e, num - 1].ToString();
                 gun_info_json_2["gun_id"] = int.Parse(gun_info[gunid_2_combobox.SelectedIndex].Split(',')[0]).ToString();
                 gun_info_json_2["gun_exp"] = gun_exp_table[Convert.ToInt16(gunlv_2_number.Value - 1)].ToString();
                 gun_info_json_2["gun_level"] = gunlv_2_number.Value.ToString();
-                gun_info_json_2["team_id"] = check_gun(num) ? "1" : "0";
+                gun_info_json_2["team_id"] = check_gun(num) ? (e+1).ToString() : "0";
                 gun_info_json_2["if_modification"] = check_ifmod(2) ? getModState((int)gunlv_2_number.Value) : "0";
                 gun_info_json_2["location"] = num.ToString();
                 gun_info_json_2["position"] = gun_position[Convert.ToInt16(gunpos_2_number.Value)].ToString();
@@ -1723,11 +1776,11 @@ namespace GFBattleTester
             else if (num == 3)
             {
                 defStat = new JObject(getGunDefaultStat(1, int.Parse(gun_info[gunid_3_combobox.SelectedIndex].Split(',')[0].ToString()), 1));
-                gun_info_json_3["id"] = num.ToString();
+                gun_info_json_3["id"] = gun_user_id[e, num - 1].ToString();
                 gun_info_json_3["gun_id"] = int.Parse(gun_info[gunid_3_combobox.SelectedIndex].Split(',')[0]).ToString();
                 gun_info_json_3["gun_exp"] = gun_exp_table[Convert.ToInt16(gunlv_3_number.Value - 1)].ToString();
                 gun_info_json_3["gun_level"] = gunlv_3_number.Value.ToString();
-                gun_info_json_3["team_id"] = check_gun(num) ? "1" : "0";
+                gun_info_json_3["team_id"] = check_gun(num) ? (e+1).ToString() : "0";
                 gun_info_json_3["if_modification"] = check_ifmod(3) ? getModState((int)gunlv_3_number.Value) : "0";
                 gun_info_json_3["location"] = num.ToString();
                 gun_info_json_3["position"] = gun_position[Convert.ToInt16(gunpos_3_number.Value)].ToString();
@@ -1752,11 +1805,11 @@ namespace GFBattleTester
             else if (num == 4)
             {
                 defStat = new JObject(getGunDefaultStat(1, int.Parse(gun_info[gunid_4_combobox.SelectedIndex].Split(',')[0].ToString()), 1));
-                gun_info_json_4["id"] = num.ToString();
+                gun_info_json_4["id"] = gun_user_id[e, num - 1].ToString();
                 gun_info_json_4["gun_id"] = int.Parse(gun_info[gunid_4_combobox.SelectedIndex].Split(',')[0]).ToString();
                 gun_info_json_4["gun_exp"] = gun_exp_table[Convert.ToInt16(gunlv_4_number.Value - 1)].ToString();
                 gun_info_json_4["gun_level"] = gunlv_4_number.Value.ToString();
-                gun_info_json_4["team_id"] = check_gun(num) ? "1" : "0";
+                gun_info_json_4["team_id"] = check_gun(num) ? (e+1).ToString() : "0";
                 gun_info_json_4["if_modification"] = check_ifmod(4) ? getModState((int)gunlv_4_number.Value) : "0";
                 gun_info_json_4["location"] = num.ToString();
                 gun_info_json_4["position"] = gun_position[Convert.ToInt16(gunpos_4_number.Value)].ToString();
@@ -1781,11 +1834,11 @@ namespace GFBattleTester
             else if (num == 5)
             {
                 defStat = new JObject(getGunDefaultStat(1, int.Parse(gun_info[gunid_5_combobox.SelectedIndex].Split(',')[0].ToString()), 1));
-                gun_info_json_5["id"] = num.ToString();
+                gun_info_json_5["id"] = gun_user_id[e, num - 1].ToString();
                 gun_info_json_5["gun_id"] = int.Parse(gun_info[gunid_5_combobox.SelectedIndex].Split(',')[0]).ToString();
                 gun_info_json_5["gun_exp"] = gun_exp_table[Convert.ToInt16(gunlv_5_number.Value - 1)].ToString();
                 gun_info_json_5["gun_level"] = gunlv_5_number.Value.ToString();
-                gun_info_json_5["team_id"] = check_gun(num) ? "1" : "0";
+                gun_info_json_5["team_id"] = check_gun(num) ? (e+1).ToString() : "0";
                 gun_info_json_5["if_modification"] = check_ifmod(5) ? getModState((int)gunlv_5_number.Value) : "0";
                 gun_info_json_5["location"] = num.ToString();
                 gun_info_json_5["position"] = gun_position[Convert.ToInt16(gunpos_5_number.Value)].ToString();
@@ -1808,12 +1861,12 @@ namespace GFBattleTester
                 return gun_info_json_5;
             }
             else
-                return null;
+                return null;*/
         }
         private void enable_1_CheckedChanged(object sender, EventArgs e)
         {
             enable_set(1);
-            UpdatePosTile(null,null);
+            UpdatePosTile(null, null);
         }
 
         private void enable_2_CheckedChanged(object sender, EventArgs e)
@@ -1973,10 +2026,17 @@ namespace GFBattleTester
             JObject savefile = new JObject();
             for (int i = 1; i <= 5; i++)
             {
-                JObject o = Get_user_gun_info_json(i);
-                o["equip1"] = "0";
-                o["equip2"] = "0";
-                o["equip3"] = "0";
+                JObject o = new JObject();
+                for (int k = 0; k < gun_eh_array.Count(); k++)
+                {
+                    if (gun_eh_array[k]["id"].ToString() == gun_user_id[echelon_select.SelectedIndex, i - 1].ToString())
+                    {
+                        o = new JObject(gun_eh_array[k]);
+                        o["equip1"] = "0";
+                        o["equip2"] = "0";
+                        o["equip3"] = "0";
+                    }
+                }
                 savefile.Add("gun" + i.ToString(), o);
             }
             //savefile.Add("enemyGroupID", enemy_team_id_combobox.Text);
@@ -1998,23 +2058,44 @@ namespace GFBattleTester
             try
             {
                 JObject file = JObject.Parse(File.ReadAllText(path));
-                loadinfofromfile(file);
+                loadinfofromfile(file, echelon_select.SelectedIndex);
                 label115.Text = Path.GetFileName(path);
-                SetGunInfo(false);
+                SetGunInfo(false, echelon_select.SelectedIndex);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(lang_data["file_load_error_msg"].ToString() + Environment.NewLine + ex.ToString(), lang_data["load_failed"].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        void loadinfofromfile(JObject json)
+        void loadinfofromfile(JObject json, int ech)
         {
             int[] gunid = gun_id.ToArray();
             #region LoadJsonData
+            for (int i = 1; i <= 5; i++)
+            {
+                for (int k = 0; k < gun_eh_array.Count(); k++)
+                {
+                    if (gun_eh_array[k]["id"].ToString() == gun_user_id[ech, i - 1].ToString())
+                    {
+                        if (json.SelectToken("gun" + i.ToString()) != null)
+                        {
+                            gun_eh_array[k].Replace(json["gun" + i.ToString()]);
+                            gun_eh_array[k]["id"] = gun_user_id[ech, i - 1].ToString();
+                        }
+                        else if (json.SelectToken("gun" + i.ToString()) == null && i != 1)
+                        {
+                            CheckBox e = (CheckBox)Controls.Find("enable_" + i.ToString(), true)[0];
+                            gun_eh_array[k]["team_id"] = "0";
+                            e.Checked = false;
+                        }
+                    }
+                }
+            }
+            /*
             if(json.SelectToken("gun1") != null)
             {
-                gun_info_json_1["id"] = json["gun1"]["id"].ToString();
-                gun_info_json_1["gun_id"] = json["gun1"]["gun_id"].ToString();
+                gun_info_json_1["id"] = gun_user_id[ech, 0].ToString(); //json["gun1"]["id"].ToString();
+                gun_info_json_1["gun_id"] =   json["gun1"]["gun_id"].ToString();
                 gun_info_json_1["gun_exp"] = json["gun1"]["gun_exp"].ToString();
                 gun_info_json_1["gun_level"] = json["gun1"]["gun_level"].ToString();
                 gun_info_json_1["team_id"] = json["gun1"]["team_id"].ToString();
@@ -2042,7 +2123,7 @@ namespace GFBattleTester
 
             if (json.SelectToken("gun2") != null)
             {
-                gun_info_json_2["id"] = json["gun2"]["id"].ToString();
+                gun_info_json_2["id"] = gun_user_id[ech, 1].ToString();//json["gun2"]["id"].ToString();
                 gun_info_json_2["gun_id"] = json["gun2"]["gun_id"].ToString();
                 gun_info_json_2["gun_exp"] = json["gun2"]["gun_exp"].ToString();
                 gun_info_json_2["gun_level"] = json["gun2"]["gun_level"].ToString();
@@ -2076,7 +2157,7 @@ namespace GFBattleTester
 
             if(json.SelectToken("gun3")!= null)
             {
-                gun_info_json_3["id"] = json["gun3"]["id"].ToString();
+                gun_info_json_3["id"] = gun_user_id[ech, 2].ToString(); //json["gun3"]["id"].ToString();
                 gun_info_json_3["gun_id"] = json["gun3"]["gun_id"].ToString();
                 gun_info_json_3["gun_exp"] = json["gun3"]["gun_exp"].ToString();
                 gun_info_json_3["gun_level"] = json["gun3"]["gun_level"].ToString();
@@ -2110,7 +2191,7 @@ namespace GFBattleTester
 
             if (json.SelectToken("gun4") != null)
             {
-                gun_info_json_4["id"] = json["gun4"]["id"].ToString();
+                gun_info_json_4["id"] = gun_user_id[ech, 3].ToString();//json["gun4"]["id"].ToString();
                 gun_info_json_4["gun_id"] = json["gun4"]["gun_id"].ToString();
                 gun_info_json_4["gun_exp"] = json["gun4"]["gun_exp"].ToString();
                 gun_info_json_4["gun_level"] = json["gun4"]["gun_level"].ToString();
@@ -2143,7 +2224,7 @@ namespace GFBattleTester
 
             if (json.SelectToken("gun5") != null)
             {
-                gun_info_json_5["id"] = json["gun5"]["id"].ToString();
+                gun_info_json_5["id"] = gun_user_id[ech, 4].ToString();//json["gun5"]["id"].ToString();
                 gun_info_json_5["gun_id"] = json["gun5"]["gun_id"].ToString();
                 gun_info_json_5["gun_exp"] = json["gun5"]["gun_exp"].ToString();
                 gun_info_json_5["gun_level"] = json["gun5"]["gun_level"].ToString();
@@ -2173,6 +2254,7 @@ namespace GFBattleTester
                 enable_5.Checked = false;
                 gun_info_json_5["team_id"] = "0";
             }
+           */
             #endregion
 
             #region SetJsonData
@@ -2184,94 +2266,154 @@ namespace GFBattleTester
             //gun_info_json_1["if_modification"] = "0";
             //gun_info_json_1["location"] = num.ToString();
 
-            JObject defStat_1 = new JObject(getGunDefaultStat(1, int.Parse(gun_info_json_1["gun_id"].ToString()), 1));
-            JObject defStat_2 = new JObject(getGunDefaultStat(1, int.Parse(gun_info_json_2["gun_id"].ToString()), 1));
-            JObject defStat_3 = new JObject(getGunDefaultStat(1, int.Parse(gun_info_json_3["gun_id"].ToString()), 1));
-            JObject defStat_4 = new JObject(getGunDefaultStat(1, int.Parse(gun_info_json_4["gun_id"].ToString()), 1));
-            JObject defStat_5 = new JObject(getGunDefaultStat(1, int.Parse(gun_info_json_5["gun_id"].ToString()), 1));
+            for (int i = 1; i <= 5; i++)
+            {
+                for (int k = 0; k < gun_eh_array.Count(); k++)
+                {
+                    if (gun_eh_array[k]["id"].ToString() == gun_user_id[ech, i - 1].ToString())
+                    {
+                        JObject defStat = new JObject(getGunDefaultStat(1, int.Parse(gun_eh_array[k]["gun_id"].ToString()), 1));
+                        ((ComboBox)Controls.Find("gunid_" + i.ToString() + "_combobox", true)[0]).SelectedIndex = Array.IndexOf(gunid, int.Parse(gun_eh_array[k]["gun_id"].ToString()));
+                        ((NumericUpDown)Controls.Find("gunlv_" + i.ToString() + "_number", true)[0]).Value = !check_ifmod(i) && int.Parse(gun_eh_array[k]["gun_level"].ToString()) > 100 ? 100 : int.Parse(gun_eh_array[k]["gun_level"].ToString());
+                        ((NumericUpDown)Controls.Find("gunpos_" + i.ToString() + "_number", true)[0]).Value = Array.IndexOf(gun_position, int.Parse(gun_eh_array[k]["position"].ToString()));
+                        ((NumericUpDown)Controls.Find("gunhp_" + i.ToString() + "_number", true)[0]).Value = int.Parse(gun_eh_array[k]["life"].ToString());
+                        ((NumericUpDown)Controls.Find("gunpow_" + i.ToString() + "_number", true)[0]).Value = int.Parse(gun_eh_array[k]["pow"].ToString()) + int.Parse(defStat["pow"].ToString());
+                        ((NumericUpDown)Controls.Find("gunhit_" + i.ToString() + "_number", true)[0]).Value = int.Parse(gun_eh_array[k]["hit"].ToString()) + int.Parse(defStat["hit"].ToString());
+                        ((NumericUpDown)Controls.Find("gundodge_" + i.ToString() + "_number", true)[0]).Value = int.Parse(gun_eh_array[k]["dodge"].ToString()) + int.Parse(defStat["dodge"].ToString());
+                        ((NumericUpDown)Controls.Find("gunrate_" + i.ToString() + "_number", true)[0]).Value = int.Parse(gun_eh_array[k]["rate"].ToString()) + int.Parse(defStat["rate"].ToString());
+                        ((NumericUpDown)Controls.Find("gunskill1_" + i.ToString() + "_number", true)[0]).Value = int.Parse(gun_eh_array[k]["skill1"].ToString());
+                        ((NumericUpDown)Controls.Find("gunskill2_" + i.ToString() + "_number", true)[0]).Value = check_ifmod(i) ? int.Parse(gun_eh_array[k]["skill2"].ToString()) : 0; //개조 아닐경우 0
+                        ((NumericUpDown)Controls.Find("gundummy_" + i.ToString() + "_number", true)[0]).Value = int.Parse(gun_eh_array[k]["number"].ToString());
+                        ((NumericUpDown)Controls.Find("gunfavor_" + i.ToString() + "_number", true)[0]).Value = int.Parse(gun_eh_array[k]["favor"].ToString()) / 10000;
+                        ((CheckBox)Controls.Find("gunoath_" + i.ToString() + "_checkbox", true)[0]).Checked = Convert.ToBoolean(int.Parse(gun_eh_array[k]["soul_bond"].ToString()));
+                        if (i != 1)
+                        {
+                            ((CheckBox)Controls.Find("enable_" + i.ToString(), true)[0]).Checked = Convert.ToBoolean(int.Parse(gun_eh_array[k]["team_id"].ToString()));
+                        }
+                    }
+                }
+            }
+            /*
+             JObject defStat_1 = new JObject(getGunDefaultStat(1, int.Parse(gun_info_json_1["gun_id"].ToString()), 1));
+             JObject defStat_2 = new JObject(getGunDefaultStat(1, int.Parse(gun_info_json_2["gun_id"].ToString()), 1));
+             JObject defStat_3 = new JObject(getGunDefaultStat(1, int.Parse(gun_info_json_3["gun_id"].ToString()), 1));
+             JObject defStat_4 = new JObject(getGunDefaultStat(1, int.Parse(gun_info_json_4["gun_id"].ToString()), 1));
+             JObject defStat_5 = new JObject(getGunDefaultStat(1, int.Parse(gun_info_json_5["gun_id"].ToString()), 1));
 
-            gunid_1_combobox.SelectedIndex = Array.IndexOf(gunid, int.Parse(gun_info_json_1["gun_id"].ToString()));
-            gunlv_1_number.Value = !check_ifmod(1) && int.Parse(gun_info_json_1["gun_level"].ToString()) > 100 ? 100 : int.Parse(gun_info_json_1["gun_level"].ToString());
-            gunpos_1_number.Value = Array.IndexOf(gun_position, int.Parse(gun_info_json_1["position"].ToString()));
-            gunhp_1_number.Value = int.Parse(gun_info_json_1["life"].ToString());
-            gunpow_1_number.Value = int.Parse(gun_info_json_1["pow"].ToString()) + int.Parse(defStat_1["pow"].ToString());
-            gunhit_1_number.Value = int.Parse(gun_info_json_1["hit"].ToString()) + int.Parse(defStat_1["hit"].ToString());
-            gundodge_1_number.Value = int.Parse(gun_info_json_1["dodge"].ToString()) + int.Parse(defStat_1["dodge"].ToString());
-            gunrate_1_number.Value = int.Parse(gun_info_json_1["rate"].ToString()) + int.Parse(defStat_1["rate"].ToString());
-            gunskill1_1_number.Value = int.Parse(gun_info_json_1["skill1"].ToString());
-            gunskill2_1_number.Value = check_ifmod(1) ? int.Parse(gun_info_json_1["skill2"].ToString()) : 0; //개조 아닐경우 0
-            gundummy_1_number.Value = int.Parse(gun_info_json_1["number"].ToString());
-            gunfavor_1_number.Value = int.Parse(gun_info_json_1["favor"].ToString()) / 10000;
-            gunoath_1_checkbox.Checked = Convert.ToBoolean(int.Parse(gun_info_json_1["soul_bond"].ToString()));
-
-
-            gunid_2_combobox.SelectedIndex = Array.IndexOf(gunid, int.Parse(gun_info_json_2["gun_id"].ToString()));
-            gunlv_2_number.Value = !check_ifmod(2) && int.Parse(gun_info_json_2["gun_level"].ToString()) > 100 ? 100 : int.Parse(gun_info_json_2["gun_level"].ToString());
-            gunpos_2_number.Value = Array.IndexOf(gun_position, int.Parse(gun_info_json_2["position"].ToString()));
-            gunhp_2_number.Value = int.Parse(gun_info_json_2["life"].ToString());
-            gunpow_2_number.Value = int.Parse(gun_info_json_2["pow"].ToString()) + int.Parse(defStat_2["pow"].ToString());
-            gunhit_2_number.Value = int.Parse(gun_info_json_2["hit"].ToString()) + int.Parse(defStat_2["hit"].ToString());
-            gundodge_2_number.Value = int.Parse(gun_info_json_2["dodge"].ToString()) + int.Parse(defStat_2["dodge"].ToString());
-            gunrate_2_number.Value = int.Parse(gun_info_json_2["rate"].ToString()) + int.Parse(defStat_2["rate"].ToString());
-            gunskill1_2_number.Value = int.Parse(gun_info_json_2["skill1"].ToString());
-            gunskill2_2_number.Value = check_ifmod(2) ? int.Parse(gun_info_json_2["skill2"].ToString()) : 0;
-            gundummy_2_number.Value = int.Parse(gun_info_json_2["number"].ToString());
-            gunfavor_2_number.Value = int.Parse(gun_info_json_2["favor"].ToString()) / 10000;
-            gunoath_2_checkbox.Checked = Convert.ToBoolean(int.Parse(gun_info_json_2["soul_bond"].ToString()));
-            enable_2.Checked = Convert.ToBoolean(int.Parse(gun_info_json_2["team_id"].ToString()));
-
-            gunid_3_combobox.SelectedIndex = Array.IndexOf(gunid, int.Parse(gun_info_json_3["gun_id"].ToString()));
-            gunlv_3_number.Value = !check_ifmod(3) && int.Parse(gun_info_json_3["gun_level"].ToString()) > 100 ? 100 : int.Parse(gun_info_json_3["gun_level"].ToString());
-            gunpos_3_number.Value = Array.IndexOf(gun_position, int.Parse(gun_info_json_3["position"].ToString()));
-            gunhp_3_number.Value = int.Parse(gun_info_json_3["life"].ToString());
-            gunpow_3_number.Value = int.Parse(gun_info_json_3["pow"].ToString()) + int.Parse(defStat_3["pow"].ToString());
-            gunhit_3_number.Value = int.Parse(gun_info_json_3["hit"].ToString()) + int.Parse(defStat_3["hit"].ToString());
-            gundodge_3_number.Value = int.Parse(gun_info_json_3["dodge"].ToString()) + int.Parse(defStat_3["dodge"].ToString());
-            gunrate_3_number.Value = int.Parse(gun_info_json_3["rate"].ToString()) + int.Parse(defStat_3["rate"].ToString());
-            gunskill1_3_number.Value = int.Parse(gun_info_json_3["skill1"].ToString());
-            gunskill2_3_number.Value = check_ifmod(3) ? int.Parse(gun_info_json_3["skill2"].ToString()) : 0;
-            gundummy_3_number.Value = int.Parse(gun_info_json_3["number"].ToString());
-            gunfavor_3_number.Value = int.Parse(gun_info_json_3["favor"].ToString()) / 10000;
-            gunoath_3_checkbox.Checked = Convert.ToBoolean(int.Parse(gun_info_json_3["soul_bond"].ToString()));
-            enable_3.Checked = Convert.ToBoolean(int.Parse(gun_info_json_3["team_id"].ToString()));
-
-            gunid_4_combobox.SelectedIndex = Array.IndexOf(gunid, int.Parse(gun_info_json_4["gun_id"].ToString()));
-            gunlv_4_number.Value = !check_ifmod(4) && int.Parse(gun_info_json_4["gun_level"].ToString()) > 100 ? 100 : int.Parse(gun_info_json_4["gun_level"].ToString());
-            gunpos_4_number.Value = Array.IndexOf(gun_position, int.Parse(gun_info_json_4["position"].ToString()));
-            gunhp_4_number.Value = int.Parse(gun_info_json_4["life"].ToString());
-            gunpow_4_number.Value = int.Parse(gun_info_json_4["pow"].ToString()) + int.Parse(defStat_4["pow"].ToString());
-            gunhit_4_number.Value = int.Parse(gun_info_json_4["hit"].ToString()) + int.Parse(defStat_4["hit"].ToString());
-            gundodge_4_number.Value = int.Parse(gun_info_json_4["dodge"].ToString()) + int.Parse(defStat_4["dodge"].ToString());
-            gunrate_4_number.Value = int.Parse(gun_info_json_4["rate"].ToString()) + int.Parse(defStat_4["rate"].ToString());
-            gunskill1_4_number.Value = int.Parse(gun_info_json_4["skill1"].ToString());
-            gunskill2_4_number.Value = check_ifmod(4) ? int.Parse(gun_info_json_4["skill2"].ToString()) : 0;
-            gundummy_4_number.Value = int.Parse(gun_info_json_4["number"].ToString());
-            gunfavor_4_number.Value = int.Parse(gun_info_json_4["favor"].ToString()) / 10000;
-            gunoath_4_checkbox.Checked = Convert.ToBoolean(int.Parse(gun_info_json_4["soul_bond"].ToString()));
-            enable_4.Checked = Convert.ToBoolean(int.Parse(gun_info_json_4["team_id"].ToString()));
-
-            gunid_5_combobox.SelectedIndex = Array.IndexOf(gunid, int.Parse(gun_info_json_5["gun_id"].ToString()));
-            gunlv_5_number.Value = !check_ifmod(5) && int.Parse(gun_info_json_5["gun_level"].ToString()) > 100 ? 100 : int.Parse(gun_info_json_5["gun_level"].ToString());
-            gunpos_5_number.Value = Array.IndexOf(gun_position, int.Parse(gun_info_json_5["position"].ToString()));
-            gunhp_5_number.Value = int.Parse(gun_info_json_5["life"].ToString());
-            gunpow_5_number.Value = int.Parse(gun_info_json_5["pow"].ToString()) + int.Parse(defStat_5["pow"].ToString());
-            gunhit_5_number.Value = int.Parse(gun_info_json_5["hit"].ToString()) + int.Parse(defStat_5["hit"].ToString());
-            gundodge_5_number.Value = int.Parse(gun_info_json_5["dodge"].ToString()) + int.Parse(defStat_5["dodge"].ToString());
-            gunrate_5_number.Value = int.Parse(gun_info_json_5["rate"].ToString()) + int.Parse(defStat_5["rate"].ToString());
-            gunskill1_5_number.Value = int.Parse(gun_info_json_5["skill1"].ToString());
-            gunskill2_5_number.Value = check_ifmod(5) ? int.Parse(gun_info_json_5["skill2"].ToString()) : 0;
-            gundummy_5_number.Value = int.Parse(gun_info_json_5["number"].ToString());
-            gunfavor_5_number.Value = int.Parse(gun_info_json_5["favor"].ToString()) / 10000;
-            gunoath_5_checkbox.Checked = Convert.ToBoolean(int.Parse(gun_info_json_5["soul_bond"].ToString()));
-            enable_5.Checked = Convert.ToBoolean(int.Parse(gun_info_json_5["team_id"].ToString()));
+             gunid_1_combobox.SelectedIndex = Array.IndexOf(gunid, int.Parse(gun_info_json_1["gun_id"].ToString()));
+             gunlv_1_number.Value = !check_ifmod(1) && int.Parse(gun_info_json_1["gun_level"].ToString()) > 100 ? 100 : int.Parse(gun_info_json_1["gun_level"].ToString());
+             gunpos_1_number.Value = Array.IndexOf(gun_position, int.Parse(gun_info_json_1["position"].ToString()));
+             gunhp_1_number.Value = int.Parse(gun_info_json_1["life"].ToString());
+             gunpow_1_number.Value = int.Parse(gun_info_json_1["pow"].ToString()) + int.Parse(defStat_1["pow"].ToString());
+             gunhit_1_number.Value = int.Parse(gun_info_json_1["hit"].ToString()) + int.Parse(defStat_1["hit"].ToString());
+             gundodge_1_number.Value = int.Parse(gun_info_json_1["dodge"].ToString()) + int.Parse(defStat_1["dodge"].ToString());
+             gunrate_1_number.Value = int.Parse(gun_info_json_1["rate"].ToString()) + int.Parse(defStat_1["rate"].ToString());
+             gunskill1_1_number.Value = int.Parse(gun_info_json_1["skill1"].ToString());
+             gunskill2_1_number.Value = check_ifmod(1) ? int.Parse(gun_info_json_1["skill2"].ToString()) : 0; //개조 아닐경우 0
+             gundummy_1_number.Value = int.Parse(gun_info_json_1["number"].ToString());
+             gunfavor_1_number.Value = int.Parse(gun_info_json_1["favor"].ToString()) / 10000;
+             gunoath_1_checkbox.Checked = Convert.ToBoolean(int.Parse(gun_info_json_1["soul_bond"].ToString()));
 
 
+             gunid_2_combobox.SelectedIndex = Array.IndexOf(gunid, int.Parse(gun_info_json_2["gun_id"].ToString()));
+             gunlv_2_number.Value = !check_ifmod(2) && int.Parse(gun_info_json_2["gun_level"].ToString()) > 100 ? 100 : int.Parse(gun_info_json_2["gun_level"].ToString());
+             gunpos_2_number.Value = Array.IndexOf(gun_position, int.Parse(gun_info_json_2["position"].ToString()));
+             gunhp_2_number.Value = int.Parse(gun_info_json_2["life"].ToString());
+             gunpow_2_number.Value = int.Parse(gun_info_json_2["pow"].ToString()) + int.Parse(defStat_2["pow"].ToString());
+             gunhit_2_number.Value = int.Parse(gun_info_json_2["hit"].ToString()) + int.Parse(defStat_2["hit"].ToString());
+             gundodge_2_number.Value = int.Parse(gun_info_json_2["dodge"].ToString()) + int.Parse(defStat_2["dodge"].ToString());
+             gunrate_2_number.Value = int.Parse(gun_info_json_2["rate"].ToString()) + int.Parse(defStat_2["rate"].ToString());
+             gunskill1_2_number.Value = int.Parse(gun_info_json_2["skill1"].ToString());
+             gunskill2_2_number.Value = check_ifmod(2) ? int.Parse(gun_info_json_2["skill2"].ToString()) : 0;
+             gundummy_2_number.Value = int.Parse(gun_info_json_2["number"].ToString());
+             gunfavor_2_number.Value = int.Parse(gun_info_json_2["favor"].ToString()) / 10000;
+             gunoath_2_checkbox.Checked = Convert.ToBoolean(int.Parse(gun_info_json_2["soul_bond"].ToString()));
+             enable_2.Checked = Convert.ToBoolean(int.Parse(gun_info_json_2["team_id"].ToString()));
+
+             gunid_3_combobox.SelectedIndex = Array.IndexOf(gunid, int.Parse(gun_info_json_3["gun_id"].ToString()));
+             gunlv_3_number.Value = !check_ifmod(3) && int.Parse(gun_info_json_3["gun_level"].ToString()) > 100 ? 100 : int.Parse(gun_info_json_3["gun_level"].ToString());
+             gunpos_3_number.Value = Array.IndexOf(gun_position, int.Parse(gun_info_json_3["position"].ToString()));
+             gunhp_3_number.Value = int.Parse(gun_info_json_3["life"].ToString());
+             gunpow_3_number.Value = int.Parse(gun_info_json_3["pow"].ToString()) + int.Parse(defStat_3["pow"].ToString());
+             gunhit_3_number.Value = int.Parse(gun_info_json_3["hit"].ToString()) + int.Parse(defStat_3["hit"].ToString());
+             gundodge_3_number.Value = int.Parse(gun_info_json_3["dodge"].ToString()) + int.Parse(defStat_3["dodge"].ToString());
+             gunrate_3_number.Value = int.Parse(gun_info_json_3["rate"].ToString()) + int.Parse(defStat_3["rate"].ToString());
+             gunskill1_3_number.Value = int.Parse(gun_info_json_3["skill1"].ToString());
+             gunskill2_3_number.Value = check_ifmod(3) ? int.Parse(gun_info_json_3["skill2"].ToString()) : 0;
+             gundummy_3_number.Value = int.Parse(gun_info_json_3["number"].ToString());
+             gunfavor_3_number.Value = int.Parse(gun_info_json_3["favor"].ToString()) / 10000;
+             gunoath_3_checkbox.Checked = Convert.ToBoolean(int.Parse(gun_info_json_3["soul_bond"].ToString()));
+             enable_3.Checked = Convert.ToBoolean(int.Parse(gun_info_json_3["team_id"].ToString()));
+
+             gunid_4_combobox.SelectedIndex = Array.IndexOf(gunid, int.Parse(gun_info_json_4["gun_id"].ToString()));
+             gunlv_4_number.Value = !check_ifmod(4) && int.Parse(gun_info_json_4["gun_level"].ToString()) > 100 ? 100 : int.Parse(gun_info_json_4["gun_level"].ToString());
+             gunpos_4_number.Value = Array.IndexOf(gun_position, int.Parse(gun_info_json_4["position"].ToString()));
+             gunhp_4_number.Value = int.Parse(gun_info_json_4["life"].ToString());
+             gunpow_4_number.Value = int.Parse(gun_info_json_4["pow"].ToString()) + int.Parse(defStat_4["pow"].ToString());
+             gunhit_4_number.Value = int.Parse(gun_info_json_4["hit"].ToString()) + int.Parse(defStat_4["hit"].ToString());
+             gundodge_4_number.Value = int.Parse(gun_info_json_4["dodge"].ToString()) + int.Parse(defStat_4["dodge"].ToString());
+             gunrate_4_number.Value = int.Parse(gun_info_json_4["rate"].ToString()) + int.Parse(defStat_4["rate"].ToString());
+             gunskill1_4_number.Value = int.Parse(gun_info_json_4["skill1"].ToString());
+             gunskill2_4_number.Value = check_ifmod(4) ? int.Parse(gun_info_json_4["skill2"].ToString()) : 0;
+             gundummy_4_number.Value = int.Parse(gun_info_json_4["number"].ToString());
+             gunfavor_4_number.Value = int.Parse(gun_info_json_4["favor"].ToString()) / 10000;
+             gunoath_4_checkbox.Checked = Convert.ToBoolean(int.Parse(gun_info_json_4["soul_bond"].ToString()));
+             enable_4.Checked = Convert.ToBoolean(int.Parse(gun_info_json_4["team_id"].ToString()));
+
+             gunid_5_combobox.SelectedIndex = Array.IndexOf(gunid, int.Parse(gun_info_json_5["gun_id"].ToString()));
+             gunlv_5_number.Value = !check_ifmod(5) && int.Parse(gun_info_json_5["gun_level"].ToString()) > 100 ? 100 : int.Parse(gun_info_json_5["gun_level"].ToString());
+             gunpos_5_number.Value = Array.IndexOf(gun_position, int.Parse(gun_info_json_5["position"].ToString()));
+             gunhp_5_number.Value = int.Parse(gun_info_json_5["life"].ToString());
+             gunpow_5_number.Value = int.Parse(gun_info_json_5["pow"].ToString()) + int.Parse(defStat_5["pow"].ToString());
+             gunhit_5_number.Value = int.Parse(gun_info_json_5["hit"].ToString()) + int.Parse(defStat_5["hit"].ToString());
+             gundodge_5_number.Value = int.Parse(gun_info_json_5["dodge"].ToString()) + int.Parse(defStat_5["dodge"].ToString());
+             gunrate_5_number.Value = int.Parse(gun_info_json_5["rate"].ToString()) + int.Parse(defStat_5["rate"].ToString());
+             gunskill1_5_number.Value = int.Parse(gun_info_json_5["skill1"].ToString());
+             gunskill2_5_number.Value = check_ifmod(5) ? int.Parse(gun_info_json_5["skill2"].ToString()) : 0;
+             gundummy_5_number.Value = int.Parse(gun_info_json_5["number"].ToString());
+             gunfavor_5_number.Value = int.Parse(gun_info_json_5["favor"].ToString()) / 10000;
+             gunoath_5_checkbox.Checked = Convert.ToBoolean(int.Parse(gun_info_json_5["soul_bond"].ToString()));
+             enable_5.Checked = Convert.ToBoolean(int.Parse(gun_info_json_5["team_id"].ToString()));
+
+             */
             #endregion
 
             //enemy_team_id_combobox.Text = json["enemyGroupID"].ToString();
 
         }
-
+        int getTeamIDfromID(int id)
+        {
+            if (id == 1 || id == 2 || id == 3 || id == 4 || id == 5)
+            {
+                return 1;
+            }
+            else if (id == 6 || id == 7 || id == 8 || id == 9 || id == 10)
+            {
+                return 2;
+            }
+            else if (id == 11 || id == 12 || id == 13 || id == 14 || id == 15)
+            {
+                return 3;
+            }
+            else if (id == 16 || id == 17 || id == 18 || id == 19 || id == 20)
+            {
+                return 4;
+            }
+            else if (id == 21 || id == 22 || id == 23 || id == 24 || id == 25)
+            {
+                return 5;
+            }
+            else if (id == 26 || id == 27 || id == 28 || id == 29 || id == 30)
+            {
+                return 6;
+            }
+            else
+                return 0;
+        }
+        int getTeamIDfromID(string id)
+        {
+            return getTeamIDfromID(int.Parse(id));
+        }
         private void button8_Click(object sender, EventArgs e)
         {
 
@@ -2374,7 +2516,7 @@ namespace GFBattleTester
                 }
                 temp.Add(sqdID[i].ToString(), sqd[i]);
             }
-            userinfo["squad_with_user_info"].Replace(temp);            
+            userinfo["squad_with_user_info"].Replace(temp);
             //Clipboard.SetText(userinfo["squad_with_user_info"].ToString());
             if (showConfirmMessage)
                 MessageBox.Show(lang_data["saved_msg"].ToString(), lang_data["alert"].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -2408,7 +2550,7 @@ namespace GFBattleTester
             try
             {
                 #region LoadSqdDataFromJson
-                if(json["Squad1"] != null)
+                if (json["Squad1"] != null)
                 {
                     json["Squad1"]["id"] = sqdID[0].ToString();
                     sqd_1_lv.Value = int.Parse(json["Squad1"]["squad_level"].ToString());
@@ -2468,17 +2610,17 @@ namespace GFBattleTester
                     sqd_3_skill2.Value = int.Parse(json["Squad3"]["skill2"].ToString());
                     sqd_3_skill3.Value = int.Parse(json["Squad3"]["skill3"].ToString());
                 }
-               /* else
-                {
-                    sqd_3_lv.Value = 1;
-                    sqd_3_damage.Value = sqd_3_damage.Minimum;
-                    sqd_3_reload.Value = sqd_3_reload.Minimum;
-                    sqd_3_hit.Value = sqd_3_reload.Minimum;
-                    sqd_3_break.Value = sqd_3_break.Minimum;
-                    sqd_3_skill1.Value = 1;
-                    sqd_3_skill2.Value = 1;
-                    sqd_3_skill3.Value = 1;
-                }*/
+                /* else
+                 {
+                     sqd_3_lv.Value = 1;
+                     sqd_3_damage.Value = sqd_3_damage.Minimum;
+                     sqd_3_reload.Value = sqd_3_reload.Minimum;
+                     sqd_3_hit.Value = sqd_3_reload.Minimum;
+                     sqd_3_break.Value = sqd_3_break.Minimum;
+                     sqd_3_skill1.Value = 1;
+                     sqd_3_skill2.Value = 1;
+                     sqd_3_skill3.Value = 1;
+                 }*/
 
                 if (json["Squad4"] != null)
                 {
@@ -2551,16 +2693,16 @@ namespace GFBattleTester
                     sqd_6_skill2.Value = 1;
                     sqd_6_skill3.Value = 1;
                 }*/
-               
 
-                for(int i=0; i < 6; i++)
+
+                for (int i = 0; i < 6; i++)
                 {
-                    if(json["switch"+(i+1).ToString()]!= null)
+                    if (json["switch" + (i + 1).ToString()] != null)
                     {
                         CheckBox sw = (CheckBox)Controls.Find("sqdswitch_" + (i + 1).ToString(), true)[0];
-                        sw.Checked = Convert.ToBoolean(int.Parse(json["switch"+(i+1)].ToString()));
+                        sw.Checked = Convert.ToBoolean(int.Parse(json["switch" + (i + 1)].ToString()));
                     }
-                    
+
 
                 }
                 /*
@@ -2573,7 +2715,7 @@ namespace GFBattleTester
 
                 for (int i = 0; i < 6; i++)
                 {
-                    if(json["Squad" + (i + 1).ToString()] != null)
+                    if (json["Squad" + (i + 1).ToString()] != null)
                     {
 
                         userinfo["squad_with_user_info"][sqdID[i].ToString()].Replace(json["Squad" + (i + 1).ToString()]);
@@ -2581,7 +2723,7 @@ namespace GFBattleTester
                     }
                     else
                     {
-                        JObject t = JObject.Parse("{'id': '"+ sqdID[i].ToString()+"','squad_id': '"+ (i + 1).ToString() + "','squad_exp': '0','squad_level': '1','rank': '1','advanced_level': '0','life': '100','cur_def': '0','ammo': '1000','mre': '1000','assist_damage': '0','assist_reload': '0','assist_hit': '0','assist_def_break': '0','damage': '0','atk_speed': '0','hit': '0','def': '0','skill1': '1','skill2': '1','skill3': '1'}");
+                        JObject t = JObject.Parse("{'id': '" + sqdID[i].ToString() + "','squad_id': '" + (i + 1).ToString() + "','squad_exp': '0','squad_level': '1','rank': '1','advanced_level': '0','life': '100','cur_def': '0','ammo': '1000','mre': '1000','assist_damage': '0','assist_reload': '0','assist_hit': '0','assist_def_break': '0','damage': '0','atk_speed': '0','hit': '0','def': '0','skill1': '1','skill2': '1','skill3': '1'}");
                         userinfo["squad_with_user_info"][sqdID[i].ToString()] = t;
                     }
                 }
@@ -2779,7 +2921,7 @@ namespace GFBattleTester
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (server_hideip.Checked)
-                server_ip.Text = lang_data["server_ip"].ToString()+"******";
+                server_ip.Text = lang_data["server_ip"].ToString() + "******";
             else
             {
                 if (listener.IsListening)
@@ -2803,12 +2945,12 @@ namespace GFBattleTester
 
         private void listView1_ColumnClick(object sender, ColumnClickEventArgs e)
         {
-            for(int i = 0; i< listView1.Columns.Count; i++)
+            for (int i = 0; i < listView1.Columns.Count; i++)
             {
                 listView1.Columns[i].Text = listView1.Columns[i].Text.Replace(" ▼", "");
                 listView1.Columns[i].Text = listView1.Columns[i].Text.Replace(" ▲", "");
             }
-                       
+
             if (listView1.Sorting == SortOrder.Ascending || listView1.Sorting == SortOrder.None)
             {
                 listView1.ListViewItemSorter = new ListViewItemComparer(e.Column, "desc");
@@ -2864,7 +3006,7 @@ namespace GFBattleTester
             }
         }
 
-       
+
         void OpenEquipSelector(string value)
         {
             EquipSelecter equipselector = new EquipSelecter();
@@ -2872,7 +3014,7 @@ namespace GFBattleTester
             equipselector.Passvalue = value;
             equipselector.Show();
         }
-        void getEquipInfoFromForm2(JObject json, string name,bool clear)
+        void getEquipInfoFromForm2(JObject json, string name, bool clear)
         {
             string pos = name.Split(';')[1];
             string ename = name.Split(';')[0];
@@ -2881,7 +3023,7 @@ namespace GFBattleTester
                 if (clear)
                 {
                     gun_info_json_1["equip1"] = "0";
-                    setEquip_11.Text =  lang_data["none_equip"].ToString();
+                    setEquip_11.Text = lang_data["none_equip"].ToString();
                     userinfo["equip_with_user_info"]["11"] = new JObject(json);
                 }
                 else
@@ -2891,15 +3033,15 @@ namespace GFBattleTester
                     gun_info_json_1["equip1"] = "11";
                     setEquip_11.Text = ename;
                 }
-               
+
             }
-            else if(pos == "12")
+            else if (pos == "12")
             {
                 if (clear)
                 {
-                   
+
                     gun_info_json_1["equip2"] = "0";
-                    setEquip_12.Text =  lang_data["none_equip"].ToString();
+                    setEquip_12.Text = lang_data["none_equip"].ToString();
                     userinfo["equip_with_user_info"]["12"] = new JObject(json);
                 }
                 else
@@ -2909,14 +3051,14 @@ namespace GFBattleTester
                     gun_info_json_1["equip2"] = "12";
                     setEquip_12.Text = ename;
                 }
-                
+
             }
             else if (pos == "13")
             {
                 if (clear)
                 {
                     gun_info_json_1["equip3"] = "0";
-                    setEquip_13.Text =  lang_data["none_equip"].ToString();
+                    setEquip_13.Text = lang_data["none_equip"].ToString();
                     userinfo["equip_with_user_info"]["13"] = new JObject(json);
                 }
                 else
@@ -2926,14 +3068,14 @@ namespace GFBattleTester
                     gun_info_json_1["equip3"] = "13";
                     setEquip_13.Text = ename;
                 }
-               
+
             }
             else if (pos == "21")
             {
                 if (clear)
                 {
                     gun_info_json_2["equip1"] = "0";
-                    setEquip_21.Text =  lang_data["none_equip"].ToString();
+                    setEquip_21.Text = lang_data["none_equip"].ToString();
                     userinfo["equip_with_user_info"]["21"] = new JObject(json);
                 }
                 else
@@ -2943,14 +3085,14 @@ namespace GFBattleTester
                     gun_info_json_2["equip1"] = "21";
                     setEquip_21.Text = ename;
                 }
-                
+
             }
             else if (pos == "22")
             {
                 if (clear)
                 {
                     gun_info_json_2["equip2"] = "0";
-                    setEquip_22.Text =  lang_data["none_equip"].ToString();
+                    setEquip_22.Text = lang_data["none_equip"].ToString();
                     userinfo["equip_with_user_info"]["22"] = new JObject(json);
                 }
                 else
@@ -2960,14 +3102,14 @@ namespace GFBattleTester
                     gun_info_json_2["equip2"] = "22";
                     setEquip_22.Text = ename;
                 }
-               
+
             }
             else if (pos == "23")
             {
                 if (clear)
                 {
                     gun_info_json_2["equip3"] = "0";
-                    setEquip_23.Text =  lang_data["none_equip"].ToString();
+                    setEquip_23.Text = lang_data["none_equip"].ToString();
                     userinfo["equip_with_user_info"]["23"] = new JObject(json);
                 }
                 else
@@ -2977,14 +3119,14 @@ namespace GFBattleTester
                     gun_info_json_2["equip3"] = "23";
                     setEquip_23.Text = ename;
                 }
-                
+
             }
             else if (pos == "31")
             {
                 if (clear)
                 {
                     gun_info_json_3["equip1"] = "0";
-                    setEquip_31.Text =  lang_data["none_equip"].ToString();
+                    setEquip_31.Text = lang_data["none_equip"].ToString();
                     userinfo["equip_with_user_info"]["31"] = new JObject(json);
                 }
                 else
@@ -2994,14 +3136,14 @@ namespace GFBattleTester
                     gun_info_json_3["equip1"] = "31";
                     setEquip_31.Text = ename;
                 }
-               
+
             }
             else if (pos == "32")
             {
                 if (clear)
                 {
                     gun_info_json_3["equip2"] = "0";
-                    setEquip_32.Text =  lang_data["none_equip"].ToString();
+                    setEquip_32.Text = lang_data["none_equip"].ToString();
                     userinfo["equip_with_user_info"]["32"] = new JObject(json);
                 }
                 else
@@ -3011,14 +3153,14 @@ namespace GFBattleTester
                     gun_info_json_3["equip2"] = "32";
                     setEquip_32.Text = ename;
                 }
-              
+
             }
             else if (pos == "33")
             {
                 if (clear)
                 {
                     gun_info_json_3["equip3"] = "0";
-                    setEquip_33.Text =  lang_data["none_equip"].ToString();
+                    setEquip_33.Text = lang_data["none_equip"].ToString();
                     userinfo["equip_with_user_info"]["33"] = new JObject(json);
                 }
                 else
@@ -3028,14 +3170,14 @@ namespace GFBattleTester
                     gun_info_json_3["equip3"] = "33";
                     setEquip_33.Text = ename;
                 }
-               
+
             }
             else if (pos == "41")
             {
                 if (clear)
                 {
                     gun_info_json_4["equip1"] = "0";
-                    setEquip_41.Text =  lang_data["none_equip"].ToString();
+                    setEquip_41.Text = lang_data["none_equip"].ToString();
                     userinfo["equip_with_user_info"]["41"] = new JObject(json);
                 }
                 else
@@ -3045,14 +3187,14 @@ namespace GFBattleTester
                     gun_info_json_4["equip1"] = "41";
                     setEquip_41.Text = ename;
                 }
-               
+
             }
             else if (pos == "42")
             {
                 if (clear)
                 {
                     gun_info_json_4["equip2"] = "0";
-                    setEquip_42.Text =  lang_data["none_equip"].ToString();
+                    setEquip_42.Text = lang_data["none_equip"].ToString();
                     userinfo["equip_with_user_info"]["42"] = new JObject(json);
                 }
                 else
@@ -3062,14 +3204,14 @@ namespace GFBattleTester
                     gun_info_json_4["equip2"] = "42";
                     setEquip_42.Text = ename;
                 }
-              
+
             }
             else if (pos == "43")
             {
                 if (clear)
                 {
                     gun_info_json_4["equip3"] = "0";
-                    setEquip_43.Text =  lang_data["none_equip"].ToString();
+                    setEquip_43.Text = lang_data["none_equip"].ToString();
                     userinfo["equip_with_user_info"]["43"] = new JObject(json);
                 }
                 else
@@ -3079,14 +3221,14 @@ namespace GFBattleTester
                     gun_info_json_4["equip3"] = "43";
                     setEquip_43.Text = ename;
                 }
-               
+
             }
             else if (pos == "51")
             {
                 if (clear)
                 {
                     gun_info_json_5["equip1"] = "0";
-                    setEquip_51.Text =  lang_data["none_equip"].ToString();
+                    setEquip_51.Text = lang_data["none_equip"].ToString();
                     userinfo["equip_with_user_info"]["51"] = new JObject(json);
                 }
                 else
@@ -3096,14 +3238,14 @@ namespace GFBattleTester
                     gun_info_json_5["equip1"] = "51";
                     setEquip_51.Text = ename;
                 }
-             
+
             }
             else if (pos == "52")
             {
                 if (clear)
                 {
                     gun_info_json_5["equip2"] = "0";
-                    setEquip_52.Text =  lang_data["none_equip"].ToString();
+                    setEquip_52.Text = lang_data["none_equip"].ToString();
                     userinfo["equip_with_user_info"]["52"] = new JObject(json);
                 }
                 else
@@ -3113,14 +3255,14 @@ namespace GFBattleTester
                     gun_info_json_5["equip2"] = "52";
                     setEquip_52.Text = ename;
                 }
-               
+
             }
             else if (pos == "53")
             {
                 if (clear)
                 {
                     gun_info_json_5["equip3"] = "0";
-                    setEquip_53.Text =  lang_data["none_equip"].ToString();
+                    setEquip_53.Text = lang_data["none_equip"].ToString();
                     userinfo["equip_with_user_info"]["53"] = new JObject(json);
                 }
                 else
@@ -3130,14 +3272,14 @@ namespace GFBattleTester
                     gun_info_json_5["equip3"] = "53";
                     setEquip_53.Text = ename;
                 }
-              
+
             }
-            SetGunInfo(false);
+            SetGunInfo(false, echelon_select.SelectedIndex);
         }
         #region showEquipselect
         private void button15_Click(object sender, EventArgs e)
         {
-            OpenEquipSelector("11;"+setEquip_11.Text);
+            OpenEquipSelector("11;" + setEquip_11.Text);
         }
         private void setEquip_12_Click(object sender, EventArgs e)
         {
@@ -3212,25 +3354,26 @@ namespace GFBattleTester
 
         private void saveFileDialog3_FileOk(object sender, CancelEventArgs e)
         {
-            
+
             JObject sav = new JObject((JObject)userinfo["equip_with_user_info"]);
             //JObject sw = new JObject();
             File.WriteAllText(saveFileDialog3.FileName, sav.ToString());
-           
+
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
             openFileDialog3.ShowDialog();
-           
+
         }
 
         private void openFileDialog3_FileOk(object sender, CancelEventArgs e)
         {
-            Load_Equip_Info_From_File(openFileDialog3.FileName);
+            Load_Equip_Info_From_File(openFileDialog3.FileName, echelon_select.SelectedIndex);
         }
-        public void Load_Equip_Info_From_File(string path)
+        public void Load_Equip_Info_From_File(string path, int echelon)
         {
+            string eh = (echelon + 1).ToString();
             JObject eq = JObject.Parse(File.ReadAllText(path));
             foreach (string a in Equippos)
             {
@@ -3238,81 +3381,114 @@ namespace GFBattleTester
                 if (eq[a] != null)
                 {
                     this.Controls.Find("setEquip_" + a, true)[0].Text = equipName[equipID.IndexOf(eq[a]["equip_id"].ToString())];
+
+                    /*
+                    for(int i=1; i <= 5; i++)
+                    {
+                        for(int k=1; k<=3; k++)
+                        {
+                            int cn = int.Parse(i.ToString() + k.ToString());
+                            
+                        }
+                    }*/
+
+
+
                     if (a == "11")
                     {
-                        gun_info_json_1["equip1"] = a;
+                        for(int i=0;i< gun_eh_array.Count(); i++)
+                        {
+                            if(gun_eh_array[i]["id"].ToString() == gun_user_id[echelon, 0].ToString())
+                            {
+                                 gun_eh_array[i]["equip1"] = a;
+                            }
+                        }
+                       
                     }
                     else if (a == "12")
                     {
-                        gun_info_json_1["equip2"] = a;
+                        gun_eh_array[i]["equip2"] = a;
                     }
                     else if (a == "13")
                     {
-                        gun_info_json_1["equip3"] = a;
+                        gun_eh_array[i]["equip3"] = a;
                     }
-                    else if (a == "21")
+
+                    if (a == "21")
                     {
-                        gun_info_json_2["equip1"] = a;
+                        gun_eh_array[i]["equip1"] = a;
                     }
                     else if (a == "22")
                     {
-                        gun_info_json_2["equip2"] = a;
+                        gun_eh_array[i]["equip2"] = a;
                     }
                     else if (a == "23")
                     {
-                        gun_info_json_2["equip3"] = a;
+                        gun_eh_array[i]["equip3"] = a;
                     }
-                    else if (a == "31")
+
+
+
+                    if (a == "31")
                     {
-                        gun_info_json_3["equip1"] = a;
+                        gun_eh_array[i]["equip1"] = a;
                     }
                     else if (a == "32")
                     {
-                        gun_info_json_3["equip2"] = a;
+                        gun_eh_array[i]["equip2"] = a;
                     }
                     else if (a == "33")
                     {
-                        gun_info_json_3["equip3"] = a;
+                        gun_eh_array[i]["equip3"] = a;
                     }
-                    else if (a == "41")
+
+
+
+                    if (a == "41")
                     {
-                        gun_info_json_4["equip1"] = a;
+                        gun_eh_array[i]["equip1"] = a;
                     }
                     else if (a == "42")
                     {
-                        gun_info_json_4["equip2"] = a;
+                        gun_eh_array[i]["equip2"] = a;
                     }
                     else if (a == "43")
                     {
-                        gun_info_json_4["equip3"] = a;
+                        gun_eh_array[i]["equip3"] = a;
                     }
-                    else if (a == "51")
+
+
+                    if (a == "51")
                     {
-                        gun_info_json_5["equip1"] = a;
+                        gun_eh_array[i]["equip1"] = a;
                     }
                     else if (a == "52")
                     {
-                        gun_info_json_5["equip2"] = a;
+                        gun_eh_array[i]["equip2"] = a;
                     }
                     else if (a == "53")
                     {
-                        gun_info_json_5["equip3"] = a;
+                        gun_eh_array[i]["equip3"] = a;
                     }
+
+
+
+
                 }
             }
             userinfo["equip_with_user_info"].Replace(eq);
             label121.Text = Path.GetFileName(path);
-            SetGunInfo(false);
+            SetGunInfo(false, echelon);
         }
         private void button17_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show(lang_data["removeall_equip_confirm_msg"].ToString(), lang_data["alert"].ToString(), MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+            if (MessageBox.Show(lang_data["removeall_equip_confirm_msg"].ToString(), lang_data["alert"].ToString(), MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
             {
-                for(int i=1; i<=5; i++)
+                for (int i = 1; i <= 5; i++)
                 {
-                    for(int j=1;j<=3;j++)
+                    for (int j = 1; j <= 3; j++)
                     {
-                        foreach(string s in Equippos)
+                        foreach (string s in Equippos)
                         {
                             Controls.Find("setEquip_" + s, true)[0].Text = lang_data["none_equip"].ToString();
                         }
@@ -3338,13 +3514,13 @@ namespace GFBattleTester
                         }
                     }
                 }
-                SetGunInfo(false);
+                SetGunInfo(false, echelon_select.SelectedIndex);
                 JObject def = JObject.Parse(File.ReadAllText(@"data/json/userinfo.json"));
                 userinfo["equip_with_user_info"].Replace(def["equip_with_user_info"]);
             }
         }
 
-        
+
         void applyEquip(JObject a)
         {
 
@@ -3355,7 +3531,7 @@ namespace GFBattleTester
 
         }
 
-       
+
 
         private void linkLabel3_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -3369,7 +3545,7 @@ namespace GFBattleTester
         }
         void showBRV(JObject o)
         {
-            battleResultViewer BRV = new battleResultViewer();           
+            battleResultViewer BRV = new battleResultViewer();
             BRV.Passvalue = o;
             BRV.Show();
         }
@@ -3428,7 +3604,7 @@ namespace GFBattleTester
         {
             ShowposSelector(5, (int)gunpos_5_number.Value, (Control)sender);
         }
-        void ShowposSelector(int n ,int selpos,Control c)
+        void ShowposSelector(int n, int selpos, Control c)
         {
             foreach (Form f in Application.OpenForms) //중복로드 방지
             {
@@ -3436,13 +3612,13 @@ namespace GFBattleTester
                 {
                     f.Activate();
                     System.Media.SystemSounds.Asterisk.Play();
-                    return;                   
+                    return;
                 }
             }
             GroupBox gbox = (GroupBox)Controls.Find("groupBox" + n.ToString(), true)[0];
-            posSelector posselector = new posSelector(c,selpos ,n);            
+            posSelector posselector = new posSelector(c, selpos, n);
             posselector.StartPosition = FormStartPosition.Manual;
-            posselector.Location = new Point(c.Location.X+gbox.Location.X+100,c.Location.Y+gbox.Location.Y+100);
+            posselector.Location = new Point(c.Location.X + gbox.Location.X + 100, c.Location.Y + gbox.Location.Y + 100);
             //posselector.FormSendEvent += new EquipSelecter.FormSendDataHandler(getEquipInfoFromForm2);
             //posselector.Passvalue = value;
             posselector.Show();
@@ -3531,25 +3707,25 @@ namespace GFBattleTester
         private void Button23_Click(object sender, EventArgs e)
         {
             serv = new serveraccess(this);
-            if(MessageBox.Show(lang_data["get_userinfo_confrim_msg"].ToString(), lang_data["get_userinfo_mode"].ToString(), MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            if (MessageBox.Show(lang_data["get_userinfo_confrim_msg"].ToString(), lang_data["get_userinfo_mode"].ToString(), MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
                 if (!listener.IsListening)
                 {
-                    if(MessageBox.Show(lang_data["server_not_started_msg"].ToString(), lang_data["server_not_started"].ToString(), MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                    if (MessageBox.Show(lang_data["server_not_started_msg"].ToString(), lang_data["server_not_started"].ToString(), MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                     {
-                       if(run_server())
+                        if (run_server())
                         {
-                            MessageBox.Show(lang_data["server_started_msg"].ToString(), lang_data["server_started"].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Information);                            
+                            MessageBox.Show(lang_data["server_started_msg"].ToString(), lang_data["server_started"].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Information);
                             serv.Show();
                             frm.getUserinfoFromServer = true;
                             gun_loadfromserver.Enabled = false;
                         }
-                       else
+                        else
                         {
                             MessageBox.Show(lang_data["server_start_failed_msg"].ToString(), lang_data["server_start_failed"].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            MessageBox.Show(lang_data["get_userinfo_failed_cause_serv_run_failed_msg"].ToString() , lang_data["server_start_failed"].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show(lang_data["get_userinfo_failed_cause_serv_run_failed_msg"].ToString(), lang_data["server_start_failed"].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
-                        
+
                     }
                     else
                     {
@@ -3589,7 +3765,7 @@ namespace GFBattleTester
         private void programSettingChanged(object sender, EventArgs e)
         {
             CheckBox chkbox = (CheckBox)sender;
-            if(chkbox.Name == "nolog_checkbox")
+            if (chkbox.Name == "nolog_checkbox")
             {
                 if (chkbox.Checked)
                 {
@@ -3604,7 +3780,7 @@ namespace GFBattleTester
         private void Commander_name_TextChanged(object sender, EventArgs e)
         {
             userinfo["user_info"]["name"] = commander_name.Text;
-            
+
         }
 
         private void Commander_exp_TextChanged(object sender, EventArgs e)
@@ -3620,7 +3796,7 @@ namespace GFBattleTester
             }
         }
 
-        
+
 
         private void TextBox2_TextChanged(object sender, EventArgs e)
         {
@@ -3650,13 +3826,13 @@ namespace GFBattleTester
             theater_enemy_preview_listbox.Items.Clear();
             string[] list = theater_enemyid_set.Text.Split(',');
             string currentid = userinfo["theater_exercise_info"]["theater_area_id"].ToString();
-            foreach(var a in (JArray)theater_enemy_info[currentid.Substring(0, 2)][currentid.Substring(2, 1)][list[(int)theater_wave_set.Value-1]])
+            foreach (var a in (JArray)theater_enemy_info[currentid.Substring(0, 2)][currentid.Substring(2, 1)][list[(int)theater_wave_set.Value - 1]])
             {
-                ListViewItem itm = new ListViewItem(a.ToString(),7);
+                ListViewItem itm = new ListViewItem(a.ToString(), 7);
                 theater_enemy_preview_listbox.Items.Add(itm);
                 //theater_enemy_preview_listbox.Items.Add(a.ToString());
             }
-            
+
         }
         private void Theater_enemy_random_btn_Click(object sender, EventArgs e)
         {
@@ -3688,7 +3864,7 @@ namespace GFBattleTester
             {
                 foreach (var a in (JArray)Theater_data["theater_info"])
                 {
-                    if(a["theater_id"].ToString() == "51")
+                    if (a["theater_id"].ToString() == "51")
                     {
                         a["battle_pt"] = "195000000";
                     }
@@ -3772,12 +3948,12 @@ namespace GFBattleTester
             int check_num = 0;
             int cnt = 0;
             string sqd = "";
-            for(int i = 1; i <= 6; i++)
+            for (int i = 1; i <= 6; i++)
             {
-                CheckBox cb = (CheckBox)Controls.Find("theater_sqd_" + i.ToString(),true)[0];
+                CheckBox cb = (CheckBox)Controls.Find("theater_sqd_" + i.ToString(), true)[0];
                 if (cb.Checked) check_num++;
             }
-            if(check_num > 3)
+            if (check_num > 3)
             {
                 ((CheckBox)last_cb).Checked = false;
             }
@@ -3785,9 +3961,41 @@ namespace GFBattleTester
             {
                 CheckBox cb = (CheckBox)Controls.Find("theater_sqd_" + i.ToString(), true)[0];
                 if (cb.Checked) { sqd += i.ToString(); cnt++; if (cnt != check_num) { sqd += ","; } }
-                
+
             }
             userinfo["theater_exercise_info"]["theater_squads"] = sqd;
+        }
+
+        private void Echelon_select_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int[] gunid = gun_id.ToArray();
+            for (int i = 1; i <= 5; i++)
+            {
+                for (int k = 0; k < gun_eh_array.Count(); k++)
+                {
+                    if (gun_eh_array[k]["id"].ToString() == gun_user_id[echelon_select.SelectedIndex, i - 1].ToString())
+                    {
+                        JObject defStat = new JObject(getGunDefaultStat(1, int.Parse(gun_eh_array[k]["gun_id"].ToString()), 1));
+                        ((ComboBox)Controls.Find("gunid_" + i.ToString() + "_combobox", true)[0]).SelectedIndex = Array.IndexOf(gunid, int.Parse(gun_eh_array[k]["gun_id"].ToString()));
+                        ((NumericUpDown)Controls.Find("gunlv_" + i.ToString() + "_number", true)[0]).Value = !check_ifmod(i) && int.Parse(gun_eh_array[k]["gun_level"].ToString()) > 100 ? 100 : int.Parse(gun_eh_array[k]["gun_level"].ToString());
+                        ((NumericUpDown)Controls.Find("gunpos_" + i.ToString() + "_number", true)[0]).Value = Array.IndexOf(gun_position, int.Parse(gun_eh_array[k]["position"].ToString()));
+                        ((NumericUpDown)Controls.Find("gunhp_" + i.ToString() + "_number", true)[0]).Value = int.Parse(gun_eh_array[k]["life"].ToString());
+                        ((NumericUpDown)Controls.Find("gunpow_" + i.ToString() + "_number", true)[0]).Value = int.Parse(gun_eh_array[k]["pow"].ToString()) + int.Parse(defStat["pow"].ToString());
+                        ((NumericUpDown)Controls.Find("gunhit_" + i.ToString() + "_number", true)[0]).Value = int.Parse(gun_eh_array[k]["hit"].ToString()) + int.Parse(defStat["hit"].ToString());
+                        ((NumericUpDown)Controls.Find("gundodge_" + i.ToString() + "_number", true)[0]).Value = int.Parse(gun_eh_array[k]["dodge"].ToString()) + int.Parse(defStat["dodge"].ToString());
+                        ((NumericUpDown)Controls.Find("gunrate_" + i.ToString() + "_number", true)[0]).Value = int.Parse(gun_eh_array[k]["rate"].ToString()) + int.Parse(defStat["rate"].ToString());
+                        ((NumericUpDown)Controls.Find("gunskill1_" + i.ToString() + "_number", true)[0]).Value = int.Parse(gun_eh_array[k]["skill1"].ToString());
+                        ((NumericUpDown)Controls.Find("gunskill2_" + i.ToString() + "_number", true)[0]).Value = check_ifmod(i) ? int.Parse(gun_eh_array[k]["skill2"].ToString()) : 0; //개조 아닐경우 0
+                        ((NumericUpDown)Controls.Find("gundummy_" + i.ToString() + "_number", true)[0]).Value = int.Parse(gun_eh_array[k]["number"].ToString());
+                        ((NumericUpDown)Controls.Find("gunfavor_" + i.ToString() + "_number", true)[0]).Value = int.Parse(gun_eh_array[k]["favor"].ToString()) / 10000;
+                        ((CheckBox)Controls.Find("gunoath_" + i.ToString() + "_checkbox", true)[0]).Checked = Convert.ToBoolean(int.Parse(gun_eh_array[k]["soul_bond"].ToString()));
+                        if (i != 1)
+                        {
+                            ((CheckBox)Controls.Find("enable_" + i.ToString(), true)[0]).Checked = Convert.ToBoolean(int.Parse(gun_eh_array[k]["team_id"].ToString()));
+                        }
+                    }
+                }
+            }
         }
 
         private void UpdatePosTile(object sender, EventArgs e)
@@ -3802,33 +4010,33 @@ namespace GFBattleTester
                     pos[(int)Num.Value - 1] = "1," + (i + 1).ToString();
                 }
                 //else
-                    //pos[(int)Num.Value - 1] = "0";
+                //pos[(int)Num.Value - 1] = "0";
             }
-           for(int i = 0; i < 9; i++)
-            {                            
-                Button button = (Button)Controls.Find("postile_" + (i+1).ToString(), true)[0];
-                if(pos[i].StartsWith("1"))
+            for (int i = 0; i < 9; i++)
+            {
+                Button button = (Button)Controls.Find("postile_" + (i + 1).ToString(), true)[0];
+                if (pos[i].StartsWith("1"))
                 {
                     button.BackColor = ColorTranslator.FromHtml("#00aeff");
                     button.Text = pos[i].Substring(2);
                 }
-                else if(pos[i].StartsWith("0"))
+                else if (pos[i].StartsWith("0"))
                 {
                     button.BackColor = Color.Transparent;
                     button.Text = string.Empty;
                 }
-               
+
             }
-          
+
         }
         private void PosTile_Hover(object sender, EventArgs e)
         {
             Control control = (Control)sender;
             if (control.Text != "")
-            {               
+            {
                 ComboBox comboBox = (ComboBox)Controls.Find("gunid_" + control.Text + "_combobox", true)[0];
                 showTooltip(control, comboBox.Text);
-            }            
+            }
         }
         byte[] DecompressGzip(byte[] data)
         {
