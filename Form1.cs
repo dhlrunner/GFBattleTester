@@ -29,7 +29,7 @@ namespace GFBattleTester
         public bool getUserinfoFromServer = false;
         public static Form1 frm;
         serveraccess serv;
-        static string signkey = "????";
+        static string signkey = "우중비모";
         string _token = string.Empty;
         bool gunsaved = false;
         int[,] gun_user_id = { { 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10 }, { 11, 12, 13, 14, 15 }, { 16, 17, 18, 19, 20 }, { 21, 22, 23, 24, 25 }, { 26, 27, 28, 29, 30 } };
@@ -87,7 +87,7 @@ namespace GFBattleTester
         10352000,10761000,11182000,11614000,12058000,12514000,12983000,13464000,13957000,14463000,15000000};
         int[] sqdID = { 227, 7615, 7138, 24369, 28011, 99999 };
         //HttpServer httpServer = new HttpServer(8080, Routes.GET);
-        int[] gun_position = { -1, 7, 12, 17, 8, 13, 18, 9, 14, 19 }; //??? = ??? ??, ?= ?????? ?
+        int[] gun_position = { -1, 7, 12, 17, 8, 13, 18, 9, 14, 19 }; //인덱스 = 키패드 배열, 값= 클라이언트상 값
         //Thread thread_http = new Thread(new ThreadStart(frm.httpServer.Listen));
         //string[] squad_names = { ""};
         int[] squad_BGM71_defaultstat = { 52, 135, 118, 28 };
@@ -96,7 +96,7 @@ namespace GFBattleTester
         int[] squad_2B14_defaultstat = { 51, 20, 46, 54 };
         int[] squad_M2_defaultstat = { 38, 17, 40, 61 };
         int[] squad_QLZ04_defaultstat = { 26, 46, 63, 112 };
-        int ??? = 0, ??? = 1, ??? = 2, ?? = 3;
+        int 살상력 = 0, 파쇄력 = 1, 정밀성 = 2, 장전 = 3;
         int battleStarttime = 0;
         public string reset_error = "error:3";
 
@@ -300,68 +300,68 @@ namespace GFBattleTester
                 gunid_5_combobox.SelectedIndex = 4;
 
                 {
-                    sqd_1_damage.Minimum = squad_BGM71_defaultstat[???];
-                    sqd_1_break.Minimum = squad_BGM71_defaultstat[???];
-                    sqd_1_hit.Minimum = squad_BGM71_defaultstat[???];
-                    sqd_1_reload.Minimum = squad_BGM71_defaultstat[??];
+                    sqd_1_damage.Minimum = squad_BGM71_defaultstat[살상력];
+                    sqd_1_break.Minimum = squad_BGM71_defaultstat[파쇄력];
+                    sqd_1_hit.Minimum = squad_BGM71_defaultstat[정밀성];
+                    sqd_1_reload.Minimum = squad_BGM71_defaultstat[장전];
 
-                    sqd_2_damage.Minimum = squad_AGS30_defaultstat[???];
-                    sqd_2_break.Minimum = squad_AGS30_defaultstat[???];
-                    sqd_2_hit.Minimum = squad_AGS30_defaultstat[???];
-                    sqd_2_reload.Minimum = squad_AGS30_defaultstat[??];
+                    sqd_2_damage.Minimum = squad_AGS30_defaultstat[살상력];
+                    sqd_2_break.Minimum = squad_AGS30_defaultstat[파쇄력];
+                    sqd_2_hit.Minimum = squad_AGS30_defaultstat[정밀성];
+                    sqd_2_reload.Minimum = squad_AGS30_defaultstat[장전];
 
-                    sqd_3_damage.Minimum = squad_2B14_defaultstat[???];
-                    sqd_3_break.Minimum = squad_2B14_defaultstat[???];
-                    sqd_3_hit.Minimum = squad_2B14_defaultstat[???];
-                    sqd_3_reload.Minimum = squad_2B14_defaultstat[??];
+                    sqd_3_damage.Minimum = squad_2B14_defaultstat[살상력];
+                    sqd_3_break.Minimum = squad_2B14_defaultstat[파쇄력];
+                    sqd_3_hit.Minimum = squad_2B14_defaultstat[정밀성];
+                    sqd_3_reload.Minimum = squad_2B14_defaultstat[장전];
 
-                    sqd_4_damage.Minimum = squad_M2_defaultstat[???];
-                    sqd_4_break.Minimum = squad_M2_defaultstat[???];
-                    sqd_4_hit.Minimum = squad_M2_defaultstat[???];
-                    sqd_4_reload.Minimum = squad_M2_defaultstat[??];
+                    sqd_4_damage.Minimum = squad_M2_defaultstat[살상력];
+                    sqd_4_break.Minimum = squad_M2_defaultstat[파쇄력];
+                    sqd_4_hit.Minimum = squad_M2_defaultstat[정밀성];
+                    sqd_4_reload.Minimum = squad_M2_defaultstat[장전];
 
-                    sqd_5_damage.Minimum = squad_AT4_defaultstat[???];
-                    sqd_5_break.Minimum = squad_AT4_defaultstat[???];
-                    sqd_5_hit.Minimum = squad_AT4_defaultstat[???];
-                    sqd_5_reload.Minimum = squad_AT4_defaultstat[??];
+                    sqd_5_damage.Minimum = squad_AT4_defaultstat[살상력];
+                    sqd_5_break.Minimum = squad_AT4_defaultstat[파쇄력];
+                    sqd_5_hit.Minimum = squad_AT4_defaultstat[정밀성];
+                    sqd_5_reload.Minimum = squad_AT4_defaultstat[장전];
 
-                    sqd_6_damage.Minimum = squad_QLZ04_defaultstat[???];
-                    sqd_6_break.Minimum = squad_QLZ04_defaultstat[???];
-                    sqd_6_hit.Minimum = squad_QLZ04_defaultstat[???];
-                    sqd_6_reload.Minimum = squad_QLZ04_defaultstat[??];
+                    sqd_6_damage.Minimum = squad_QLZ04_defaultstat[살상력];
+                    sqd_6_break.Minimum = squad_QLZ04_defaultstat[파쇄력];
+                    sqd_6_hit.Minimum = squad_QLZ04_defaultstat[정밀성];
+                    sqd_6_reload.Minimum = squad_QLZ04_defaultstat[장전];
                 }
-                setSquadInfo(false); //??? ???
-                SetGunInfo(false, 0); //?? ???
+                setSquadInfo(false); //중장비 초기화
+                SetGunInfo(false, 0); //인형 초기화
                 {
-                    sqd_1_damage.Minimum = squad_BGM71_defaultstat[???];
-                    sqd_1_break.Minimum = squad_BGM71_defaultstat[???];
-                    sqd_1_hit.Minimum = squad_BGM71_defaultstat[???];
-                    sqd_1_reload.Minimum = squad_BGM71_defaultstat[??];
+                    sqd_1_damage.Minimum = squad_BGM71_defaultstat[살상력];
+                    sqd_1_break.Minimum = squad_BGM71_defaultstat[파쇄력];
+                    sqd_1_hit.Minimum = squad_BGM71_defaultstat[정밀성];
+                    sqd_1_reload.Minimum = squad_BGM71_defaultstat[장전];
 
-                    sqd_2_damage.Minimum = squad_AGS30_defaultstat[???];
-                    sqd_2_break.Minimum = squad_AGS30_defaultstat[???];
-                    sqd_2_hit.Minimum = squad_AGS30_defaultstat[???];
-                    sqd_2_reload.Minimum = squad_AGS30_defaultstat[??];
+                    sqd_2_damage.Minimum = squad_AGS30_defaultstat[살상력];
+                    sqd_2_break.Minimum = squad_AGS30_defaultstat[파쇄력];
+                    sqd_2_hit.Minimum = squad_AGS30_defaultstat[정밀성];
+                    sqd_2_reload.Minimum = squad_AGS30_defaultstat[장전];
 
-                    sqd_3_damage.Minimum = squad_2B14_defaultstat[???];
-                    sqd_3_break.Minimum = squad_2B14_defaultstat[???];
-                    sqd_3_hit.Minimum = squad_2B14_defaultstat[???];
-                    sqd_3_reload.Minimum = squad_2B14_defaultstat[??];
+                    sqd_3_damage.Minimum = squad_2B14_defaultstat[살상력];
+                    sqd_3_break.Minimum = squad_2B14_defaultstat[파쇄력];
+                    sqd_3_hit.Minimum = squad_2B14_defaultstat[정밀성];
+                    sqd_3_reload.Minimum = squad_2B14_defaultstat[장전];
 
-                    sqd_4_damage.Minimum = squad_M2_defaultstat[???];
-                    sqd_4_break.Minimum = squad_M2_defaultstat[???];
-                    sqd_4_hit.Minimum = squad_M2_defaultstat[???];
-                    sqd_4_reload.Minimum = squad_M2_defaultstat[??];
+                    sqd_4_damage.Minimum = squad_M2_defaultstat[살상력];
+                    sqd_4_break.Minimum = squad_M2_defaultstat[파쇄력];
+                    sqd_4_hit.Minimum = squad_M2_defaultstat[정밀성];
+                    sqd_4_reload.Minimum = squad_M2_defaultstat[장전];
 
-                    sqd_5_damage.Minimum = squad_AT4_defaultstat[???];
-                    sqd_5_break.Minimum = squad_AT4_defaultstat[???];
-                    sqd_5_hit.Minimum = squad_AT4_defaultstat[???];
-                    sqd_5_reload.Minimum = squad_AT4_defaultstat[??];
+                    sqd_5_damage.Minimum = squad_AT4_defaultstat[살상력];
+                    sqd_5_break.Minimum = squad_AT4_defaultstat[파쇄력];
+                    sqd_5_hit.Minimum = squad_AT4_defaultstat[정밀성];
+                    sqd_5_reload.Minimum = squad_AT4_defaultstat[장전];
 
-                    sqd_6_damage.Minimum = squad_QLZ04_defaultstat[???];
-                    sqd_6_break.Minimum = squad_QLZ04_defaultstat[???];
-                    sqd_6_hit.Minimum = squad_QLZ04_defaultstat[???];
-                    sqd_6_reload.Minimum = squad_QLZ04_defaultstat[??];
+                    sqd_6_damage.Minimum = squad_QLZ04_defaultstat[살상력];
+                    sqd_6_break.Minimum = squad_QLZ04_defaultstat[파쇄력];
+                    sqd_6_hit.Minimum = squad_QLZ04_defaultstat[정밀성];
+                    sqd_6_reload.Minimum = squad_QLZ04_defaultstat[장전];
                 }
                 enable_set_sqd();
 
@@ -897,7 +897,7 @@ namespace GFBattleTester
         public static bool IsTcpPortAvailable(int tcpPort)
         {
             var ipgp = IPGlobalProperties.GetIPGlobalProperties();
-            // ?? ??
+            // 포트 체크
             TcpConnectionInformation[] conns = ipgp.GetActiveTcpConnections();
             foreach (var cn in conns)
             {
@@ -931,7 +931,7 @@ namespace GFBattleTester
             }
             else if (ctx.Request.Url.LocalPath == "/")
             {
-                string html = "<!doctype html><html lang=\"ko\"><head><meta charset=\"utf-8\"><title>GFHelper</title></head><body>Server is working</br><a href=\"data/Cert/GFBattleTester.cer/\">??? ????</a></body></html>";
+                string html = "<!doctype html><html lang=\"ko\"><head><meta charset=\"utf-8\"><title>GFHelper</title></head><body>Server is working</br><a href=\"data/Cert/GFBattleTester.cer/\">인증서 다운로드</a></body></html>";
                 ResponceProcessBinary(ctx, Encoding.UTF8.GetBytes(html), false, true);
             }
             else if (ctx.Request.Url.LocalPath == "/data/Cert/GFBattleTester.cer/")
@@ -945,7 +945,7 @@ namespace GFBattleTester
             if (frm.showdetailLog_checkbox.Checked && ctx.Request.HttpMethod.ToString() == "POST")
                 frm.AddLog("Client_Request: " + Encoding.UTF8.GetString(Client_Req_data));
 
-            if (!frm.getUserinfoFromServer) //!????
+            if (!frm.getUserinfoFromServer) //!유저정보
             {
                 if (ctx.Request.Url.LocalPath == GF_URLs_Kr.index_version)
                 {
@@ -1031,7 +1031,7 @@ namespace GFBattleTester
                     saveJson.Add("MaxDamageToEnemy", clientdata["1000"]["41"].ToString());
                     saveJson.Add("EnemyLeaderID", clientdata["1000"]["33"].ToString());
                     saveJson.Add("EnemyGroupID", frm.spotactinfo[index]["enemy_team_id"].ToString());
-                    saveJson.Add("unknown", Xxtea.XXTEA.EncryptToBase64String(Encoding.UTF8.GetBytes(clientdata["1000"].ToString()), Encoding.UTF8.GetBytes("????")));
+                    saveJson.Add("unknown", Xxtea.XXTEA.EncryptToBase64String(Encoding.UTF8.GetBytes(clientdata["1000"].ToString()), Encoding.UTF8.GetBytes("우중비모")));
                     File.WriteAllText(@"BattleLog/" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + "_battlelog.brvf", saveJson.ToString());
                     JArray gun_ids = JArray.Parse(clientdata["guns"].ToString());
                     int fight_gun = gun_ids.Count;
@@ -1177,7 +1177,7 @@ namespace GFBattleTester
                 }
                 else
                 {
-                    //ResponceProcessBinary(ctx, Encoding.UTF8.GetBytes("??? ?? ??? ???"), false,false);
+                    //ResponceProcessBinary(ctx, Encoding.UTF8.GetBytes("우중이 애미 하늘로 날아감"), false,false);
                     try
                     {
                         //uri = "http://gf-game.girlfrontline.co.kr" + uri;
@@ -1407,17 +1407,17 @@ namespace GFBattleTester
                 data = Encoding.UTF8.GetBytes(Packet.EncodeWithGzip(Encoding.UTF8.GetString(data), signkey));
             //HttpListenerRequest request = ctx.Request;
             HttpListenerResponse response = ctx.Response;
-            //?? ??
+            //헤더 설정
             if (!isHeaderSettedAlready)
             {
-                response.Headers.Add("Accept-Encoding", "none"); //gzip ???? ????? ???
+                response.Headers.Add("Accept-Encoding", "none"); //gzip 처리하기 귀찮으므로 비압축
                 response.Headers.Add("Content-Type", "text/html; charset=UTF-8");
                 response.Headers.Add("Server", "ngnix");
                 response.Headers.Add("X-Powered-By", " PHP/5.6.21");
                 response.Headers.Add("X-Upstream", " 127.0.0.1:8080");
             }
-            //??? ??
-            response.ContentLength64 = data.Length; //??? ?? ??
+            //스트림 쓰기
+            response.ContentLength64 = data.Length; //데이터 길이 설정
             Stream output = response.OutputStream;
             output.Write(data, 0, data.Length);
             if (frm.showdetailLog_checkbox.Checked)
@@ -1595,7 +1595,7 @@ namespace GFBattleTester
               gunid_5_combobox.SelectedIndex == gunid_1_combobox.SelectedIndex*/
               false)
             {
-                MessageBox.Show("?? ??? ??? ??? ? ????.", "??", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("같은 인형을 여러명 배속할 수 없습니다.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (duplicated)
             {
@@ -1706,7 +1706,7 @@ namespace GFBattleTester
                     gun_eh_array[k]["dodge"] = (((NumericUpDown)Controls.Find("gundodge_" + num.ToString() + "_number", true)[0]).Value - ((NumericUpDown)Controls.Find("gundodge_" + num.ToString() + "_number", true)[0]).Minimum).ToString();
                     gun_eh_array[k]["rate"] = (((NumericUpDown)Controls.Find("gunrate_" + num.ToString() + "_number", true)[0]).Value - ((NumericUpDown)Controls.Find("gunrate_" + num.ToString() + "_number", true)[0]).Minimum).ToString();
                     gun_eh_array[k]["skill1"] = ((NumericUpDown)Controls.Find("gunskill1_" + num.ToString() + "_number", true)[0]).Value.ToString();
-                    gun_eh_array[k]["skill2"] = ((NumericUpDown)Controls.Find("gunskill2_" + num.ToString() + "_number", true)[0]).Value.ToString(); //?? ???? 0
+                    gun_eh_array[k]["skill2"] = ((NumericUpDown)Controls.Find("gunskill2_" + num.ToString() + "_number", true)[0]).Value.ToString(); //개조 아닐경우 0
                     gun_eh_array[k]["number"] = ((NumericUpDown)Controls.Find("gundummy_" + num.ToString() + "_number", true)[0]).Value.ToString();
                     gun_eh_array[k]["favor"] = (((NumericUpDown)Controls.Find("gunfavor_" + num.ToString() + "_number", true)[0]).Value * 10000).ToString();
                     gun_eh_array[k]["soul_bond"] = ((CheckBox)Controls.Find("gunoath_" + num.ToString() + "_checkbox", true)[0]).Checked ? "1" : "0";
@@ -2282,7 +2282,7 @@ namespace GFBattleTester
                         ((NumericUpDown)Controls.Find("gundodge_" + i.ToString() + "_number", true)[0]).Value = int.Parse(gun_eh_array[k]["dodge"].ToString()) + int.Parse(defStat["dodge"].ToString());
                         ((NumericUpDown)Controls.Find("gunrate_" + i.ToString() + "_number", true)[0]).Value = int.Parse(gun_eh_array[k]["rate"].ToString()) + int.Parse(defStat["rate"].ToString());
                         ((NumericUpDown)Controls.Find("gunskill1_" + i.ToString() + "_number", true)[0]).Value = int.Parse(gun_eh_array[k]["skill1"].ToString());
-                        ((NumericUpDown)Controls.Find("gunskill2_" + i.ToString() + "_number", true)[0]).Value = check_ifmod(i) ? int.Parse(gun_eh_array[k]["skill2"].ToString()) : 0; //?? ???? 0
+                        ((NumericUpDown)Controls.Find("gunskill2_" + i.ToString() + "_number", true)[0]).Value = check_ifmod(i) ? int.Parse(gun_eh_array[k]["skill2"].ToString()) : 0; //개조 아닐경우 0
                         ((NumericUpDown)Controls.Find("gundummy_" + i.ToString() + "_number", true)[0]).Value = int.Parse(gun_eh_array[k]["number"].ToString());
                         ((NumericUpDown)Controls.Find("gunfavor_" + i.ToString() + "_number", true)[0]).Value = int.Parse(gun_eh_array[k]["favor"].ToString()) / 10000;
                         ((CheckBox)Controls.Find("gunoath_" + i.ToString() + "_checkbox", true)[0]).Checked = Convert.ToBoolean(int.Parse(gun_eh_array[k]["soul_bond"].ToString()));
@@ -2309,7 +2309,7 @@ namespace GFBattleTester
              gundodge_1_number.Value = int.Parse(gun_info_json_1["dodge"].ToString()) + int.Parse(defStat_1["dodge"].ToString());
              gunrate_1_number.Value = int.Parse(gun_info_json_1["rate"].ToString()) + int.Parse(defStat_1["rate"].ToString());
              gunskill1_1_number.Value = int.Parse(gun_info_json_1["skill1"].ToString());
-             gunskill2_1_number.Value = check_ifmod(1) ? int.Parse(gun_info_json_1["skill2"].ToString()) : 0; //?? ???? 0
+             gunskill2_1_number.Value = check_ifmod(1) ? int.Parse(gun_info_json_1["skill2"].ToString()) : 0; //개조 아닐경우 0
              gundummy_1_number.Value = int.Parse(gun_info_json_1["number"].ToString());
              gunfavor_1_number.Value = int.Parse(gun_info_json_1["favor"].ToString()) / 10000;
              gunoath_1_checkbox.Checked = Convert.ToBoolean(int.Parse(gun_info_json_1["soul_bond"].ToString()));
@@ -2445,10 +2445,10 @@ namespace GFBattleTester
                         sqd[i]["squad_id"] = (i + 1).ToString();
                         sqd[i]["squad_exp"] = sqd_exp_table[Convert.ToInt16(sqd_1_lv.Value) - 1].ToString();
                         sqd[i]["squad_level"] = sqd_1_lv.Value.ToString();
-                        sqd[i]["assist_damage"] = (sqd_1_damage.Value - squad_BGM71_defaultstat[???]).ToString();
-                        sqd[i]["assist_reload"] = (sqd_1_reload.Value - squad_BGM71_defaultstat[??]).ToString();
-                        sqd[i]["assist_hit"] = (sqd_1_hit.Value - squad_BGM71_defaultstat[???]).ToString();
-                        sqd[i]["assist_def_break"] = (sqd_1_break.Value - squad_BGM71_defaultstat[???]).ToString();
+                        sqd[i]["assist_damage"] = (sqd_1_damage.Value - squad_BGM71_defaultstat[살상력]).ToString();
+                        sqd[i]["assist_reload"] = (sqd_1_reload.Value - squad_BGM71_defaultstat[장전]).ToString();
+                        sqd[i]["assist_hit"] = (sqd_1_hit.Value - squad_BGM71_defaultstat[정밀성]).ToString();
+                        sqd[i]["assist_def_break"] = (sqd_1_break.Value - squad_BGM71_defaultstat[파쇄력]).ToString();
                         sqd[i]["skill1"] = sqd_1_skill1.Value.ToString();
                         sqd[i]["skill2"] = sqd_1_skill2.Value.ToString();
                         sqd[i]["skill3"] = sqd_1_skill3.Value.ToString();
@@ -2457,10 +2457,10 @@ namespace GFBattleTester
                         sqd[i]["squad_id"] = (i + 1).ToString();
                         sqd[i]["squad_exp"] = sqd_exp_table[Convert.ToInt16(sqd_2_lv.Value) - 1].ToString();
                         sqd[i]["squad_level"] = sqd_2_lv.Value.ToString();
-                        sqd[i]["assist_damage"] = (sqd_2_damage.Value - squad_AGS30_defaultstat[???]).ToString();
-                        sqd[i]["assist_reload"] = (sqd_2_reload.Value - squad_AGS30_defaultstat[??]).ToString();
-                        sqd[i]["assist_hit"] = (sqd_2_hit.Value - squad_AGS30_defaultstat[???]).ToString();
-                        sqd[i]["assist_def_break"] = (sqd_2_break.Value - squad_AGS30_defaultstat[???]).ToString();
+                        sqd[i]["assist_damage"] = (sqd_2_damage.Value - squad_AGS30_defaultstat[살상력]).ToString();
+                        sqd[i]["assist_reload"] = (sqd_2_reload.Value - squad_AGS30_defaultstat[장전]).ToString();
+                        sqd[i]["assist_hit"] = (sqd_2_hit.Value - squad_AGS30_defaultstat[정밀성]).ToString();
+                        sqd[i]["assist_def_break"] = (sqd_2_break.Value - squad_AGS30_defaultstat[파쇄력]).ToString();
                         sqd[i]["skill1"] = sqd_2_skill1.Value.ToString();
                         sqd[i]["skill2"] = sqd_2_skill2.Value.ToString();
                         sqd[i]["skill3"] = sqd_2_skill3.Value.ToString();
@@ -2469,10 +2469,10 @@ namespace GFBattleTester
                         sqd[i]["squad_id"] = (i + 1).ToString();
                         sqd[i]["squad_exp"] = sqd_exp_table[Convert.ToInt16(sqd_3_lv.Value) - 1].ToString();
                         sqd[i]["squad_level"] = sqd_3_lv.Value.ToString();
-                        sqd[i]["assist_damage"] = (sqd_3_damage.Value - squad_2B14_defaultstat[???]).ToString();
-                        sqd[i]["assist_reload"] = (sqd_3_reload.Value - squad_2B14_defaultstat[??]).ToString();
-                        sqd[i]["assist_hit"] = (sqd_3_hit.Value - squad_2B14_defaultstat[???]).ToString();
-                        sqd[i]["assist_def_break"] = (sqd_3_break.Value - squad_2B14_defaultstat[???]).ToString();
+                        sqd[i]["assist_damage"] = (sqd_3_damage.Value - squad_2B14_defaultstat[살상력]).ToString();
+                        sqd[i]["assist_reload"] = (sqd_3_reload.Value - squad_2B14_defaultstat[장전]).ToString();
+                        sqd[i]["assist_hit"] = (sqd_3_hit.Value - squad_2B14_defaultstat[정밀성]).ToString();
+                        sqd[i]["assist_def_break"] = (sqd_3_break.Value - squad_2B14_defaultstat[파쇄력]).ToString();
                         sqd[i]["skill1"] = sqd_3_skill1.Value.ToString();
                         sqd[i]["skill2"] = sqd_3_skill2.Value.ToString();
                         sqd[i]["skill3"] = sqd_3_skill3.Value.ToString();
@@ -2481,10 +2481,10 @@ namespace GFBattleTester
                         sqd[i]["squad_id"] = (i + 1).ToString();
                         sqd[i]["squad_exp"] = sqd_exp_table[Convert.ToInt16(sqd_4_lv.Value) - 1].ToString();
                         sqd[i]["squad_level"] = sqd_4_lv.Value.ToString();
-                        sqd[i]["assist_damage"] = (sqd_4_damage.Value - squad_M2_defaultstat[???]).ToString();
-                        sqd[i]["assist_reload"] = (sqd_4_reload.Value - squad_M2_defaultstat[??]).ToString();
-                        sqd[i]["assist_hit"] = (sqd_4_hit.Value - squad_M2_defaultstat[???]).ToString();
-                        sqd[i]["assist_def_break"] = (sqd_4_break.Value - squad_M2_defaultstat[???]).ToString();
+                        sqd[i]["assist_damage"] = (sqd_4_damage.Value - squad_M2_defaultstat[살상력]).ToString();
+                        sqd[i]["assist_reload"] = (sqd_4_reload.Value - squad_M2_defaultstat[장전]).ToString();
+                        sqd[i]["assist_hit"] = (sqd_4_hit.Value - squad_M2_defaultstat[정밀성]).ToString();
+                        sqd[i]["assist_def_break"] = (sqd_4_break.Value - squad_M2_defaultstat[파쇄력]).ToString();
                         sqd[i]["skill1"] = sqd_4_skill1.Value.ToString();
                         sqd[i]["skill2"] = sqd_4_skill2.Value.ToString();
                         sqd[i]["skill3"] = sqd_4_skill3.Value.ToString();
@@ -2493,10 +2493,10 @@ namespace GFBattleTester
                         sqd[i]["squad_id"] = (i + 1).ToString();
                         sqd[i]["squad_exp"] = sqd_exp_table[Convert.ToInt16(sqd_5_lv.Value) - 1].ToString();
                         sqd[i]["squad_level"] = sqd_5_lv.Value.ToString();
-                        sqd[i]["assist_damage"] = (sqd_5_damage.Value - squad_AT4_defaultstat[???]).ToString();
-                        sqd[i]["assist_reload"] = (sqd_5_reload.Value - squad_AT4_defaultstat[??]).ToString();
-                        sqd[i]["assist_hit"] = (sqd_5_hit.Value - squad_AT4_defaultstat[???]).ToString();
-                        sqd[i]["assist_def_break"] = (sqd_5_break.Value - squad_AT4_defaultstat[???]).ToString();
+                        sqd[i]["assist_damage"] = (sqd_5_damage.Value - squad_AT4_defaultstat[살상력]).ToString();
+                        sqd[i]["assist_reload"] = (sqd_5_reload.Value - squad_AT4_defaultstat[장전]).ToString();
+                        sqd[i]["assist_hit"] = (sqd_5_hit.Value - squad_AT4_defaultstat[정밀성]).ToString();
+                        sqd[i]["assist_def_break"] = (sqd_5_break.Value - squad_AT4_defaultstat[파쇄력]).ToString();
                         sqd[i]["skill1"] = sqd_5_skill1.Value.ToString();
                         sqd[i]["skill2"] = sqd_5_skill2.Value.ToString();
                         sqd[i]["skill3"] = sqd_5_skill3.Value.ToString();
@@ -2505,10 +2505,10 @@ namespace GFBattleTester
                         sqd[i]["squad_id"] = (i + 1).ToString();
                         sqd[i]["squad_exp"] = sqd_exp_table[Convert.ToInt16(sqd_6_lv.Value) - 1].ToString();
                         sqd[i]["squad_level"] = sqd_6_lv.Value.ToString();
-                        sqd[i]["assist_damage"] = (sqd_6_damage.Value - squad_QLZ04_defaultstat[???]).ToString();
-                        sqd[i]["assist_reload"] = (sqd_6_reload.Value - squad_QLZ04_defaultstat[??]).ToString();
-                        sqd[i]["assist_hit"] = (sqd_6_hit.Value - squad_QLZ04_defaultstat[???]).ToString();
-                        sqd[i]["assist_def_break"] = (sqd_6_break.Value - squad_QLZ04_defaultstat[???]).ToString();
+                        sqd[i]["assist_damage"] = (sqd_6_damage.Value - squad_QLZ04_defaultstat[살상력]).ToString();
+                        sqd[i]["assist_reload"] = (sqd_6_reload.Value - squad_QLZ04_defaultstat[장전]).ToString();
+                        sqd[i]["assist_hit"] = (sqd_6_hit.Value - squad_QLZ04_defaultstat[정밀성]).ToString();
+                        sqd[i]["assist_def_break"] = (sqd_6_break.Value - squad_QLZ04_defaultstat[파쇄력]).ToString();
                         sqd[i]["skill1"] = sqd_6_skill1.Value.ToString();
                         sqd[i]["skill2"] = sqd_6_skill2.Value.ToString();
                         sqd[i]["skill3"] = sqd_6_skill3.Value.ToString();
@@ -2554,10 +2554,10 @@ namespace GFBattleTester
                 {
                     json["Squad1"]["id"] = sqdID[0].ToString();
                     sqd_1_lv.Value = int.Parse(json["Squad1"]["squad_level"].ToString());
-                    sqd_1_damage.Value = int.Parse(json["Squad1"]["assist_damage"].ToString()) + squad_BGM71_defaultstat[???];
-                    sqd_1_reload.Value = int.Parse(json["Squad1"]["assist_reload"].ToString()) + squad_BGM71_defaultstat[??];
-                    sqd_1_hit.Value = int.Parse(json["Squad1"]["assist_hit"].ToString()) + squad_BGM71_defaultstat[???];
-                    sqd_1_break.Value = int.Parse(json["Squad1"]["assist_def_break"].ToString()) + squad_BGM71_defaultstat[???];
+                    sqd_1_damage.Value = int.Parse(json["Squad1"]["assist_damage"].ToString()) + squad_BGM71_defaultstat[살상력];
+                    sqd_1_reload.Value = int.Parse(json["Squad1"]["assist_reload"].ToString()) + squad_BGM71_defaultstat[장전];
+                    sqd_1_hit.Value = int.Parse(json["Squad1"]["assist_hit"].ToString()) + squad_BGM71_defaultstat[정밀성];
+                    sqd_1_break.Value = int.Parse(json["Squad1"]["assist_def_break"].ToString()) + squad_BGM71_defaultstat[파쇄력];
                     sqd_1_skill1.Value = int.Parse(json["Squad1"]["skill1"].ToString());
                     sqd_1_skill2.Value = int.Parse(json["Squad1"]["skill2"].ToString());
                     sqd_1_skill3.Value = int.Parse(json["Squad1"]["skill3"].ToString());
@@ -2578,10 +2578,10 @@ namespace GFBattleTester
                 {
                     json["Squad2"]["id"] = sqdID[1].ToString();
                     sqd_2_lv.Value = int.Parse(json["Squad2"]["squad_level"].ToString());
-                    sqd_2_damage.Value = int.Parse(json["Squad2"]["assist_damage"].ToString()) + squad_AGS30_defaultstat[???];
-                    sqd_2_reload.Value = int.Parse(json["Squad2"]["assist_reload"].ToString()) + squad_AGS30_defaultstat[??];
-                    sqd_2_hit.Value = int.Parse(json["Squad2"]["assist_hit"].ToString()) + squad_AGS30_defaultstat[???];
-                    sqd_2_break.Value = int.Parse(json["Squad2"]["assist_def_break"].ToString()) + squad_AGS30_defaultstat[???];
+                    sqd_2_damage.Value = int.Parse(json["Squad2"]["assist_damage"].ToString()) + squad_AGS30_defaultstat[살상력];
+                    sqd_2_reload.Value = int.Parse(json["Squad2"]["assist_reload"].ToString()) + squad_AGS30_defaultstat[장전];
+                    sqd_2_hit.Value = int.Parse(json["Squad2"]["assist_hit"].ToString()) + squad_AGS30_defaultstat[정밀성];
+                    sqd_2_break.Value = int.Parse(json["Squad2"]["assist_def_break"].ToString()) + squad_AGS30_defaultstat[파쇄력];
                     sqd_2_skill1.Value = int.Parse(json["Squad2"]["skill1"].ToString());
                     sqd_2_skill2.Value = int.Parse(json["Squad2"]["skill2"].ToString());
                     sqd_2_skill3.Value = int.Parse(json["Squad2"]["skill3"].ToString());
@@ -2602,10 +2602,10 @@ namespace GFBattleTester
                 {
                     json["Squad3"]["id"] = sqdID[2].ToString();
                     sqd_3_lv.Value = int.Parse(json["Squad3"]["squad_level"].ToString());
-                    sqd_3_damage.Value = int.Parse(json["Squad3"]["assist_damage"].ToString()) + squad_2B14_defaultstat[???];
-                    sqd_3_reload.Value = int.Parse(json["Squad3"]["assist_reload"].ToString()) + squad_2B14_defaultstat[??];
-                    sqd_3_hit.Value = int.Parse(json["Squad3"]["assist_hit"].ToString()) + squad_2B14_defaultstat[???];
-                    sqd_3_break.Value = int.Parse(json["Squad3"]["assist_def_break"].ToString()) + squad_2B14_defaultstat[???];
+                    sqd_3_damage.Value = int.Parse(json["Squad3"]["assist_damage"].ToString()) + squad_2B14_defaultstat[살상력];
+                    sqd_3_reload.Value = int.Parse(json["Squad3"]["assist_reload"].ToString()) + squad_2B14_defaultstat[장전];
+                    sqd_3_hit.Value = int.Parse(json["Squad3"]["assist_hit"].ToString()) + squad_2B14_defaultstat[정밀성];
+                    sqd_3_break.Value = int.Parse(json["Squad3"]["assist_def_break"].ToString()) + squad_2B14_defaultstat[파쇄력];
                     sqd_3_skill1.Value = int.Parse(json["Squad3"]["skill1"].ToString());
                     sqd_3_skill2.Value = int.Parse(json["Squad3"]["skill2"].ToString());
                     sqd_3_skill3.Value = int.Parse(json["Squad3"]["skill3"].ToString());
@@ -2626,10 +2626,10 @@ namespace GFBattleTester
                 {
                     json["Squad4"]["id"] = sqdID[3].ToString();
                     sqd_4_lv.Value = int.Parse(json["Squad4"]["squad_level"].ToString());
-                    sqd_4_damage.Value = int.Parse(json["Squad4"]["assist_damage"].ToString()) + squad_M2_defaultstat[???];
-                    sqd_4_reload.Value = int.Parse(json["Squad4"]["assist_reload"].ToString()) + squad_M2_defaultstat[??];
-                    sqd_4_hit.Value = int.Parse(json["Squad4"]["assist_hit"].ToString()) + squad_M2_defaultstat[???];
-                    sqd_4_break.Value = int.Parse(json["Squad4"]["assist_def_break"].ToString()) + squad_M2_defaultstat[???];
+                    sqd_4_damage.Value = int.Parse(json["Squad4"]["assist_damage"].ToString()) + squad_M2_defaultstat[살상력];
+                    sqd_4_reload.Value = int.Parse(json["Squad4"]["assist_reload"].ToString()) + squad_M2_defaultstat[장전];
+                    sqd_4_hit.Value = int.Parse(json["Squad4"]["assist_hit"].ToString()) + squad_M2_defaultstat[정밀성];
+                    sqd_4_break.Value = int.Parse(json["Squad4"]["assist_def_break"].ToString()) + squad_M2_defaultstat[파쇄력];
                     sqd_4_skill1.Value = int.Parse(json["Squad4"]["skill1"].ToString());
                     sqd_4_skill2.Value = int.Parse(json["Squad4"]["skill2"].ToString());
                     sqd_4_skill3.Value = int.Parse(json["Squad4"]["skill3"].ToString());
@@ -2650,10 +2650,10 @@ namespace GFBattleTester
                 {
                     json["Squad5"]["id"] = sqdID[4].ToString();
                     sqd_5_lv.Value = int.Parse(json["Squad5"]["squad_level"].ToString());
-                    sqd_5_damage.Value = int.Parse(json["Squad5"]["assist_damage"].ToString()) + squad_AT4_defaultstat[???];
-                    sqd_5_reload.Value = int.Parse(json["Squad5"]["assist_reload"].ToString()) + squad_AT4_defaultstat[??];
-                    sqd_5_hit.Value = int.Parse(json["Squad5"]["assist_hit"].ToString()) + squad_AT4_defaultstat[???];
-                    sqd_5_break.Value = int.Parse(json["Squad5"]["assist_def_break"].ToString()) + squad_AT4_defaultstat[???];
+                    sqd_5_damage.Value = int.Parse(json["Squad5"]["assist_damage"].ToString()) + squad_AT4_defaultstat[살상력];
+                    sqd_5_reload.Value = int.Parse(json["Squad5"]["assist_reload"].ToString()) + squad_AT4_defaultstat[장전];
+                    sqd_5_hit.Value = int.Parse(json["Squad5"]["assist_hit"].ToString()) + squad_AT4_defaultstat[정밀성];
+                    sqd_5_break.Value = int.Parse(json["Squad5"]["assist_def_break"].ToString()) + squad_AT4_defaultstat[파쇄력];
                     sqd_5_skill1.Value = int.Parse(json["Squad5"]["skill1"].ToString());
                     sqd_5_skill2.Value = int.Parse(json["Squad5"]["skill2"].ToString());
                     sqd_5_skill3.Value = int.Parse(json["Squad5"]["skill3"].ToString());
@@ -2674,10 +2674,10 @@ namespace GFBattleTester
                 {
                     json["Squad6"]["id"] = sqdID[5].ToString();
                     sqd_6_lv.Value = int.Parse(json["Squad6"]["squad_level"].ToString());
-                    sqd_6_damage.Value = int.Parse(json["Squad6"]["assist_damage"].ToString()) + squad_QLZ04_defaultstat[???];
-                    sqd_6_reload.Value = int.Parse(json["Squad6"]["assist_reload"].ToString()) + squad_QLZ04_defaultstat[??];
-                    sqd_6_hit.Value = int.Parse(json["Squad6"]["assist_hit"].ToString()) + squad_QLZ04_defaultstat[???];
-                    sqd_6_break.Value = int.Parse(json["Squad6"]["assist_def_break"].ToString()) + squad_QLZ04_defaultstat[???];
+                    sqd_6_damage.Value = int.Parse(json["Squad6"]["assist_damage"].ToString()) + squad_QLZ04_defaultstat[살상력];
+                    sqd_6_reload.Value = int.Parse(json["Squad6"]["assist_reload"].ToString()) + squad_QLZ04_defaultstat[장전];
+                    sqd_6_hit.Value = int.Parse(json["Squad6"]["assist_hit"].ToString()) + squad_QLZ04_defaultstat[정밀성];
+                    sqd_6_break.Value = int.Parse(json["Squad6"]["assist_def_break"].ToString()) + squad_QLZ04_defaultstat[파쇄력];
                     sqd_6_skill1.Value = int.Parse(json["Squad6"]["skill1"].ToString());
                     sqd_6_skill2.Value = int.Parse(json["Squad6"]["skill2"].ToString());
                     sqd_6_skill3.Value = int.Parse(json["Squad6"]["skill3"].ToString());
@@ -3606,7 +3606,7 @@ namespace GFBattleTester
         }
         void ShowposSelector(int n, int selpos, Control c)
         {
-            foreach (Form f in Application.OpenForms) //???? ??
+            foreach (Form f in Application.OpenForms) //중복로드 방지
             {
                 if (f.Name == "posSelector")
                 {
@@ -3985,7 +3985,7 @@ namespace GFBattleTester
                         ((NumericUpDown)Controls.Find("gundodge_" + i.ToString() + "_number", true)[0]).Value = int.Parse(gun_eh_array[k]["dodge"].ToString()) + int.Parse(defStat["dodge"].ToString());
                         ((NumericUpDown)Controls.Find("gunrate_" + i.ToString() + "_number", true)[0]).Value = int.Parse(gun_eh_array[k]["rate"].ToString()) + int.Parse(defStat["rate"].ToString());
                         ((NumericUpDown)Controls.Find("gunskill1_" + i.ToString() + "_number", true)[0]).Value = int.Parse(gun_eh_array[k]["skill1"].ToString());
-                        ((NumericUpDown)Controls.Find("gunskill2_" + i.ToString() + "_number", true)[0]).Value = check_ifmod(i) ? int.Parse(gun_eh_array[k]["skill2"].ToString()) : 0; //?? ???? 0
+                        ((NumericUpDown)Controls.Find("gunskill2_" + i.ToString() + "_number", true)[0]).Value = check_ifmod(i) ? int.Parse(gun_eh_array[k]["skill2"].ToString()) : 0; //개조 아닐경우 0
                         ((NumericUpDown)Controls.Find("gundummy_" + i.ToString() + "_number", true)[0]).Value = int.Parse(gun_eh_array[k]["number"].ToString());
                         ((NumericUpDown)Controls.Find("gunfavor_" + i.ToString() + "_number", true)[0]).Value = int.Parse(gun_eh_array[k]["favor"].ToString()) / 10000;
                         ((CheckBox)Controls.Find("gunoath_" + i.ToString() + "_checkbox", true)[0]).Checked = Convert.ToBoolean(int.Parse(gun_eh_array[k]["soul_bond"].ToString()));
